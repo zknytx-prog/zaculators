@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="100+ free financial calculators. Mortgage, tax, savings, investment, and more. Accurate calculations, no hidden fees.">
-    <title>Precision Finance | 100+ Free Calculators</title>
+    <meta name="description" content="17 free financial calculators. Mortgage, tax, loan, savings, retirement, and more. Accurate calculations, no hidden fees.">
+    <title>Precision Finance | Free Financial Calculators</title>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
@@ -42,26 +42,29 @@
         }
         .calculator-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
         .calc-card {
             background: white;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 1.25rem;
+            padding: 1.5rem;
             text-decoration: none;
             color: inherit;
             transition: all 0.2s;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .calc-card:hover {
             border-color: var(--primary);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
             transform: translateY(-2px);
         }
-        .calc-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-        .calc-card p { font-size: 0.85rem; color: #64748b; }
+        .calc-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 600; }
+        .calc-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 1rem; }
         footer {
             background: white;
             border-top: 1px solid var(--border);
@@ -73,116 +76,117 @@
         .status {
             display: inline-block;
             font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 4px;
-            margin-top: 0.5rem;
+            background: #dcfce7;
+            color: #166534;
+            font-weight: 500;
         }
-        .status.ready { background: #dcfce7; color: #166534; }
-        .status.coming { background: #fef3c7; color: #92400e; }
         .ad-space {
             text-align: center;
-            margin: 2rem 0;
-            padding: 1rem;
+            margin: 3rem 0;
+            padding: 2rem;
             background: #f0f4f8;
             border-radius: 8px;
+            border: 1px dashed var(--border);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Precision Finance</h1>
-        <p class="tagline">100+ Free Calculators | Accurate • Trustworthy • Zero Fees</p>
+        <h1>💰 Precision Finance</h1>
+        <p class="tagline">17 Free Financial Calculators | Accurate • Trustworthy • Zero Fees</p>
     </header>
 
     <main>
-        <!-- FINANCIAL -->
+        <!-- FINANCIAL CALCULATORS -->
         <section class="category">
-            <h2>💰 Financial Calculators</h2>
+            <h2>Financial Calculators</h2>
             <div class="calculator-grid">
-                <a href="mortgage.html" class="calc-card">
-                    <h3>Mortgage</h3>
+                <a href="1-financial/mortgage.html" class="calc-card">
+                    <h3>Mortgage Calculator</h3>
                     <p>Monthly payment & amortization</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="tax.html" class="calc-card">
+                <a href="1-financial/tax.html" class="calc-card">
                     <h3>Tax Calculator</h3>
                     <p>Federal & state tax estimates</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="savings.html" class="calc-card">
+                <a href="1-financial/savings.html" class="calc-card">
                     <h3>Savings Growth</h3>
                     <p>Compound interest calculator</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="compound-interest.html" class="calc-card">
+                <a href="1-financial/compound-interest.html" class="calc-card">
                     <h3>Compound Interest</h3>
                     <p>Investment growth over time</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="retirement.html" class="calc-card">
+                <a href="1-financial/retirement.html" class="calc-card">
                     <h3>Retirement Calculator</h3>
                     <p>Retirement planning & savings</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="loan.html" class="calc-card">
+                <a href="1-financial/loan.html" class="calc-card">
                     <h3>Loan Calculator</h3>
                     <p>Personal loan payments</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="debt-payoff.html" class="calc-card">
-                    <h3>Debt Payoff</h3>
+                <a href="1-financial/debt-payoff.html" class="calc-card">
+                    <h3>Debt Payoff Calculator</h3>
                     <p>Debt elimination strategy</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="investment-return.html" class="calc-card">
+                <a href="1-financial/investment-return.html" class="calc-card">
                     <h3>Investment Return</h3>
                     <p>ROI & profit calculations</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="apr.html" class="calc-card">
+                <a href="1-financial/apr.html" class="calc-card">
                     <h3>APR Calculator</h3>
                     <p>Annual percentage rate</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="profit-margin.html" class="calc-card">
+                <a href="1-financial/profit-margin.html" class="calc-card">
                     <h3>Profit Margin</h3>
                     <p>Gross & net margin analysis</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="roi.html" class="calc-card">
+                <a href="1-financial/roi.html" class="calc-card">
                     <h3>ROI Calculator</h3>
                     <p>Return on investment</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="break-even.html" class="calc-card">
+                <a href="1-financial/break-even.html" class="calc-card">
                     <h3>Break-Even Analysis</h3>
                     <p>Business break-even point</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="hourly-rate.html" class="calc-card">
-                    <h3>Hourly Rate</h3>
+                <a href="1-financial/hourly-rate.html" class="calc-card">
+                    <h3>Hourly Rate Converter</h3>
                     <p>Salary to hourly conversion</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="commission.html" class="calc-card">
+                <a href="1-financial/commission.html" class="calc-card">
                     <h3>Commission Calculator</h3>
                     <p>Sales commission tracking</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="tip.html" class="calc-card">
+                <a href="1-financial/tip.html" class="calc-card">
                     <h3>Tip Calculator</h3>
                     <p>Restaurant tip calculator</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="percentage.html" class="calc-card">
+                <a href="1-financial/percentage.html" class="calc-card">
                     <h3>Percentage Calculator</h3>
-                    <p>Percentage calculations</p>
-                    <span class="status ready">✓ Ready</span>
+                    <p>Quick percentage calculations</p>
+                    <span class="status">✓ Ready</span>
                 </a>
-                <a href="discount.html" class="calc-card">
+                <a href="1-financial/discount.html" class="calc-card">
                     <h3>Discount Calculator</h3>
                     <p>Sale price calculations</p>
-                    <span class="status ready">✓ Ready</span>
+                    <span class="status">✓ Ready</span>
                 </a>
             </div>
         </section>
@@ -203,8 +207,8 @@
     </main>
 
     <footer>
-        <p>Precision Finance © 2025 | Free financial calculators for accurate decision-making</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">All calculations are estimates for educational purposes. Consult professionals for financial advice.</p>
+        <p><strong>Precision Finance</strong> © 2025 | Free financial calculators for accurate decision-making</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">⚠️ Calculations are estimates for educational purposes. Consult professionals for financial advice.</p>
     </footer>
 </body>
 </html>
