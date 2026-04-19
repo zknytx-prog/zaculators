@@ -1,0 +1,4 @@
+Install path for this corrected package:
+- Upload the contents of the folder named "1-financial" into your GitHub repo's existing /1-financial/ folder.
+- These files are intended to resolve URLs like /1-financial/retirement.html and /1-financial/commission.html.
+- Keep all 12 financial HTML files together in the same folder.
