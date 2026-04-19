@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate compound interest and see how your savings grow. Accurate projections for any savings goal with monthly or annual deposits.">
+    <meta name="keywords" content="savings calculator, compound interest, savings growth, investment calculator">
+    <title>Savings Calculator | Compound Interest Growth Projector</title>
+    <style>
+        :root { --primary: #2563eb; --primary-dark: #1e40af; --primary-light: #eff6ff; --success: #16a34a; --warning: #d97706; --text: #0f172a; --text-secondary: #475569; --text-tertiary: #94a3b8; --bg: #f8fafc; --border: #e2e8f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%); color: var(--text); line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 40; backdrop-filter: blur(12px); }
+        .header-content { max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px; }
+        main { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .hero-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
+        .trust-badges { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; padding: 1rem; background: var(--bg); border-radius: 12px; }
+        .badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
+        .badge:before { content: "✓"; color: var(--success); font-weight: 700; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
+        @media (min-width: 1024px) { .calculator-grid { grid-template-columns: 360px 1fr; } }
+        .input-panel { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; height: fit-content; position: sticky; top: 90px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
+        .input-panel h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .input-group { margin-bottom: 1.75rem; }
+        label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+        .input-wrapper { position: relative; display: flex; align-items: center; }
+        .input-prefix { position: absolute; left: 12px; color: var(--text-tertiary); font-weight: 500; pointer-events: none; }
+        input[type="number"], select { width: 100%; padding: 0.75rem 0.75rem 0.75rem 2rem; border: 1.5px solid var(--border); border-radius: 10px; font-size: 1rem; color: var(--text); background: white; transition: all 0.2s; font-weight: 500; }
+        input[type="number"]:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+        input[type="range"] { width: 100%; height: 6px; border-radius: 3px; background: var(--border); outline: none; margin-top: 0.75rem; -webkit-appearance: none; appearance: none; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--primary); cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3); }
+        input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.1); box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4); }
+        input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--primary); cursor: pointer; border: none; }
+        .input-hint { font-size: 0.8125rem; color: var(--text-tertiary); margin-top: 0.375rem; }
+        .button-calculate { width: 100%; padding: 1rem; margin-top: 2rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
+        .button-calculate:hover { background: var(--primary-dark); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3); transform: translateY(-1px); }
+        .results-panel { animation: fadeIn 0.4s ease-out; }
+        .result-card-primary { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 1px solid #93c5fd; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+        .result-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; color: var(--primary); text-transform: uppercase; margin-bottom: 0.75rem; }
+        .result-value { font-size: 3rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; word-break: break-word; }
+        .result-explanation { font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .result-insight { background: rgba(255, 255, 255, 0.6); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); }
+        .result-insight strong { color: var(--text); }
+        .action-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .button-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; background: white; border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.95rem; font-weight: 600; color: var(--text); cursor: pointer; transition: all 0.2s; }
+        .button-secondary:hover { background: var(--bg); border-color: var(--primary); color: var(--primary); }
+        .breakdown-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .breakdown-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-align: center; }
+        .breakdown-label { font-size: 0.8rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .breakdown-value { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+        .breakdown-detail { font-size: 0.8rem; color: var(--text-secondary); }
+        .next-steps { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid #fcd34d; border-radius: 16px; padding: 1.75rem; margin-bottom: 1.5rem; }
+        .next-steps h3 { font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: 1rem; }
+        .next-steps ul { list-style: none; }
+        .next-steps li { font-size: 0.95rem; color: var(--text-secondary); padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .next-steps li:before { content: "✓"; color: var(--success); font-weight: 700; flex-shrink: 0; }
+        .faq-section { border-top: 1px solid var(--border); padding-top: 2.5rem; margin-top: 3rem; }
+        .faq-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+        .faq-item { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.2s; }
+        .faq-item:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        .faq-question { width: 100%; padding: 1.25rem; background: white; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: var(--text); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .faq-question:hover { background: var(--bg); }
+        .faq-answer { padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: all 0.2s ease; background: var(--bg); }
+        .faq-item.open .faq-answer { max-height: 500px; padding: 1.25rem; }
+        .faq-answer p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+        .empty-state { background: var(--bg); border: 2px dashed var(--border); border-radius: 16px; padding: 3rem 2rem; text-align: center; color: var(--text-secondary); }
+        .empty-state p { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        footer { background: white; border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; margin-top: 3rem; text-align: center; color: var(--text-tertiary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .hidden { display: none !important; }
+        @media (max-width: 1023px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+            .input-panel { position: static; }
+            h1 { font-size: 2rem; }
+            .result-value { font-size: 2.5rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Savings Calculator",
+      "description": "Calculate compound interest and savings growth with accurate projections",
+      "url": "https://precisionfinance.example.com/savings",
+      "applicationCategory": "FinanceApplication",
+      "offers": { "@type": "Offer", "price": "0" }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-icon">PF</div>
+            <span style="font-weight: 600;">Precision Finance</span>
+        </div>
+    </header>
+
+    <main>
+        <section style="margin-bottom: 2.5rem; animation: slideUp 0.6s ease-out;">
+            <h1>Savings Calculator</h1>
+            <p class="hero-subtitle">See exactly how your savings grow with compound interest. Plan for your future with accurate projections.</p>
+        </section>
+
+        <div class="trust-badges">
+            <div class="badge">Accurate calculations</div>
+            <div class="badge">No hidden fees</div>
+            <div class="badge">Free to use</div>
+            <div class="badge">Saved data stays private</div>
+        </div>
+
+        <div class="calculator-grid">
+            <aside class="input-panel" role="complementary" aria-label="Savings calculator inputs">
+                <h2>Your Savings Details</h2>
+
+                <div class="input-group">
+                    <label for="initialSavings">Starting Balance</label>
+                    <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="initialSavings" value="10000" min="0" step="1000" aria-label="Initial savings amount" aria-describedby="initial-hint">
+                    </div>
+                    <div id="initial-hint" class="input-hint">How much you have saved now</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="monthlyDeposit">Monthly Deposit</label>
+                    <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="monthlyDeposit" value="500" min="0" step="50" aria-label="Monthly savings deposit" aria-describedby="monthly-hint">
+                    </div>
+                    <div id="monthly-hint" class="input-hint">Amount you add each month</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="annualRate">Annual Interest Rate</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="annualRate" value="4.5" min="0" max="20" step="0.01" aria-label="Annual interest rate percentage" aria-describedby="rate-hint">
+                        <span class="input-prefix" style="right: 12px; left: auto;">%</span>
+                    </div>
+                    <div id="rate-hint" class="input-hint">APY from your savings account</div>
+                    <input type="range" id="annualRateRange" min="0" max="20" step="0.1" value="4.5" aria-label="Interest rate slider">
+                </div>
+
+                <div class="input-group">
+                    <label for="years">Time Period</label>
+                    <select id="years" aria-label="Years to save">
+                        <option value="1">1 year</option>
+                        <option value="3">3 years</option>
+                        <option value="5" selected>5 years</option>
+                        <option value="10">10 years</option>
+                        <option value="20">20 years</option>
+                        <option value="30">30 years</option>
+                    </select>
+                    <div class="input-hint">How long you'll save for</div>
+                </div>
+
+                <button class="button-calculate" onclick="calculate()">Calculate Growth</button>
+            </aside>
+
+            <div role="main" aria-label="Savings growth results">
+                <div id="results" class="results-panel hidden">
+                    <div class="result-card-primary">
+                        <div class="result-label">Final Balance After Interest</div>
+                        <div class="result-value" id="finalBalanceDisplay" aria-live="polite">$0</div>
+                        <p class="result-explanation">This is your total savings including all deposits and earned interest. You can stop saving here or continue for more growth.</p>
+                        <div class="result-insight" aria-label="Total interest earned">
+                            <strong>Total interest earned:</strong> <span id="totalInterestEarned">$0</span>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="button-secondary" onclick="saveResults()" aria-label="Save calculation results">💾 Save</button>
+                            <button class="button-secondary" onclick="shareResults()" aria-label="Share calculation results">📋 Copy</button>
+                            <button class="button-secondary" onclick="window.print()" aria-label="Print calculation">🖨️ Print</button>
+                        </div>
+                        <div id="saveMessage" class="hidden message" style="padding: 0.75rem 1rem; border-radius: 8px; margin-top: 0.75rem; font-size: 0.9rem; font-weight: 500; background: #dcfce7; color: #166534; border: 1px solid #86efac;"></div>
+                    </div>
+
+                    <div class="breakdown-grid">
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Total Deposits</div>
+                            <div class="breakdown-value" id="totalDeposits">$0</div>
+                            <div class="breakdown-detail">Money you contributed</div>
+                        </div>
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Interest Earned</div>
+                            <div class="breakdown-value" id="interestEarned">$0</div>
+                            <div class="breakdown-detail">Bonus from your bank</div>
+                        </div>
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Starting Balance</div>
+                            <div class="breakdown-value" id="startingDisplay">$0</div>
+                            <div class="breakdown-detail">Your initial amount</div>
+                        </div>
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Growth Rate</div>
+                            <div class="breakdown-value" id="growthPercent">0%</div>
+                            <div class="breakdown-detail">Interest as % increase</div>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>Your Next Steps</h3>
+                        <ul>
+                            <li>Set up automatic monthly transfers from your checking account</li>
+                            <li>Choose a high-yield savings account (4-5% APY currently available)</li>
+                            <li>Avoid withdrawing early to maximize compound interest</li>
+                            <li>Increase deposits when possible (bonuses, tax refunds)</li>
+                            <li>Review your progress quarterly and adjust goals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <p>Enter your savings details above and click "Calculate Growth" to see your projections.</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.75rem; color: var(--text-tertiary);">All calculations are instant and stay private on your device.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section" id="faq" aria-label="Frequently asked questions about savings">
+            <h2>Common Savings Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What is compound interest and how does it work?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Compound interest is interest earned on your interest. Your bank pays you interest on your balance, then next month you earn interest on that interest too. It's like "interest on interest." The longer your money sits, the more it compounds. A $10,000 deposit at 4% grows to $10,816 in 2 years due to compounding. This is why starting early matters so much.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What's the difference between APR and APY?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>APY (Annual Percentage Yield) includes compound interest; APR (Annual Percentage Rate) does not. APY is what you actually earn. For savings accounts, always check the APY because it's the real return. A 4% APY is better than a 4% APR. High-yield savings accounts currently offer 4-5% APY, while traditional banks offer 0.01%. The difference is huge over time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>How long should I save to reach my goal?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Use this calculator to test different time periods. For example: $500/month at 4.5% APY grows to $34,000 in 5 years, $77,000 in 10 years, or $187,000 in 20 years. Starting earlier matters more than the amount. A 25-year-old saving $500/month has $1M+ by 65. A 45-year-old needs $2,000+/month to reach the same goal. Time is your biggest advantage.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>Where should I keep my savings for best returns?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>High-yield savings accounts (4-5% APY) are currently best for emergency funds. Banks like Marcus, Ally, Wealthfront offer these with no fees. Traditional savings accounts at big banks pay 0.01%, losing you thousands in opportunity cost. Money market accounts are similar to HYSA. For longer-term goals, consider CDs (4-5%) or index funds (8% average). Keep 3-6 months expenses in savings, invest the rest.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>How much should I deposit each month to reach $50,000?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Use this calculator backwards: If you want $50,000 in 5 years at 4.5% APY with $10,000 starting, you need about $700/month deposits. In 10 years, you only need $300/month. The longer your timeline, the less you need to deposit. Most people underestimate the power of time and compound interest. Start with whatever you can afford; even $100/month adds up to $6,000+ with interest over 5 years.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>Should I withdraw my savings early if I need the money?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Try to avoid early withdrawals—you lose compound interest growth. If you have a true emergency, withdraw from savings before taking on high-interest debt. For planned large expenses (car, down payment), calculate opportunity cost. One early $5,000 withdrawal costs you $5,500+ in lost growth over 10 years. This is why having a separate emergency fund (3-6 months expenses) is critical. Never touch retirement or long-term savings unless absolutely necessary.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Disclaimer:</strong> These calculations are estimates for educational purposes. Actual returns may vary based on market conditions and bank policies. Not financial advice.</p>
+        <p style="margin-top: 1rem;">&copy; 2025 Precision Finance. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const annualRate = document.getElementById('annualRate');
+        const annualRateRange = document.getElementById('annualRateRange');
+
+        annualRate.addEventListener('input', () => {
+            annualRateRange.value = annualRate.value;
+        });
+        annualRateRange.addEventListener('input', () => {
+            annualRate.value = annualRateRange.value;
+        });
+
+        function calculate() {
+            const initial = parseFloat(document.getElementById('initialSavings').value) || 0;
+            const monthly = parseFloat(document.getElementById('monthlyDeposit').value) || 0;
+            const rate = parseFloat(document.getElementById('annualRate').value) || 0;
+            const years = parseInt(document.getElementById('years').value) || 5;
+
+            const monthlyRate = rate / 100 / 12;
+            const months = years * 12;
+
+            // Future value of lump sum
+            let fv = initial * Math.pow(1 + monthlyRate, months);
+
+            // Future value of annuity (monthly deposits)
+            if (monthlyRate === 0) {
+                fv += monthly * months;
+            } else {
+                fv += monthly * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+            }
+
+            const totalDeposited = initial + (monthly * months);
+            const interestEarned = fv - totalDeposited;
+            const growthRate = totalDeposited > 0 ? ((interestEarned / totalDeposited) * 100).toFixed(1) : 0;
+
+            const fmt = (n) => '$' + n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            document.getElementById('finalBalanceDisplay').textContent = fmt(fv);
+            document.getElementById('totalInterestEarned').textContent = fmt(interestEarned);
+            document.getElementById('totalDeposits').textContent = fmt(totalDeposited - initial);
+            document.getElementById('interestEarned').textContent = fmt(interestEarned);
+            document.getElementById('startingDisplay').textContent = fmt(initial);
+            document.getElementById('growthPercent').textContent = growthRate + '%';
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('emptyState').classList.add('hidden');
+
+            setTimeout(() => {
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function toggleFAQ(event) {
+            event.currentTarget.parentElement.classList.toggle('open');
+        }
+
+        function saveResults() {
+            const final = document.getElementById('finalBalanceDisplay').textContent;
+            const data = {
+                initialSavings: document.getElementById('initialSavings').value,
+                monthlyDeposit: document.getElementById('monthlyDeposit').value,
+                annualRate: document.getElementById('annualRate').value,
+                years: document.getElementById('years').value,
+                finalBalance: final,
+                savedDate: new Date().toLocaleDateString()
+            };
+            localStorage.setItem('savingsCalc', JSON.stringify(data));
+            showMessage('saveMessage', 'Calculation saved to your device!', 3000);
+        }
+
+        function shareResults() {
+            const text = `My projected savings: ${document.getElementById('finalBalanceDisplay').textContent}`;
+            if (navigator.share) {
+                navigator.share({ title: 'Savings Calculator', text });
+            } else {
+                navigator.clipboard.writeText(text);
+                showMessage('saveMessage', 'Copied to clipboard!', 2000);
+            }
+        }
+
+        function showMessage(elementId, text, duration) {
+            const el = document.getElementById(elementId);
+            el.textContent = text;
+            el.classList.remove('hidden');
+            if (duration) {
+                setTimeout(() => el.classList.add('hidden'), duration);
+            }
+        }
+
+        document.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && (e.target.type === 'number' || e.target.tagName === 'SELECT')) {
+                calculate();
+            }
+        });
+    </script>
+</body>
+</html>
