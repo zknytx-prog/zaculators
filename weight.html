@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert kilograms, pounds, ounces, grams, and stones instantly.">
+    <meta name="keywords" content="weight converter, kg to lb, pounds to grams, stones converter">
+    <title>Weight Converter | Precision Finance</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
+         crossorigin="anonymous"></script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Weight Converter",
+        "description": "Convert kilograms, pounds, ounces, grams, and stones instantly.",
+        "url": "https://project-mjcnr.vercel.app/6-conversion/weight.html",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Precision Finance",
+            "url": "https://project-mjcnr.vercel.app"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item {
+            margin-bottom: 1rem;
+        }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol {
+            padding-left: 1.5rem;
+            color: #92400e;
+        }
+        .next-steps li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between pounds and ounces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One pound equals sixteen ounces. Ounces are more useful for smaller food, ingredient, and parcel measurements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do many fitness plans use kilograms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kilograms are standard in science, medicine, and most international health references, so they travel better across systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for shipping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but carriers often round up by ounce or pound for billing. Convert first, then confirm the carrier rule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why include stones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stone is still widely used in the UK and Ireland for body weight, so it helps when reading international health content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I round grams in recipes or supplements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only lightly. Small gram differences can matter in baking, coffee, nutrition, and lab work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the same conversion apply to body weight and package weight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The math is identical. Only the rounding standard changes depending on the context."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header>
+        <h1>Weight Converter</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Conversions
+        </div>
+    </header>
+
+    <main>
+        <!-- CALCULATOR SECTION -->
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate calculations</span>
+                <span><div class="badge-icon">✓</div> No ads in results</span>
+                <span><div class="badge-icon">✓</div> Completely free</span>
+            </div>
+
+            <form id="calcForm">
+                
+                <div class="form-group">
+                    <p style="margin-bottom:1rem;color:#475569;">Convert everyday body, food, parcel, and product weights.</p>
+                    <label for="inputValue">Value</label>
+                    <input id="inputValue" name="inputValue" type="number" inputmode="decimal" step="any" placeholder="Enter value" required aria-describedby="inputValue-error">
+                    <div class="error-message" id="inputValue-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUnit">Unit</label>
+                    <select id="inputUnit" name="inputUnit"><option value="kg">Kilograms</option>
+<option value="lb">Pounds</option>
+<option value="oz">Ounces</option>
+<option value="g">Grams</option>
+<option value="st">Stones</option></select>
+                    <div class="error-message" aria-live="polite"></div>
+                </div>
+    
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+
+            <div id="results" class="results-section">
+                <h3 style="margin-bottom:1rem;">Converted values</h3>
+<div class="result-item">
+                <label>Kilograms</label>
+                <div class="value" id="result-kg">—</div>
+            </div>
+<div class="result-item">
+                <label>Pounds</label>
+                <div class="value" id="result-lb">—</div>
+            </div>
+<div class="result-item">
+                <label>Ounces</label>
+                <div class="value" id="result-oz">—</div>
+            </div>
+<div class="result-item">
+                <label>Grams</label>
+                <div class="value" id="result-g">—</div>
+            </div>
+<div class="result-item">
+                <label>Stones</label>
+                <div class="value" id="result-st">—</div>
+            </div>
+            </div>
+
+            <div class="disclaimer">
+                ⚠️ These conversion results are estimates based on the unit definitions and static reference values used on this page. Double-check critical measurements before ordering, building, cooking, or publishing.
+            </div>
+
+            <div class="updated">
+                Last updated: April 19, 2026
+            </div>
+        </section>
+
+        <!-- RELATED CALCULATORS -->
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="/6-conversion/length.html">Length Converter</a>
+<a href="/6-conversion/volume.html">Volume Converter</a>
+<a href="/6-conversion/density-converter.html">Density Converter</a>
+<a href="/6-conversion/temperature.html">Temperature Converter</a>
+            </div>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+                <li>Use the converted weight in your label, recipe, or training log.</li>
+<li>Check your shipper or platform for its rounding rules.</li>
+<li>Save the result if you compare several items or weigh-ins.</li>
+<li>Share the number with a coach, supplier, or team member when needed.</li>
+<li>Print the result card if you want a quick station-side reference.</li>
+            </ol>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><h3>What is the difference between pounds and ounces?</h3><p>One pound equals sixteen ounces. Ounces are more useful for smaller food, ingredient, and parcel measurements.</p></div>
+<div class="faq-item"><h3>Why do many fitness plans use kilograms?</h3><p>Kilograms are standard in science, medicine, and most international health references, so they travel better across systems.</p></div>
+<div class="faq-item"><h3>Can I use this for shipping?</h3><p>Yes, but carriers often round up by ounce or pound for billing. Convert first, then confirm the carrier rule.</p></div>
+<div class="faq-item"><h3>Why include stones?</h3><p>Stone is still widely used in the UK and Ireland for body weight, so it helps when reading international health content.</p></div>
+<div class="faq-item"><h3>Should I round grams in recipes or supplements?</h3><p>Only lightly. Small gram differences can matter in baking, coffee, nutrition, and lab work.</p></div>
+<div class="faq-item"><h3>Does the same conversion apply to body weight and package weight?</h3><p>Yes. The math is identical. Only the rounding standard changes depending on the context.</p></div>
+        </section>
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <!-- SHARED UTILITIES -->
+    <script src="/calc-utils.js"></script>
+
+    <!-- CALCULATOR LOGIC -->
+    <script>
+        
+const CALCULATOR_ID = 'weight';
+const CALCULATOR_TITLE = 'Weight Converter';
+const inputValue = document.getElementById('inputValue');
+const inputUnit = document.getElementById('inputUnit');
+const units = {"kg": {"label": "Kilograms", "symbol": "kg", "factor": 1}, "lb": {"label": "Pounds", "symbol": "lb", "factor": 0.45359237}, "oz": {"label": "Ounces", "symbol": "oz", "factor": 0.028349523125}, "g": {"label": "Grams", "symbol": "g", "factor": 0.001}, "st": {"label": "Stones", "symbol": "st", "factor": 6.35029318}};
+let latestData = null;
+
+function calculateResults() {
+    showValidationError(inputValue, null);
+    const check = validateNumber(inputValue.value, 0);
+    if (!check.valid) {
+        showValidationError(inputValue, check.error);
+        inputValue.focus();
+        return;
+    }
+    const amount = parseFloat(inputValue.value);
+    const base = amount * units[inputUnit.value].factor;
+    const outputs = {};
+    Object.keys(units).forEach(key => {
+        outputs[key] = base / units[key].factor;
+        document.getElementById('result-' + key).textContent = formatNumber(outputs[key], 4) + (units[key].symbol ? ' ' + units[key].symbol : '');
+    });
+    latestData = {
+        amount,
+        unit: inputUnit.value,
+        outputs
+    };
+    document.getElementById('results').classList.add('active');
+}
+
+function handleSave() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    saveResults(CALCULATOR_ID, latestData);
+}
+
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    const summary = {};
+    summary['Input'] = formatNumber(latestData.amount, 4) + ' ' + units[latestData.unit].label;
+    Object.keys(units).forEach(key => {
+        summary[units[key].label] = formatNumber(latestData.outputs[key], 4) + (units[key].symbol ? ' ' + units[key].symbol : '');
+    });
+    shareResults(CALCULATOR_TITLE, summary);
+}
+
+function handlePrint() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    printResults('results', CALCULATOR_TITLE);
+}
+
+document.getElementById('calcForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    calculateResults();
+});
+
+inputValue.addEventListener('input', function() {
+    showValidationError(inputValue, null);
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        inputValue.value = saved.amount;
+        inputUnit.value = saved.unit;
+        latestData = saved;
+        Object.keys(units).forEach(key => {
+            if (saved.outputs && saved.outputs[key] !== undefined) {
+                document.getElementById('result-' + key).textContent = formatNumber(saved.outputs[key], 4) + (units[key].symbol ? ' ' + units[key].symbol : '');
+            }
+        });
+        document.getElementById('results').classList.add('active');
+    }
+});
+
+    </script>
+
+    <footer>
+        <p><strong>Precision Finance</strong> © 2025 | Free financial calculators</p>
+    </footer>
+</body>
+</html>

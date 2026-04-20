@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate screen pixel density from resolution and diagonal size in inches.">
+    <meta name="keywords" content="screen ppi calculator, pixel density, display sharpness, monitor ppi">
+    <title>Screen PPI Calculator | Precision Finance</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
+         crossorigin="anonymous"></script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Screen PPI Calculator",
+        "description": "Calculate screen pixel density from resolution and diagonal size in inches.",
+        "url": "https://project-mjcnr.vercel.app/6-conversion/screen-ppi.html",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Precision Finance",
+            "url": "https://project-mjcnr.vercel.app"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item {
+            margin-bottom: 1rem;
+        }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol {
+            padding-left: 1.5rem;
+            color: #92400e;
+        }
+        .next-steps li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does PPI mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PPI means pixels per inch. It tells you how tightly packed the pixels are on a display."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does higher PPI look sharper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "More pixels packed into each inch create smoother text, finer details, and less visible jagged edges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PPI the same as screen resolution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Resolution is the total pixel count across width and height, while PPI combines that with the physical screen size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What PPI is considered good?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Around 150 to 220 PPI is solid for many monitors. Phones and premium tablets often go much higher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does higher PPI always mean a better screen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. Color accuracy, brightness, contrast, refresh rate, and panel quality matter too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for print?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This page is for display density, not print DPI planning. Print work follows a related but different workflow."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header>
+        <h1>Screen PPI Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Conversions
+        </div>
+    </header>
+
+    <main>
+        <!-- CALCULATOR SECTION -->
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate calculations</span>
+                <span><div class="badge-icon">✓</div> No ads in results</span>
+                <span><div class="badge-icon">✓</div> Completely free</span>
+            </div>
+
+            <form id="calcForm">
+                
+                <div class="form-group">
+                    <p style="margin-bottom:1rem;color:#475569;">Estimate pixel density from screen width, height, and diagonal size.</p>
+                    <label for="pixelWidth">Pixel width</label>
+                    <input id="pixelWidth" type="number" inputmode="numeric" step="1" placeholder="1920" required aria-describedby="pixelWidth-error">
+                    <div class="error-message" id="pixelWidth-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="pixelHeight">Pixel height</label>
+                    <input id="pixelHeight" type="number" inputmode="numeric" step="1" placeholder="1080" required aria-describedby="pixelHeight-error">
+                    <div class="error-message" id="pixelHeight-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="diagonal">Diagonal size (inches)</label>
+                    <input id="diagonal" type="number" inputmode="decimal" step="any" placeholder="13.3" required aria-describedby="diagonal-error">
+                    <div class="error-message" id="diagonal-error" aria-live="polite"></div>
+                </div>
+
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+
+            <div id="results" class="results-section">
+                
+                <h3 style="margin-bottom:1rem;">Screen density results</h3>
+                <div class="result-item"><label>Pixels per inch (PPI)</label><div class="value" id="ppi-result">—</div></div>
+                <div class="result-item"><label>Total pixel count</label><div class="value" id="pixels-result">—</div></div>
+                <div class="result-item"><label>Pixel diagonal</label><div class="value" id="diag-result">—</div></div>
+                <div class="result-item"><label>Density rating</label><div class="value" id="rating-result">—</div></div>
+
+            </div>
+
+            <div class="disclaimer">
+                ⚠️ These conversion results are estimates based on the unit definitions and static reference values used on this page. Double-check critical measurements before ordering, building, cooking, or publishing.
+            </div>
+
+            <div class="updated">
+                Last updated: April 19, 2026
+            </div>
+        </section>
+
+        <!-- RELATED CALCULATORS -->
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="/6-conversion/aspect-ratio.html">Aspect Ratio</a>
+<a href="/6-conversion/unit-price.html">Unit Price Comparison</a>
+<a href="/6-conversion/length.html">Length Converter</a>
+<a href="/6-conversion/data-storage.html">Data Storage Converter</a>
+            </div>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+                <li>Compare the PPI result before buying a monitor, laptop, or tablet.</li>
+<li>Use the density rating when reviewing screen specs side by side.</li>
+<li>Save the result if you compare several devices.</li>
+<li>Share the output with a designer, buyer, or client.</li>
+<li>Print the result card for procurement or review notes.</li>
+            </ol>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><h3>What does PPI mean?</h3><p>PPI means pixels per inch. It tells you how tightly packed the pixels are on a display.</p></div>
+<div class="faq-item"><h3>Why does higher PPI look sharper?</h3><p>More pixels packed into each inch create smoother text, finer details, and less visible jagged edges.</p></div>
+<div class="faq-item"><h3>Is PPI the same as screen resolution?</h3><p>No. Resolution is the total pixel count across width and height, while PPI combines that with the physical screen size.</p></div>
+<div class="faq-item"><h3>What PPI is considered good?</h3><p>Around 150 to 220 PPI is solid for many monitors. Phones and premium tablets often go much higher.</p></div>
+<div class="faq-item"><h3>Does higher PPI always mean a better screen?</h3><p>Not always. Color accuracy, brightness, contrast, refresh rate, and panel quality matter too.</p></div>
+<div class="faq-item"><h3>Can I use this for print?</h3><p>This page is for display density, not print DPI planning. Print work follows a related but different workflow.</p></div>
+        </section>
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <!-- SHARED UTILITIES -->
+    <script src="/calc-utils.js"></script>
+
+    <!-- CALCULATOR LOGIC -->
+    <script>
+        
+const CALCULATOR_ID = 'screen-ppi';
+const CALCULATOR_TITLE = 'Screen PPI Calculator';
+const pixelWidth = document.getElementById('pixelWidth');
+const pixelHeight = document.getElementById('pixelHeight');
+const diagonal = document.getElementById('diagonal');
+let latestData = null;
+function validateField(input) {
+    const r = validateNumber(input.value, 1);
+    if (!r.valid) showValidationError(input, r.error);
+    return r;
+}
+function calculateResults() {
+    [pixelWidth, pixelHeight, diagonal].forEach(el => showValidationError(el, null));
+    const w = validateField(pixelWidth);
+    const h = validateField(pixelHeight);
+    const d = validateField(diagonal);
+    if (!w.valid) { pixelWidth.focus(); return; }
+    if (!h.valid) { pixelHeight.focus(); return; }
+    if (!d.valid) { diagonal.focus(); return; }
+    const pixelDiag = Math.sqrt(Math.pow(parseFloat(pixelWidth.value), 2) + Math.pow(parseFloat(pixelHeight.value), 2));
+    const ppi = pixelDiag / parseFloat(diagonal.value);
+    const totalPixels = parseFloat(pixelWidth.value) * parseFloat(pixelHeight.value);
+    let rating = 'Standard';
+    if (ppi >= 300) rating = 'Very sharp';
+    else if (ppi >= 220) rating = 'High density';
+    else if (ppi >= 150) rating = 'Good';
+    document.getElementById('ppi-result').textContent = formatNumber(ppi, 2) + ' PPI';
+    document.getElementById('pixels-result').textContent = formatNumber(totalPixels, 0) + ' pixels';
+    document.getElementById('diag-result').textContent = formatNumber(pixelDiag, 2) + ' px';
+    document.getElementById('rating-result').textContent = rating;
+    document.getElementById('results').classList.add('active');
+    latestData = { width: parseFloat(pixelWidth.value), height: parseFloat(pixelHeight.value), diagonal: parseFloat(diagonal.value), ppi, totalPixels, pixelDiag, rating };
+}
+function handleSave(){ if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare(){ if (!latestData) calculateResults(); if (!latestData) return; shareResults(CALCULATOR_TITLE, {
+    'Resolution': latestData.width + ' × ' + latestData.height,
+    'Diagonal size': formatNumber(latestData.diagonal, 2) + ' in',
+    'PPI': formatNumber(latestData.ppi, 2) + ' PPI',
+    'Total pixels': formatNumber(latestData.totalPixels, 0),
+    'Density rating': latestData.rating
+});}
+function handlePrint(){ if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+window.addEventListener('DOMContentLoaded', function(){
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        pixelWidth.value = saved.width; pixelHeight.value = saved.height; diagonal.value = saved.diagonal; latestData = saved;
+        document.getElementById('ppi-result').textContent = formatNumber(saved.ppi, 2) + ' PPI';
+        document.getElementById('pixels-result').textContent = formatNumber(saved.totalPixels, 0) + ' pixels';
+        document.getElementById('diag-result').textContent = formatNumber(saved.pixelDiag, 2) + ' px';
+        document.getElementById('rating-result').textContent = saved.rating;
+        document.getElementById('results').classList.add('active');
+    }
+});
+
+    </script>
+
+    <footer>
+        <p><strong>Precision Finance</strong> © 2025 | Free financial calculators</p>
+    </footer>
+</body>
+</html>

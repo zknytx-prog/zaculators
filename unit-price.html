@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare two products by cost per unit to find the better value fast.">
+    <meta name="keywords" content="unit price calculator, price per unit, compare product value, cost comparison">
+    <title>Unit Price Comparison | Precision Finance</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
+         crossorigin="anonymous"></script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Unit Price Comparison",
+        "description": "Compare two products by cost per unit to find the better value fast.",
+        "url": "https://project-mjcnr.vercel.app/6-conversion/unit-price.html",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Precision Finance",
+            "url": "https://project-mjcnr.vercel.app"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item {
+            margin-bottom: 1rem;
+        }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol {
+            padding-left: 1.5rem;
+            color: #92400e;
+        }
+        .next-steps li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is unit price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the cost per one unit of quantity, such as per ounce, pound, liter, item, or sheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why compare by unit price instead of total price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A larger package can cost more overall while still being the better deal per unit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use weight, volume, or count as the quantity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The math works as long as both products use the same quantity basis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the package sizes use different units?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convert them first so both quantities use the same unit before comparing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a lower unit price always mean I should buy it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. Expiration risk, storage space, and quality still matter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is this useful for business buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It helps with purchasing, supplier comparison, menu costing, and inventory decisions."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header>
+        <h1>Unit Price Comparison</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Conversions
+        </div>
+    </header>
+
+    <main>
+        <!-- CALCULATOR SECTION -->
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate calculations</span>
+                <span><div class="badge-icon">✓</div> No ads in results</span>
+                <span><div class="badge-icon">✓</div> Completely free</span>
+            </div>
+
+            <form id="calcForm">
+                
+                <div class="form-group">
+                    <p style="margin-bottom:1rem;color:#475569;">Compare two offers by price per unit instead of getting fooled by bigger packaging and shiny labels. Humanity does love paying more for worse math.</p>
+                    <label for="priceA">Product A price</label>
+                    <input id="priceA" type="number" inputmode="decimal" step="any" placeholder="5.99" required aria-describedby="priceA-error">
+                    <div class="error-message" id="priceA-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="qtyA">Product A quantity</label>
+                    <input id="qtyA" type="number" inputmode="decimal" step="any" placeholder="12" required aria-describedby="qtyA-error">
+                    <div class="error-message" id="qtyA-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="priceB">Product B price</label>
+                    <input id="priceB" type="number" inputmode="decimal" step="any" placeholder="8.49" required aria-describedby="priceB-error">
+                    <div class="error-message" id="priceB-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="qtyB">Product B quantity</label>
+                    <input id="qtyB" type="number" inputmode="decimal" step="any" placeholder="18" required aria-describedby="qtyB-error">
+                    <div class="error-message" id="qtyB-error" aria-live="polite"></div>
+                </div>
+
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+
+            <div id="results" class="results-section">
+                
+                <h3 style="margin-bottom:1rem;">Unit price comparison</h3>
+                <div class="result-item"><label>Product A unit price</label><div class="value" id="unitA">—</div></div>
+                <div class="result-item"><label>Product B unit price</label><div class="value" id="unitB">—</div></div>
+                <div class="result-item"><label>Better value</label><div class="value" id="winner">—</div></div>
+                <div class="result-item"><label>Savings per unit</label><div class="value" id="difference">—</div></div>
+
+            </div>
+
+            <div class="disclaimer">
+                ⚠️ These conversion results are estimates based on the unit definitions and static reference values used on this page. Double-check critical measurements before ordering, building, cooking, or publishing.
+            </div>
+
+            <div class="updated">
+                Last updated: April 19, 2026
+            </div>
+        </section>
+
+        <!-- RELATED CALCULATORS -->
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="/6-conversion/currency.html">Currency Converter</a>
+<a href="/6-conversion/weight.html">Weight Converter</a>
+<a href="/6-conversion/volume.html">Volume Converter</a>
+<a href="/6-conversion/cooking-measurements.html">Cooking Measurements</a>
+            </div>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+                <li>Convert both product sizes into the same unit before entering them.</li>
+<li>Use the better-value result when comparing brands or suppliers.</li>
+<li>Save the comparison if you rebuy the same items regularly.</li>
+<li>Share the result with a buyer, manager, or household shopper.</li>
+<li>Print the result card for sourcing or cost-control notes.</li>
+            </ol>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><h3>What is unit price?</h3><p>It is the cost per one unit of quantity, such as per ounce, pound, liter, item, or sheet.</p></div>
+<div class="faq-item"><h3>Why compare by unit price instead of total price?</h3><p>A larger package can cost more overall while still being the better deal per unit.</p></div>
+<div class="faq-item"><h3>Can I use weight, volume, or count as the quantity?</h3><p>Yes. The math works as long as both products use the same quantity basis.</p></div>
+<div class="faq-item"><h3>What happens if the package sizes use different units?</h3><p>Convert them first so both quantities use the same unit before comparing.</p></div>
+<div class="faq-item"><h3>Does a lower unit price always mean I should buy it?</h3><p>Not always. Expiration risk, storage space, and quality still matter.</p></div>
+<div class="faq-item"><h3>Why is this useful for business buying?</h3><p>It helps with purchasing, supplier comparison, menu costing, and inventory decisions.</p></div>
+        </section>
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <!-- SHARED UTILITIES -->
+    <script src="/calc-utils.js"></script>
+
+    <!-- CALCULATOR LOGIC -->
+    <script>
+        
+const CALCULATOR_ID = 'unit-price';
+const CALCULATOR_TITLE = 'Unit Price Comparison';
+const fields = ['priceA','qtyA','priceB','qtyB'].map(id => document.getElementById(id));
+let latestData = null;
+function valid(input) {
+    const result = validateNumber(input.value, 0.0000001);
+    if (!result.valid) showValidationError(input, result.error);
+    return result;
+}
+function calculateResults() {
+    fields.forEach(el => showValidationError(el, null));
+    for (const el of fields) {
+        const check = valid(el);
+        if (!check.valid) { el.focus(); return; }
+    }
+    const priceA = parseFloat(document.getElementById('priceA').value);
+    const qtyA = parseFloat(document.getElementById('qtyA').value);
+    const priceB = parseFloat(document.getElementById('priceB').value);
+    const qtyB = parseFloat(document.getElementById('qtyB').value);
+    const unitPriceA = priceA / qtyA;
+    const unitPriceB = priceB / qtyB;
+    const better = unitPriceA < unitPriceB ? 'Product A' : unitPriceB < unitPriceA ? 'Product B' : 'Tie';
+    const savings = Math.abs(unitPriceA - unitPriceB);
+    document.getElementById('unitA').textContent = formatCurrency(unitPriceA, 4);
+    document.getElementById('unitB').textContent = formatCurrency(unitPriceB, 4);
+    document.getElementById('winner').textContent = better;
+    document.getElementById('difference').textContent = formatCurrency(savings, 4);
+    document.getElementById('results').classList.add('active');
+    latestData = { priceA, qtyA, priceB, qtyB, unitPriceA, unitPriceB, better, savings };
+}
+function handleSave(){ if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare(){ if (!latestData) calculateResults(); if (!latestData) return; shareResults(CALCULATOR_TITLE, {
+    'Product A unit price': formatCurrency(latestData.unitPriceA, 4),
+    'Product B unit price': formatCurrency(latestData.unitPriceB, 4),
+    'Better value': latestData.better,
+    'Savings per unit': formatCurrency(latestData.savings, 4)
+});}
+function handlePrint(){ if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+window.addEventListener('DOMContentLoaded', function(){
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        document.getElementById('priceA').value = saved.priceA; document.getElementById('qtyA').value = saved.qtyA;
+        document.getElementById('priceB').value = saved.priceB; document.getElementById('qtyB').value = saved.qtyB;
+        latestData = saved;
+        document.getElementById('unitA').textContent = formatCurrency(saved.unitPriceA, 4);
+        document.getElementById('unitB').textContent = formatCurrency(saved.unitPriceB, 4);
+        document.getElementById('winner').textContent = saved.better;
+        document.getElementById('difference').textContent = formatCurrency(saved.savings, 4);
+        document.getElementById('results').classList.add('active');
+    }
+});
+
+    </script>
+
+    <footer>
+        <p><strong>Precision Finance</strong> © 2025 | Free financial calculators</p>
+    </footer>
+</body>
+</html>

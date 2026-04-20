@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert cups, tablespoons, teaspoons, milliliters, and gram estimates for recipes.">
+    <meta name="keywords" content="cooking measurements converter, cups to tbsp, teaspoons to ml, recipe conversion">
+    <title>Cooking Measurements | Precision Finance</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
+         crossorigin="anonymous"></script>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cooking Measurements",
+        "description": "Convert cups, tablespoons, teaspoons, milliliters, and gram estimates for recipes.",
+        "url": "https://project-mjcnr.vercel.app/6-conversion/cooking-measurements.html",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Precision Finance",
+            "url": "https://project-mjcnr.vercel.app"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item {
+            margin-bottom: 1rem;
+        }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol {
+            padding-left: 1.5rem;
+            color: #92400e;
+        }
+        .next-steps li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are grams and milliliters always equal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page uses a water-style estimate where 1 mL is treated like 1 g for quick kitchen math."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can flour and sugar differ from water?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dry ingredients pack differently and have different densities, so the gram weight changes by ingredient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I rely on cups or grams for baking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grams are usually more consistent for baking because scoop style and cup packing can vary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why include tablespoons and teaspoons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Those units are common in everyday cooking and recipe cards, especially for small ingredient amounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for meal prep scaling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is handy for doubling, halving, and converting recipe liquids and approximate ingredient amounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I switch to an ingredient-specific chart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use one when precision matters, especially for flour, sweeteners, butter, and specialty powders."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <header>
+        <h1>Cooking Measurements</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Conversions
+        </div>
+    </header>
+
+    <main>
+        <!-- CALCULATOR SECTION -->
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate calculations</span>
+                <span><div class="badge-icon">✓</div> No ads in results</span>
+                <span><div class="badge-icon">✓</div> Completely free</span>
+            </div>
+
+            <form id="calcForm">
+                
+                <div class="form-group">
+                    <p style="margin-bottom:1rem;color:#475569;">Convert common kitchen measurements. Grams are shown as water-equivalent estimates, because ingredients refuse to behave like civilized identical molecules.</p>
+                    <label for="cookValue">Amount</label>
+                    <input id="cookValue" type="number" inputmode="decimal" step="any" placeholder="2" required aria-describedby="cookValue-error">
+                    <div class="error-message" id="cookValue-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="cookUnit">Unit</label>
+                    <select id="cookUnit">
+                        <option value="cup">Cup</option>
+                        <option value="tbsp">Tablespoon</option>
+                        <option value="tsp">Teaspoon</option>
+                        <option value="ml">Milliliter</option>
+                        <option value="g">Gram (water estimate)</option>
+                    </select>
+                </div>
+
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+
+            <div id="results" class="results-section">
+                
+                <h3 style="margin-bottom:1rem;">Kitchen conversions</h3>
+                <div class="result-item"><label>Cups</label><div class="value" id="cook-cup">—</div></div>
+                <div class="result-item"><label>Tablespoons</label><div class="value" id="cook-tbsp">—</div></div>
+                <div class="result-item"><label>Teaspoons</label><div class="value" id="cook-tsp">—</div></div>
+                <div class="result-item"><label>Milliliters</label><div class="value" id="cook-ml">—</div></div>
+                <div class="result-item"><label>Grams (water estimate)</label><div class="value" id="cook-g">—</div></div>
+
+            </div>
+
+            <div class="disclaimer">
+                ⚠️ These conversion results are estimates based on the unit definitions and static reference values used on this page. Double-check critical measurements before ordering, building, cooking, or publishing.
+            </div>
+
+            <div class="updated">
+                Last updated: April 19, 2026
+            </div>
+        </section>
+
+        <!-- RELATED CALCULATORS -->
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="/6-conversion/volume.html">Volume Converter</a>
+<a href="/6-conversion/weight.html">Weight Converter</a>
+<a href="/6-conversion/unit-price.html">Unit Price Comparison</a>
+<a href="/6-conversion/temperature.html">Temperature Converter</a>
+            </div>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+                <li>Convert the measurement before you scale the recipe.</li>
+<li>Use an ingredient-specific gram chart when baking precision matters.</li>
+<li>Save common conversions for your prep workflow.</li>
+<li>Share the result with a cook, baker, or assistant.</li>
+<li>Print the card for kitchen station reference.</li>
+            </ol>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><h3>Are grams and milliliters always equal?</h3><p>No. This page uses a water-style estimate where 1 mL is treated like 1 g for quick kitchen math.</p></div>
+<div class="faq-item"><h3>Why can flour and sugar differ from water?</h3><p>Dry ingredients pack differently and have different densities, so the gram weight changes by ingredient.</p></div>
+<div class="faq-item"><h3>Should I rely on cups or grams for baking?</h3><p>Grams are usually more consistent for baking because scoop style and cup packing can vary.</p></div>
+<div class="faq-item"><h3>Why include tablespoons and teaspoons?</h3><p>Those units are common in everyday cooking and recipe cards, especially for small ingredient amounts.</p></div>
+<div class="faq-item"><h3>Can I use this for meal prep scaling?</h3><p>Yes. It is handy for doubling, halving, and converting recipe liquids and approximate ingredient amounts.</p></div>
+<div class="faq-item"><h3>When should I switch to an ingredient-specific chart?</h3><p>Use one when precision matters, especially for flour, sweeteners, butter, and specialty powders.</p></div>
+        </section>
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <!-- SHARED UTILITIES -->
+    <script src="/calc-utils.js"></script>
+
+    <!-- CALCULATOR LOGIC -->
+    <script>
+        
+const CALCULATOR_ID = 'cooking-measurements';
+const CALCULATOR_TITLE = 'Cooking Measurements';
+const cookValue = document.getElementById('cookValue');
+const cookUnit = document.getElementById('cookUnit');
+const factors = { cup: 240, tbsp: 15, tsp: 5, ml: 1, g: 1 };
+let latestData = null;
+function calculateResults() {
+    showValidationError(cookValue, null);
+    const check = validateNumber(cookValue.value, 0);
+    if (!check.valid) {
+        showValidationError(cookValue, check.error);
+        cookValue.focus();
+        return;
+    }
+    const raw = parseFloat(cookValue.value);
+    const baseMl = raw * factors[cookUnit.value];
+    const data = {
+        cup: baseMl / factors.cup,
+        tbsp: baseMl / factors.tbsp,
+        tsp: baseMl / factors.tsp,
+        ml: baseMl,
+        g: baseMl
+    };
+    document.getElementById('cook-cup').textContent = formatNumber(data.cup, 3) + ' cups';
+    document.getElementById('cook-tbsp').textContent = formatNumber(data.tbsp, 3) + ' tbsp';
+    document.getElementById('cook-tsp').textContent = formatNumber(data.tsp, 3) + ' tsp';
+    document.getElementById('cook-ml').textContent = formatNumber(data.ml, 2) + ' mL';
+    document.getElementById('cook-g').textContent = formatNumber(data.g, 2) + ' g';
+    document.getElementById('results').classList.add('active');
+    latestData = { raw, unit: cookUnit.value, data };
+}
+function handleSave(){ if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare(){ if (!latestData) calculateResults(); if (!latestData) return; shareResults(CALCULATOR_TITLE, {
+    'Input': formatNumber(latestData.raw, 3) + ' ' + latestData.unit,
+    'Cups': formatNumber(latestData.data.cup, 3),
+    'Tablespoons': formatNumber(latestData.data.tbsp, 3),
+    'Teaspoons': formatNumber(latestData.data.tsp, 3),
+    'Milliliters': formatNumber(latestData.data.ml, 2) + ' mL',
+    'Grams estimate': formatNumber(latestData.data.g, 2) + ' g'
+});}
+function handlePrint(){ if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+window.addEventListener('DOMContentLoaded', function(){
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        cookValue.value = saved.raw;
+        cookUnit.value = saved.unit;
+        latestData = saved;
+        document.getElementById('cook-cup').textContent = formatNumber(saved.data.cup, 3) + ' cups';
+        document.getElementById('cook-tbsp').textContent = formatNumber(saved.data.tbsp, 3) + ' tbsp';
+        document.getElementById('cook-tsp').textContent = formatNumber(saved.data.tsp, 3) + ' tsp';
+        document.getElementById('cook-ml').textContent = formatNumber(saved.data.ml, 2) + ' mL';
+        document.getElementById('cook-g').textContent = formatNumber(saved.data.g, 2) + ' g';
+        document.getElementById('results').classList.add('active');
+    }
+});
+
+    </script>
+
+    <footer>
+        <p><strong>Precision Finance</strong> © 2025 | Free financial calculators</p>
+    </footer>
+</body>
+</html>
