@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate your federal and state tax liability. See what you'll owe or get back. Updated for 2025 tax year.">
+    <meta name="keywords" content="tax calculator, income tax, federal tax, state tax, tax estimator">
+    <title>Tax Calculator | Federal & State Tax Estimator</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #eff6ff;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(12px);
+        }
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .hero-subtitle { font-size: 1.125rem; color: #475569; max-width: 600px; }
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        @media (min-width: 1024px) {
+            .calculator-grid {
+                grid-template-columns: 360px 1fr;
+            }
+        }
+        .input-panel {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 90px;
+        }
+        .input-panel h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .input-group { margin-bottom: 1.75rem; }
+        label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+        input[type="number"], select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+        .input-hint { font-size: 0.8125rem; color: #94a3b8; margin-top: 0.375rem; }
+        .button-calculate {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .button-calculate:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        .results-panel { animation: fadeIn 0.4s; }
+        .result-card-primary {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #93c5fd;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .result-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; color: var(--primary); text-transform: uppercase; margin-bottom: 0.75rem; }
+        .result-value { font-size: 3rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
+        .result-explanation { font-size: 1rem; color: #475569; margin-bottom: 1.5rem; }
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .breakdown-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .breakdown-label { font-size: 0.8rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .breakdown-value { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+        .breakdown-detail { font-size: 0.8rem; color: #475569; margin-top: 0.25rem; }
+        .next-steps {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #fcd34d;
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .next-steps h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
+        .next-steps ul { list-style: none; }
+        .next-steps li { font-size: 0.95rem; color: #475569; padding: 0.5rem 0; display: flex; gap: 0.75rem; }
+        .next-steps li:before { content: "✓"; color: #16a34a; font-weight: 700; }
+        .faq-section { border-top: 1px solid var(--border); padding-top: 2.5rem; margin-top: 3rem; }
+        .faq-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+        .faq-item { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .faq-question { width: 100%; padding: 1.25rem; background: white; border: none; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question:hover { background: #f1f5f9; }
+        .faq-answer { padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: all 0.2s; background: #f1f5f9; }
+        .faq-item.open .faq-answer { max-height: 500px; padding: 1.25rem; }
+        footer { background: white; border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; text-align: center; color: #94a3b8; margin-top: 3rem; }
+        .hidden { display: none !important; }
+        .empty-state { background: #f1f5f9; border: 2px dashed var(--border); border-radius: 16px; padding: 3rem 2rem; text-align: center; color: #475569; }
+        @media (max-width: 1023px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+            .input-panel { position: static; }
+            h1 { font-size: 2rem; }
+            .result-value { font-size: 2.5rem; }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-icon">PF</div>
+            <span style="font-weight: 600;">Precision Finance</span>
+        </div>
+    </header>
+
+    <main>
+        <section style="margin-bottom: 2.5rem;">
+            <h1>Tax Calculator</h1>
+            <p class="hero-subtitle">Estimate your federal and state tax liability for 2025. See what you'll owe or get back.</p>
+        </section>
+
+        <div class="calculator-grid">
+            <aside class="input-panel">
+                <h2>Your Income Info</h2>
+
+                <div class="input-group">
+                    <label for="income">Gross Income</label>
+                    <input type="number" id="income" value="75000" min="0" step="1000">
+                    <div class="input-hint">Annual gross income (salary, wages)</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="filingStatus">Filing Status</label>
+                    <select id="filingStatus">
+                        <option value="single">Single</option>
+                        <option value="married">Married Filing Jointly</option>
+                        <option value="head">Head of Household</option>
+                    </select>
+                    <div class="input-hint">Your tax filing status</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="state">State</label>
+                    <select id="state">
+                        <option value="TX">Texas (no state tax)</option>
+                        <option value="CA">California</option>
+                        <option value="NY">New York</option>
+                        <option value="FL">Florida (no state tax)</option>
+                        <option value="IL">Illinois</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="OH">Ohio</option>
+                        <option value="GA">Georgia</option>
+                        <option value="NC">North Carolina</option>
+                    </select>
+                    <div class="input-hint">Your state of residence</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="deductions">Standard Deduction</label>
+                    <input type="number" id="deductions" value="14600" min="0" step="100">
+                    <div class="input-hint">Standard deduction for 2025</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="dependents">Dependents</label>
+                    <input type="number" id="dependents" value="0" min="0" max="20" step="1">
+                    <div class="input-hint">Number of dependents (each $2,000 credit)</div>
+                </div>
+
+                <button class="button-calculate" onclick="calculate()">Calculate Taxes</button>
+            </aside>
+
+            <div role="main">
+                <div id="results" class="results-panel hidden">
+                    <div class="result-card-primary">
+                        <div class="result-label">Estimated Tax Due</div>
+                        <div class="result-value" id="totalTaxDisplay">$0</div>
+                        <p class="result-explanation">This is your estimated federal and state tax liability for the year.</p>
+                    </div>
+
+                    <div class="breakdown-grid">
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Federal Tax</div>
+                            <div class="breakdown-value" id="federalTax">$0</div>
+                            <div class="breakdown-detail">Federal liability</div>
+                        </div>
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">State Tax</div>
+                            <div class="breakdown-value" id="stateTax">$0</div>
+                            <div class="breakdown-detail">State liability</div>
+                        </div>
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Taxable Income</div>
+                            <div class="breakdown-value" id="taxableIncome">$0</div>
+                            <div class="breakdown-detail">After deductions</div>
+                        </div>
+                        <div class="breakdown-card">
+                            <div class="breakdown-label">Effective Rate</div>
+                            <div class="breakdown-value" id="effectiveRate">0%</div>
+                            <div class="breakdown-detail">Percentage of income</div>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>Next Steps</h3>
+                        <ul>
+                            <li>Gather all W-2s, 1099s, and income documents</li>
+                            <li>Track deductible expenses (home office, education, medical)</li>
+                            <li>Consider tax-advantaged accounts (401k, IRA, HSA)</li>
+                            <li>File by April 15, 2026 to avoid penalties</li>
+                            <li>Consult a CPA for personalized tax strategy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <p>Enter your income and filing status above to estimate your taxes.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <h2>Tax Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What's the difference between federal and state tax?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Federal tax is collected by the IRS and funds national programs. State tax is collected by your state and funds local programs. Not all states have income tax (TX, FL, NV, etc.). Federal rates range 10-37%; state rates vary by state (0-13%+).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>How does the standard deduction work?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The standard deduction reduces your taxable income. For 2025, it's $14,600 (single) or $29,200 (married). Everyone gets this, even if they have no deductions. If your itemized deductions exceed the standard deduction, you can itemize instead.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What credits reduce my taxes?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tax credits directly reduce taxes owed. Child Tax Credit ($2,000/child), Earned Income Credit (EITC), American Opportunity Credit (education), and Child Care Credit are common. Credits are better than deductions because they reduce actual tax, not just taxable income.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>Should I adjust my W-4 withholding?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If you owe taxes, you're under-withholding. Increase W-4 allowances to withhold more. If you get a big refund, you're over-withholding. Decrease allowances to get more pay now. Aim for $0 refund (you gave IRS an interest-free loan otherwise).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What deductions can I claim?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If itemizing: Mortgage interest, property/state taxes (up to $10K), charitable donations, medical expenses (>7.5% AGI), and student loan interest. Home office, business expenses, education costs, and investment losses can also qualify. Keep documentation for IRS audits.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>When should I file my taxes?</span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>File by April 15, 2026 (or request 6-month extension). Filing early maximizes refund speed (1-3 weeks electronically). You need all W-2s (by Jan 31) and 1099s before filing. E-file is faster and has fewer errors than paper returns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Disclaimer:</strong> This calculator is educational only. Actual tax liability may differ. Consult a CPA for accurate tax planning.</p>
+        <p style="margin-top: 1rem;">&copy; 2025 Precision Finance.</p>
+    </footer>
+
+    <script>
+        function calculate() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const deductions = parseFloat(document.getElementById('deductions').value) || 14600;
+            const dependents = parseInt(document.getElementById('dependents').value) || 0;
+            const filingStatus = document.getElementById('filingStatus').value;
+            const state = document.getElementById('state').value;
+
+            // 2025 Federal brackets (simplified)
+            const brackets = {
+                single: [
+                    { limit: 11600, rate: 0.10 },
+                    { limit: 47150, rate: 0.12 },
+                    { limit: 100525, rate: 0.22 },
+                    { limit: 191950, rate: 0.24 },
+                    { limit: 243725, rate: 0.32 },
+                    { limit: 609350, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ],
+                married: [
+                    { limit: 23200, rate: 0.10 },
+                    { limit: 94300, rate: 0.12 },
+                    { limit: 201050, rate: 0.22 },
+                    { limit: 383900, rate: 0.24 },
+                    { limit: 487450, rate: 0.32 },
+                    { limit: 731200, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ],
+                head: [
+                    { limit: 15600, rate: 0.10 },
+                    { limit: 59400, rate: 0.12 },
+                    { limit: 100375, rate: 0.22 },
+                    { limit: 192400, rate: 0.24 },
+                    { limit: 244650, rate: 0.32 },
+                    { limit: 609350, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ]
+            };
+
+            // Calculate taxable income
+            const taxableIncome = Math.max(0, income - deductions);
+
+            // Calculate federal tax
+            const bracket = brackets[filingStatus] || brackets.single;
+            let federalTax = 0;
+            let previousLimit = 0;
+
+            for (let i = 0; i < bracket.length; i++) {
+                const amount = Math.min(taxableIncome, bracket[i].limit) - previousLimit;
+                if (amount > 0) {
+                    federalTax += amount * bracket[i].rate;
+                }
+                if (taxableIncome <= bracket[i].limit) break;
+                previousLimit = bracket[i].limit;
+            }
+
+            // Apply dependent credits
+            federalTax = Math.max(0, federalTax - (dependents * 2000));
+
+            // Calculate state tax (simplified)
+            let stateTax = 0;
+            if (state === 'CA') stateTax = taxableIncome * 0.093;
+            else if (state === 'NY') stateTax = taxableIncome * 0.065;
+            else if (state === 'IL') stateTax = taxableIncome * 0.0495;
+            else if (state === 'PA') stateTax = taxableIncome * 0.0307;
+            else if (state === 'OH') stateTax = taxableIncome * 0.0540;
+            else if (state === 'GA') stateTax = taxableIncome * 0.0575;
+            else if (state === 'NC') stateTax = taxableIncome * 0.0599;
+
+            const totalTax = federalTax + stateTax;
+            const effectiveRate = income > 0 ? ((totalTax / income) * 100).toFixed(1) : 0;
+
+            // Format numbers
+            const fmt = (n) => '$' + n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // Update display
+            document.getElementById('totalTaxDisplay').textContent = fmt(totalTax);
+            document.getElementById('federalTax').textContent = fmt(federalTax);
+            document.getElementById('stateTax').textContent = fmt(stateTax);
+            document.getElementById('taxableIncome').textContent = fmt(taxableIncome);
+            document.getElementById('effectiveRate').textContent = effectiveRate + '%';
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('emptyState').classList.add('hidden');
+        }
+
+        function toggleFAQ(event) {
+            event.currentTarget.parentElement.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

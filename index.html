@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="17 free financial calculators. Mortgage, tax, loan, savings, retirement, and more. Accurate calculations, no hidden fees.">
-    <title>Precision Finance | Free Financial Calculators</title>
+    <meta name="description" content="100+ free financial calculators. Mortgage, tax, savings, investment, and more. Accurate calculations, no hidden fees.">
+    <title>Precision Finance | 100+ Free Calculators</title>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
@@ -42,29 +42,26 @@
         }
         .calculator-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
         }
         .calc-card {
             background: white;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             text-decoration: none;
             color: inherit;
             transition: all 0.2s;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
         .calc-card:hover {
             border-color: var(--primary);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
             transform: translateY(-2px);
         }
-        .calc-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 600; }
-        .calc-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 1rem; }
+        .calc-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .calc-card p { font-size: 0.85rem; color: #64748b; }
         footer {
             background: white;
             border-top: 1px solid var(--border);
@@ -76,117 +73,106 @@
         .status {
             display: inline-block;
             font-size: 0.75rem;
-            padding: 0.35rem 0.75rem;
+            padding: 0.25rem 0.5rem;
             border-radius: 4px;
-            background: #dcfce7;
-            color: #166534;
-            font-weight: 500;
+            margin-top: 0.5rem;
         }
+        .status.ready { background: #dcfce7; color: #166534; }
+        .status.coming { background: #fef3c7; color: #92400e; }
         .ad-space {
             text-align: center;
-            margin: 3rem 0;
-            padding: 2rem;
+            margin: 2rem 0;
+            padding: 1rem;
             background: #f0f4f8;
             border-radius: 8px;
-            border: 1px dashed var(--border);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>💰 Precision Finance</h1>
-        <p class="tagline">17 Free Financial Calculators | Accurate • Trustworthy • Zero Fees</p>
+        <h1>Precision Finance</h1>
+        <p class="tagline">100+ Free Calculators | Accurate • Trustworthy • Zero Fees</p>
     </header>
 
     <main>
-        <!-- FINANCIAL CALCULATORS -->
+        <!-- FINANCIAL -->
         <section class="category">
-            <h2>Financial Calculators</h2>
+            <h2>💰 Financial Calculators</h2>
             <div class="calculator-grid">
                 <a href="1-financial/mortgage.html" class="calc-card">
-                    <h3>Mortgage Calculator</h3>
+                    <h3>Mortgage</h3>
                     <p>Monthly payment & amortization</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/tax.html" class="calc-card">
                     <h3>Tax Calculator</h3>
                     <p>Federal & state tax estimates</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/savings.html" class="calc-card">
                     <h3>Savings Growth</h3>
                     <p>Compound interest calculator</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/compound-interest.html" class="calc-card">
                     <h3>Compound Interest</h3>
                     <p>Investment growth over time</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/retirement.html" class="calc-card">
                     <h3>Retirement Calculator</h3>
                     <p>Retirement planning & savings</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/loan.html" class="calc-card">
                     <h3>Loan Calculator</h3>
                     <p>Personal loan payments</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/debt-payoff.html" class="calc-card">
-                    <h3>Debt Payoff Calculator</h3>
+                    <h3>Debt Payoff</h3>
                     <p>Debt elimination strategy</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/investment-return.html" class="calc-card">
                     <h3>Investment Return</h3>
                     <p>ROI & profit calculations</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/apr.html" class="calc-card">
                     <h3>APR Calculator</h3>
                     <p>Annual percentage rate</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/profit-margin.html" class="calc-card">
                     <h3>Profit Margin</h3>
                     <p>Gross & net margin analysis</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/roi.html" class="calc-card">
                     <h3>ROI Calculator</h3>
                     <p>Return on investment</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/break-even.html" class="calc-card">
                     <h3>Break-Even Analysis</h3>
                     <p>Business break-even point</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/hourly-rate.html" class="calc-card">
-                    <h3>Hourly Rate Converter</h3>
+                    <h3>Hourly Rate</h3>
                     <p>Salary to hourly conversion</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/commission.html" class="calc-card">
                     <h3>Commission Calculator</h3>
                     <p>Sales commission tracking</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
                 <a href="1-financial/tip.html" class="calc-card">
                     <h3>Tip Calculator</h3>
                     <p>Restaurant tip calculator</p>
-                    <span class="status">✓ Ready</span>
-                </a>
-                <a href="1-financial/percentage.html" class="calc-card">
-                    <h3>Percentage Calculator</h3>
-                    <p>Quick percentage calculations</p>
-                    <span class="status">✓ Ready</span>
-                </a>
-                <a href="1-financial/discount.html" class="calc-card">
-                    <h3>Discount Calculator</h3>
-                    <p>Sale price calculations</p>
-                    <span class="status">✓ Ready</span>
+                    <span class="status ready">✓ Ready</span>
                 </a>
             </div>
         </section>
@@ -204,11 +190,377 @@
             </script>
         </div>
 
+        <!-- MEDICAL -->
+        <section class="category">
+            <h2>🏥 Health & Fitness Calculators</h2>
+            <div class="calculator-grid">
+                <a href="2-medical/bmi.html" class="calc-card">
+                    <h3>BMI Calculator</h3>
+                    <p>Body mass index</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/calorie-needs.html" class="calc-card">
+                    <h3>Calorie Needs</h3>
+                    <p>Daily calorie requirements</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/tdee.html" class="calc-card">
+                    <h3>TDEE Calculator</h3>
+                    <p>Total daily energy expenditure</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/protein-intake.html" class="calc-card">
+                    <h3>Protein Intake</h3>
+                    <p>Daily protein requirements</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/pregnancy.html" class="calc-card">
+                    <h3>Pregnancy Calculator</h3>
+                    <p>Due date & week estimator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/blood-alcohol.html" class="calc-card">
+                    <h3>BAC Calculator</h3>
+                    <p>Blood alcohol content</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/bmi-percentile.html" class="calc-card">
+                    <h3>BMI for Kids</h3>
+                    <p>Child BMI percentile</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/waist-hip.html" class="calc-card">
+                    <h3>Waist-Hip Ratio</h3>
+                    <p>Body shape health indicator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/vo2-max.html" class="calc-card">
+                    <h3>VO2 Max</h3>
+                    <p>Aerobic fitness level</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="2-medical/max-heart-rate.html" class="calc-card">
+                    <h3>Max Heart Rate</h3>
+                    <p>Target heart rate zones</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- REAL ESTATE -->
+        <section class="category">
+            <h2>🏠 Real Estate Calculators</h2>
+            <div class="calculator-grid">
+                <a href="4-realestate/home-affordability.html" class="calc-card">
+                    <h3>Home Affordability</h3>
+                    <p>Maximum home price estimation</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/property-tax.html" class="calc-card">
+                    <h3>Property Tax</h3>
+                    <p>Annual property tax estimate</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/rent-vs-buy.html" class="calc-card">
+                    <h3>Rent vs Buy</h3>
+                    <p>Financial comparison analysis</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/closing-costs.html" class="calc-card">
+                    <h3>Closing Costs</h3>
+                    <p>Home purchase closing expenses</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/refinance.html" class="calc-card">
+                    <h3>Refinance Calculator</h3>
+                    <p>Mortgage refinancing analysis</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/hoa.html" class="calc-card">
+                    <h3>HOA Fees</h3>
+                    <p>Monthly HOA cost calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/condo-vs-house.html" class="calc-card">
+                    <h3>Condo vs House</h3>
+                    <p>Long-term cost comparison</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/property-appreciation.html" class="calc-card">
+                    <h3>Property Appreciation</h3>
+                    <p>Future home value estimator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/down-payment.html" class="calc-card">
+                    <h3>Down Payment</h3>
+                    <p>Required down payment calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="4-realestate/investment-property.html" class="calc-card">
+                    <h3>Investment Property</h3>
+                    <p>Rental property ROI analysis</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- BUSINESS -->
+        <section class="category">
+            <h2>📊 Business Calculators</h2>
+            <div class="calculator-grid">
+                <a href="3-business/business-loan.html" class="calc-card">
+                    <h3>Business Loan</h3>
+                    <p>Small business loan calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/breakeven-ecommerce.html" class="calc-card">
+                    <h3>E-Commerce Breakeven</h3>
+                    <p>Online store breakeven analysis</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/startup-costs.html" class="calc-card">
+                    <h3>Startup Costs</h3>
+                    <p>Initial business expenses</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/payroll.html" class="calc-card">
+                    <h3>Payroll Calculator</h3>
+                    <p>Employee payroll estimator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/gross-margin.html" class="calc-card">
+                    <h3>Gross Margin</h3>
+                    <p>Product margin analysis</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/inventory.html" class="calc-card">
+                    <h3>Inventory Turnover</h3>
+                    <p>Stock rotation rate calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/pricing.html" class="calc-card">
+                    <h3>Pricing Strategy</h3>
+                    <p>Product pricing calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/revenue-growth.html" class="calc-card">
+                    <h3>Revenue Growth</h3>
+                    <p>Business growth projections</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/markup.html" class="calc-card">
+                    <h3>Markup Calculator</h3>
+                    <p>Selling price from cost</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="3-business/customer-lifetime-value.html" class="calc-card">
+                    <h3>Customer LTV</h3>
+                    <p>Lifetime customer value</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- CONVERSION -->
+        <section class="category">
+            <h2>🔄 Conversion & Utility Calculators</h2>
+            <div class="calculator-grid">
+                <a href="6-conversion/temperature.html" class="calc-card">
+                    <h3>Temperature</h3>
+                    <p>Celsius, Fahrenheit, Kelvin</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/length.html" class="calc-card">
+                    <h3>Length</h3>
+                    <p>Meters, Feet, Inches, Yards</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/weight.html" class="calc-card">
+                    <h3>Weight</h3>
+                    <p>Kg, Lbs, Ounces, Grams</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/volume.html" class="calc-card">
+                    <h3>Volume</h3>
+                    <p>Liters, Gallons, Cups</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/currency.html" class="calc-card">
+                    <h3>Currency Converter</h3>
+                    <p>Real-time exchange rates</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/percentage.html" class="calc-card">
+                    <h3>Percentage Calculator</h3>
+                    <p>Percentage calculations</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/discount.html" class="calc-card">
+                    <h3>Discount Calculator</h3>
+                    <p>Sale price calculations</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/aspect-ratio.html" class="calc-card">
+                    <h3>Aspect Ratio</h3>
+                    <p>Image & video dimensions</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/ppi.html" class="calc-card">
+                    <h3>Screen PPI</h3>
+                    <p>Pixel density calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="6-conversion/unit-price.html" class="calc-card">
+                    <h3>Unit Price</h3>
+                    <p>Compare product prices</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="category">
+            <h2>📚 Education Calculators</h2>
+            <div class="calculator-grid">
+                <a href="5-education/student-loan.html" class="calc-card">
+                    <h3>Student Loan</h3>
+                    <p>Loan repayment planning</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/gpa.html" class="calc-card">
+                    <h3>GPA Calculator</h3>
+                    <p>Grade point average</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/grade-needed.html" class="calc-card">
+                    <h3>Grade Needed</h3>
+                    <p>Required final grade</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/tuition.html" class="calc-card">
+                    <h3>College Cost</h3>
+                    <p>Education expense estimator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/scholarship.html" class="calc-card">
+                    <h3>Scholarship Planner</h3>
+                    <p>Financial aid calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/weighted-gpa.html" class="calc-card">
+                    <h3>Weighted GPA</h3>
+                    <p>AP/honors weighted calculation</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/student-debt.html" class="calc-card">
+                    <h3>Student Debt</h3>
+                    <p>Total education debt tracker</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="5-education/return-on-education.html" class="calc-card">
+                    <h3>Education ROI</h3>
+                    <p>Degree investment analysis</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- UTILITIES -->
+        <section class="category">
+            <h2>⏱️ Time & Utilities Calculators</h2>
+            <div class="calculator-grid">
+                <a href="10-utilities/age.html" class="calc-card">
+                    <h3>Age Calculator</h3>
+                    <p>Calculate exact age</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="10-utilities/days-between.html" class="calc-card">
+                    <h3>Days Between</h3>
+                    <p>Date difference calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="10-utilities/time-zone.html" class="calc-card">
+                    <h3>Time Zone</h3>
+                    <p>World time converter</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="10-utilities/electricity-cost.html" class="calc-card">
+                    <h3>Electricity Cost</h3>
+                    <p>Monthly power bill estimate</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="10-utilities/work-hours.html" class="calc-card">
+                    <h3>Work Hours</h3>
+                    <p>Time & wage tracker</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="10-utilities/countdown.html" class="calc-card">
+                    <h3>Countdown Timer</h3>
+                    <p>Days until event</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="10-utilities/cost-per-use.html" class="calc-card">
+                    <h3>Cost Per Use</h3>
+                    <p>Item value analyzer</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- AUTOMOTIVE -->
+        <section class="category">
+            <h2>🚗 Automotive Calculators</h2>
+            <div class="calculator-grid">
+                <a href="9-automotive/gas-mileage.html" class="calc-card">
+                    <h3>Gas Mileage</h3>
+                    <p>MPG calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="9-automotive/car-payment.html" class="calc-card">
+                    <h3>Car Payment</h3>
+                    <p>Auto loan calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="9-automotive/fuel-cost.html" class="calc-card">
+                    <h3>Fuel Cost</h3>
+                    <p>Trip fuel expense</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="9-automotive/tire-pressure.html" class="calc-card">
+                    <h3>Tire Pressure</h3>
+                    <p>PSI recommendations</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- PERSONAL -->
+        <section class="category">
+            <h2>💝 Personal Calculators</h2>
+            <div class="calculator-grid">
+                <a href="8-personal/age-difference.html" class="calc-card">
+                    <h3>Age Difference</h3>
+                    <p>Calculate year differences</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="8-personal/baby-due-date.html" class="calc-card">
+                    <h3>Baby Due Date</h3>
+                    <p>Pregnancy calculator</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+                <a href="8-personal/days-until.html" class="calc-card">
+                    <h3>Days Until</h3>
+                    <p>Event countdown</p>
+                    <span class="status ready">✓ Ready</span>
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p><strong>Precision Finance</strong> © 2025 | Free financial calculators for accurate decision-making</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">⚠️ Calculations are estimates for educational purposes. Consult professionals for financial advice.</p>
+        <p>Precision Finance © 2025 | Free financial calculators for accurate decision-making</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">All calculations are estimates for educational purposes. Consult professionals for financial advice.</p>
     </footer>
 </body>
 </html>
