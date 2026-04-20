@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate maximum home price you can afford. Get home affordability estimate based on income, debt, and down payment.">
+    <title>Home Affordability Calculator | Max Home Price | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Home Affordability Calculator","description":"Calculate maximum affordable home price","url":"https://project-mjcnr.vercel.app/home-affordability.html","applicationCategory":"FinanceApplication"}</script>
+    <style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0;--success:#16a34a;--error:#dc2626;--warning:#f59e0b}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}header{background:white;border-bottom:1px solid var(--border);padding:1.5rem;text-align:center}header h1{font-size:1.8rem;margin-bottom:0.25rem}.breadcrumb{font-size:0.85rem;color:#64748b;margin-top:0.5rem}.breadcrumb a{color:var(--primary);text-decoration:none}main{max-width:900px;margin:0 auto;padding:2rem}.calculator-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.calculator-section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.form-group{margin-bottom:1.5rem}label{display:block;font-weight:500;margin-bottom:0.5rem;color:var(--text)}input,select{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;font-size:1rem}input:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}@media(max-width:640px){.form-row{grid-template-columns:1fr}}.button-group{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}@media(max-width:640px){.button-group{grid-template-columns:1fr 1fr}}button{padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:500;cursor:pointer;transition:all 0.2s;font-size:0.9rem}.btn-primary{background:var(--primary);color:white}.btn-primary:hover{background:#1d4ed8}.btn-secondary{background:#f1f5f9;color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background:#e2e8f0}.results-section{background:#f0fdf4;border-left:4px solid var(--success);padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results-section.active{display:block}.result-item{margin-bottom:1.5rem}.result-item label{font-size:0.9rem;color:#64748b;margin-bottom:0.25rem}.result-item .value{font-size:1.5rem;font-weight:600;color:var(--success)}.trust-badges{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;font-size:0.85rem;color:#64748b}.trust-badges span{display:flex;align-items:center;gap:0.5rem}.badge-icon{width:20px;height:20px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:bold}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem;color:var(--text)}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid var(--warning);padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps h3{font-size:1.1rem;margin-bottom:1rem;color:#92400e}.next-steps ol{padding-left:1.5rem;color:#92400e}.next-steps li{margin-bottom:0.75rem;line-height:1.6}.disclaimer{background:#fee2e2;border-left:4px solid var(--error);padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related-calculators{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related-calculators h3{font-size:1rem;margin-bottom:1rem;color:var(--primary)}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center;transition:all 0.2s}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}.updated{font-size:0.8rem;color:#94a3b8;margin-top:1rem}.toast{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:white;padding:1rem 1.5rem;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:none;z-index:1000;animation:slideIn 0.3s ease}.toast.show{display:block}@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}</style>
+</head>
+<body>
+    <header>
+        <h1>Home Affordability Calculator</h1>
+        <div class="breadcrumb"><a href="/">Precision Finance</a> / Real Estate</div>
+    </header>
+    <main>
+        <section class="calculator-section">
+            <h2>Calculate Maximum Home Price</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Lender Guidelines</span>
+                <span><div class="badge-icon">✓</div> Multiple Methods</span>
+                <span><div class="badge-icon">✓</div> Completely Free</span>
+            </div>
+            <form id="calcForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="income">Annual Gross Income ($)</label>
+                        <input type="number" id="income" min="20000" max="500000" placeholder="e.g., 75000" step="1000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="downpayment">Down Payment ($)</label>
+                        <input type="number" id="downpayment" min="0" max="1000000" placeholder="e.g., 50000" step="1000" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="debt">Monthly Debt Payments ($)</label>
+                        <input type="number" id="debt" min="0" max="10000" placeholder="e.g., 500" step="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rate">Interest Rate (%)</label>
+                        <input type="number" id="rate" min="2" max="10" placeholder="e.g., 6.5" step="0.1" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="term">Loan Term (years)</label>
+                        <select id="term" required>
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taxes">Annual Property Tax Rate (%)</label>
+                        <input type="number" id="taxes" min="0" max="3" placeholder="e.g., 1.2" step="0.1" required>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+                <div class="result-item">
+                    <label>Maximum Home Price (28% Rule)</label>
+                    <div class="value" id="price28">-</div>
+                    <div style="font-size:0.85rem;color:#64748b;margin-top:0.5rem">28% of gross income for housing</div>
+                </div>
+                <div class="result-item">
+                    <label>Maximum Home Price (36% Rule)</label>
+                    <div class="value" id="price36">-</div>
+                    <div style="font-size:0.85rem;color:#64748b;margin-top:0.5rem">36% of gross income minus debt</div>
+                </div>
+                <div class="result-item">
+                    <label>Recommended Max Price</label>
+                    <div class="value" id="priceRecommended">-</div>
+                    <div style="font-size:0.85rem;color:#64748b;margin-top:0.5rem">Conservative estimate (safer)</div>
+                </div>
+                <div class="result-item">
+                    <label>Monthly Payment Estimate</label>
+                    <div class="value" id="monthlyPayment">-</div>
+                    <div style="font-size:0.85rem;color:#64748b;margin-top:0.5rem">Principal, interest, tax, insurance</div>
+                </div>
+            </div>
+            <div class="disclaimer">⚠️ <strong>Disclaimer:</strong> This calculator provides estimates based on standard lending guidelines. Actual approval depends on credit score, debt-to-income ratio, employment history, and lender requirements. Consult a mortgage lender for accurate pre-approval.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="closing-costs.html">Closing Costs</a>
+                <a href="property-tax.html">Property Tax</a>
+                <a href="rent-vs-buy.html">Rent vs Buy</a>
+            </div>
+        </div>
+        <div class="next-steps">
+            <h3>📋 What to Do Next:</h3>
+            <ol>
+                <li><strong>Get pre-approved:</strong> Contact mortgage lenders for official pre-approval letter (needed to make offers)</li>
+                <li><strong>Check credit score:</strong> Higher scores get better interest rates (aim for 740+)</li>
+                <li><strong>Save down payment:</strong> 20% avoids PMI; 10-15% is common; 3-5% is minimum</li>
+                <li><strong>Find a realtor:</strong> Local expert helps navigate market and negotiate</li>
+                <li><strong>Get home inspection:</strong> Critical before closing; can identify $5K+ in repairs</li>
+            </ol>
+        </div>
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What's the difference between 28% and 36% rules?</h3>
+                <p>28% rule: Housing costs (mortgage, tax, insurance) ≤ 28% of gross income. 36% rule: Total debt (housing + car + credit + student loans) ≤ 36% of gross income. Lenders use both—you must qualify under both rules. The 28% rule is stricter for housing, protecting you from overextending on mortgage.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I don't have a 20% down payment?</h3>
+                <p>You can put down as little as 3-5%, but you'll pay PMI (Private Mortgage Insurance)—typically 0.5-1.5% of loan annually until you have 20% equity. This adds $100-200/month to payment. Saving for 10-15% down is ideal—reduces PMI and monthly cost significantly. Consider down payment assistance programs if available in your area.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does debt affect home affordability?</h3>
+                <p>Each $1,000 of monthly debt reduces your mortgage approval by ~$200,000. High car payments, student loans, or credit cards significantly limit your home budget. Strategy: Pay off high-interest debt before buying. A $500 car payment reduces approval by ~$100,000. Eliminating it increases home budget substantially.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Should I buy the maximum I'm approved for?</h3>
+                <p>No. Just because lenders approve $400K doesn't mean you should spend it. Lender approval = maximum risk; your budget should account for emergencies, maintenance (1-2% of home value annually), and life changes. A safer approach: aim for 30-year mortgage payment ≤ 25% of gross income, leaving room for other expenses.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What interest rate should I assume?</h3>
+                <p>Rates change daily. Check current rates from Freddie Mac, Bankrate, or your lender. Use realistic rates (today's ~6-7% depending on market). For planning, add 0.5-1% buffer to prepare for potential rate increases. Even 0.5% difference = $100-150/month on $300K loan. Lock rate when applying for pre-approval.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does this calculator include all homeownership costs?</h3>
+                <p>No. This shows mortgage payment + property tax + insurance estimates. Budget also includes: maintenance (1-2% annually), utilities, homeowners insurance, HOA fees (if applicable), capital improvements. Total housing cost typically 30-40% of gross income including all expenses. This calculator shows the mortgage component primarily.</p>
+            </div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+        function formatCurrency(n){return'$'+Math.round(n).toLocaleString()}
+        document.getElementById('calcForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            const income=parseFloat(document.getElementById('income').value);
+            const downpay=parseFloat(document.getElementById('downpayment').value);
+            const debt=parseFloat(document.getElementById('debt').value);
+            const rate=parseFloat(document.getElementById('rate').value)/100/12;
+            const term=parseInt(document.getElementById('term').value)*12;
+            const taxRate=parseFloat(document.getElementById('taxes').value)/100/12;
+            const monthlyIncome=income/12;
+            const maxMonthlyPayment28=monthlyIncome*0.28;
+            const maxMonthlyPayment36=(monthlyIncome*0.36)-debt;
+            function maxLoan(maxPayment){
+                if(maxPayment<=0)return 0;
+                const numerator=maxPayment*(1-Math.pow(1+rate,-term));
+                const denom1=rate+taxRate/12;
+                return numerator/denom1;
+            }
+            const loan28=maxLoan(maxMonthlyPayment28);
+            const loan36=maxLoan(maxMonthlyPayment36);
+            const price28=loan28+downpay;
+            const price36=loan36+downpay;
+            const priceRecommended=Math.min(price28,price36);
+            const loanFinal=priceRecommended-downpay;
+            const monthlyPI=loanFinal*rate/(1-Math.pow(1+rate,-term));
+            const monthlyTax=priceRecommended*taxRate;
+            const monthlyInsurance=priceRecommended*0.006/12;
+            const totalMonthly=monthlyPI+monthlyTax+monthlyInsurance;
+            document.getElementById('price28').textContent=formatCurrency(Math.max(0,price28));
+            document.getElementById('price36').textContent=formatCurrency(Math.max(0,price36));
+            document.getElementById('priceRecommended').textContent=formatCurrency(Math.max(0,priceRecommended));
+            document.getElementById('monthlyPayment').textContent=formatCurrency(totalMonthly);
+            document.getElementById('results').classList.add('active');
+        });
+        function saveResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}showToast('✓ Results saved')}
+        function shareResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}const summary=`📊 Home Affordability\nMax Price: ${document.getElementById('priceRecommended').textContent}\nMonthly Payment: ${document.getElementById('monthlyPayment').textContent}\n\n💰 Calculated with Precision Finance`;if(navigator.clipboard){navigator.clipboard.writeText(summary).then(()=>showToast('📤 Copied'))}}
+        function printResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head><title>Home Affordability</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Home Affordability</h1><div class="item"><div class="label">Recommended Max Price:</div><div class="value">${document.getElementById('priceRecommended').textContent}</div></div><div class="item"><div class="label">Est. Monthly Payment:</div><div class="value">${document.getElementById('monthlyPayment').textContent}</div></div><hr><p style="font-size:0.9em;color:#666;">Calculated ${new Date().toLocaleDateString()}</p></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
+    </script>
+    <footer><p><strong>Precision Finance</strong> © 2025 | Free real estate calculators</p></footer>
+</body>
+</html>
