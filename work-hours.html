@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate hours worked, break-adjusted shift length, and estimated pay including overnight shifts.">
+    <meta name="keywords" content="work hours calculator, timesheet calculator, shift pay estimate">
+    <title>Work Hours Calculator | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Work Hours Calculator",
+  "description": "Calculate hours worked, break-adjusted shift length, and estimated pay including overnight shifts.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/work-hours.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this calculator handle overnight shifts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If the end time is earlier than the start time, it treats the shift as crossing midnight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are breaks handled?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break time is deducted from the raw shift length before the paid hours and estimated pay are calculated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for payroll?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a useful estimate, but payroll rules, rounding, overtime, and state law may change the final paid amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I have no unpaid break?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter zero minutes and the full shift length will count as paid time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the pay estimate different from my paycheck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taxes, overtime, bonuses, deductions, and employer rounding policies are not included here."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use decimal hours instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This version is built for start and end times because most schedules are entered that way."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Work Hours Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Calculate hours worked, break-adjusted shift length, and estimated pay including overnight shifts.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="startTime">Shift start</label>
+<input id="startTime" name="startTime" type="time" required aria-describedby="startTime-error">
+<div class="error-message" id="startTime-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="endTime">Shift end</label>
+<input id="endTime" name="endTime" type="time" required aria-describedby="endTime-error">
+<div class="error-message" id="endTime-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="breakMinutes">Unpaid break (minutes)</label>
+<input id="breakMinutes" name="breakMinutes" type="number" inputmode="decimal" step="1" placeholder="Example: 30" required min="0" aria-describedby="breakMinutes-error" >
+<div class="error-message" id="breakMinutes-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="hourlyRate">Hourly rate ($)</label>
+<input id="hourlyRate" name="hourlyRate" type="number" inputmode="decimal" step="0.01" placeholder="Example: 18.50" required min="0" aria-describedby="hourlyRate-error" >
+<div class="error-message" id="hourlyRate-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Shift totals</h3>
+
+<div class="result-item"><label>Paid hours</label><div class="value" id="wh-hours">—</div></div>
+<div class="result-item"><label>Estimated pay</label><div class="value" id="wh-pay">—</div></div>
+<div class="result-item"><label>Break deducted</label><div class="value" id="wh-break">—</div></div>
+<div class="result-item"><label>Raw shift length</label><div class="value" id="wh-shift">—</div></div>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/time-zone.html">Time Zone Converter</a>
+<a href="/10-utilities/electricity-cost.html">Electricity Cost Calculator</a>
+<a href="/10-utilities/cost-per-use.html">Cost Per Use Calculator</a>
+<a href="/6-conversion/percentage-calculator.html">Percentage Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Check that the start and end times match the actual timesheet or clock record.</li>
+<li>Save the result if you are comparing multiple schedule options or employee shifts.</li>
+<li>Share the estimate with payroll, a manager, or a client before invoicing.</li>
+<li>Print the result card for shift planning or a labor-cost review.</li>
+<li>Recalculate with different break lengths or rates to test staffing changes.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>Does this calculator handle overnight shifts?</h3><p>Yes. If the end time is earlier than the start time, it treats the shift as crossing midnight.</p></div>
+<div class="faq-item"><h3>How are breaks handled?</h3><p>The break time is deducted from the raw shift length before the paid hours and estimated pay are calculated.</p></div>
+<div class="faq-item"><h3>Can I use this for payroll?</h3><p>It is a useful estimate, but payroll rules, rounding, overtime, and state law may change the final paid amount.</p></div>
+<div class="faq-item"><h3>What if I have no unpaid break?</h3><p>Enter zero minutes and the full shift length will count as paid time.</p></div>
+<div class="faq-item"><h3>Why is the pay estimate different from my paycheck?</h3><p>Taxes, overtime, bonuses, deductions, and employer rounding policies are not included here.</p></div>
+<div class="faq-item"><h3>Can I use decimal hours instead?</h3><p>This version is built for start and end times because most schedules are entered that way.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const startTime = document.getElementById('startTime');
+const endTime = document.getElementById('endTime');
+const breakMinutes = document.getElementById('breakMinutes');
+const hourlyRate = document.getElementById('hourlyRate');
+
+function timeToMinutes(val){ const [h,m] = val.split(':').map(Number); return h*60 + m; }
+
+function calculateResults() {
+    [startTime,endTime,breakMinutes,hourlyRate].forEach(el => showValidationError(el, null));
+    if (!startTime.value) { showValidationError(startTime,'Please choose a start time'); startTime.focus(); return; }
+    if (!endTime.value) { showValidationError(endTime,'Please choose an end time'); endTime.focus(); return; }
+    const breakCheck = validateNumber(breakMinutes.value, 0);
+    if (!breakCheck.valid) { showValidationError(breakMinutes, breakCheck.error); breakMinutes.focus(); return; }
+    const rateCheck = validateNumber(hourlyRate.value, 0);
+    if (!rateCheck.valid) { showValidationError(hourlyRate, rateCheck.error); hourlyRate.focus(); return; }
+    let start = timeToMinutes(startTime.value);
+    let end = timeToMinutes(endTime.value);
+    if (end <= start) end += 24 * 60;
+    const rawMinutes = end - start;
+    const breakMins = parseFloat(breakMinutes.value || 0);
+    if (breakMins >= rawMinutes) { showValidationError(breakMinutes, 'Break must be shorter than the shift'); breakMinutes.focus(); return; }
+    const paidMinutes = rawMinutes - breakMins;
+    const paidHours = paidMinutes / 60;
+    const pay = paidHours * parseFloat(hourlyRate.value || 0);
+    document.getElementById('wh-hours').textContent = formatNumber(paidHours, 2) + ' hours';
+    document.getElementById('wh-pay').textContent = formatCurrency(pay);
+    document.getElementById('wh-break').textContent = formatNumber(breakMins, 0) + ' minutes';
+    document.getElementById('wh-shift').textContent = formatNumber(rawMinutes / 60, 2) + ' hours';
+    document.getElementById('results').classList.add('active');
+    latestData = { start:startTime.value, end:endTime.value, breakMins, paidHours, rawHours: rawMinutes/60, pay };
+}
+
+const CALCULATOR_ID = 'work-hours';
+const CALCULATOR_TITLE = 'Work Hours Calculator';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Start': latestData.start,
+        'End': latestData.end,
+        'Paid hours': formatNumber(latestData.paidHours, 2) + ' hours',
+        'Estimated pay': formatCurrency(latestData.pay)
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>

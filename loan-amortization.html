@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate monthly payment, total interest, total paid, and a printable opening amortization schedule.">
+    <meta name="keywords" content="loan amortization calculator, amortization schedule, loan payment">
+    <title>Loan Amortization Calculator | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Loan Amortization Calculator",
+  "description": "Estimate monthly payment, total interest, total paid, and a printable opening amortization schedule.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/loan-amortization.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an amortization schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It shows how each payment is split between principal and interest over the life of the loan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the first payment mostly interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At the start, the balance is highest, so the interest portion is larger and the principal portion is smaller."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this work for zero-interest loans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In that case the payment is simply the loan amount divided evenly by the number of months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why only show the first 12 months?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That preview is enough for quick checking and prints cleanly, without turning the page into a spreadsheet graveyard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for mortgages and car loans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes for estimation. Real lenders may add insurance, escrow, fees, or different compounding rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes the total interest most?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The rate and term length usually matter the most. Longer loans often lower the monthly payment but raise total interest."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Loan Amortization Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Estimate monthly payment, total interest, total paid, and a printable opening amortization schedule.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="laPrincipal">Loan amount ($)</label>
+<input id="laPrincipal" name="laPrincipal" type="number" inputmode="decimal" step="0.01" placeholder="Example: 25000" required min="0" aria-describedby="laPrincipal-error" >
+<div class="error-message" id="laPrincipal-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="laRate">Annual interest rate (%)</label>
+<input id="laRate" name="laRate" type="number" inputmode="decimal" step="0.01" placeholder="Example: 6.5" required min="0" aria-describedby="laRate-error" >
+<div class="error-message" id="laRate-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="laYears">Loan term (years)</label>
+<input id="laYears" name="laYears" type="number" inputmode="decimal" step="1" placeholder="Example: 5" required min="1" aria-describedby="laYears-error" >
+<div class="error-message" id="laYears-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Loan summary</h3>
+<div class="result-hint">The table shows the first 12 months of the amortization schedule because apparently humans enjoy scrolling less.</div>
+<div class="result-item"><label>Monthly payment</label><div class="value" id="la-payment">—</div></div>
+<div class="result-item"><label>Total interest</label><div class="value" id="la-total-interest">—</div></div>
+<div class="result-item"><label>Total paid</label><div class="value" id="la-total-paid">—</div></div>
+<div class="result-item"><label>Payoff time</label><div class="value" id="la-payoff">—</div></div>
+
+<table id="scheduleTable" class="schedule-table" aria-label="Amortization schedule preview">
+    <thead>
+        <tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>
+    </thead>
+    <tbody id="scheduleBody"></tbody>
+</table>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/emi-calculator.html">EMI Calculator</a>
+<a href="/10-utilities/simple-interest.html">Simple Interest Calculator</a>
+<a href="/10-utilities/future-value.html">Future Value Calculator</a>
+<a href="/10-utilities/payback-period.html">Payback Period Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Compare a shorter term against a longer term before choosing the loan.</li>
+<li>Check whether extra principal payments could reduce total interest.</li>
+<li>Save the result if you are comparing multiple lender offers.</li>
+<li>Share the monthly payment and total interest with a partner or buyer.</li>
+<li>Print the result card and schedule preview for loan shopping or negotiation.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>What is an amortization schedule?</h3><p>It shows how each payment is split between principal and interest over the life of the loan.</p></div>
+<div class="faq-item"><h3>Why is the first payment mostly interest?</h3><p>At the start, the balance is highest, so the interest portion is larger and the principal portion is smaller.</p></div>
+<div class="faq-item"><h3>Does this work for zero-interest loans?</h3><p>Yes. In that case the payment is simply the loan amount divided evenly by the number of months.</p></div>
+<div class="faq-item"><h3>Why only show the first 12 months?</h3><p>That preview is enough for quick checking and prints cleanly, without turning the page into a spreadsheet graveyard.</p></div>
+<div class="faq-item"><h3>Can I use this for mortgages and car loans?</h3><p>Yes for estimation. Real lenders may add insurance, escrow, fees, or different compounding rules.</p></div>
+<div class="faq-item"><h3>What changes the total interest most?</h3><p>The rate and term length usually matter the most. Longer loans often lower the monthly payment but raise total interest.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const laPrincipal = document.getElementById('laPrincipal');
+const laRate = document.getElementById('laRate');
+const laYears = document.getElementById('laYears');
+
+function calculateResults() {
+    [laPrincipal,laRate,laYears].forEach(el => showValidationError(el, null));
+    const pCheck = validatePositive(laPrincipal.value);
+    if (!pCheck.valid) { showValidationError(laPrincipal, pCheck.error); laPrincipal.focus(); return; }
+    const rCheck = validateNumber(laRate.value, 0);
+    if (!rCheck.valid) { showValidationError(laRate, rCheck.error); laRate.focus(); return; }
+    const yCheck = validatePositive(laYears.value);
+    if (!yCheck.valid) { showValidationError(laYears, yCheck.error); laYears.focus(); return; }
+    const principal = parseFloat(laPrincipal.value);
+    const annualRate = parseFloat(laRate.value);
+    const years = parseFloat(laYears.value);
+    const months = Math.round(years * 12);
+    const monthlyRate = annualRate / 12 / 100;
+    const payment = calcLoanPayment(principal, monthlyRate, months);
+    const totalPaid = payment * months;
+    const totalInterest = totalPaid - principal;
+    document.getElementById('la-payment').textContent = formatCurrency(payment);
+    document.getElementById('la-total-interest').textContent = formatCurrency(totalInterest);
+    document.getElementById('la-total-paid').textContent = formatCurrency(totalPaid);
+    document.getElementById('la-payoff').textContent = months + ' months';
+    const body = document.getElementById('scheduleBody');
+    body.innerHTML = '';
+    let balance = principal;
+    const showMonths = Math.min(12, months);
+    for (let i = 1; i <= showMonths; i++) {
+        const interest = monthlyRate === 0 ? 0 : balance * monthlyRate;
+        const principalPaid = payment - interest;
+        balance = Math.max(0, balance - principalPaid);
+        body.insertAdjacentHTML('beforeend', `<tr><td>${i}</td><td>${formatCurrency(payment)}</td><td>${formatCurrency(principalPaid)}</td><td>${formatCurrency(interest)}</td><td>${formatCurrency(balance)}</td></tr>`);
+    }
+    document.getElementById('scheduleTable').classList.add('active');
+    document.getElementById('results').classList.add('active');
+    latestData = { principal, annualRate, years, payment, totalInterest, totalPaid, months };
+}
+
+const CALCULATOR_ID = 'loan-amortization';
+const CALCULATOR_TITLE = 'Loan Amortization Calculator';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Loan amount': formatCurrency(latestData.principal),
+        'Monthly payment': formatCurrency(latestData.payment),
+        'Total interest': formatCurrency(latestData.totalInterest),
+        'Total paid': formatCurrency(latestData.totalPaid)
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>

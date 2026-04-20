@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate the exact number of days, weeks, months, and business planning intervals between two dates.">
+    <meta name="keywords" content="days between dates, date difference, date calculator">
+    <title>Days Between Dates | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Days Between Dates",
+  "description": "Calculate the exact number of days, weeks, months, and business planning intervals between two dates.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/days-between.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this count the start date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The result shows the elapsed time between the two selected calendar dates, which is the most common planning approach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the end date be earlier than the start date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The page blocks that so you do not accidentally reverse the dates and get a misleading result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are months shown as approximate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Month lengths vary, so the calculator estimates months from the exact day count for quick planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this useful for contracts or invoices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes for estimating timing, but legal and billing rules may count days differently, so confirm the method required in your document."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for project planning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is useful for timelines, notice periods, delivery windows, and milestone spacing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does leap year affect the output?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The exact day count automatically reflects leap years and month length changes."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Days Between Dates</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Calculate the exact number of days, weeks, months, and business planning intervals between two dates.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="startDate">Start date</label>
+<input id="startDate" name="startDate" type="date" required aria-describedby="startDate-error">
+<div class="error-message" id="startDate-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="endDate">End date</label>
+<input id="endDate" name="endDate" type="date" required aria-describedby="endDate-error">
+<div class="error-message" id="endDate-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Difference results</h3>
+
+<div class="result-item"><label>Total days</label><div class="value" id="db-days">—</div></div>
+<div class="result-item"><label>Total weeks</label><div class="value" id="db-weeks">—</div></div>
+<div class="result-item"><label>Approx. months</label><div class="value" id="db-months">—</div></div>
+<div class="result-item"><label>Approx. years</label><div class="value" id="db-years">—</div></div>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/age.html">Age Calculator</a>
+<a href="/10-utilities/time-zone.html">Time Zone Converter</a>
+<a href="/10-utilities/work-hours.html">Work Hours Calculator</a>
+<a href="/6-conversion/percentage-calculator.html">Percentage Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Double-check both dates before using the number in a contract or report.</li>
+<li>Save the result if you are comparing multiple deadline scenarios.</li>
+<li>Share the output with your team when you set a schedule or notice period.</li>
+<li>Print the result card if you need a quick timeline reference in a meeting.</li>
+<li>Recalculate with a revised end date to test a shorter or longer timeline.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>Does this count the start date?</h3><p>The result shows the elapsed time between the two selected calendar dates, which is the most common planning approach.</p></div>
+<div class="faq-item"><h3>Can the end date be earlier than the start date?</h3><p>No. The page blocks that so you do not accidentally reverse the dates and get a misleading result.</p></div>
+<div class="faq-item"><h3>Why are months shown as approximate?</h3><p>Month lengths vary, so the calculator estimates months from the exact day count for quick planning.</p></div>
+<div class="faq-item"><h3>Is this useful for contracts or invoices?</h3><p>Yes for estimating timing, but legal and billing rules may count days differently, so confirm the method required in your document.</p></div>
+<div class="faq-item"><h3>Can I use this for project planning?</h3><p>Yes. It is useful for timelines, notice periods, delivery windows, and milestone spacing.</p></div>
+<div class="faq-item"><h3>Does leap year affect the output?</h3><p>Yes. The exact day count automatically reflects leap years and month length changes.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const startDate = document.getElementById('startDate');
+const endDate = document.getElementById('endDate');
+
+function calculateResults() {
+    [startDate,endDate].forEach(el => showValidationError(el, null));
+    if (!startDate.value) { showValidationError(startDate, 'Please choose a start date'); startDate.focus(); return; }
+    if (!endDate.value) { showValidationError(endDate, 'Please choose an end date'); endDate.focus(); return; }
+    const start = new Date(startDate.value + 'T00:00:00');
+    const end = new Date(endDate.value + 'T00:00:00');
+    if (end < start) { showValidationError(endDate, 'End date must be on or after start date'); endDate.focus(); return; }
+    const days = Math.floor((end - start) / 86400000);
+    const weeks = days / 7;
+    const months = days / 30.4375;
+    const years = days / 365.25;
+    document.getElementById('db-days').textContent = formatNumber(days, 0) + ' days';
+    document.getElementById('db-weeks').textContent = formatNumber(weeks, 1) + ' weeks';
+    document.getElementById('db-months').textContent = formatNumber(months, 1) + ' months';
+    document.getElementById('db-years').textContent = formatNumber(years, 2) + ' years';
+    document.getElementById('results').classList.add('active');
+    latestData = { startDate: startDate.value, endDate: endDate.value, days, weeks, months, years };
+}
+
+const CALCULATOR_ID = 'days-between';
+const CALCULATOR_TITLE = 'Days Between Dates';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Start date': latestData.startDate,
+        'End date': latestData.endDate,
+        'Days': formatNumber(latestData.days, 0) + ' days',
+        'Weeks': formatNumber(latestData.weeks, 1) + ' weeks'
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>

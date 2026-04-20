@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate the number of units you need to sell to cover fixed and variable costs.">
+    <meta name="keywords" content="break even quantity calculator, break even units, contribution margin">
+    <title>Break-Even Quantity Calculator | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Break-Even Quantity Calculator",
+  "description": "Calculate the number of units you need to sell to cover fixed and variable costs.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/break-even-quantity.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is break-even quantity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the number of units you need to sell so total contribution covers all fixed costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does contribution margin matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because only the amount left after variable cost helps pay fixed costs and eventually create profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if variable cost is higher than price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You cannot break even under that setup because each sale loses money."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for services instead of products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Treat each billable job, subscription, or booking as a unit if that matches your business model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this include taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It focuses on operating economics, not tax treatment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why show profit above break-even?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because owners usually want to know not just survival, but how quickly results improve after crossing the line."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Break-Even Quantity Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Calculate the number of units you need to sell to cover fixed and variable costs.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="beFixed">Fixed costs ($)</label>
+<input id="beFixed" name="beFixed" type="number" inputmode="decimal" step="0.01" placeholder="Example: 8000" required min="0" aria-describedby="beFixed-error" >
+<div class="error-message" id="beFixed-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="bePrice">Selling price per unit ($)</label>
+<input id="bePrice" name="bePrice" type="number" inputmode="decimal" step="0.01" placeholder="Example: 35" required min="0" aria-describedby="bePrice-error" >
+<div class="error-message" id="bePrice-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="beVariable">Variable cost per unit ($)</label>
+<input id="beVariable" name="beVariable" type="number" inputmode="decimal" step="0.01" placeholder="Example: 18" required min="0" aria-describedby="beVariable-error" >
+<div class="error-message" id="beVariable-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Break-even results</h3>
+
+<div class="result-item"><label>Break-even units</label><div class="value" id="be-units">—</div></div>
+<div class="result-item"><label>Break-even revenue</label><div class="value" id="be-revenue">—</div></div>
+<div class="result-item"><label>Contribution margin</label><div class="value" id="be-margin">—</div></div>
+<div class="result-item"><label>Profit at 10% above break-even</label><div class="value" id="be-profit10">—</div></div>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/payback-period.html">Payback Period Calculator</a>
+<a href="/10-utilities/npv-calculator.html">NPV Calculator</a>
+<a href="/10-utilities/future-value.html">Future Value Calculator</a>
+<a href="/6-conversion/percentage-calculator.html">Percentage Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Check your price and variable cost assumptions before relying on the unit target.</li>
+<li>Use the result to set sales goals for a week, month, or launch window.</li>
+<li>Save the break-even point for discussions with partners or investors.</li>
+<li>Share the summary with sales or operations so everyone sees the target.</li>
+<li>Print the output to keep the unit goal visible during pricing reviews.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>What is break-even quantity?</h3><p>It is the number of units you need to sell so total contribution covers all fixed costs.</p></div>
+<div class="faq-item"><h3>Why does contribution margin matter?</h3><p>Because only the amount left after variable cost helps pay fixed costs and eventually create profit.</p></div>
+<div class="faq-item"><h3>What happens if variable cost is higher than price?</h3><p>You cannot break even under that setup because each sale loses money.</p></div>
+<div class="faq-item"><h3>Can I use this for services instead of products?</h3><p>Yes. Treat each billable job, subscription, or booking as a unit if that matches your business model.</p></div>
+<div class="faq-item"><h3>Does this include taxes?</h3><p>No. It focuses on operating economics, not tax treatment.</p></div>
+<div class="faq-item"><h3>Why show profit above break-even?</h3><p>Because owners usually want to know not just survival, but how quickly results improve after crossing the line.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const beFixed = document.getElementById('beFixed');
+const bePrice = document.getElementById('bePrice');
+const beVariable = document.getElementById('beVariable');
+
+function calculateResults() {
+    [beFixed,bePrice,beVariable].forEach(el => showValidationError(el, null));
+    for (const [el,label] of [[beFixed,'fixed costs'],[bePrice,'selling price'],[beVariable,'variable cost']]) {
+        const check = validatePositive(el.value);
+        if (!check.valid) { showValidationError(el, `Enter a valid ${label}`); el.focus(); return; }
+    }
+    const fixed = parseFloat(beFixed.value);
+    const price = parseFloat(bePrice.value);
+    const variable = parseFloat(beVariable.value);
+    if (price <= variable) { showValidationError(bePrice, 'Price must be greater than variable cost'); bePrice.focus(); return; }
+    const margin = price - variable;
+    const units = Math.ceil(fixed / margin);
+    const revenue = units * price;
+    const profit10 = ((Math.ceil(units * 1.1) * margin) - fixed);
+    document.getElementById('be-units').textContent = formatNumber(units, 0) + ' units';
+    document.getElementById('be-revenue').textContent = formatCurrency(revenue);
+    document.getElementById('be-margin').textContent = formatCurrency(margin) + ' per unit';
+    document.getElementById('be-profit10').textContent = formatCurrency(profit10);
+    document.getElementById('results').classList.add('active');
+    latestData = { fixed, price, variable, units, revenue, margin, profit10 };
+}
+
+const CALCULATOR_ID = 'break-even-quantity';
+const CALCULATOR_TITLE = 'Break-Even Quantity Calculator';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Break-even units': formatNumber(latestData.units, 0) + ' units',
+        'Break-even revenue': formatCurrency(latestData.revenue),
+        'Contribution margin': formatCurrency(latestData.margin) + ' per unit',
+        'Profit at 10% above': formatCurrency(latestData.profit10)
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>

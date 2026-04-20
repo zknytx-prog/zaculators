@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate the future value of regular monthly contributions growing at a fixed annual rate.">
+    <meta name="keywords" content="annuity calculator, monthly contribution calculator, future value annuity">
+    <title>Annuity Calculator | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Annuity Calculator",
+  "description": "Estimate the future value of regular monthly contributions growing at a fixed annual rate.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/annuity.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this annuity calculator assume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It assumes equal monthly contributions at a steady annual return rate, compounded monthly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an annuity due or ordinary annuity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This version uses end-of-month contributions, which is the standard ordinary annuity setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the future value much higher over long periods?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compounding stacks over time, so both contributions and earned growth build on themselves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for retirement savings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is useful for retirement, education savings, sinking funds, and other recurring investment plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this guarantee investment returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Real returns vary. This is a projection, not a promise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I contribute weekly instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a monthly average here for a rough estimate or switch to a tool designed for weekly compounding."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Annuity Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Estimate the future value of regular monthly contributions growing at a fixed annual rate.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="annPayment">Monthly contribution ($)</label>
+<input id="annPayment" name="annPayment" type="number" inputmode="decimal" step="0.01" placeholder="Example: 300" required min="0" aria-describedby="annPayment-error" >
+<div class="error-message" id="annPayment-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="annRate">Annual return rate (%)</label>
+<input id="annRate" name="annRate" type="number" inputmode="decimal" step="0.01" placeholder="Example: 6" required min="0" aria-describedby="annRate-error" >
+<div class="error-message" id="annRate-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="annYears">Years</label>
+<input id="annYears" name="annYears" type="number" inputmode="decimal" step="1" placeholder="Example: 20" required min="1" aria-describedby="annYears-error" >
+<div class="error-message" id="annYears-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Annuity results</h3>
+
+<div class="result-item"><label>Future value</label><div class="value" id="ann-fv">—</div></div>
+<div class="result-item"><label>Total contributions</label><div class="value" id="ann-contrib">—</div></div>
+<div class="result-item"><label>Growth earned</label><div class="value" id="ann-growth">—</div></div>
+<div class="result-item"><label>Approx. first month interest</label><div class="value" id="ann-monthly-return">—</div></div>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/future-value.html">Future Value Calculator</a>
+<a href="/10-utilities/inflation-calculator.html">Inflation Calculator</a>
+<a href="/10-utilities/npv-calculator.html">NPV Calculator</a>
+<a href="/10-utilities/simple-interest.html">Simple Interest Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Try different monthly contribution levels to see which target is realistic.</li>
+<li>Compare the future value under low and high return assumptions.</li>
+<li>Save the result if you are building a savings or retirement plan.</li>
+<li>Share the summary with a spouse, adviser, or teammate.</li>
+<li>Print the output and keep it with your long-term planning notes.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>What does this annuity calculator assume?</h3><p>It assumes equal monthly contributions at a steady annual return rate, compounded monthly.</p></div>
+<div class="faq-item"><h3>Is this an annuity due or ordinary annuity?</h3><p>This version uses end-of-month contributions, which is the standard ordinary annuity setup.</p></div>
+<div class="faq-item"><h3>Why is the future value much higher over long periods?</h3><p>Compounding stacks over time, so both contributions and earned growth build on themselves.</p></div>
+<div class="faq-item"><h3>Can I use this for retirement savings?</h3><p>Yes. It is useful for retirement, education savings, sinking funds, and other recurring investment plans.</p></div>
+<div class="faq-item"><h3>Does this guarantee investment returns?</h3><p>No. Real returns vary. This is a projection, not a promise.</p></div>
+<div class="faq-item"><h3>What if I contribute weekly instead?</h3><p>Use a monthly average here for a rough estimate or switch to a tool designed for weekly compounding.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const annPayment = document.getElementById('annPayment');
+const annRate = document.getElementById('annRate');
+const annYears = document.getElementById('annYears');
+
+function calculateResults() {
+    [annPayment,annRate,annYears].forEach(el => showValidationError(el, null));
+    const pm = validatePositive(annPayment.value); if (!pm.valid) { showValidationError(annPayment, pm.error); annPayment.focus(); return; }
+    const rt = validateNumber(annRate.value, 0); if (!rt.valid) { showValidationError(annRate, rt.error); annRate.focus(); return; }
+    const yr = validatePositive(annYears.value); if (!yr.valid) { showValidationError(annYears, yr.error); annYears.focus(); return; }
+    const payment = parseFloat(annPayment.value);
+    const annualRate = parseFloat(annRate.value) / 100;
+    const years = Math.round(parseFloat(annYears.value));
+    const monthlyRate = annualRate / 12;
+    const n = years * 12;
+    const fv = monthlyRate === 0 ? payment * n : payment * ((Math.pow(1 + monthlyRate, n) - 1) / monthlyRate);
+    const contrib = payment * n;
+    const growth = fv - contrib;
+    const firstMonth = payment * monthlyRate;
+    document.getElementById('ann-fv').textContent = formatCurrency(fv);
+    document.getElementById('ann-contrib').textContent = formatCurrency(contrib);
+    document.getElementById('ann-growth').textContent = formatCurrency(growth);
+    document.getElementById('ann-monthly-return').textContent = formatCurrency(firstMonth);
+    document.getElementById('results').classList.add('active');
+    latestData = { payment, annualRate, years, fv, contrib, growth };
+}
+
+const CALCULATOR_ID = 'annuity';
+const CALCULATOR_TITLE = 'Annuity Calculator';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Monthly contribution': formatCurrency(latestData.payment),
+        'Future value': formatCurrency(latestData.fv),
+        'Total contributions': formatCurrency(latestData.contrib),
+        'Growth earned': formatCurrency(latestData.growth)
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>

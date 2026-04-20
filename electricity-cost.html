@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate daily, monthly, and yearly electricity cost from device wattage, usage hours, and local power rate.">
+    <meta name="keywords" content="electricity cost calculator, kwh cost, power bill estimator">
+    <title>Electricity Cost Calculator | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Electricity Cost Calculator",
+  "description": "Estimate daily, monthly, and yearly electricity cost from device wattage, usage hours, and local power rate.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/electricity-cost.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does this electricity calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It converts wattage into kilowatt-hours based on how long the device runs, then multiplies that by your power rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the monthly total look higher than expected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A device that seems small can add up quickly when it runs many hours every day or when multiple units are used."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this include taxes or utility fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It estimates energy usage cost only, so your utility bill may still include service charges and taxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for appliances and HVAC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It works for any device as long as you know the wattage, average run time, and electricity rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the device cycles on and off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the average run time rather than the full clock time for a more realistic estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the result exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a planning estimate. Real consumption can vary with voltage, load, weather, and appliance efficiency."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Electricity Cost Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Estimate daily, monthly, and yearly electricity cost from device wattage, usage hours, and local power rate.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="watts">Device wattage (W)</label>
+<input id="watts" name="watts" type="number" inputmode="decimal" step="0.01" placeholder="Example: 1500" required min="0" aria-describedby="watts-error" >
+<div class="error-message" id="watts-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="hoursPerDay">Hours used per day</label>
+<input id="hoursPerDay" name="hoursPerDay" type="number" inputmode="decimal" step="0.01" placeholder="Example: 4" required min="0" aria-describedby="hoursPerDay-error" >
+<div class="error-message" id="hoursPerDay-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="rate">Electricity rate per kWh ($)</label>
+<input id="rate" name="rate" type="number" inputmode="decimal" step="0.0001" placeholder="Example: 0.16" required min="0" aria-describedby="rate-error" >
+<div class="error-message" id="rate-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="quantity">Number of devices</label>
+<input id="quantity" name="quantity" type="number" inputmode="decimal" step="1" placeholder="Example: 1" required min="1" aria-describedby="quantity-error" >
+<div class="error-message" id="quantity-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Power cost estimate</h3>
+
+<div class="result-item"><label>Energy used per day</label><div class="value" id="ec-kwh-day">—</div></div>
+<div class="result-item"><label>Daily cost</label><div class="value" id="ec-cost-day">—</div></div>
+<div class="result-item"><label>Monthly cost</label><div class="value" id="ec-cost-month">—</div></div>
+<div class="result-item"><label>Yearly cost</label><div class="value" id="ec-cost-year">—</div></div>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/cost-per-use.html">Cost Per Use Calculator</a>
+<a href="/10-utilities/work-hours.html">Work Hours Calculator</a>
+<a href="/10-utilities/inflation-calculator.html">Inflation Calculator</a>
+<a href="/6-conversion/unit-price.html">Unit Price Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Check the wattage label or product manual before trusting the estimate.</li>
+<li>Compare two appliances or settings to see which one costs less to run.</li>
+<li>Save the result if you are tracking home or business utility savings.</li>
+<li>Share the summary with a landlord, customer, or purchasing manager.</li>
+<li>Print the estimate for budgeting, quoting, or energy audit discussions.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How does this electricity calculator work?</h3><p>It converts wattage into kilowatt-hours based on how long the device runs, then multiplies that by your power rate.</p></div>
+<div class="faq-item"><h3>Why does the monthly total look higher than expected?</h3><p>A device that seems small can add up quickly when it runs many hours every day or when multiple units are used.</p></div>
+<div class="faq-item"><h3>Does this include taxes or utility fees?</h3><p>No. It estimates energy usage cost only, so your utility bill may still include service charges and taxes.</p></div>
+<div class="faq-item"><h3>Can I use this for appliances and HVAC?</h3><p>Yes. It works for any device as long as you know the wattage, average run time, and electricity rate.</p></div>
+<div class="faq-item"><h3>What if the device cycles on and off?</h3><p>Use the average run time rather than the full clock time for a more realistic estimate.</p></div>
+<div class="faq-item"><h3>Is the result exact?</h3><p>It is a planning estimate. Real consumption can vary with voltage, load, weather, and appliance efficiency.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const watts = document.getElementById('watts');
+const hoursPerDay = document.getElementById('hoursPerDay');
+const rate = document.getElementById('rate');
+const quantity = document.getElementById('quantity');
+
+function calculateResults() {
+    [watts,hoursPerDay,rate,quantity].forEach(el => showValidationError(el, null));
+    for (const [el,label] of [[watts,'wattage'],[hoursPerDay,'hours'],[rate,'rate'],[quantity,'quantity']]) {
+        const check = validatePositive(el.value);
+        if (!check.valid) { showValidationError(el, `Enter a valid ${label}`); el.focus(); return; }
+    }
+    const w = parseFloat(watts.value);
+    const h = parseFloat(hoursPerDay.value);
+    const r = parseFloat(rate.value);
+    const q = parseFloat(quantity.value);
+    const kwhPerDay = (w * h * q) / 1000;
+    const dayCost = kwhPerDay * r;
+    const monthCost = dayCost * 30.4375;
+    const yearCost = dayCost * 365;
+    document.getElementById('ec-kwh-day').textContent = formatNumber(kwhPerDay, 3) + ' kWh';
+    document.getElementById('ec-cost-day').textContent = formatCurrency(dayCost);
+    document.getElementById('ec-cost-month').textContent = formatCurrency(monthCost);
+    document.getElementById('ec-cost-year').textContent = formatCurrency(yearCost);
+    document.getElementById('results').classList.add('active');
+    latestData = { watts:w, hours:h, rate:r, quantity:q, kwhPerDay, dayCost, monthCost, yearCost };
+}
+
+const CALCULATOR_ID = 'electricity-cost';
+const CALCULATOR_TITLE = 'Electricity Cost Calculator';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Daily use': formatNumber(latestData.kwhPerDay, 3) + ' kWh',
+        'Daily cost': formatCurrency(latestData.dayCost),
+        'Monthly cost': formatCurrency(latestData.monthCost),
+        'Yearly cost': formatCurrency(latestData.yearCost)
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>

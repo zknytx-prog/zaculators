@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert a date and time between major time zones with static UTC offsets for quick planning and scheduling.">
+    <meta name="keywords" content="time zone converter, utc offset, meeting time converter">
+    <title>Time Zone Converter | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Time Zone Converter",
+  "description": "Convert a date and time between major time zones with static UTC offsets for quick planning and scheduling.",
+  "url": "https://project-mjcnr.vercel.app/10-utilities/time-zone.html",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Precision Finance",
+    "url": "https://project-mjcnr.vercel.app"
+  }
+}
+    </script>
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 1.25rem;
+        }
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item { margin-bottom: 1rem; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .faq-section, .related-calculators, .next-steps {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol { padding-left: 1.5rem; color: #92400e; }
+        .next-steps li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .related-calculators {
+            background: #f0f4f8;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .note {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .schedule-table.active { display: table; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: right;
+        }
+        .schedule-table th:first-child, .schedule-table td:first-child { text-align: center; }
+        .schedule-table th { background: #eff6ff; color: #1e40af; }
+        .result-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this handle daylight saving time automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This version uses fixed UTC offsets only, which keeps it simple and predictable but not DST-aware."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why use a static time zone converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is useful for quick planning, hiring calls, shipping windows, and recurring international coordination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the date change after conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The converted time may land on the previous or next day depending on the offset difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is India shown as UTC+5:30?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some time zones use half-hour offsets, and India is one of the most common examples."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use this for legal filing deadlines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use it for planning only. Official deadlines should always be checked against the governing jurisdiction’s actual local time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the safest way to schedule a global meeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convert once, then confirm the final local time with everyone involved before sending the invite."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Time Zone Converter</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Utilities
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculator</h2>
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Accurate formulas</span>
+                <span><div class="badge-icon">✓</div> Mobile friendly</span>
+                <span><div class="badge-icon">✓</div> Free to use</span>
+            </div>
+            <form id="calcForm">
+                <p class="note">Convert a date and time between major time zones with static UTC offsets for quick planning and scheduling.</p>
+                <div class="form-grid">
+<div class="form-group">
+<label for="tzDate">Date</label>
+<input id="tzDate" name="tzDate" type="date" required aria-describedby="tzDate-error">
+<div class="error-message" id="tzDate-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="tzTime">Time</label>
+<input id="tzTime" name="tzTime" type="time" required aria-describedby="tzTime-error">
+<div class="error-message" id="tzTime-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="fromZone">From time zone</label>
+<select id="fromZone" name="fromZone" aria-describedby="fromZone-error">
+<option value="UTC-8">Pacific Time (UTC-8)</option>
+<option value="UTC-6">Central Time (UTC-6)</option>
+<option value="UTC-5">Eastern Time (UTC-5)</option>
+<option value="UTC+0">UTC / London (UTC+0)</option>
+<option value="UTC+1">Central Europe (UTC+1)</option>
+<option value="UTC+3">East Africa / Gulf (UTC+3)</option>
+<option value="UTC+5.5">India (UTC+5:30)</option>
+<option value="UTC+8">China / Singapore (UTC+8)</option>
+<option value="UTC+10">Sydney (UTC+10)</option>
+</select>
+<div class="error-message" id="fromZone-error" aria-live="polite"></div>
+</div>
+<div class="form-group">
+<label for="toZone">To time zone</label>
+<select id="toZone" name="toZone" aria-describedby="toZone-error">
+<option value="UTC-8">Pacific Time (UTC-8)</option>
+<option value="UTC-6">Central Time (UTC-6)</option>
+<option value="UTC-5">Eastern Time (UTC-5)</option>
+<option value="UTC+0">UTC / London (UTC+0)</option>
+<option value="UTC+1">Central Europe (UTC+1)</option>
+<option value="UTC+3">East Africa / Gulf (UTC+3)</option>
+<option value="UTC+5.5">India (UTC+5:30)</option>
+<option value="UTC+8">China / Singapore (UTC+8)</option>
+<option value="UTC+10">Sydney (UTC+10)</option>
+</select>
+<div class="error-message" id="toZone-error" aria-live="polite"></div>
+</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results-section">
+<h3 style="margin-bottom:1rem;">Converted time</h3>
+<div class="result-hint">Static offsets are fast, but daylight saving changes are not applied on this page.</div>
+<div class="result-item"><label>Converted local time</label><div class="value" id="tz-converted">—</div></div>
+<div class="result-item"><label>Time difference</label><div class="value" id="tz-offset">—</div></div>
+<div class="result-item"><label>Day shift</label><div class="value" id="tz-day">—</div></div>
+<div class="result-item"><label>ISO-style result</label><div class="value" id="tz-iso">—</div></div>
+
+            </div>
+            <div class="disclaimer">⚠️ These utility and estimate results are based on the inputs and formulas shown on this page. Verify important financial, scheduling, billing, or planning decisions with your own records before you act.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+<a href="/10-utilities/work-hours.html">Work Hours Calculator</a>
+<a href="/10-utilities/days-between.html">Days Between Dates</a>
+<a href="/10-utilities/age.html">Age Calculator</a>
+<a href="/10-utilities/electricity-cost.html">Electricity Cost Calculator</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to do next:</h3>
+            <ol>
+<li>Confirm whether either location is observing daylight saving time before finalizing a meeting.</li>
+<li>Save the converted time if you need to compare multiple meeting slots.</li>
+<li>Share the summary with attendees so everyone sees the same reference time.</li>
+<li>Print the result for a shift board, dispatch desk, or travel file.</li>
+<li>Recalculate with a different destination zone if your team spans more than two regions.</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>Does this handle daylight saving time automatically?</h3><p>No. This version uses fixed UTC offsets only, which keeps it simple and predictable but not DST-aware.</p></div>
+<div class="faq-item"><h3>Why use a static time zone converter?</h3><p>It is useful for quick planning, hiring calls, shipping windows, and recurring international coordination.</p></div>
+<div class="faq-item"><h3>Can the date change after conversion?</h3><p>Yes. The converted time may land on the previous or next day depending on the offset difference.</p></div>
+<div class="faq-item"><h3>Why is India shown as UTC+5:30?</h3><p>Some time zones use half-hour offsets, and India is one of the most common examples.</p></div>
+<div class="faq-item"><h3>Should I use this for legal filing deadlines?</h3><p>Use it for planning only. Official deadlines should always be checked against the governing jurisdiction’s actual local time.</p></div>
+<div class="faq-item"><h3>What is the safest way to schedule a global meeting?</h3><p>Convert once, then confirm the final local time with everyone involved before sending the invite.</p></div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+
+const tzDate = document.getElementById('tzDate');
+const tzTime = document.getElementById('tzTime');
+const fromZone = document.getElementById('fromZone');
+const toZone = document.getElementById('toZone');
+
+function parseOffset(val){ return parseFloat(val.replace('UTC','')); }
+function zoneLabel(val){ return val.replace('UTC','UTC '); }
+
+function calculateResults() {
+    [tzDate,tzTime].forEach(el => showValidationError(el, null));
+    if (!tzDate.value) { showValidationError(tzDate, 'Please choose a date'); tzDate.focus(); return; }
+    if (!tzTime.value) { showValidationError(tzTime, 'Please choose a time'); tzTime.focus(); return; }
+    const [year,month,day] = tzDate.value.split('-').map(Number);
+    const [hour,minute] = tzTime.value.split(':').map(Number);
+    const fromOffset = parseOffset(fromZone.value);
+    const toOffset = parseOffset(toZone.value);
+    const utcMillis = Date.UTC(year, month-1, day, hour - fromOffset, minute);
+    const target = new Date(utcMillis + (toOffset * 60 * 60 * 1000));
+    const source = new Date(Date.UTC(year, month-1, day, hour, minute));
+    const dayDiff = Math.floor((Date.UTC(target.getUTCFullYear(), target.getUTCMonth(), target.getUTCDate()) - Date.UTC(year, month-1, day)) / 86400000);
+    const diffHours = toOffset - fromOffset;
+    const converted = `${target.getUTCFullYear()}-${String(target.getUTCMonth()+1).padStart(2,'0')}-${String(target.getUTCDate()).padStart(2,'0')} ${String(target.getUTCHours()).padStart(2,'0')}:${String(target.getUTCMinutes()).padStart(2,'0')}`;
+    document.getElementById('tz-converted').textContent = converted;
+    document.getElementById('tz-offset').textContent = `${diffHours >= 0 ? '+' : ''}${formatNumber(diffHours,1)} hours`;
+    document.getElementById('tz-day').textContent = dayDiff === 0 ? 'Same calendar day' : (dayDiff > 0 ? `${dayDiff} day later` : `${Math.abs(dayDiff)} day earlier`);
+    document.getElementById('tz-iso').textContent = converted.replace(' ','T') + ` (${toZone.value})`;
+    document.getElementById('results').classList.add('active');
+    latestData = { date: tzDate.value, time: tzTime.value, from: fromZone.options[fromZone.selectedIndex].text, to: toZone.options[toZone.selectedIndex].text, converted, diffHours, dayShift: document.getElementById('tz-day').textContent };
+}
+
+const CALCULATOR_ID = 'time-zone';
+const CALCULATOR_TITLE = 'Time Zone Converter';
+let latestData = null;
+
+function handleSave() { if (!latestData) calculateResults(); if (latestData) saveResults(CALCULATOR_ID, latestData); }
+function handleShare() {
+    if (!latestData) calculateResults();
+    if (!latestData) return;
+    shareResults(CALCULATOR_TITLE, {
+        'Input': latestData.date + " " + latestData.time,
+        'From': latestData.from,
+        'To': latestData.to,
+        'Converted': latestData.converted
+    });
+}
+function handlePrint() { if (!latestData) calculateResults(); if (latestData) printResults('results', CALCULATOR_TITLE); }
+document.getElementById('calcForm').addEventListener('submit', function(e){ e.preventDefault(); calculateResults(); });
+
+    </script>
+</body>
+</html>
