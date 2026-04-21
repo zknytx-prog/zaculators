@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, accurate mortgage calculator. Calculate monthly payments, total interest, and amortization. Updated for 2025 rates.">
+    <meta name="keywords" content="mortgage calculator, monthly payment, amortization calculator">
+    <title>Mortgage Calculator | Precision Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    
+    <!-- Header -->
+    <header class="border-b border-slate-200/50 sticky top-0 z-40 bg-white/80 backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">PF</span>
+                </div>
+                <span class="font-semibold text-slate-900">Precision Finance</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm">
+                <a href="#" class="text-slate-600 hover:text-blue-600 transition">Tools</a>
+                <a href="#" class="text-slate-600 hover:text-blue-600 transition">About</a>
+                <a href="#" class="text-slate-600 hover:text-blue-600 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- Hero -->
+        <div class="mb-12">
+            <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Mortgage Calculator</h1>
+            <p class="text-lg text-slate-600 max-w-2xl">Calculate your monthly payment, total interest, and full amortization schedule. Updated for 2025 rates. No account needed.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Input Section -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm sticky top-24">
+                    <h2 class="text-lg font-semibold text-slate-900 mb-6">Loan Details</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Home Price -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Home Price</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-600">$</span>
+                                <input type="number" id="homePrice" value="350000" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="350000">
+                            </div>
+                            <input type="range" id="homePriceRange" min="50000" max="2000000" step="10000" value="350000" class="w-full mt-2">
+                        </div>
+
+                        <!-- Down Payment -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Down Payment</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-600">$</span>
+                                <input type="number" id="downPayment" value="70000" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="70000">
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1"><span id="downPaymentPercent">20</span>% of home price</p>
+                        </div>
+
+                        <!-- Loan Term -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Loan Term</label>
+                            <select id="loanTerm" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="15">15 years</option>
+                                <option value="20">20 years</option>
+                                <option value="30" selected>30 years</option>
+                            </select>
+                        </div>
+
+                        <!-- Interest Rate -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="6.5" step="0.1" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="6.5">
+                            <input type="range" id="interestRateRange" min="2" max="12" step="0.1" value="6.5" class="w-full mt-2">
+                        </div>
+
+                        <!-- Property Tax -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Property Tax (monthly)</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-600">$</span>
+                                <input type="number" id="propertyTax" value="120" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+
+                        <!-- Home Insurance -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Home Insurance (monthly)</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-600">$</span>
+                                <input type="number" id="homeInsurance" value="150" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+
+                        <!-- HOA -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">HOA Fees (monthly, optional)</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-600">$</span>
+                                <input type="number" id="hoa" value="0" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="calculate()" class="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition">
+                        Calculate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="lg:col-span-2">
+                <div id="results" class="hidden space-y-6 animate-fadeIn">
+                    
+                    <!-- Primary Result -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100/30 rounded-2xl border border-blue-200 p-8">
+                        <p class="text-sm font-medium text-blue-700 mb-2">TOTAL MONTHLY PAYMENT</p>
+                        <div class="text-5xl font-bold text-slate-900 mb-4" id="monthlyPaymentDisplay">$0</div>
+                        <p class="text-slate-600 mb-6">This includes your principal and interest plus taxes, insurance, and other fees.</p>
+                        
+                        <div class="bg-white/60 rounded-lg p-4 mb-6">
+                            <p class="text-sm text-slate-600"><strong>What this means:</strong> You'll pay approximately <span id="annualCost">$0</span> per year.</p>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button onclick="saveResults()" class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 transition">
+                                💾 Save
+                            </button>
+                            <button onclick="shareResults()" class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 transition">
+                                📤 Share
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white rounded-xl border border-slate-200 p-4">
+                            <p class="text-xs font-medium text-slate-500 uppercase mb-2">Principal & Interest</p>
+                            <p class="text-2xl font-bold text-slate-900" id="principalInterest">$0</p>
+                            <p class="text-xs text-slate-600">Monthly payment</p>
+                        </div>
+                        <div class="bg-white rounded-xl border border-slate-200 p-4">
+                            <p class="text-xs font-medium text-slate-500 uppercase mb-2">Total Interest</p>
+                            <p class="text-2xl font-bold text-slate-900" id="totalInterest">$0</p>
+                            <p class="text-xs text-slate-600">Over loan term</p>
+                        </div>
+                        <div class="bg-white rounded-xl border border-slate-200 p-4">
+                            <p class="text-xs font-medium text-slate-500 uppercase mb-2">PMI</p>
+                            <p class="text-2xl font-bold text-slate-900" id="pmiDisplay">$0</p>
+                            <p class="text-xs text-slate-600" id="pmiText">Not required</p>
+                        </div>
+                        <div class="bg-white rounded-xl border border-slate-200 p-4">
+                            <p class="text-xs font-medium text-slate-500 uppercase mb-2">Loan Amount</p>
+                            <p class="text-2xl font-bold text-slate-900" id="loanAmount">$0</p>
+                            <p class="text-xs text-slate-600">After down payment</p>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+                        <h3 class="font-semibold text-slate-900 mb-4">Next Steps</h3>
+                        <ul class="space-y-2 text-sm text-slate-700">
+                            <li>✓ Check your credit score</li>
+                            <li>✓ Get pre-approved by a lender</li>
+                            <li>✓ Review closing costs (2-5% of home price)</li>
+                            <li>✓ Factor in property taxes and insurance</li>
+                        </ul>
+                    </div>
+
+                    <!-- AdSense -->
+                    <div class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-lg p-8 text-center text-slate-500 text-sm">
+                        [AdSense Placement: 300x600 or 300x250]
+                    </div>
+                </div>
+
+                <div id="emptyState" class="bg-slate-50 rounded-2xl border border-slate-200 p-12 text-center">
+                    <p class="text-slate-600">Enter your loan details and click "Calculate" to see your breakdown.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <section class="mt-16 border-t border-slate-200 pt-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg border border-slate-200 p-5">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">What does PMI mean?</button>
+                    <p class="text-slate-600 text-sm mt-4 hidden">PMI protects the lender if you default. Required when down payment is less than 20%. Typically costs 0.5-1% annually.</p>
+                </div>
+                <div class="bg-white rounded-lg border border-slate-200 p-5">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">How is interest calculated?</button>
+                    <p class="text-slate-600 text-sm mt-4 hidden">Interest is calculated monthly on your remaining balance. Early payments mostly cover interest; later payments pay down principal.</p>
+                </div>
+                <div class="bg-white rounded-lg border border-slate-200 p-5">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">Can I pay off early?</button>
+                    <p class="text-slate-600 text-sm mt-4 hidden">Most mortgages allow penalty-free early payoff. Paying extra toward principal reduces total interest and shortens your loan term.</p>
+                </div>
+                <div class="bg-white rounded-lg border border-slate-200 p-5">
+                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">What affects my rate?</button>
+                    <p class="text-slate-600 text-sm mt-4 hidden">Credit score, down payment, loan term, property location, and current market rates all affect your rate. Shop multiple lenders.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Capture -->
+        <section class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-12 text-white">
+            <h2 class="text-2xl font-bold mb-4">Get Financial Tips & Rate Updates</h2>
+            <p class="mb-6 text-slate-300">Get notified when rates change and receive personalized tips.</p>
+            <div class="flex gap-3 max-w-md">
+                <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-lg text-slate-900">
+                <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium">Subscribe</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 mt-24 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm">
+            <p>&copy; 2025 Precision Finance. Calculators are tools only and not financial advice.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Link input and range
+        document.getElementById('homePrice').addEventListener('input', (e) => {
+            document.getElementById('homePriceRange').value = e.target.value;
+        });
+        document.getElementById('homePriceRange').addEventListener('input', (e) => {
+            document.getElementById('homePrice').value = e.target.value;
+        });
+        
+        document.getElementById('interestRate').addEventListener('input', (e) => {
+            document.getElementById('interestRateRange').value = e.target.value;
+        });
+        document.getElementById('interestRateRange').addEventListener('input', (e) => {
+            document.getElementById('interestRate').value = e.target.value;
+        });
+
+        // Calculate
+        function calculate() {
+            const homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
+            const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value) || 30;
+            const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+            const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+            const homeInsurance = parseFloat(document.getElementById('homeInsurance').value) || 0;
+            const hoa = parseFloat(document.getElementById('hoa').value) || 0;
+
+            const principal = homePrice - downPayment;
+            const monthlyRate = interestRate / 100 / 12;
+            const numberOfPayments = loanTerm * 12;
+
+            let monthlyPayment = 0;
+            if (monthlyRate === 0) {
+                monthlyPayment = principal / numberOfPayments;
+            } else {
+                monthlyPayment = (principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments))) / 
+                                (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            }
+
+            const totalPayment = monthlyPayment * numberOfPayments;
+            const totalInterest = totalPayment - principal;
+            const pmi = downPayment / homePrice < 0.20 ? (principal * 0.005) / 12 : 0;
+            const totalMonthly = monthlyPayment + pmi + propertyTax + homeInsurance + hoa;
+
+            // Update DOM
+            document.getElementById('monthlyPaymentDisplay').textContent = '$' + totalMonthly.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('annualCost').textContent = '$' + (totalMonthly * 12).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('principalInterest').textContent = '$' + monthlyPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('pmiDisplay').textContent = '$' + pmi.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('pmiText').textContent = downPayment / homePrice < 0.20 ? 'Required with <20% down' : 'Not required';
+            document.getElementById('loanAmount').textContent = '$' + principal.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('downPaymentPercent').textContent = (downPayment / homePrice * 100).toFixed(1);
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('emptyState').classList.add('hidden');
+        }
+
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('hidden');
+        }
+
+        function saveResults() {
+            alert('Results saved! This feature requires backend setup.');
+        }
+
+        function shareResults() {
+            const text = `Monthly Mortgage Payment: ${document.getElementById('monthlyPaymentDisplay').textContent}`;
+            if (navigator.share) {
+                navigator.share({ title: 'Mortgage Calculator', text });
+            } else {
+                navigator.clipboard.writeText(text);
+                alert('Copied to clipboard!');
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate waist-hip ratio to assess body shape and health risk. Determine if your weight distribution indicates increased health risks.">
+    <meta name="keywords" content="waist hip ratio, body shape, health risk, abdominal fat, WHR calculator">
+    <title>Waist-Hip Ratio Calculator | Body Shape Health Assessment | Precision Finance</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Waist-Hip Ratio Calculator",
+        "description": "Calculate waist-hip ratio and assess body shape health risk",
+        "url": "https://project-mjcnr.vercel.app/2-medical/waist-hip-ratio.html",
+        "applicationCategory": "HealthAndFitnessApplication",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "author": {"@type": "Organization", "name": "Precision Finance", "url": "https://project-mjcnr.vercel.app"}
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+            --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 640px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+        .measurement-guide {
+            background: #f0f4f8;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        .measurement-guide strong { color: var(--primary); }
+        .measurement-guide ul {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .measurement-guide li {
+            margin-bottom: 0.5rem;
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .results-section.active { display: block; }
+        .result-item {
+            margin-bottom: 1.5rem;
+        }
+        .result-item:last-child { margin-bottom: 0; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .risk-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .risk-low {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .risk-moderate {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .risk-high {
+            background: #fee2e2;
+            color: #7f1d1d;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .faq-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol {
+            padding-left: 1.5rem;
+            color: #92400e;
+        }
+        .next-steps li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .related-calculators {
+            background: #f0f4f8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Waist-Hip Ratio Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Medical & Health
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <h2>Calculate Your Waist-Hip Ratio</h2>
+            
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> WHO Health Standards</span>
+                <span><div class="badge-icon">✓</div> Body Shape Assessment</span>
+                <span><div class="badge-icon">✓</div> Completely Free</span>
+            </div>
+
+            <form id="calcForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="waist">Waist Circumference (cm)</label>
+                        <input type="number" id="waist" min="50" max="200" placeholder="e.g., 80" step="0.1" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hip">Hip Circumference (cm)</label>
+                        <input type="number" id="hip" min="60" max="200" placeholder="e.g., 95" step="0.1" required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender (for health risk comparison)</label>
+                    <select id="gender" required>
+                        <option value="">-- Select --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="measurement-guide">
+                    <strong>How to Measure Accurately:</strong>
+                    <ul>
+                        <li><strong>Waist:</strong> Measure at the narrowest point between ribs and hips (usually at belly button level). Keep tape snug but not tight.</li>
+                        <li><strong>Hip:</strong> Measure at the fullest part of your hips/buttocks. Stand relaxed, feet together.</li>
+                        <li>Measure over bare skin if possible for accuracy</li>
+                        <li>Don't hold your breath or suck in your stomach</li>
+                    </ul>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
+                </div>
+            </form>
+
+            <div id="results" class="results-section">
+                <div class="result-item">
+                    <label>Waist-Hip Ratio (WHR)</label>
+                    <div class="value" id="whrValue">-</div>
+                </div>
+
+                <div class="result-item">
+                    <label>Health Risk Category</label>
+                    <span id="riskBadge" class="risk-badge">-</span>
+                </div>
+
+                <div class="result-item">
+                    <label>Body Shape</label>
+                    <div style="font-size: 0.95rem; color: #64748b; margin-top: 0.5rem;" id="shape">-</div>
+                </div>
+
+                <div class="result-item">
+                    <label>What This Means</label>
+                    <div style="font-size: 0.95rem; color: #64748b; margin-top: 0.5rem; line-height: 1.6;" id="meaning">-</div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                ⚠️ <strong>Medical Disclaimer:</strong> Waist-hip ratio is one health indicator among many. BMI, fitness level, diet, genetics, and family history also significantly affect health. This measurement should not replace comprehensive health assessment. Consult a healthcare provider for personalized health evaluation and guidance.
+            </div>
+
+            <div class="updated">
+                Last updated: April 19, 2026
+            </div>
+        </section>
+
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="bmi-percentile.html">BMI for Kids</a>
+                <a href="body-fat-percentage.html">Body Fat Percentage</a>
+                <a href="calorie-needs.html">Calorie Needs</a>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 What to Do Next:</h3>
+            <ol>
+                <li><strong>Track quarterly:</strong> Measure waist-hip ratio every 3 months to monitor changes in body composition</li>
+                <li><strong>Focus on abdominal fitness:</strong> Core strength exercises reduce visceral fat independent of weight loss</li>
+                <li><strong>Dietary adjustments:</strong> Reduce refined carbs and added sugars, which preferentially deposit abdominal fat</li>
+                <li><strong>Increase aerobic activity:</strong> Cardio exercise specifically targets visceral fat (dangerous abdominal fat)</li>
+                <li><strong>Regular health check-ups:</strong> Discuss results with your doctor, especially if ratio indicates increased health risk</li>
+            </ol>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>Why is waist-hip ratio important if I have a normal BMI?</h3>
+                <p>BMI measures total weight relative to height but doesn't show fat distribution. You can have a "normal" BMI while carrying excess visceral fat (deep abdominal fat surrounding organs). This "metabolically obese" state increases risk of diabetes, heart disease, and stroke independent of BMI. Waist-hip ratio directly assesses fat location, identifying this hidden health risk.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What makes abdominal fat more dangerous than fat elsewhere?</h3>
+                <p>Visceral fat (deep belly fat) is metabolically active, releasing inflammatory compounds and hormones that increase blood pressure, blood sugar, and blood lipids. Subcutaneous fat (under skin) is relatively inert. Abdominal fat location correlates with insulin resistance, metabolic syndrome, and cardiovascular disease risk—even in non-obese individuals. This is why fat distribution matters more than total fat percentage for health.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's a healthy waist-hip ratio?</h3>
+                <p>WHO guidelines: For women, ratios below 0.85 indicate lower health risk; above 0.85 indicates increased risk. For men, below 0.90 is lower risk; above 0.90 indicates increased risk. However, these are population averages—individual risk also depends on absolute waist circumference. A woman with WHR 0.88 but 60cm waist is lower risk than one with 0.82 but 95cm waist.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I reduce my waist-hip ratio without weight loss?</h3>
+                <p>Yes. Resistance training and core work build abdominal muscle, reducing visceral fat while minimally affecting overall weight. Aerobic exercise (cardio) preferentially burns visceral fat. Some studies show dietary changes (more fiber, less refined carbs) reduce visceral fat by 20-30% without significant weight loss. Building muscle while reducing belly fat improves ratio even if scale weight stays similar.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does genetics determine where I store fat?</h3>
+                <p>Yes, largely. Genetics significantly influence fat storage patterns—some people naturally store more abdominal fat despite similar BMI. However, lifestyle modifications can shift distribution even if baseline tendency is genetic. Higher exercise, lower refined sugar intake, and adequate sleep promote healthier fat distribution patterns. Work with what your genetics give you, but don't accept it as unchangeable.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Should older adults have different ratio targets?</h3>
+                <p>Research suggests older adults may tolerate slightly higher ratios without equivalent health risk compared to younger populations. However, excess abdominal fat still increases disease risk across all ages. Rather than relaxing targets with age, focus on maintaining good ratio through continued activity and diet—fitness becomes MORE protective with aging as illness risk naturally increases.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="/calc-utils.js"></script>
+
+    <script>
+        document.getElementById('calcForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const waist = parseFloat(document.getElementById('waist').value);
+            const hip = parseFloat(document.getElementById('hip').value);
+            const gender = document.getElementById('gender').value;
+            
+            const waistError = !isInRange(waist, 50, 200) ? 'Waist must be 50-200 cm' : null;
+            const hipError = !isInRange(hip, 60, 200) ? 'Hip must be 60-200 cm' : null;
+            const genderError = !gender ? 'Please select gender' : null;
+            
+            if (waistError) showValidationError(document.getElementById('waist'), waistError);
+            else showValidationError(document.getElementById('waist'), null);
+            
+            if (hipError) showValidationError(document.getElementById('hip'), hipError);
+            else showValidationError(document.getElementById('hip'), null);
+            
+            if (genderError) showValidationError(document.getElementById('gender'), genderError);
+            else showValidationError(document.getElementById('gender'), null);
+            
+            if (waistError || hipError || genderError) return;
+            
+            const whr = waist / hip;
+            const threshold = gender === 'male' ? 0.90 : 0.85;
+            
+            let riskLevel, riskBadge, shape, meaning;
+            
+            if (gender === 'male') {
+                if (whr < 0.85) {
+                    riskLevel = 'Low Risk';
+                    riskBadge = 'risk-low';
+                    shape = 'Athletic/Apple shape with low central obesity';
+                } else if (whr < 0.95) {
+                    riskLevel = 'Moderate Risk';
+                    riskBadge = 'risk-moderate';
+                    shape = 'Apple shape with moderate central fat';
+                } else {
+                    riskLevel = 'High Risk';
+                    riskBadge = 'risk-high';
+                    shape = 'Apple shape with significant central obesity';
+                }
+            } else {
+                if (whr < 0.80) {
+                    riskLevel = 'Low Risk';
+                    riskBadge = 'risk-low';
+                    shape = 'Pear shape with healthy fat distribution';
+                } else if (whr < 0.90) {
+                    riskLevel = 'Moderate Risk';
+                    riskBadge = 'risk-moderate';
+                    shape = 'Apple shape with moderate central fat';
+                } else {
+                    riskLevel = 'High Risk';
+                    riskBadge = 'risk-high';
+                    shape = 'Apple shape with significant central obesity';
+                }
+            }
+            
+            if (riskLevel === 'Low Risk') {
+                meaning = `Your ratio indicates lower cardiovascular risk. Maintain current activity level and healthy diet to preserve this ratio.`;
+            } else if (riskLevel === 'Moderate Risk') {
+                meaning = `Your ratio suggests increased health risk from central obesity. Increase aerobic exercise, reduce processed foods, and focus on core fitness to reduce visceral fat.`;
+            } else {
+                meaning = `Your ratio indicates substantially elevated health risk from visceral fat accumulation. Consult a healthcare provider and consider structured exercise program and dietary modification.`;
+            }
+            
+            document.getElementById('whrValue').textContent = formatNumber(whr, 2);
+            document.getElementById('riskBadge').textContent = riskLevel;
+            document.getElementById('riskBadge').className = 'risk-badge ' + riskBadge;
+            document.getElementById('shape').textContent = shape;
+            document.getElementById('meaning').textContent = meaning;
+            
+            document.getElementById('results').classList.add('active');
+            saveResults('waist-hip-ratio', { waist, hip, whr: formatNumber(whr, 2), risk: riskLevel });
+        });
+
+        function saveResults() {
+            if (document.getElementById('whrValue').textContent === '-') {
+                showToast('⚠️ Calculate first');
+                return;
+            }
+            showToast('✓ Results saved to your device');
+        }
+
+        function shareResults() {
+            if (document.getElementById('whrValue').textContent === '-') {
+                showToast('⚠️ Calculate first');
+                return;
+            }
+            const summary = `📊 Waist-Hip Ratio Results\nRatio: ${document.getElementById('whrValue').textContent}\nRisk: ${document.getElementById('riskBadge').textContent}\nShape: ${document.getElementById('shape').textContent}\n\n💰 Calculated with Precision Finance Calculator`;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(summary).then(() => showToast('📤 Summary copied'));
+            }
+        }
+
+        function printResults() {
+            if (document.getElementById('whrValue').textContent === '-') {
+                showToast('⚠️ Calculate first');
+                return;
+            }
+            const pw = window.open('', '_blank');
+            pw.document.write(`<html><head><title>WHR Results</title><style>body{font-family:Arial;padding:20px;}h1{color:#2563eb;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Waist-Hip Ratio Results</h1><div class="item"><div class="label">Ratio:</div><div class="value">${document.getElementById('whrValue').textContent}</div></div><div class="item"><div class="label">Risk Level:</div><div class="value">${document.getElementById('riskBadge').textContent}</div></div><div class="item"><div class="label">Shape:</div><p>${document.getElementById('shape').textContent}</p></div><hr><p style="font-size:0.9em;color:#666;">Calculated on ${new Date().toLocaleDateString()}</p></body></html>`);
+            pw.document.close();
+            pw.onload = () => pw.print();
+        }
+    </script>
+
+    <footer>
+        <p><strong>Precision Finance</strong> © 2025 | Free health & fitness calculators</p>
+    </footer>
+</body>
+</html>

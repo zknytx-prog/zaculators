@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate annual property tax. Estimate property taxes based on home value and tax rate.">
+    <title>Property Tax Calculator | Annual Property Tax | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0;--success:#16a34a}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;border-bottom:1px solid var(--border);padding:1.5rem;text-align:center}h1{font-size:1.8rem;margin-bottom:0.25rem}.breadcrumb{font-size:0.85rem;color:#64748b;margin-top:0.5rem}.breadcrumb a{color:var(--primary);text-decoration:none}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.form-group{margin-bottom:1.5rem}label{display:block;font-weight:500;margin-bottom:0.5rem}input,select{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;font-size:1rem}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}@media(max-width:640px){.form-row{grid-template-columns:1fr}}.buttons{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}@media(max-width:640px){.buttons{grid-template-columns:1fr 1fr}}button{padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:500;cursor:pointer;transition:all 0.2s}.btn-primary{background:var(--primary);color:white}.btn-primary:hover{background:#1d4ed8}.btn-secondary{background:#f1f5f9;color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background:#e2e8f0}.results{background:#f0fdf4;border-left:4px solid var(--success);padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.result-item{margin-bottom:1.5rem}.result-item label{font-size:0.9rem;color:#64748b;margin-bottom:0.25rem}.result-item .value{font-size:1.5rem;font-weight:600;color:var(--success)}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid #f59e0b;padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps h3{font-size:1.1rem;margin-bottom:1rem;color:#92400e}.next-steps ol{padding-left:1.5rem;color:#92400e}.next-steps li{margin-bottom:0.75rem;line-height:1.6}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d}.related{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related h3{font-size:1rem;margin-bottom:1rem;color:var(--primary)}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center;transition:all 0.2s}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}.updated{font-size:0.8rem;color:#94a3b8;margin-top:1rem}.toast{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:white;padding:1rem 1.5rem;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:none;z-index:1000;animation:slideIn 0.3s ease}.toast.show{display:block}@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}</style>
+</head>
+<body>
+    <header>
+        <h1>Property Tax Calculator</h1>
+        <div class="breadcrumb"><a href="/">Precision Finance</a> / Real Estate</div>
+    </header>
+    <main>
+        <section class="section">
+            <h2>Calculate Annual Property Tax</h2>
+            <form id="calcForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="homevalue">Home Value ($)</label>
+                        <input type="number" id="homevalue" min="50000" max="5000000" placeholder="e.g., 350000" step="10000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taxrate">Property Tax Rate (%)</label>
+                        <input type="number" id="taxrate" min="0" max="5" placeholder="e.g., 1.2" step="0.01" required>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results">
+                <div class="result-item">
+                    <label>Annual Property Tax</label>
+                    <div class="value" id="annualTax">-</div>
+                </div>
+                <div class="result-item">
+                    <label>Monthly Property Tax</label>
+                    <div class="value" id="monthlyTax">-</div>
+                </div>
+                <div class="result-item">
+                    <label>Tax as % of Home Value</label>
+                    <div class="value" id="taxPercent">-</div>
+                </div>
+            </div>
+            <div class="disclaimer">⚠️ Property tax rates vary by county/state. This is an estimate—check your county assessor's office for exact rates. Rates may be lower for owner-occupied homes or if exemptions apply.</div>
+            <div class="updated">Last updated: April 19, 2026</div>
+        </section>
+        <div class="related">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="home-affordability.html">Home Affordability</a>
+                <a href="closing-costs.html">Closing Costs</a>
+                <a href="rent-vs-buy.html">Rent vs Buy</a>
+            </div>
+        </div>
+        <div class="next-steps">
+            <h3>📋 What to Do Next:</h3>
+            <ol>
+                <li><strong>Check your county assessor:</strong> Website has exact tax rate and assessment value</li>
+                <li><strong>Factor into budget:</strong> Add property tax to mortgage payment for true housing cost</li>
+                <li><strong>Appeal if overassessed:</strong> If home value decreases, request assessment reduction</li>
+                <li><strong>Look for exemptions:</strong> Homestead exemptions, senior exemptions may reduce taxes</li>
+                <li><strong>Budget for increases:</strong> Property tax rises 2-3% annually; plan ahead</li>
+            </ol>
+        </div>
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What's the average property tax rate in the US?</h3>
+                <p>Average is ~0.85% of home value, ranging 0.3% (Hawaii) to 2.5% (New Jersey, Illinois). Texas averages 1.6%, Florida 0.91%, California 0.7%. States with high property taxes often have lower income/sales taxes (trade-off). Check your specific county for exact rate.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I deduct property taxes from my income?</h3>
+                <p>Yes, if you itemize deductions and have a mortgage. SALT deduction cap is $10,000 annually (includes state income tax, sales tax, property tax combined). Most homeowners benefit from standard deduction instead. Consult tax professional for your situation.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do property taxes go up every year?</h3>
+                <p>Usually, yes. Average annual increase is 2-3%. Some states cap increases (Proposition 13 in California limits to 2% unless property changes hands). Check your state's property tax cap laws. Budget for 3% annual increase when planning long-term homeownership costs.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I disagree with my home's assessed value?</h3>
+                <p>File a formal appeal with your county assessor. Provide evidence: recent appraisals, comparable sales, photos showing condition issues. If successful, reassessed value lowers tax bill. Appeals are usually free and deadlines are tight (30-60 days), so act quickly if assessed value seems high.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are property taxes paid from escrow?</h3>
+                <p>Yes, typically. Mortgage lenders require escrow account for property tax and insurance. Monthly payment includes: principal, interest, tax, insurance (PITI). Lender holds money, pays taxes/insurance on your behalf. Ensures taxes get paid, protecting lender's investment.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do rental properties have different property tax rates?</h3>
+                <p>Generally no—tax rate is same. However, rental income may trigger additional taxes. Owner-occupied homes may qualify for homestead exemption (lower rate). Some areas offer agricultural exemptions for farms. Check your county for exemptions applicable to your situation.</p>
+            </div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+        document.getElementById('calcForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            const homevalue=parseFloat(document.getElementById('homevalue').value);
+            const taxrate=parseFloat(document.getElementById('taxrate').value)/100;
+            const annual=homevalue*taxrate;
+            const monthly=annual/12;
+            document.getElementById('annualTax').textContent='$'+Math.round(annual).toLocaleString();
+            document.getElementById('monthlyTax').textContent='$'+Math.round(monthly).toLocaleString();
+            document.getElementById('taxPercent').textContent=(taxrate*100).toFixed(2)+'%';
+            document.getElementById('results').classList.add('active');
+        });
+        function saveResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}showToast('✓ Saved')}
+        function shareResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}const summary=`📊 Property Tax\nAnnual: ${document.getElementById('annualTax').textContent}\nMonthly: ${document.getElementById('monthlyTax').textContent}`;if(navigator.clipboard){navigator.clipboard.writeText(summary).then(()=>showToast('📤 Copied'))}}
+        function printResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head><title>Property Tax</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Property Tax</h1><div class="item"><div class="label">Annual:</div><div class="value">${document.getElementById('annualTax').textContent}</div></div><div class="item"><div class="label">Monthly:</div><div class="value">${document.getElementById('monthlyTax').textContent}</div></div></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
+    </script>
+    <footer><p><strong>Precision Finance</strong> © 2025 | Real estate calculators</p></footer>
+</body>
+</html>

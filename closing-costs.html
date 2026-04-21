@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate closing costs for home purchase. Estimate buyer and seller closing costs as percentage of home price.">
+    <title>Closing Costs Calculator | Home Purchase | Precision Finance</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0;--success:#16a34a}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;border-bottom:1px solid var(--border);padding:1.5rem;text-align:center}h1{font-size:1.8rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.form-group{margin-bottom:1.5rem}label{display:block;font-weight:500;margin-bottom:0.5rem}input{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}@media(max-width:640px){.form-row{grid-template-columns:1fr}}.buttons{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}button{padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:500;cursor:pointer}.btn-primary{background:var(--primary);color:white}.btn-secondary{background:#f1f5f9;color:var(--text);border:1px solid var(--border)}.results{background:#f0fdf4;border-left:4px solid var(--success);padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.result-item{margin-bottom:1.5rem}.result-item label{font-size:0.9rem;color:#64748b;margin-bottom:0.25rem}.result-item .value{font-size:1.5rem;font-weight:600;color:var(--success)}.cost-breakdown{background:#f9fafb;border:1px solid var(--border);border-radius:6px;padding:1rem;margin-top:1rem}.cost-line{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border)}.cost-line:last-child{border-bottom:none}.cost-label{color:#64748b}.cost-amount{font-weight:600}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.toast{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:white;padding:1rem 1.5rem;border-radius:6px;display:none;z-index:1000}.toast.show{display:block}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}</style>
+</head>
+<body>
+    <header>
+        <h1>Closing Costs Calculator</h1>
+    </header>
+    <main>
+        <section class="section">
+            <h2>Estimate Home Purchase Closing Costs</h2>
+            <form id="calcForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="homevalue">Home Price ($)</label>
+                        <input type="number" id="homevalue" min="50000" max="2000000" placeholder="e.g., 350000" step="10000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanamount">Loan Amount ($)</label>
+                        <input type="number" id="loanamount" min="0" max="1500000" placeholder="e.g., 280000" step="10000" required>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
+                </div>
+            </form>
+            <div id="results" class="results">
+                <div class="result-item">
+                    <label>Total Buyer Closing Costs</label>
+                    <div class="value" id="totalCosts">-</div>
+                    <div class="cost-breakdown" id="breakdown"></div>
+                </div>
+                <div class="result-item">
+                    <label>Closing Costs as % of Price</label>
+                    <div class="value" id="percentage">-</div>
+                </div>
+                <div class="result-item">
+                    <label>Budget to Bring to Closing</label>
+                    <div class="value" id="budget">-</div>
+                </div>
+            </div>
+            <div class="faq-section">
+                <h2>Common Questions</h2>
+                <div class="faq-item">
+                    <h3>What's included in closing costs?</h3>
+                    <p>Loan origination (0.5-1%), appraisal ($300-500), title insurance (0.5-1%), attorney fees ($500-1500), property tax, homeowners insurance prepayment, HOA transfer fees, etc. Typical total: 2-5% of purchase price ($7K-$17.5K on $350K home).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can closing costs be negotiated?</h3>
+                    <p>Some yes, some no. Lender fees (origination, appraisal, title) vary—shop around. Seller may pay some costs in negotiation (seller concessions). Attorney/title fees vary by state. Get full Closing Disclosure 3+ days before closing to review all costs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I roll closing costs into the mortgage?</h3>
+                    <p>Yes, but it increases loan amount and interest paid over 30 years. A $10K closing cost rolled in costs $18K+ over 30 years at 6% rate. Better to pay from savings if possible; otherwise, negotiate seller to pay some costs instead.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="/calc-utils.js"></script>
+    <script>
+        document.getElementById('calcForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            const homevalue=parseFloat(document.getElementById('homevalue').value);
+            const loanamount=parseFloat(document.getElementById('loanamount').value);
+            const origination=loanamount*0.01;
+            const appraisal=400;
+            const titleInsurance=homevalue*0.006;
+            const processing=500;
+            const attorney=800;
+            const inspection=300;
+            const survey=300;
+            const creditCheck=100;
+            const totalCosts=origination+appraisal+titleInsurance+processing+attorney+inspection+survey+creditCheck;
+            const percentage=(totalCosts/homevalue*100).toFixed(2);
+            const downpayment=homevalue-loanamount;
+            const budget=downpayment+totalCosts;
+            document.getElementById('totalCosts').textContent='$'+Math.round(totalCosts).toLocaleString();
+            document.getElementById('percentage').textContent=percentage+'%';
+            document.getElementById('budget').textContent='$'+Math.round(budget).toLocaleString();
+            let breakdown=`
+                <div class="cost-line"><span class="cost-label">Loan Origination</span><span class="cost-amount">$${Math.round(origination).toLocaleString()}</span></div>
+                <div class="cost-line"><span class="cost-label">Appraisal</span><span class="cost-amount">$${appraisal}</span></div>
+                <div class="cost-line"><span class="cost-label">Title Insurance</span><span class="cost-amount">$${Math.round(titleInsurance).toLocaleString()}</span></div>
+                <div class="cost-line"><span class="cost-label">Processing Fee</span><span class="cost-amount">$${processing}</span></div>
+                <div class="cost-line"><span class="cost-label">Attorney Fees</span><span class="cost-amount">$${attorney}</span></div>
+                <div class="cost-line"><span class="cost-label">Home Inspection</span><span class="cost-amount">$${inspection}</span></div>
+                <div class="cost-line"><span class="cost-label">Survey</span><span class="cost-amount">$${survey}</span></div>
+                <div class="cost-line"><span class="cost-label">Credit Check</span><span class="cost-amount">$${creditCheck}</span></div>
+            `;
+            document.getElementById('breakdown').innerHTML=breakdown;
+            document.getElementById('results').classList.add('active');
+        });
+        function saveResults(){if(document.getElementById('totalCosts').textContent==='-'){showToast('⚠️ Calculate');return}showToast('✓ Saved')}
+        function shareResults(){if(document.getElementById('totalCosts').textContent==='-'){showToast('⚠️ Calculate');return}const msg=`📊 Closing Costs\nTotal: ${document.getElementById('totalCosts').textContent}\n% of Price: ${document.getElementById('percentage').textContent}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('📤 Copied'))}}
+        function printResults(){if(document.getElementById('totalCosts').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head><title>Closing Costs</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Closing Costs</h1><p><strong>Total:</strong> ${document.getElementById('totalCosts').textContent}</p><p><strong>% of Price:</strong> ${document.getElementById('percentage').textContent}</p><p><strong>Budget:</strong> ${document.getElementById('budget').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
+    </script>
+    <footer><p><strong>Precision Finance</strong> © 2025</p></footer>
+</body>
+</html>
