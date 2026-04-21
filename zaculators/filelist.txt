@@ -1,0 +1,8 @@
+ Volume in drive C is OS
+ Volume Serial Number is CA0E-B527
+
+ Directory of C:\Users\1zkny\zaculators\zaculators
+
+04/20/2026  08:48 PM            24,922 index.html
+               1 File(s)         24,922 bytes
+               0 Dir(s)  255,523,643,392 bytes free
