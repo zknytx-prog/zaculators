@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Calculate monthly car payments, total cost, and total interest from loan amount, APR, and term.">
+<meta name="keywords" content="car payment calculator, auto loan calculator, vehicle loan payment">
+<title>Car Payment Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Car Payment Calculator",
+  "description": "Calculate monthly car payments, total cost, and total interest from loan amount, APR, and term.",
+  "url": "https://zaculators.com/9-automotive/car-payment.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Does a longer loan always help?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "It lowers the monthly payment, but it usually increases total interest paid over time."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Should I include taxes and fees here?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "You can add them into the loan amount if they will be financed."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "How much does APR matter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "A small APR change can noticeably affect total interest, especially on longer loans."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "What is a good auto loan term?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Many buyers aim for the shortest term they can comfortably afford each month."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Does a down payment reduce interest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Yes. Borrowing less lowers both the payment and total interest cost."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Can I use this for refinancing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Yes. Enter the remaining balance as the loan amount and use the new APR and term."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Car Payment Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Estimate your monthly auto loan payment before you buy, refinance, or compare dealer offers.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="loanAmount">Loan amount</label><input id="loanAmount" type="number" min="100" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="apr">APR (%)</label><input id="apr" type="number" min="0" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="months">Loan term (months)</label><input id="months" type="number" min="1" step="1" required><div class="error-message"></div></div><div class="form-group"><label for="downPayment">Down payment</label><input id="downPayment" type="number" min="0" step="0.01" placeholder="Optional" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,73 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Auto loan estimate</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Estimated monthly payment</label><div class="value" id="result-monthly">—</div></div>
+<div class="result-item"><label>Total of payments</label><div class="value" id="result-total">—</div></div>
+<div class="result-item"><label>Total interest paid</label><div class="value" id="result-interest">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/lease-vs-buy.html">Lease vs Buy Calculator</a>
+<a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<a href="/depreciation.html">Car Depreciation Calculator</a>
+<a href="/road-trip-cost.html">Road Trip Cost Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Compare the payment with your monthly vehicle budget, not just what a dealer says you can afford.</li>
+<li>Test a larger down payment to see how much interest you save.</li>
+<li>Compare offers from at least two lenders.</li>
+<li>Check insurance and maintenance costs before deciding.</li>
+<li>Use the result to set a realistic purchase price ceiling.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Does a longer loan always help?</h3><p>It lowers the monthly payment, but it usually increases total interest paid over time.</p></div>
+<div class="faq-item"><h3>Should I include taxes and fees here?</h3><p>You can add them into the loan amount if they will be financed.</p></div>
+<div class="faq-item"><h3>How much does APR matter?</h3><p>A small APR change can noticeably affect total interest, especially on longer loans.</p></div>
+<div class="faq-item"><h3>What is a good auto loan term?</h3><p>Many buyers aim for the shortest term they can comfortably afford each month.</p></div>
+<div class="faq-item"><h3>Does a down payment reduce interest?</h3><p>Yes. Borrowing less lowers both the payment and total interest cost.</p></div>
+<div class="faq-item"><h3>Can I use this for refinancing?</h3><p>Yes. Enter the remaining balance as the loan amount and use the new APR and term.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'car-payment';
+const CALCULATOR_TITLE = 'Car Payment Calculator';
+const loanAmount = document.getElementById('loanAmount');
+const apr = document.getElementById('apr');
+const months = document.getElementById('months');
+const downPayment = document.getElementById('downPayment');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const amount = parseFloat(loanAmount.value), rate = parseFloat(apr.value), term = parseInt(months.value), down = parseFloat(downPayment.value || 0);
+    if (!isFinite(amount) || amount <= 0) { showValidationError(loanAmount,'Enter a valid loan amount'); return; } else showValidationError(loanAmount,null);
+    if (!isFinite(rate) || rate < 0) { showValidationError(apr,'APR cannot be negative'); return; } else showValidationError(apr,null);
+    if (!isFinite(term) || term <= 0) { showValidationError(months,'Enter term in months'); return; } else showValidationError(months,null);
+    if (!isFinite(down) || down < 0) { showValidationError(downPayment,'Down payment cannot be negative'); return; } else showValidationError(downPayment,null);
+    const principal = Math.max(amount - down, 0);
+    const monthlyRate = rate / 100 / 12;
+    const monthly = calcLoanPayment(principal, monthlyRate, term);
+    const total = monthly * term;
+    const interest = total - principal;
+    document.getElementById('result-monthly').textContent = formatCurrency(monthly);
+    document.getElementById('result-total').textContent = formatCurrency(total);
+    document.getElementById('result-interest').textContent = formatCurrency(interest);
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {loanAmount:loanAmount.value,apr:apr.value,months:months.value,downPayment:downPayment.value,monthly:formatCurrency(monthly),total:formatCurrency(total),interest:formatCurrency(interest)};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +258,16 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.loanAmount !== undefined) loanAmount.value = saved.loanAmount;
+if (saved.apr !== undefined) apr.value = saved.apr;
+if (saved.months !== undefined) months.value = saved.months;
+if (saved.downPayment !== undefined) downPayment.value = saved.downPayment;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+        document.getElementById('result-monthly').textContent = saved.monthly;
+        document.getElementById('result-total').textContent = saved.total;
+        document.getElementById('result-interest').textContent = saved.interest;
+
         document.getElementById('results').classList.add('active');
     }
 });

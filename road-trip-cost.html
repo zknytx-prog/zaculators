@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Estimate fuel-only and total road trip cost including optional tolls and parking.">
+<meta name="keywords" content="road trip cost calculator, trip cost calculator, fuel trip calculator">
+<title>Road Trip Cost Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Road Trip Cost Calculator",
+  "description": "Estimate fuel-only and total road trip cost including optional tolls and parking.",
+  "url": "https://zaculators.com/9-automotive/road-trip-cost.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Should I include the return trip?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "Yes. Enter total round-trip miles if you want the full cost."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Are tolls and parking required?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "No. They are optional extras, but including them makes the estimate more honest."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Why is my real cost higher than this?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "Traffic, detours, higher speeds, and lower real-world MPG can all raise cost."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Can I use this for delivery work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Yes. It is useful for route planning and quick expense estimates."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Should I round fuel price up?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Usually yes, especially if prices are moving up in the region."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Does weather matter on long trips?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Yes. Wind, cold weather, and mountains can lower fuel economy."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Road Trip Cost Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Plan a driving trip budget with fuel, tolls, parking, and other predictable expenses.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="distance">Total trip miles</label><input id="distance" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="mpg">Average MPG</label><input id="mpg" type="number" min="0.1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="fuelPrice">Fuel price per gallon</label><input id="fuelPrice" type="number" min="0.01" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="extras">Tolls + parking + extras</label><input id="extras" type="number" min="0" step="0.01" placeholder="Optional" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,71 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Road trip budget</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Fuel-only cost</label><div class="value" id="result-fuel">—</div></div>
+<div class="result-item"><label>Total trip cost</label><div class="value" id="result-total">—</div></div>
+<div class="result-item"><label>Fuel needed</label><div class="value" id="result-gallons">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<a href="/gas-mileage.html">Gas Mileage Calculator</a>
+<a href="/car-payment.html">Car Payment Calculator</a>
+<a href="/ev-charging-cost.html">EV Charging Cost Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Double-check whether the distance is one-way or round trip.</li>
+<li>Add food and lodging separately if it is a longer trip.</li>
+<li>Budget a small cushion above the estimate for price changes.</li>
+<li>Compare your trip cost with flights or rental options.</li>
+<li>Use real-world MPG from recent driving, not optimistic brochure numbers.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Should I include the return trip?</h3><p>Yes. Enter total round-trip miles if you want the full cost.</p></div>
+<div class="faq-item"><h3>Are tolls and parking required?</h3><p>No. They are optional extras, but including them makes the estimate more honest.</p></div>
+<div class="faq-item"><h3>Why is my real cost higher than this?</h3><p>Traffic, detours, higher speeds, and lower real-world MPG can all raise cost.</p></div>
+<div class="faq-item"><h3>Can I use this for delivery work?</h3><p>Yes. It is useful for route planning and quick expense estimates.</p></div>
+<div class="faq-item"><h3>Should I round fuel price up?</h3><p>Usually yes, especially if prices are moving up in the region.</p></div>
+<div class="faq-item"><h3>Does weather matter on long trips?</h3><p>Yes. Wind, cold weather, and mountains can lower fuel economy.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'road-trip-cost';
+const CALCULATOR_TITLE = 'Road Trip Cost Calculator';
+const distance = document.getElementById('distance');
+const mpg = document.getElementById('mpg');
+const fuelPrice = document.getElementById('fuelPrice');
+const extras = document.getElementById('extras');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const d = parseFloat(distance.value), m = parseFloat(mpg.value), p = parseFloat(fuelPrice.value), x = parseFloat(extras.value || 0);
+    if (!isFinite(d) || d <= 0) { showValidationError(distance,'Enter total trip miles'); return; } else showValidationError(distance,null);
+    if (!isFinite(m) || m <= 0) { showValidationError(mpg,'Enter MPG above 0'); return; } else showValidationError(mpg,null);
+    if (!isFinite(p) || p <= 0) { showValidationError(fuelPrice,'Enter fuel price'); return; } else showValidationError(fuelPrice,null);
+    if (!isFinite(x) || x < 0) { showValidationError(extras,'Extras cannot be negative'); return; } else showValidationError(extras,null);
+    const gallons = d / m;
+    const fuelOnly = gallons * p;
+    const total = fuelOnly + x;
+    document.getElementById('result-fuel').textContent = formatCurrency(fuelOnly);
+    document.getElementById('result-total').textContent = formatCurrency(total);
+    document.getElementById('result-gallons').textContent = formatNumber(gallons,2) + ' gal';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {distance:distance.value,mpg:mpg.value,fuelPrice:fuelPrice.value,extras:extras.value,fuelOnly:formatCurrency(fuelOnly),total:formatCurrency(total),gallons:formatNumber(gallons,2) + ' gal'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +256,16 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.distance !== undefined) distance.value = saved.distance;
+if (saved.mpg !== undefined) mpg.value = saved.mpg;
+if (saved.fuelPrice !== undefined) fuelPrice.value = saved.fuelPrice;
+if (saved.extras !== undefined) extras.value = saved.extras;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+        document.getElementById('result-fuel').textContent = saved.fuelOnly;
+        document.getElementById('result-total').textContent = saved.total;
+        document.getElementById('result-gallons').textContent = saved.gallons;
+
         document.getElementById('results').classList.add('active');
     }
 });

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Calculate pace per mile and speed from total distance and time.">
+<meta name="keywords" content="pace calculator, running pace calculator, walking speed calculator">
+<title>Pace Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Pace Calculator",
+  "description": "Calculate pace per mile and speed from total distance and time.",
+  "url": "https://zaculators.com/7-fitness/pace-calculator.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Can I use kilometers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "This version is built around miles, so convert first if needed."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Why is pace useful?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "Pace helps compare runs more intuitively than raw total time."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Does terrain matter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "Yes. Hills and trail conditions change pace a lot."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Should I compare every run?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Only if you enjoy emotional instability. Consistency matters more than one outing."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Can walkers use it too?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Yes. Pace is useful for walking as well."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Why show speed too?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Some people prefer miles per hour instead of pace per mile."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
+  <h1>Pace Calculator</h1>
   <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">A simple pace calculator for running, walking, or any activity where humans insist on timing themselves.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="distance">Distance (miles)</label><input id="distance" type="number" min="0.1" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="minutes">Time (minutes)</label><input id="minutes" type="number" min="1" step="0.1" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,11 +168,11 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Pace result</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Average pace</label><div class="value" id="result-pace">—</div></div>
+<div class="result-item"><label>Average speed</label><div class="value" id="result-speed">—</div></div>
+<div class="result-item"><label>Quick note</label><div class="value" id="result-note">—</div></div>
     </div>
   </div>
   <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
@@ -182,48 +182,53 @@
 <div class="related-calculators">
   <h3>Related Calculators</h3>
   <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
+<a href="/max-heart-rate.html">Max Heart Rate Calculator</a>
 <a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
 <a href="/tdee.html">TDEE Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Use pace to set realistic training targets.</li>
+<li>Compare similar routes if you want fair comparisons.</li>
+<li>Track trends over time.</li>
+<li>Warm up before hard efforts.</li>
+<li>Do not overread one slow day.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Can I use kilometers?</h3><p>This version is built around miles, so convert first if needed.</p></div>
+<div class="faq-item"><h3>Why is pace useful?</h3><p>Pace helps compare runs more intuitively than raw total time.</p></div>
+<div class="faq-item"><h3>Does terrain matter?</h3><p>Yes. Hills and trail conditions change pace a lot.</p></div>
+<div class="faq-item"><h3>Should I compare every run?</h3><p>Only if you enjoy emotional instability. Consistency matters more than one outing.</p></div>
+<div class="faq-item"><h3>Can walkers use it too?</h3><p>Yes. Pace is useful for walking as well.</p></div>
+<div class="faq-item"><h3>Why show speed too?</h3><p>Some people prefer miles per hour instead of pace per mile.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'pace-calculator';
+const CALCULATOR_TITLE = 'Pace Calculator';
+const distance = document.getElementById('distance');
+const minutes = document.getElementById('minutes');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+ const d=parseFloat(distance.value), mins=parseFloat(minutes.value);
+ if(!isFinite(d)||d<=0){showValidationError(distance,'Enter distance');return;} else showValidationError(distance,null);
+ if(!isFinite(mins)||mins<=0){showValidationError(minutes,'Enter time');return;} else showValidationError(minutes,null);
+ const pace = mins / d;
+ const mph = d / (mins/60);
+ const paceMin = Math.floor(pace), paceSec = Math.round((pace-paceMin)*60);
+ document.getElementById('result-pace').textContent = paceMin + ':' + String(paceSec).padStart(2,'0') + ' /mile';
+ document.getElementById('result-speed').textContent = formatNumber(mph,2) + ' mph';
+ document.getElementById('result-note').textContent = 'Useful for running and walking pace planning.';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {distance:distance.value,minutes:minutes.value,pace:paceMin + ':' + String(paceSec).padStart(2,'0') + ' /mile',speed:formatNumber(mph,2) + ' mph',note:'Useful for running and walking pace planning.'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +252,10 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.distance !== undefined) distance.value = saved.distance;
+if (saved.minutes !== undefined) minutes.value = saved.minutes;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        document.getElementById('result-pace').textContent=saved.pace;document.getElementById('result-speed').textContent=saved.speed;document.getElementById('result-note').textContent=saved.note;
         document.getElementById('results').classList.add('active');
     }
 });

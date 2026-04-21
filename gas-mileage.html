@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Estimate MPG, km per liter, and fuel efficiency from miles driven and gallons used.">
+<meta name="keywords" content="gas mileage calculator, mpg calculator, fuel efficiency calculator, km per liter">
+<title>Gas Mileage Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Gas Mileage Calculator",
+  "description": "Estimate MPG, km per liter, and fuel efficiency from miles driven and gallons used.",
+  "url": "https://zaculators.com/9-automotive/gas-mileage.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "What is considered good gas mileage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "That depends on the vehicle type, engine, and driving conditions. Smaller cars often deliver higher MPG than trucks or SUVs."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Should I calculate MPG after every fill-up?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "Yes. Tracking each fill-up smooths out one-off trips and gives a more realistic fuel economy average."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Why does city driving lower MPG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "Frequent stopping, idling, and short trips make the engine work harder and burn more fuel."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Does tire pressure affect mileage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Yes. Underinflated tires increase rolling resistance and can reduce fuel economy."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Can weather change my MPG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Yes. Cold weather, strong wind, and heavy air conditioning or heating loads can lower efficiency."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Is highway mileage always better?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Usually, but very high speeds can reduce efficiency, so steady moderate speeds tend to be best."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Gas Mileage Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Use this calculator to measure fuel efficiency after a trip, compare vehicles, or track driving habits over time.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="miles">Miles driven</label><input id="miles" type="number" min="0.1" step="0.1" required><div class='hint'>Enter trip distance or total miles.</div><div class="error-message"></div></div><div class="form-group"><label for="gallons">Gallons used</label><input id="gallons" type="number" min="0.01" step="0.01" required><div class='hint'>Use liters if needed, then convert first.</div><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,66 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Fuel efficiency results</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Miles per gallon</label><div class="value" id="result-mpg">—</div></div>
+<div class="result-item"><label>Kilometers per liter</label><div class="value" id="result-kmpl">—</div></div>
+<div class="result-item"><label>Gallons per mile</label><div class="value" id="result-gpm">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<a href="/tire-pressure.html">Tire Pressure Calculator</a>
+<a href="/road-trip-cost.html">Road Trip Cost Calculator</a>
+<a href="/car-payment.html">Car Payment Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Compare the result with your vehicle’s typical MPG from the owner manual or sticker.</li>
+<li>Track the same numbers over several tanks to find your true average.</li>
+<li>Check tire pressure if mileage suddenly drops.</li>
+<li>Reduce idling and aggressive acceleration on daily routes.</li>
+<li>Use the result to estimate future trip fuel costs.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>What is considered good gas mileage?</h3><p>That depends on the vehicle type, engine, and driving conditions. Smaller cars often deliver higher MPG than trucks or SUVs.</p></div>
+<div class="faq-item"><h3>Should I calculate MPG after every fill-up?</h3><p>Yes. Tracking each fill-up smooths out one-off trips and gives a more realistic fuel economy average.</p></div>
+<div class="faq-item"><h3>Why does city driving lower MPG?</h3><p>Frequent stopping, idling, and short trips make the engine work harder and burn more fuel.</p></div>
+<div class="faq-item"><h3>Does tire pressure affect mileage?</h3><p>Yes. Underinflated tires increase rolling resistance and can reduce fuel economy.</p></div>
+<div class="faq-item"><h3>Can weather change my MPG?</h3><p>Yes. Cold weather, strong wind, and heavy air conditioning or heating loads can lower efficiency.</p></div>
+<div class="faq-item"><h3>Is highway mileage always better?</h3><p>Usually, but very high speeds can reduce efficiency, so steady moderate speeds tend to be best.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'gas-mileage';
+const CALCULATOR_TITLE = 'Gas Mileage Calculator';
+const miles = document.getElementById('miles');
+const gallons = document.getElementById('gallons');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const m = parseFloat(miles.value), g = parseFloat(gallons.value);
+    if (!isFinite(m) || m <= 0) { showValidationError(miles, 'Enter miles above 0'); return; } else showValidationError(miles,null);
+    if (!isFinite(g) || g <= 0) { showValidationError(gallons, 'Enter gallons above 0'); return; } else showValidationError(gallons,null);
+    const mpg = m / g;
+    const kmpl = (m*1.609344)/(g*3.785411784);
+    document.getElementById('result-mpg').textContent = formatNumber(mpg,2) + ' mpg';
+    document.getElementById('result-kmpl').textContent = formatNumber(kmpl,2) + ' km/L';
+    document.getElementById('result-gpm').textContent = formatNumber(g/m,4) + ' gal/mi';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {miles:miles.value,gallons:gallons.value,mpg:formatNumber(mpg,2) + ' mpg',kmpl:formatNumber(kmpl,2) + ' km/L',gpm:formatNumber(g/m,4) + ' gal/mi'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +251,14 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.miles !== undefined) miles.value = saved.miles;
+if (saved.gallons !== undefined) gallons.value = saved.gallons;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+        document.getElementById('result-mpg').textContent = saved.mpg;
+        document.getElementById('result-kmpl').textContent = saved.kmpl;
+        document.getElementById('result-gpm').textContent = saved.gpm;
+
         document.getElementById('results').classList.add('active');
     }
 });

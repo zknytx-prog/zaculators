@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Find the next anniversary date, days until it, and a future milestone date.">
+<meta name="keywords" content="anniversary calculator, next anniversary date">
+<title>Anniversary Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Anniversary Calculator",
+  "description": "Find the next anniversary date, days until it, and a future milestone date.",
+  "url": "https://zaculators.com/8-personal/anniversary-calculator.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Can I use this for business anniversaries?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "Yes. It works for personal, professional, or project anniversaries."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "What is the milestone date?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "It is the future anniversary based on the number of years you enter."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Does it account for leap years?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "It uses standard date handling, which covers leap years in normal use."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Can I project 10 or 25 years ahead?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Yes, as long as you enter the number of years."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Why show days until next anniversary?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Because people love countdowns almost as much as they love forgetting dates."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Can I share this result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Yes. Use the share button after calculating."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Anniversary Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Track the next anniversary from a start date and project a future milestone without fumbling with the calendar.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="startDate">Start date</label><input id="startDate" type="date" required><div class="error-message"></div></div><div class="form-group"><label for="yearsAhead">Years to project</label><input id="yearsAhead" type="number" min="1" max="50" step="1" placeholder="5" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,69 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Anniversary timing</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Next anniversary date</label><div class="value" id="result-next">—</div></div>
+<div class="result-item"><label>Days until next anniversary</label><div class="value" id="result-days">—</div></div>
+<div class="result-item"><label>Projected milestone date</label><div class="value" id="result-milestone">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator is for general planning or entertainment purposes. Dates, cycles, and reminder estimates can vary, so use your own judgment for important decisions.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/days-until.html">Days Until Calculator</a>
+<a href="/baby-due-date.html">Baby Due Date Calculator</a>
+<a href="/age-difference.html">Age Difference Calculator</a>
+<a href="/sleep-cycle.html">Sleep Cycle Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Use the next date to set a reminder in your phone or calendar.</li>
+<li>Project important milestone years early for planning.</li>
+<li>Double-check the original start date if the result looks off.</li>
+<li>Save the calculation for repeated use.</li>
+<li>Send the result before someone asks why you forgot again.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Can I use this for business anniversaries?</h3><p>Yes. It works for personal, professional, or project anniversaries.</p></div>
+<div class="faq-item"><h3>What is the milestone date?</h3><p>It is the future anniversary based on the number of years you enter.</p></div>
+<div class="faq-item"><h3>Does it account for leap years?</h3><p>It uses standard date handling, which covers leap years in normal use.</p></div>
+<div class="faq-item"><h3>Can I project 10 or 25 years ahead?</h3><p>Yes, as long as you enter the number of years.</p></div>
+<div class="faq-item"><h3>Why show days until next anniversary?</h3><p>Because people love countdowns almost as much as they love forgetting dates.</p></div>
+<div class="faq-item"><h3>Can I share this result?</h3><p>Yes. Use the share button after calculating.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'anniversary-calculator';
+const CALCULATOR_TITLE = 'Anniversary Calculator';
+const startDate = document.getElementById('startDate');
+const yearsAhead = document.getElementById('yearsAhead');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    if (!startDate.value) { showValidationError(startDate,'Choose a start date'); return; } else showValidationError(startDate,null);
+    const years = parseInt(yearsAhead.value || 5);
+    if (!isFinite(years) || years <= 0) { showValidationError(yearsAhead,'Enter years to project'); return; } else showValidationError(yearsAhead,null);
+    const start = new Date(startDate.value + 'T00:00:00');
+    const next = new Date(start); next.setFullYear(new Date().getFullYear());
+    if (next < new Date()) next.setFullYear(next.getFullYear() + 1);
+    const milestone = new Date(start); milestone.setFullYear(start.getFullYear() + years);
+    const daysUntil = Math.round((next - new Date(new Date().setHours(0,0,0,0))) / 86400000);
+    document.getElementById('result-next').textContent = next.toLocaleDateString();
+    document.getElementById('result-days').textContent = daysUntil + ' days';
+    document.getElementById('result-milestone').textContent = milestone.toLocaleDateString();
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {startDate:startDate.value,yearsAhead:yearsAhead.value,nextDate:next.toLocaleDateString(),days:daysUntil + ' days',milestone:milestone.toLocaleDateString()};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +254,14 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.startDate !== undefined) startDate.value = saved.startDate;
+if (saved.yearsAhead !== undefined) yearsAhead.value = saved.yearsAhead;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+document.getElementById('result-next').textContent = saved.nextDate;
+document.getElementById('result-days').textContent = saved.days;
+document.getElementById('result-milestone').textContent = saved.milestone;
+
         document.getElementById('results').classList.add('active');
     }
 });

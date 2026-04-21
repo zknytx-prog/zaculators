@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Estimate EV charging cost from battery size, electricity rate, and charge percentage needed.">
+<meta name="keywords" content="ev charging cost calculator, electric vehicle charging cost, kwh charging calculator">
+<title>EV Charging Cost Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "EV Charging Cost Calculator",
+  "description": "Estimate EV charging cost from battery size, electricity rate, and charge percentage needed.",
+  "url": "https://zaculators.com/9-automotive/ev-charging-cost.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Does this include charging losses?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "No. Real charging can use a bit more electricity due to conversion losses."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Can I use public charger pricing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "Yes, as long as you enter the effective price per kWh."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Why compare full charge cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "It gives a quick benchmark even if you usually charge only part of the battery."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Does battery size equal usable battery?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Not always. Some EVs reserve part of the pack, so usable capacity may be lower."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Can time-of-use rates lower cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Yes. Overnight charging can be substantially cheaper in some areas."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Should I charge to 100% every day?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "That depends on the EV and your needs. Many owners use lower daily charge targets."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>EV Charging Cost Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Estimate what an EV charge session may cost at home or compare against public charging pricing.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="batterySize">Battery size (kWh)</label><input id="batterySize" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="pricePerKwh">Electricity price per kWh</label><input id="pricePerKwh" type="number" min="0.01" step="0.001" required><div class="error-message"></div></div><div class="form-group"><label for="chargePercent">Charge needed (%)</label><input id="chargePercent" type="number" min="1" max="100" step="1" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,69 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Charging estimate</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Energy needed</label><div class="value" id="result-kwh">—</div></div>
+<div class="result-item"><label>Estimated session cost</label><div class="value" id="result-cost">—</div></div>
+<div class="result-item"><label>Cost for full 100% charge</label><div class="value" id="result-full">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<a href="/road-trip-cost.html">Road Trip Cost Calculator</a>
+<a href="/gas-mileage.html">Gas Mileage Calculator</a>
+<a href="/car-payment.html">Car Payment Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Check your utility bill for the actual price per kWh.</li>
+<li>Adjust for off-peak rates if your utility offers them.</li>
+<li>Compare home charging cost against public fast charging.</li>
+<li>Use this number with your annual mileage to estimate yearly electricity spend.</li>
+<li>Add charging losses if you want a more conservative estimate.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Does this include charging losses?</h3><p>No. Real charging can use a bit more electricity due to conversion losses.</p></div>
+<div class="faq-item"><h3>Can I use public charger pricing?</h3><p>Yes, as long as you enter the effective price per kWh.</p></div>
+<div class="faq-item"><h3>Why compare full charge cost?</h3><p>It gives a quick benchmark even if you usually charge only part of the battery.</p></div>
+<div class="faq-item"><h3>Does battery size equal usable battery?</h3><p>Not always. Some EVs reserve part of the pack, so usable capacity may be lower.</p></div>
+<div class="faq-item"><h3>Can time-of-use rates lower cost?</h3><p>Yes. Overnight charging can be substantially cheaper in some areas.</p></div>
+<div class="faq-item"><h3>Should I charge to 100% every day?</h3><p>That depends on the EV and your needs. Many owners use lower daily charge targets.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'ev-charging-cost';
+const CALCULATOR_TITLE = 'EV Charging Cost Calculator';
+const batterySize = document.getElementById('batterySize');
+const pricePerKwh = document.getElementById('pricePerKwh');
+const chargePercent = document.getElementById('chargePercent');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const size = parseFloat(batterySize.value), price = parseFloat(pricePerKwh.value), pct = parseFloat(chargePercent.value);
+    if (!isFinite(size) || size <= 0) { showValidationError(batterySize,'Enter battery size'); return; } else showValidationError(batterySize,null);
+    if (!isFinite(price) || price <= 0) { showValidationError(pricePerKwh,'Enter kWh price'); return; } else showValidationError(pricePerKwh,null);
+    if (!isFinite(pct) || pct <= 0 || pct > 100) { showValidationError(chargePercent,'Enter 1 to 100'); return; } else showValidationError(chargePercent,null);
+    const kwhNeeded = size * (pct / 100);
+    const cost = kwhNeeded * price;
+    const fullCost = size * price;
+    document.getElementById('result-kwh').textContent = formatNumber(kwhNeeded,2) + ' kWh';
+    document.getElementById('result-cost').textContent = formatCurrency(cost);
+    document.getElementById('result-full').textContent = formatCurrency(fullCost);
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {batterySize:batterySize.value,pricePerKwh:pricePerKwh.value,chargePercent:chargePercent.value,kwhNeeded:formatNumber(kwhNeeded,2) + ' kWh',cost:formatCurrency(cost),fullCost:formatCurrency(fullCost)};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +254,15 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.batterySize !== undefined) batterySize.value = saved.batterySize;
+if (saved.pricePerKwh !== undefined) pricePerKwh.value = saved.pricePerKwh;
+if (saved.chargePercent !== undefined) chargePercent.value = saved.chargePercent;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+        document.getElementById('result-kwh').textContent = saved.kwhNeeded;
+        document.getElementById('result-cost').textContent = saved.cost;
+        document.getElementById('result-full').textContent = saved.fullCost;
+
         document.getElementById('results').classList.add('active');
     }
 });

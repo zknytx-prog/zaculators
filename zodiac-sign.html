@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Find a zodiac sign and element from birth month and day.">
+<meta name="keywords" content="zodiac sign calculator, horoscope sign finder">
+<title>Zodiac Sign Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Zodiac Sign Calculator",
+  "description": "Find a zodiac sign and element from birth month and day.",
+  "url": "https://zaculators.com/8-personal/zodiac-sign.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Is this astrology?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "It is a simple zodiac sign lookup based on common sun-sign date ranges."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Can this replace a full birth chart?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "No. That would require time and place of birth too."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Why show the element?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "Signs are commonly grouped into fire, earth, air, and water."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "What if my birthday is on a boundary date?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Boundary dates can vary slightly in some systems, but common ranges are used here."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Is this scientific?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "No. It is entertainment, not science."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Can I share the result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Yes. The share button exists because humanity cannot resist sending these things around."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Zodiac Sign Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">A quick zodiac sign lookup for entertainment. The stars remain suspiciously unbothered either way.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="birthMonth">Birth month</label><input id="birthMonth" type="number" min="1" max="12" step="1" required><div class="error-message"></div></div><div class="form-group"><label for="birthDay">Birth day</label><input id="birthDay" type="number" min="1" max="31" step="1" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,81 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Zodiac result</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Zodiac sign</label><div class="value" id="result-sign">—</div></div>
+<div class="result-item"><label>Element</label><div class="value" id="result-element">—</div></div>
+<div class="result-item"><label>Note</label><div class="value" id="result-note">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator is for general planning or entertainment purposes. Dates, cycles, and reminder estimates can vary, so use your own judgment for important decisions.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/life-path-number.html">Life Path Number Calculator</a>
+<a href="/pet-age.html">Pet Age Calculator</a>
+<a href="/age-difference.html">Age Difference Calculator</a>
+<a href="/days-until.html">Days Until Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Use it for fun, not decision-making.</li>
+<li>Check boundary dates if you were born near a transition day.</li>
+<li>Save the result if you forget your sign every year.</li>
+<li>Share it only with people who will not make it their whole personality.</li>
+<li>Move on with your life afterward.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Is this astrology?</h3><p>It is a simple zodiac sign lookup based on common sun-sign date ranges.</p></div>
+<div class="faq-item"><h3>Can this replace a full birth chart?</h3><p>No. That would require time and place of birth too.</p></div>
+<div class="faq-item"><h3>Why show the element?</h3><p>Signs are commonly grouped into fire, earth, air, and water.</p></div>
+<div class="faq-item"><h3>What if my birthday is on a boundary date?</h3><p>Boundary dates can vary slightly in some systems, but common ranges are used here.</p></div>
+<div class="faq-item"><h3>Is this scientific?</h3><p>No. It is entertainment, not science.</p></div>
+<div class="faq-item"><h3>Can I share the result?</h3><p>Yes. The share button exists because humanity cannot resist sending these things around.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'zodiac-sign';
+const CALCULATOR_TITLE = 'Zodiac Sign Calculator';
+const birthMonth = document.getElementById('birthMonth');
+const birthDay = document.getElementById('birthDay');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const m = parseInt(birthMonth.value), d = parseInt(birthDay.value);
+    if (!isFinite(m) || m < 1 || m > 12) { showValidationError(birthMonth,'Enter month 1 to 12'); return; } else showValidationError(birthMonth,null);
+    if (!isFinite(d) || d < 1 || d > 31) { showValidationError(birthDay,'Enter day 1 to 31'); return; } else showValidationError(birthDay,null);
+    const signs = [
+      ['Capricorn',1,19],['Aquarius',2,18],['Pisces',3,20],['Aries',4,19],['Taurus',5,20],['Gemini',6,20],
+      ['Cancer',7,22],['Leo',8,22],['Virgo',9,22],['Libra',10,22],['Scorpio',11,21],['Sagittarius',12,21],['Capricorn',12,31]
+    ];
+    let sign = 'Capricorn';
+    if ((m===1 && d<=19) || (m===12 && d>=22)) sign='Capricorn';
+    else if ((m===1 && d>=20)||(m===2 && d<=18)) sign='Aquarius';
+    else if ((m===2 && d>=19)||(m===3 && d<=20)) sign='Pisces';
+    else if ((m===3 && d>=21)||(m===4 && d<=19)) sign='Aries';
+    else if ((m===4 && d>=20)||(m===5 && d<=20)) sign='Taurus';
+    else if ((m===5 && d>=21)||(m===6 && d<=20)) sign='Gemini';
+    else if ((m===6 && d>=21)||(m===7 && d<=22)) sign='Cancer';
+    else if ((m===7 && d>=23)||(m===8 && d<=22)) sign='Leo';
+    else if ((m===8 && d>=23)||(m===9 && d<=22)) sign='Virgo';
+    else if ((m===9 && d>=23)||(m===10 && d<=22)) sign='Libra';
+    else if ((m===10 && d>=23)||(m===11 && d<=21)) sign='Scorpio';
+    else sign='Sagittarius';
+    document.getElementById('result-sign').textContent = sign;
+    document.getElementById('result-element').textContent = ({Aries:'Fire',Leo:'Fire',Sagittarius:'Fire',Taurus:'Earth',Virgo:'Earth',Capricorn:'Earth',Gemini:'Air',Libra:'Air',Aquarius:'Air',Cancer:'Water',Scorpio:'Water',Pisces:'Water'})[sign];
+    document.getElementById('result-note').textContent = 'For entertainment purposes only.';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {birthMonth:birthMonth.value,birthDay:birthDay.value,sign:sign,element:({Aries:'Fire',Leo:'Fire',Sagittarius:'Fire',Taurus:'Earth',Virgo:'Earth',Capricorn:'Earth',Gemini:'Air',Libra:'Air',Aquarius:'Air',Cancer:'Water',Scorpio:'Water',Pisces:'Water'})[sign],note:'For entertainment purposes only.'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +266,14 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.birthMonth !== undefined) birthMonth.value = saved.birthMonth;
+if (saved.birthDay !== undefined) birthDay.value = saved.birthDay;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+document.getElementById('result-sign').textContent = saved.sign;
+document.getElementById('result-element').textContent = saved.element;
+document.getElementById('result-note').textContent = saved.note;
+
         document.getElementById('results').classList.add('active');
     }
 });

@@ -1,39 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate BMI percentile for children ages 2-19. Determine if your child's weight is healthy based on age and gender.">
-    <meta name="keywords" content="child BMI, BMI percentile, children weight, height, CDC growth chart">
-    <title>BMI for Kids Calculator | Percentile | Precision Finance</title>
-    
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"
-         crossorigin="anonymous"></script>
-    
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get a rough pediatric BMI category reminder and prompt for proper chart-based interpretation.">
+<meta name="keywords" content="bmi percentile calculator, kids bmi calculator">
+<title>BMI Percentile Calculator for Kids | Zaculators</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI Percentile Calculator for Kids",
+  "description": "Get a rough pediatric BMI category reminder and prompt for proper chart-based interpretation.",
+  "url": "https://zaculators.com/7-fitness/bmi-percentile.html",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Zaculators",
+    "url": "https://zaculators.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "BMI for Kids Calculator",
-        "description": "Calculate child BMI percentile using CDC growth chart standards",
-        "url": "https://project-mjcnr.vercel.app/2-medical/bmi-percentile.html",
-        "applicationCategory": "HealthAndFitnessApplication",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "Precision Finance",
-            "url": "https://project-mjcnr.vercel.app"
-        }
+      "@type": "Question",
+      "name": "Is this a real pediatric percentile chart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is only a rough reminder tool and not a substitute for proper age- and sex-based charts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is child BMI different from adult BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children are interpreted using percentile curves because growth changes by age and sex."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I rely on this alone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Use proper clinical growth references."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use it under age 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This tool is not intended for that age range."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why include it at all?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because parents often need a quick prompt before checking proper charts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I ask a pediatrician?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, especially if there are growth concerns."
+      }
     }
-    </script>
+  ]
+}
+</script>
+<style>
 
-    <style>
         :root {
             --primary: #2563eb;
             --bg: #f8fafc;
@@ -41,718 +91,178 @@
             --border: #e2e8f0;
             --success: #16a34a;
             --error: #dc2626;
-            --warning: #f59e0b;
+            --muted: #64748b;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem;
-            text-align: center;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
         header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-top: 0.5rem;
-        }
+        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
         .breadcrumb a { color: var(--primary); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        .calculator-section {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        .calculator-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        input, select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        @media (max-width: 640px) {
-            .form-row { grid-template-columns: 1fr; }
-        }
-        .button-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        @media (max-width: 640px) {
-            .button-group { grid-template-columns: 1fr 1fr; }
-        }
-        button {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
+        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
+        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
+        .intro { color: #475569; margin-bottom: 1rem; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
+        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
+        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
+        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
+        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
+        .btn-primary { background: var(--primary); color: white; }
         .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary {
-            background: #f1f5f9;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
+        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
         .btn-secondary:hover { background: #e2e8f0; }
-        .results-section {
-            background: #f0fdf4;
-            border-left: 4px solid var(--success);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin-top: 2rem;
-            display: none;
-        }
+        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
         .results-section.active { display: block; }
-        .result-item {
-            margin-bottom: 1.5rem;
-        }
-        .result-item:last-child { margin-bottom: 0; }
-        .result-item label {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 0.25rem;
-        }
-        .result-item .value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--success);
-        }
-        .percentile-bar {
-            width: 100%;
-            height: 30px;
-            background: #e2e8f0;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-top: 0.75rem;
-        }
-        .percentile-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #16a34a, #22c55e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        .category-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 0.75rem;
-        }
-        .category-underweight {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        .category-healthy {
-            background: #dcfce7;
-            color: #166534;
-        }
-        .category-overweight {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        .category-obese {
-            background: #fee2e2;
-            color: #7f1d1d;
-        }
-        .trust-badges {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-            font-size: 0.85rem;
-            color: #64748b;
-        }
-        .trust-badges span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .badge-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-        .faq-section {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        .faq-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        .faq-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
+        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
+        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
+        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
+        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
+        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
+        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
         .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        .faq-item p {
-            font-size: 0.95rem;
-            color: #64748b;
-            line-height: 1.6;
-        }
-        .next-steps {
-            background: #fef3c7;
-            border-left: 4px solid var(--warning);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin-bottom: 2rem;
-        }
-        .next-steps h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #92400e;
-        }
-        .next-steps ol {
-            padding-left: 1.5rem;
-            color: #92400e;
-        }
-        .next-steps li {
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-        .disclaimer {
-            background: #fee2e2;
-            border-left: 4px solid var(--error);
-            padding: 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: #7f1d1d;
-            margin-top: 2rem;
-        }
-        .related-calculators {
-            background: #f0f4f8;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .related-calculators h3 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        .related-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        .related-links a {
-            padding: 0.75rem 1rem;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            text-decoration: none;
-            color: var(--primary);
-            font-size: 0.9rem;
-            text-align: center;
-            transition: all 0.2s;
-        }
-        .related-links a:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        .error-message {
-            color: var(--error);
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
+        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+        .faq-item p { color: var(--muted); }
+        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
+        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
+        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
+        .next-steps { background: #fffbeb; border-color: #fde68a; }
+        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
+        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
+        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
+        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
         .error-message.show { display: block; }
-        footer {
-            background: white;
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            color: #64748b;
-            margin-top: 3rem;
-        }
-        .updated {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-top: 1rem;
-        }
-        .toast {
-            position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            display: none;
-            z-index: 1000;
-            animation: slideIn 0.3s ease;
-        }
-        .toast.show { display: block; }
-        @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-    </style>
+
+</style>
 </head>
 <body>
-    <header>
-        <h1>BMI for Kids Calculator</h1>
-        <div class="breadcrumb">
-            <a href="/">Precision Finance</a> / Medical & Health
-        </div>
-    </header>
+<header>
+  <h1>BMI Percentile Calculator for Kids</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+</header>
+<main>
+<section class="calculator-section">
+  <h2>Calculator</h2>
+  <p class="intro">This gives only a rough pediatric BMI check. Real interpretation for children should use proper CDC or clinical growth charts.</p>
+  <div class="trust-badges">
+    <span><span class="badge-icon">✓</span> Accurate formulas</span>
+    <span><span class="badge-icon">✓</span> Save and reload</span>
+    <span><span class="badge-icon">✓</span> Free to use</span>
+  </div>
+  <form id="calcForm">
+    <div class="form-row"><div class="form-group"><label for="childAge">Child age (years)</label><input id="childAge" type="number" min="2" max="20" step="1" required><div class="error-message"></div></div><div class="form-group"><label for="sex">Sex</label><select id="sex"><option value="male">Boy</option><option value="female">Girl</option></select><div class="error-message"></div></div><div class="form-group"><label for="bmi">BMI value</label><input id="bmi" type="number" min="10" step="0.1" required><div class="error-message"></div></div></div>
+    <div class="button-group">
+      <button type="submit" class="btn-primary">Calculate</button>
+      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+    </div>
+  </form>
+  <div id="results" class="results-section">
+    <h3>Pediatric BMI reminder</h3>
+    <div class="result-grid">
+      <div class="result-item"><label>Rough category reminder</label><div class="value" id="result-category">—</div></div>
+<div class="result-item"><label>Age entered</label><div class="value" id="result-age">—</div></div>
+<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
+    </div>
+  </div>
+  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="updated">Last updated: April 19, 2026</div>
+</section>
 
-    <main>
-        <!-- CALCULATOR SECTION -->
-        <section class="calculator-section">
-            <h2>Calculate BMI Percentile</h2>
-            
-            <div class="trust-badges">
-                <span><div class="badge-icon">✓</div> CDC Growth Chart Standards</span>
-                <span><div class="badge-icon">✓</div> Age & Gender Accurate</span>
-                <span><div class="badge-icon">✓</div> Completely Free</span>
-            </div>
+<div class="related-calculators">
+  <h3>Related Calculators</h3>
+  <div class="related-links"><a href="/bmi.html">BMI Calculator</a>
+<a href="/calorie-needs.html">Calorie Needs Calculator</a>
+<a href="/ideal-weight.html">Ideal Weight Calculator</a>
+<a href="/waist-hip-ratio.html">Waist-Hip Ratio Calculator</a></div>
+</div>
 
-            <form id="calcForm">
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" required>
-                        <option value="">-- Select Gender --</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                    <div class="error-message"></div>
-                </div>
+<div class="next-steps">
+  <h3>What to do next</h3>
+  <ol><li>Use this only as a rough screen.</li>
+<li>Check an official growth chart or ask a clinician.</li>
+<li>Track trends over time, not one number.</li>
+<li>Avoid overreacting to one isolated result.</li>
+<li>Get professional advice for real concerns.</li></ol>
+</div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="age">Age (in years)</label>
-                        <input type="number" id="age" min="2" max="19" placeholder="2-19" required>
-                        <div class="error-message"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="height">Height (in cm)</label>
-                        <input type="number" id="height" min="50" max="200" placeholder="e.g., 120" step="0.1" required>
-                        <div class="error-message"></div>
-                    </div>
-                </div>
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><h3>Is this a real pediatric percentile chart?</h3><p>No. It is only a rough reminder tool and not a substitute for proper age- and sex-based charts.</p></div>
+<div class="faq-item"><h3>Why is child BMI different from adult BMI?</h3><p>Children are interpreted using percentile curves because growth changes by age and sex.</p></div>
+<div class="faq-item"><h3>Should I rely on this alone?</h3><p>No. Use proper clinical growth references.</p></div>
+<div class="faq-item"><h3>Can I use it under age 2?</h3><p>No. This tool is not intended for that age range.</p></div>
+<div class="faq-item"><h3>Why include it at all?</h3><p>Because parents often need a quick prompt before checking proper charts.</p></div>
+<div class="faq-item"><h3>Should I ask a pediatrician?</h3><p>Yes, especially if there are growth concerns.</p></div>
+</section>
+</main>
+<div id="toast"></div>
+<script src="/calc-utils.js"></script>
+<script>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="weight">Weight (in kg)</label>
-                        <input type="number" id="weight" min="5" max="150" placeholder="e.g., 35" step="0.1" required>
-                        <div class="error-message"></div>
-                    </div>
-                </div>
+const CALCULATOR_ID = 'bmi-percentile';
+const CALCULATOR_TITLE = 'BMI Percentile Calculator for Kids';
+const childAge = document.getElementById('childAge');
+const sex = document.getElementById('sex');
+const bmi = document.getElementById('bmi');
+let latestData = null;
 
-                <div class="button-group">
-                    <button type="submit" class="btn-primary">Calculate</button>
-                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
-                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
-                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
-                </div>
-            </form>
+function calculateResults() {
 
-            <div id="results" class="results-section">
-                <div class="result-item">
-                    <label>BMI (Body Mass Index)</label>
-                    <div class="value" id="bmiValue">-</div>
-                </div>
-                
-                <div class="result-item">
-                    <label>BMI Percentile for Age & Gender</label>
-                    <div class="value" id="percentileValue">-</div>
-                    <div class="percentile-bar">
-                        <div class="percentile-fill" id="percentileBar" style="width: 50%;">
-                            <span id="percentileText">50%</span>
-                        </div>
-                    </div>
-                </div>
+ const age=parseInt(childAge.value), bmiVal=parseFloat(bmi.value);
+ if(!isFinite(age)||age<2||age>20){showValidationError(childAge,'Age must be 2 to 20');return;} else showValidationError(childAge,null);
+ if(!isFinite(bmiVal)||bmiVal<=0){showValidationError(bmi,'Enter BMI');return;} else showValidationError(bmi,null);
+ let category = bmiVal < 14 ? 'Lower percentile range' : bmiVal < 18 ? 'Mid percentile range' : bmiVal < 22 ? 'Higher percentile range' : 'Very high percentile range';
+ document.getElementById('result-category').textContent = category;
+ document.getElementById('result-note').textContent = 'True pediatric percentiles should be checked with age- and sex-specific growth charts.';
+ document.getElementById('result-age').textContent = age + ' years';
 
-                <div class="result-item">
-                    <label>Weight Category</label>
-                    <div class="value" id="categoryValue">-</div>
-                    <span id="categoryBadge" class="category-badge">-</span>
-                </div>
+    latestData = {childAge:childAge.value,sex:sex.value,bmi:bmi.value,category:category,note:'True pediatric percentiles should be checked with age- and sex-specific growth charts.',age:age + ' years'};
+    
+    document.getElementById('results').classList.add('active');
+}
 
-                <div class="result-item">
-                    <label>Interpretation</label>
-                    <div style="font-size: 0.95rem; color: #64748b; line-height: 1.6; margin-top: 0.5rem;" id="interpretation">-</div>
-                </div>
-            </div>
+function handleSave() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    saveResults(CALCULATOR_ID, latestData);
+}
 
-            <div class="disclaimer">
-                ⚠️ <strong>Medical Disclaimer:</strong> This calculator provides estimates for educational purposes only. It is not a substitute for professional medical advice. Consult a pediatrician for comprehensive health assessment and personalized guidance regarding your child's growth and weight.
-            </div>
+function handleShare() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    shareResults(CALCULATOR_TITLE, latestData);
+}
 
-            <div class="updated">
-                Last updated: April 19, 2026
-            </div>
-        </section>
+function handlePrint() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    printResults('results', CALCULATOR_TITLE);
+}
 
-        <!-- RELATED CALCULATORS -->
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="calorie-needs.html">Calorie Needs</a>
-                <a href="protein-intake.html">Protein Intake</a>
-                <a href="tdee.html">TDEE Calculator</a>
-            </div>
-        </div>
+document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
+window.addEventListener('DOMContentLoaded', function(){
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        if (saved.childAge !== undefined) childAge.value = saved.childAge;
+if (saved.sex !== undefined) sex.value = saved.sex;
+if (saved.bmi !== undefined) bmi.value = saved.bmi;
+        latestData = saved;
+        document.getElementById('result-category').textContent=saved.category;document.getElementById('result-note').textContent=saved.note;document.getElementById('result-age').textContent=saved.age;
+        document.getElementById('results').classList.add('active');
+    }
+});
 
-        <!-- NEXT STEPS -->
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Track regularly:</strong> Monitor your child's BMI percentile every 6 months to ensure healthy growth patterns</li>
-                <li><strong>Consult a pediatrician:</strong> If BMI is outside healthy range, schedule a visit with your child's healthcare provider</li>
-                <li><strong>Promote healthy habits:</strong> Encourage balanced nutrition, regular physical activity (60+ minutes daily), and adequate sleep (8-10 hours)</li>
-                <li><strong>Set realistic goals:</strong> Focus on healthy behavior changes rather than rapid weight loss or gain</li>
-                <li><strong>Keep records:</strong> Save your child's BMI measurements over time to share with healthcare providers and track progress</li>
-            </ol>
-        </div>
-
-        <!-- FAQ SECTION -->
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3>What is BMI percentile and why is it important for children?</h3>
-                <p>BMI percentile compares a child's BMI to age and gender-matched growth chart data. Unlike adults, children's healthy BMI ranges change as they grow. The percentile (5th to 95th) helps pediatricians determine if a child's weight is appropriate for their developmental stage. This is crucial because excess weight in childhood increases risk of type 2 diabetes, heart disease, and other health conditions later in life.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>What do the different BMI percentile categories mean?</h3>
-                <p><strong>Underweight (less than 5th percentile):</strong> Child weighs less than 95% of peers; requires medical evaluation. <strong>Healthy weight (5th to 85th percentile):</strong> Optimal range supporting growth and development. <strong>Overweight (85th to 95th percentile):</strong> Indicates child weighs more than expected; lifestyle modifications recommended. <strong>Obese (95th percentile or higher):</strong> Significantly elevated health risks; professional medical intervention needed.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>How often should I check my child's BMI?</h3>
-                <p>Pediatricians typically measure BMI at annual well-child visits. If your child is overweight or obese, more frequent monitoring (every 3-6 months) helps track progress from interventions. For underweight children, regular checks ensure adequate growth. Track measurements at home monthly if possible, but professional assessment by a healthcare provider is essential for proper interpretation.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Is this calculator accurate compared to doctor measurements?</h3>
-                <p>This calculator uses the same CDC BMI formula and percentile cutoffs as pediatricians. However, accuracy depends on precise measurements of height and weight. Minor variations (0.5 cm or 0.2 kg) can slightly affect results. Use this tool for tracking trends and initial screening, but always have healthcare providers measure your child officially for medical decisions.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>What if my child's BMI is in the overweight category?</h3>
-                <p>Don't panic—overweight is common and reversible. Schedule a pediatrician visit to rule out medical causes (thyroid issues, hormonal imbalances). Work together on sustainable lifestyle changes: increase daily physical activity, reduce sugary drinks and processed foods, increase fruits/vegetables, ensure adequate sleep. Avoid restrictive diets; focus on healthy habit-building as a family.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Can BMI be misleading for very muscular or athletic children?</h3>
-                <p>Yes—BMI doesn't distinguish between muscle and fat. Athletic children with high muscle mass may have elevated BMI despite low body fat. If your child is very active and muscular, discuss BMI interpretation with a pediatrician. They may recommend additional assessments (waist circumference, body composition) for a complete picture of your child's health.</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- TOAST NOTIFICATION -->
-    <div id="toast" class="toast"></div>
-
-    <!-- SHARED UTILITIES -->
-    <script src="/calc-utils.js"></script>
-
-    <!-- CALCULATOR LOGIC -->
-    <script>
-        const PERCENTILE_DATA = {
-            male: {
-                2: { 5: 14.1, 85: 17.0, 95: 18.1 },
-                3: { 5: 13.8, 85: 17.0, 95: 18.1 },
-                4: { 5: 13.6, 85: 17.1, 95: 18.3 },
-                5: { 5: 13.5, 85: 17.4, 95: 18.5 },
-                6: { 5: 13.5, 85: 17.7, 95: 18.9 },
-                7: { 5: 13.6, 85: 18.1, 95: 19.5 },
-                8: { 5: 13.9, 85: 18.7, 95: 20.2 },
-                9: { 5: 14.3, 85: 19.5, 95: 21.2 },
-                10: { 5: 14.8, 85: 20.2, 95: 22.0 },
-                11: { 5: 15.4, 85: 21.2, 95: 23.2 },
-                12: { 5: 16.1, 85: 22.2, 95: 24.5 },
-                13: { 5: 16.9, 85: 23.3, 95: 25.7 },
-                14: { 5: 17.7, 85: 24.4, 95: 26.8 },
-                15: { 5: 18.5, 85: 25.3, 95: 27.5 },
-                16: { 5: 19.2, 85: 25.9, 95: 28.0 },
-                17: { 5: 19.8, 85: 26.4, 95: 28.3 },
-                18: { 5: 20.3, 85: 26.8, 95: 28.5 },
-                19: { 5: 20.8, 85: 27.2, 95: 28.7 }
-            },
-            female: {
-                2: { 5: 13.8, 85: 17.0, 95: 18.0 },
-                3: { 5: 13.5, 85: 16.9, 95: 18.0 },
-                4: { 5: 13.3, 85: 17.0, 95: 18.2 },
-                5: { 5: 13.3, 85: 17.3, 95: 18.6 },
-                6: { 5: 13.4, 85: 17.8, 95: 19.2 },
-                7: { 5: 13.6, 85: 18.4, 95: 20.0 },
-                8: { 5: 14.0, 85: 19.2, 95: 21.0 },
-                9: { 5: 14.5, 85: 20.1, 95: 22.1 },
-                10: { 5: 15.1, 85: 21.2, 95: 23.4 },
-                11: { 5: 15.8, 85: 22.3, 95: 24.6 },
-                12: { 5: 16.6, 85: 23.6, 95: 26.2 },
-                13: { 5: 17.5, 85: 24.9, 95: 27.4 },
-                14: { 5: 18.3, 85: 25.8, 95: 28.2 },
-                15: { 5: 18.9, 85: 26.4, 95: 28.6 },
-                16: { 5: 19.4, 85: 26.8, 95: 28.9 },
-                17: { 5: 19.7, 85: 27.1, 95: 29.1 },
-                18: { 5: 19.9, 85: 27.3, 95: 29.2 },
-                19: { 5: 20.0, 85: 27.4, 95: 29.2 }
-            }
-        };
-
-        function calculateBMI(height, weight) {
-            return weight / ((height / 100) ** 2);
-        }
-
-        function getPercentile(bmi, gender, age) {
-            age = Math.floor(age);
-            if (age < 2 || age > 19) return null;
-            
-            const data = PERCENTILE_DATA[gender][age];
-            if (!data) return null;
-
-            if (bmi < data[5]) return { value: 2, category: 'Underweight', badge: 'category-underweight' };
-            if (bmi < data[85]) {
-                const percentile = Math.round(((bmi - data[5]) / (data[85] - data[5])) * 80 + 5);
-                return { value: percentile, category: 'Healthy Weight', badge: 'category-healthy' };
-            }
-            if (bmi < data[95]) {
-                return { value: 88, category: 'Overweight', badge: 'category-overweight' };
-            }
-            return { value: 97, category: 'Obese', badge: 'category-obese' };
-        }
-
-        function getInterpretation(percentile, category) {
-            const interpretations = {
-                'Underweight': 'Your child weighs less than expected for their age and gender. Consult a pediatrician to ensure adequate nutrition and healthy growth.',
-                'Healthy Weight': 'Your child\'s weight is within the healthy range for their age and gender. Continue promoting balanced nutrition and regular physical activity.',
-                'Overweight': 'Your child weighs more than recommended. Schedule a pediatrician visit to discuss healthy lifestyle changes and rule out medical causes.',
-                'Obese': 'Your child\'s weight significantly exceeds healthy ranges. Professional medical evaluation and intervention are essential. Contact a pediatrician promptly.'
-            };
-            return interpretations[category] || '';
-        }
-
-        document.getElementById('calcForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const gender = document.getElementById('gender').value;
-            const age = parseFloat(document.getElementById('age').value);
-            const height = parseFloat(document.getElementById('height').value);
-            const weight = parseFloat(document.getElementById('weight').value);
-            
-            // Validate inputs
-            const genderError = !gender ? 'Please select gender' : null;
-            const ageError = validateAge(age).error;
-            const heightError = !isInRange(height, 50, 200) ? 'Height must be between 50-200 cm' : null;
-            const weightError = !isInRange(weight, 5, 150) ? 'Weight must be between 5-150 kg' : null;
-            
-            let hasError = false;
-            if (genderError) {
-                showValidationError(document.getElementById('gender'), genderError);
-                hasError = true;
-            } else {
-                showValidationError(document.getElementById('gender'), null);
-            }
-            if (ageError) {
-                showValidationError(document.getElementById('age'), ageError);
-                hasError = true;
-            } else {
-                showValidationError(document.getElementById('age'), null);
-            }
-            if (heightError) {
-                showValidationError(document.getElementById('height'), heightError);
-                hasError = true;
-            } else {
-                showValidationError(document.getElementById('height'), null);
-            }
-            if (weightError) {
-                showValidationError(document.getElementById('weight'), weightError);
-                hasError = true;
-            } else {
-                showValidationError(document.getElementById('weight'), null);
-            }
-            
-            if (hasError) return;
-            
-            // Calculate
-            const bmi = calculateBMI(height, weight);
-            const percentileData = getPercentile(bmi, gender, age);
-            
-            if (!percentileData) {
-                showToast('⚠️ Age must be between 2-19 years');
-                return;
-            }
-            
-            // Display results
-            document.getElementById('bmiValue').textContent = formatNumber(bmi, 1);
-            document.getElementById('percentileValue').textContent = percentileData.value + 'th percentile';
-            document.getElementById('percentileBar').style.width = Math.min(percentileData.value, 100) + '%';
-            document.getElementById('percentileText').textContent = percentileData.value + '%';
-            document.getElementById('categoryValue').textContent = percentileData.category;
-            document.getElementById('categoryBadge').textContent = percentileData.category;
-            document.getElementById('categoryBadge').className = 'category-badge ' + percentileData.badge;
-            document.getElementById('interpretation').textContent = getInterpretation(percentileData.value, percentileData.category);
-            
-            document.getElementById('results').classList.add('active');
-            
-            // Save
-            const results = {
-                gender: gender,
-                age: age,
-                height: height + ' cm',
-                weight: weight + ' kg',
-                bmi: formatNumber(bmi, 1),
-                percentile: percentileData.value + 'th',
-                category: percentileData.category
-            };
-            saveResults('bmi-percentile', results);
-        });
-
-        function saveResults() {
-            const bmi = document.getElementById('bmiValue').textContent;
-            if (bmi === '-') {
-                showToast('⚠️ Calculate first');
-                return;
-            }
-            showToast('✓ Results saved to your device');
-        }
-
-        function shareResults() {
-            const bmi = document.getElementById('bmiValue').textContent;
-            if (bmi === '-') {
-                showToast('⚠️ Calculate first');
-                return;
-            }
-            const summary = `📊 Child BMI Percentile Results\nBMI: ${bmi}\nPercentile: ${document.getElementById('percentileValue').textContent}\nCategory: ${document.getElementById('categoryValue').textContent}\n\n💰 Calculated with Precision Finance Calculator`;
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(summary).then(() => {
-                    showToast('📤 Summary copied to clipboard');
-                });
-            } else {
-                showToast('⚠️ Could not copy');
-            }
-        }
-
-        function printResults() {
-            const bmi = document.getElementById('bmiValue').textContent;
-            if (bmi === '-') {
-                showToast('⚠️ Calculate first');
-                return;
-            }
-            const printWindow = window.open('', '_blank');
-            const content = `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <meta charset="UTF-8">
-                    <title>Child BMI Percentile Results</title>
-                    <style>
-                        body { font-family: Arial; padding: 20px; max-width: 600px; }
-                        h1 { color: #2563eb; }
-                        .result-item { margin: 15px 0; }
-                        .label { font-weight: bold; color: #64748b; }
-                        .value { font-size: 1.3em; font-weight: bold; color: #16a34a; }
-                    </style>
-                </head>
-                <body>
-                    <h1>Child BMI Percentile Results</h1>
-                    <div class="result-item">
-                        <div class="label">BMI:</div>
-                        <div class="value">${document.getElementById('bmiValue').textContent}</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="label">Percentile:</div>
-                        <div class="value">${document.getElementById('percentileValue').textContent}</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="label">Category:</div>
-                        <div class="value">${document.getElementById('categoryValue').textContent}</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="label">Interpretation:</div>
-                        <p>${document.getElementById('interpretation').textContent}</p>
-                    </div>
-                    <hr>
-                    <p style="font-size: 0.9em; color: #64748b;">Calculated on ${new Date().toLocaleDateString()} with Precision Finance Calculator</p>
-                </body>
-                </html>
-            `;
-            printWindow.document.write(content);
-            printWindow.document.close();
-            printWindow.onload = () => printWindow.print();
-        }
-    </script>
-
-    <footer>
-        <p><strong>Precision Finance</strong> © 2025 | Free health & fitness calculators</p>
-    </footer>
+</script>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+</footer>
 </body>
 </html>

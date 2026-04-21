@@ -1,190 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate body fat percentage using Navy method. Estimate your body composition based on measurements.">
-    <meta name="keywords" content="body fat percentage, body composition, Navy method, fat calculator">
-    <title>Body Fat Percentage Calculator | Navy Method | Precision Finance</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Body Fat Percentage Calculator","description":"Estimate body fat percentage using Navy method formula","url":"https://project-mjcnr.vercel.app/2-medical/body-fat-percentage.html","applicationCategory":"HealthAndFitnessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Precision Finance","url":"https://project-mjcnr.vercel.app"}}</script>
-    <style>
-        :root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0;--success:#16a34a;--error:#dc2626;--warning:#f59e0b}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}header{background:white;border-bottom:1px solid var(--border);padding:1.5rem;text-align:center}header h1{font-size:1.8rem;margin-bottom:0.25rem}.breadcrumb{font-size:0.85rem;color:#64748b;margin-top:0.5rem}.breadcrumb a{color:var(--primary);text-decoration:none}.breadcrumb a:hover{text-decoration:underline}main{max-width:900px;margin:0 auto;padding:2rem}.calculator-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.calculator-section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.form-group{margin-bottom:1.5rem}label{display:block;font-weight:500;margin-bottom:0.5rem;color:var(--text)}input,select{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;font-size:1rem;font-family:inherit}input:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}@media(max-width:640px){.form-row{grid-template-columns:1fr}}.button-group{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}@media(max-width:640px){.button-group{grid-template-columns:1fr 1fr}}button{padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:500;cursor:pointer;transition:all 0.2s;font-size:0.9rem}.btn-primary{background:var(--primary);color:white}.btn-primary:hover{background:#1d4ed8}.btn-secondary{background:#f1f5f9;color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background:#e2e8f0}.results-section{background:#f0fdf4;border-left:4px solid var(--success);padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results-section.active{display:block}.result-item{margin-bottom:1.5rem}.result-item:last-child{margin-bottom:0}.result-item label{font-size:0.9rem;color:#64748b;margin-bottom:0.25rem}.result-item .value{font-size:1.5rem;font-weight:600;color:var(--success)}.fat-bar{width:100%;height:30px;background:#e2e8f0;border-radius:6px;overflow:hidden;margin-top:0.75rem}.fat-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#16a34a);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:0.85rem}.category-badge{display:inline-block;padding:0.5rem 1rem;border-radius:6px;font-weight:600;font-size:0.9rem;margin-top:0.75rem}.cat-essential{background:#dbeafe;color:#1e40af}.cat-athletes{background:#dcfce7;color:#166534}.cat-fitness{background:#fef3c7;color:#92400e}.cat-average{background:#fed7aa;color:#92400e}.cat-obese{background:#fee2e2;color:#7f1d1d}.trust-badges{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;font-size:0.85rem;color:#64748b}.trust-badges span{display:flex;align-items:center;gap:0.5rem}.badge-icon{width:20px;height:20px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:bold}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem;color:var(--text)}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid var(--warning);padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps h3{font-size:1.1rem;margin-bottom:1rem;color:#92400e}.next-steps ol{padding-left:1.5rem;color:#92400e}.next-steps li{margin-bottom:0.75rem;line-height:1.6}.disclaimer{background:#fee2e2;border-left:4px solid var(--error);padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related-calculators{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related-calculators h3{font-size:1rem;margin-bottom:1rem;color:var(--primary)}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center;transition:all 0.2s}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}.error-message{color:var(--error);font-size:0.85rem;margin-top:0.25rem;display:none}.error-message.show{display:block}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}.updated{font-size:0.8rem;color:#94a3b8;margin-top:1rem}.toast{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:white;padding:1rem 1.5rem;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.15);display:none;z-index:1000;animation:slideIn 0.3s ease}.toast.show{display:block}@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimate body fat percentage with the US Navy tape measurement method.">
+<meta name="keywords" content="body fat calculator, body fat percentage calculator">
+<title>Body Fat Percentage Calculator | Zaculators</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Body Fat Percentage Calculator",
+  "description": "Estimate body fat percentage with the US Navy tape measurement method.",
+  "url": "https://zaculators.com/7-fitness/body-fat-percentage.html",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Zaculators",
+    "url": "https://zaculators.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this as accurate as a DEXA scan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Tape methods are convenient estimates, not gold-standard measurements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is hip measurement only for women in this formula?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is how this commonly used version of the Navy method is structured."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can hydration affect this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It affects some body composition methods, but tape measurement error usually matters more here."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I measure at the same time each time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Consistent conditions improve tracking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why track body fat instead of scale weight only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can give more context when weight alone is misleading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can athletes still use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but context and consistency matter."
+      }
+    }
+  ]
+}
+</script>
+<style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+            --muted: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
+        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
+        .intro { color: #475569; margin-bottom: 1rem; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
+        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
+        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
+        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
+        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
+        .results-section.active { display: block; }
+        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
+        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
+        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
+        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
+        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
+        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+        .faq-item p { color: var(--muted); }
+        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
+        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
+        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
+        .next-steps { background: #fffbeb; border-color: #fde68a; }
+        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
+        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
+        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
+        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
+        .error-message.show { display: block; }
+
+</style>
 </head>
 <body>
-    <header>
-        <h1>Body Fat Percentage Calculator</h1>
-        <div class="breadcrumb"><a href="/">Precision Finance</a> / Medical & Health</div>
-    </header>
-    <main>
-        <section class="calculator-section">
-            <h2>Calculate Body Fat %</h2>
-            <div class="trust-badges">
-                <span><div class="badge-icon">✓</div> Navy Method</span>
-                <span><div class="badge-icon">✓</div> Validated Formula</span>
-                <span><div class="badge-icon">✓</div> Completely Free</span>
-            </div>
-            <form id="calcForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <select id="gender" required>
-                            <option value="">-- Select --</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                        <div class="error-message"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="height">Height (cm)</label>
-                        <input type="number" id="height" min="100" max="250" placeholder="e.g., 180" step="0.1" required>
-                        <div class="error-message"></div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="weight">Weight (kg)</label>
-                        <input type="number" id="weight" min="30" max="300" placeholder="e.g., 80" step="0.1" required>
-                        <div class="error-message"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="neck">Neck Circumference (cm)</label>
-                        <input type="number" id="neck" min="20" max="60" placeholder="e.g., 38" step="0.1" required>
-                        <div class="error-message"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="waist">Waist Circumference (cm)</label>
-                    <input type="number" id="waist" min="40" max="200" placeholder="e.g., 85" step="0.1" required>
-                    <div class="error-message"></div>
-                </div>
-                <div id="hipGroup" class="form-group" style="display:none">
-                    <label for="hip">Hip Circumference (cm)</label>
-                    <input type="number" id="hip" min="60" max="200" placeholder="e.g., 100" step="0.1">
-                    <div class="error-message"></div>
-                </div>
-                <div class="button-group">
-                    <button type="submit" class="btn-primary">Calculate</button>
-                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
-                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
-                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
-                </div>
-            </form>
-            <div id="results" class="results-section">
-                <div class="result-item">
-                    <label>Body Fat Percentage</label>
-                    <div class="value" id="fatValue">-</div>
-                    <div class="fat-bar"><div class="fat-fill" id="fatBar" style="width:50%"><span id="fatPercent">50%</span></div></div>
-                </div>
-                <div class="result-item">
-                    <label>Body Fat Category</label>
-                    <span id="categoryBadge" class="category-badge">-</span>
-                </div>
-                <div class="result-item">
-                    <label>Lean Body Mass</label>
-                    <div class="value" id="leanValue">-</div>
-                </div>
-                <div class="result-item">
-                    <label>Interpretation</label>
-                    <div style="font-size:0.95rem;color:#64748b;margin-top:0.5rem;line-height:1.6" id="interpretation">-</div>
-                </div>
-            </div>
-            <div class="disclaimer">⚠️ <strong>Medical Disclaimer:</strong> This calculator estimates body fat using the Navy method formula. It's not as accurate as DEXA scans or hydrostatic weighing. Use for tracking progress over time rather than absolute accuracy. Consult healthcare provider for medical body composition assessment.</div>
-            <div class="updated">Last updated: April 19, 2026</div>
-        </section>
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="bmi-percentile.html">BMI for Kids</a>
-                <a href="waist-hip-ratio.html">Waist-Hip Ratio</a>
-                <a href="calorie-needs.html">Calorie Needs</a>
-            </div>
-        </div>
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Measure accurately:</strong> Measurements over bone provide most accurate results. Use flexible tape measure.</li>
-                <li><strong>Track quarterly:</strong> Retest every 3 months to monitor body composition changes independent of weight</li>
-                <li><strong>Combine with BMI:</strong> Use both metrics for complete picture—BMI shows weight, body fat shows composition</li>
-                <li><strong>Adjust training:</strong> If body fat is high, increase cardio; if low and strength goals, focus on resistance training</li>
-                <li><strong>Consider lab testing:</strong> For competitive athletes, DEXA or hydrostatic testing provides precise body composition</li>
-            </ol>
-        </div>
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>What's the difference between body fat percentage and BMI?</h3>
-                <p>BMI is weight relative to height (simple but inaccurate). Body fat percentage shows actual fat mass vs. muscle. Someone muscular can have high BMI but low body fat. Conversely, someone can have normal BMI but high body fat ("skinny fat"). For accurate health assessment, both matter—use together for complete picture.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What's a healthy body fat percentage?</h3>
-                <p>Essential fat: 2-5% (men), 10-13% (women—includes reproductive fat). Athletes: 6-13% (men), 14-20% (women). Fitness: 14-17% (men), 21-24% (women). Average: 18-25% (men), 25-31% (women). Obese: 25%+ (men), 32%+ (women). Goals depend on health, fitness level, and genetics. Healthy ranges: 15-25% men, 20-32% women.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How accurate is the Navy method?</h3>
-                <p>Navy method is ±3-4% accurate compared to DEXA scans. Good for tracking trends but not absolute precision. Accuracy varies by body shape—very muscular or obese individuals may see larger errors. For fitness tracking, the key is consistency (measure same time, conditions) so percentage changes reflect true composition shifts, not measurement error.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Why is body fat percentage better than scale weight?</h3>
-                <p>Scale weight includes muscle, water, organs, bones—not just fat. Someone building muscle while losing fat sees no scale change despite improving composition. Body fat percentage isolates actual adipose tissue, better reflecting health changes. Muscle weighs more than fat, so scale can be misleading during exercise.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I reduce body fat percentage without losing total weight?</h3>
-                <p>Yes! Building muscle while losing fat keeps weight stable but improves body composition. This is "body recomposition"—achieved through resistance training + adequate protein + moderate calorie deficit. Takes longer than pure weight loss but results in better aesthetics and strength. Requires patience; scale won't reflect improvements immediately.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What factors affect body fat accuracy measurements?</h3>
-                <p>Hydration status significantly affects accuracy—dehydration inflates measurements. Recent workouts cause inflammation/swelling (temporary). Time of day (morning vs. evening) changes body volume. Menstrual cycle affects water retention in women. For most accurate tracking: measure morning, same time weekly, same conditions, average multiple weeks.</p>
-            </div>
-        </section>
-    </main>
-    <div id="toast" class="toast"></div>
-    <script src="/calc-utils.js"></script>
-    <script>
-        document.getElementById('gender').addEventListener('change', function(){
-            document.getElementById('hipGroup').style.display = this.value === 'female' ? 'block' : 'none';
-        });
-        document.getElementById('calcForm').addEventListener('submit', function(e){
-            e.preventDefault();
-            const gender = document.getElementById('gender').value;
-            const height = parseFloat(document.getElementById('height').value);
-            const weight = parseFloat(document.getElementById('weight').value);
-            const neck = parseFloat(document.getElementById('neck').value);
-            const waist = parseFloat(document.getElementById('waist').value);
-            const hip = gender === 'female' ? parseFloat(document.getElementById('hip').value) : 0;
-            if(!gender||!isInRange(height,100,250)||!isInRange(weight,30,300)||!isInRange(neck,20,60)||!isInRange(waist,40,200)){showToast('⚠️ Check input ranges');return}
-            if(gender === 'female' && (!hip || !isInRange(hip,60,200))){showToast('⚠️ Hip measurement required for females');return}
-            let bodyFat;
-            if(gender === 'male'){bodyFat = 495/(1.0324-0.19077*(Math.log10(waist-neck))+0.15456*(Math.log10(height)))-450}else{bodyFat = 495/(1.29579-0.35004*(Math.log10(waist+hip-neck))+0.22100*(Math.log10(height)))-450}
-            bodyFat = Math.max(1, Math.min(60, bodyFat));
-            const leanMass = weight * (1 - bodyFat/100);
-            let category, badge;
-            if(bodyFat < 6) { category = 'Essential Fat'; badge = 'cat-essential'; }
-            else if(bodyFat < 13) { category = 'Athletes'; badge = 'cat-athletes'; }
-            else if(bodyFat < 20) { category = 'Fitness'; badge = 'cat-fitness'; }
-            else if(bodyFat < 26) { category = 'Average'; badge = 'cat-average'; }
-            else { category = 'Obese'; badge = 'cat-obese'; }
-            let interpretation = '';
-            if(bodyFat < 6) interpretation = 'Very low body fat—only appropriate for competitive athletes during competition season.';
-            else if(bodyFat < 13) interpretation = 'Athletic body composition. Excellent fitness level with visible muscle definition.';
-            else if(bodyFat < 20) interpretation = 'Good fitness level. Healthy body composition for most people.';
-            else if(bodyFat < 26) interpretation = 'Average body composition. Consider increasing exercise and improving diet for better health outcomes.';
-            else interpretation = 'High body fat. Increased health risks. Consult healthcare provider about fitness and nutrition plan.';
-            document.getElementById('fatValue').textContent = formatNumber(bodyFat,1) + '%';
-            document.getElementById('fatBar').style.width = Math.min(bodyFat,100) + '%';
-            document.getElementById('fatPercent').textContent = formatNumber(bodyFat,1) + '%';
-            document.getElementById('categoryBadge').textContent = category;
-            document.getElementById('categoryBadge').className = 'category-badge ' + badge;
-            document.getElementById('leanValue').textContent = formatNumber(leanMass,1) + ' kg';
-            document.getElementById('interpretation').textContent = interpretation;
-            document.getElementById('results').classList.add('active');
-            saveResults('body-fat', {gender, height, weight, bodyFat: formatNumber(bodyFat,1), category});
-        });
-        function saveResults(){if(document.getElementById('fatValue').textContent === '-'){showToast('⚠️ Calculate first');return}showToast('✓ Results saved to your device')}
-        function shareResults(){if(document.getElementById('fatValue').textContent === '-'){showToast('⚠️ Calculate first');return}const summary = `📊 Body Fat Percentage\nBody Fat: ${document.getElementById('fatValue').textContent}\nCategory: ${document.getElementById('categoryBadge').textContent}\n\n💰 Calculated with Precision Finance Calculator`;if(navigator.clipboard){navigator.clipboard.writeText(summary).then(()=>showToast('📤 Summary copied'))}}
-        function printResults(){if(document.getElementById('fatValue').textContent === '-'){showToast('⚠️ Calculate first');return}const pw = window.open('','_blank');pw.document.write(`<html><head><title>Body Fat Results</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Body Fat Percentage Results</h1><div class="item"><div class="label">Body Fat:</div><div class="value">${document.getElementById('fatValue').textContent}</div></div><div class="item"><div class="label">Category:</div><div class="value">${document.getElementById('categoryBadge').textContent}</div></div><hr><p style="font-size:0.9em;color:#666;">Calculated on ${new Date().toLocaleDateString()}</p></body></html>`);pw.document.close();pw.onload = () => pw.print()}
-    </script>
-    <footer><p><strong>Precision Finance</strong> © 2025 | Free health & fitness calculators</p></footer>
+<header>
+  <h1>Body Fat Percentage Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+</header>
+<main>
+<section class="calculator-section">
+  <h2>Calculator</h2>
+  <p class="intro">This calculator estimates body fat percentage from tape measurements. Useful for tracking, imperfect for precision.</p>
+  <div class="trust-badges">
+    <span><span class="badge-icon">✓</span> Accurate formulas</span>
+    <span><span class="badge-icon">✓</span> Save and reload</span>
+    <span><span class="badge-icon">✓</span> Free to use</span>
+  </div>
+  <form id="calcForm">
+    <div class="form-row"><div class="form-group"><label for="sex">Sex</label><select id="sex"><option value="male">Male</option><option value="female">Female</option></select><div class="error-message"></div></div><div class="form-group"><label for="height">Height (inches)</label><input id="height" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="neck">Neck circumference (inches)</label><input id="neck" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="waist">Waist circumference (inches)</label><input id="waist" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="hip">Hip circumference (inches, women only)</label><input id="hip" type="number" min="0" step="0.1" placeholder="0 for men" required><div class="error-message"></div></div></div>
+    <div class="button-group">
+      <button type="submit" class="btn-primary">Calculate</button>
+      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+    </div>
+  </form>
+  <div id="results" class="results-section">
+    <h3>Body fat estimate</h3>
+    <div class="result-grid">
+      <div class="result-item"><label>Estimated body fat</label><div class="value" id="result-bf">—</div></div>
+<div class="result-item"><label>Estimated lean percentage</label><div class="value" id="result-lean">—</div></div>
+<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
+    </div>
+  </div>
+  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="updated">Last updated: April 19, 2026</div>
+</section>
+
+<div class="related-calculators">
+  <h3>Related Calculators</h3>
+  <div class="related-links"><a href="/bmi.html">BMI Calculator</a>
+<a href="/waist-hip-ratio.html">Waist-Hip Ratio Calculator</a>
+<a href="/ideal-weight.html">Ideal Weight Calculator</a>
+<a href="/tdee.html">TDEE Calculator</a></div>
+</div>
+
+<div class="next-steps">
+  <h3>What to do next</h3>
+  <ol><li>Measure the same way every time.</li>
+<li>Track trends rather than obsessing over tiny changes.</li>
+<li>Use body fat alongside weight, waist, and performance.</li>
+<li>Expect some error from tape placement.</li>
+<li>Choose consistency over perfection.</li></ol>
+</div>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><h3>Is this as accurate as a DEXA scan?</h3><p>No. Tape methods are convenient estimates, not gold-standard measurements.</p></div>
+<div class="faq-item"><h3>Why is hip measurement only for women in this formula?</h3><p>That is how this commonly used version of the Navy method is structured.</p></div>
+<div class="faq-item"><h3>Can hydration affect this?</h3><p>It affects some body composition methods, but tape measurement error usually matters more here.</p></div>
+<div class="faq-item"><h3>Should I measure at the same time each time?</h3><p>Yes. Consistent conditions improve tracking.</p></div>
+<div class="faq-item"><h3>Why track body fat instead of scale weight only?</h3><p>It can give more context when weight alone is misleading.</p></div>
+<div class="faq-item"><h3>Can athletes still use it?</h3><p>Yes, but context and consistency matter.</p></div>
+</section>
+</main>
+<div id="toast"></div>
+<script src="/calc-utils.js"></script>
+<script>
+
+const CALCULATOR_ID = 'body-fat-percentage';
+const CALCULATOR_TITLE = 'Body Fat Percentage Calculator';
+const sex = document.getElementById('sex');
+const height = document.getElementById('height');
+const neck = document.getElementById('neck');
+const waist = document.getElementById('waist');
+const hip = document.getElementById('hip');
+let latestData = null;
+
+function calculateResults() {
+
+ const s=sex.value,h=parseFloat(height.value),n=parseFloat(neck.value),w=parseFloat(waist.value),hipVal=parseFloat(hip.value||0);
+ if(!isFinite(h)||h<=0){showValidationError(height,'Enter height');return;} else showValidationError(height,null);
+ if(!isFinite(n)||n<=0){showValidationError(neck,'Enter neck');return;} else showValidationError(neck,null);
+ if(!isFinite(w)||w<=0){showValidationError(waist,'Enter waist');return;} else showValidationError(waist,null);
+ let bf;
+ if(s==='male'){
+   bf = 86.010*Math.log10(w-n) - 70.041*Math.log10(h) + 36.76;
+ } else {
+   if(!isFinite(hipVal)||hipVal<=0){showValidationError(hip,'Enter hip measurement for women'); return;} else showValidationError(hip,null);
+   bf = 163.205*Math.log10(w + hipVal - n) - 97.684*Math.log10(h) - 78.387;
+ }
+ document.getElementById('result-bf').textContent = formatNumber(bf,1) + '%';
+ document.getElementById('result-lean').textContent = formatNumber(100-bf,1) + '%';
+ document.getElementById('result-note').textContent = 'Tape measurement methods are estimates, not scans.';
+
+    latestData = {sex:sex.value,height:height.value,neck:neck.value,waist:waist.value,hip:hip.value,bf:formatNumber(bf,1) + '%',lean:formatNumber(100-bf,1) + '%',note:'Tape measurement methods are estimates, not scans.'};
+    
+    document.getElementById('results').classList.add('active');
+}
+
+function handleSave() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    saveResults(CALCULATOR_ID, latestData);
+}
+
+function handleShare() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    shareResults(CALCULATOR_TITLE, latestData);
+}
+
+function handlePrint() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    printResults('results', CALCULATOR_TITLE);
+}
+
+document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
+window.addEventListener('DOMContentLoaded', function(){
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        if (saved.sex !== undefined) sex.value = saved.sex;
+if (saved.height !== undefined) height.value = saved.height;
+if (saved.neck !== undefined) neck.value = saved.neck;
+if (saved.waist !== undefined) waist.value = saved.waist;
+if (saved.hip !== undefined) hip.value = saved.hip;
+        latestData = saved;
+        document.getElementById('result-bf').textContent=saved.bf;document.getElementById('result-lean').textContent=saved.lean;document.getElementById('result-note').textContent=saved.note;
+        document.getElementById('results').classList.add('active');
+    }
+});
+
+</script>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+</footer>
 </body>
 </html>

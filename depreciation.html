@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Measure how much value your vehicle has lost in dollars, percentage, and average annual depreciation.">
+<meta name="keywords" content="car depreciation calculator, vehicle value loss calculator">
+<title>Car Depreciation Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Car Depreciation Calculator",
+  "description": "Measure how much value your vehicle has lost in dollars, percentage, and average annual depreciation.",
+  "url": "https://zaculators.com/9-automotive/depreciation.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Why do new cars depreciate so quickly?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "The steepest value drop often happens in the first few years as the vehicle moves from new to used."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Can maintenance slow depreciation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "Good maintenance and records can help resale value, even if they do not fully stop depreciation."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Should I use trade-in or private sale value?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "Use the value that matches your likely exit plan. Trade-in values are usually lower."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Do some brands hold value better?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Yes. Reliability, demand, and supply all affect resale strength."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Why calculate annual depreciation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "It helps compare the hidden cost of ownership across vehicles."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Can mileage accelerate depreciation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Absolutely. Higher-than-average mileage usually lowers value."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Car Depreciation Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Use this calculator to estimate how much vehicle value has disappeared while you were busy paying for it. Humanity loves that arrangement.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="purchasePrice">Purchase price</label><input id="purchasePrice" type="number" min="1" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="currentValue">Current value</label><input id="currentValue" type="number" min="0" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="yearsOwned">Years owned</label><input id="yearsOwned" type="number" min="0.1" step="0.1" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,69 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Vehicle depreciation estimate</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Value lost</label><div class="value" id="result-lost">—</div></div>
+<div class="result-item"><label>Percent depreciated</label><div class="value" id="result-percent">—</div></div>
+<div class="result-item"><label>Average annual depreciation</label><div class="value" id="result-annual">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/car-payment.html">Car Payment Calculator</a>
+<a href="/lease-vs-buy.html">Lease vs Buy Calculator</a>
+<a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<a href="/road-trip-cost.html">Road Trip Cost Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Check both trade-in and private-party values to see the realistic range.</li>
+<li>Use depreciation along with fuel and maintenance cost when comparing vehicles.</li>
+<li>Keep service records if you care about resale value.</li>
+<li>Avoid overpaying for add-ons that usually do not hold value.</li>
+<li>Review depreciation before deciding whether to keep or replace the car.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Why do new cars depreciate so quickly?</h3><p>The steepest value drop often happens in the first few years as the vehicle moves from new to used.</p></div>
+<div class="faq-item"><h3>Can maintenance slow depreciation?</h3><p>Good maintenance and records can help resale value, even if they do not fully stop depreciation.</p></div>
+<div class="faq-item"><h3>Should I use trade-in or private sale value?</h3><p>Use the value that matches your likely exit plan. Trade-in values are usually lower.</p></div>
+<div class="faq-item"><h3>Do some brands hold value better?</h3><p>Yes. Reliability, demand, and supply all affect resale strength.</p></div>
+<div class="faq-item"><h3>Why calculate annual depreciation?</h3><p>It helps compare the hidden cost of ownership across vehicles.</p></div>
+<div class="faq-item"><h3>Can mileage accelerate depreciation?</h3><p>Absolutely. Higher-than-average mileage usually lowers value.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'depreciation';
+const CALCULATOR_TITLE = 'Car Depreciation Calculator';
+const purchasePrice = document.getElementById('purchasePrice');
+const currentValue = document.getElementById('currentValue');
+const yearsOwned = document.getElementById('yearsOwned');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const price = parseFloat(purchasePrice.value), current = parseFloat(currentValue.value), years = parseFloat(yearsOwned.value);
+    if (!isFinite(price) || price <= 0) { showValidationError(purchasePrice,'Enter purchase price'); return; } else showValidationError(purchasePrice,null);
+    if (!isFinite(current) || current < 0 || current > price*2) { showValidationError(currentValue,'Enter a reasonable current value'); return; } else showValidationError(currentValue,null);
+    if (!isFinite(years) || years <= 0) { showValidationError(yearsOwned,'Enter years owned'); return; } else showValidationError(yearsOwned,null);
+    const lost = price - current;
+    const percent = lost / price;
+    const annual = lost / years;
+    document.getElementById('result-lost').textContent = formatCurrency(lost);
+    document.getElementById('result-percent').textContent = formatPercent(percent,1);
+    document.getElementById('result-annual').textContent = formatCurrency(annual) + '/yr';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {purchasePrice:purchasePrice.value,currentValue:currentValue.value,yearsOwned:yearsOwned.value,lost:formatCurrency(lost),percent:formatPercent(percent,1),annual:formatCurrency(annual) + '/yr'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +254,15 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.purchasePrice !== undefined) purchasePrice.value = saved.purchasePrice;
+if (saved.currentValue !== undefined) currentValue.value = saved.currentValue;
+if (saved.yearsOwned !== undefined) yearsOwned.value = saved.yearsOwned;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+        document.getElementById('result-lost').textContent = saved.lost;
+        document.getElementById('result-percent').textContent = saved.percent;
+        document.getElementById('result-annual').textContent = saved.annual;
+
         document.getElementById('results').classList.add('active');
     }
 });

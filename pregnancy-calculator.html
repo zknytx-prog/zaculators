@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Estimate weeks pregnant and days remaining from an expected due date.">
+<meta name="keywords" content="pregnancy week calculator, weeks pregnant calculator">
+<title>Pregnancy Week Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Pregnancy Week Calculator",
+  "description": "Estimate weeks pregnant and days remaining from an expected due date.",
+  "url": "https://zaculators.com/7-fitness/pregnancy-calculator.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Is this a medical dating tool?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "No. It only works from a due date you already have and is for planning only."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Can due dates change?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "Yes. Providers may adjust the date based on clinical information."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Should I rely on this for care decisions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "No. Use clinical guidance for anything medical."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Why use due date instead of LMP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Because some people already know their due date and only want a quick progress estimate."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Can I use this after the due date passes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Yes, but the note will reflect that it has passed."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Is every pregnancy exactly 40 weeks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "No. It is a benchmark, not a guarantee."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
+  <h1>Pregnancy Week Calculator</h1>
   <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">A simple planning calculator based on an already known due date.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="dueDate">Estimated due date</label><input id="dueDate" type="date" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,11 +168,11 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Pregnancy timing</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Days until due date</label><div class="value" id="result-days">—</div></div>
+<div class="result-item"><label>Estimated pregnancy progress</label><div class="value" id="result-weeks">—</div></div>
+<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
     </div>
   </div>
   <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
@@ -181,49 +181,53 @@
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/baby-due-date.html">Baby Due Date Calculator</a>
+<a href="/days-until.html">Days Until Calculator</a>
+<a href="/sleep-cycle.html">Sleep Cycle Calculator</a>
+<a href="/anniversary-calculator.html">Anniversary Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Use the estimate for planning only.</li>
+<li>Follow your clinician for real prenatal guidance.</li>
+<li>Keep appointments and notes in a real calendar too.</li>
+<li>Share dates carefully if you want privacy.</li>
+<li>Do not let apps replace proper care.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Is this a medical dating tool?</h3><p>No. It only works from a due date you already have and is for planning only.</p></div>
+<div class="faq-item"><h3>Can due dates change?</h3><p>Yes. Providers may adjust the date based on clinical information.</p></div>
+<div class="faq-item"><h3>Should I rely on this for care decisions?</h3><p>No. Use clinical guidance for anything medical.</p></div>
+<div class="faq-item"><h3>Why use due date instead of LMP?</h3><p>Because some people already know their due date and only want a quick progress estimate.</p></div>
+<div class="faq-item"><h3>Can I use this after the due date passes?</h3><p>Yes, but the note will reflect that it has passed.</p></div>
+<div class="faq-item"><h3>Is every pregnancy exactly 40 weeks?</h3><p>No. It is a benchmark, not a guarantee.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'pregnancy-calculator';
+const CALCULATOR_TITLE = 'Pregnancy Week Calculator';
+const dueDate = document.getElementById('dueDate');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+ if(!dueDate.value){showValidationError(dueDate,'Choose a due date');return;} else showValidationError(dueDate,null);
+ const due = new Date(dueDate.value + 'T00:00:00');
+ const today = new Date(); today.setHours(0,0,0,0);
+ const daysLeft = Math.round((due - today)/86400000);
+ const weeksLeft = daysLeft/7;
+ const weeksPreg = 40 - weeksLeft;
+ document.getElementById('result-days').textContent = daysLeft + ' days';
+ document.getElementById('result-weeks').textContent = formatNumber(weeksPreg,1) + ' weeks pregnant';
+ document.getElementById('result-note').textContent = daysLeft >= 0 ? 'Estimate until due date' : 'Due date has passed';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {dueDate:dueDate.value,days:daysLeft + ' days',weeks:formatNumber(weeksPreg,1) + ' weeks pregnant',note:(daysLeft >= 0 ? 'Estimate until due date' : 'Due date has passed')};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +251,9 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.dueDate !== undefined) dueDate.value = saved.dueDate;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        document.getElementById('result-days').textContent=saved.days;document.getElementById('result-weeks').textContent=saved.weeks;document.getElementById('result-note').textContent=saved.note;
         document.getElementById('results').classList.add('active');
     }
 });

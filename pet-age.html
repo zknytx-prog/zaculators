@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Convert a dog or cat age into a rough human-age equivalent.">
+<meta name="keywords" content="pet age calculator, dog years calculator, cat years calculator">
+<title>Pet Age Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Pet Age Calculator",
+  "description": "Convert a dog or cat age into a rough human-age equivalent.",
+  "url": "https://zaculators.com/8-personal/pet-age.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "Is one dog year really seven human years?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "Not reliably. Modern estimates vary by species, breed, and age stage."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "Why are early years weighted more?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "Dogs and cats mature faster in the first couple of years than the old myth suggests."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Does breed matter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "Yes. Especially for dogs, breed size can affect lifespan and aging pattern."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Can I use this for other animals?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "No. This version is only for cats and dogs."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Why show a life stage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "It helps translate the rough age into something more practical for care planning."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Is this medically useful?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Only as a fun estimate, not as veterinary guidance."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Pet Age Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">Use this calculator for a rough dog or cat age conversion. It is not biology perfection, but it beats the old one-size-fits-all myth.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="petYears">Pet age in years</label><input id="petYears" type="number" min="0.1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="petType">Pet type</label><select id="petType"><option value="dog">Dog</option><option value="cat">Cat</option></select><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,67 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Pet age conversion</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Human-age equivalent</label><div class="value" id="result-human">—</div></div>
+<div class="result-item"><label>Life stage</label><div class="value" id="result-stage">—</div></div>
+<div class="result-item"><label>Quick note</label><div class="value" id="result-note">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator is for general planning or entertainment purposes. Dates, cycles, and reminder estimates can vary, so use your own judgment for important decisions.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/sleep-cycle.html">Sleep Cycle Calculator</a>
+<a href="/days-until.html">Days Until Calculator</a>
+<a href="/life-path-number.html">Life Path Number Calculator</a>
+<a href="/age-difference.html">Age Difference Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Use the result as a rough comparison, not a diagnosis tool.</li>
+<li>Older pets may need different diet and mobility support.</li>
+<li>Ask your vet about age-specific care recommendations.</li>
+<li>Save the result if you manage multiple pets.</li>
+<li>Do not tell the pet. They are dealing with enough already.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>Is one dog year really seven human years?</h3><p>Not reliably. Modern estimates vary by species, breed, and age stage.</p></div>
+<div class="faq-item"><h3>Why are early years weighted more?</h3><p>Dogs and cats mature faster in the first couple of years than the old myth suggests.</p></div>
+<div class="faq-item"><h3>Does breed matter?</h3><p>Yes. Especially for dogs, breed size can affect lifespan and aging pattern.</p></div>
+<div class="faq-item"><h3>Can I use this for other animals?</h3><p>No. This version is only for cats and dogs.</p></div>
+<div class="faq-item"><h3>Why show a life stage?</h3><p>It helps translate the rough age into something more practical for care planning.</p></div>
+<div class="faq-item"><h3>Is this medically useful?</h3><p>Only as a fun estimate, not as veterinary guidance.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'pet-age';
+const CALCULATOR_TITLE = 'Pet Age Calculator';
+const petYears = document.getElementById('petYears');
+const petType = document.getElementById('petType');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    const yrs = parseFloat(petYears.value);
+    if (!isFinite(yrs) || yrs <= 0) { showValidationError(petYears,'Enter pet age above 0'); return; } else showValidationError(petYears,null);
+    const type = petType.value;
+    let human;
+    if (type === 'dog') human = yrs <= 2 ? yrs * 10.5 : 21 + (yrs - 2) * 4;
+    else human = yrs <= 2 ? yrs * 12.5 : 25 + (yrs - 2) * 4;
+    document.getElementById('result-human').textContent = formatNumber(human,1) + ' human years';
+    document.getElementById('result-stage').textContent = human < 18 ? 'Young' : human < 50 ? 'Adult' : 'Senior';
+    document.getElementById('result-note').textContent = 'Breed and health can change aging speed.';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {petYears:petYears.value,petType:petType.value,human:formatNumber(human,1) + ' human years',stage:(human < 18 ? 'Young' : human < 50 ? 'Adult' : 'Senior'),note:'Breed and health can change aging speed.'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +252,14 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.petYears !== undefined) petYears.value = saved.petYears;
+if (saved.petType !== undefined) petType.value = saved.petType;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+document.getElementById('result-human').textContent = saved.human;
+document.getElementById('result-stage').textContent = saved.stage;
+document.getElementById('result-note').textContent = saved.note;
+
         document.getElementById('results').classList.add('active');
     }
 });

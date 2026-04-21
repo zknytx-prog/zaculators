@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investment Return (ROI) Calculator | Utility Calculator Suite</title>
+  <meta name="description" content="Calculate return on investment. See profit, percentage return, and annualized ROI.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="color-scheme" content="light only">
+  <link rel="canonical" href="investment-return.html">
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --panel-alt: #eef4ff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #cbd5e1;
+      --line-strong: #94a3b8;
+      --primary: #0f4c81;
+      --primary-strong: #0b3b64;
+      --success-bg: #e8f7ef;
+      --success-text: #0f5132;
+      --danger-bg: #fff1f2;
+      --danger-text: #9f1239;
+      --shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --focus: 0 0 0 3px rgba(15, 76, 129, 0.22);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+    a { color: var(--primary); text-underline-offset: 2px; }
+    a:hover { color: var(--primary-strong); }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+      outline: none;
+      box-shadow: var(--focus);
+      border-radius: 12px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.75rem 1rem;
+      background: #fff;
+      z-index: 1000;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .site-header {
+      background: #0b1220;
+      color: #fff;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .brand-badge {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      color: #08111f;
+      font-weight: 900;
+    }
+    .header-nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .header-nav a {
+      color: #dbeafe;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: 1rem;
+      margin: 1.25rem 0 1rem;
+    }
+    .hero-card, .aside-card, .panel {
+      background: var(--panel);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card {
+      padding: 1.5rem;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: #e0ecff;
+      color: var(--primary-strong);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0.85rem 0 0.75rem;
+      font-size: clamp(1.9rem, 2.6vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 70ch;
+      margin: 0 0 1rem;
+    }
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 1rem 0 0;
+      list-style: none;
+    }
+    .hero-points li {
+      background: #f8fbff;
+      border: 1px solid #dbeafe;
+      color: #16324f;
+      padding: 0.7rem 0.9rem;
+      border-radius: 14px;
+      font-weight: 600;
+    }
+    .aside-card {
+      padding: 1.25rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+    .aside-card h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+    .trust-list {
+      padding-left: 1rem;
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 1rem;
+      align-items: start;
+    }
+    .panel {
+      padding: 1.25rem;
+    }
+    .panel h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    .fields {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .field {
+      min-width: 0;
+    }
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+    .input-shell {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 3.2rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 0.85rem;
+    }
+    .input-shell:focus-within {
+      border-color: var(--primary);
+      box-shadow: var(--focus);
+    }
+    .input-affix {
+      color: var(--muted);
+      font-weight: 700;
+    }
+    input, select {
+      width: 100%;
+      min-height: 3rem;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      padding: 0;
+    }
+    .field-hint {
+      margin: 0.45rem 0 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 0.9rem 1.15rem;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-strong);
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: var(--text);
+    }
+
+    .error {
+      display: none;
+      padding: 0.95rem 1rem;
+      background: var(--danger-bg);
+      color: var(--danger-text);
+      border: 1px solid #fecdd3;
+      border-radius: 14px;
+      font-weight: 700;
+    }
+    .error.active { display: block; }
+
+    .results {
+      display: grid;
+      gap: 1rem;
+    }
+    .summary-box {
+      padding: 1rem 1rem 1.05rem;
+      border-radius: 16px;
+      background: var(--panel-alt);
+      border: 1px solid #dbeafe;
+    }
+    .summary-box h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+    .summary-box p {
+      margin: 0;
+      color: #16324f;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+    .result-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem;
+      min-height: 6.5rem;
+    }
+    .result-card .k {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+    .result-card .v {
+      display: block;
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      line-height: 1.2;
+      font-weight: 900;
+      color: var(--text);
+      overflow-wrap: anywhere;
+    }
+    .insights {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .insights caption {
+      text-align: left;
+      font-weight: 800;
+      padding: 0.9rem 1rem 0;
+    }
+    .insights th, .insights td {
+      padding: 0.8rem 1rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    .insights th {
+      width: 45%;
+      color: var(--muted);
+      font-weight: 700;
+      background: #f8fafc;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+    .data-table caption {
+      text-align: left;
+      font-weight: 800;
+      padding: 0.95rem 1rem;
+    }
+    .data-table th, .data-table td {
+      padding: 0.8rem 1rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .data-table thead th {
+      background: #f8fafc;
+    }
+
+    .stack {
+      display: grid;
+      gap: 1rem;
+    }
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 0.95rem 1rem;
+      background: #fff;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    details p {
+      margin: 0.8rem 0 0;
+      color: var(--muted);
+    }
+    .next-steps {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .next-steps li + li {
+      margin-top: 0.55rem;
+    }
+    .disclaimer {
+      font-size: 0.92rem;
+      color: var(--muted);
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+    }
+    .related {
+      padding-left: 1.15rem;
+      margin: 0;
+    }
+    .related li + li {
+      margin-top: 0.45rem;
+    }
+
+    .site-footer {
+      max-width: var(--max);
+      margin: 1rem auto 0;
+      padding: 0 1.25rem 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .footer-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(148,163,184,0.35);
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 900px) {
+      .hero, .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .page {
+        padding: 0.85rem;
+      }
+      .hero-card, .aside-card, .panel {
+        padding: 1rem;
+      }
+      .fields, .results-grid {
+        grid-template-columns: 1fr;
+      }
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      button {
+        width: 100%;
+      }
+      .header-inner {
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Investment Return (ROI) Calculator","description":"Calculate return on investment. See profit, percentage return, and annualized ROI.","isPartOf":{"@type":"WebSite","name":"Utility Calculator Suite"},"publisher":{"@type":"Organization","name":"Utility Calculator Suite"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good ROI?","acceptedAnswer":{"@type":"Answer","text":"A good ROI depends on risk, time horizon, and what you compare it against. A strong return in one asset class may be average in another."}},{"@type":"Question","name":"How is ROI calculated?","acceptedAnswer":{"@type":"Answer","text":"Basic ROI measures profit divided by the original investment. It is useful for a fast comparison, though it does not capture volatility or risk."}},{"@type":"Question","name":"Annualized vs total return?","acceptedAnswer":{"@type":"Answer","text":"Total return looks at the whole gain over the entire holding period. Annualized return converts that result into an average yearly growth rate."}},{"@type":"Question","name":"How should I compare investments?","acceptedAnswer":{"@type":"Answer","text":"Use the same time frame, include fees and taxes where possible, and compare to an appropriate benchmark rather than evaluating performance in isolation."}},{"@type":"Question","name":"Do fees matter?","acceptedAnswer":{"@type":"Answer","text":"Fees reduce net return directly. Even small annual fees can compound into a large drag over time."}},{"@type":"Question","name":"What about taxes?","acceptedAnswer":{"@type":"Answer","text":"Tax treatment can change the real return you keep. Different accounts and assets may have different tax consequences."}}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to calculator</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Utility Calculator Suite home">
+        <span class="brand-badge" aria-hidden="true">∑</span>
+        <span>Utility Calculator Suite</span>
+      </a>
+      <nav class="header-nav" aria-label="Secondary">
+        <a href="#calculator">Calculator</a>
+        <a href="#faq">FAQ</a>
+        <a href="#related">Related tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-card">
+        <div class="eyebrow">Batch 1 Financial</div>
+        <h1 id="page-title">Investment Return (ROI) Calculator</h1>
+        <p class="lead">Compare starting value, ending value, and time held to estimate total return, profit, and annualized performance.</p>
+        <ul class="hero-points" aria-label="Page highlights">
+          <li>Zero dependencies</li>
+          <li>Accessible form structure</li>
+          <li>Mobile responsive layout</li>
+          <li>Validation and edge-case handling</li>
+        </ul>
+      </div>
+      <aside class="aside-card" aria-labelledby="trust-title">
+        <h2 id="trust-title">What this page does</h2>
+        <p>Use the form to estimate outcomes quickly, then read the summary and supporting figures below.</p>
+        <ul class="trust-list">
+          <li>Client-side calculation only</li>
+          <li>No external libraries</li>
+          <li>Helpful error states</li>
+          <li>FAQ + next-step guidance built in</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="layout">
+      <section class="panel" id="calculator" aria-labelledby="calc-title">
+        <h2 id="calc-title">Calculator</h2>
+        <div class="error" id="errorBox" role="alert" aria-live="assertive"></div>
+        <form id="calculatorForm" novalidate>
+          <div class="fields">
+            <div class="field">
+        <label for="field-initialInvestment">Initial investment</label>
+        <div class="input-shell">
+          <span class="input-affix" aria-hidden="true">$</span>
+          <input id="field-initialInvestment" name="initialInvestment" aria-describedby="field-initialInvestment-hint" required type="number" inputmode="decimal" min="0.01"  step="0.01" value="10000">
+          
+        </div>
+        <p class="field-hint" id="field-initialInvestment-hint">Amount originally invested.</p>
+      </div>
+<div class="field">
+        <label for="field-finalValue">Final value</label>
+        <div class="input-shell">
+          <span class="input-affix" aria-hidden="true">$</span>
+          <input id="field-finalValue" name="finalValue" aria-describedby="field-finalValue-hint" required type="number" inputmode="decimal" min="0"  step="0.01" value="14500">
+          
+        </div>
+        <p class="field-hint" id="field-finalValue-hint">Current or ending value of the investment.</p>
+      </div>
+<div class="field">
+        <label for="field-years">Time period</label>
+        <div class="input-shell">
+          
+          <input id="field-years" name="years" aria-describedby="field-years-hint" required type="number" inputmode="decimal" min="0.01"  step="0.01" value="3">
+          
+        </div>
+        <p class="field-hint" id="field-years-hint">Length of time held in years.</p>
+      </div>
+          </div>
+          <div class="actions">
+            <button class="btn-primary" type="submit">Calculate</button>
+            <button class="btn-secondary" type="reset">Reset defaults</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel">
+        <h2>How to use it</h2>
+        <ol>
+          <li>Enter realistic values in each field.</li>
+          <li>Select the right mode where applicable.</li>
+          <li>Press Calculate to refresh the result.</li>
+        </ol>
+        <p class="disclaimer"><strong>Note:</strong> This calculator is for education and planning. It is not financial, tax, legal, or investment advice.</p>
+      </aside>
+    </section>
+
+    <section class="panel" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <div id="results" class="results" aria-live="polite">
+        <div class="summary-box">
+          <h3>Ready to calculate</h3>
+          <p>Enter your figures and press Calculate. Results update instantly in your browser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <section class="panel stack" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Frequently asked questions</h2>
+        <details><summary>What is a good ROI?</summary><p>A good ROI depends on risk, time horizon, and what you compare it against. A strong return in one asset class may be average in another.</p></details>
+<details><summary>How is ROI calculated?</summary><p>Basic ROI measures profit divided by the original investment. It is useful for a fast comparison, though it does not capture volatility or risk.</p></details>
+<details><summary>Annualized vs total return?</summary><p>Total return looks at the whole gain over the entire holding period. Annualized return converts that result into an average yearly growth rate.</p></details>
+<details><summary>How should I compare investments?</summary><p>Use the same time frame, include fees and taxes where possible, and compare to an appropriate benchmark rather than evaluating performance in isolation.</p></details>
+<details><summary>Do fees matter?</summary><p>Fees reduce net return directly. Even small annual fees can compound into a large drag over time.</p></details>
+<details><summary>What about taxes?</summary><p>Tax treatment can change the real return you keep. Different accounts and assets may have different tax consequences.</p></details>
+      </section>
+
+      <aside class="panel stack">
+        <section aria-labelledby="next-title">
+          <h2 id="next-title">Next steps</h2>
+          <ol class="next-steps">
+            <li>Track investment performance quarterly.</li>
+<li>Compare returns to a relevant benchmark.</li>
+<li>Review fees and expenses.</li>
+<li>Rebalance when allocations drift.</li>
+<li>Assess tax efficiency once a year.</li>
+          </ol>
+        </section>
+        <section id="related" aria-labelledby="related-title">
+          <h2 id="related-title">Related calculators</h2>
+          <ul class="related">
+            <li><a href="retirement.html">Retirement</a></li><li><a href="loan.html">Loan</a></li><li><a href="debt-payoff.html">Debt Payoff</a></li><li><a href="apr.html">Apr</a></li><li><a href="profit-margin.html">Profit Margin</a></li><li><a href="break-even.html">Break Even</a></li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-card">
+      <strong>Investment Return (ROI) Calculator</strong><br>
+      <span>Calculate return on investment. See profit, percentage return, and annualized ROI.</span>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('calculatorForm');
+    const resultsEl = document.getElementById('results');
+    const errorBox = document.getElementById('errorBox');
+
+    const currencyFormatter = new Intl.NumberFormat(undefined, {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 2
+    });
+    const numberFormatter = new Intl.NumberFormat(undefined, {
+      maximumFractionDigits: 2
+    });
+
+    function formatCurrency(value) {
+      return currencyFormatter.format(Number.isFinite(value) ? value : 0);
+    }
+    function formatNumber(value, digits = 2) {
+      return new Intl.NumberFormat(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: digits
+      }).format(Number.isFinite(value) ? value : 0);
+    }
+    function formatPercent(value) {
+      return `${formatNumber(value, 2)}%`;
+    }
+    function setError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.add('active');
+    }
+    function clearError() {
+      errorBox.textContent = '';
+      errorBox.classList.remove('active');
+    }
+    function readFormData() {
+      const raw = new FormData(form);
+      const data = {};
+      for (const [key, value] of raw.entries()) {
+        if (value === '' || value === null) {
+          throw new Error('Please complete all fields.');
+        }
+        const element = form.elements[key];
+        if (element && element.tagName === 'SELECT') {
+          data[key] = value;
+        } else {
+          const numeric = Number(value);
+          if (!Number.isFinite(numeric)) throw new Error('Please enter valid numbers in every field.');
+          if (numeric < 0 && key !== 'value1' && key !== 'value2') throw new Error('Negative values are not allowed for this calculator.');
+          data[key] = numeric;
+        }
+      }
+      return data;
+    }
+
+    function renderResults(payload) {
+      const cards = payload.cards.map(card => `
+        <article class="result-card">
+          <span class="k">${escapeHtml(card.label)}</span>
+          <span class="v">${escapeHtml(String(card.value))}</span>
+        </article>
+      `).join('');
+
+      const insights = payload.insights ? `
+        <table class="insights">
+          <caption>Supporting details</caption>
+          <tbody>
+            ${payload.insights.map(row => `
+              <tr>
+                <th scope="row">${escapeHtml(String(row[0]))}</th>
+                <td>${escapeHtml(String(row[1]))}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      ` : '';
+
+      const table = payload.table ? `
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>${escapeHtml(payload.table.caption)}</caption>
+            <thead>
+              <tr>
+                ${payload.table.headers.map(h => `<th scope="col">${escapeHtml(h)}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${payload.table.rows.map(row => `
+                <tr>${row.map(cell => `<td>${escapeHtml(String(cell))}</td>`).join('')}</tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      ` : '';
+
+      resultsEl.innerHTML = `
+        <div class="summary-box">
+          <h3>Calculation summary</h3>
+          <p>${escapeHtml(payload.summary)}</p>
+        </div>
+        <div class="results-grid">${cards}</div>
+        ${insights}
+        ${table}
+      `;
+    }
+
+    function escapeHtml(value) {
+      return value
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function calculate(data) {
+      if (data.years <= 0) throw new Error('Time period must be greater than zero.');
+const profit = data.finalValue - data.initialInvestment;
+const totalRoi = ((data.finalValue - data.initialInvestment) / data.initialInvestment) * 100;
+const annualized = (Math.pow(data.finalValue / data.initialInvestment, 1 / data.years) - 1) * 100;
+const multiple = data.finalValue / data.initialInvestment;
+return {
+  cards: [
+    {label:'Profit', value: formatCurrency(profit)},
+    {label:'Total ROI', value: formatPercent(totalRoi)},
+    {label:'Annualized ROI', value: formatPercent(annualized)},
+    {label:'Ending value', value: formatCurrency(data.finalValue)},
+    {label:'Multiple on money', value: `${formatNumber(multiple, 2)}x`}
+  ],
+  summary: `This investment produced ${formatCurrency(profit)} in profit. Total ROI is ${formatPercent(totalRoi)}, which equals an annualized return of about ${formatPercent(annualized)} over ${formatNumber(data.years, 2)} years.`,
+  insights: [
+    ['Initial investment', formatCurrency(data.initialInvestment)],
+    ['Final value', formatCurrency(data.finalValue)],
+    ['Holding period', `${formatNumber(data.years, 2)} years`],
+    ['Growth multiple', `${formatNumber(multiple, 2)}x`]
+  ]
+};
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      clearError();
+      if (!form.reportValidity()) return;
+      try {
+        const data = readFormData();
+        const payload = calculate(data);
+        renderResults(payload);
+      } catch (error) {
+        setError(error && error.message ? error.message : 'Something went wrong. Please check the inputs and try again.');
+      }
+    });
+
+    form.addEventListener('reset', function () {
+      requestAnimationFrame(() => {
+        clearError();
+        try {
+          const payload = calculate(readFormData());
+          renderResults(payload);
+        } catch (error) {
+          resultsEl.innerHTML = `
+            <div class="summary-box">
+              <h3>Ready to calculate</h3>
+              <p>Enter your figures and press Calculate. Results update instantly in your browser.</p>
+            </div>
+          `;
+        }
+      });
+    });
+
+    window.addEventListener('load', function () {
+      try {
+        const payload = calculate(readFormData());
+        renderResults(payload);
+      } catch (error) {
+        setError(error && error.message ? error.message : 'Please review the values entered.');
+      }
+    });
+  </script>
+</body>
+</html>

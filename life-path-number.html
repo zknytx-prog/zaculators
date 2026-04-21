@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate maximum heart rate and common training zones from age.">
-<meta name="keywords" content="max heart rate calculator, target heart rate zones">
-<title>Max Heart Rate Calculator | Zaculators</title>
+<meta name="description" content="Calculate a numerology life path number from a birth date.">
+<meta name="keywords" content="life path number calculator, numerology calculator">
+<title>Life Path Number Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Max Heart Rate Calculator",
-  "description": "Estimate maximum heart rate and common training zones from age.",
-  "url": "https://zaculators.com/7-fitness/max-heart-rate.html",
+  "name": "Life Path Number Calculator",
+  "description": "Calculate a numerology life path number from a birth date.",
+  "url": "https://zaculators.com/8-personal/life-path-number.html",
   "applicationCategory": "UtilityApplication",
   "offers": {
     "@type": "Offer",
@@ -33,50 +33,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is max heart rate exact from age?",
+      "name": "How is the number calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Age-based formulas are estimates and individual response varies a lot."
+        "text": "The digits of the birth date are added and reduced until a single digit or a master number remains."
       }
     },
     {
       "@type": "Question",
-      "name": "Why use training zones?",
+      "name": "What are master numbers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They help structure cardio intensity."
+        "text": "In numerology, 11, 22, and 33 are often treated specially instead of reduced further."
       }
     },
     {
       "@type": "Question",
-      "name": "Can medications affect heart rate?",
+      "name": "Is this scientific?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. That is one reason formulas are not perfect."
+        "text": "No. It is a numerology tool for entertainment or personal reflection."
       }
     },
     {
       "@type": "Question",
-      "name": "Should beginners train at max heart rate?",
+      "name": "Can I use any date format?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually no. Most training happens well below max."
+        "text": "Use the date picker so the tool receives a valid date automatically."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this safe for everyone?",
+      "name": "Why do people use this?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anyone with health concerns should follow medical guidance before intense exercise."
+        "text": "Usually for curiosity, symbolism, or self-reflection."
       }
     },
     {
       "@type": "Question",
-      "name": "Can fitness level change max heart rate?",
+      "name": "Should I make real decisions with it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It can affect performance more than it affects the age-based estimate."
+        "text": "Probably not. That path has a poor historical success rate."
       }
     }
   ]
@@ -146,20 +146,20 @@
 </head>
 <body>
 <header>
-  <h1>Max Heart Rate Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
+  <h1>Life Path Number Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
 </header>
 <main>
 <section class="calculator-section">
   <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate max heart rate and broad training zones. It is a guide, not a lab test.</p>
+  <p class="intro">A numerology-style life path calculator for curiosity, reflection, or plain human superstition with better formatting.</p>
   <div class="trust-badges">
     <span><span class="badge-icon">✓</span> Accurate formulas</span>
     <span><span class="badge-icon">✓</span> Save and reload</span>
     <span><span class="badge-icon">✓</span> Free to use</span>
   </div>
   <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
+    <div class="form-row"><div class="form-group"><label for="birthDate">Birth date</label><input id="birthDate" type="date" required><div class="error-message"></div></div></div>
     <div class="button-group">
       <button type="submit" class="btn-primary">Calculate</button>
       <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
@@ -168,62 +168,66 @@
     </div>
   </form>
   <div id="results" class="results-section">
-    <h3>Heart rate estimate</h3>
+    <h3>Numerology result</h3>
     <div class="result-grid">
-      <div class="result-item"><label>Estimated max heart rate</label><div class="value" id="result-max">—</div></div>
-<div class="result-item"><label>Easy zone</label><div class="value" id="result-zone1">—</div></div>
-<div class="result-item"><label>Moderate to hard zone</label><div class="value" id="result-zone2">—</div></div>
+      <div class="result-item"><label>Life path number</label><div class="value" id="result-number">—</div></div>
+<div class="result-item"><label>Number type</label><div class="value" id="result-type">—</div></div>
+<div class="result-item"><label>Note</label><div class="value" id="result-note">—</div></div>
     </div>
   </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+  <div class="disclaimer">This calculator is for general planning or entertainment purposes. Dates, cycles, and reminder estimates can vary, so use your own judgment for important decisions.</div>
   <div class="updated">Last updated: April 19, 2026</div>
 </section>
 
 <div class="related-calculators">
   <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/vo2-max.html">VO2 Max Calculator</a>
-<a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/one-rep-max.html">One Rep Max Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
+  <div class="related-links"><a href="/zodiac-sign.html">Zodiac Sign Calculator</a>
+<a href="/pet-age.html">Pet Age Calculator</a>
+<a href="/age-difference.html">Age Difference Calculator</a>
+<a href="/days-until.html">Days Until Calculator</a></div>
 </div>
 
 <div class="next-steps">
   <h3>What to do next</h3>
-  <ol><li>Use zones as a general guide during cardio.</li>
-<li>If you feel unwell, stop and seek medical guidance.</li>
-<li>Do not use this as a hard medical threshold.</li>
-<li>Consider perceived effort along with heart rate.</li>
-<li>Re-check if training goals change.</li></ol>
+  <ol><li>Treat the result as symbolic, not factual.</li>
+<li>Use the save button if you want to compare several dates.</li>
+<li>Share it only if the other person is into this kind of thing.</li>
+<li>Keep perspective. A number is still a number.</li>
+<li>Move on to something measurable afterward.</li></ol>
 </div>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is max heart rate exact from age?</h3><p>No. Age-based formulas are estimates and individual response varies a lot.</p></div>
-<div class="faq-item"><h3>Why use training zones?</h3><p>They help structure cardio intensity.</p></div>
-<div class="faq-item"><h3>Can medications affect heart rate?</h3><p>Yes. That is one reason formulas are not perfect.</p></div>
-<div class="faq-item"><h3>Should beginners train at max heart rate?</h3><p>Usually no. Most training happens well below max.</p></div>
-<div class="faq-item"><h3>Is this safe for everyone?</h3><p>Anyone with health concerns should follow medical guidance before intense exercise.</p></div>
-<div class="faq-item"><h3>Can fitness level change max heart rate?</h3><p>It can affect performance more than it affects the age-based estimate.</p></div>
+  <div class="faq-item"><h3>How is the number calculated?</h3><p>The digits of the birth date are added and reduced until a single digit or a master number remains.</p></div>
+<div class="faq-item"><h3>What are master numbers?</h3><p>In numerology, 11, 22, and 33 are often treated specially instead of reduced further.</p></div>
+<div class="faq-item"><h3>Is this scientific?</h3><p>No. It is a numerology tool for entertainment or personal reflection.</p></div>
+<div class="faq-item"><h3>Can I use any date format?</h3><p>Use the date picker so the tool receives a valid date automatically.</p></div>
+<div class="faq-item"><h3>Why do people use this?</h3><p>Usually for curiosity, symbolism, or self-reflection.</p></div>
+<div class="faq-item"><h3>Should I make real decisions with it?</h3><p>Probably not. That path has a poor historical success rate.</p></div>
 </section>
 </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
 
-const CALCULATOR_ID = 'max-heart-rate';
-const CALCULATOR_TITLE = 'Max Heart Rate Calculator';
-const age = document.getElementById('age');
+const CALCULATOR_ID = 'life-path-number';
+const CALCULATOR_TITLE = 'Life Path Number Calculator';
+const birthDate = document.getElementById('birthDate');
 let latestData = null;
 
 function calculateResults() {
 
- const a=parseInt(age.value); if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const maxHr = 208 - 0.7*a;
- document.getElementById('result-max').textContent = formatNumber(maxHr,0) + ' bpm';
- document.getElementById('result-zone1').textContent = formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm';
- document.getElementById('result-zone2').textContent = formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm';
+    if (!birthDate.value) { showValidationError(birthDate,'Choose a date'); return; } else showValidationError(birthDate,null);
+    const digits = birthDate.value.replace(/-/g,'').split('').map(Number);
+    let sum = digits.reduce((a,b)=>a+b,0);
+    while (sum > 9 && ![11,22,33].includes(sum)) {
+        sum = String(sum).split('').map(Number).reduce((a,b)=>a+b,0);
+    }
+    document.getElementById('result-number').textContent = sum;
+    document.getElementById('result-type').textContent = [11,22,33].includes(sum) ? 'Master number' : 'Reduced number';
+    document.getElementById('result-note').textContent = 'Numerology is for entertainment and reflection only.';
 
-    latestData = {age:age.value,max:formatNumber(maxHr,0) + ' bpm',z1:formatNumber(maxHr*0.6,0) + ' to ' + formatNumber(maxHr*0.7,0) + ' bpm',z2:formatNumber(maxHr*0.7,0) + ' to ' + formatNumber(maxHr*0.85,0) + ' bpm'};
+    latestData = {birthDate:birthDate.value,number:sum,type:([11,22,33].includes(sum) ? 'Master number' : 'Reduced number'),note:'Numerology is for entertainment and reflection only.'};
     
     document.getElementById('results').classList.add('active');
 }
@@ -247,9 +251,13 @@ document.getElementById('calcForm').addEventListener('submit', function(e) { e.p
 window.addEventListener('DOMContentLoaded', function(){
     const saved = loadResults(CALCULATOR_ID);
     if (saved) {
-        if (saved.age !== undefined) age.value = saved.age;
+        if (saved.birthDate !== undefined) birthDate.value = saved.birthDate;
         latestData = saved;
-        document.getElementById('result-max').textContent=saved.max;document.getElementById('result-zone1').textContent=saved.z1;document.getElementById('result-zone2').textContent=saved.z2;
+        
+document.getElementById('result-number').textContent = saved.number;
+document.getElementById('result-type').textContent = saved.type;
+document.getElementById('result-note').textContent = saved.note;
+
         document.getElementById('results').classList.add('active');
     }
 });

@@ -1,1 +1,279 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0;--success:#16a34a;--error:#dc2626;--warning:#f59e0b}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}header{background:white;border-bottom:1px solid var(--border);padding:1.5rem;text-align:center}h1{font-size:1.8rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}@media(max-width:640px){.form-row{grid-template-columns:1fr}}.form-group{margin-bottom:1.5rem}label{display:block;font-weight:500;margin-bottom:0.5rem}input,select{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;font-size:1rem}input:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}.buttons{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}@media(max-width:640px){.buttons{grid-template-columns:1fr 1fr}}button{padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:500;cursor:pointer;transition:all 0.2s}.btn-primary{background:var(--primary);color:white}.btn-primary:hover{background:#1d4ed8}.btn-secondary{background:#f1f5f9;color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background:#e2e8f0}.results{background:#f0fdf4;border-left:4px solid var(--success);padding:1.5rem;border-radius:6px;margin-top:2rem;display:none;border-radius:6px}.results.active{display:block}.result-item{margin-bottom:1.5rem}.result-item label{font-size:0.9rem;color:#64748b;margin-bottom:0.25rem}.result-item .value{font-size:1.5rem;font-weight:600;color:var(--success)}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid var(--warning);padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps h3{font-size:1.1rem;margin-bottom:1rem;color:#92400e}.next-steps ol{padding-left:1.5rem;color:#92400e}.next-steps li{margin-bottom:0.75rem;line-height:1.6}.disclaimer{background:#fee2e2;border-left:4px solid var(--error);padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related h3{font-size:1rem;margin-bottom:1rem;color:var(--primary)}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center;transition:all 0.2s}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}.updated{font-size:0.8rem;color:#94a3b8;margin-top:1rem}.toast{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:white;padding:1rem 1.5rem;border-radius:6px;display:none;z-index:1000;animation:slideIn 0.3s ease}.toast.show{display:block}@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}</style></head><body><header><h1>Calculator</h1></header><main><section class="section"><h2>Calculate Result</h2><form id="f"><div class="form-row"><div class="form-group"><label>Value 1</label><input type="number" id="v1" placeholder="Enter value" required></div><div class="form-group"><label>Value 2</label><input type="number" id="v2" placeholder="Enter value" required></div></div><div class="buttons"><button class="btn-primary">Calculate</button><button type="button" class="btn-secondary" onclick="save()">💾 Save</button><button type="button" class="btn-secondary" onclick="share()">📤 Share</button><button type="button" class="btn-secondary" onclick="print()">🖨️ Print</button></div></form><div id="r" class="results"><div class="result-item"><label>Result</label><div class="value" id="val">-</div></div></div></section><div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="home-affordability.html">Home Affordability</a><a href="property-tax.html">Property Tax</a><a href="rent-vs-buy.html">Rent vs Buy</a></div></div><div class="next-steps"><h3>📋 Next Steps:</h3><ol><li>Verify all values are accurate</li><li>Review results carefully</li><li>Consult professional for decisions</li><li>Save results for reference</li><li>Take appropriate action</li><li>Monitor changes regularly</li></ol></div><section class="faq-section"><h2>FAQ</h2><div class="faq-item"><h3>How accurate is this?</h3><p>This provides estimates based on standard formulas. Actual results vary by market conditions and individual circumstances. Use as guide only, not definitive advice.</p></div><div class="faq-item"><h3>Should I use this for decisions?</h3><p>Yes as a starting point. Consult professionals (real estate agents, accountants, lawyers) before making major financial decisions based on these calculations.</p></div><div class="faq-item"><h3>How often should I recalculate?</h3><p>Recalculate quarterly or when circumstances change significantly. Markets move fast—keep numbers current.</p></div><div class="faq-item"><h3>What assumptions are used?</h3><p>Standard industry assumptions. Your situation may differ. Adjust inputs based on your specific circumstances for more accurate results.</p></div><div class="faq-item"><h3>Can I export results?</h3><p>Yes, use Save, Share, or Print buttons to capture your results. Save locally or share with advisors for discussion.</p></div><div class="faq-item"><h3>Is this calculator secure?</h3><p>All calculations run locally in your browser. No data is sent to servers. Your privacy is protected completely.</p></div></section><div class="disclaimer">⚠️ This calculator provides estimates for informational purposes. Not financial or legal advice. Consult qualified professionals before making decisions.</div><div class="updated">Last updated: April 19, 2026</div></main><div id="t" class="toast"></div><script src="/calc-utils.js"></script><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const v1=parseFloat(document.getElementById('v1').value);const v2=parseFloat(document.getElementById('v2').value);const result=v1+v2;document.getElementById('val').textContent=result.toLocaleString();document.getElementById('r').classList.add('active')});function save(){if(document.getElementById('val').textContent==='-'){showToast('⚠️ Calculate');return}showToast('✓ Saved')}function share(){if(document.getElementById('val').textContent==='-'){showToast('⚠️ Calculate');return}const msg=`Result: ${document.getElementById('val').textContent}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('📤 Copied'))}}function print(){if(document.getElementById('val').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head><title>Result</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Calculation Result</h1><p><strong>Result:</strong> ${document.getElementById('val').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}</script><footer><p><strong>Precision Finance</strong> © 2025</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Compare total lease versus buy payment cost over the term you enter.">
+<meta name="keywords" content="lease vs buy calculator, car lease calculator, buy vs lease vehicle">
+<title>Lease vs Buy Calculator | Zaculators</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lease vs Buy Calculator",
+  "description": "Compare total lease versus buy payment cost over the term you enter.",
+  "url": "https://zaculators.com/9-automotive/lease-vs-buy.html",
+  "applicationCategory": "UtilityApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Zaculators",
+    "url": "https://zaculators.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this include resale value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This is a simple payment comparison and does not include equity, resale value, or mileage fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why lease at all if buying can build equity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some drivers prefer lower payments, newer cars more often, or fewer repair worries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about down payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can add them into the monthly math outside this tool or compare total cash outlay separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can excess mileage make leasing more expensive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Mileage penalties can change the outcome quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does buying always win long term?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always, but ownership can look stronger the longer you keep a vehicle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I compare insurance too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Insurance, taxes, and maintenance can materially change the real cost."
+      }
+    }
+  ]
+}
+</script>
+<style>
+
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+            --muted: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
+        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
+        .intro { color: #475569; margin-bottom: 1rem; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
+        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
+        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
+        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
+        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
+        .results-section.active { display: block; }
+        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
+        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
+        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
+        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
+        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
+        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+        .faq-item p { color: var(--muted); }
+        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
+        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
+        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
+        .next-steps { background: #fffbeb; border-color: #fde68a; }
+        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
+        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
+        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
+        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
+        .error-message.show { display: block; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Lease vs Buy Calculator</h1>
+  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
+</header>
+<main>
+<section class="calculator-section">
+  <h2>Calculator</h2>
+  <p class="intro">This calculator gives a clean first-pass comparison of lease payments versus buy payments over the term you choose.</p>
+  <div class="trust-badges">
+    <span><span class="badge-icon">✓</span> Accurate formulas</span>
+    <span><span class="badge-icon">✓</span> Save and reload</span>
+    <span><span class="badge-icon">✓</span> Free to use</span>
+  </div>
+  <form id="calcForm">
+    <div class="form-row"><div class="form-group"><label for="buyMonthly">Buy payment per month</label><input id="buyMonthly" type="number" min="0.01" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="leaseMonthly">Lease payment per month</label><input id="leaseMonthly" type="number" min="0.01" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="buyMonths">Buy term months</label><input id="buyMonths" type="number" min="1" step="1" required><div class="error-message"></div></div><div class="form-group"><label for="leaseMonths">Lease term months</label><input id="leaseMonths" type="number" min="1" step="1" required><div class="error-message"></div></div></div>
+    <div class="button-group">
+      <button type="submit" class="btn-primary">Calculate</button>
+      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
+      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
+      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
+    </div>
+  </form>
+  <div id="results" class="results-section">
+    <h3>Lease vs buy snapshot</h3>
+    <div class="result-grid">
+      <div class="result-item"><label>Total buy payments</label><div class="value" id="result-buy">—</div></div>
+<div class="result-item"><label>Total lease payments</label><div class="value" id="result-lease">—</div></div>
+<div class="result-item"><label>Simple comparison outcome</label><div class="value" id="result-cheaper">—</div></div>
+    </div>
+  </div>
+  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
+  <div class="updated">Last updated: April 19, 2026</div>
+</section>
+
+<div class="related-calculators">
+  <h3>Related Calculators</h3>
+  <div class="related-links"><a href="/car-payment.html">Car Payment Calculator</a>
+<a href="/depreciation.html">Car Depreciation Calculator</a>
+<a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<a href="/road-trip-cost.html">Road Trip Cost Calculator</a></div>
+</div>
+
+<div class="next-steps">
+  <h3>What to do next</h3>
+  <ol><li>Add expected fees, taxes, and insurance for a fuller comparison.</li>
+<li>Think about how long you actually keep vehicles, not how long ads tell you.</li>
+<li>Check mileage limits before leasing.</li>
+<li>Estimate resale value if you are comparing long ownership periods.</li>
+<li>Use the result as a starting point, then compare total ownership cost.</li></ol>
+</div>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><h3>Does this include resale value?</h3><p>No. This is a simple payment comparison and does not include equity, resale value, or mileage fees.</p></div>
+<div class="faq-item"><h3>Why lease at all if buying can build equity?</h3><p>Some drivers prefer lower payments, newer cars more often, or fewer repair worries.</p></div>
+<div class="faq-item"><h3>What about down payments?</h3><p>You can add them into the monthly math outside this tool or compare total cash outlay separately.</p></div>
+<div class="faq-item"><h3>Can excess mileage make leasing more expensive?</h3><p>Yes. Mileage penalties can change the outcome quickly.</p></div>
+<div class="faq-item"><h3>Does buying always win long term?</h3><p>Not always, but ownership can look stronger the longer you keep a vehicle.</p></div>
+<div class="faq-item"><h3>Should I compare insurance too?</h3><p>Yes. Insurance, taxes, and maintenance can materially change the real cost.</p></div>
+</section>
+</main>
+<div id="toast"></div>
+<script src="/calc-utils.js"></script>
+<script>
+
+const CALCULATOR_ID = 'lease-vs-buy';
+const CALCULATOR_TITLE = 'Lease vs Buy Calculator';
+const buyMonthly = document.getElementById('buyMonthly');
+const leaseMonthly = document.getElementById('leaseMonthly');
+const buyMonths = document.getElementById('buyMonths');
+const leaseMonths = document.getElementById('leaseMonths');
+let latestData = null;
+
+function calculateResults() {
+
+    const bm = parseFloat(buyMonthly.value), lm = parseFloat(leaseMonthly.value), bmo = parseInt(buyMonths.value), lmo = parseInt(leaseMonths.value);
+    if (!isFinite(bm) || bm <= 0) { showValidationError(buyMonthly,'Enter buy payment'); return; } else showValidationError(buyMonthly,null);
+    if (!isFinite(lm) || lm <= 0) { showValidationError(leaseMonthly,'Enter lease payment'); return; } else showValidationError(leaseMonthly,null);
+    if (!isFinite(bmo) || bmo <= 0) { showValidationError(buyMonths,'Enter buy months'); return; } else showValidationError(buyMonths,null);
+    if (!isFinite(lmo) || lmo <= 0) { showValidationError(leaseMonths,'Enter lease months'); return; } else showValidationError(leaseMonths,null);
+    const buyTotal = bm * bmo;
+    const leaseTotal = lm * lmo;
+    const difference = buyTotal - leaseTotal;
+    const cheaper = difference > 0 ? 'Lease is cheaper over the compared term.' : difference < 0 ? 'Buy is cheaper over the compared term.' : 'Both options cost the same in this simple comparison.';
+    document.getElementById('result-buy').textContent = formatCurrency(buyTotal);
+    document.getElementById('result-lease').textContent = formatCurrency(leaseTotal);
+    document.getElementById('result-cheaper').textContent = cheaper;
+
+    latestData = {buyMonthly:buyMonthly.value,leaseMonthly:leaseMonthly.value,buyMonths:buyMonths.value,leaseMonths:leaseMonths.value,buyTotal:formatCurrency(buyTotal),leaseTotal:formatCurrency(leaseTotal),cheaper:cheaper};
+    
+    document.getElementById('results').classList.add('active');
+}
+
+function handleSave() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    saveResults(CALCULATOR_ID, latestData);
+}
+
+function handleShare() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    shareResults(CALCULATOR_TITLE, latestData);
+}
+
+function handlePrint() {
+    if (!latestData) { showToast('Run the calculator first'); return; }
+    printResults('results', CALCULATOR_TITLE);
+}
+
+document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
+window.addEventListener('DOMContentLoaded', function(){
+    const saved = loadResults(CALCULATOR_ID);
+    if (saved) {
+        if (saved.buyMonthly !== undefined) buyMonthly.value = saved.buyMonthly;
+if (saved.leaseMonthly !== undefined) leaseMonthly.value = saved.leaseMonthly;
+if (saved.buyMonths !== undefined) buyMonths.value = saved.buyMonths;
+if (saved.leaseMonths !== undefined) leaseMonths.value = saved.leaseMonths;
+        latestData = saved;
+        
+        document.getElementById('result-buy').textContent = saved.buyTotal;
+        document.getElementById('result-lease').textContent = saved.leaseTotal;
+        document.getElementById('result-cheaper').textContent = saved.cheaper;
+
+        document.getElementById('results').classList.add('active');
+    }
+});
+
+</script>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+</footer>
+</body>
+</html>
