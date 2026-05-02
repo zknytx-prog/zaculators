@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1B4FY69QMS');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All 136+ free online calculators on Zaculators — finance, real estate, health, business, automotive, and more. No sign-up required.">
+    <title>All Calculators - Zaculators | 136+ Free Online Calculators</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        body.dark-mode { background: var(--bg-dark); color: var(--text-dark); }
+
+        header {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        body.dark-mode header { background: var(--card-dark); border-bottom-color: var(--border-dark); }
+        .logo {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 1.4rem; font-weight: 700; color: var(--primary); text-decoration: none;
+        }
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .theme-toggle { background: none; border: none; cursor: pointer; font-size: 1.4rem; }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white; padding: 2.5rem 2rem; text-align: center;
+        }
+        .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.5rem; }
+        .page-hero p { opacity: 0.9; font-size: 1.05rem; margin-bottom: 1.5rem; }
+
+        .search-wrap {
+            max-width: 520px; margin: 0 auto;
+            display: flex; gap: 0.5rem;
+        }
+        #searchInput {
+            flex: 1; padding: 0.8rem 1.2rem; border-radius: 50px; border: none;
+            font-size: 1rem; outline: none; color: #0f172a;
+        }
+        .clear-btn {
+            background: rgba(255,255,255,0.2); border: none; border-radius: 50px;
+            padding: 0.8rem 1.2rem; color: white; cursor: pointer; font-size: 0.9rem;
+            display: none;
+        }
+        .clear-btn.visible { display: block; }
+
+        .category-nav {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0.75rem 2rem;
+            display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+            position: sticky; top: 65px; z-index: 99;
+        }
+        body.dark-mode .category-nav { background: var(--card-dark); border-bottom-color: var(--border-dark); }
+        .cat-pill {
+            padding: 0.35rem 0.9rem; border-radius: 50px;
+            background: var(--bg-light); border: 1px solid var(--border-light);
+            color: inherit; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            transition: all 0.2s; white-space: nowrap;
+        }
+        body.dark-mode .cat-pill { background: var(--bg-dark); border-color: var(--border-dark); }
+        .cat-pill:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        main { max-width: 1400px; margin: 0 auto; padding: 2.5rem 2rem; }
+
+        .search-status {
+            text-align: center; padding: 0.75rem; font-size: 0.95rem;
+            color: #64748b; display: none;
+        }
+        body.dark-mode .search-status { color: #94a3b8; }
+
+        .category-section { margin-bottom: 3.5rem; }
+        .category-section h2 {
+            font-size: 1.5rem; margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem; border-bottom: 3px solid var(--primary);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .cat-count {
+            font-size: 0.85rem; font-weight: 500; color: #64748b;
+            background: var(--bg-light); border: 1px solid var(--border-light);
+            border-radius: 20px; padding: 0.1rem 0.6rem; margin-left: 0.25rem;
+        }
+        body.dark-mode .cat-count { background: var(--bg-dark); border-color: var(--border-dark); color: #94a3b8; }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.9rem;
+        }
+        .calc-card {
+            background: var(--card-light); border: 1px solid var(--border-light);
+            border-radius: 12px; padding: 1.1rem 0.9rem;
+            text-decoration: none; color: inherit;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; min-height: 110px;
+        }
+        body.dark-mode .calc-card { background: var(--card-dark); border-color: var(--border-dark); }
+        .calc-card:hover {
+            transform: translateY(-5px); border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.18);
+            background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(16,185,129,0.04));
+        }
+        .calc-card .icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+        .calc-card h3 { font-size: 0.88rem; font-weight: 600; line-height: 1.3; }
+        .calc-card.hidden { display: none; }
+
+        .no-results {
+            text-align: center; padding: 3rem; display: none;
+            color: #64748b;
+        }
+        body.dark-mode .no-results { color: #94a3b8; }
+        .no-results p { font-size: 1.1rem; }
+
+        footer {
+            background: var(--card-light); border-top: 1px solid var(--border-light);
+            padding: 2.5rem 2rem; text-align: center; color: #64748b; margin-top: 2rem;
+        }
+        body.dark-mode footer { background: var(--card-dark); border-top-color: var(--border-dark); color: #94a3b8; }
+        .footer-links { margin-top: 0.75rem; }
+        .footer-links a { color: inherit; opacity: 0.8; margin: 0 0.5rem; text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { opacity: 1; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            header { padding: 0.75rem 1rem; }
+            .page-hero { padding: 1.75rem 1rem; }
+            .category-nav { top: 57px; padding: 0.6rem 1rem; }
+            main { padding: 1.5rem 1rem; }
+            .calc-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.65rem; }
+            .calc-card { min-height: 95px; padding: 0.85rem 0.65rem; }
+            .calc-card h3 { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-icon">🧮</div>
+            <span>Zaculators</span>
+        </a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <div class="page-hero">
+        <h1>All Calculators</h1>
+        <p>136+ free tools — no sign-up, no data collection</p>
+        <div class="search-wrap">
+            <input type="search" id="searchInput" placeholder="Search calculators…" autocomplete="off" />
+            <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕ Clear</button>
+        </div>
+    </div>
+
+    <nav class="category-nav" aria-label="Calculator categories">
+        <a href="#financial"   class="cat-pill">💰 Financial</a>
+        <a href="#realestate"  class="cat-pill">🏠 Real Estate</a>
+        <a href="#business"    class="cat-pill">💼 Business</a>
+        <a href="#health"      class="cat-pill">❤️ Health</a>
+        <a href="#automotive"  class="cat-pill">🚗 Automotive</a>
+        <a href="#personal"    class="cat-pill">👨‍👩‍👧 Personal</a>
+        <a href="#education"   class="cat-pill">🎓 Education</a>
+    </nav>
+
+    <main>
+        <div class="search-status" id="searchStatus"></div>
+        <div class="no-results" id="noResults">
+            <p>No calculators found for "<span id="searchTerm"></span>"</p>
+            <p style="margin-top:0.5rem;font-size:0.9rem;"><a href="#" onclick="clearSearch();return false;">Clear search</a></p>
+        </div>
+        <div id="categorySections"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Zaculators. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about-us.html">About</a>
+            <a href="contact-us.html">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+    </footer>
+
+    <script>
+    const CATEGORIES = [
+        {
+            id: 'financial',
+            label: '💰 Financial & Investing',
+            calcs: [
+                { name: 'APR Calculator',             icon: '💹', file: 'apr.html' },
+                { name: 'Annuity Calculator',         icon: '💳', file: 'annuity-calculator.html' },
+                { name: 'Bond Calculator',            icon: '📊', file: 'bond-calculator.html' },
+                { name: 'Break-Even Calculator',      icon: '📉', file: 'break-even.html' },
+                { name: 'Budget Planner',             icon: '📋', file: 'budget-planner.html' },
+                { name: 'Cash Flow Projection',       icon: '📈', file: 'cash-flow-projection.html' },
+                { name: 'Cash Flow Tracker',          icon: '💵', file: 'cash-flow-tracker.html' },
+                { name: 'Commission Calculator',      icon: '💰', file: 'commission.html' },
+                { name: 'Compound Interest',          icon: '📈', file: 'compound-interest-monthly.html' },
+                { name: 'Credit Utilization',         icon: '💳', file: 'credit-utilization.html' },
+                { name: 'Customer Lifetime Value',    icon: '📊', file: 'customer-lifetime-value.html' },
+                { name: 'Customer LTV',               icon: '📊', file: 'customer-ltv.html' },
+                { name: 'Debt Consolidation',         icon: '💸', file: 'debt-consolidation.html' },
+                { name: 'Debt Payoff',                icon: '✅', file: 'debt-payoff.html' },
+                { name: 'Depreciation Calculator',    icon: '📉', file: 'depreciation.html' },
+                { name: 'Discount Calculator',        icon: '🏷️', file: 'discount.html' },
+                { name: 'Dividend Calculator',        icon: '💹', file: 'dividend-calculator.html' },
+                { name: 'Down Payment',               icon: '🏦', file: 'down-payment.html' },
+                { name: 'Emergency Fund',             icon: '🛡️', file: 'emergency-fund.html' },
+                { name: 'ETF Calculator',             icon: '📊', file: 'etf-calculator.html' },
+                { name: 'Expense Allocator',          icon: '💰', file: 'expense-allocator.html' },
+                { name: 'Expense Tracker',            icon: '📋', file: 'expense-tracker.html' },
+                { name: 'Financial Aid',              icon: '🎓', file: 'financial-aid-calculator.html' },
+                { name: 'Future Value',               icon: '📈', file: 'future-value.html' },
+                { name: 'Hourly Rate',                icon: '⏱️', file: 'hourly-rate.html' },
+                { name: 'Inflation Calculator',       icon: '📊', file: 'inflation-calculator.html' },
+                { name: 'Investment Return',          icon: '💹', file: 'investment-return.html' },
+                { name: 'Loan Calculator',            icon: '🏦', file: 'loan.html' },
+                { name: 'Loan Comparison',            icon: '⚖️', file: 'loan-comparison.html' },
+                { name: 'Loan Payoff',                icon: '✅', file: 'loan-payoff.html' },
+                { name: 'Markup Calculator',          icon: '🏷️', file: 'markup-calculator.html' },
+                { name: 'Net Worth',                  icon: '💎', file: 'net-worth.html' },
+                { name: 'Pension Calculator',         icon: '👴', file: 'pension-calculator.html' },
+                { name: 'Percentage Calculator',      icon: '%',  file: 'percentage.html' },
+                { name: 'Present Value',              icon: '💰', file: 'present-value.html' },
+                { name: 'Profit Margin',              icon: '💹', file: 'profit-margin.html' },
+                { name: 'Profit Maximizer',           icon: '📈', file: 'profit-maximizer.html' },
+                { name: 'Retirement Planner',         icon: '🏖️', file: 'retirement.html' },
+                { name: 'Retirement Age',             icon: '📅', file: 'retirement-age.html' },
+                { name: 'Retirement Countdown',       icon: '⏳', file: 'retirement-countdown.html' },
+                { name: 'Scholarship Calculator',     icon: '🎓', file: 'scholarship-calculator.html' },
+                { name: 'Simple Interest',            icon: '💰', file: 'simple-interest.html' },
+                { name: 'Social Security',            icon: '🛡️', file: 'social-security.html' },
+                { name: 'Student Loan',               icon: '📚', file: 'student-loan.html' },
+                { name: 'Tip Calculator',             icon: '🍽️', file: 'tip.html' },
+                { name: 'Time Value of Money',        icon: '⏱️', file: 'time-value.html' },
+            ]
+        },
+        {
+            id: 'realestate',
+            label: '🏠 Real Estate & Mortgage',
+            calcs: [
+                { name: 'Closing Costs',              icon: '🏠', file: 'closing-costs.html' },
+                { name: 'Down Payment Calculator',    icon: '💰', file: 'down-payment-calculator.html' },
+                { name: 'Equity Calculator',          icon: '📊', file: 'equity-calculator.html' },
+                { name: 'Equity Loan',                icon: '🏦', file: 'equity-loan.html' },
+                { name: 'Flipping Calculator',        icon: '🔨', file: 'flipping-calculator.html' },
+                { name: 'Home Affordability',         icon: '🏡', file: 'home-affordability.html' },
+                { name: 'Home Equity',                icon: '📈', file: 'home-equity.html' },
+                { name: 'Home Improvement',           icon: '🔧', file: 'home-improvement.html' },
+                { name: 'HOA Fees',                   icon: '🏘️', file: 'hoa-fees.html' },
+                { name: 'HOA Fees Estimator',         icon: '🏘️', file: 'hoa-fees-estimator.html' },
+                { name: 'Investment Property',        icon: '🏗️', file: 'investment-property.html' },
+                { name: 'Investment Property ROI',    icon: '💹', file: 'investment-property-roi.html' },
+                { name: 'Lease Calculator',           icon: '📋', file: 'lease-calculator.html' },
+                { name: 'Mortgage Calculator',        icon: '🏠', file: 'mortgage.html' },
+                { name: 'Mortgage Amortization',      icon: '📊', file: 'mortgage-amortization.html' },
+                { name: 'Property Appreciation',      icon: '📈', file: 'property-appreciation.html' },
+                { name: 'Property Tax',               icon: '🏛️', file: 'property-tax.html' },
+                { name: 'Property Valuation',         icon: '💎', file: 'property-valuation.html' },
+                { name: 'Refinance Calculator',       icon: '🔄', file: 'refinance.html' },
+                { name: 'Rent vs Buy',                icon: '⚖️', file: 'rent-vs-buy.html' },
+            ]
+        },
+        {
+            id: 'business',
+            label: '💼 Business & Entrepreneurship',
+            calcs: [
+                { name: 'Break-Even Sales',           icon: '📊', file: 'break-even-sales.html' },
+                { name: 'Course Cost Tracker',        icon: '📚', file: 'course-cost-tracker.html' },
+                { name: 'Degree ROI',                 icon: '🎓', file: 'degree-roi.html' },
+                { name: 'Inventory Manager',          icon: '📦', file: 'inventory-manager.html' },
+                { name: 'Inventory Turnover',         icon: '🔄', file: 'inventory-turnover.html' },
+                { name: 'Markup Tool',                icon: '🏷️', file: 'markup-tool.html' },
+                { name: 'Payroll Calculator',         icon: '💵', file: 'payroll-calculator.html' },
+                { name: 'Payroll Tax',                icon: '💸', file: 'payroll-tax.html' },
+                { name: 'Pricing Optimizer',          icon: '🎯', file: 'pricing-optimizer.html' },
+                { name: 'Revenue Projector',          icon: '📊', file: 'revenue-projector.html' },
+            ]
+        },
+        {
+            id: 'health',
+            label: '❤️ Health & Fitness',
+            calcs: [
+                { name: 'BAC Calculator',             icon: '🍷', file: 'bac-calculator.html' },
+                { name: 'BMI Calculator',             icon: '⚖️', file: 'bmi.html' },
+                { name: 'BMI Percentile',             icon: '📊', file: 'bmi-percentile.html' },
+                { name: 'BMR Calculator',             icon: '⚡', file: 'bmr.html' },
+                { name: 'Body Fat Percentage',        icon: '💪', file: 'body-fat-percentage.html' },
+                { name: 'Calorie Burn',               icon: '🔥', file: 'calorie-burn.html' },
+                { name: 'Calorie Needs',              icon: '🥗', file: 'calorie-needs.html' },
+                { name: 'Exercise Duration',          icon: '🏃', file: 'exercise-duration.html' },
+                { name: 'Fitness Level',              icon: '🏋️', file: 'fitness-level.html' },
+                { name: 'HIIT Timer',                 icon: '⏱️', file: 'hiit-timer.html' },
+                { name: 'Ideal Weight',               icon: '⚖️', file: 'ideal-weight.html' },
+                { name: 'Max Heart Rate',             icon: '❤️', file: 'max-heart-rate.html' },
+                { name: 'Nutrition Calculator',       icon: '🥗', file: 'nutrition-calculator.html' },
+                { name: 'One Rep Max',                icon: '🏋️', file: 'one-rep-max.html' },
+                { name: 'Pace Calculator',            icon: '🏃', file: 'pace-calculator.html' },
+                { name: 'Protein Intake',             icon: '💪', file: 'protein-intake.html' },
+                { name: 'Sleep Calculator',           icon: '😴', file: 'sleep-calculator.html' },
+                { name: 'Sleep Cycle',                icon: '🌙', file: 'sleep-cycle.html' },
+                { name: 'TDEE Calculator',            icon: '⚡', file: 'tdee.html' },
+                { name: 'VO2 Max',                    icon: '🫁', file: 'vo2-max.html' },
+                { name: 'Waist-Hip Ratio',            icon: '📏', file: 'waist-hip-ratio.html' },
+                { name: 'Water Intake',               icon: '💧', file: 'water-intake.html' },
+                { name: 'Weight Loss Timeline',       icon: '📉', file: 'weight-loss-timeline.html' },
+            ]
+        },
+        {
+            id: 'automotive',
+            label: '🚗 Automotive & Travel',
+            calcs: [
+                { name: 'Car Payment',                icon: '🚗', file: 'car-payment.html' },
+                { name: 'EV Charging Cost',           icon: '⚡', file: 'ev-charging-cost.html' },
+                { name: 'Fuel Cost',                  icon: '⛽', file: 'fuel-cost.html' },
+                { name: 'Fuel Efficiency',            icon: '🚗', file: 'fuel-efficiency.html' },
+                { name: 'Gas Mileage',                icon: '⛽', file: 'gas-mileage.html' },
+                { name: 'Lease vs Buy',               icon: '⚖️', file: 'lease-vs-buy.html' },
+                { name: 'Road Trip Cost',             icon: '🗺️', file: 'road-trip-cost.html' },
+                { name: 'Tire Pressure',              icon: '🔧', file: 'tire-pressure.html' },
+                { name: 'Trip Cost',                  icon: '✈️', file: 'trip-cost.html' },
+                { name: 'Vacation Budget',            icon: '🏖️', file: 'vacation-budget.html' },
+                { name: 'Vehicle Cost',               icon: '💰', file: 'vehicle-cost.html' },
+                { name: 'Vehicle Depreciation',       icon: '📉', file: 'vehicle-depreciation.html' },
+                { name: 'Vehicle Loan',               icon: '🏦', file: 'vehicle-loan.html' },
+            ]
+        },
+        {
+            id: 'personal',
+            label: '👨‍👩‍👧 Personal & Life Events',
+            calcs: [
+                { name: 'Age Difference',             icon: '📅', file: 'age-difference.html' },
+                { name: 'Anniversary Calculator',     icon: '🎉', file: 'anniversary-calculator.html' },
+                { name: 'Baby Due Date',              icon: '👶', file: 'baby-due-date.html' },
+                { name: 'Birthday Budget',            icon: '🎂', file: 'birthday-budget.html' },
+                { name: 'Days Until',                 icon: '📅', file: 'days-until.html' },
+                { name: 'Gift Budget',                icon: '🎁', file: 'gift-budget.html' },
+                { name: 'Life Path Number',           icon: '🔮', file: 'life-path-number.html' },
+                { name: 'Love Calculator',            icon: '❤️', file: 'love-calculator.html' },
+                { name: 'Pet Age',                    icon: '🐾', file: 'pet-age.html' },
+                { name: 'Pregnancy Calculator',       icon: '🤰', file: 'pregnancy-calculator.html' },
+                { name: 'Wedding Budget',             icon: '💍', file: 'wedding-budget.html' },
+                { name: 'Zodiac Sign',                icon: '⭐', file: 'zodiac-sign.html' },
+            ]
+        },
+        {
+            id: 'education',
+            label: '🎓 Education & Lifestyle',
+            calcs: [
+                { name: 'Appliance Cost',             icon: '🏠', file: 'appliance-cost.html' },
+                { name: 'Energy Cost',                icon: '⚡', file: 'energy-cost.html' },
+                { name: 'Event Planner',              icon: '📅', file: 'event-planner.html' },
+                { name: 'Furniture Cost',             icon: '🪑', file: 'furniture-cost.html' },
+                { name: 'GPA Calculator',             icon: '📚', file: 'gpa-calculator.html' },
+                { name: 'Grade Calculator',           icon: '📝', file: 'grade-calculator.html' },
+                { name: 'Grade Converter',            icon: '🔄', file: 'grade-converter.html' },
+                { name: 'Insurance Premium',          icon: '🛡️', file: 'insurance-premium.html' },
+                { name: 'Moving Cost',                icon: '📦', file: 'moving-cost.html' },
+                { name: 'Parking Fee',                icon: '🅿️', file: 'parking-fee.html' },
+                { name: 'Student Budget',             icon: '💰', file: 'student-budget.html' },
+                { name: 'Study Planner',              icon: '📚', file: 'study-planner.html' },
+                { name: 'Tuition Cost',               icon: '🎓', file: 'tuition-cost.html' },
+                { name: 'Tuition Forecaster',         icon: '📊', file: 'tuition-forecaster.html' },
+                { name: 'Unit Converter',             icon: '🔄', file: 'unit-converter.html' },
+                { name: 'Utility Cost',               icon: '💡', file: 'utility-cost.html' },
+                { name: 'Water Bill',                 icon: '💧', file: 'water-bill.html' },
+            ]
+        }
+    ];
+
+    function buildPage() {
+        const container = document.getElementById('categorySections');
+        CATEGORIES.forEach(cat => {
+            const section = document.createElement('section');
+            section.className = 'category-section';
+            section.id = cat.id;
+
+            const heading = document.createElement('h2');
+            heading.innerHTML = `${cat.label} <span class="cat-count">${cat.calcs.length}</span>`;
+            section.appendChild(heading);
+
+            const grid = document.createElement('div');
+            grid.className = 'calc-grid';
+            grid.dataset.catId = cat.id;
+
+            cat.calcs.forEach(calc => {
+                const a = document.createElement('a');
+                a.href = calc.file;
+                a.className = 'calc-card';
+                a.dataset.name = calc.name.toLowerCase();
+                a.innerHTML = `<div class="icon">${calc.icon}</div><h3>${calc.name}</h3>`;
+                grid.appendChild(a);
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
+        });
+    }
+
+    function doSearch(q) {
+        q = q.trim().toLowerCase();
+        const sections = document.querySelectorAll('.category-section');
+        const statusEl = document.getElementById('searchStatus');
+        const noResults = document.getElementById('noResults');
+        const clearBtn = document.getElementById('clearBtn');
+
+        clearBtn.classList.toggle('visible', q.length > 0);
+
+        let total = 0;
+        sections.forEach(section => {
+            const cards = section.querySelectorAll('.calc-card');
+            let visible = 0;
+            cards.forEach(card => {
+                const match = !q || card.dataset.name.includes(q);
+                card.classList.toggle('hidden', !match);
+                if (match) visible++;
+            });
+            total += visible;
+            section.style.display = (visible === 0 && q) ? 'none' : '';
+        });
+
+        if (q) {
+            statusEl.style.display = 'block';
+            statusEl.textContent = `${total} result${total !== 1 ? 's' : ''} for "${q}"`;
+            noResults.style.display = total === 0 ? 'block' : 'none';
+            document.getElementById('searchTerm').textContent = q;
+        } else {
+            statusEl.style.display = 'none';
+            noResults.style.display = 'none';
+        }
+    }
+
+    function clearSearch() {
+        const input = document.getElementById('searchInput');
+        input.value = '';
+        doSearch('');
+        input.focus();
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        updateThemeBtn();
+    }
+    function updateThemeBtn() {
+        document.querySelector('.theme-toggle').textContent =
+            document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+
+    buildPage();
+
+    document.getElementById('searchInput').addEventListener('input', e => doSearch(e.target.value));
+
+    if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark-mode');
+    updateThemeBtn();
+    </script>
+</body>
+</html>
