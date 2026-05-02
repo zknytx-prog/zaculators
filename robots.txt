@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /UNIVERSAL_CALCULATOR_TEMPLATE.html
+Disallow: /calculator-template-ADSENSE-COMPLIANT.html
+Disallow: /index-REDESIGNED.html
+Disallow: /organized-index.html
+Disallow: /mortgage-calculator-FIXED.html
+Disallow: /mortgage-calculator-premium.html
+Disallow: /mortgage-calculator-standalone.html
+
+Sitemap: https://zaculators.com/sitemap.xml
