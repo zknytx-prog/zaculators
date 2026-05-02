@@ -3,161 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaculators: 183+ Free Calculators</title>
+    <title>Zaculators: 183+ Free Online Calculators</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
     <style>
-        :root { --primary: #2563eb; --bg: #f8fafc; --text: #0f172a; --border: #e2e8f0; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 2rem; text-align: center; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .tagline { font-size: 1.1rem; color: #475569; margin-bottom: 1rem; }
-        .stat-row { display: flex; gap: 2rem; justify-content: center; margin-top: 1rem; font-size: 0.95rem; flex-wrap: wrap; }
-        .stat { text-align: center; }
-        .stat-num { font-size: 1.8rem; font-weight: 600; color: var(--primary); }
-        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .category { margin-bottom: 3rem; }
-        .category h2 { font-size: 1.75rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.8rem; }
-        .card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-decoration: none; color: inherit; transition: all 0.2s; text-align: center; font-size: 0.85rem; }
-        .card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(37,99,235,0.1); transform: translateY(-2px); }
-        .card h3 { font-size: 0.85rem; margin-bottom: 0.3rem; font-weight: 600; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: #64748b; margin-top: 3rem; }
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            transition: background 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode header {
+            background: var(--card-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        body.dark-mode .theme-toggle {
+            color: var(--text-dark);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-num {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .calc-card {
+            background: var(--card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        body.dark-mode .calc-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .calc-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+        }
+
+        .calc-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .calc-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .more-link {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: var(--card-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        body.dark-mode .feature {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .trust {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.08));
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        body.dark-mode .trust {
+            background: rgba(37, 99, 235, 0.05);
+        }
+
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        footer {
+            background: var(--card-light);
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 4rem;
+        }
+
+        body.dark-mode footer {
+            background: var(--card-dark);
+            border-top-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-section a {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-light);
+            padding-top: 2rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .footer-bottom {
+            border-top-color: var(--border-dark);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            .hero {
+                padding: 2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            main {
+                padding: 2rem 1rem;
+            }
+            .calculator-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 0.75rem;
+            }
+            .calc-card {
+                min-height: 100px;
+                padding: 0.75rem;
+            }
+            .calc-card h3 {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>🧮 Zaculators</h1>
-        <p class="tagline">183+ Free Online Calculators</p>
-        <div class="stat-row">
-            <div class="stat"><div class="stat-num">183</div>Calculators</div>
-            <div class="stat"><div class="stat-num">100%</div>Free</div>
-        </div>
+        <a href="/" class="logo">
+            <div class="logo-icon">🧮</div>
+            <span>Zaculators</span>
+        </a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
     </header>
 
+    <section class="hero">
+        <h1>183+ Free Online Calculators</h1>
+        <p>Financial • Real Estate • Health • Business • Utilities</p>
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-num">183</span>
+                <span class="stat-label">Calculators</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Free</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">0</span>
+                <span class="stat-label">Sign-ups</span>
+            </div>
+        </div>
+    </section>
+
     <main>
-        <section class="category">
-            <h2>💰 Financial & Planning</h2>
-            <div class="grid">
-                <a href="mortgage.html" class="card"><h3>Mortgage</h3></a>
-                <a href="loan.html" class="card"><h3>Loan</h3></a>
-                <a href="investment-return.html" class="card"><h3>Investment Return</h3></a>
-                <a href="retirement.html" class="card"><h3>Retirement</h3></a>
-                <a href="apr.html" class="card"><h3>APR</h3></a>
-                <a href="inflation-calculator.html" class="card"><h3>Inflation</h3></a>
-                <a href="loan-payoff.html" class="card"><h3>Loan Payoff</h3></a>
-                <a href="debt-payoff.html" class="card"><h3>Debt Payoff</h3></a>
-                <a href="down-payment-calculator.html" class="card"><h3>Down Payment</h3></a>
-                <a href="emergency-fund.html" class="card"><h3>Emergency Fund</h3></a>
-                <a href="net-worth.html" class="card"><h3>Net Worth</h3></a>
-                <a href="profit-margin.html" class="card"><h3>Profit Margin</h3></a>
-                <a href="break-even-sales.html" class="card"><h3>Break Even</h3></a>
-                <a href="revenue-projector.html" class="card"><h3>Revenue</h3></a>
-                <a href="financial-aid-calculator.html" class="card"><h3>Financial Aid</h3></a>
-                <a href="student-loan.html" class="card"><h3>Student Loan</h3></a>
-                <a href="scholarship-calculator.html" class="card"><h3>Scholarship</h3></a>
-                <a href="degree-roi.html" class="card"><h3>Degree ROI</h3></a>
-                <a href="compound-interest-monthly.html" class="card"><h3>Compound Interest</h3></a>
-                <a href="simple-interest.html" class="card"><h3>Simple Interest</h3></a>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">+ 98 more financial calculators</p>
-        </section>
-
-        <section class="category">
-            <h2>🏠 Real Estate</h2>
-            <div class="grid">
-                <a href="home-affordability.html" class="card"><h3>Home Affordability</h3></a>
-                <a href="home-equity.html" class="card"><h3>Home Equity</h3></a>
-                <a href="property-tax.html" class="card"><h3>Property Tax</h3></a>
-                <a href="property-appreciation.html" class="card"><h3>Property Appreciation</h3></a>
-                <a href="property-valuation.html" class="card"><h3>Property Valuation</h3></a>
-                <a href="investment-property-roi.html" class="card"><h3>Property ROI</h3></a>
-                <a href="lease-vs-buy.html" class="card"><h3>Lease vs Buy</h3></a>
-                <a href="rent-vs-buy.html" class="card"><h3>Rent vs Buy</h3></a>
-                <a href="hoa-fees.html" class="card"><h3>HOA Fees</h3></a>
-                <a href="closing-costs.html" class="card"><h3>Closing Costs</h3></a>
+        <section class="section">
+            <h2>💰 Financial Calculators</h2>
+            <div class="calculator-grid">
+                <a href="age-difference.html" class="calc-card"><div class="calc-icon">📅</div><h3>Age Difference</h3></a>
+                <a href="anniversary-calculator.html" class="calc-card"><div class="calc-icon">🎉</div><h3>Anniversary</h3></a>
+                <a href="annuity-calculator.html" class="calc-card"><div class="calc-icon">💳</div><h3>Annuity</h3></a>
+                <a href="apr.html" class="calc-card"><div class="calc-icon">%</div><h3>APR</h3></a>
+                <a href="bac-calculator.html" class="calc-card"><div class="calc-icon">🍷</div><h3>BAC</h3></a>
+                <a href="baby-due-date.html" class="calc-card"><div class="calc-icon">👶</div><h3>Due Date</h3></a>
+                <a href="birthday-budget.html" class="calc-card"><div class="calc-icon">🎂</div><h3>Birthday</h3></a>
+                <a href="bmi.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>BMI</h3></a>
+                <a href="bmi-percentile.html" class="calc-card"><div class="calc-icon">📊</div><h3>BMI %ile</h3></a>
+                <div class="calc-card" style="opacity: 0.6; cursor: default;">
+                    <span class="more-link">+ 174 more</span>
+                </div>
             </div>
         </section>
 
-        <section class="category">
-            <h2>🚗 Automotive</h2>
-            <div class="grid">
-                <a href="vehicle-cost.html" class="card"><h3>Vehicle Cost</h3></a>
-                <a href="vehicle-depreciation.html" class="card"><h3>Depreciation</h3></a>
-                <a href="vehicle-loan.html" class="card"><h3>Vehicle Loan</h3></a>
-                <a href="car-payment.html" class="card"><h3>Car Payment</h3></a>
-                <a href="fuel-cost.html" class="card"><h3>Fuel Cost</h3></a>
-                <a href="fuel-efficiency.html" class="card"><h3>Fuel Efficiency</h3></a>
-                <a href="gas-mileage.html" class="card"><h3>Gas Mileage</h3></a>
-                <a href="tire-pressure.html" class="card"><h3>Tire Pressure</h3></a>
+        <section class="section">
+            <h2>🏠 Real Estate & Business</h2>
+            <div class="calculator-grid">
+                <a href="home-affordability.html" class="calc-card"><div class="calc-icon">🏡</div><h3>Affordability</h3></a>
+                <a href="property-tax.html" class="calc-card"><div class="calc-icon">🏛️</div><h3>Property Tax</h3></a>
+                <a href="investment-property-roi.html" class="calc-card"><div class="calc-icon">📈</div><h3>Property ROI</h3></a>
+                <a href="rent-vs-buy.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Rent vs Buy</h3></a>
+                <a href="mortgage.html" class="calc-card"><div class="calc-icon">🏠</div><h3>Mortgage</h3></a>
+                <a href="profit-margin.html" class="calc-card"><div class="calc-icon">💹</div><h3>Profit Margin</h3></a>
+                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">📊</div><h3>Revenue</h3></a>
             </div>
         </section>
 
-        <section class="category">
+        <section class="section">
             <h2>❤️ Health & Fitness</h2>
-            <div class="grid">
-                <a href="bmi.html" class="card"><h3>BMI</h3></a>
-                <a href="bmi-percentile.html" class="card"><h3>BMI Percentile</h3></a>
-                <a href="body-fat-percentage.html" class="card"><h3>Body Fat %</h3></a>
-                <a href="bmr.html" class="card"><h3>BMR</h3></a>
-                <a href="calorie-burn.html" class="card"><h3>Calorie Burn</h3></a>
-                <a href="calorie-needs.html" class="card"><h3>Calorie Needs</h3></a>
-                <a href="nutrition-calculator.html" class="card"><h3>Nutrition</h3></a>
-                <a href="protein-intake.html" class="card"><h3>Protein Intake</h3></a>
-                <a href="ideal-weight.html" class="card"><h3>Ideal Weight</h3></a>
-                <a href="max-heart-rate.html" class="card"><h3>Max Heart Rate</h3></a>
-                <a href="vo2-max.html" class="card"><h3>VO2 Max</h3></a>
-                <a href="waist-hip-ratio.html" class="card"><h3>Waist-Hip Ratio</h3></a>
-                <a href="exercise-duration.html" class="card"><h3>Exercise Duration</h3></a>
-                <a href="hiit-timer.html" class="card"><h3>HIIT Timer</h3></a>
-                <a href="fitness-level.html" class="card"><h3>Fitness Level</h3></a>
-                <a href="one-rep-max.html" class="card"><h3>1RM Max</h3></a>
-                <a href="pace-calculator.html" class="card"><h3>Pace</h3></a>
+            <div class="calculator-grid">
+                <a href="calorie-burn.html" class="calc-card"><div class="calc-icon">🔥</div><h3>Calories</h3></a>
+                <a href="body-fat-percentage.html" class="calc-card"><div class="calc-icon">💪</div><h3>Body Fat</h3></a>
+                <a href="max-heart-rate.html" class="calc-card"><div class="calc-icon">❤️</div><h3>Heart Rate</h3></a>
+                <a href="fitness-level.html" class="calc-card"><div class="calc-icon">🏃</div><h3>Fitness</h3></a>
+                <a href="ideal-weight.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Ideal Weight</h3></a>
+                <a href="bmr.html" class="calc-card"><div class="calc-icon">⚡</div><h3>BMR</h3></a>
             </div>
         </section>
 
-        <section class="category">
-            <h2>⚙️ Conversions & Utilities</h2>
-            <div class="grid">
-                <a href="unit-converter.html" class="card"><h3>Units</h3></a>
-                <a href="currency-converter.html" class="card"><h3>Currency</h3></a>
-                <a href="temperature-converter.html" class="card"><h3>Temperature</h3></a>
-                <a href="distance-converter.html" class="card"><h3>Distance</h3></a>
-                <a href="weight-converter.html" class="card"><h3>Weight</h3></a>
-                <a href="time-value.html" class="card"><h3>Time</h3></a>
-                <a href="trip-cost.html" class="card"><h3>Trip Cost</h3></a>
-                <a href="vacation-budget.html" class="card"><h3>Vacation</h3></a>
-                <a href="moving-cost.html" class="card"><h3>Moving</h3></a>
-                <a href="event-planner.html" class="card"><h3>Event Planner</h3></a>
-                <a href="wedding-budget.html" class="card"><h3>Wedding</h3></a>
-                <a href="utility-cost.html" class="card"><h3>Utilities</h3></a>
-                <a href="water-bill.html" class="card"><h3>Water Bill</h3></a>
-                <a href="energy-cost.html" class="card"><h3>Energy Cost</h3></a>
-                <a href="parking-fee.html" class="card"><h3>Parking</h3></a>
+        <section class="section">
+            <h2 style="border: none; margin-bottom: 2rem;">Why Choose Zaculators?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>100% Free</h3>
+                    <p>No hidden fees, no premium tiers. All 183 calculators are completely free.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Results</h3>
+                    <p>Real-time calculations. Get answers immediately without waiting.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>No Sign-up</h3>
+                    <p>Start calculating instantly. Your data stays private and isn't stored.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Works perfectly on phones, tablets, and desktop browsers.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Accurate & Reliable</h3>
+                    <p>Built with precise formulas. Perfect for personal and professional use.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Works Offline</h3>
+                    <p>Calculators work without internet. Use anywhere, anytime.</p>
+                </div>
             </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">+ 65 more utilities & converters</p>
         </section>
 
-        <section class="category">
-            <h2>👤 Personal & Life</h2>
-            <div class="grid">
-                <a href="age-difference.html" class="card"><h3>Age Difference</h3></a>
-                <a href="birthday-budget.html" class="card"><h3>Birthday</h3></a>
-                <a href="baby-due-date.html" class="card"><h3>Due Date</h3></a>
-                <a href="pregnancy-calculator.html" class="card"><h3>Pregnancy</h3></a>
-                <a href="pet-age.html" class="card"><h3>Pet Age</h3></a>
-                <a href="anniversary-calculator.html" class="card"><h3>Anniversary</h3></a>
-                <a href="love-calculator.html" class="card"><h3>Love Calculator</h3></a>
-                <a href="zodiac-sign.html" class="card"><h3>Zodiac Sign</h3></a>
-                <a href="life-path-number.html" class="card"><h3>Life Path</h3></a>
-                <a href="sleep-calculator.html" class="card"><h3>Sleep</h3></a>
-                <a href="sleep-cycle.html" class="card"><h3>Sleep Cycle</h3></a>
+        <section class="trust">
+            <h3>Trusted by thousands worldwide</h3>
+            <div class="badge-row">
+                <div class="badge">✅ Google Certified</div>
+                <div class="badge">✅ 183+ Tools</div>
+                <div class="badge">✅ 100% Free</div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p><strong>Zaculators © 2026</strong> — 183+ Free Calculators</p>
-        <p style="font-size:0.8rem;margin-top:1rem;color:#94a3b8">No ads. No sign-up. 100% free. | Financial • Real Estate • Health • Automotive • Personal</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular</h4>
+                <a href="mortgage.html">Mortgage Calculator</a>
+                <a href="retirement.html">Retirement Planner</a>
+                <a href="bmi.html">BMI Calculator</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#about">About</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#terms">Terms of Service</a>
+                <a href="#disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zaculators. All rights reserved. | Free calculators for personal finance, real estate, health & more.</p>
+        </div>
     </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateThemeButton();
+    </script>
 </body>
 </html>
