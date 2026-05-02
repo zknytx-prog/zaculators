@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rent vs Buy calculator. Compare total cost of renting vs buying a home over 5-30 years.">
@@ -128,7 +137,16 @@
         });
         function saveResults(){if(document.getElementById('winner').textContent==='-'){showToast('⚠️ Calculate');return}showToast('✓ Saved')}
         function shareResults(){if(document.getElementById('winner').textContent==='-'){showToast('⚠️ Calculate');return}const msg=`📊 Rent vs Buy\nWinner: ${document.getElementById('winner').textContent}\nBuy Cost: ${document.getElementById('buyCost').textContent}\nRent Cost: ${document.getElementById('rentCost').textContent}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('📤 Copied'))}}
-        function printResults(){if(document.getElementById('winner').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head><title>Rent vs Buy</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Rent vs Buy</h1><p><strong>Winner:</strong> ${document.getElementById('winner').textContent}</p><p><strong>Buy Cost:</strong> ${document.getElementById('buyCost').textContent}</p><p><strong>Rent Cost:</strong> ${document.getElementById('rentCost').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
+        function printResults(){if(document.getElementById('winner').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script><title>Rent vs Buy</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Rent vs Buy</h1><p><strong>Winner:</strong> ${document.getElementById('winner').textContent}</p><p><strong>Buy Cost:</strong> ${document.getElementById('buyCost').textContent}</p><p><strong>Rent Cost:</strong> ${document.getElementById('rentCost').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
     </script>
     <footer><p><strong>Precision Finance</strong> © 2025</p></footer>
 </body>

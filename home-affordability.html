@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Calculate maximum home price you can afford. Get home affordability estimate based on income, debt, and down payment.">
@@ -174,7 +183,16 @@
         });
         function saveResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}showToast('✓ Results saved')}
         function shareResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}const summary=`📊 Home Affordability\nMax Price: ${document.getElementById('priceRecommended').textContent}\nMonthly Payment: ${document.getElementById('monthlyPayment').textContent}\n\n💰 Calculated with Precision Finance`;if(navigator.clipboard){navigator.clipboard.writeText(summary).then(()=>showToast('📤 Copied'))}}
-        function printResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head><title>Home Affordability</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Home Affordability</h1><div class="item"><div class="label">Recommended Max Price:</div><div class="value">${document.getElementById('priceRecommended').textContent}</div></div><div class="item"><div class="label">Est. Monthly Payment:</div><div class="value">${document.getElementById('monthlyPayment').textContent}</div></div><hr><p style="font-size:0.9em;color:#666;">Calculated ${new Date().toLocaleDateString()}</p></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
+        function printResults(){if(document.getElementById('price28').textContent==='-'){showToast('⚠️ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script><title>Home Affordability</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Home Affordability</h1><div class="item"><div class="label">Recommended Max Price:</div><div class="value">${document.getElementById('priceRecommended').textContent}</div></div><div class="item"><div class="label">Est. Monthly Payment:</div><div class="value">${document.getElementById('monthlyPayment').textContent}</div></div><hr><p style="font-size:0.9em;color:#666;">Calculated ${new Date().toLocaleDateString()}</p></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
     </script>
     <footer><p><strong>Precision Finance</strong> © 2025 | Free real estate calculators</p></footer>
 </body>

@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Refinance calculator. Calculate savings from refinancing mortgage to lower interest rate.">
@@ -120,7 +129,16 @@
         });
         function saveResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('⚠️ Calculate');return}showToast('✓ Saved')}
         function shareResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('⚠️ Calculate');return}const msg=`📊 Refinance\nBreak-even: ${document.getElementById('breakeven').textContent}\nMonthly Savings: ${(parseFloat(document.getElementById('currentPayment').textContent.replace(/[^0-9.-]/g,''))-parseFloat(document.getElementById('newPayment').textContent.replace(/[^0-9.-]/g,''))).toLocaleString()}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('📤 Copied'))}}
-        function printResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head><title>Refinance</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Refinance Analysis</h1><p><strong>Break-even:</strong> ${document.getElementById('breakeven').textContent}</p><p><strong>Total Savings:</strong> ${document.getElementById('savings').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
+        function printResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script><title>Refinance</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Refinance Analysis</h1><p><strong>Break-even:</strong> ${document.getElementById('breakeven').textContent}</p><p><strong>Total Savings:</strong> ${document.getElementById('savings').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
     </script>
     <footer><p><strong>Precision Finance</strong> © 2025</p></footer>
 </body>

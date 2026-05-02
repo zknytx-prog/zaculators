@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Calculate annual property tax. Estimate property taxes based on home value and tax rate.">
@@ -113,7 +122,16 @@
         });
         function saveResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}showToast('✓ Saved')}
         function shareResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}const summary=`📊 Property Tax\nAnnual: ${document.getElementById('annualTax').textContent}\nMonthly: ${document.getElementById('monthlyTax').textContent}`;if(navigator.clipboard){navigator.clipboard.writeText(summary).then(()=>showToast('📤 Copied'))}}
-        function printResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head><title>Property Tax</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Property Tax</h1><div class="item"><div class="label">Annual:</div><div class="value">${document.getElementById('annualTax').textContent}</div></div><div class="item"><div class="label">Monthly:</div><div class="value">${document.getElementById('monthlyTax').textContent}</div></div></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
+        function printResults(){if(document.getElementById('annualTax').textContent==='-'){showToast('⚠️ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1B4FY69QMS');
+</script><title>Property Tax</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Property Tax</h1><div class="item"><div class="label">Annual:</div><div class="value">${document.getElementById('annualTax').textContent}</div></div><div class="item"><div class="label">Monthly:</div><div class="value">${document.getElementById('monthlyTax').textContent}</div></div></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
     </script>
     <footer><p><strong>Precision Finance</strong> © 2025 | Real estate calculators</p></footer>
 </body>
