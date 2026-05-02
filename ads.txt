@@ -1,0 +1,9 @@
+# Ads.txt for Zaculators
+# This file contains the authorized digital sellers for this property
+# Google AdSense Publisher ID: ca-pub-3736768574278789
+
+# Google AdSense
+google.com, ca-pub-3736768574278789, DIRECT, f08c47fec0942fa0
+
+# Additional Ad Networks (can be added as needed)
+# Format: domain, publisher-id, relationship-type, certification-id

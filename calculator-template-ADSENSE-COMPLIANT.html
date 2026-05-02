@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free {CALCULATOR_NAME} - Calculate {DESCRIPTION_SHORT} instantly. No sign-up required.">
+    <title>{CALCULATOR_NAME} - Free Online {CATEGORY} Calculator</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode header {
+            background: var(--card-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-section {
+            background: var(--card-light);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        body.dark-mode .calculator-section {
+            background: var(--card-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--card-light);
+            color: var(--text-light);
+            transition: border-color 0.2s;
+        }
+
+        body.dark-mode input[type="number"],
+        body.dark-mode input[type="text"],
+        body.dark-mode select {
+            background: #334155;
+            color: var(--text-dark);
+            border-color: var(--border-dark);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .results {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(37, 99, 235, 0.08));
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.75rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        body.dark-mode .content-section p {
+            color: #cbd5e1;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .tips-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-box li {
+            padding-left: 1.75rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .tips-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-light);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode footer {
+            border-top-color: var(--border-dark);
+            color: #94a3b8;
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+
+        body.dark-mode .disclaimer {
+            background: rgba(251, 191, 36, 0.1);
+            border-color: #b45309;
+            color: #fbbf24;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: var(--card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        body.dark-mode .faq-item {
+            background: #334155;
+            border-color: var(--border-dark);
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: var(--border-light);
+        }
+
+        body.dark-mode .faq-question:hover {
+            background: #475569;
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem 1rem;
+            display: none;
+            color: #475569;
+        }
+
+        body.dark-mode .faq-answer {
+            color: #cbd5e1;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .faq-toggle {
+            transition: transform 0.2s;
+        }
+
+        .faq-toggle.open {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 600px) {
+            main { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            .result-value { font-size: 1.5rem; }
+            .button-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">🧮 Zaculators</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <main>
+        <a href="/" class="back-link">← Back to all calculators</a>
+
+        <h1>{CALCULATOR_NAME}</h1>
+        <p class="subtitle">{DESCRIPTION_FULL}</p>
+
+        <!-- CALCULATOR TOOL -->
+        <div class="calculator-section">
+            <form id="calcForm">
+                {FORM_FIELDS}
+                <div class="button-group">
+                    <button type="submit">Calculate</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+
+            <div id="results" class="results">
+                {RESULTS_FIELDS}
+            </div>
+        </div>
+
+        <!-- HOW TO USE -->
+        <div class="content-section">
+            <h2>How to Use This Calculator</h2>
+            <p>
+                Our {CALCULATOR_NAME} is designed to help you quickly calculate {DESCRIPTION_SHORT}. 
+                Here's how to use it:
+            </p>
+            <ol style="list-style: decimal; padding-left: 1.5rem; color: #475569;">
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;">Enter the required values in the input fields above</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;">Click the "Calculate" button</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;">View your results instantly below the calculator</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;">Use "Clear" button to reset and start over</li>
+            </ol>
+            <p style="margin-top: 1rem;">
+                The calculator provides instant results and automatically updates as you change the input values.
+            </p>
+        </div>
+
+        <!-- TIPS -->
+        <div class="tips-box">
+            <h3>💡 Tips for Best Results</h3>
+            <ul>
+                <li>Ensure all inputs are accurate for precise calculations</li>
+                <li>Double-check your numbers before submitting</li>
+                <li>Results are calculated in real-time as you type</li>
+                <li>Your data is never stored or shared</li>
+                <li>Works offline and on mobile devices</li>
+            </ul>
+        </div>
+
+        <!-- EXPLANATION -->
+        <div class="content-section">
+            <h2>What Does This Calculator Do?</h2>
+            <p>
+                {EXPLANATION_DETAILED}
+            </p>
+            <p>
+                This calculator uses standard mathematical formulas to provide accurate results. 
+                It's suitable for personal use, educational purposes, and professional applications.
+            </p>
+        </div>
+
+        <!-- UNDERSTANDING RESULTS -->
+        <div class="content-section">
+            <h2>Understanding Your Results</h2>
+            <p>
+                Once you calculate, you'll receive the following information:
+            </p>
+            {RESULTS_EXPLANATION}
+            <p>
+                Use these results to make informed decisions or for further analysis.
+            </p>
+        </div>
+
+        <!-- COMMON QUESTIONS -->
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is this calculator accurate?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, our calculator uses standard mathematical formulas and is regularly tested for accuracy. However, always verify important financial or health calculations with a professional.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is my data saved?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No. Your data is never stored, saved, or sent to our servers. All calculations happen in your browser. Your privacy is completely protected.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I use this on my phone?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! This calculator works on all devices - phones, tablets, and computers. It's fully responsive and optimized for mobile use.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I get an error?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Check that all input fields have valid numbers. Some calculators may have specific requirements - for example, age calculators need dates in the correct format. Clear and try again.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="disclaimer">
+            <strong>⚠️ Disclaimer:</strong> This calculator is provided for informational and educational purposes only. 
+            Results should not be considered professional financial, medical, or legal advice. Always consult with a qualified professional 
+            for important decisions. We make no warranties about the accuracy of results.
+        </div>
+
+        <!-- ADDITIONAL INFO -->
+        <div class="content-section">
+            <h2>Why Use Our Calculators?</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem;">✅ <strong>100% Free:</strong> No hidden charges or premium versions</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>No Sign-up:</strong> Start calculating immediately</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Private:</strong> Your data stays on your device</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Fast:</strong> Instant calculations and results</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Reliable:</strong> Used by thousands daily</li>
+                <li>✅ <strong>Mobile-friendly:</strong> Works on any device</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Zaculators. All rights reserved. | <a href="#" style="color: inherit; text-decoration: underline;">Privacy Policy</a> | <a href="#" style="color: inherit; text-decoration: underline;">Terms</a></p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">Free calculators for finance, health, real estate, business, and more.</p>
+    </footer>
+
+    <script>
+        // Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateThemeButton();
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            answer.classList.toggle('show');
+            toggle.classList.toggle('open');
+        }
+
+        // Calculator Logic
+        document.getElementById('calcForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            try {
+                // REPLACE THIS WITH YOUR ACTUAL CALCULATOR LOGIC
+                const result = calculateValue();
+                displayResults(result);
+            } catch (error) {
+                alert('Please check your inputs and try again.');
+            }
+        });
+
+        function calculateValue() {
+            // PLACEHOLDER - CUSTOMIZE FOR EACH CALCULATOR
+            return 0;
+        }
+
+        function displayResults(result) {
+            // PLACEHOLDER - CUSTOMIZE FOR EACH CALCULATOR
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.add('active');
+        }
+    </script>
+</body>
+</html>

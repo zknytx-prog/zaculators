@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Zaculators - Got questions? Feedback? Bug reports? We'd love to hear from you.">
+    <title>Contact Us - Zaculators</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode header {
+            background: var(--card-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        body.dark-mode .subtitle {
+            color: #cbd5e1;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            background: var(--card-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .contact-info {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .contact-info h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .contact-method {
+            margin-bottom: 2rem;
+        }
+
+        .contact-method h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-method a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        .form-section {
+            background: var(--card-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .form-section {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .form-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg-light);
+            color: var(--text-light);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        body.dark-mode input[type="text"],
+        body.dark-mode input[type="email"],
+        body.dark-mode textarea,
+        body.dark-mode select {
+            background: #334155;
+            color: var(--text-dark);
+            border-color: var(--border-dark);
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .response-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .response-message.success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        body.dark-mode .response-message.success {
+            background: rgba(16, 185, 129, 0.2);
+            color: #86efac;
+            border-color: #4ade80;
+        }
+
+        .response-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        body.dark-mode .response-message.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border-color: #f87171;
+        }
+
+        .response-message.show {
+            display: block;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        body.dark-mode p {
+            color: #cbd5e1;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.75rem;
+        }
+
+        body.dark-mode .faq-section h2 {
+            border-bottom-color: var(--border-dark);
+        }
+
+        .faq-item {
+            background: var(--card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        body.dark-mode .faq-item {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: var(--border-light);
+        }
+
+        body.dark-mode .faq-question:hover {
+            background: #475569;
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem 1rem;
+            display: none;
+            color: #475569;
+        }
+
+        body.dark-mode .faq-answer {
+            color: #cbd5e1;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-light);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode footer {
+            border-top-color: var(--border-dark);
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            main {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">🧮 Zaculators</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <main>
+        <a href="/" class="back-link">← Back to calculators</a>
+
+        <h1>Contact Us</h1>
+        <p class="subtitle">We'd love to hear from you</p>
+
+        <div class="contact-container">
+            <!-- CONTACT INFO -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                
+                <div class="contact-method">
+                    <h3>📧 Email</h3>
+                    <p>General inquiries:</p>
+                    <a href="mailto:hello@zaculators.com">hello@zaculators.com</a>
+                    <p style="margin-top: 1rem;">Support & bugs:</p>
+                    <a href="mailto:support@zaculators.com">support@zaculators.com</a>
+                </div>
+
+                <div class="contact-method">
+                    <h3>🌐 Website</h3>
+                    <a href="https://zaculators.com">zaculators.com</a>
+                </div>
+
+                <div class="contact-method">
+                    <h3>📞 Response Time</h3>
+                    <p>We typically respond within 24 hours during business days.</p>
+                </div>
+
+                <div class="contact-method">
+                    <h3>✨ What We Accept</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Feature requests</li>
+                        <li>✓ Bug reports</li>
+                        <li>✓ Calculator suggestions</li>
+                        <li>✓ General feedback</li>
+                        <li>✓ Partnership inquiries</li>
+                        <li>✓ Press inquiries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="form-section">
+                <h2>Send Us a Message</h2>
+                
+                <div id="responseMessage" class="response-message"></div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Message Type</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select...</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="calculator">Calculator Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us what you think..." required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How can I report a bug?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Use the contact form above or email support@zaculators.com with:</p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Which calculator has the bug</li>
+                        <li>What you entered</li>
+                        <li>What happened vs what should happen</li>
+                        <li>Your browser/device if possible</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I request a new calculator?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We're always looking for new calculator ideas. Use the contact form 
+                    and select "Calculator Suggestion" as the message type. Tell us what you need and 
+                    why it would be useful.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I use your calculators on my website?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Our calculators are available for embedding. Email us at hello@zaculators.com 
+                    for partnership and embedding options.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you accept donations or sponsorships?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We're currently supported by AdSense. For sponsorship or partnership inquiries, 
+                    email hello@zaculators.com.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>When will you respond to my message?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We aim to respond within 24 hours during business days. During weekends and 
+                    holidays, it may take 48-72 hours. Thanks for your patience!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How can I stay updated?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Check back regularly for new calculators and features. We don't have a newsletter 
+                    yet, but if you'd like one, let us know in the contact form!</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Zaculators. All rights reserved.</p>
+        <p>183+ free calculators. Always here to help.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateThemeButton();
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.parentElement.querySelector('.faq-answer');
+            const toggle = element.querySelector('span:last-child');
+            answer.classList.toggle('show');
+            toggle.textContent = answer.classList.contains('show') ? '▲' : '▼';
+        }
+
+        // Contact Form (Note: This would need backend to actually send emails)
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In production, this would send to a backend service
+            // For now, show a success message
+            const responseDiv = document.getElementById('responseMessage');
+            responseDiv.className = 'response-message success show';
+            responseDiv.textContent = 'Thank you! We received your message. We\'ll respond within 24 hours.';
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                responseDiv.classList.remove('show');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

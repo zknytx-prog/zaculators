@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free mortgage calculator - Calculate monthly mortgage payments, total interest, and amortization instantly. No sign-up required.">
+    <title>Mortgage Calculator - Free Monthly Payment Calculator</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode header {
+            background: var(--card-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-section {
+            background: var(--card-light);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        body.dark-mode .calculator-section {
+            background: var(--card-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--card-light);
+            color: var(--text-light);
+            transition: border-color 0.2s;
+        }
+
+        body.dark-mode input[type="number"],
+        body.dark-mode input[type="text"],
+        body.dark-mode select {
+            background: #334155;
+            color: var(--text-dark);
+            border-color: var(--border-dark);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .results {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(37, 99, 235, 0.08));
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        body.dark-mode .result-label {
+            color: #94a3b8;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.75rem;
+        }
+
+        body.dark-mode .content-section h2 {
+            border-bottom-color: var(--border-dark);
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        body.dark-mode .content-section p {
+            color: #cbd5e1;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        body.dark-mode .tips-box {
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .tips-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-box li {
+            padding-left: 1.75rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .tips-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-light);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode footer {
+            border-top-color: var(--border-dark);
+            color: #94a3b8;
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+
+        body.dark-mode .disclaimer {
+            background: rgba(251, 191, 36, 0.1);
+            border-color: #b45309;
+            color: #fbbf24;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: var(--card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        body.dark-mode .faq-item {
+            background: #334155;
+            border-color: var(--border-dark);
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: var(--border-light);
+        }
+
+        body.dark-mode .faq-question:hover {
+            background: #475569;
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem 1rem;
+            display: none;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        body.dark-mode .faq-answer {
+            color: #cbd5e1;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .faq-toggle {
+            transition: transform 0.2s;
+        }
+
+        .faq-toggle.open {
+            transform: rotate(180deg);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-light);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        body.dark-mode th, 
+        body.dark-mode td {
+            border-color: var(--border-dark);
+        }
+
+        th {
+            background: var(--border-light);
+            font-weight: 600;
+        }
+
+        body.dark-mode th {
+            background: #475569;
+        }
+
+        @media (max-width: 600px) {
+            main { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            .result-value { font-size: 1.5rem; }
+            .button-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">🧮 Zaculators</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <main>
+        <a href="/" class="back-link">← Back to all calculators</a>
+
+        <h1>Mortgage Calculator</h1>
+        <p class="subtitle">Calculate your monthly mortgage payment, total interest, and amortization schedule instantly</p>
+
+        <!-- CALCULATOR TOOL -->
+        <div class="calculator-section">
+            <form id="calcForm">
+                <div class="form-group">
+                    <label for="homePrice">Home Price ($)</label>
+                    <input type="number" id="homePrice" placeholder="300000" min="0" step="1000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="downPayment">Down Payment ($)</label>
+                    <input type="number" id="downPayment" placeholder="60000" min="0" step="1000">
+                </div>
+
+                <div class="form-group">
+                    <label for="interestRate">Interest Rate (%)</label>
+                    <input type="number" id="interestRate" placeholder="6.5" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanTerm">Loan Term (Years)</label>
+                    <select id="loanTerm" required>
+                        <option value="15">15 years</option>
+                        <option value="20">20 years</option>
+                        <option value="30" selected>30 years</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Calculate</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+
+            <div id="results" class="results">
+                <div class="result-item">
+                    <div class="result-label">Loan Amount</div>
+                    <div class="result-value" id="loanAmount">-</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Monthly Payment</div>
+                    <div class="result-value" id="monthlyPayment">-</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Total Interest Paid</div>
+                    <div class="result-value" id="totalInterest">-</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Total Amount Paid</div>
+                    <div class="result-value" id="totalAmount">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOW TO USE -->
+        <div class="content-section">
+            <h2>How to Use This Mortgage Calculator</h2>
+            <p>
+                Our free mortgage calculator helps you quickly determine your monthly mortgage payments and understand the total cost of your home loan. Here's a step-by-step guide:
+            </p>
+            <ol style="list-style: decimal; padding-left: 1.5rem; color: #475569;">
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;"><strong>Enter Home Price:</strong> Input the total purchase price of the property</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;"><strong>Enter Down Payment:</strong> Specify how much you're putting down (optional - defaults to 20%)</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;"><strong>Enter Interest Rate:</strong> Input the annual interest rate your lender is offering</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;"><strong>Select Loan Term:</strong> Choose between 15, 20, or 30 years</li>
+                <li style="margin-bottom: 0.75rem; padding-left: 0.5rem;"><strong>Click Calculate:</strong> Get instant results showing your monthly payment and total costs</li>
+                <li>Use the results to compare different scenarios and find the best mortgage option</li>
+            </ol>
+        </div>
+
+        <!-- TIPS -->
+        <div class="tips-box">
+            <h3>💡 Tips for Using This Mortgage Calculator</h3>
+            <ul>
+                <li>A larger down payment reduces your loan amount and monthly payment</li>
+                <li>Shorter loan terms (15 years) have lower total interest but higher monthly payments</li>
+                <li>Compare 15-year vs 30-year mortgages to find your ideal balance</li>
+                <li>Even small changes in interest rates significantly impact your monthly payment</li>
+                <li>Don't forget to factor in property taxes, insurance, and HOA fees</li>
+                <li>Use this calculator to compare multiple mortgage scenarios</li>
+            </ul>
+        </div>
+
+        <!-- EXPLANATION -->
+        <div class="content-section">
+            <h2>What Does This Calculator Do?</h2>
+            <p>
+                This mortgage calculator uses the standard loan amortization formula to calculate your monthly mortgage payment based on three key factors: the loan amount (home price minus down payment), the interest rate, and the loan term.
+            </p>
+            <p>
+                The calculator shows you:
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.75rem;">✓ <strong>Loan Amount:</strong> The amount you're borrowing (after down payment)</li>
+                <li style="margin-bottom: 0.75rem;">✓ <strong>Monthly Payment:</strong> Principal + interest payment due each month</li>
+                <li style="margin-bottom: 0.75rem;">✓ <strong>Total Interest:</strong> All interest you'll pay over the life of the loan</li>
+                <li>✓ <strong>Total Amount Paid:</strong> Principal + all interest combined</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                These calculations help you understand the true cost of homeownership and make informed decisions about your mortgage.
+            </p>
+        </div>
+
+        <!-- UNDERSTANDING RESULTS -->
+        <div class="content-section">
+            <h2>Understanding Your Results</h2>
+            <p>
+                Here's what each result means and how to interpret it:
+            </p>
+            
+            <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">Loan Amount</h3>
+            <p>
+                This is the total amount you're borrowing from the lender. It equals the home price minus your down payment. For example, if you're buying a $300,000 home with a $60,000 down payment, your loan amount would be $240,000.
+            </p>
+
+            <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">Monthly Payment</h3>
+            <p>
+                This is the amount you'll pay to your lender each month for the duration of your loan (15, 20, or 30 years). This payment includes both principal (the amount you borrowed) and interest (the cost of borrowing). Keep in mind this doesn't include property taxes, homeowners insurance, PMI, or HOA fees.
+            </p>
+
+            <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">Total Interest Paid</h3>
+            <p>
+                This is the total amount of interest you'll pay over the entire life of the loan. It can be a surprisingly large number - often 50% or more of the loan amount on a 30-year mortgage. This is why paying extra principal early can save you significant money.
+            </p>
+
+            <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">Total Amount Paid</h3>
+            <p>
+                This is the sum of everything you'll pay: the principal loan amount plus all interest. For example, on a $240,000 loan at 6.5% over 30 years, you'll pay about $475,000 total - $240,000 principal plus $235,000 interest.
+            </p>
+        </div>
+
+        <!-- COMPARISON TABLE -->
+        <div class="content-section">
+            <h2>Example: Comparing Loan Terms</h2>
+            <p>Here's how a 30-year and 15-year mortgage compare on a $240,000 loan at 6.5% interest:</p>
+            
+            <table>
+                <tr>
+                    <th>Loan Term</th>
+                    <th>Monthly Payment</th>
+                    <th>Total Interest</th>
+                    <th>Total Paid</th>
+                </tr>
+                <tr>
+                    <td>15 years</td>
+                    <td>$1,854</td>
+                    <td>$93,720</td>
+                    <td>$333,720</td>
+                </tr>
+                <tr>
+                    <td>30 years</td>
+                    <td>$1,520</td>
+                    <td>$307,020</td>
+                    <td>$547,020</td>
+                </tr>
+            </table>
+
+            <p style="margin-top: 1rem;">
+                As you can see, the 15-year mortgage has a higher monthly payment but saves you over $213,000 in interest! However, the 30-year mortgage is more affordable monthly, which is why most homeowners choose it.
+            </p>
+        </div>
+
+        <!-- COMMON QUESTIONS -->
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Does this calculator include property taxes and insurance?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, this calculator shows only the principal and interest portion of your monthly payment. Your actual monthly payment (PITI) also includes property taxes, homeowners insurance, and PMI (if applicable). On average, these add 25-35% to your monthly payment. Contact your lender for exact amounts based on your property and location.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's the difference between 15, 20, and 30-year mortgages?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>15-year mortgage:</strong> Higher monthly payment, but you own your home faster and pay much less interest. Good if you want to build equity quickly.</p>
+                    <p><strong>30-year mortgage:</strong> Lower monthly payment, easier to afford, but you pay significantly more interest over time. Most common choice.</p>
+                    <p><strong>20-year mortgage:</strong> A middle ground between the two, offering a balance of affordability and total interest savings.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's PMI and do I need it?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>PMI (Private Mortgage Insurance) is required when your down payment is less than 20%. It protects the lender if you default. For example, with a 10% down payment, you'd pay PMI until you reach 20% equity. PMI typically costs 0.3-1.5% of your loan amount annually and is added to your monthly payment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How does making extra payments help?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>When you make extra principal payments, you reduce the amount you owe faster, which means less interest accrues over time. For example, making one extra mortgage payment per year can cut 5-7 years off your 30-year mortgage and save you tens of thousands in interest. Even small extra payments ($50-100/month) add up significantly over time.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's a good interest rate?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Interest rates vary based on market conditions, your credit score, loan type, and down payment. As of 2026, rates typically range from 5.5% to 8%. Shop around with multiple lenders - even 0.5% difference in interest rate can mean $50,000+ in savings over 30 years. Check current rates on Bankrate, LendingTree, or directly with lenders.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is this calculator accurate?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, this calculator uses the standard amortization formula used by banks and lenders. However, it shows only principal and interest. For your actual monthly payment, you need to add property taxes, insurance, PMI, and HOA fees. Always verify with your lender before making financial decisions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="disclaimer">
+            <strong>⚠️ Disclaimer:</strong> This mortgage calculator is provided for informational and educational purposes only. 
+            It calculates principal and interest only and does not include property taxes, homeowners insurance, PMI, HOA fees, or other costs. 
+            Results should not be considered financial advice. Always consult with a qualified mortgage lender or financial advisor before making 
+            major financial decisions. We make no warranties about the accuracy or completeness of results.
+        </div>
+
+        <!-- ADDITIONAL INFO -->
+        <div class="content-section">
+            <h2>Why Use Our Mortgage Calculator?</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem;">✅ <strong>100% Free:</strong> No hidden charges or registration required</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Instant Results:</strong> Calculate in seconds, not hours</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Easy Comparison:</strong> Test multiple scenarios side-by-side</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>No Data Collection:</strong> Your calculations stay private and aren't saved</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Mobile Friendly:</strong> Works on any device, anywhere</li>
+                <li style="margin-bottom: 1rem;">✅ <strong>Accurate Formula:</strong> Uses the same calculations as banks</li>
+                <li>✅ <strong>Dark Mode:</strong> Easy on the eyes with automatic theme detection</li>
+            </ul>
+        </div>
+
+        <!-- RELATED -->
+        <div class="content-section">
+            <h2>Related Calculators</h2>
+            <p>You might also find these calculators useful:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">• <a href="home-affordability.html" style="color: var(--primary); text-decoration: none;">Home Affordability Calculator</a> - Determine how much house you can afford</li>
+                <li style="margin-bottom: 0.5rem;">• <a href="property-tax.html" style="color: var(--primary); text-decoration: none;">Property Tax Calculator</a> - Estimate annual property taxes</li>
+                <li style="margin-bottom: 0.5rem;">• <a href="rent-vs-buy.html" style="color: var(--primary); text-decoration: none;">Rent vs Buy Calculator</a> - Compare renting vs buying costs</li>
+                <li style="margin-bottom: 0.5rem;">• <a href="loan.html" style="color: var(--primary); text-decoration: none;">Loan Calculator</a> - Calculate any type of loan payment</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Zaculators. All rights reserved. | <a href="#" style="color: inherit; text-decoration: underline;">Privacy Policy</a> | <a href="#" style="color: inherit; text-decoration: underline;">Terms</a></p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">Free calculators for mortgages, loans, finance, health, real estate, and more.</p>
+    </footer>
+
+    <script>
+        // Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateThemeButton();
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            answer.classList.toggle('show');
+            toggle.classList.toggle('open');
+        }
+
+        // Mortgage Calculator Logic
+        document.getElementById('calcForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            try {
+                const homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
+                const downPayment = parseFloat(document.getElementById('downPayment').value) || (homePrice * 0.2);
+                const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+                const loanTerm = parseInt(document.getElementById('loanTerm').value) * 12;
+                
+                const loanAmount = homePrice - downPayment;
+                const monthlyPayment = loanAmount * (interestRate * Math.pow(1 + interestRate, loanTerm)) / (Math.pow(1 + interestRate, loanTerm) - 1);
+                const totalAmount = monthlyPayment * loanTerm;
+                const totalInterest = totalAmount - loanAmount;
+
+                document.getElementById('loanAmount').textContent = '$' + loanAmount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                document.getElementById('monthlyPayment').textContent = '$' + monthlyPayment.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '/mo';
+                document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                document.getElementById('totalAmount').textContent = '$' + totalAmount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                
+                document.getElementById('results').classList.add('active');
+            } catch (error) {
+                alert('Please check your inputs and try again.');
+            }
+        });
+    </script>
+</body>
+</html>

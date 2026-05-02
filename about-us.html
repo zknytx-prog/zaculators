@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Zaculators - 183+ free online calculators for finance, health, real estate, business, and more.">
+    <title>About Us - Zaculators</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #10b981;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--card-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode header {
+            background: var(--card-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        body.dark-mode .subtitle {
+            color: #cbd5e1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.75rem;
+        }
+
+        body.dark-mode h2 {
+            border-bottom-color: var(--border-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        body.dark-mode p {
+            color: #cbd5e1;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--card-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .feature-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        body.dark-mode .mission-box {
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .mission-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-light);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode footer {
+            border-top-color: var(--border-dark);
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            main { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">🧮 Zaculators</a>
+        <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
+    <main>
+        <a href="/" class="back-link">← Back to calculators</a>
+
+        <h1>About Zaculators</h1>
+        <p class="subtitle">Free calculators for everyone, everywhere</p>
+
+        <h2>Our Mission</h2>
+        <div class="mission-box">
+            <h3>Make financial, health, and business calculations accessible to everyone</h3>
+            <p>
+                We believe that everyone should have access to powerful, accurate calculation tools 
+                without paying subscription fees or providing personal information. Zaculators was created 
+                to solve this problem—providing 183+ free online calculators for personal finance, real estate, 
+                health, business, and more.
+            </p>
+        </div>
+
+        <h2>What We Offer</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>183+ Calculators</h3>
+                <p>
+                    Financial calculators for mortgages, loans, investments, retirement planning, 
+                    and more.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">100%</div>
+                <h3>100% Free</h3>
+                <p>
+                    No hidden fees, no premium versions, no paywalls. Everything is completely free 
+                    to use.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>
+                    No sign-ups, no tracking, no data collection. Your calculations stay on your device.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>
+                    Get results in milliseconds. All calculations happen instantly in your browser.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>
+                    Works perfectly on phones, tablets, and computers. Use Zaculators anywhere.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>No Sign-Up Required</h3>
+                <p>
+                    Start calculating immediately. No registration, no email verification, nothing.
+                </p>
+            </div>
+        </div>
+
+        <h2>Our Calculator Categories</h2>
+        <p>Zaculators includes calculators in these categories:</p>
+        <ul>
+            <li><strong>Financial:</strong> Mortgages, loans, investments, retirement, compound interest, debt payoff, and more</li>
+            <li><strong>Real Estate:</strong> Property tax, home affordability, rent vs buy, property ROI, and more</li>
+            <li><strong>Health & Fitness:</strong> BMI, calorie calculator, body fat percentage, max heart rate, and more</li>
+            <li><strong>Business:</strong> Profit margin, revenue projector, break-even analysis, and more</li>
+            <li><strong>Automotive:</strong> Car payments, fuel costs, vehicle depreciation, and more</li>
+            <li><strong>Conversions & Utilities:</strong> Unit conversions, currency converter, travel costs, and more</li>
+            <li><strong>Personal:</strong> Age calculator, pet age, love calculator, zodiac sign, and more</li>
+        </ul>
+
+        <h2>Why We Built Zaculators</h2>
+        <p>
+            We noticed a gap in the calculator market:
+        </p>
+        <ul>
+            <li>Most calculator sites require sign-ups or email verification</li>
+            <li>Many collect and sell your personal data</li>
+            <li>Subscription models lock basic features behind paywalls</li>
+            <li>Some calculators are inaccurate or outdated</li>
+            <li>Many sites are cluttered with ads and distractions</li>
+        </ul>
+        <p>
+            Zaculators solves all these problems. We offer powerful, accurate calculators with 
+            zero friction, zero data collection, and complete privacy protection.
+        </p>
+
+        <h2>Our Values</h2>
+        <ul>
+            <li><strong>Simplicity:</strong> Clean, intuitive interface. No clutter or confusing menus.</li>
+            <li><strong>Accuracy:</strong> All calculators use verified formulas and are tested regularly.</li>
+            <li><strong>Privacy:</strong> We never collect, store, or share your data. Period.</li>
+            <li><strong>Accessibility:</strong> Free, fast, and works on any device.</li>
+            <li><strong>Transparency:</strong> Clear disclaimers, honest about limitations, and user-focused.</li>
+        </ul>
+
+        <h2>Technical Details</h2>
+        <p>
+            Zaculators is built with modern web technologies:
+        </p>
+        <ul>
+            <li>Pure HTML, CSS, and JavaScript (no unnecessary frameworks)</li>
+            <li>Runs entirely in your browser (no server-side processing)</li>
+            <li>Responsive design for all screen sizes</li>
+            <li>Dark mode for comfortable use anytime</li>
+            <li>Fast loading times and instant calculations</li>
+            <li>Works offline after first load</li>
+        </ul>
+
+        <h2>Supported By</h2>
+        <p>
+            Zaculators is supported by non-intrusive advertising through Google AdSense. 
+            This allows us to keep all calculators free while covering server and development costs. 
+            We only show relevant, appropriate ads that don't interfere with calculator usage.
+        </p>
+
+        <h2>Contact & Support</h2>
+        <p>
+            Have a question? Found a calculator that doesn't work? Want to suggest a new calculator?
+        </p>
+        <ul>
+            <li>Email us: <a href="mailto:support@zaculators.com">support@zaculators.com</a></li>
+            <li>Visit: <a href="/">zaculators.com</a></li>
+        </ul>
+
+        <h2>Legal</h2>
+        <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/disclaimer.html">Disclaimer</a></li>
+        </ul>
+
+        <h2>Thank You</h2>
+        <p>
+            Thank you for using Zaculators. We're committed to continuously improving our calculators 
+            and adding new ones based on user feedback. Our goal is to be the most trusted, most 
+            accessible calculator site on the internet.
+        </p>
+        <p>
+            Whether you're calculating a mortgage payment, planning retirement, tracking fitness goals, 
+            or making a business decision—Zaculators is here to help.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Zaculators. All rights reserved.</p>
+        <p>183+ free calculators. No sign-up. No data collection. Just pure calculation power.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        updateThemeButton();
+    </script>
+</body>
+</html>
