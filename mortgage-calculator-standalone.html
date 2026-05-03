@@ -25,6 +25,7 @@
             animation: fadeIn 0.3s ease-in-out;
         }
     </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good debt-to-income ratio for a mortgage?","acceptedAnswer":{"@type":"Answer","text":"Most conventional lenders prefer a total debt-to-income (DTI) ratio under 43%, with front-end (housing-only) DTI under 28%. Some loan programs allow up to 50% back-end DTI for well-qualified borrowers. Your DTI is calculated by dividing monthly debt payments by gross monthly income. Keeping DTI low improves approval odds and typically earns a better interest rate."}},{"@type":"Question","name":"How much does a 1% rate difference actually cost?","acceptedAnswer":{"@type":"Answer","text":"On a $300,000 30-year mortgage, a 1% higher interest rate raises your monthly payment by about $198 and adds roughly $71,000 in total interest over the loan's life. Even a 0.25% difference costs around $17,000 over 30 years. Shopping multiple lenders and improving your credit score before applying can each deliver tens of thousands in savings."}},{"@type":"Question","name":"Is it better to make biweekly payments instead of monthly?","acceptedAnswer":{"@type":"Answer","text":"Yes, in most cases. Paying half your monthly payment every two weeks results in 26 half-payments per year — the equivalent of 13 full monthly payments. On a $350,000 loan at 7%, biweekly payments can cut the loan term by about 4.5 years and save over $65,000 in interest."}},{"@type":"Question","name":"What is an escrow account and do I need one?","acceptedAnswer":{"@type":"Answer","text":"An escrow account is managed by your lender to collect and pay property taxes and homeowner's insurance on your behalf. Most lenders require escrow when your down payment is under 20%. Each month, a portion of your payment goes into the account; the lender pays your tax and insurance bills when due."}},{"@type":"Question","name":"What is the difference between pre-qualification and pre-approval?","acceptedAnswer":{"@type":"Answer","text":"Pre-qualification is an informal estimate based on self-reported income and assets. Pre-approval involves submitting actual documentation and a hard credit pull; the lender issues a conditional commitment letter for a specific loan amount. In competitive markets, most sellers require a pre-approval letter. Pre-approval also locks in the lender's rate for 60–90 days."}}]}</script>
 </head>
 <body class="bg-gradient-to-br from-slate-50 via-white to-blue-50">
     
@@ -205,25 +206,50 @@
 
         <!-- FAQ -->
         <section class="mt-16 border-t border-slate-200 pt-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-lg border border-slate-200 p-5">
-                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">What does PMI mean?</button>
-                    <p class="text-slate-600 text-sm mt-4 hidden">PMI protects the lender if you default. Required when down payment is less than 20%. Typically costs 0.5-1% annually.</p>
-                </div>
-                <div class="bg-white rounded-lg border border-slate-200 p-5">
-                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">How is interest calculated?</button>
-                    <p class="text-slate-600 text-sm mt-4 hidden">Interest is calculated monthly on your remaining balance. Early payments mostly cover interest; later payments pay down principal.</p>
-                </div>
-                <div class="bg-white rounded-lg border border-slate-200 p-5">
-                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">Can I pay off early?</button>
-                    <p class="text-slate-600 text-sm mt-4 hidden">Most mortgages allow penalty-free early payoff. Paying extra toward principal reduces total interest and shortens your loan term.</p>
-                </div>
-                <div class="bg-white rounded-lg border border-slate-200 p-5">
-                    <button onclick="toggleFAQ(this)" class="w-full text-left font-medium text-slate-900 hover:text-blue-600">What affects my rate?</button>
-                    <p class="text-slate-600 text-sm mt-4 hidden">Credit score, down payment, loan term, property location, and current market rates all affect your rate. Shop multiple lenders.</p>
-                </div>
-            </div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Mortgage Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A mortgage calculator estimates your monthly loan payment based on the home price, down payment, interest rate, and loan term you provide. It helps prospective homebuyers, current owners exploring refinancing, and financial planners compare loan scenarios quickly. Rather than waiting for a lender quote, you can model dozens of combinations in minutes — adjusting rate by a quarter percent, switching from a 30-year to a 15-year term, or experimenting with a larger down payment — to see how each variable shifts your monthly obligation and total cost. This standalone calculator focuses on a clean, fast estimate so you can arrive at lender conversations better informed and less likely to accept unfavorable terms simply because the numbers weren't clear in advance.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Home Price</strong> — The full purchase price of the property you intend to buy.</li>
+<li><strong>Down Payment</strong> — The cash you pay at closing. Use 20% to avoid PMI, or enter a smaller amount to see what PMI adds each month.</li>
+<li><strong>Interest Rate</strong> — Your expected annual rate. Check current rate averages from Freddie Mac's weekly survey as a benchmark, then add or subtract based on your credit profile.</li>
+<li><strong>Loan Term</strong> — Typically 15 or 30 years. Shorter terms cost more monthly but far less overall.</li>
+<li><strong>Start Date</strong> — Used to generate your amortization timeline and projected payoff date.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">Your result shows the monthly principal-and-interest payment — the core obligation that never changes on a fixed-rate loan. Keep in mind this figure does not include property taxes, homeowner's insurance, or HOA fees; when you add those, total monthly housing cost is typically 25–40% higher than the P&amp;I figure alone. Lenders use a 28% front-end DTI rule of thumb: your total monthly housing cost should not exceed 28% of gross monthly income. A household earning $8,000/month should target housing costs under $2,240. Use the amortization breakdown to see how quickly you build equity — the first several years, most of your payment is interest, so the balance falls slowly. By year 10 of a 30-year loan, you've paid roughly one-third of total interest but retired far less than half the principal balance.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A first-time buyer purchases a $310,000 home with 5% down ($15,500), creating a $294,500 loan at 6.875% for 30 years. Monthly P&amp;I: $1,936. PMI at 0.8% adds $196/month until 20% equity is reached (around year 9). Property tax at 1.1% adds $284/month, insurance adds $120/month — total PITI is $2,536. On a $75,000 gross income that's $6,250/month, this represents 40.6% — above the 28% guideline. The buyer could lower costs by targeting a $270,000 purchase, saving over $350/month and bringing the ratio to a more comfortable 34%. Running these scenarios takes under a minute with this calculator.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is a good debt-to-income ratio for a mortgage?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Most conventional lenders prefer a total debt-to-income (DTI) ratio under 43%, with front-end (housing-only) DTI under 28%. Some loan programs allow up to 50% back-end DTI for well-qualified borrowers. Your DTI is calculated by dividing monthly debt payments (housing, car, student loans, credit cards) by gross monthly income. Keeping DTI low not only improves approval odds but typically earns you a better interest rate, reducing lifetime costs significantly.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How much does a 1% rate difference actually cost?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">On a $300,000 30-year mortgage, a 1% higher interest rate (say, 7% vs. 6%) raises your monthly payment by about $198 and adds roughly $71,000 in total interest over the loan's life. Even a 0.25% difference costs around $17,000 over 30 years. This is why shopping multiple lenders — most mortgage experts recommend at least three — and improving your credit score before applying can each deliver tens of thousands in savings without changing the purchase price.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Is it better to make biweekly payments instead of monthly?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes, in most cases. Paying half your monthly payment every two weeks results in 26 half-payments per year — the equivalent of 13 full monthly payments instead of 12. That extra payment per year goes entirely to principal. On a $350,000 loan at 7%, biweekly payments can cut the loan term by about 4.5 years and save over $65,000 in interest. Confirm with your lender that they apply biweekly payments immediately rather than holding them until month-end.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is an escrow account and do I need one?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">An escrow account is managed by your lender to collect and pay property taxes and homeowner's insurance on your behalf. Most lenders require escrow when your down payment is under 20%. Each month, a portion of your payment goes into the account; the lender pays your tax and insurance bills when due. While you lose control over those funds between payment and disbursement, escrow prevents the risk of missing a large tax bill — which could trigger a lien on your property.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is the difference between pre-qualification and pre-approval?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Pre-qualification is an informal estimate based on self-reported income and assets — it takes minutes but carries little weight with sellers. Pre-approval involves submitting actual documentation (pay stubs, tax returns, bank statements) and a hard credit pull; the lender issues a conditional commitment letter for a specific loan amount. In competitive markets, most sellers require a pre-approval letter. Pre-approval also locks in the lender's rate for 60–90 days, protecting you if rates rise while you shop.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/refinance.html" style="color:#2563eb;">Refinance Calculator</a> · <a href="/rent-vs-buy.html" style="color:#2563eb;">Rent vs Buy Calculator</a> · <a href="/property-appreciation.html" style="color:#2563eb;">Property Appreciation Calculator</a></p>
+</section>
         </section>
 
         <!-- Email Capture -->

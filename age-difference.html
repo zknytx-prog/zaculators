@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Does this use leap years?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It uses an average year length so the estimate is practical and consistent."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I compare any two dates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The tool works for any valid pair of dates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why show months too?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Some comparisons make more sense in months, especially for children."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will same-day birthdays show zero?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. If both dates match exactly, the difference is zero."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use future dates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, though that is more planning than age calculation. Humans do enjoy making timelines for everything."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the result exact to the day?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The years and months display is a rounded practical estimate."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the calculator handle leap years correctly?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses a standard average year length of 365.2425 days, which already accounts for leap years in aggregate. For most practical purposes — comparing ages between siblings, partners, or historical figures — this produces an accurate and consistent result. If you need an exact day-by-day count, a dedicated date-difference tool will be more precise for very short intervals."}},{"@type":"Question","name":"Why is the result shown in decimal years instead of years and months separately?","acceptedAnswer":{"@type":"Answer","text":"Decimal years make it easy to sort, compare, and use in formulas. The calculator also shows the total months figure separately, which gives you the month-level breakdown. Together, the two numbers cover most use cases: a quick comparison uses the year decimal, while a detailed breakdown uses the month count."}},{"@type":"Question","name":"Can I compare birth dates for two people born in different countries?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the birth date each person actually uses on official documents. The calculator compares calendar dates and does not apply time-zone adjustments, which is exactly what you want for comparing legal ages."}},{"@type":"Question","name":"What does the who is older result mean when both dates are the same?","acceptedAnswer":{"@type":"Answer","text":"When both birth dates match exactly, the calculator shows Both dates are the same and returns a difference of 0 years and 0 months. There is no rounding that would cause identical dates to show a non-zero gap."}},{"@type":"Question","name":"Can I use future birth dates to plan or project age gaps?","acceptedAnswer":{"@type":"Answer","text":"Yes. Entering a future date works the same way. Some parents planning a second pregnancy use the calculator to project what the age gap will be given a target due date. You can also use it to check eligibility cutoffs for school enrollment or age-based programs."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,47 @@
 <li>Save the result if you compare the same dates often.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Does this use leap years?</h3><p>It uses an average year length so the estimate is practical and consistent.</p></div>
-<div class="faq-item"><h3>Can I compare any two dates?</h3><p>Yes. The tool works for any valid pair of dates.</p></div>
-<div class="faq-item"><h3>Why show months too?</h3><p>Some comparisons make more sense in months, especially for children.</p></div>
-<div class="faq-item"><h3>Will same-day birthdays show zero?</h3><p>Yes. If both dates match exactly, the difference is zero.</p></div>
-<div class="faq-item"><h3>Can I use future dates?</h3><p>Yes, though that is more planning than age calculation. Humans do enjoy making timelines for everything.</p></div>
-<div class="faq-item"><h3>Is the result exact to the day?</h3><p>The years and months display is a rounded practical estimate.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Age Difference Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The Age Difference Calculator compares two birth dates and tells you the gap between them in both years and months. People use it for all kinds of reasons: couples curious about how many years separate them, parents tracking the spread between siblings, genealogists working through old records, and HR professionals checking eligibility windows for age-related programs. Rather than counting months on a calendar by hand and risking an off-by-one error, you enter the two dates and get an instant, consistent result. The calculator also identifies which date is older, so you never have to wonder which person is the elder. It works for any two valid dates — past, present, or future — making it equally useful for historical research and future planning.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>First birth date</strong> — Enter the earlier or later date using the date picker. The order does not matter; the calculator always returns a positive difference.</li>
+<li><strong>Second birth date</strong> — Enter the second person's birth date. You can use any format the date picker accepts.</li>
+<li><strong>Click Calculate</strong> — The results panel shows the gap in decimal years, the same gap converted to total months, and a label indicating which date is older.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The calculator returns three values. The years figure is a decimal — for example, 4.75 years means four years and roughly nine months. This decimal format is useful when you need a single number for a spreadsheet or comparison. The months figure converts that same gap into total months, which is especially meaningful for young children where "34 months" is more precise than saying "almost 3 years." The "who is older" label identifies which of the two dates you entered is the earlier one. Keep in mind the calculator uses an average year of 365.2425 days, so results for very short gaps may differ slightly from a strict calendar count. For gaps of several years, the rounding is negligible in practice. This tool does not account for time zones, so if two people were born across a date-line boundary, use the local birth dates each person actually uses.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">Suppose two siblings were born on March 14, 2005, and November 28, 2009. Entering those two dates gives a gap of about 4.71 years, or roughly 56.5 months. The calculator labels the March 2005 date as older. A parent verifying school-grade eligibility might use this to confirm a 4-year, 8-month spread — important when districts use strict cutoff dates for programs or grade placement. The same calculation works for adult partners: a person born January 10, 1985, and another born August 3, 1991, have a gap of about 6.56 years (78.7 months), with the 1985 date being older.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Does the calculator handle leap years correctly?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The calculator uses a standard average year length of 365.2425 days, which already accounts for leap years in aggregate. For most practical purposes — comparing ages between siblings, partners, or historical figures — this produces an accurate and consistent result. If you need an exact day-by-day count, a dedicated date-difference tool that walks through the actual calendar will be more precise for very short intervals.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why is the result shown in decimal years instead of years and months separately?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Decimal years make it easy to sort, compare, and use in formulas. The calculator also shows the total months figure separately, which gives you the month-level breakdown. Together, the two numbers cover most use cases: a quick comparison uses the year decimal, while a detailed breakdown uses the month count.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can I compare birth dates for two people born in different countries?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes. Enter the birth date each person actually uses on official documents. The calculator compares calendar dates and does not apply time-zone adjustments, which is exactly what you want for comparing legal ages. A person born on December 31 in Tokyo and another born on January 1 in New York have birth dates one day apart on their respective documents, and the calculator will reflect that accurately.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What does the "who is older" result mean when both dates are the same?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">When both birth dates match exactly, the calculator shows "Both dates are the same" and returns a difference of 0 years and 0 months. This happens with twins born on the same day, or any comparison where you accidentally enter the same date in both fields. There is no rounding that would cause identical dates to show a non-zero gap.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can I use future birth dates to plan or project age gaps?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes. Entering a future date works the same way. Some parents planning a second pregnancy use the calculator to project what the age gap will be given a target due date. You can also use it to check eligibility cutoffs — for example, whether a child born in a particular month will meet a school's age threshold by September 1 of a given year. The calculator handles any valid date pair regardless of whether those dates are past, present, or future.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/anniversary-calculator.html" style="color:#2563eb;">Anniversary Calculator</a> · <a href="/days-until.html" style="color:#2563eb;">Days Until Calculator</a> · <a href="/baby-due-date.html" style="color:#2563eb;">Baby Due Date Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>

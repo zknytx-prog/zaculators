@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is TDEE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TDEE is your estimated total daily calorie burn including activity."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why show a cutting target?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A moderate calorie deficit is a common starting point for fat loss planning."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the activity level precise?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It is a practical category estimate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should athletes rely on this alone?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not always. Training load and recovery can vary more than the categories suggest."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What about bulking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can add a moderate surplus above maintenance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should I update it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Recalculate after meaningful changes in body weight or activity."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is the calories your body burns at complete rest. TDEE adds the caloric cost of all physical activity on top of BMR. For a sedentary person, TDEE might be only 20% above BMR. For a highly active athlete, TDEE can be 90% or more above BMR. Plan nutrition around TDEE, not BMR."}},{"@type":"Question","name":"How do activity multipliers work and which should I choose?","acceptedAnswer":{"@type":"Answer","text":"Activity multipliers represent the ratio of total daily energy expenditure to resting metabolic rate. Most people overestimate their activity level. A person who exercises 45 minutes three times per week but sits most of the day is lightly active. If weight is not changing as expected, try dropping to the next lower multiplier."}},{"@type":"Question","name":"Why does weight loss slow down after a few weeks on a consistent deficit?","acceptedAnswer":{"@type":"Answer","text":"Metabolic adaptation occurs when the body responds to caloric restriction by reducing non-exercise activity and slightly lowering body temperature. This can reduce effective TDEE by 100–300 kcal/day. Periodic diet breaks at maintenance and gradually increasing activity can help mitigate adaptation."}},{"@type":"Question","name":"How many calories above TDEE should I eat to build muscle?","acceptedAnswer":{"@type":"Answer","text":"A lean bulk typically uses a surplus of 100–300 kcal/day above TDEE to support muscle protein synthesis without excessive fat gain. Larger surpluses of 500+ kcal/day add weight faster but a greater proportion tends to be fat rather than muscle."}},{"@type":"Question","name":"Should I recalculate my TDEE as I lose weight?","acceptedAnswer":{"@type":"Answer","text":"Yes. As body weight decreases, BMR decreases proportionally, so TDEE also falls. Recalculate every 10–15 lb of weight change to keep targets accurate. Many plateaus occur simply because the caloric deficit disappeared as body weight and TDEE converged."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,49 @@
 <li>Update the estimate after body weight changes.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>What is TDEE?</h3><p>TDEE is your estimated total daily calorie burn including activity.</p></div>
-<div class="faq-item"><h3>Why show a cutting target?</h3><p>A moderate calorie deficit is a common starting point for fat loss planning.</p></div>
-<div class="faq-item"><h3>Is the activity level precise?</h3><p>No. It is a practical category estimate.</p></div>
-<div class="faq-item"><h3>Should athletes rely on this alone?</h3><p>Not always. Training load and recovery can vary more than the categories suggest.</p></div>
-<div class="faq-item"><h3>What about bulking?</h3><p>You can add a moderate surplus above maintenance.</p></div>
-<div class="faq-item"><h3>How often should I update it?</h3><p>Recalculate after meaningful changes in body weight or activity.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the TDEE Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">Total Daily Energy Expenditure (TDEE) is the estimated number of calories your body burns in a full day, accounting for both resting metabolism and physical activity. It is calculated by multiplying your Basal Metabolic Rate (BMR) — the calories your body needs at complete rest to maintain basic organ function — by an activity multiplier that reflects how physically active you are. This calculator uses the Mifflin-St Jeor equation, the most widely validated BMR formula for the general population, combined with the Harris-Benedict activity scale. TDEE is the foundation of evidence-based nutrition planning: eating below TDEE creates a deficit that drives fat loss; eating above TDEE creates a surplus that supports muscle gain; eating at TDEE maintains current weight. Fitness coaches, registered dietitians, athletes, and anyone managing body composition use TDEE as their caloric baseline.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Sex</strong> — The Mifflin-St Jeor equation uses different constants for males and females because of differences in average lean mass and resting metabolic rate.</li>
+<li><strong>Weight (lb)</strong> — Enter your current body weight in pounds. Use a recent morning measurement for consistency.</li>
+<li><strong>Height (inches)</strong> — Enter your height in total inches (e.g., 5'10" = 70 inches).</li>
+<li><strong>Age</strong> — Metabolic rate declines with age, roughly 1–2% per decade after age 20, so age is a meaningful input in the formula.</li>
+<li><strong>Activity level</strong> — Choose the category that best matches your typical week: Sedentary (desk job, minimal exercise, ×1.2), Lightly active (light exercise 1–3 days/week, ×1.375), Moderately active (moderate exercise 3–5 days/week, ×1.55), Very active (hard exercise 6–7 days/week, ×1.725), Extra active (very hard exercise or physical job, ×1.9).</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The calculator outputs three numbers: Estimated TDEE (your daily maintenance calories), Maintenance target (same as TDEE — what to eat to hold current weight), and Rough cutting target (TDEE minus 500 calories). A 500 kcal/day deficit creates approximately a 1 lb per week fat loss rate, since 3,500 kcal equals roughly one pound of fat. This is a commonly used and sustainable deficit for most people. A 250 kcal deficit produces about 0.5 lb per week — slower but easier to sustain. Deficits larger than 750–1,000 kcal/day risk muscle loss, hormonal disruption, and metabolic adaptation. Always track real-world weight trends over 2–4 weeks rather than trusting the calculator number blindly — individual metabolisms vary by 10–20% from formula predictions.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A 32-year-old male, 180 lb, 5'11" (71 inches), moderately active (×1.55). BMR via Mifflin-St Jeor: (10 × 81.6 kg) + (6.25 × 180.3 cm) − (5 × 32) + 5 = 816 + 1,127 − 160 + 5 = 1,788 kcal/day. TDEE: 1,788 × 1.55 = 2,771 kcal/day. Cutting target: 2,771 − 500 = 2,271 kcal/day. At this deficit, he should expect approximately 1 lb of fat loss per week in the absence of metabolic adaptation, assuming protein intake is sufficient (0.7–1 g per lb of body weight) to preserve lean mass.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is the difference between BMR and TDEE?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">BMR (Basal Metabolic Rate) is the number of calories your body burns at complete rest — essentially the energy cost of keeping your organs functioning while lying still in a neutral temperature environment. TDEE adds the caloric cost of all physical activity on top of BMR. For a sedentary person, TDEE might be only 20% above BMR. For a highly active athlete, TDEE can be 90% or more above BMR. You should plan nutrition around TDEE, not BMR.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How do activity multipliers work and which should I choose?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Activity multipliers represent the ratio of total daily energy expenditure to resting metabolic rate. Most people overestimate their activity level — a person who exercises 45 minutes three times per week but sits for most of the remaining 23 hours is "lightly active," not "moderately active." If your weight is not changing as expected after 3–4 weeks of tracking, try dropping to the next lower activity multiplier and recalculating.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does weight loss slow down after a few weeks even on a consistent deficit?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Metabolic adaptation — sometimes called "adaptive thermogenesis" — occurs when your body responds to sustained caloric restriction by reducing non-exercise activity (fidgeting, spontaneous movement), lowering body temperature slightly, and reducing the thermic effect of food. This can reduce your effective TDEE by 100–300 kcal/day over several months of dieting. Taking periodic diet breaks (eating at maintenance for 1–2 weeks) and gradually increasing activity can help mitigate adaptation.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How many calories above TDEE should I eat to build muscle?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">A lean bulk typically uses a surplus of 100–300 kcal/day above TDEE. This supports muscle protein synthesis without excessive fat gain. Larger surpluses of 500+ kcal/day add weight faster but a greater proportion of that weight tends to be fat. Beginners can build muscle effectively even in a small deficit, but intermediate and advanced trainees generally need a modest surplus to make consistent strength and size gains.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Should I recalculate my TDEE as I lose weight?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes. As body weight decreases, BMR decreases proportionally, so your TDEE also falls. A person who started at 220 lb has a meaningfully higher TDEE than the same person at 185 lb. Recalculating every 10–15 lb of weight change keeps your targets accurate. Many people hit a plateau not because of metabolic adaptation but simply because their caloric deficit disappeared as their body weight and TDEE converged.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/bmi.html" style="color:#2563eb;">BMI Calculator</a> · <a href="/water-intake.html" style="color:#2563eb;">Water Intake Calculator</a> · <a href="/waist-hip-ratio.html" style="color:#2563eb;">Waist-Hip Ratio Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>

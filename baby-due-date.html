@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is this medically exact?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It is a common estimate, but clinicians may refine the date with ultrasound and other information."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does cycle length matter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Longer or shorter cycles can shift ovulation timing and the estimated due date."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use conception date instead?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "This version is based on LMP. A conception-based calculator would be slightly different."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if I do not know my exact LMP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Use your best estimate, then confirm with a healthcare professional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can pregnancies go past the due date?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. A due date is an estimate, not a guaranteed arrival slot. Babies ignore scheduling software."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I rely on this for medical decisions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Use it for planning only and follow clinical guidance."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Naegele's Rule and how does this calculator use it?","acceptedAnswer":{"@type":"Answer","text":"Naegele's Rule is the standard formula for estimating a due date: add 280 days to the first day of the LMP. This calculator applies the same logic but also adjusts for your actual cycle length, shifting the due date by the number of days your cycle differs from 28. A 32-day cycle shifts it 4 days later; a 25-day cycle shifts it 3 days earlier."}},{"@type":"Question","name":"How accurate is LMP-based due date estimation?","acceptedAnswer":{"@type":"Answer","text":"LMP-based estimation assumes regular cycles and reliable recall of the LMP date. First-trimester ultrasound dating is more accurate, typically within 5-7 days. LMP dating can be off by 1-2 weeks in people with irregular cycles. Most providers confirm or adjust the LMP estimate at the first prenatal ultrasound, usually between 8 and 12 weeks."}},{"@type":"Question","name":"What does gestational age mean and how is it counted?","acceptedAnswer":{"@type":"Answer","text":"Gestational age counts from the first day of the LMP, not from conception. This is a clinical convention. Conception typically occurs around week 2 of gestational age, so a 6-week embryo by gestational age is about 4 weeks old by fertilization age. Total pregnancy is 40 weeks from LMP but about 38 weeks from conception."}},{"@type":"Question","name":"Is it normal to deliver before or after the estimated due date?","acceptedAnswer":{"@type":"Answer","text":"Yes. Only about 5% of births occur on the estimated due date itself. Full-term is 39 to 40 weeks 6 days. Most births occur within two weeks before or after. Providers typically monitor closely and may recommend induction if pregnancy extends beyond 41-42 weeks."}},{"@type":"Question","name":"Can I calculate the due date using conception date instead of LMP?","acceptedAnswer":{"@type":"Answer","text":"If you know your conception date, add 266 days (38 weeks) to it rather than 280 days from LMP. This is because conception typically occurs about 14 days after LMP in a standard 28-day cycle. The two approaches should give the same or very similar result."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,47 @@
 <li>Use the share feature only if you actually want the entire family to start texting.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is this medically exact?</h3><p>No. It is a common estimate, but clinicians may refine the date with ultrasound and other information.</p></div>
-<div class="faq-item"><h3>Why does cycle length matter?</h3><p>Longer or shorter cycles can shift ovulation timing and the estimated due date.</p></div>
-<div class="faq-item"><h3>Can I use conception date instead?</h3><p>This version is based on LMP. A conception-based calculator would be slightly different.</p></div>
-<div class="faq-item"><h3>What if I do not know my exact LMP?</h3><p>Use your best estimate, then confirm with a healthcare professional.</p></div>
-<div class="faq-item"><h3>Can pregnancies go past the due date?</h3><p>Yes. A due date is an estimate, not a guaranteed arrival slot. Babies ignore scheduling software.</p></div>
-<div class="faq-item"><h3>Should I rely on this for medical decisions?</h3><p>No. Use it for planning only and follow clinical guidance.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Baby Due Date Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The Baby Due Date Calculator estimates when a baby is expected to arrive using Naegele's Rule — the same method most obstetricians use for a first estimate. The formula adds 280 days (40 weeks) to the first day of the last menstrual period (LMP), then adjusts for cycle lengths that differ from the standard 28-day assumption. A person with a 30-day cycle ovulates roughly two days later than average, shifting the estimated due date by the same amount. This calculator is useful for initial planning: setting up a prenatal appointment, estimating which trimester you are in, calculating how many weeks along you are today, and giving family members a rough timeline. It should never replace clinical dating, which may use ultrasound measurements — especially a first-trimester crown-rump length scan — to establish or refine the due date.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Last menstrual period start date</strong> — Enter the first day of your most recent period before conception. This is the anchor date for the 280-day calculation. If you are unsure of the exact date, use the first of the month as an approximation and note that results will be less precise.</li>
+<li><strong>Average cycle length (days)</strong> — Enter the typical length of your menstrual cycle in days, from the first day of one period to the first day of the next. The standard assumption is 28 days; enter your actual average if it is different, anywhere from 21 to 40 days.</li>
+<li><strong>Click Calculate</strong> — The result shows your estimated due date, how many weeks have elapsed since your LMP, and a reminder that clinical providers may adjust this estimate.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The estimated due date is the 40-week mark from your LMP, adjusted by the difference between your cycle length and 28 days. Only about 5% of babies actually arrive on their estimated due date; most births occur within two weeks before or after. The "weeks elapsed" figure counts from your LMP date and is how healthcare providers measure gestational age — so at 8 weeks pregnant, your embryo is actually about 6 weeks old by fertilization age. If your estimated due date differs from what your OB or midwife tells you after an ultrasound, trust the clinical measurement. Ultrasound dating in the first trimester is accurate to within about 5–7 days, making it more reliable than LMP-based estimation when there is a discrepancy.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A person with a last menstrual period starting January 10, 2025, and a 28-day cycle enters those values. The calculator adds 280 days to January 10, arriving at an estimated due date of October 17, 2025. If the same person has a 31-day cycle, the due date shifts to October 20, 2025 — three days later, reflecting later ovulation. At the time of calculation in early April 2025, the calculator would show approximately 12 weeks elapsed, placing this pregnancy in the late first trimester. The person can use this information to confirm they are due for their first-trimester screening window and plan accordingly.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is Naegele's Rule and how does this calculator use it?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Naegele's Rule is the standard formula for estimating a due date: add one year to the LMP date, subtract three months, and add seven days — which is mathematically equivalent to adding 280 days. This calculator applies the same logic but also adjusts for your actual cycle length, shifting the due date by the number of days your cycle differs from 28. A 32-day cycle shifts it 4 days later; a 25-day cycle shifts it 3 days earlier.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How accurate is LMP-based due date estimation?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">LMP-based estimation assumes regular cycles and reliable recall of the LMP date. Studies show that first-trimester ultrasound dating is more accurate, typically within 5–7 days. LMP dating can be off by 1–2 weeks in people with irregular cycles, uncertain LMP dates, or conditions like PCOS. Most providers confirm or adjust the LMP estimate at the first prenatal ultrasound, usually between 8 and 12 weeks.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What does gestational age mean and how is it counted?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Gestational age counts from the first day of the LMP, not from conception or implantation. This is a clinical convention that makes the LMP — a date patients can usually identify — the starting point. Conception typically occurs around week 2 of gestational age, so a "6-week embryo" by gestational age is actually about 4 weeks old by fertilization age. This is why the total pregnancy is said to last 40 weeks from LMP but only about 38 weeks from conception.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Is it normal to deliver before or after the estimated due date?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes, this is very normal. A full-term pregnancy is considered anywhere from 39 to 40 weeks and 6 days. Early term is 37–38 weeks 6 days; late term is 41 weeks; post-term is 42 weeks or beyond. According to CDC data, only about 5% of births occur on the estimated due date itself. Most occur within the two-week window on either side. Providers typically monitor closely and may recommend induction if the pregnancy extends beyond 41–42 weeks.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can I calculate the due date using conception date instead of LMP?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">If you know your conception date, add 266 days (38 weeks) to it rather than 280 days from LMP. This is because conception typically occurs about 14 days after LMP in a standard 28-day cycle. The two approaches should give the same or very similar result. This calculator uses LMP as the input because it is the date most people know; if you only know your conception date, use the 266-day method manually or note it adds about 38 weeks.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/age-difference.html" style="color:#2563eb;">Age Difference Calculator</a> · <a href="/anniversary-calculator.html" style="color:#2563eb;">Anniversary Calculator</a> · <a href="/days-until.html" style="color:#2563eb;">Days Until Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>

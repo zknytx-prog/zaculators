@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is this legally reliable?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It is only an estimate and should never be used to decide whether driving is safe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is body weight included?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Body size affects dilution in common estimate formulas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is time included?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alcohol is metabolized over time, so BAC generally decreases as hours pass."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can food change BAC?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Food, metabolism, and many other factors can affect the real number."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does this guarantee I am under the limit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Never rely on an estimate for legal or safety decisions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should I do if I drank?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Do not drive. Use a sober ride or wait until completely safe."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can this calculator tell me if I am safe to drive?","acceptedAnswer":{"@type":"Answer","text":"No — and it should never be used for that purpose. This is an educational estimate based on average physiological assumptions. Actual BAC depends on many individual factors this formula cannot account for. Even a BAC below 0.08% can impair driving ability. The only responsible answer after drinking any amount of alcohol is to arrange a sober ride or wait a sufficient period confirmed by a certified breathalyzer."}},{"@type":"Question","name":"Why does biological sex affect the BAC estimate?","acceptedAnswer":{"@type":"Answer","text":"The Widmark formula uses a body water distribution constant — 0.73 for males and 0.66 for females on average. Females typically have a higher proportion of body fat and lower proportion of body water, meaning alcohol is distributed through less fluid, resulting in a higher estimated BAC for the same number of drinks."}},{"@type":"Question","name":"How long does it take to sober up?","acceptedAnswer":{"@type":"Answer","text":"The body metabolizes alcohol at roughly 0.015% BAC per hour on average — about one standard drink per hour for a typical adult. You cannot speed up this process by drinking coffee, eating, or exercising. The only thing that eliminates alcohol from your bloodstream is time and your liver's natural metabolic process."}},{"@type":"Question","name":"What counts as one standard drink in the US?","acceptedAnswer":{"@type":"Answer","text":"The NIAAA defines one standard drink as 14 grams of pure alcohol: 12 oz of regular beer at 5% ABV, 5 oz of table wine at 12% ABV, or 1.5 oz of 80-proof distilled spirits at 40% ABV. Many common servings — a large restaurant wine pour or a pint of craft IPA — contain more than one standard drink."}},{"@type":"Question","name":"At what BAC level does impairment begin?","acceptedAnswer":{"@type":"Answer","text":"Research shows measurable impairment of judgment and reaction time begins at BAC levels as low as 0.02-0.04%. At 0.05%, coordination deteriorates. At 0.08% — the legal limit — reaction time and lane tracking are significantly impaired. The legal threshold is not a safe level; it is the point at which driving is illegal, not where impairment starts."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,48 @@
 <li>Err on the side of safety every time.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is this legally reliable?</h3><p>No. It is only an estimate and should never be used to decide whether driving is safe.</p></div>
-<div class="faq-item"><h3>Why is body weight included?</h3><p>Body size affects dilution in common estimate formulas.</p></div>
-<div class="faq-item"><h3>Why is time included?</h3><p>Alcohol is metabolized over time, so BAC generally decreases as hours pass.</p></div>
-<div class="faq-item"><h3>Can food change BAC?</h3><p>Yes. Food, metabolism, and many other factors can affect the real number.</p></div>
-<div class="faq-item"><h3>Does this guarantee I am under the limit?</h3><p>No. Never rely on an estimate for legal or safety decisions.</p></div>
-<div class="faq-item"><h3>What should I do if I drank?</h3><p>Do not drive. Use a sober ride or wait until completely safe.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the BAC Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">Blood Alcohol Concentration (BAC) is a measure of the amount of alcohol present in a person's bloodstream, expressed as a percentage. A BAC of 0.08% — the legal driving limit in all US states — means 0.08 grams of alcohol per 100 milliliters of blood. This calculator estimates BAC using the Widmark formula, one of the most widely cited methods in forensic toxicology and alcohol research. It takes into account the number of standard drinks consumed, body weight, biological sex, and the number of hours since drinking began. This tool is strictly educational — for understanding how alcohol affects the body, for academic purposes, or for awareness. It must never be used to determine whether it is safe or legal to drive. Impairment can occur at BAC levels well below 0.08%, and individual variation is significant.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Number of drinks</strong> — Enter the number of standard drinks consumed. In the US, one standard drink contains 14 grams of pure alcohol — equivalent to 12 oz of regular beer (5% ABV), 5 oz of wine (12% ABV), or 1.5 oz of distilled spirits (40% ABV). Craft beers, large wine pours, and cocktails often count as more than one standard drink.</li>
+<li><strong>Body weight</strong> — Enter your weight in pounds. The Widmark formula distributes alcohol through body water, and larger body mass dilutes alcohol more, resulting in lower estimated BAC.</li>
+<li><strong>Hours since drinking started</strong> — Enter how many hours have passed since you began drinking. The body metabolizes alcohol at roughly 0.015% BAC per hour on average, so time reduces the estimate.</li>
+<li><strong>Biological sex</strong> — Select male or female. The Widmark formula uses different distribution constants (r values) for each: 0.73 for males and 0.66 for females, reflecting different average body water percentages.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The calculator returns an estimated BAC value and a status message. A result at or above 0.08 indicates high legal risk for driving in all US states. A non-zero result below 0.08 still signals that alcohol is present — impairment of judgment, reaction time, and coordination can occur at any measurable BAC. A result of 0 means the estimate suggests no alcohol remaining, but this is a mathematical estimate, not a clinical blood test. Real BAC is affected by food intake, hydration, liver function, medications, tolerance, and many other individual factors the Widmark formula does not capture. A breathalyzer or blood test administered by a medical professional is the only reliable measurement of actual BAC.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A 160-pound male consumes 3 standard drinks over 2 hours. Using the Widmark formula: (3 × 5.14) ÷ (160 × 0.73) = 15.42 ÷ 116.8 = 0.132. Subtract 0.015 × 2 hours = 0.030. Estimated BAC = 0.132 − 0.030 = approximately 0.102%. This is above the 0.08% legal limit. A 130-pound female consuming the same 3 drinks over 2 hours would calculate: (3 × 5.14) ÷ (130 × 0.66) = 15.42 ÷ 85.8 = 0.180, minus 0.030 = approximately 0.150% — substantially higher, illustrating why body weight and sex matter significantly in BAC estimation.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can this calculator tell me if I am safe to drive?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">No — and it should never be used for that purpose. This is an educational estimate based on average physiological assumptions. Actual BAC depends on many individual factors this formula cannot account for. Even a BAC below 0.08% can impair driving ability. The only responsible answer after drinking any amount of alcohol is to arrange a sober ride, use a rideshare app, or wait a sufficient period of time confirmed by a certified breathalyzer.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does biological sex affect the BAC estimate?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The Widmark formula uses a body water distribution constant — 0.73 for males and 0.66 for females on average. Females typically have a higher proportion of body fat and lower proportion of body water than males of the same weight, which means alcohol is distributed through less fluid, resulting in a higher estimated BAC for the same number of drinks. Hormonal fluctuations and other biological factors can also affect alcohol metabolism, but the Widmark constants are the primary adjustment in this formula.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How long does it take to sober up?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The body metabolizes alcohol at roughly 0.015% BAC per hour on average — equivalent to about one standard drink per hour for a typical adult. You cannot speed up this process by drinking coffee, eating food, exercising, or sleeping. These actions may make you feel more alert but do not reduce actual BAC. The only thing that eliminates alcohol from your bloodstream is time and your liver's natural metabolic process.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What counts as one standard drink in the US?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The US National Institute on Alcohol Abuse and Alcoholism (NIAAA) defines one standard drink as 14 grams (0.6 fl oz) of pure alcohol. This equals: 12 oz of regular beer at 5% ABV, 8–9 oz of malt liquor at 7% ABV, 5 oz of table wine at 12% ABV, or 1.5 oz of 80-proof distilled spirits at 40% ABV. Many common servings — a large restaurant pour of wine, a pint of craft IPA, or a strong cocktail — contain more than one standard drink.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">At what BAC level does impairment begin?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Research shows measurable impairment of judgment and reaction time begins at BAC levels as low as 0.02–0.04%. At 0.05%, coordination and ability to track moving objects deteriorate. At 0.08% — the legal limit — reaction time, steering, and lane tracking are significantly impaired. At 0.15% and above, severe impairment of balance, speech, and motor control occurs. The 0.08% legal threshold is not a "safe" level; it is the point at which driving is illegal, not the point at which impairment starts.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/calorie-burn.html" style="color:#2563eb;">Calorie Burn Calculator</a> · <a href="/bmr.html" style="color:#2563eb;">BMR Calculator</a> · <a href="/body-fat-percentage.html" style="color:#2563eb;">Body Fat Percentage Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>

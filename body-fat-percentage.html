@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is this as accurate as a DEXA scan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Tape methods are convenient estimates, not gold-standard measurements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is hip measurement only for women in this formula?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "That is how this commonly used version of the Navy method is structured."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can hydration affect this?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It affects some body composition methods, but tape measurement error usually matters more here."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I measure at the same time each time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Consistent conditions improve tracking."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why track body fat instead of scale weight only?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It can give more context when weight alone is misleading."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can athletes still use it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, but context and consistency matter."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the Navy method compare to DEXA and other body fat measurement methods?","acceptedAnswer":{"@type":"Answer","text":"DEXA is considered the gold standard for body composition measurement, with an error margin of about 1-2%. The Navy tape method has an error of roughly 3-4 percentage points. Bioelectrical impedance scales vary widely. For tracking progress over time, the Navy method is reliable enough if you measure consistently in the same conditions."}},{"@type":"Question","name":"How should I measure to get the most consistent results?","acceptedAnswer":{"@type":"Answer","text":"Measure at the same time of day — morning before eating is ideal. Use a flexible but non-stretchy tape measure. Take each measurement three times and use the average. Keep the tape parallel to the floor, snug against skin without compressing it. Measure at the same body landmarks each time. Consistency in technique matters more than perfection."}},{"@type":"Question","name":"Why does the formula require hip measurement for women but not men?","acceptedAnswer":{"@type":"Answer","text":"The US Navy formula was developed from research showing that fat distribution patterns differ significantly between sexes. Women tend to store more fat in the hip and gluteal region, which correlates with total body fat more strongly in women than in men. Including hip circumference improves the formula's accuracy for female body types."}},{"@type":"Question","name":"Is a lower body fat percentage always better?","acceptedAnswer":{"@type":"Answer","text":"No. Essential fat — the minimum required for normal physiological function — is 2-5% for men and 10-13% for women. Dropping below essential fat levels causes serious health problems including hormonal disruption and bone density loss. For most non-athletes, the fitness or acceptable range is both healthy and sustainable."}},{"@type":"Question","name":"Can this calculator be used by athletes with high muscle mass?","acceptedAnswer":{"@type":"Answer","text":"The Navy method becomes less reliable at the extremes of body composition — very lean athletes with large neck circumferences and small waists may get less accurate estimates. Highly muscular athletes are often better served by DEXA or Bod Pod measurements. The method is still useful for tracking relative changes over time."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,49 @@
 <li>Choose consistency over perfection.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is this as accurate as a DEXA scan?</h3><p>No. Tape methods are convenient estimates, not gold-standard measurements.</p></div>
-<div class="faq-item"><h3>Why is hip measurement only for women in this formula?</h3><p>That is how this commonly used version of the Navy method is structured.</p></div>
-<div class="faq-item"><h3>Can hydration affect this?</h3><p>It affects some body composition methods, but tape measurement error usually matters more here.</p></div>
-<div class="faq-item"><h3>Should I measure at the same time each time?</h3><p>Yes. Consistent conditions improve tracking.</p></div>
-<div class="faq-item"><h3>Why track body fat instead of scale weight only?</h3><p>It can give more context when weight alone is misleading.</p></div>
-<div class="faq-item"><h3>Can athletes still use it?</h3><p>Yes, but context and consistency matter.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Body Fat Percentage Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">Body fat percentage is the proportion of your total body weight that is fat tissue, as opposed to lean mass — muscle, bone, organs, and water. Knowing your body fat percentage gives more meaningful information than scale weight alone, because two people can weigh the same but have very different body compositions. A 180-pound person at 15% body fat has about 27 pounds of fat and 153 pounds of lean mass; the same weight at 30% body fat means 54 pounds of fat and 126 pounds of lean mass — a dramatically different health picture. This calculator uses the US Navy circumference method, which estimates body fat from neck, waist, and (for women) hip measurements combined with height. It is a practical, free, equipment-light method that produces reasonably accurate estimates for most non-extreme body types when measurements are taken consistently.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Sex</strong> — Select male or female. The Navy formula uses different equations for each sex, with hip measurement included for women.</li>
+<li><strong>Height (inches)</strong> — Measure your height barefoot and enter it in total inches (5'9" = 69 inches).</li>
+<li><strong>Neck circumference (inches)</strong> — Measure around the neck just below the larynx (Adam's apple), keeping the tape horizontal. Round down to the nearest 0.5 inch.</li>
+<li><strong>Waist circumference (inches)</strong> — For men, measure at the navel. For women, measure at the narrowest point of the abdomen. Keep the tape snug but not compressing skin. Take the measurement at the end of a normal exhale.</li>
+<li><strong>Hip circumference (inches, women only)</strong> — Measure around the widest part of the hips and buttocks. Men enter 0 or leave this field blank.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The American Council on Exercise (ACE) classifies body fat ranges for adults as follows. For men: essential fat 2–5%, athletes 6–13%, fitness 14–17%, acceptable 18–24%, obese 25%+. For women: essential fat 10–13%, athletes 14–20%, fitness 21–24%, acceptable 25–31%, obese 32%+. Women naturally carry more essential fat than men due to hormonal and reproductive physiology. The Navy method has an error margin of roughly ±3–4 percentage points compared to DEXA scan measurements, so treat your result as a useful tracking tool rather than a precise clinical measurement. Track trends over weeks and months — consistent improvement matters more than any single number.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A 32-year-old man, 70 inches tall, with a 34-inch waist, 16-inch neck. Using the Navy formula for males: 86.010 × log10(34 − 16) − 70.041 × log10(70) + 36.76 = 86.010 × log10(18) − 70.041 × log10(70) + 36.76 = 86.010 × 1.2553 − 70.041 × 1.8451 + 36.76 = 107.97 − 129.19 + 36.76 = approximately 15.5% body fat. This falls in the "fitness" category for men. His lean percentage is 84.5%. If he loses 5 pounds of fat while maintaining muscle, his body fat would drop to roughly 13.5%, entering the athletic range.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How does the Navy method compare to DEXA and other body fat measurement methods?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">DEXA (dual-energy X-ray absorptiometry) is considered the gold standard for body composition measurement, with an error margin of about 1–2%. Hydrostatic weighing and air displacement plethysmography (Bod Pod) are also highly accurate. The Navy tape method has an error of roughly 3–4 percentage points. Bioelectrical impedance (BIA) scales and handheld devices vary widely — from ±3% for high-quality devices to ±8% for cheap consumer units. For tracking progress over time, the Navy method is reliable enough if you measure consistently in the same conditions.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How should I measure to get the most consistent results?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Measure at the same time of day — morning before eating is ideal. Use a flexible but non-stretchy tape measure. Take each measurement three times and use the average. Keep the tape parallel to the floor, snug against skin without compressing it. Measure at the same body landmarks each time. Consistency in technique matters more than perfection — systematic measurements taken the same way each month reveal genuine trends even if absolute accuracy is imperfect.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does the formula require hip measurement for women but not men?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The US Navy formula was developed from research showing that fat distribution patterns differ significantly between sexes. Women tend to store more fat in the hip and gluteal region, which correlates with total body fat more strongly in women than in men. Including hip circumference improves the formula's accuracy for female body types. For men, the waist-to-neck ratio captures the primary fat distribution pattern without needing the hip measurement.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Is a lower body fat percentage always better?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">No. Essential fat — the minimum fat required for normal physiological function — is 2–5% for men and 10–13% for women. Dropping below essential fat levels causes serious health problems including hormonal disruption, bone density loss, immune dysfunction, and cardiovascular risk. For most non-athletes, the fitness or acceptable range is both healthy and sustainable. Very lean body fat percentages in the athletic range require significant dietary discipline and may not be maintainable or desirable long-term for everyone.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can this calculator be used by athletes with high muscle mass?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The Navy method becomes less reliable at the extremes of body composition — very lean athletes with large neck circumferences and small waists, or very obese individuals, may get less accurate estimates. Highly muscular athletes are often better served by DEXA or Bod Pod measurements. That said, the Navy method is still useful for tracking relative changes over time even for athletes, as long as you understand the absolute number may be slightly off from your true body fat.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/bmi.html" style="color:#2563eb;">BMI Calculator</a> · <a href="/bmr.html" style="color:#2563eb;">BMR Calculator</a> · <a href="/calorie-needs.html" style="color:#2563eb;">Calorie Needs Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>

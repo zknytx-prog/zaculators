@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Should I include the return trip?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Enter total round-trip miles if you want the full cost."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are tolls and parking required?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. They are optional extras, but including them makes the estimate more honest."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is my real cost higher than this?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Traffic, detours, higher speeds, and lower real-world MPG can all raise cost."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use this for delivery work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. It is useful for route planning and quick expense estimates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I round fuel price up?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Usually yes, especially if prices are moving up in the region."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does weather matter on long trips?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Wind, cold weather, and mountains can lower fuel economy."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I include the return trip in my mileage?","acceptedAnswer":{"@type":"Answer","text":"Yes, for an accurate total budget you should enter the full round-trip distance. If your route home is different from the route out, add both legs separately and combine the totals."}},{"@type":"Question","name":"Why does my actual fuel cost come out higher than the estimate?","acceptedAnswer":{"@type":"Answer","text":"Several factors reduce real-world MPG below the figure you entered. Highway speed above 65 mph increases aerodynamic drag — fuel economy typically drops 7–14% between 65 and 80 mph. Mountain grades, heavy loads, roof racks, and cold weather all have measurable impacts."}},{"@type":"Question","name":"Are tolls and parking required inputs?","acceptedAnswer":{"@type":"Answer","text":"No, they are optional. However, toll roads can add $20–80 or more to a single trip, so including a realistic estimate produces a much more useful total. Mapping apps now show toll costs by route."}},{"@type":"Question","name":"Can I use this calculator for delivery or gig work expense tracking?","acceptedAnswer":{"@type":"Answer","text":"Yes. Delivery drivers and independent contractors often need a quick fuel cost estimate per route. The fuel cost output gives your direct per-trip expense baseline. Gig workers can also deduct the IRS standard mileage rate on taxes."}},{"@type":"Question","name":"How does this compare to flying or renting a car?","acceptedAnswer":{"@type":"Answer","text":"To compare fairly, add food and lodging costs for overnight driving legs to the road trip total. Flying adds airport parking, baggage fees, and ground transportation. For trips under 300 miles, driving is almost always cheaper."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,48 @@
 <li>Use real-world MPG from recent driving, not optimistic brochure numbers.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Should I include the return trip?</h3><p>Yes. Enter total round-trip miles if you want the full cost.</p></div>
-<div class="faq-item"><h3>Are tolls and parking required?</h3><p>No. They are optional extras, but including them makes the estimate more honest.</p></div>
-<div class="faq-item"><h3>Why is my real cost higher than this?</h3><p>Traffic, detours, higher speeds, and lower real-world MPG can all raise cost.</p></div>
-<div class="faq-item"><h3>Can I use this for delivery work?</h3><p>Yes. It is useful for route planning and quick expense estimates.</p></div>
-<div class="faq-item"><h3>Should I round fuel price up?</h3><p>Usually yes, especially if prices are moving up in the region.</p></div>
-<div class="faq-item"><h3>Does weather matter on long trips?</h3><p>Yes. Wind, cold weather, and mountains can lower fuel economy.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Road Trip Cost Calculator?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The Road Trip Cost Calculator estimates how much you will spend on fuel for a driving trip, then adds optional tolls, parking, and other predictable extras to give you a complete budget number. Road trips remain one of the most popular ways to travel in the United States — AAA estimates tens of millions of Americans drive more than 50 miles from home for leisure each year — yet most people underestimate the real cost before they leave. This tool is useful for solo travelers, families planning a cross-country drive, gig workers tracking mileage expenses, and anyone comparing the total cost of driving versus flying or renting a car. By plugging in real numbers before departure, you avoid the unpleasant surprise of arriving home with a credit card bill that does not match your mental budget.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Total trip miles</strong> — Enter the total driving distance one-way or round-trip. Use your mapping app's distance estimate for accuracy. If you want the full round-trip cost, double the one-way mileage or enter the combined total.</li>
+<li><strong>Average MPG</strong> — Enter your vehicle's real-world fuel economy. Check your trip computer or recent fill-up receipts. Highway driving is typically more efficient than city driving; most passenger cars achieve 28–38 MPG on the highway, while SUVs and trucks average 18–26 MPG.</li>
+<li><strong>Fuel price per gallon</strong> — Enter the current price at stations along your route. GasBuddy or AAA's fuel gauge can give you regional averages. Rounding up by $0.05–0.10 is wise when prices are volatile.</li>
+<li><strong>Tolls, parking, and extras</strong> — Estimate tolls from mapping apps or state DOT websites. Add expected parking costs. This field is optional but makes the total far more realistic.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The calculator outputs three numbers: fuel-only cost (gallons needed multiplied by price per gallon), total trip cost (fuel plus extras), and total gallons needed. The fuel-only cost is useful when comparing routes or vehicles. The total cost is what to put in your actual travel budget. Keep in mind this tool covers only direct fuel and road costs — it does not include food, lodging, vehicle wear-and-tear, or emergency expenses. A rule of thumb for long trips: budget an extra 10–15% above the calculated total for unplanned costs like detours, road closures, or unexpected fuel price spikes. Real-world MPG can be 15–25% lower than EPA estimates in heavy traffic, mountainous terrain, headwinds over 20 mph, or extreme cold temperatures below 20°F.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">Suppose you are driving from Chicago to Nashville — roughly 470 miles each way, so 940 miles round-trip. Your SUV averages 28 MPG. Gas is priced at $3.35 per gallon regionally. You expect $22 in tolls and $15 in parking at your destination. Fuel needed: 940 ÷ 28 = 33.6 gallons. Fuel cost: 33.6 × $3.35 = $112.55. Total with extras: $112.55 + $22 + $15 = $149.55. That is your baseline road trip budget before food and hotel. Compare this against the cheapest round-trip flight price, and you will have a clear basis for deciding which option makes sense for your situation.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Should I include the return trip in my mileage?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes, for an accurate total budget you should enter the full round-trip distance. If your route home is different from the route out — due to a stop in a different city, for example — add both legs separately and combine the totals. One-way estimates are useful when comparing road versus air for that leg only, but most people want the complete picture before booking.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does my actual fuel cost come out higher than the estimate?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Several factors reduce real-world MPG below the figure you entered. Highway speed above 65 mph increases aerodynamic drag substantially — fuel economy typically drops 7–14% between 65 and 80 mph. Mountain grades, heavy loads, roof racks, trailer towing, and cold weather all have measurable impacts. Using your most recent real-world average rather than the EPA label will produce a tighter estimate.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Are tolls and parking required inputs?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">No, they are optional. If you skip them, the calculator shows a fuel-only estimate. However, toll roads in states like Texas, Florida, and the Northeast can add $20–80 or more to a single trip, so including a realistic estimate produces a much more useful total. Mapping apps now show toll costs by route, making it easy to get a ballpark number before you leave.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can I use this calculator for delivery or gig work expense tracking?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes. Delivery drivers, rideshare drivers, and independent contractors often need a quick fuel cost estimate per route to evaluate whether a job pays enough to cover expenses. Enter the route distance, your vehicle's MPG, and the current pump price. The fuel cost output gives you your direct per-trip expense baseline. Remember that gig workers can also deduct the IRS standard mileage rate on taxes, which in 2025 was 70 cents per mile.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How does this compare to flying or renting a car?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">To compare fairly, add food and lodging costs for any overnight driving legs to the road trip total. Flying adds airport parking, baggage fees, ground transportation at the destination, and rental car costs if needed on arrival. For trips under 300 miles, driving is almost always cheaper. For trips over 800 miles, the comparison becomes closer once all costs are included, and time becomes a significant factor. This calculator gives you the driving baseline for an apples-to-apples comparison.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/fuel-cost.html" style="color:#2563eb;">Fuel Cost Calculator</a> · <a href="/gas-mileage.html" style="color:#2563eb;">Gas Mileage Calculator</a> · <a href="/trip-cost.html" style="color:#2563eb;">Trip Cost Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>

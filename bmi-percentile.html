@@ -35,62 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is this a real pediatric percentile chart?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It is only a rough reminder tool and not a substitute for proper age- and sex-based charts."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is child BMI different from adult BMI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Children are interpreted using percentile curves because growth changes by age and sex."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I rely on this alone?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Use proper clinical growth references."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use it under age 2?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. This tool is not intended for that age range."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why include it at all?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because parents often need a quick prompt before checking proper charts."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I ask a pediatrician?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, especially if there are growth concerns."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does pediatric BMI use percentiles instead of fixed cutoffs like adult BMI?","acceptedAnswer":{"@type":"Answer","text":"Children's body composition changes dramatically as they grow — a healthy amount of body fat at age 5 is different from healthy body fat at age 15. Fixed cutoffs don't account for this. Percentile charts compare a child's BMI against a reference population of the same age and sex, so the same BMI number is evaluated in its proper developmental context."}},{"@type":"Question","name":"What is a healthy BMI percentile range for children?","acceptedAnswer":{"@type":"Answer","text":"The CDC defines healthy weight for children as a BMI between the 5th and 85th percentile for their age and sex. Below the 5th percentile is underweight; between 85th and 95th is overweight; at or above the 95th percentile is obese. These are screening categories, not diagnoses — a pediatrician considers growth trends and clinical exam alongside BMI percentile."}},{"@type":"Question","name":"My child's BMI percentile is high — should I put them on a diet?","acceptedAnswer":{"@type":"Answer","text":"Do not restrict a growing child's calories without pediatric guidance. Calorie restriction in children can interfere with normal growth and development. Pediatricians generally focus on supporting healthy habits — balanced nutrition, adequate sleep, physical activity — rather than calorie counting. Discuss concerns with your child's doctor."}},{"@type":"Question","name":"Can a muscular child have a high BMI percentile even if they are not overweight?","acceptedAnswer":{"@type":"Answer","text":"Yes. BMI is a ratio of weight to height squared and does not directly measure body fat. A child who is heavily muscled from sports will have a higher weight for their height, raising BMI. This is why pediatricians do not treat BMI percentile as the only measure — clinical assessment and waist circumference provide additional context."}},{"@type":"Question","name":"Where can I find an official pediatric BMI percentile chart?","acceptedAnswer":{"@type":"Answer","text":"The CDC provides free downloadable BMI-for-age growth charts at cdc.gov/growthcharts, available separately for boys and girls ages 2-20. The CDC also offers an online Child and Teen BMI Calculator that computes the actual percentile from age, height, and weight. Your child's pediatrician uses these same reference charts during well-child visits."}}]}</script>
 <style>
 
         :root {
@@ -205,14 +150,48 @@
 <li>Get professional advice for real concerns.</li></ol>
 </div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Is this a real pediatric percentile chart?</h3><p>No. It is only a rough reminder tool and not a substitute for proper age- and sex-based charts.</p></div>
-<div class="faq-item"><h3>Why is child BMI different from adult BMI?</h3><p>Children are interpreted using percentile curves because growth changes by age and sex.</p></div>
-<div class="faq-item"><h3>Should I rely on this alone?</h3><p>No. Use proper clinical growth references.</p></div>
-<div class="faq-item"><h3>Can I use it under age 2?</h3><p>No. This tool is not intended for that age range.</p></div>
-<div class="faq-item"><h3>Why include it at all?</h3><p>Because parents often need a quick prompt before checking proper charts.</p></div>
-<div class="faq-item"><h3>Should I ask a pediatrician?</h3><p>Yes, especially if there are growth concerns.</p></div>
+<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
+<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the BMI Percentile Calculator for Kids?</h2>
+<p style="line-height:1.7;margin-bottom:0.75rem;">BMI percentile for children and teens works very differently from adult BMI. In adults, a single BMI number maps directly to a weight category — under 18.5 is underweight, 25–29.9 is overweight, and so on. In children ages 2–20, a BMI number alone means very little without knowing the child's age and sex, because healthy body fat levels change substantially as children grow. A BMI of 17 is normal for a 5-year-old but may indicate underweight in a 14-year-old. The CDC growth charts plot BMI against age-and-sex-specific percentile curves to give context. This calculator provides a rough category reminder based on commonly cited thresholds — it is a screening prompt, not a clinical measurement. For any real concern about a child's growth, a pediatrician with access to proper CDC or WHO growth chart software is the appropriate resource.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
+<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
+<li><strong>Child age (years)</strong> — Enter the child's age in whole years, between 2 and 20. Ages outside this range are not appropriate for this tool.</li>
+<li><strong>Sex</strong> — Select boy or girl. Pediatric BMI percentile charts are sex-specific because boys and girls have different body fat patterns during development.</li>
+<li><strong>BMI value</strong> — Enter the child's calculated BMI. You can compute BMI using the standard formula: weight (lbs) ÷ height (inches)² × 703, or use the separate BMI calculator on this site.</li>
+<li><strong>Click Calculate</strong> — The result shows a rough category reminder and a note to verify with proper growth charts.</li>
+</ol>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">The CDC classifies pediatric BMI percentiles as: underweight (below the 5th percentile), healthy weight (5th to less than 85th), overweight (85th to less than 95th), and obese (95th percentile or above). This calculator uses simplified BMI thresholds as a rough proxy for those ranges — it does not compute actual percentiles, which require statistical lookup tables by age and sex. Use the result as a prompt to check a proper chart or discuss with a pediatrician, not as a diagnosis. A single measurement at one point in time is less meaningful than tracking a child's BMI percentile trend over multiple checkups, which is how pediatricians typically monitor growth.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
+<p style="line-height:1.7;margin-bottom:0.75rem;">A 10-year-old boy is 54 inches tall and weighs 85 pounds. His BMI is: 85 ÷ (54²) × 703 = 85 ÷ 2,916 × 703 ≈ 20.5. According to the CDC BMI-for-age charts, a BMI of 20.5 for a 10-year-old boy places him at approximately the 85th–90th percentile — classified as overweight. The same BMI of 20.5 in a 15-year-old boy would fall at roughly the 50th percentile, which is healthy weight. This illustrates why age context is essential and why this calculator's rough category should always be verified against age-specific reference data.</p>
+
+<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
+<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does pediatric BMI use percentiles instead of fixed cutoffs like adult BMI?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Children's body composition changes dramatically as they grow — a healthy amount of body fat at age 5 is different from healthy body fat at age 15. Fixed cutoffs like "25 = overweight" don't account for this. Percentile charts compare a child's BMI against a reference population of the same age and sex, so the same BMI number is evaluated in its proper developmental context rather than against a one-size-fits-all threshold.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is a healthy BMI percentile range for children?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The CDC defines healthy weight for children as a BMI between the 5th and 85th percentile for their age and sex. Below the 5th percentile is classified as underweight; between the 85th and 95th is overweight; at or above the 95th percentile is obese. These are screening categories, not diagnoses — a pediatrician considers growth trends, diet, activity, family history, and clinical exam alongside BMI percentile before drawing any conclusions.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">My child's BMI percentile is high — should I put them on a diet?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Do not restrict a growing child's calories without pediatric guidance. Calorie restriction in children can interfere with normal growth and development. Pediatricians generally focus on supporting healthy habits — balanced nutrition, adequate sleep, physical activity — rather than calorie counting. If you are concerned, discuss it with your child's doctor, who can assess whether any intervention is appropriate and what form it should take.</p>
+</div>
+<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can a muscular child have a high BMI percentile even if they are not overweight?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">Yes. BMI is a ratio of weight to height squared and does not directly measure body fat. A child who is heavily muscled from sports will have a higher weight for their height, which raises BMI. This is one reason pediatricians do not treat BMI percentile as the only measure of healthy weight — clinical assessment, waist circumference, and overall health history all provide additional context.</p>
+</div>
+<div style="padding:1rem 1.25rem;">
+<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Where can I find an official pediatric BMI percentile chart?</p>
+<p style="line-height:1.6;color:#475569;margin:0;">The CDC provides free downloadable BMI-for-age growth charts at cdc.gov/growthcharts, available separately for boys and girls ages 2–20. The CDC also offers an online Child and Teen BMI Calculator that computes the actual percentile from age, height, and weight. Your child's pediatrician uses these same reference charts during well-child visits and can plot your child's measurements over time to show growth trends.</p>
+</div>
+</div>
+<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/bmi.html" style="color:#2563eb;">BMI Calculator</a> · <a href="/calorie-needs.html" style="color:#2563eb;">Calorie Needs Calculator</a> · <a href="/bmr.html" style="color:#2563eb;">BMR Calculator</a></p>
 </section>
 </main>
 <div id="toast"></div>
