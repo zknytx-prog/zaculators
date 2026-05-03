@@ -362,6 +362,23 @@
             }
         }
     </style>
+
+  <style id="educational-guide-styles">
+    .educational-guide { margin: 2rem auto 0; max-width: 1100px; }
+    .edu-card { background: #ffffff; border: 1px solid #dbe3ef; border-radius: 18px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
+    .edu-card h2 { margin: 0 0 1rem; font-size: 1.7rem; color: #0f172a; }
+    .edu-block + .edu-block { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+    .edu-block h3 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #0f172a; }
+    .edu-block p, .edu-block li { color: #334155; line-height: 1.7; font-size: 1rem; }
+    .edu-block ol, .edu-block ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+    .edu-faq details { border: 1px solid #dbe3ef; border-radius: 14px; padding: 0.9rem 1rem; background: #f8fbff; }
+    .edu-faq details + details { margin-top: 0.75rem; }
+    .edu-faq summary { cursor: pointer; font-weight: 700; color: #0f172a; }
+    .edu-faq p { margin: 0.75rem 0 0; }
+    .edu-related { list-style: disc; }
+    .edu-related li + li { margin-top: 0.5rem; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the BMI for Kids Calculator actually estimate?","acceptedAnswer":{"@type":"Answer","text":"BMI for Kids Calculator uses the inputs on this page to estimate bmi (body mass index), bmi percentile for age & gender, weight category. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision."}},{"@type":"Question","name":"Which inputs matter most on this calculator?","acceptedAnswer":{"@type":"Answer","text":"The biggest drivers are usually gender, age (in years), height (in cm). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most."}},{"@type":"Question","name":"Does this result count as medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful."}},{"@type":"Question","name":"How should I use this result in a real decision?","acceptedAnswer":{"@type":"Answer","text":"Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable."}}]}</script>
 </head>
 <body>
     <header>
@@ -460,61 +477,45 @@
         </section>
 
         <!-- RELATED CALCULATORS -->
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="calorie-needs.html">Calorie Needs</a>
-                <a href="protein-intake.html">Protein Intake</a>
-                <a href="tdee.html">TDEE Calculator</a>
-            </div>
-        </div>
+        <section class="educational-guide" id="guide" aria-labelledby="guide-title">
+  <div class="edu-card">
+    <h2 id="guide-title">Understand This BMI for Kids Calculator</h2>
 
-        <!-- NEXT STEPS -->
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Track regularly:</strong> Monitor your child's BMI percentile every 6 months to ensure healthy growth patterns</li>
-                <li><strong>Consult a pediatrician:</strong> If BMI is outside healthy range, schedule a visit with your child's healthcare provider</li>
-                <li><strong>Promote healthy habits:</strong> Encourage balanced nutrition, regular physical activity (60+ minutes daily), and adequate sleep (8-10 hours)</li>
-                <li><strong>Set realistic goals:</strong> Focus on healthy behavior changes rather than rapid weight loss or gain</li>
-                <li><strong>Keep records:</strong> Save your child's BMI measurements over time to share with healthcare providers and track progress</li>
-            </ol>
-        </div>
+    <section class="edu-block">
+      <h3>What is the BMI for Kids Calculator?</h3>
+      <p>BMI for Kids Calculator is built for quick scenario planning when you need a number you can act on. BMI for Kids Calculator is used to compare a child&#39;s BMI to age- and sex-based growth chart percentiles. People usually need this calculation when the wrong estimate can lead to overspending, unrealistic expectations, or poor planning. By putting the key inputs in one place, the calculator lets you test a baseline case first and then adjust one variable at a time. People often use this type of result to guide training, nutrition, or general health conversations, not to replace a clinician. In real life, that might mean entering gender of 100, age (in years) of 2-19, height (in cm) of 120, weight (in kg) of 35 so you can see bmi (body mass index), bmi percentile for age &amp; gender, weight category. Used that way, the calculator becomes less about one isolated number and more about making the next step clearer.</p>
+    </section>
 
-        <!-- FAQ SECTION -->
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3>What is BMI percentile and why is it important for children?</h3>
-                <p>BMI percentile compares a child's BMI to age and gender-matched growth chart data. Unlike adults, children's healthy BMI ranges change as they grow. The percentile (5th to 95th) helps pediatricians determine if a child's weight is appropriate for their developmental stage. This is crucial because excess weight in childhood increases risk of type 2 diabetes, heart disease, and other health conditions later in life.</p>
-            </div>
+    <section class="edu-block">
+      <h3>How to Use This BMI for Kids Calculator</h3>
+      Start with the values you already know, even if they are rough estimates. The best way to use BMI for Kids Calculator is to treat the first result as a baseline and then test a few realistic alternatives.<ol><li>Enter <strong>Gender</strong>.</li><li>Enter <strong>Age (in years)</strong>.</li><li>Enter <strong>Height (in cm)</strong>.</li><li>Enter <strong>Weight (in kg)</strong>.</li></ol><p>After you calculate, compare the results to your budget, timeline, or goal instead of looking at the output in isolation. Small input changes can move the answer more than most people expect.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>What do the different BMI percentile categories mean?</h3>
-                <p><strong>Underweight (less than 5th percentile):</strong> Child weighs less than 95% of peers; requires medical evaluation. <strong>Healthy weight (5th to 85th percentile):</strong> Optimal range supporting growth and development. <strong>Overweight (85th to 95th percentile):</strong> Indicates child weighs more than expected; lifestyle modifications recommended. <strong>Obese (95th percentile or higher):</strong> Significantly elevated health risks; professional medical intervention needed.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Understanding Your Results</h3>
+      <p>On this page, pay closest attention to BMI (Body Mass Index), BMI Percentile for Age &amp; Gender, Weight Category. A raw number only becomes useful when you connect it to a real decision. For example, if the calculator shows a result that strains your budget, delays your timeline, or pushes you outside a healthy range, that is a signal to test new inputs instead of forcing the first answer to work. Percentiles should be read as screening context, not a diagnosis on their own. In health and fitness, the number is best used as a screening or planning marker. One result rarely tells the whole story, so trends and personal context matter. That is why it helps to compare at least two scenarios: a conservative case, a likely case, and an optimistic case. When the result stays reasonable across all three, you can trust it more.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>How often should I check my child's BMI?</h3>
-                <p>Pediatricians typically measure BMI at annual well-child visits. If your child is overweight or obese, more frequent monitoring (every 3-6 months) helps track progress from interventions. For underweight children, regular checks ensure adequate growth. Track measurements at home monthly if possible, but professional assessment by a healthcare provider is essential for proper interpretation.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Example Calculation</h3>
+      <p>Here is a realistic example. Suppose you enter a 10-year-old child&#39;s height, weight, age, and sex. With those inputs, the calculator gives you a quick estimate that you can compare against your own target or limit. The practical takeaway is not just the number itself. It tells you whether the scenario is comfortably workable, borderline, or worth revising before you move forward. If the result looks too aggressive, try changing one input at a time until you find a version that fits your real situation.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Is this calculator accurate compared to doctor measurements?</h3>
-                <p>This calculator uses the same CDC BMI formula and percentile cutoffs as pediatricians. However, accuracy depends on precise measurements of height and weight. Minor variations (0.5 cm or 0.2 kg) can slightly affect results. Use this tool for tracking trends and initial screening, but always have healthcare providers measure your child officially for medical decisions.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Frequently Asked Questions</h3>
+      <div class="edu-faq">
+        <details><summary>What does the BMI for Kids Calculator actually estimate?</summary><p>BMI for Kids Calculator uses the inputs on this page to estimate bmi (body mass index), bmi percentile for age &amp; gender, weight category. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision.</p></details><details><summary>Which inputs matter most on this calculator?</summary><p>The biggest drivers are usually gender, age (in years), height (in cm). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most.</p></details><details><summary>Does this result count as medical advice?</summary><p>No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional.</p></details><details><summary>When should I recalculate?</summary><p>Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful.</p></details><details><summary>How should I use this result in a real decision?</summary><p>Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable.</p></details>
+      </div>
+    </section>
 
-            <div class="faq-item">
-                <h3>What if my child's BMI is in the overweight category?</h3>
-                <p>Don't panic—overweight is common and reversible. Schedule a pediatrician visit to rule out medical causes (thyroid issues, hormonal imbalances). Work together on sustainable lifestyle changes: increase daily physical activity, reduce sugary drinks and processed foods, increase fruits/vegetables, ensure adequate sleep. Avoid restrictive diets; focus on healthy habit-building as a family.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Can BMI be misleading for very muscular or athletic children?</h3>
-                <p>Yes—BMI doesn't distinguish between muscle and fat. Athletic children with high muscle mass may have elevated BMI despite low body fat. If your child is very active and muscular, discuss BMI interpretation with a pediatrician. They may recommend additional assessments (waist circumference, body composition) for a complete picture of your child's health.</p>
-            </div>
-        </section>
+    <section class="edu-block">
+      <h3>Related Calculators</h3>
+      <ul class="edu-related">
+        <li><a href="bmi.html">BMI</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="protein-intake.html">Protein Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="water-intake.html">Water Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="tdee.html">TDEE</a> - Helpful for comparing another health or fitness input that affects the same decision.</li>
+      </ul>
+    </section>
+  </div>
+</section>
     </main>
 
     <!-- TOAST NOTIFICATION -->

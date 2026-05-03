@@ -339,6 +339,23 @@
             to { transform: translateX(0); opacity: 1; }
         }
     </style>
+
+  <style id="educational-guide-styles">
+    .educational-guide { margin: 2rem auto 0; max-width: 1100px; }
+    .edu-card { background: #ffffff; border: 1px solid #dbe3ef; border-radius: 18px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
+    .edu-card h2 { margin: 0 0 1rem; font-size: 1.7rem; color: #0f172a; }
+    .edu-block + .edu-block { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+    .edu-block h3 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #0f172a; }
+    .edu-block p, .edu-block li { color: #334155; line-height: 1.7; font-size: 1rem; }
+    .edu-block ol, .edu-block ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+    .edu-faq details { border: 1px solid #dbe3ef; border-radius: 14px; padding: 0.9rem 1rem; background: #f8fbff; }
+    .edu-faq details + details { margin-top: 0.75rem; }
+    .edu-faq summary { cursor: pointer; font-weight: 700; color: #0f172a; }
+    .edu-faq p { margin: 0.75rem 0 0; }
+    .edu-related { list-style: disc; }
+    .edu-related li + li { margin-top: 0.5rem; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Waist-Hip Ratio Calculator actually estimate?","acceptedAnswer":{"@type":"Answer","text":"Waist-Hip Ratio Calculator uses the inputs on this page to estimate waist-hip ratio (whr), health risk category. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision."}},{"@type":"Question","name":"Which inputs matter most on this calculator?","acceptedAnswer":{"@type":"Answer","text":"The biggest drivers are usually waist circumference (cm), hip circumference (cm), gender (for health risk comparison). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most."}},{"@type":"Question","name":"Does this result count as medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful."}},{"@type":"Question","name":"How should I use this result in a real decision?","acceptedAnswer":{"@type":"Answer","text":"Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable."}}]}</script>
 </head>
 <body>
     <header>
@@ -431,59 +448,45 @@
             </div>
         </section>
 
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="bmi-percentile.html">BMI for Kids</a>
-                <a href="body-fat-percentage.html">Body Fat Percentage</a>
-                <a href="calorie-needs.html">Calorie Needs</a>
-            </div>
-        </div>
+        <section class="educational-guide" id="guide" aria-labelledby="guide-title">
+  <div class="edu-card">
+    <h2 id="guide-title">Understand This Waist-Hip Ratio Calculator</h2>
 
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Track quarterly:</strong> Measure waist-hip ratio every 3 months to monitor changes in body composition</li>
-                <li><strong>Focus on abdominal fitness:</strong> Core strength exercises reduce visceral fat independent of weight loss</li>
-                <li><strong>Dietary adjustments:</strong> Reduce refined carbs and added sugars, which preferentially deposit abdominal fat</li>
-                <li><strong>Increase aerobic activity:</strong> Cardio exercise specifically targets visceral fat (dangerous abdominal fat)</li>
-                <li><strong>Regular health check-ups:</strong> Discuss results with your doctor, especially if ratio indicates increased health risk</li>
-            </ol>
-        </div>
+    <section class="edu-block">
+      <h3>What is the Waist-Hip Ratio Calculator?</h3>
+      <p>Waist-Hip Ratio Calculator helps you turn raw numbers into a usable answer before you make a choice. Waist-Hip Ratio Calculator is used to compare waist size with hip size as one indicator of body fat distribution. People usually need this calculation when the wrong estimate can lead to overspending, unrealistic expectations, or poor planning. By putting the key inputs in one place, the calculator lets you test a baseline case first and then adjust one variable at a time. People often use this type of result to guide training, nutrition, or general health conversations, not to replace a clinician. In real life, that might mean entering waist circumference (cm) of 80, hip circumference (cm) of 95, gender (for health risk comparison) of 100 so you can see waist-hip ratio (whr), health risk category. Used that way, the calculator becomes less about one isolated number and more about making the next step clearer.</p>
+    </section>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3>Why is waist-hip ratio important if I have a normal BMI?</h3>
-                <p>BMI measures total weight relative to height but doesn't show fat distribution. You can have a "normal" BMI while carrying excess visceral fat (deep abdominal fat surrounding organs). This "metabolically obese" state increases risk of diabetes, heart disease, and stroke independent of BMI. Waist-hip ratio directly assesses fat location, identifying this hidden health risk.</p>
-            </div>
+    <section class="edu-block">
+      <h3>How to Use This Waist-Hip Ratio Calculator</h3>
+      Start with the values you already know, even if they are rough estimates. The best way to use Waist-Hip Ratio Calculator is to treat the first result as a baseline and then test a few realistic alternatives.<ol><li>Enter <strong>Waist Circumference (cm)</strong>.</li><li>Enter <strong>Hip Circumference (cm)</strong>.</li><li>Enter <strong>Gender (for health risk comparison)</strong>.</li></ol><p>After you calculate, compare the results to your budget, timeline, or goal instead of looking at the output in isolation. Small input changes can move the answer more than most people expect.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>What makes abdominal fat more dangerous than fat elsewhere?</h3>
-                <p>Visceral fat (deep belly fat) is metabolically active, releasing inflammatory compounds and hormones that increase blood pressure, blood sugar, and blood lipids. Subcutaneous fat (under skin) is relatively inert. Abdominal fat location correlates with insulin resistance, metabolic syndrome, and cardiovascular disease risk—even in non-obese individuals. This is why fat distribution matters more than total fat percentage for health.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Understanding Your Results</h3>
+      <p>On this page, pay closest attention to Waist-Hip Ratio (WHR), Health Risk Category. A raw number only becomes useful when you connect it to a real decision. For example, if the calculator shows a result that strains your budget, delays your timeline, or pushes you outside a healthy range, that is a signal to test new inputs instead of forcing the first answer to work. It is a screening measure, so it works best alongside other health markers. In health and fitness, the number is best used as a screening or planning marker. One result rarely tells the whole story, so trends and personal context matter. That is why it helps to compare at least two scenarios: a conservative case, a likely case, and an optimistic case. When the result stays reasonable across all three, you can trust it more.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>What's a healthy waist-hip ratio?</h3>
-                <p>WHO guidelines: For women, ratios below 0.85 indicate lower health risk; above 0.85 indicates increased risk. For men, below 0.90 is lower risk; above 0.90 indicates increased risk. However, these are population averages—individual risk also depends on absolute waist circumference. A woman with WHR 0.88 but 60cm waist is lower risk than one with 0.82 but 95cm waist.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Example Calculation</h3>
+      <p>Here is a realistic example. Suppose you enter waist and hip measurements taken in inches or centimeters. With those inputs, the calculator reports health risk category of ${document.getElementById(&#39;whrValue&#39;).textContent}. The practical takeaway is not just the number itself. It tells you whether the scenario is comfortably workable, borderline, or worth revising before you move forward. If the result looks too aggressive, try changing one input at a time until you find a version that fits your real situation.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Can I reduce my waist-hip ratio without weight loss?</h3>
-                <p>Yes. Resistance training and core work build abdominal muscle, reducing visceral fat while minimally affecting overall weight. Aerobic exercise (cardio) preferentially burns visceral fat. Some studies show dietary changes (more fiber, less refined carbs) reduce visceral fat by 20-30% without significant weight loss. Building muscle while reducing belly fat improves ratio even if scale weight stays similar.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Frequently Asked Questions</h3>
+      <div class="edu-faq">
+        <details><summary>What does the Waist-Hip Ratio Calculator actually estimate?</summary><p>Waist-Hip Ratio Calculator uses the inputs on this page to estimate waist-hip ratio (whr), health risk category. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision.</p></details><details><summary>Which inputs matter most on this calculator?</summary><p>The biggest drivers are usually waist circumference (cm), hip circumference (cm), gender (for health risk comparison). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most.</p></details><details><summary>Does this result count as medical advice?</summary><p>No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional.</p></details><details><summary>When should I recalculate?</summary><p>Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful.</p></details><details><summary>How should I use this result in a real decision?</summary><p>Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable.</p></details>
+      </div>
+    </section>
 
-            <div class="faq-item">
-                <h3>Does genetics determine where I store fat?</h3>
-                <p>Yes, largely. Genetics significantly influence fat storage patterns—some people naturally store more abdominal fat despite similar BMI. However, lifestyle modifications can shift distribution even if baseline tendency is genetic. Higher exercise, lower refined sugar intake, and adequate sleep promote healthier fat distribution patterns. Work with what your genetics give you, but don't accept it as unchangeable.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Should older adults have different ratio targets?</h3>
-                <p>Research suggests older adults may tolerate slightly higher ratios without equivalent health risk compared to younger populations. However, excess abdominal fat still increases disease risk across all ages. Rather than relaxing targets with age, focus on maintaining good ratio through continued activity and diet—fitness becomes MORE protective with aging as illness risk naturally increases.</p>
-            </div>
-        </section>
+    <section class="edu-block">
+      <h3>Related Calculators</h3>
+      <ul class="edu-related">
+        <li><a href="bmi.html">BMI</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="protein-intake.html">Protein Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="water-intake.html">Water Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="tdee.html">TDEE</a> - Helpful for comparing another health or fitness input that affects the same decision.</li>
+      </ul>
+    </section>
+  </div>
+</section>
     </main>
 
     <div id="toast" class="toast"></div>

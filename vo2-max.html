@@ -339,6 +339,23 @@
             to { transform: translateX(0); opacity: 1; }
         }
     </style>
+
+  <style id="educational-guide-styles">
+    .educational-guide { margin: 2rem auto 0; max-width: 1100px; }
+    .edu-card { background: #ffffff; border: 1px solid #dbe3ef; border-radius: 18px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
+    .edu-card h2 { margin: 0 0 1rem; font-size: 1.7rem; color: #0f172a; }
+    .edu-block + .edu-block { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+    .edu-block h3 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #0f172a; }
+    .edu-block p, .edu-block li { color: #334155; line-height: 1.7; font-size: 1rem; }
+    .edu-block ol, .edu-block ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+    .edu-faq details { border: 1px solid #dbe3ef; border-radius: 14px; padding: 0.9rem 1rem; background: #f8fbff; }
+    .edu-faq details + details { margin-top: 0.75rem; }
+    .edu-faq summary { cursor: pointer; font-weight: 700; color: #0f172a; }
+    .edu-faq p { margin: 0.75rem 0 0; }
+    .edu-related { list-style: disc; }
+    .edu-related li + li { margin-top: 0.5rem; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the VO2 Max Estimator actually estimate?","acceptedAnswer":{"@type":"Answer","text":"VO2 Max Estimator uses the inputs on this page to estimate estimated vo2 max, fitness level. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision."}},{"@type":"Question","name":"Which inputs matter most on this calculator?","acceptedAnswer":{"@type":"Answer","text":"The biggest drivers are usually gender, age (years), body weight (kg). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most."}},{"@type":"Question","name":"Does this result count as medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful."}},{"@type":"Question","name":"How should I use this result in a real decision?","acceptedAnswer":{"@type":"Answer","text":"Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable."}}]}</script>
 </head>
 <body>
     <header>
@@ -443,59 +460,45 @@
             </div>
         </section>
 
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="max-heart-rate.html">Max Heart Rate</a>
-                <a href="calorie-burn.html">Calorie Burn</a>
-                <a href="pace-calculator.html">Running Pace</a>
-            </div>
-        </div>
+        <section class="educational-guide" id="guide" aria-labelledby="guide-title">
+  <div class="edu-card">
+    <h2 id="guide-title">Understand This VO2 Max Estimator</h2>
 
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Establish baseline:</strong> Measure resting heart rate (waking, before getting up) for 5 days to get accurate average</li>
-                <li><strong>Increase aerobic activity:</strong> Cardio exercise (running, cycling, swimming) directly improves VO2 Max by 15-25% over 8-12 weeks</li>
-                <li><strong>Use interval training:</strong> High-intensity intervals are most efficient for VO2 Max improvement (2-3 sessions/week)</li>
-                <li><strong>Retest quarterly:</strong> Recheck resting heart rate and activity level every 3 months to track improvement</li>
-                <li><strong>Consider lab testing:</strong> For serious athletes, professional VO2 Max testing gives precise measurement and training zones</li>
-            </ol>
-        </div>
+    <section class="edu-block">
+      <h3>What is the VO2 Max Estimator?</h3>
+      <p>VO2 Max Estimator gives you a faster way to test assumptions without reaching for a spreadsheet. VO2 Max Estimator is used to estimate aerobic capacity using pace, distance, heart rate, or test performance. People usually need this calculation when the wrong estimate can lead to overspending, unrealistic expectations, or poor planning. By putting the key inputs in one place, the calculator lets you test a baseline case first and then adjust one variable at a time. People often use this type of result to guide training, nutrition, or general health conversations, not to replace a clinician. In real life, that might mean entering gender of 100, age (years) of 35, body weight (kg) of 75, resting heart rate (bpm) of 70 so you can see estimated vo2 max, fitness level. Used that way, the calculator becomes less about one isolated number and more about making the next step clearer.</p>
+    </section>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3>What does VO2 Max actually measure?</h3>
-                <p>VO2 Max (maximum oxygen uptake) is the maximum amount of oxygen your body can utilize during intense exercise, measured in milliliters of oxygen per kilogram of body weight per minute (ml/kg/min). It reflects cardiovascular fitness and aerobic endurance capacity. Higher VO2 Max indicates better oxygen delivery to muscles and greater aerobic capability, correlating with better cardiovascular health and endurance performance.</p>
-            </div>
+    <section class="edu-block">
+      <h3>How to Use This VO2 Max Estimator</h3>
+      Start with the values you already know, even if they are rough estimates. The best way to use VO2 Max Estimator is to treat the first result as a baseline and then test a few realistic alternatives.<ol><li>Enter <strong>Gender</strong>.</li><li>Enter <strong>Age (years)</strong>.</li><li>Enter <strong>Body Weight (kg)</strong>.</li><li>Enter <strong>Resting Heart Rate (bpm)</strong>.</li><li>Enter <strong>Activity Level</strong>.</li></ol><p>After you calculate, compare the results to your budget, timeline, or goal instead of looking at the output in isolation. Small input changes can move the answer more than most people expect.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Why is resting heart rate so important for this calculation?</h3>
-                <p>Resting heart rate (RHR) is a direct marker of cardiovascular efficiency. Lower RHR indicates better heart function, greater stroke volume (blood pumped per beat), and improved cardiovascular conditioning. Athletes often have RHR 40-60 bpm while sedentary adults average 70-90 bpm. This calculator uses RHR as a proxy for aerobic conditioning because improved fitness directly lowers RHR through regular exercise.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Understanding Your Results</h3>
+      <p>On this page, pay closest attention to Estimated VO2 Max, Fitness Level. A raw number only becomes useful when you connect it to a real decision. For example, if the calculator shows a result that strains your budget, delays your timeline, or pushes you outside a healthy range, that is a signal to test new inputs instead of forcing the first answer to work. Higher values often reflect stronger aerobic fitness, but progress over time matters more than a one-day score. In health and fitness, the number is best used as a screening or planning marker. One result rarely tells the whole story, so trends and personal context matter. That is why it helps to compare at least two scenarios: a conservative case, a likely case, and an optimistic case. When the result stays reasonable across all three, you can trust it more.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Can I improve my VO2 Max? How much?</h3>
-                <p>Yes, significantly. Aerobic training can improve VO2 Max by 15-25% within 8-12 weeks. High-intensity interval training is most efficient—3 sessions weekly can yield 20%+ improvements. Age affects potential: younger people achieve bigger gains, but improvements occur across all ages. Genetics play 40-50% of the variation, but lifestyle modifications substantially override genetic predisposition. Consistent training is essential; gains decline without maintenance.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Example Calculation</h3>
+      <p>Here is a realistic example. Suppose you enter a timed run, walk test, or related cardio input. With those inputs, the calculator reports fitness level of ${document.getElementById(&#39;vo2Value&#39;).textContent} ml/kg/min. The practical takeaway is not just the number itself. It tells you whether the scenario is comfortably workable, borderline, or worth revising before you move forward. If the result looks too aggressive, try changing one input at a time until you find a version that fits your real situation.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>How accurate is this estimation compared to lab testing?</h3>
-                <p>Estimation formulas are typically accurate ±10-15% of actual measured VO2 Max. Lab testing (maximal graded exercise test with expired gas analysis) is the gold standard but expensive ($200-500). For fitness tracking and improvement monitoring, this calculator is sufficient. The key is tracking change over time (re-test quarterly) rather than absolute accuracy—improvements will be evident even if baseline estimate is slightly off.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Frequently Asked Questions</h3>
+      <div class="edu-faq">
+        <details><summary>What does the VO2 Max Estimator actually estimate?</summary><p>VO2 Max Estimator uses the inputs on this page to estimate estimated vo2 max, fitness level. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision.</p></details><details><summary>Which inputs matter most on this calculator?</summary><p>The biggest drivers are usually gender, age (years), body weight (kg). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most.</p></details><details><summary>Does this result count as medical advice?</summary><p>No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional.</p></details><details><summary>When should I recalculate?</summary><p>Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful.</p></details><details><summary>How should I use this result in a real decision?</summary><p>Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable.</p></details>
+      </div>
+    </section>
 
-            <div class="faq-item">
-                <h3>What's a good VO2 Max for my age?</h3>
-                <p>This varies by age and gender. Averages for sedentary adults: 25-35 ml/kg/min (women) and 35-40 ml/kg/min (men). Excellent fitness: 40-50+ (women) and 50-60+ (men). Athletes exceed 60+ ml/kg/min. VO2 Max declines ~10% per decade after age 25 without exercise, but active people maintain higher values into old age. Compare yourself to age/gender peers rather than absolute values.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>How do I accurately measure resting heart rate?</h3>
-                <p>Measure upon waking before leaving bed, before caffeine or food, in a relaxed state. Take pulse for 60 seconds (or 15 seconds x 4). Average 3-5 morning measurements over a week for baseline. Factors affecting RHR: sleep, stress, caffeine, illness, overtraining (all increase HR). Consistent routine is key—same time, same conditions daily for accurate tracking over time.</p>
-            </div>
-        </section>
+    <section class="edu-block">
+      <h3>Related Calculators</h3>
+      <ul class="edu-related">
+        <li><a href="bmi.html">BMI</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="protein-intake.html">Protein Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="water-intake.html">Water Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="tdee.html">TDEE</a> - Helpful for comparing another health or fitness input that affects the same decision.</li>
+      </ul>
+    </section>
+  </div>
+</section>
     </main>
 
     <div id="toast" class="toast"></div>

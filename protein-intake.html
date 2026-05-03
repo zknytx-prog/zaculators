@@ -312,6 +312,23 @@
             to { transform: translateX(0); opacity: 1; }
         }
     </style>
+
+  <style id="educational-guide-styles">
+    .educational-guide { margin: 2rem auto 0; max-width: 1100px; }
+    .edu-card { background: #ffffff; border: 1px solid #dbe3ef; border-radius: 18px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
+    .edu-card h2 { margin: 0 0 1rem; font-size: 1.7rem; color: #0f172a; }
+    .edu-block + .edu-block { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+    .edu-block h3 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #0f172a; }
+    .edu-block p, .edu-block li { color: #334155; line-height: 1.7; font-size: 1rem; }
+    .edu-block ol, .edu-block ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+    .edu-faq details { border: 1px solid #dbe3ef; border-radius: 14px; padding: 0.9rem 1rem; background: #f8fbff; }
+    .edu-faq details + details { margin-top: 0.75rem; }
+    .edu-faq summary { cursor: pointer; font-weight: 700; color: #0f172a; }
+    .edu-faq p { margin: 0.75rem 0 0; }
+    .edu-related { list-style: disc; }
+    .edu-related li + li { margin-top: 0.5rem; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Protein Intake Calculator actually estimate?","acceptedAnswer":{"@type":"Answer","text":"Protein Intake Calculator uses the inputs on this page to estimate daily protein recommendation, protein per meal (4 meals/day), common protein sources & serving sizes. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision."}},{"@type":"Question","name":"Which inputs matter most on this calculator?","acceptedAnswer":{"@type":"Answer","text":"The biggest drivers are usually body weight (kg), activity level, fitness goal. If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most."}},{"@type":"Question","name":"Does this result count as medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful."}},{"@type":"Question","name":"How should I use this result in a real decision?","acceptedAnswer":{"@type":"Answer","text":"Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable."}}]}</script>
 </head>
 <body>
     <header>
@@ -413,59 +430,45 @@
             </div>
         </section>
 
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="calorie-needs.html">Calorie Needs</a>
-                <a href="macros.html">Macros Calculator</a>
-                <a href="bmi-percentile.html">BMI for Kids</a>
-            </div>
-        </div>
+        <section class="educational-guide" id="guide" aria-labelledby="guide-title">
+  <div class="edu-card">
+    <h2 id="guide-title">Understand This Protein Intake Calculator</h2>
 
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Track your intake:</strong> Use a nutrition app or food journal for 3-5 days to see your current protein consumption</li>
-                <li><strong>Plan meals:</strong> Distribute daily protein across 3-4 meals (distribute rather than front-load)</li>
-                <li><strong>Choose quality sources:</strong> Mix lean meats, fish, eggs, dairy, legumes, nuts, and plant-based options</li>
-                <li><strong>Monitor progress:</strong> After 4 weeks, assess energy levels, muscle soreness, and body composition changes</li>
-                <li><strong>Adjust as needed:</strong> If not seeing results, increase intake by 5-10% or modify activity level</li>
-            </ol>
-        </div>
+    <section class="edu-block">
+      <h3>What is the Protein Intake Calculator?</h3>
+      <p>Protein Intake Calculator helps you turn raw numbers into a usable answer before you make a choice. Protein Intake Calculator is used to estimate daily protein intake needs based on body weight and activity level. People usually need this calculation when the wrong estimate can lead to overspending, unrealistic expectations, or poor planning. By putting the key inputs in one place, the calculator lets you test a baseline case first and then adjust one variable at a time. People often use this type of result to guide training, nutrition, or general health conversations, not to replace a clinician. In real life, that might mean entering body weight (kg) of 75, activity level of 100, fitness goal of 100 so you can see daily protein recommendation, protein per meal (4 meals/day), common protein sources &amp; serving sizes. Used that way, the calculator becomes less about one isolated number and more about making the next step clearer.</p>
+    </section>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3>How much protein does my body actually need?</h3>
-                <p>The Recommended Dietary Allowance (RDA) is 0.8g per kg for sedentary adults. However, active individuals need more: 1.2-1.6g/kg for general fitness, 1.6-2.2g/kg for muscle building. Your calculator considers activity level and goals. Higher protein supports muscle recovery, increases satiety (feeling full), and helps preserve muscle during weight loss.</p>
-            </div>
+    <section class="edu-block">
+      <h3>How to Use This Protein Intake Calculator</h3>
+      Start with the values you already know, even if they are rough estimates. The best way to use Protein Intake Calculator is to treat the first result as a baseline and then test a few realistic alternatives.<ol><li>Enter <strong>Body Weight (kg)</strong>.</li><li>Enter <strong>Activity Level</strong>.</li><li>Enter <strong>Fitness Goal</strong>.</li></ol><p>After you calculate, compare the results to your budget, timeline, or goal instead of looking at the output in isolation. Small input changes can move the answer more than most people expect.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Can too much protein damage my kidneys?</h3>
-                <p>For healthy individuals, high protein intake does not damage kidneys. Research shows people consuming 2-3g/kg daily for years experience no kidney issues. However, those with pre-existing kidney disease must restrict protein. If you have kidney concerns, consult a physician before increasing protein. Stay well-hydrated (2-3L water daily) when consuming high protein.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Understanding Your Results</h3>
+      <p>On this page, pay closest attention to Daily Protein Recommendation, Protein Per Meal (4 meals/day), Common Protein Sources &amp; Serving Sizes. A raw number only becomes useful when you connect it to a real decision. For example, if the calculator shows a result that strains your budget, delays your timeline, or pushes you outside a healthy range, that is a signal to test new inputs instead of forcing the first answer to work. The right intake depends on training, age, and overall calorie intake. In health and fitness, the number is best used as a screening or planning marker. One result rarely tells the whole story, so trends and personal context matter. That is why it helps to compare at least two scenarios: a conservative case, a likely case, and an optimistic case. When the result stays reasonable across all three, you can trust it more.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>What's the best timing for protein consumption?</h3>
-                <p>Total daily intake matters most. However, spreading protein across meals (25-35g per meal) optimizes muscle protein synthesis better than consuming it all at once. Post-workout is beneficial (within 2 hours) for muscle recovery. Consuming protein with breakfast also improves satiety. For weight loss, higher protein at each meal helps reduce appetite and cravings.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Example Calculation</h3>
+      <p>Here is a realistic example. Suppose you enter body weight and a sedentary, active, or strength-training goal. With those inputs, the calculator reports common protein sources &amp; serving sizes of ${document.getElementById(&#39;proteinValue&#39;).textContent}. The practical takeaway is not just the number itself. It tells you whether the scenario is comfortably workable, borderline, or worth revising before you move forward. If the result looks too aggressive, try changing one input at a time until you find a version that fits your real situation.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Are plant-based proteins as good as animal proteins?</h3>
-                <p>Animal proteins (meat, fish, eggs, dairy) contain all 9 essential amino acids in optimal ratios. Most plant proteins lack one or more amino acids. However, combining different plant sources (rice + beans, hummus + pita) creates complete proteins. Vegans/vegetarians can meet protein needs by varying sources and may need 10% more total protein due to lower bioavailability.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Frequently Asked Questions</h3>
+      <div class="edu-faq">
+        <details><summary>What does the Protein Intake Calculator actually estimate?</summary><p>Protein Intake Calculator uses the inputs on this page to estimate daily protein recommendation, protein per meal (4 meals/day), common protein sources &amp; serving sizes. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision.</p></details><details><summary>Which inputs matter most on this calculator?</summary><p>The biggest drivers are usually body weight (kg), activity level, fitness goal. If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most.</p></details><details><summary>Does this result count as medical advice?</summary><p>No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional.</p></details><details><summary>When should I recalculate?</summary><p>Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful.</p></details><details><summary>How should I use this result in a real decision?</summary><p>Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable.</p></details>
+      </div>
+    </section>
 
-            <div class="faq-item">
-                <h3>Should I use protein powder supplements?</h3>
-                <p>Protein powder is convenient, not necessary. Whole foods provide additional nutrients (vitamins, minerals, fiber). Powder works best as supplementary when whole-food intake is insufficient. Quality matters: choose whey (complete, fast-absorbing), casein (slow), plant-based blends, or collagen. Check labels for added sugars. Cost-effective: ~£0.50/20g protein vs. £2.50 for chicken breast.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Why does my protein need increase with activity?</h3>
-                <p>Exercise causes muscle protein breakdown. Higher protein intake provides amino acids to repair and build muscle. During intense training, muscle turnover increases 2-3x. Inadequate protein during heavy exercise prevents adaptation, reduces strength gains, and increases recovery time. This calculator accounts for activity to ensure you consume enough protein for your training stimulus.</p>
-            </div>
-        </section>
+    <section class="edu-block">
+      <h3>Related Calculators</h3>
+      <ul class="edu-related">
+        <li><a href="bmi.html">BMI</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="water-intake.html">Water Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="tdee.html">TDEE</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="vo2-max.html">VO2 Max</a> - Helpful for comparing another health or fitness input that affects the same decision.</li>
+      </ul>
+    </section>
+  </div>
+</section>
     </main>
 
     <div id="toast" class="toast"></div>

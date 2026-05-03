@@ -327,6 +327,23 @@
             to { transform: translateX(0); opacity: 1; }
         }
     </style>
+
+  <style id="educational-guide-styles">
+    .educational-guide { margin: 2rem auto 0; max-width: 1100px; }
+    .edu-card { background: #ffffff; border: 1px solid #dbe3ef; border-radius: 18px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
+    .edu-card h2 { margin: 0 0 1rem; font-size: 1.7rem; color: #0f172a; }
+    .edu-block + .edu-block { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; }
+    .edu-block h3 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #0f172a; }
+    .edu-block p, .edu-block li { color: #334155; line-height: 1.7; font-size: 1rem; }
+    .edu-block ol, .edu-block ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+    .edu-faq details { border: 1px solid #dbe3ef; border-radius: 14px; padding: 0.9rem 1rem; background: #f8fbff; }
+    .edu-faq details + details { margin-top: 0.75rem; }
+    .edu-faq summary { cursor: pointer; font-weight: 700; color: #0f172a; }
+    .edu-faq p { margin: 0.75rem 0 0; }
+    .edu-related { list-style: disc; }
+    .edu-related li + li { margin-top: 0.5rem; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Blood Alcohol Content Calculator actually estimate?","acceptedAnswer":{"@type":"Answer","text":"Blood Alcohol Content Calculator uses the inputs on this page to estimate estimated blood alcohol content (bac), impairment level. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision."}},{"@type":"Question","name":"Which inputs matter most on this calculator?","acceptedAnswer":{"@type":"Answer","text":"The biggest drivers are usually gender, body weight (kg), number of drinks (12oz beer, 5oz wine, 1.5oz liquor). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most."}},{"@type":"Question","name":"Does this result count as medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful."}},{"@type":"Question","name":"How should I use this result in a real decision?","acceptedAnswer":{"@type":"Answer","text":"Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable."}}]}</script>
 </head>
 <body>
     <header>
@@ -432,59 +449,45 @@
             </div>
         </section>
 
-        <div class="related-calculators">
-            <h3>Related Calculators</h3>
-            <div class="related-links">
-                <a href="bmi-percentile.html">BMI for Kids</a>
-                <a href="calorie-needs.html">Calorie Needs</a>
-                <a href="tdee.html">TDEE Calculator</a>
-            </div>
-        </div>
+        <section class="educational-guide" id="guide" aria-labelledby="guide-title">
+  <div class="edu-card">
+    <h2 id="guide-title">Understand This Blood Alcohol Content Calculator</h2>
 
-        <div class="next-steps">
-            <h3>📋 What to Do Next:</h3>
-            <ol>
-                <li><strong>Plan ahead:</strong> Decide on transport BEFORE drinking (taxi, rideshare, designated driver, public transit)</li>
-                <li><strong>Pace yourself:</strong> Limit to 1-2 drinks per 2 hours; alternate with non-alcoholic beverages</li>
-                <li><strong>Eat beforehand:</strong> Food significantly slows alcohol absorption and reduces peak BAC by 30-40%</li>
-                <li><strong>Stay hydrated:</strong> Drink water between alcoholic drinks to reduce dehydration effects</li>
-                <li><strong>Know your limits:</strong> Everyone's metabolism differs. Track how you feel at different BAC levels</li>
-            </ol>
-        </div>
+    <section class="edu-block">
+      <h3>What is the Blood Alcohol Content Calculator?</h3>
+      <p>Blood Alcohol Content Calculator helps you turn raw numbers into a usable answer before you make a choice. Blood Alcohol Content Calculator is used to estimate blood alcohol concentration from drinks, body size, and time. People usually need this calculation when the wrong estimate can lead to overspending, unrealistic expectations, or poor planning. By putting the key inputs in one place, the calculator lets you test a baseline case first and then adjust one variable at a time. People often use this type of result to guide training, nutrition, or general health conversations, not to replace a clinician. In real life, that might mean entering gender of 100, body weight (kg) of 75, number of drinks (12oz beer, 5oz wine, 1.5oz liquor) of 2, time period (hours) of 2 so you can see estimated blood alcohol content (bac), impairment level. Used that way, the calculator becomes less about one isolated number and more about making the next step clearer.</p>
+    </section>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3>What does Blood Alcohol Content (BAC) actually measure?</h3>
-                <p>BAC is the percentage of alcohol in your bloodstream by volume. For example, 0.08% means 0.08 grams of alcohol per 100mL of blood. This measurement determines legal impairment thresholds. In most jurisdictions, 0.08% is the legal driving limit; 0.05% shows measurable impairment even if not legally drunk. BAC reflects total alcohol consumed minus what your liver eliminates (about 1 drink per hour).</p>
-            </div>
+    <section class="edu-block">
+      <h3>How to Use This Blood Alcohol Content Calculator</h3>
+      Start with the values you already know, even if they are rough estimates. The best way to use Blood Alcohol Content Calculator is to treat the first result as a baseline and then test a few realistic alternatives.<ol><li>Enter <strong>Gender</strong>.</li><li>Enter <strong>Body Weight (kg)</strong>.</li><li>Enter <strong>Number of Drinks (12oz beer, 5oz wine, 1.5oz liquor)</strong>.</li><li>Enter <strong>Time Period (hours)</strong>.</li><li>Enter <strong>Eaten Before/During Drinking?</strong>.</li></ol><p>After you calculate, compare the results to your budget, timeline, or goal instead of looking at the output in isolation. Small input changes can move the answer more than most people expect.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Why do men and women metabolize alcohol differently?</h3>
-                <p>Women typically reach higher BAC than men consuming identical amounts due to: (1) lower body water percentage (alcohol distributes in water, not fat), (2) lower gastric alcohol dehydrogenase enzyme (metabolizes alcohol before absorption), (3) hormonal effects on metabolism varying with menstrual cycle. Women can have 20-30% higher BAC at the same consumption level. Medications, liver disease, and food also significantly affect metabolism.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Understanding Your Results</h3>
+      <p>On this page, pay closest attention to Estimated Blood Alcohol Content (BAC), Impairment Level. A raw number only becomes useful when you connect it to a real decision. For example, if the calculator shows a result that strains your budget, delays your timeline, or pushes you outside a healthy range, that is a signal to test new inputs instead of forcing the first answer to work. BAC calculators are rough estimates and should never be used to decide whether it is safe to drive. In health and fitness, the number is best used as a screening or planning marker. One result rarely tells the whole story, so trends and personal context matter. That is why it helps to compare at least two scenarios: a conservative case, a likely case, and an optimistic case. When the result stays reasonable across all three, you can trust it more.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>How accurate is this calculator compared to a breathalyzer?</h3>
-                <p>This uses the Widmark formula, the gold standard for BAC estimation. However, actual BAC varies ±10-15% due to individual metabolism differences. Breathalyzers measure actual breath alcohol and are significantly more accurate. This calculator is best for understanding relative impairment and recovery time. For legal/safety decisions, use an actual breathalyzer or observe sobriety tests (coordination, eye tracking).</p>
-            </div>
+    <section class="edu-block">
+      <h3>Example Calculation</h3>
+      <p>Here is a realistic example. Suppose you enter number of drinks, body weight, biological sex, and hours since drinking began. With those inputs, the calculator reports impairment level of ${document.getElementById(&#39;bacValue&#39;).textContent}. The practical takeaway is not just the number itself. It tells you whether the scenario is comfortably workable, borderline, or worth revising before you move forward. If the result looks too aggressive, try changing one input at a time until you find a version that fits your real situation.</p>
+    </section>
 
-            <div class="faq-item">
-                <h3>Can eating food after drinking reduce BAC?</h3>
-                <p>No. Food consumed AFTER drinking doesn't reduce BAC because alcohol is already absorbed. Food eaten BEFORE or DURING drinking slows absorption, extending the time to peak BAC and reducing maximum BAC by 20-40%. The liver still eliminates one drink per hour regardless of food. Once alcohol is in your bloodstream, only time eliminates it—not food, coffee, cold showers, or exercise.</p>
-            </div>
+    <section class="edu-block">
+      <h3>Frequently Asked Questions</h3>
+      <div class="edu-faq">
+        <details><summary>What does the Blood Alcohol Content Calculator actually estimate?</summary><p>Blood Alcohol Content Calculator uses the inputs on this page to estimate estimated blood alcohol content (bac), impairment level. It is meant to speed up planning and comparison, not to replace a lender quote, lab result, utility bill, or professional review. The value of the tool is that it helps you test assumptions quickly before you commit to a decision.</p></details><details><summary>Which inputs matter most on this calculator?</summary><p>The biggest drivers are usually gender, body weight (kg), number of drinks (12oz beer, 5oz wine, 1.5oz liquor). If one of those values is off, the final estimate can move a lot. When you are unsure, run a low, middle, and high scenario so you can see which assumption changes the answer the most.</p></details><details><summary>Does this result count as medical advice?</summary><p>No. Health and fitness calculators are best treated as education and self-monitoring tools. They can highlight patterns, ranges, and useful questions, but they do not know your full medical history, medications, training background, or symptoms. If the result concerns you, use it as a reason to speak with a qualified healthcare professional.</p></details><details><summary>When should I recalculate?</summary><p>Recalculate whenever one of the main assumptions changes. That could mean a new rate, different budget, updated goal, different body measurement, a change in schedule, or revised pricing. The best use of this page is ongoing comparison, because one stale input can quietly make an otherwise solid estimate much less useful.</p></details><details><summary>How should I use this result in a real decision?</summary><p>Use the result to narrow your options, not to end the conversation. If the answer supports your budget, timeline, or target range, it can help you move to the next step with more confidence. If it does not, that is still valuable because it tells you what needs to change before the decision becomes workable.</p></details>
+      </div>
+    </section>
 
-            <div class="faq-item">
-                <h3>Why is liver function critical for alcohol metabolism?</h3>
-                <p>Your liver metabolizes ~90% of consumed alcohol; kidneys/lungs eliminate ~10%. The liver processes alcohol at a fixed rate (about 1 standard drink/hour) that can't be accelerated by hydration, exercise, or willpower. Pre-existing liver disease (hepatitis, cirrhosis, fatty liver) severely reduces alcohol elimination, causing dangerously high BAC accumulation. Certain medications also interfere with liver metabolism. If you have liver concerns, discuss alcohol with a physician.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>At what BAC level is driving legally impaired?</h3>
-                <p>In most countries, 0.08% is the legal driving limit for adults (21+ in US). However, impairment begins much earlier: coordination effects at 0.02-0.03%, reduced judgment at 0.04-0.06%, significant impairment at 0.07-0.09%. Many insurance and legal experts recommend 0.05% as a personal safety threshold. Driving under 0.05% with any alcohol consumption is safest. Never rely on feeling "fine"—impairment is often invisible to yourself.</p>
-            </div>
-        </section>
+    <section class="edu-block">
+      <h3>Related Calculators</h3>
+      <ul class="edu-related">
+        <li><a href="bmi.html">BMI</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="protein-intake.html">Protein Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="water-intake.html">Water Intake</a> - Helpful for comparing another health or fitness input that affects the same decision.</li><li><a href="tdee.html">TDEE</a> - Helpful for comparing another health or fitness input that affects the same decision.</li>
+      </ul>
+    </section>
+  </div>
+</section>
     </main>
 
     <div id="toast" class="toast"></div>
