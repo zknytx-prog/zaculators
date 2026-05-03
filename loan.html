@@ -482,7 +482,7 @@
     }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Loan Calculator","description":"Calculate loan payments. See total interest, monthly payment, and amortization schedule.","isPartOf":{"@type":"WebSite","name":"Utility Calculator Suite"},"publisher":{"@type":"Organization","name":"Utility Calculator Suite"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can I pay off a loan faster?","acceptedAnswer":{"@type":"Answer","text":"Paying extra toward principal, choosing a shorter term, or refinancing to a lower rate can all reduce total interest and shorten payoff time."}},{"@type":"Question","name":"Are there early payoff penalties?","acceptedAnswer":{"@type":"Answer","text":"Some loans include prepayment penalties, especially in certain mortgage or business loan products. Check your note before accelerating payments."}},{"@type":"Question","name":"Fixed vs variable rate?","acceptedAnswer":{"@type":"Answer","text":"A fixed-rate loan keeps the same interest rate over the term. A variable-rate loan can change, which makes future payments less predictable."}},{"@type":"Question","name":"When does refinancing help?","acceptedAnswer":{"@type":"Answer","text":"Refinancing is usually worth considering when rates drop enough to offset fees or when you want to change the term or payment structure."}},{"@type":"Question","name":"APR vs APY?","acceptedAnswer":{"@type":"Answer","text":"APR reflects borrowing cost, while APY is commonly used for savings or investment yield and includes compounding effects."}},{"@type":"Question","name":"Should I pay extra every month?","acceptedAnswer":{"@type":"Answer","text":"Extra payments often save interest, but you should first make sure you have emergency savings and no higher-priority debt or obligations."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between APR and interest rate?","acceptedAnswer":{"@type":"Answer","text":"The interest rate is the basic annual cost of borrowing applied to your principal balance. APR (Annual Percentage Rate) is broader — it includes the interest rate plus lender fees such as origination fees, closing costs, and mortgage insurance. Always compare APR across lenders, not just the stated interest rate, to understand the true cost of a loan."}},{"@type":"Question","name":"What are prepayment penalties and do I have one?","acceptedAnswer":{"@type":"Answer","text":"A prepayment penalty is a fee charged if you pay off a loan early or make extra principal payments. They are common in some personal loans, auto loans, and older mortgage products. Always ask your lender directly and read your promissory note before accelerating payments. Most federally backed mortgages originated after 2014 prohibit prepayment penalties."}},{"@type":"Question","name":"How much do extra payments save?","acceptedAnswer":{"@type":"Answer","text":"Because interest accrues on the outstanding balance, every extra dollar paid toward principal immediately reduces future interest charges. On a $25,000 auto loan at 6.5% over 60 months (payment: $487/month, total interest: $4,220), adding $100/month in extra payments cuts the term by about 10 months and saves roughly $690 in interest."}},{"@type":"Question","name":"When does refinancing make sense?","acceptedAnswer":{"@type":"Answer","text":"Refinancing typically makes sense when market rates drop 0.5%–1% below your current rate, when your credit score has improved significantly, or when you want to change the loan term. Calculate the break-even point: divide total refinancing costs by your monthly savings to find how many months until you come out ahead."}},{"@type":"Question","name":"Does a longer loan term always mean lower payments?","acceptedAnswer":{"@type":"Answer","text":"Yes, but total interest paid rises substantially. On a $25,000 loan at 6.5%, extending from 48 to 72 months reduces the monthly payment by about $90 but adds roughly $1,100 in total interest. Run both scenarios in this calculator to see the full trade-off before choosing a term."}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to calculator</a>
@@ -627,6 +627,49 @@
         </section>
       </aside>
     </section>
+  <section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;" aria-label="Loan guide">
+    <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;">Understanding Your Loan Calculator Results</h2>
+
+    <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;">APR vs. Stated Interest Rate: What's the Difference?</h3>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">The <strong>interest rate</strong> on a loan is the basic cost of borrowing — the annual percentage applied to your outstanding principal. The <strong>Annual Percentage Rate (APR)</strong> is broader: it includes the interest rate plus lender fees such as origination fees, closing costs, and mortgage insurance. APR reflects the true cost of the loan over its full term.</p>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">When comparing loan offers, always compare APR rather than the stated interest rate. A loan with a low rate but high origination fees may cost more overall than a loan with a slightly higher rate and no fees. Federal law (the Truth in Lending Act) requires lenders to disclose the APR before you sign.</p>
+
+    <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;">Prepayment Penalties: Check Before You Sign</h3>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">Some loan agreements — particularly certain personal loans, auto loans, and older mortgage products — include <strong>prepayment penalties</strong> that charge a fee if you pay the loan off early or make extra principal payments. These penalties protect lenders' expected interest income and can erase the financial benefit of paying ahead of schedule.</p>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">Always ask your lender directly whether a prepayment penalty exists and read your promissory note before accelerating payments. Most federally backed mortgages originated after 2014 prohibit prepayment penalties, but they remain common in other loan categories.</p>
+
+    <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;">How Extra Payments Change the Math</h3>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">Because interest accrues on the outstanding balance, every extra dollar paid toward principal immediately reduces the amount on which future interest is calculated. The benefit compounds over time.</p>
+    <p style="line-height:1.7;margin-bottom:0.75rem;"><strong>Example:</strong> A <strong>$25,000 auto loan at 6.5% over 60 months</strong> produces a monthly payment of <strong>$487</strong> and total interest of about <strong>$4,220</strong>. Add $100 per month in extra payments and you pay off the loan roughly 10 months early and save about $690 in interest — all from one small change.</p>
+
+    <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;">Fixed vs. Variable Rate Loans</h3>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">A <strong>fixed-rate loan</strong> locks in your interest rate for the full term, making monthly payments completely predictable. A <strong>variable-rate loan</strong> starts at a market index rate plus a margin and can rise or fall as conditions change. Variable rates are common in HELOCs, adjustable-rate mortgages, and some personal loans.</p>
+    <p style="line-height:1.7;margin-bottom:0.75rem;">Variable loans often start lower but carry the risk of payment increases. If you choose a variable rate, understand the rate cap structure — how much the rate can rise per adjustment period and over the life of the loan.</p>
+
+    <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;">Frequently Asked Questions</h3>
+    <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+      <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+        <p style="font-weight:600;margin-bottom:0.35rem;">What is amortization?</p>
+        <p style="line-height:1.6;margin:0;">Amortization is the process of paying down a loan through scheduled payments that cover both interest and principal. Early in a loan, most of each payment goes to interest. As the balance falls, the interest portion shrinks and more goes toward principal with every payment.</p>
+      </div>
+      <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+        <p style="font-weight:600;margin-bottom:0.35rem;">How can I pay off a loan faster without a penalty?</p>
+        <p style="line-height:1.6;margin:0;">Make extra payments designated specifically toward principal. Even $50–$200 extra per month meaningfully shortens the loan term and reduces total interest. Always confirm with your lender that there is no prepayment penalty first.</p>
+      </div>
+      <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+        <p style="font-weight:600;margin-bottom:0.35rem;">When does refinancing make sense?</p>
+        <p style="line-height:1.6;margin:0;">Refinancing typically makes sense when market rates drop 0.5%–1% below your current rate, when your credit score has improved, or when you want to change the loan term. Calculate the break-even point: divide total refinancing costs by your monthly savings to find how many months until you come out ahead.</p>
+      </div>
+      <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
+        <p style="font-weight:600;margin-bottom:0.35rem;">Does loan term affect total interest paid?</p>
+        <p style="line-height:1.6;margin:0;">Yes, significantly. A longer term lowers monthly payments but increases total interest paid. On a $25,000 loan at 6.5%, extending from 48 to 72 months adds roughly $1,100 in total interest while reducing the monthly payment by about $90.</p>
+      </div>
+      <div style="padding:1rem 1.25rem;">
+        <p style="font-weight:600;margin-bottom:0.35rem;">What credit score do I need for a good rate?</p>
+        <p style="line-height:1.6;margin:0;">Generally: scores above 720 qualify for the best rates, 660–719 access mid-tier rates, and below 660 means higher rates or additional requirements. A 40-point improvement in your credit score can reduce your rate by 0.5%–1.5%, saving thousands over the loan term.</p>
+      </div>
+    </div>
+  </section>
   </main>
 
   <footer class="site-footer">
