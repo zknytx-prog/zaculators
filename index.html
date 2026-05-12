@@ -11,10 +11,58 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="183+ free online calculators for finance, real estate, health, business, education, and daily life. Fast, useful, and easy to browse.">
+    <meta name="description" content="254+ free online calculators for finance, real estate, health, business, education, and daily life. Fast, useful, and easy to browse.">
     <meta name="theme-color" content="#2563eb">
-    <title>Zaculators: 183+ Free Online Calculators</title>
+    <title>Zaculators: 254+ Free Online Calculators</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I use Zaculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Choose a category on the homepage or open the full directory, then enter your numbers directly in the calculator you need. Results are intended for planning, comparison, and general educational use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are Zaculators calculators free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Zaculators calculators are free to use in your browser without creating an account."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are calculator results guaranteed to be exact?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Calculator results are estimates based on the inputs and assumptions shown on each page, so real-world outcomes may differ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I rely on these calculators for legal, tax, medical, or financial advice?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Zaculators provides estimate tools for general information and planning, not professional legal, tax, medical, or financial advice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do some calculators use assumptions or simplified inputs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Some calculators use assumptions so they stay fast and practical. Rates, taxes, fees, health factors, and local rules can vary by location and situation."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         :root {
             --primary: #2563eb;
@@ -139,6 +187,7 @@
             font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 0.9rem;
             font-weight: 800;
+            color: #ffffff;
         }
 
         .hero p {
@@ -164,20 +213,55 @@
             border-radius: 999px;
             text-decoration: none;
             font-weight: 700;
+            color: #1e40af;
             transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
         }
 
         .hero-button.primary {
             background: #ffffff;
-            color: var(--primary-dark);
-            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+            color: #1e40af;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
         }
 
-        .hero-button.secondary {
-            background: rgba(255,255,255,0.14);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.28);
+        .hero-category-select {
+            min-width: 190px;
+            padding: 0.95rem 3rem 0.95rem 1.3rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.65);
+            background: #ffffff;
+            color: #1e40af;
+            font: inherit;
+            font-weight: 700;
             backdrop-filter: blur(10px);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+            background-image:
+                linear-gradient(45deg, transparent 50%, var(--primary-dark) 50%),
+                linear-gradient(135deg, var(--primary-dark) 50%, transparent 50%);
+            background-position:
+                calc(100% - 1.35rem) calc(50% - 0.2rem),
+                calc(100% - 0.95rem) calc(50% - 0.2rem);
+            background-size: 0.45rem 0.45rem, 0.45rem 0.45rem;
+            background-repeat: no-repeat;
+        }
+
+        .hero-category-select:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.85);
+        }
+
+        .hero-category-select:focus {
+            outline: 2px solid rgba(255,255,255,0.55);
+            outline-offset: 2px;
+        }
+
+        .hero-category-select option {
+            color: var(--text-light);
+            background: var(--surface-light);
         }
 
         .hero-button:hover {
@@ -187,6 +271,50 @@
         .hero-helper {
             font-size: 0.95rem;
             opacity: 0.92;
+        }
+
+        .currency-preference-card {
+            max-width: 640px;
+            margin: 1.4rem auto 0;
+            padding: 1rem 1.1rem;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.24);
+            backdrop-filter: blur(12px);
+            text-align: left;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+        }
+
+        .currency-preference-label {
+            display: block;
+            margin-bottom: 0.55rem;
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .currency-preference-select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid rgba(255,255,255,0.26);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.94);
+            color: var(--text-light);
+            font: inherit;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+        }
+
+        .currency-preference-select:focus {
+            outline: 2px solid rgba(255,255,255,0.5);
+            outline-offset: 2px;
+        }
+
+        .currency-preference-note {
+            margin-top: 0.65rem;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            opacity: 0.94;
         }
 
         .stats {
@@ -233,7 +361,7 @@
             padding: 0.55rem 0.9rem;
             border-radius: 999px;
             text-decoration: none;
-            color: inherit;
+            color: #1e40af;
             font-size: 0.9rem;
             font-weight: 700;
             background: var(--surface-light);
@@ -263,6 +391,7 @@
             padding-bottom: 0.7rem;
             border-bottom: 3px solid var(--primary);
             display: inline-block;
+            color: var(--primary, #2563eb);
         }
 
         .section-copy {
@@ -286,7 +415,7 @@
             border-radius: 12px;
             padding: 1rem 0.85rem;
             text-decoration: none;
-            color: inherit;
+            color: #1e40af;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
             text-align: center;
             display: flex;
@@ -317,6 +446,7 @@
             font-size: 0.88rem;
             font-weight: 700;
             line-height: 1.3;
+            color: #1e40af;
         }
 
         .section-cta {
@@ -347,6 +477,7 @@
             margin-bottom: 0.75rem;
             border: none;
             padding: 0;
+            color: var(--primary, #2563eb);
         }
 
         .trust p {
@@ -357,6 +488,145 @@
 
         body.dark-mode .trust p {
             color: var(--muted-dark);
+        }
+
+        .support-stack {
+            display: grid;
+            gap: 1.4rem;
+            margin-top: 1.5rem;
+        }
+
+        .support-panel,
+        .faq-section,
+        .disclaimer-panel,
+        .privacy-panel {
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            border-radius: 18px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .support-panel,
+        body.dark-mode .faq-section,
+        body.dark-mode .privacy-panel {
+            background: var(--surface-dark);
+            border-color: var(--border-dark);
+        }
+
+        .support-panel h2,
+        .faq-section h2,
+        .privacy-panel h2 {
+            color: var(--primary, #2563eb);
+            font-size: 1.45rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-panel p,
+        .faq-item p,
+        .privacy-panel p {
+            color: var(--muted-light);
+        }
+
+        body.dark-mode .support-panel p,
+        body.dark-mode .faq-item p,
+        body.dark-mode .privacy-panel p,
+        body.dark-mode .updated-line {
+            color: var(--muted-dark);
+        }
+
+        .support-panel p + p,
+        .privacy-panel p + p {
+            margin-top: 0.8rem;
+        }
+
+        .support-grid,
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .support-card,
+        .popular-card {
+            background: rgba(37, 99, 235, 0.04);
+            border: 1px solid rgba(37, 99, 235, 0.12);
+            border-radius: 14px;
+            padding: 1rem;
+        }
+
+        body.dark-mode .support-card,
+        body.dark-mode .popular-card {
+            background: rgba(37, 99, 235, 0.08);
+            border-color: rgba(148, 163, 184, 0.24);
+        }
+
+        .support-card h3,
+        .popular-card h3,
+        .faq-item h3 {
+            color: var(--primary, #2563eb);
+            font-size: 1rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .support-card p,
+        .popular-card p {
+            color: var(--muted-light);
+            font-size: 0.95rem;
+        }
+
+        body.dark-mode .support-card p,
+        body.dark-mode .popular-card p {
+            color: var(--muted-dark);
+        }
+
+        .popular-card {
+            text-decoration: none;
+            display: block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .popular-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.16);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .faq-item {
+            border-bottom-color: var(--border-dark);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .disclaimer-panel {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+            color: #1e3a8a;
+        }
+
+        body.dark-mode .disclaimer-panel {
+            background: rgba(37, 99, 235, 0.14);
+            border-color: rgba(96, 165, 250, 0.35);
+            color: #dbeafe;
+        }
+
+        .updated-line {
+            text-align: center;
+            color: var(--muted-light);
+            font-size: 0.9rem;
         }
 
         footer {
@@ -408,6 +678,10 @@
                 padding: 3rem 1rem 2.75rem;
             }
 
+            .currency-preference-card {
+                padding: 0.9rem 1rem;
+            }
+
             main {
                 padding: 2rem 1rem 3rem;
             }
@@ -415,6 +689,13 @@
             .calculator-grid {
                 grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
                 gap: 0.75rem;
+            }
+
+            .support-panel,
+            .faq-section,
+            .disclaimer-panel,
+            .privacy-panel {
+                padding: 1.25rem;
             }
 
             .calc-card {
@@ -441,16 +722,29 @@
     </header>
 
     <section class="hero">
-        <h1>183+ Free Online Calculators</h1>
+        <h1>254+ Free Online Calculators</h1>
         <p>Financial, real estate, health, business, education, and daily-life calculators built to help you get answers fast.</p>
         <div class="hero-actions">
             <a class="hero-button primary" href="all-calculators.html">View All Calculators</a>
-            <a class="hero-button secondary" href="#categories">Browse by Category</a>
+            <select class="hero-category-select" id="heroCategorySelect" aria-label="Browse by Category">
+                <option value="">Browse by Category</option>
+                <option value="#financial">Financial Calculators</option>
+                <option value="#real-estate">Real Estate</option>
+                <option value="#business">Business</option>
+                <option value="#health">Health &amp; Fitness</option>
+                <option value="#education">Education</option>
+                <option value="#utilities">Utilities</option>
+            </select>
         </div>
         <div class="hero-helper">No sign-up required. No paywall. Just fast tools that are easy to scan and use.</div>
+        <div class="currency-preference-card">
+            <label class="currency-preference-label" for="currencyPreferenceSelector">Preferred Currency Display</label>
+            <select class="currency-preference-select" id="currencyPreferenceSelector" aria-label="Preferred currency display"></select>
+            <p class="currency-preference-note">Choose your preferred currency display. Exchange rates are not applied unless a calculator asks for a conversion rate.</p>
+        </div>
         <div class="stats">
             <div class="stat">
-                <span class="stat-num">183</span>
+                <span class="stat-num">254</span>
                 <span class="stat-label">Calculators</span>
             </div>
             <div class="stat">
@@ -483,17 +777,17 @@
             </div>
             <div class="calculator-grid">
                 <a href="mortgage.html" class="calc-card"><div class="calc-icon">🏠</div><h3>Mortgage</h3></a>
-                <a href="loan.html" class="calc-card"><div class="calc-icon">💳</div><h3>Loan</h3></a>
-                <a href="savings.html" class="calc-card"><div class="calc-icon">💰</div><h3>Savings</h3></a>
-                <a href="compound-interest.html" class="calc-card"><div class="calc-icon">📈</div><h3>Compound Interest</h3></a>
-                <a href="retirement.html" class="calc-card"><div class="calc-icon">🌴</div><h3>Retirement</h3></a>
-                <a href="tax.html" class="calc-card"><div class="calc-icon">🧾</div><h3>Tax</h3></a>
-                <a href="debt-payoff.html" class="calc-card"><div class="calc-icon">📉</div><h3>Debt Payoff</h3></a>
-                <a href="investment-return.html" class="calc-card"><div class="calc-icon">📊</div><h3>Investment Return</h3></a>
-                <a href="tip.html" class="calc-card"><div class="calc-icon">🍽️</div><h3>Tip</h3></a>
+                <a href="loan-payoff.html" class="calc-card"><div class="calc-icon">💳</div><h3>Loan</h3></a>
+                <a href="compound-interest-monthly.html" class="calc-card"><div class="calc-icon">💰</div><h3>Savings</h3></a>
+                <a href="compound-interest-monthly.html" class="calc-card"><div class="calc-icon">📈</div><h3>Compound Interest</h3></a>
+                <a href="time-value.html" class="calc-card"><div class="calc-icon">🌴</div><h3>Retirement</h3></a>
+                <a href="effective-tax-rate-calculator.html" class="calc-card"><div class="calc-icon">🧾</div><h3>Tax</h3></a>
+                <a href="loan-payoff.html" class="calc-card"><div class="calc-icon">📉</div><h3>Debt Payoff</h3></a>
+                <a href="time-value.html" class="calc-card"><div class="calc-icon">📊</div><h3>Investment Return</h3></a>
+                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">🍽️</div><h3>Tip</h3></a>
                 <a href="net-worth.html" class="calc-card"><div class="calc-icon">🏦</div><h3>Net Worth</h3></a>
             </div>
-            <div class="section-cta"><a class="more-link" href="all-calculators.html#financial">See all financial calculators →</a></div>
+            <div class="section-cta"><a class="more-link" href="#financial">See all financial calculators →</a></div>
         </section>
 
         <section class="section" id="real-estate">
@@ -510,12 +804,12 @@
                 <a href="rent-vs-buy.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Rent vs Buy</h3></a>
                 <a href="mortgage.html" class="calc-card"><div class="calc-icon">🏠</div><h3>Mortgage</h3></a>
                 <a href="closing-costs.html" class="calc-card"><div class="calc-icon">📄</div><h3>Closing Costs</h3></a>
-                <a href="refinance.html" class="calc-card"><div class="calc-icon">🔁</div><h3>Refinance</h3></a>
+                <a href="mortgage.html" class="calc-card"><div class="calc-icon">🔁</div><h3>Refinance</h3></a>
                 <a href="down-payment-calculator.html" class="calc-card"><div class="calc-icon">💵</div><h3>Down Payment</h3></a>
-                <a href="equity-calculator.html" class="calc-card"><div class="calc-icon">🏘️</div><h3>Home Equity</h3></a>
+                <a href="home-equity.html" class="calc-card"><div class="calc-icon">🏘️</div><h3>Home Equity</h3></a>
                 <a href="property-appreciation.html" class="calc-card"><div class="calc-icon">📊</div><h3>Appreciation</h3></a>
             </div>
-            <div class="section-cta"><a class="more-link" href="all-calculators.html#realestate">See all real estate calculators →</a></div>
+            <div class="section-cta"><a class="more-link" href="#real-estate">See all real estate calculators →</a></div>
         </section>
 
         <section class="section" id="business">
@@ -526,18 +820,18 @@
                 </div>
             </div>
             <div class="calculator-grid">
-                <a href="profit-margin.html" class="calc-card"><div class="calc-icon">💹</div><h3>Profit Margin</h3></a>
-                <a href="break-even.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Break Even</h3></a>
-                <a href="commission.html" class="calc-card"><div class="calc-icon">🤝</div><h3>Commission</h3></a>
-                <a href="markup-tool.html" class="calc-card"><div class="calc-icon">🏷️</div><h3>Markup</h3></a>
+                <a href="break-even-sales.html" class="calc-card"><div class="calc-icon">💹</div><h3>Profit Margin</h3></a>
+                <a href="break-even-sales.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Break Even</h3></a>
+                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">🤝</div><h3>Commission</h3></a>
+                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">🏷️</div><h3>Markup</h3></a>
                 <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">📈</div><h3>Revenue</h3></a>
-                <a href="pricing-optimizer.html" class="calc-card"><div class="calc-icon">🎯</div><h3>Pricing</h3></a>
-                <a href="inventory-manager.html" class="calc-card"><div class="calc-icon">📦</div><h3>Inventory</h3></a>
-                <a href="cash-flow-tracker.html" class="calc-card"><div class="calc-icon">💵</div><h3>Cash Flow</h3></a>
-                <a href="payroll-calculator.html" class="calc-card"><div class="calc-icon">🧮</div><h3>Payroll</h3></a>
-                <a href="customer-lifetime-value.html" class="calc-card"><div class="calc-icon">👥</div><h3>Customer LTV</h3></a>
+                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">🎯</div><h3>Pricing</h3></a>
+                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">📦</div><h3>Inventory</h3></a>
+                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">💵</div><h3>Cash Flow</h3></a>
+                <a href="payroll-tax-calculator.html" class="calc-card"><div class="calc-icon">🧮</div><h3>Payroll</h3></a>
+                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">👥</div><h3>Customer LTV</h3></a>
             </div>
-            <div class="section-cta"><a class="more-link" href="all-calculators.html#business">See all business calculators →</a></div>
+            <div class="section-cta"><a class="more-link" href="#business">See all business calculators →</a></div>
         </section>
 
         <section class="section" id="health">
@@ -552,14 +846,14 @@
                 <a href="bmi-percentile.html" class="calc-card"><div class="calc-icon">📊</div><h3>BMI %ile</h3></a>
                 <a href="body-fat-percentage.html" class="calc-card"><div class="calc-icon">💪</div><h3>Body Fat</h3></a>
                 <a href="protein-intake.html" class="calc-card"><div class="calc-icon">🥚</div><h3>Protein</h3></a>
-                <a href="water-intake.html" class="calc-card"><div class="calc-icon">💧</div><h3>Water Intake</h3></a>
+                <a href="nutrition-calculator.html" class="calc-card"><div class="calc-icon">💧</div><h3>Water Intake</h3></a>
                 <a href="calorie-burn.html" class="calc-card"><div class="calc-icon">🔥</div><h3>Calories Burned</h3></a>
                 <a href="max-heart-rate.html" class="calc-card"><div class="calc-icon">❤️</div><h3>Heart Rate</h3></a>
-                <a href="tdee.html" class="calc-card"><div class="calc-icon">⚡</div><h3>TDEE</h3></a>
+                <a href="calorie-needs.html" class="calc-card"><div class="calc-icon">⚡</div><h3>TDEE</h3></a>
                 <a href="sleep-calculator.html" class="calc-card"><div class="calc-icon">😴</div><h3>Sleep</h3></a>
                 <a href="vo2-max.html" class="calc-card"><div class="calc-icon">🏃</div><h3>VO2 Max</h3></a>
             </div>
-            <div class="section-cta"><a class="more-link" href="all-calculators.html#health">See all health calculators →</a></div>
+            <div class="section-cta"><a class="more-link" href="#health">See all health calculators →</a></div>
         </section>
 
         <section class="section" id="education">
@@ -570,18 +864,18 @@
                 </div>
             </div>
             <div class="calculator-grid">
-                <a href="gpa-calculator.html" class="calc-card"><div class="calc-icon">🎓</div><h3>GPA</h3></a>
-                <a href="grade-calculator.html" class="calc-card"><div class="calc-icon">📝</div><h3>Grade Calculator</h3></a>
-                <a href="grade-converter.html" class="calc-card"><div class="calc-icon">🔄</div><h3>Grade Converter</h3></a>
+                <a href="scholarship-calculator.html" class="calc-card"><div class="calc-icon">🎓</div><h3>GPA</h3></a>
+                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">📝</div><h3>Grade Calculator</h3></a>
+                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">🔄</div><h3>Grade Converter</h3></a>
                 <a href="student-loan.html" class="calc-card"><div class="calc-icon">💳</div><h3>Student Loan</h3></a>
-                <a href="tuition-cost.html" class="calc-card"><div class="calc-icon">🏫</div><h3>Tuition Cost</h3></a>
+                <a href="degree-roi.html" class="calc-card"><div class="calc-icon">🏫</div><h3>Tuition Cost</h3></a>
                 <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">📚</div><h3>Financial Aid</h3></a>
                 <a href="degree-roi.html" class="calc-card"><div class="calc-icon">📈</div><h3>Degree ROI</h3></a>
                 <a href="scholarship-calculator.html" class="calc-card"><div class="calc-icon">🏅</div><h3>Scholarship</h3></a>
-                <a href="study-planner.html" class="calc-card"><div class="calc-icon">🗓️</div><h3>Study Planner</h3></a>
-                <a href="student-budget.html" class="calc-card"><div class="calc-icon">💵</div><h3>Student Budget</h3></a>
+                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">🗓️</div><h3>Study Planner</h3></a>
+                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">💵</div><h3>Student Budget</h3></a>
             </div>
-            <div class="section-cta"><a class="more-link" href="all-calculators.html#education">See all education calculators →</a></div>
+            <div class="section-cta"><a class="more-link" href="#education">See all education calculators →</a></div>
         </section>
 
         <section class="section" id="utilities">
@@ -592,24 +886,122 @@
                 </div>
             </div>
             <div class="calculator-grid">
-                <a href="age.html" class="calc-card"><div class="calc-icon">📅</div><h3>Age</h3></a>
-                <a href="electricity-cost.html" class="calc-card"><div class="calc-icon">🔌</div><h3>Electricity Cost</h3></a>
+                <a href="event-planner.html" class="calc-card"><div class="calc-icon">📅</div><h3>Age</h3></a>
+                <a href="energy-cost.html" class="calc-card"><div class="calc-icon">🔌</div><h3>Electricity Cost</h3></a>
                 <a href="fuel-cost.html" class="calc-card"><div class="calc-icon">⛽</div><h3>Fuel Cost</h3></a>
                 <a href="trip-cost.html" class="calc-card"><div class="calc-icon">🚗</div><h3>Trip Cost</h3></a>
                 <a href="unit-converter.html" class="calc-card"><div class="calc-icon">📏</div><h3>Unit Converter</h3></a>
-                <a href="currency.html" class="calc-card"><div class="calc-icon">💱</div><h3>Currency</h3></a>
-                <a href="temperature.html" class="calc-card"><div class="calc-icon">🌡️</div><h3>Temperature</h3></a>
-                <a href="days-between.html" class="calc-card"><div class="calc-icon">🗓️</div><h3>Days Between</h3></a>
+                <a href="currency-converter.html" class="calc-card"><div class="calc-icon">💱</div><h3>Currency</h3></a>
+                <a href="temperature-converter.html" class="calc-card"><div class="calc-icon">🌡️</div><h3>Temperature</h3></a>
+                <a href="event-planner.html" class="calc-card"><div class="calc-icon">🗓️</div><h3>Days Between</h3></a>
                 <a href="vacation-budget.html" class="calc-card"><div class="calc-icon">✈️</div><h3>Vacation Budget</h3></a>
                 <a href="moving-cost.html" class="calc-card"><div class="calc-icon">📦</div><h3>Moving Cost</h3></a>
             </div>
-            <div class="section-cta"><a class="more-link" href="all-calculators.html">See the full calculator directory →</a></div>
+            <div class="section-cta"><a class="more-link" href="#categories">See the full calculator directory →</a></div>
         </section>
 
         <section class="trust">
             <h2>Why Choose Zaculators?</h2>
             <p>Zaculators is built for fast browsing and low-friction decisions. You can jump straight into a single tool, scan category groups quickly, or open the full calculator directory when you want everything in one place.</p>
         </section>
+
+        <div class="support-stack">
+            <section class="support-panel">
+                <h2>How to Use Zaculators</h2>
+                <p>Start with a category on this page if you want a quick route into a common calculator type, or open the full directory if you want to compare more options. Each calculator works directly in your browser and is designed for fast input and readable results.</p>
+                <p>For larger decisions, it can help to use more than one tool together. For example, a home-planning session might involve mortgage, down payment, affordability, and property tax calculators, while a budgeting session might involve savings, debt payoff, and net worth tools.</p>
+            </section>
+
+            <section class="support-panel">
+                <h2>Why Choose Zaculators</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Fast access</h3>
+                        <p>Homepage categories and the full calculator directory make it easy to reach a useful tool without digging through cluttered menus.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Clear results</h3>
+                        <p>Calculators are built to show practical estimate outputs for planning, comparison, and everyday decision support.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Broad coverage</h3>
+                        <p>Zaculators covers finance, tax, property, health, education, utilities, and other common use cases in one place.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Free to use</h3>
+                        <p>Tools open in the browser without account creation, software downloads, or locked result screens.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support-panel">
+                <h2>Popular Calculator Categories</h2>
+                <div class="popular-grid">
+                    <a class="popular-card" href="#financial">
+                        <h3>Financial Calculators</h3>
+                        <p>Mortgage, debt payoff, savings, investment, and other money-planning tools.</p>
+                    </a>
+                    <a class="popular-card" href="#real-estate">
+                        <h3>Real Estate</h3>
+                        <p>Affordability, refinancing, closing costs, equity, and property-focused calculators.</p>
+                    </a>
+                    <a class="popular-card" href="#business">
+                        <h3>Business</h3>
+                        <p>Break-even, payroll, pricing, margin, and planning tools for work and operations.</p>
+                    </a>
+                    <a class="popular-card" href="#health">
+                        <h3>Health &amp; Fitness</h3>
+                        <p>Body metrics, calorie, sleep, hydration, and performance estimate tools.</p>
+                    </a>
+                    <a class="popular-card" href="#education">
+                        <h3>Education</h3>
+                        <p>GPA, grade, tuition, aid, scholarship, and student-planning calculators.</p>
+                    </a>
+                    <a class="popular-card" href="#utilities">
+                        <h3>Utilities &amp; Daily Tools</h3>
+                        <p>Date, travel, unit, energy, and household calculators for everyday use.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="faq-section" aria-labelledby="homepage-faq-heading">
+                <h2 id="homepage-faq-heading">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>How do I use Zaculators?</h3>
+                        <p>Choose a category on the homepage or open the full directory, then enter your numbers directly in the calculator you need. Results are intended for planning, comparison, and general educational use.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are Zaculators calculators free to use?</h3>
+                        <p>Yes. Zaculators calculators are free to use in your browser without creating an account.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are calculator results guaranteed to be exact?</h3>
+                        <p>No. Calculator results are estimates based on the inputs and assumptions shown on each page, so real-world outcomes may differ.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I rely on these calculators for legal, tax, medical, or financial advice?</h3>
+                        <p>No. Zaculators provides estimate tools for general information and planning, not professional legal, tax, medical, or financial advice.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why do some calculators use assumptions or simplified inputs?</h3>
+                        <p>Some calculators use assumptions so they stay fast and practical. Rates, taxes, fees, health factors, and local rules can vary by location and situation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="disclaimer-panel">
+                <strong>General Disclaimer:</strong> Zaculators calculators are provided for general information, education, and planning support only. Results are estimates, not guarantees, and they should not replace professional judgment or advice. Financial, tax, legal, medical, property, and other real-world decisions may depend on rules, fees, rates, timing, and personal circumstances not fully reflected in a calculator.
+            </section>
+
+            <section class="privacy-panel">
+                <h2>Privacy / Cookie / Advertising Note</h2>
+                <p>Zaculators may use analytics, cookies, and similar technologies to understand site usage, remember preferences such as display settings, and improve the experience across calculators and directory pages.</p>
+                <p>Advertising may appear on some pages to support the site. Ads do not change calculator formulas or outcomes, and users should always review the Privacy Policy, Terms, and Disclaimer for more detail.</p>
+            </section>
+
+            <div class="updated-line">Last updated: May 12, 2026</div>
+        </div>
     </main>
 
     <footer>
@@ -624,6 +1016,7 @@
         </div>
     </footer>
 
+    <script src="currency-preferences.js"></script>
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
@@ -640,6 +1033,21 @@
                 if (btn) btn.textContent = '☀️';
             }
         })();
+
+        (function initHeroCategorySelect() {
+            const select = document.getElementById('heroCategorySelect');
+            if (!select) return;
+
+            select.addEventListener('change', function () {
+                if (!this.value) return;
+                const target = document.querySelector(this.value);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        })();
+
+        initializeCurrencySelector();
     </script>
 </body>
 </html>

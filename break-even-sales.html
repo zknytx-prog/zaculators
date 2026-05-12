@@ -1,18 +1,71 @@
-﻿<!DOCTYPE html><html><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break-Even Sales Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.55rem; font-weight:700; color:var(--success); margin-bottom:0.5rem; }
+        h1 { font-size:1.8rem; margin-bottom:0.25rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is break-even sales?","acceptedAnswer":{"@type":"Answer","text":"Break-even sales is the point where contribution from sales covers fixed costs without an estimated profit or loss."}},{"@type":"Question","name":"What is contribution margin?","acceptedAnswer":{"@type":"Answer","text":"Contribution margin is selling price per unit minus variable cost per unit."}},{"@type":"Question","name":"Can this estimate help with pricing scenarios?","acceptedAnswer":{"@type":"Answer","text":"Yes. Changing price or variable cost can show how your break-even point might move."}},{"@type":"Question","name":"Does this include taxes or financing costs?","acceptedAnswer":{"@type":"Answer","text":"No. Add those into your planning separately if they matter to your scenario."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it when costs, pricing, or sales assumptions change."}}]}</script>
+</head>
+<body>
+    <header>
+        <h1>Break-Even Sales Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div><label for="fixed">Fixed Costs</label><input id="fixed" type="number" min="0" step="0.01" placeholder="10000" required></div>
+                <div><label for="price">Selling Price per Unit</label><input id="price" type="number" min="0.01" step="0.01" placeholder="50" required></div>
+                <div><label for="variable">Variable Cost per Unit</label><input id="variable" type="number" min="0" step="0.01" placeholder="20" required></div>
+                <div class="full"><button type="submit">Calculate Break-Even</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates the number of units and revenue needed to break even based on your current assumptions.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter fixed costs, selling price, and variable cost per unit.</li><li>Make sure all values use the same time period.</li><li>Click Calculate Break-Even to view the estimate.</li><li>Review the unit target and revenue estimate shown.</li><li>Test different assumptions as pricing or costs change.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="revenue-projector.html">Revenue Projector</a> · <a href="profit-maximizer.html">Profit Maximizer</a> · <a href="pricing-optimizer.html">Pricing Optimizer</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What is break-even sales?</strong><br>Break-even sales is the point where contribution from sales covers fixed costs without an estimated profit or loss.</p><p class="subtle"><strong>What is contribution margin?</strong><br>Contribution margin is selling price per unit minus variable cost per unit.</p><p class="subtle"><strong>Can this estimate help with pricing scenarios?</strong><br>Yes. Changing price or variable cost can show how your break-even point might move.</p><p class="subtle"><strong>Does this include taxes or financing costs?</strong><br>No. Add those into your planning separately if they matter to your scenario.</p><p class="subtle"><strong>When should I update the estimate?</strong><br>Update it when costs, pricing, or sales assumptions change.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides business planning estimates only. Actual costs, pricing, margins, and sales performance may vary from simplified assumptions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const fixed = Number(document.getElementById("fixed").value);
+            const price = Number(document.getElementById("price").value);
+            const variable = Number(document.getElementById("variable").value);
+            const contribution = price - variable;
+            const units = fixed / contribution;
+            const revenue = units * price;
+            document.getElementById("value").textContent = `${Math.ceil(units).toLocaleString()} units`;
+            document.getElementById("detail").textContent = `${money(revenue)} in break-even revenue at a ${money(contribution)} contribution margin per unit.`;
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
+</body>
+</html>
 
-  gtag('config', 'G-1B4FY69QMS');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}h1{font-size:1.5rem;margin-bottom:0.25rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}input,button{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;margin-bottom:1rem;font-size:1rem}button{background:var(--primary);color:white;border:none;cursor:pointer;font-weight:500}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid #f59e0b;padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps ol{padding-left:1.5rem}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}</style></head><body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav><header><h1>Calculator | Precision Finance</h1></header><main><section class="section"><form id="f"><input type="number" id="v1" placeholder="Enter value" required><input type="number" id="v2" placeholder="Enter value" required><button type="submit">Calculate</button></form><div id="r" class="results"><div class="value" id="val">Calculated</div></div></section><div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="index.html">All Calculators</a><a href="mortgage.html">Mortgage</a><a href="investment-property-roi.html">Investment ROI</a></div></div><div class="next-steps"><h3>📋 Next Steps:</h3><ol><li>Enter accurate values</li><li>Review calculation results</li><li>Compare with other options</li><li>Consult professional advisors</li><li>Make informed decisions</li><li>Monitor progress regularly</li></ol></div><section class="faq-section"><h2>FAQ</h2><div class="faq-item"><h3>How accurate is this calculator?</h3><p>This provides estimates based on standard industry formulas. Actual results vary by individual circumstances. Use as guide, not definitive answer. Consult professionals for major decisions.</p></div><div class="faq-item"><h3>Can I use this for important decisions?</h3><p>Yes as starting point. Always verify with qualified professionals before making major financial, educational, or business decisions based on calculations.</p></div><div class="faq-item"><h3>How often should I recalculate?</h3><p>Recalculate when circumstances change significantly. Market conditions, interest rates, and personal situations change—keep numbers current.</p></div><div class="faq-item"><h3>What assumptions are included?</h3><p>Standard industry assumptions. Your situation may differ. Adjust inputs for more accurate personalized results.</p></div><div class="faq-item"><h3>Is my data safe?</h3><p>Yes. All calculations run locally in your browser. No data sent to servers. Your information stays private.</p></div><div class="faq-item"><h3>Can I save or share results?</h3><p>Yes. Use browser features to save or print. You can also manually copy results and share with advisors.</p></div></section><div class="disclaimer">⚠️ This calculator provides estimates. Not financial, legal, or professional advice. Consult qualified professionals before decisions.</div></main><footer><p><strong>Precision Finance</strong> © 2025 | 100+ Free Calculators</p>
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+

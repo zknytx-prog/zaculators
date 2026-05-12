@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator UK | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel,.disclaimer { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .disclaimer { margin-top:2rem; color:#7f1d1d; background:#fee2e2; border-color:#fecaca; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.4rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mortgage Calculator UK</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div><label for="price">Property Price</label><input id="price" type="number" min="0" step="0.01" placeholder="350000" required></div>
+                <div><label for="deposit">Deposit</label><input id="deposit" type="number" min="0" step="0.01" placeholder="70000" required></div>
+                <div><label for="rate">Interest Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="5.25" required></div>
+                <div><label for="years">Term (Years)</label><input id="years" type="number" min="1" step="1" placeholder="25" required></div>
+                <div class="full"><button type="submit">Calculate Mortgage</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+        <div class="disclaimer">Illustrative only. UK mortgage rates, fees, and affordability rules vary by lender and product.</div>
+        <div class="disclaimer">Currency display can be changed, but rates, taxes, and rules may still be country-specific.</div>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script src="currency-preferences.js"></script>
+    <script>
+        initializeCurrencySelector();
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const principal = Number(document.getElementById("price").value) - Number(document.getElementById("deposit").value);
+            const monthlyRate = Number(document.getElementById("rate").value) / 100 / 12;
+            const months = Number(document.getElementById("years").value) * 12;
+            const payment = monthlyRate === 0
+                ? principal / months
+                : principal * (monthlyRate * (1 + monthlyRate) ** months) / (((1 + monthlyRate) ** months) - 1);
+            document.getElementById("value").textContent = `${formatCurrency(payment)} (${getCurrencyCode()}) / month`;
+            document.getElementById("detail").textContent = `${formatCurrency(payment * months)} (${getCurrencyCode()}) total paid over ${months} months.`;
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
+</body>
+</html>

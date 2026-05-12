@@ -1,15 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Accurate mortgage calculator. See your monthly payment, total interest, and complete amortization schedule. No hidden fees, no surprises.">
@@ -140,7 +131,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
-            color: var(--text-primary);
+            color: var(--primary, #2563eb);
             letter-spacing: -0.02em;
         }
 
@@ -179,7 +170,7 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            color: var(--text-primary);
+            color: var(--primary, #2563eb);
         }
 
         .input-group {
@@ -511,7 +502,7 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            color: var(--text-primary);
+            color: var(--primary, #2563eb);
         }
 
         .faq-grid {
@@ -596,6 +587,7 @@
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
+            color: var(--primary, #2563eb);
         }
 
         .email-section p {
@@ -867,7 +859,38 @@
     }
     </script>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between a 15-year and 30-year mortgage?","acceptedAnswer":{"@type":"Answer","text":"A 15-year mortgage has a higher monthly payment but charges significantly less total interest — often 40–50% less over the life of the loan. A 30-year mortgage offers a lower monthly payment, improving short-term cash flow, but costs much more long-term. On a $350,000 loan at 7%, the 15-year saves roughly $198,000 in interest compared to 30 years, though the monthly payment is about $1,000 higher."}},{"@type":"Question","name":"When can I remove PMI from my mortgage?","acceptedAnswer":{"@type":"Answer","text":"Under the federal Homeowners Protection Act, lenders must automatically cancel PMI when your loan balance reaches 78% of the original purchase price. You can request cancellation earlier, at 80% LTV (20% equity), with a written request and possibly a home appraisal. FHA loans may require MIP for the life of the loan if down payment was under 10%."}},{"@type":"Question","name":"How does the amortization schedule work?","acceptedAnswer":{"@type":"Answer","text":"An amortization schedule shows every payment over the life of the loan, broken into principal and interest. Each month, interest is calculated on the remaining balance (rate ÷ 12 × balance). The remainder of your fixed payment reduces principal. As the balance falls, the interest portion shrinks and principal paydown accelerates."}},{"@type":"Question","name":"What credit score do I need for the best mortgage rates?","acceptedAnswer":{"@type":"Answer","text":"Conventional lenders typically require a minimum score of 620, but borrowers with 760+ receive the best rates. The difference between a 680 and a 760 score can mean 0.5%–0.75% higher interest — on a $350,000 loan, that's roughly $18,000–$27,000 more in total interest over 30 years. FHA loans accept scores as low as 580 with 3.5% down."}},{"@type":"Question","name":"Should I pay points to lower my interest rate?","acceptedAnswer":{"@type":"Answer","text":"Mortgage points let you prepay interest to lower your rate — each point costs 1% of the loan and typically reduces the rate by 0.25%. Divide the upfront cost by the monthly savings to find your breakeven period. On a $350,000 loan, one point costs $3,500 and might save $58/month, so breakeven is about 5 years. Points make sense if you stay longer than that breakeven."}}]}</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does PMI mean and when is it required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home's purchase price. It protects the lender if you default and typically costs 0.5-1% of your loan amount annually. Once your home equity reaches 20%, you can request to have PMI removed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is mortgage interest calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mortgage interest is calculated monthly using the outstanding loan balance and your annual interest rate divided by 12. Early in your loan, most of your payment goes toward interest. As you pay down principal, less goes to interest and more toward building equity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pay off my mortgage early without penalties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most modern mortgages have no prepayment penalties, allowing you to pay extra toward principal at any time. This reduces total interest paid and shortens your loan term. However, check your loan documents to confirm, as older mortgages may have restrictions."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Header -->
     <header>
@@ -877,11 +900,9 @@
                 <span>Precision Finance</span>
             </a>
             <nav>
-                <a href="/" aria-label="Return to homepage">Home</a>
-                <a href="/all-calculators.html">All Calculators</a>
                 <a href="#tools">Calculators</a>
-                <a href="about-us.html">About</a>
-                <a href="contact-us.html">Contact</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -1132,52 +1153,68 @@
 
         <!-- FAQ Section -->
         <section class="faq-section" id="faq" aria-label="Frequently asked questions about mortgages">
-<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
-<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Premium Mortgage Calculator?</h2>
-<p style="line-height:1.7;margin-bottom:0.75rem;">This premium mortgage calculator goes beyond a basic payment estimator — it computes your exact monthly obligation including principal, interest, property taxes, homeowner's insurance, and PMI, then generates a complete month-by-month amortization schedule. Homebuyers, real estate agents, financial planners, and homeowners considering refinancing all rely on tools like this to model different scenarios before committing to a loan. Understanding the full cost of a mortgage — not just the interest rate — is essential for making a sound home-purchase decision. A $400,000 home at 7% for 30 years carries a principal-and-interest payment of about $2,661 per month, but with taxes, insurance, and PMI, total monthly cost can exceed $3,500. This calculator makes every component visible so nothing is hidden.</p>
+            <h2>Common Questions About Mortgages</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What is PMI and when do I need it?</span>
+                        <span class="faq-icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>PMI (Private Mortgage Insurance) is required when your down payment is less than 20% of the home price. It protects the lender in case you default. PMI typically costs 0.5–1% of your loan amount annually. Once you reach 20% equity through payments or appreciation, you can request it be removed.</p>
+                    </div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
-<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
-<li><strong>Home Price</strong> — Enter the full purchase price of the property you are buying or refinancing.</li>
-<li><strong>Down Payment</strong> — The amount you pay upfront. A minimum of 20% eliminates PMI; FHA loans allow as little as 3.5% down.</li>
-<li><strong>Interest Rate</strong> — Your annual rate from the lender. Shop at least three lenders — a 0.5% difference on a $350,000 loan saves over $35,000 in total interest.</li>
-<li><strong>Loan Term</strong> — Choose 15 or 30 years. A 15-year term carries a higher monthly payment but saves tens of thousands in interest.</li>
-<li><strong>Property Tax Rate</strong> — Enter the annual tax rate as a percentage of home value. U.S. average is roughly 1.1%, but it ranges from 0.3% (Hawaii) to over 2.4% (New Jersey).</li>
-<li><strong>Homeowner's Insurance</strong> — Annual premium, typically $1,200–$2,500 per year depending on location and coverage level.</li>
-<li><strong>PMI Rate</strong> — If your down payment is under 20%, enter PMI. Standard range is 0.5%–1.5% annually, based on credit score and loan-to-value ratio.</li>
-</ol>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>How is mortgage interest calculated?</span>
+                        <span class="faq-icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Mortgage interest is calculated monthly based on your remaining loan balance and your annual interest rate. Early in the loan, most of your payment covers interest. Over time, as principal decreases, more of each payment goes toward building equity. This is why a 30-year mortgage costs significantly more total interest than a 15-year loan.</p>
+                    </div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">The calculator breaks your monthly payment into its four components: principal (reducing your balance), interest (the lender's fee), escrow for taxes, and escrow for insurance. Early in the loan, the interest share is highest — on a $350,000 loan at 7%, Month 1 interest alone is $2,042 while only $619 goes to principal. By Month 180, that flips. The amortization schedule shows exactly when you cross key milestones: 20% equity (PMI removal eligibility), 50% equity, and full payoff. Note that this calculator assumes a fixed interest rate. Adjustable-rate mortgages (ARMs) will have different payment trajectories after the initial fixed period ends. Use the results as a reliable baseline for fixed-rate conventional loans and government-backed products with fixed terms.</p>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>Can I pay off my mortgage early?</span>
+                        <span class="faq-icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Most modern mortgages have no prepayment penalties. You can pay extra toward principal anytime, which reduces total interest and shortens your loan term. For example, making one extra payment per year could cut 4–5 years off a 30-year mortgage. Check your loan documents for any restrictions.</p>
+                    </div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">A couple buys a $420,000 home with 10% down ($42,000), leaving a $378,000 loan at 6.75% for 30 years. Their principal-and-interest payment is $2,451/month. Adding property tax at 1.2% ($420/month), homeowner's insurance ($150/month), and PMI at 0.7% ($220/month), total PITI is $3,241/month. Over 30 years, total interest paid is $504,360. If they increase their down payment to 20% ($84,000), the loan drops to $336,000, P&amp;I falls to $2,179, PMI disappears, and total interest drops to $448,440 — a $55,920 saving. This is why even marginal increases in down payment deliver outsized long-term value.</p>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What factors affect my interest rate?</span>
+                        <span class="faq-icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your credit score, down payment percentage, loan term, property location, and current market rates all affect your rate. Borrowers with excellent credit (750+) typically qualify for rates 0.5–1% lower than those with fair credit (620–669). Shopping with multiple lenders can save you thousands over your loan's life.</p>
+                    </div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
-<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is the difference between a 15-year and 30-year mortgage?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">A 15-year mortgage has a higher monthly payment but charges significantly less total interest — often 40–50% less over the life of the loan. A 30-year mortgage offers a lower monthly payment, improving short-term cash flow, but costs much more long-term. On a $350,000 loan at 7%, the 15-year saves roughly $198,000 in interest compared to 30 years, though the monthly payment is about $1,000 higher.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">When can I remove PMI from my mortgage?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Under the federal Homeowners Protection Act, lenders must automatically cancel PMI when your loan balance reaches 78% of the original purchase price. You can request cancellation earlier, at 80% LTV (20% equity), with a written request and possibly a home appraisal. For FHA loans, PMI (called MIP) may remain for the life of the loan if your down payment was under 10%, which is a key reason many FHA borrowers refinance into a conventional loan once they build equity.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How does the amortization schedule work?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">An amortization schedule shows every payment over the life of the loan, broken into principal and interest. Each month, interest is calculated on the remaining balance (rate ÷ 12 × balance). The remainder of your fixed payment reduces principal. As the balance falls, the interest portion shrinks and principal paydown accelerates. This front-loading of interest is why making extra early payments has a disproportionately large impact on total interest and payoff date.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What credit score do I need for the best mortgage rates?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Conventional lenders typically require a minimum score of 620, but borrowers with 760+ receive the best rates. The difference between a 680 and a 760 score can mean 0.5%–0.75% higher interest — on a $350,000 loan, that's roughly $18,000–$27,000 more in total interest over 30 years. FHA loans accept scores as low as 580 with 3.5% down. Improving your score before applying — by paying down credit cards and correcting errors on your report — is one of the highest-return financial moves a homebuyer can make.</p>
-</div>
-<div style="padding:1rem 1.25rem;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Should I pay points to lower my interest rate?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Mortgage points (or discount points) let you prepay interest to lower your rate — each point costs 1% of the loan and typically reduces the rate by 0.25%. Whether this makes sense depends on your breakeven period: divide the upfront cost by the monthly savings. On a $350,000 loan, one point costs $3,500 and might save $58/month, so breakeven is about 5 years. If you plan to stay in the home longer than that, points make financial sense. If you might move or refinance sooner, skip them.</p>
-</div>
-</div>
-<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/refinance.html" style="color:#2563eb;">Refinance Calculator</a> · <a href="/rent-vs-buy.html" style="color:#2563eb;">Rent vs Buy Calculator</a> · <a href="/property-tax.html" style="color:#2563eb;">Property Tax Calculator</a></p>
-</section>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>What are closing costs?</span>
+                        <span class="faq-icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Closing costs are fees paid at loan closing, typically 2–5% of the home price. They include appraisal, title insurance, inspections, lender fees, and escrow. A $350,000 home might have $7,000–$17,500 in closing costs. Some lenders allow you to roll these into your loan; others require payment upfront.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(event)">
+                        <span>How does a bigger down payment help?</span>
+                        <span class="faq-icon">⌄</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A larger down payment reduces your loan amount and monthly payment. It also eliminates PMI (at 20%+), improves your loan terms, and shows lenders you're financially stable. Going from 10% to 20% down on a $350,000 home saves roughly $200–$300/month plus PMI costs.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Email Signup -->
@@ -1241,8 +1278,8 @@
                 <div class="footer-section">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
                         <li><a href="#blog">Blog</a></li>
                         <li><a href="#careers">Careers</a></li>
                     </ul>
@@ -1250,8 +1287,8 @@
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
                         <li><a href="#disclaimer">Disclaimer</a></li>
                         <li><a href="#accessibility">Accessibility</a></li>
                     </ul>

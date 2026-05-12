@@ -1,276 +1,87 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate body fat percentage with the US Navy tape measurement method.">
-<meta name="keywords" content="body fat calculator, body fat percentage calculator">
-<title>Body Fat Percentage Calculator | Zaculators</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Body Fat Percentage Calculator",
-  "description": "Estimate body fat percentage with the US Navy tape measurement method.",
-  "url": "https://zaculators.com/7-fitness/body-fat-percentage.html",
-  "applicationCategory": "UtilityApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Zaculators",
-    "url": "https://zaculators.com"
-  }
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the Navy method compare to DEXA and other body fat measurement methods?","acceptedAnswer":{"@type":"Answer","text":"DEXA is considered the gold standard for body composition measurement, with an error margin of about 1-2%. The Navy tape method has an error of roughly 3-4 percentage points. Bioelectrical impedance scales vary widely. For tracking progress over time, the Navy method is reliable enough if you measure consistently in the same conditions."}},{"@type":"Question","name":"How should I measure to get the most consistent results?","acceptedAnswer":{"@type":"Answer","text":"Measure at the same time of day — morning before eating is ideal. Use a flexible but non-stretchy tape measure. Take each measurement three times and use the average. Keep the tape parallel to the floor, snug against skin without compressing it. Measure at the same body landmarks each time. Consistency in technique matters more than perfection."}},{"@type":"Question","name":"Why does the formula require hip measurement for women but not men?","acceptedAnswer":{"@type":"Answer","text":"The US Navy formula was developed from research showing that fat distribution patterns differ significantly between sexes. Women tend to store more fat in the hip and gluteal region, which correlates with total body fat more strongly in women than in men. Including hip circumference improves the formula's accuracy for female body types."}},{"@type":"Question","name":"Is a lower body fat percentage always better?","acceptedAnswer":{"@type":"Answer","text":"No. Essential fat — the minimum required for normal physiological function — is 2-5% for men and 10-13% for women. Dropping below essential fat levels causes serious health problems including hormonal disruption and bone density loss. For most non-athletes, the fitness or acceptable range is both healthy and sustainable."}},{"@type":"Question","name":"Can this calculator be used by athletes with high muscle mass?","acceptedAnswer":{"@type":"Answer","text":"The Navy method becomes less reliable at the extremes of body composition — very lean athletes with large neck circumferences and small waists may get less accurate estimates. Highly muscular athletes are often better served by DEXA or Bod Pod measurements. The method is still useful for tracking relative changes over time."}}]}</script>
-<style>
-
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #0f172a;
-            --border: #e2e8f0;
-            --success: #16a34a;
-            --error: #dc2626;
-            --muted: #64748b;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
-        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
-        .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
-        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
-        .intro { color: #475569; margin-bottom: 1rem; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
-        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
-        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
-        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
-        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { background: #e2e8f0; }
-        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
-        .results-section.active { display: block; }
-        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
-        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
-        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
-        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-        .faq-item p { color: var(--muted); }
-        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
-        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
-        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
-        .next-steps { background: #fffbeb; border-color: #fde68a; }
-        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
-        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
-        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
-        .error-message.show { display: block; }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Percentage Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; margin-bottom:2rem; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, select, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.4rem; }
+        .subtle { color:#64748b; }
+        .disclaimer { font-size:0.9rem; color:#7f1d1d; background:#fee2e2; border-left:4px solid #dc2626; padding:1rem; border-radius:8px; }
+        a { color:var(--primary); text-decoration:none; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this body fat estimate use?","acceptedAnswer":{"@type":"Answer","text":"It uses a circumference-based formula with the measurements you enter."}},{"@type":"Question","name":"Is the result exact?","acceptedAnswer":{"@type":"Answer","text":"No. Tape-measure methods are approximate and can differ from lab or scan-based methods."}},{"@type":"Question","name":"Why does the female option ask for hip measurement?","acceptedAnswer":{"@type":"Answer","text":"That measurement is part of the common formula used for the selected estimate."}},{"@type":"Question","name":"Can measurement technique change the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Small differences in tape placement or posture can affect the estimate."}},{"@type":"Question","name":"When should I recalculate body fat?","acceptedAnswer":{"@type":"Answer","text":"Recalculate after meaningful changes in measurements or at regular progress check-ins."}}]}</script>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
-<header>
-  <h1>Body Fat Percentage Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
-</header>
-<main>
-<section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">This calculator estimates body fat percentage from tape measurements. Useful for tracking, imperfect for precision.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="sex">Sex</label><select id="sex"><option value="male">Male</option><option value="female">Female</option></select><div class="error-message"></div></div><div class="form-group"><label for="height">Height (inches)</label><input id="height" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="neck">Neck circumference (inches)</label><input id="neck" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="waist">Waist circumference (inches)</label><input id="waist" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="hip">Hip circumference (inches, women only)</label><input id="hip" type="number" min="0" step="0.1" placeholder="0 for men" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>Body fat estimate</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Estimated body fat</label><div class="value" id="result-bf">—</div></div>
-<div class="result-item"><label>Estimated lean percentage</label><div class="value" id="result-lean">—</div></div>
-<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
-</section>
-
-<div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/bmi.html">BMI Calculator</a>
-<a href="/waist-hip-ratio.html">Waist-Hip Ratio Calculator</a>
-<a href="/ideal-weight.html">Ideal Weight Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
-</div>
-
-<div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Measure the same way every time.</li>
-<li>Track trends rather than obsessing over tiny changes.</li>
-<li>Use body fat alongside weight, waist, and performance.</li>
-<li>Expect some error from tape placement.</li>
-<li>Choose consistency over perfection.</li></ol>
-</div>
-
-<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
-<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Body Fat Percentage Calculator?</h2>
-<p style="line-height:1.7;margin-bottom:0.75rem;">Body fat percentage is the proportion of your total body weight that is fat tissue, as opposed to lean mass — muscle, bone, organs, and water. Knowing your body fat percentage gives more meaningful information than scale weight alone, because two people can weigh the same but have very different body compositions. A 180-pound person at 15% body fat has about 27 pounds of fat and 153 pounds of lean mass; the same weight at 30% body fat means 54 pounds of fat and 126 pounds of lean mass — a dramatically different health picture. This calculator uses the US Navy circumference method, which estimates body fat from neck, waist, and (for women) hip measurements combined with height. It is a practical, free, equipment-light method that produces reasonably accurate estimates for most non-extreme body types when measurements are taken consistently.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
-<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
-<li><strong>Sex</strong> — Select male or female. The Navy formula uses different equations for each sex, with hip measurement included for women.</li>
-<li><strong>Height (inches)</strong> — Measure your height barefoot and enter it in total inches (5'9" = 69 inches).</li>
-<li><strong>Neck circumference (inches)</strong> — Measure around the neck just below the larynx (Adam's apple), keeping the tape horizontal. Round down to the nearest 0.5 inch.</li>
-<li><strong>Waist circumference (inches)</strong> — For men, measure at the navel. For women, measure at the narrowest point of the abdomen. Keep the tape snug but not compressing skin. Take the measurement at the end of a normal exhale.</li>
-<li><strong>Hip circumference (inches, women only)</strong> — Measure around the widest part of the hips and buttocks. Men enter 0 or leave this field blank.</li>
-</ol>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">The American Council on Exercise (ACE) classifies body fat ranges for adults as follows. For men: essential fat 2–5%, athletes 6–13%, fitness 14–17%, acceptable 18–24%, obese 25%+. For women: essential fat 10–13%, athletes 14–20%, fitness 21–24%, acceptable 25–31%, obese 32%+. Women naturally carry more essential fat than men due to hormonal and reproductive physiology. The Navy method has an error margin of roughly ±3–4 percentage points compared to DEXA scan measurements, so treat your result as a useful tracking tool rather than a precise clinical measurement. Track trends over weeks and months — consistent improvement matters more than any single number.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">A 32-year-old man, 70 inches tall, with a 34-inch waist, 16-inch neck. Using the Navy formula for males: 86.010 × log10(34 − 16) − 70.041 × log10(70) + 36.76 = 86.010 × log10(18) − 70.041 × log10(70) + 36.76 = 86.010 × 1.2553 − 70.041 × 1.8451 + 36.76 = 107.97 − 129.19 + 36.76 = approximately 15.5% body fat. This falls in the "fitness" category for men. His lean percentage is 84.5%. If he loses 5 pounds of fat while maintaining muscle, his body fat would drop to roughly 13.5%, entering the athletic range.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
-<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How does the Navy method compare to DEXA and other body fat measurement methods?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">DEXA (dual-energy X-ray absorptiometry) is considered the gold standard for body composition measurement, with an error margin of about 1–2%. Hydrostatic weighing and air displacement plethysmography (Bod Pod) are also highly accurate. The Navy tape method has an error of roughly 3–4 percentage points. Bioelectrical impedance (BIA) scales and handheld devices vary widely — from ±3% for high-quality devices to ±8% for cheap consumer units. For tracking progress over time, the Navy method is reliable enough if you measure consistently in the same conditions.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How should I measure to get the most consistent results?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Measure at the same time of day — morning before eating is ideal. Use a flexible but non-stretchy tape measure. Take each measurement three times and use the average. Keep the tape parallel to the floor, snug against skin without compressing it. Measure at the same body landmarks each time. Consistency in technique matters more than perfection — systematic measurements taken the same way each month reveal genuine trends even if absolute accuracy is imperfect.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does the formula require hip measurement for women but not men?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">The US Navy formula was developed from research showing that fat distribution patterns differ significantly between sexes. Women tend to store more fat in the hip and gluteal region, which correlates with total body fat more strongly in women than in men. Including hip circumference improves the formula's accuracy for female body types. For men, the waist-to-neck ratio captures the primary fat distribution pattern without needing the hip measurement.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Is a lower body fat percentage always better?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">No. Essential fat — the minimum fat required for normal physiological function — is 2–5% for men and 10–13% for women. Dropping below essential fat levels causes serious health problems including hormonal disruption, bone density loss, immune dysfunction, and cardiovascular risk. For most non-athletes, the fitness or acceptable range is both healthy and sustainable. Very lean body fat percentages in the athletic range require significant dietary discipline and may not be maintainable or desirable long-term for everyone.</p>
-</div>
-<div style="padding:1rem 1.25rem;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can this calculator be used by athletes with high muscle mass?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">The Navy method becomes less reliable at the extremes of body composition — very lean athletes with large neck circumferences and small waists, or very obese individuals, may get less accurate estimates. Highly muscular athletes are often better served by DEXA or Bod Pod measurements. That said, the Navy method is still useful for tracking relative changes over time even for athletes, as long as you understand the absolute number may be slightly off from your true body fat.</p>
-</div>
-</div>
-<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/bmi.html" style="color:#2563eb;">BMI Calculator</a> · <a href="/bmr.html" style="color:#2563eb;">BMR Calculator</a> · <a href="/calorie-needs.html" style="color:#2563eb;">Calorie Needs Calculator</a></p>
-</section>
-</main>
-<div id="toast"></div>
-<script src="/calc-utils.js"></script>
-<script>
-
-const CALCULATOR_ID = 'body-fat-percentage';
-const CALCULATOR_TITLE = 'Body Fat Percentage Calculator';
-const sex = document.getElementById('sex');
-const height = document.getElementById('height');
-const neck = document.getElementById('neck');
-const waist = document.getElementById('waist');
-const hip = document.getElementById('hip');
-let latestData = null;
-
-function calculateResults() {
-
- const s=sex.value,h=parseFloat(height.value),n=parseFloat(neck.value),w=parseFloat(waist.value),hipVal=parseFloat(hip.value||0);
- if(!isFinite(h)||h<=0){showValidationError(height,'Enter height');return;} else showValidationError(height,null);
- if(!isFinite(n)||n<=0){showValidationError(neck,'Enter neck');return;} else showValidationError(neck,null);
- if(!isFinite(w)||w<=0){showValidationError(waist,'Enter waist');return;} else showValidationError(waist,null);
- let bf;
- if(s==='male'){
-   bf = 86.010*Math.log10(w-n) - 70.041*Math.log10(h) + 36.76;
- } else {
-   if(!isFinite(hipVal)||hipVal<=0){showValidationError(hip,'Enter hip measurement for women'); return;} else showValidationError(hip,null);
-   bf = 163.205*Math.log10(w + hipVal - n) - 97.684*Math.log10(h) - 78.387;
- }
- document.getElementById('result-bf').textContent = formatNumber(bf,1) + '%';
- document.getElementById('result-lean').textContent = formatNumber(100-bf,1) + '%';
- document.getElementById('result-note').textContent = 'Tape measurement methods are estimates, not scans.';
-
-    latestData = {sex:sex.value,height:height.value,neck:neck.value,waist:waist.value,hip:hip.value,bf:formatNumber(bf,1) + '%',lean:formatNumber(100-bf,1) + '%',note:'Tape measurement methods are estimates, not scans.'};
-    
-    document.getElementById('results').classList.add('active');
-}
-
-function handleSave() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    saveResults(CALCULATOR_ID, latestData);
-}
-
-function handleShare() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    shareResults(CALCULATOR_TITLE, latestData);
-}
-
-function handlePrint() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    printResults('results', CALCULATOR_TITLE);
-}
-
-document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
-window.addEventListener('DOMContentLoaded', function(){
-    const saved = loadResults(CALCULATOR_ID);
-    if (saved) {
-        if (saved.sex !== undefined) sex.value = saved.sex;
-if (saved.height !== undefined) height.value = saved.height;
-if (saved.neck !== undefined) neck.value = saved.neck;
-if (saved.waist !== undefined) waist.value = saved.waist;
-if (saved.hip !== undefined) hip.value = saved.hip;
-        latestData = saved;
-        document.getElementById('result-bf').textContent=saved.bf;document.getElementById('result-lean').textContent=saved.lean;document.getElementById('result-note').textContent=saved.note;
-        document.getElementById('results').classList.add('active');
-    }
-});
-
-</script>
-<footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
+<body>
+    <header>
+        <h1>Body Fat Percentage Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div>
+                    <label for="sex">Sex</label>
+                    <select id="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div><label for="height">Height (cm)</label><input id="height" type="number" min="1" step="0.1" placeholder="175" required></div>
+                <div><label for="neck">Neck (cm)</label><input id="neck" type="number" min="1" step="0.1" placeholder="38" required></div>
+                <div><label for="waist">Waist (cm)</label><input id="waist" type="number" min="1" step="0.1" placeholder="85" required></div>
+                <div id="hipWrap"><label for="hip">Hip (cm)</label><input id="hip" type="number" min="1" step="0.1" placeholder="95"></div>
+                <div class="full"><button type="submit">Estimate Body Fat</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+        <div class="disclaimer">Tape-measure formulas are approximate and should not replace professional assessment.</div>
+    <section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates body fat percentage using circumference measurements. It is useful for general tracking, but it is not a medical assessment.</p></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Select the correct sex option for the formula used.</li><li>Enter height and the requested body measurements.</li><li>Use a tape measure consistently for better comparisons.</li><li>Click Estimate Body Fat to view the result.</li><li>Track changes over time rather than relying on one reading.</li></ol></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmi.html">BMI</a> · <a href="bmr.html">BMR</a> · <a href="waist-hip-ratio.html">Waist-Hip Ratio</a></p></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does this body fat estimate use?</strong><br>It uses a circumference-based formula with the measurements you enter.</p><p class="subtle"><strong>Is the result exact?</strong><br>No. Tape-measure methods are approximate and can differ from lab or scan-based methods.</p><p class="subtle"><strong>Why does the female option ask for hip measurement?</strong><br>That measurement is part of the common formula used for the selected estimate.</p><p class="subtle"><strong>Can measurement technique change the result?</strong><br>Yes. Small differences in tape placement or posture can affect the estimate.</p><p class="subtle"><strong>When should I recalculate body fat?</strong><br>Recalculate after meaningful changes in measurements or at regular progress check-ins.</p></section><section class="panel"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Measurement-based formulas can vary from professional assessments.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        const sex = document.getElementById("sex");
+        const hipWrap = document.getElementById("hipWrap");
+        function toggleHip() {
+            hipWrap.style.display = sex.value === "female" ? "block" : "none";
+            document.getElementById("hip").required = sex.value === "female";
+        }
+        sex.addEventListener("change", toggleHip);
+        toggleHip();
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const h = Number(document.getElementById("height").value);
+            const n = Number(document.getElementById("neck").value);
+            const w = Number(document.getElementById("waist").value);
+            const hip = Number(document.getElementById("hip").value || 0);
+            const bodyFat = sex.value === "male"
+                ? 495 / (1.0324 - 0.19077 * Math.log10(w - n) + 0.15456 * Math.log10(h)) - 450
+                : 495 / (1.29579 - 0.35004 * Math.log10(w + hip - n) + 0.22100 * Math.log10(h)) - 450;
+            document.getElementById("value").textContent = `${bodyFat.toFixed(1)}%`;
+            document.getElementById("detail").textContent = "Estimated using a circumference-based formula.";
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
 </body>
 </html>
+
+

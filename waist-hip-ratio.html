@@ -1,283 +1,71 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Calculate waist-to-hip ratio from circumference measurements.">
-<meta name="keywords" content="waist hip ratio calculator, whr calculator">
-<title>Waist-Hip Ratio Calculator | Zaculators</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Waist-Hip Ratio Calculator",
-  "description": "Calculate waist-to-hip ratio from circumference measurements.",
-  "url": "https://zaculators.com/7-fitness/waist-hip-ratio.html",
-  "applicationCategory": "UtilityApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Zaculators",
-    "url": "https://zaculators.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does waist-to-hip ratio show?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It is a body-shape screening measure related to fat distribution."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is it enough by itself?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It should be interpreted along with other health information."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How should I measure waist?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Follow a consistent method, typically around the natural waist or just above the navel depending on the standard used."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I track this over time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. It is often more useful as a trend than a one-time reading."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does a lower ratio always mean healthy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not automatically. Health is more complicated than one ratio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why not use BMI only?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because body size and fat distribution are different things."
-      }
-    }
-  ]
-}
-</script>
-<style>
-
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #0f172a;
-            --border: #e2e8f0;
-            --success: #16a34a;
-            --error: #dc2626;
-            --muted: #64748b;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
-        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
-        .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
-        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
-        .intro { color: #475569; margin-bottom: 1rem; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
-        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
-        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
-        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
-        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { background: #e2e8f0; }
-        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
-        .results-section.active { display: block; }
-        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
-        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
-        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
-        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-        .faq-item p { color: var(--muted); }
-        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
-        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
-        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
-        .next-steps { background: #fffbeb; border-color: #fde68a; }
-        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
-        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
-        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
-        .error-message.show { display: block; }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waist-Hip Ratio Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel,.disclaimer { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .disclaimer { margin-top:2rem; color:#7f1d1d; background:#fee2e2; border-color:#fecaca; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, select, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.4rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
-<header>
-  <h1>Waist-Hip Ratio Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
-</header>
-<main>
-<section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">Waist-to-hip ratio is a simple body-shape screening measure that adds context beyond body weight alone.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="waist">Waist circumference</label><input id="waist" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="hip">Hip circumference</label><input id="hip" type="number" min="1" step="0.1" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>WHR result</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Waist-to-hip ratio</label><div class="value" id="result-ratio">—</div></div>
-<div class="result-item"><label>Quick interpretation</label><div class="value" id="result-note">—</div></div>
-<div class="result-item"><label>Guidance</label><div class="value" id="result-guidance">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
-</section>
-
-<div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/body-fat-percentage.html">Body Fat Calculator</a>
-<a href="/bmi.html">BMI Calculator</a>
-<a href="/ideal-weight.html">Ideal Weight Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
-</div>
-
-<div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Measure consistently using the same tape and method.</li>
-<li>Compare this with other health markers.</li>
-<li>Track trends over months, not days.</li>
-<li>Ask a clinician if you need personalized interpretation.</li>
-<li>Do not turn one ratio into a personality trait.</li></ol>
-</div>
-
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>What does waist-to-hip ratio show?</h3><p>It is a body-shape screening measure related to fat distribution.</p></div>
-<div class="faq-item"><h3>Is it enough by itself?</h3><p>No. It should be interpreted along with other health information.</p></div>
-<div class="faq-item"><h3>How should I measure waist?</h3><p>Follow a consistent method, typically around the natural waist or just above the navel depending on the standard used.</p></div>
-<div class="faq-item"><h3>Can I track this over time?</h3><p>Yes. It is often more useful as a trend than a one-time reading.</p></div>
-<div class="faq-item"><h3>Does a lower ratio always mean healthy?</h3><p>Not automatically. Health is more complicated than one ratio.</p></div>
-<div class="faq-item"><h3>Why not use BMI only?</h3><p>Because body size and fat distribution are different things.</p></div>
-</section>
-</main>
-<div id="toast"></div>
-<script src="/calc-utils.js"></script>
-<script>
-
-const CALCULATOR_ID = 'waist-hip-ratio';
-const CALCULATOR_TITLE = 'Waist-Hip Ratio Calculator';
-const waist = document.getElementById('waist');
-const hip = document.getElementById('hip');
-let latestData = null;
-
-function calculateResults() {
-
- const w=parseFloat(waist.value), h=parseFloat(hip.value);
- if(!isFinite(w)||w<=0){showValidationError(waist,'Enter waist');return;} else showValidationError(waist,null);
- if(!isFinite(h)||h<=0){showValidationError(hip,'Enter hip');return;} else showValidationError(hip,null);
- const ratio = w/h;
- document.getElementById('result-ratio').textContent = formatNumber(ratio,2);
- document.getElementById('result-note').textContent = ratio < 0.8 ? 'Lower ratio' : ratio < 0.9 ? 'Moderate ratio' : 'Higher ratio';
- document.getElementById('result-guidance').textContent = 'Interpretation varies by sex, age, and medical context.';
-
-    latestData = {waist:waist.value,hip:hip.value,ratio:formatNumber(ratio,2),note:(ratio < 0.8 ? 'Lower ratio' : ratio < 0.9 ? 'Moderate ratio' : 'Higher ratio'),guidance:'Interpretation varies by sex, age, and medical context.'};
-    
-    document.getElementById('results').classList.add('active');
-}
-
-function handleSave() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    saveResults(CALCULATOR_ID, latestData);
-}
-
-function handleShare() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    shareResults(CALCULATOR_TITLE, latestData);
-}
-
-function handlePrint() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    printResults('results', CALCULATOR_TITLE);
-}
-
-document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
-window.addEventListener('DOMContentLoaded', function(){
-    const saved = loadResults(CALCULATOR_ID);
-    if (saved) {
-        if (saved.waist !== undefined) waist.value = saved.waist;
-if (saved.hip !== undefined) hip.value = saved.hip;
-        latestData = saved;
-        document.getElementById('result-ratio').textContent=saved.ratio;document.getElementById('result-note').textContent=saved.note;document.getElementById('result-guidance').textContent=saved.guidance;
-        document.getElementById('results').classList.add('active');
-    }
-});
-
-</script>
-<footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
+<body>
+    <header>
+        <h1>Waist-Hip Ratio Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div>
+                    <label for="sex">Sex</label>
+                    <select id="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div><label for="waist">Waist</label><input id="waist" type="number" min="1" step="0.1" placeholder="85" required></div>
+                <div><label for="hip">Hip</label><input id="hip" type="number" min="1" step="0.1" placeholder="95" required></div>
+                <div class="full"><button type="submit">Calculate Ratio</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+        <div class="disclaimer">Anthropometric ratios are screening tools and do not replace medical evaluation.</div>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const ratio = Number(document.getElementById("waist").value) / Number(document.getElementById("hip").value);
+            const sex = document.getElementById("sex").value;
+            const risk = sex === "male"
+                ? (ratio >= 0.9 ? "Higher risk range" : "Lower risk range")
+                : (ratio >= 0.85 ? "Higher risk range" : "Lower risk range");
+            document.getElementById("value").textContent = ratio.toFixed(2);
+            document.getElementById("detail").textContent = risk;
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
 </body>
 </html>

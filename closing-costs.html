@@ -1,135 +1,69 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate closing costs for home purchase. Estimate buyer and seller closing costs as percentage of home price.">
-    <title>Closing Costs Calculator | Home Purchase | Precision Finance</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
-    <style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0;--success:#16a34a}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;border-bottom:1px solid var(--border);padding:1.5rem;text-align:center}h1{font-size:1.8rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--primary)}.form-group{margin-bottom:1.5rem}label{display:block;font-weight:500;margin-bottom:0.5rem}input{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}@media(max-width:640px){.form-row{grid-template-columns:1fr}}.buttons{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}button{padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:500;cursor:pointer}.btn-primary{background:var(--primary);color:white}.btn-secondary{background:#f1f5f9;color:var(--text);border:1px solid var(--border)}.results{background:#f0fdf4;border-left:4px solid var(--success);padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.result-item{margin-bottom:1.5rem}.result-item label{font-size:0.9rem;color:#64748b;margin-bottom:0.25rem}.result-item .value{font-size:1.5rem;font-weight:600;color:var(--success)}.cost-breakdown{background:#f9fafb;border:1px solid var(--border);border-radius:6px;padding:1rem;margin-top:1rem}.cost-line{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border)}.cost-line:last-child{border-bottom:none}.cost-label{color:#64748b}.cost-amount{font-weight:600}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.toast{position:fixed;bottom:1rem;right:1rem;background:var(--primary);color:white;padding:1rem 1.5rem;border-radius:6px;display:none;z-index:1000}.toast.show{display:block}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}</style>
+    <title>Closing Costs Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.5rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are closing costs?","acceptedAnswer":{"@type":"Answer","text":"Closing costs are transaction expenses tied to a property purchase in addition to the sale price itself."}},{"@type":"Question","name":"Do prepaid items count toward closing funds?","acceptedAnswer":{"@type":"Answer","text":"Yes. Prepaid taxes, insurance, and similar items often affect the cash needed at closing."}},{"@type":"Question","name":"Are rates the same everywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Closing fees, taxes, and lender charges vary by location, lender, and transaction type."}},{"@type":"Question","name":"Does this include every fee automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This is a simplified estimate and actual closing disclosures may include additional items."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it when purchase price, expected fees, lender terms, or prepaid items change."}}]}</script>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
+<body>
     <header>
         <h1>Closing Costs Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Real Estate</p>
     </header>
     <main>
-        <section class="section">
-            <h2>Estimate Home Purchase Closing Costs</h2>
-            <form id="calcForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="homevalue">Home Price ($)</label>
-                        <input type="number" id="homevalue" min="50000" max="2000000" placeholder="e.g., 350000" step="10000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="loanamount">Loan Amount ($)</label>
-                        <input type="number" id="loanamount" min="0" max="1500000" placeholder="e.g., 280000" step="10000" required>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <button type="submit" class="btn-primary">Calculate</button>
-                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
-                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
-                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
-                </div>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div><label for="price">Purchase Price</label><input id="price" type="number" min="0" step="0.01" placeholder="350000" required></div>
+                <div><label for="rate">Closing Costs (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="3" required></div>
+                <div><label for="prepaid">Prepaid Taxes/Insurance</label><input id="prepaid" type="number" min="0" step="0.01" placeholder="2500" required></div>
+                <div class="full"><button type="submit">Estimate Closing Costs</button></div>
             </form>
-            <div id="results" class="results">
-                <div class="result-item">
-                    <label>Total Buyer Closing Costs</label>
-                    <div class="value" id="totalCosts">-</div>
-                    <div class="cost-breakdown" id="breakdown"></div>
-                </div>
-                <div class="result-item">
-                    <label>Closing Costs as % of Price</label>
-                    <div class="value" id="percentage">-</div>
-                </div>
-                <div class="result-item">
-                    <label>Budget to Bring to Closing</label>
-                    <div class="value" id="budget">-</div>
-                </div>
-            </div>
-            <div class="faq-section">
-                <h2>Common Questions</h2>
-                <div class="faq-item">
-                    <h3>What's included in closing costs?</h3>
-                    <p>Loan origination (0.5-1%), appraisal ($300-500), title insurance (0.5-1%), attorney fees ($500-1500), property tax, homeowners insurance prepayment, HOA transfer fees, etc. Typical total: 2-5% of purchase price ($7K-$17.5K on $350K home).</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can closing costs be negotiated?</h3>
-                    <p>Some yes, some no. Lender fees (origination, appraisal, title) vary—shop around. Seller may pay some costs in negotiation (seller concessions). Attorney/title fees vary by state. Get full Closing Disclosure 3+ days before closing to review all costs.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I roll closing costs into the mortgage?</h3>
-                    <p>Yes, but it increases loan amount and interest paid over 30 years. A $10K closing cost rolled in costs $18K+ over 30 years at 6% rate. Better to pay from savings if possible; otherwise, negotiate seller to pay some costs instead.</p>
-                </div>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
             </div>
         </section>
+            <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates closing costs using a purchase price, a percentage assumption, and prepaid items you enter.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter the purchase price and an estimated closing-cost rate.</li><li>Add prepaid taxes or insurance if you want them included.</li><li>Click Estimate Closing Costs to view the result.</li><li>Review the total alongside your cash-to-close plan.</li><li>Update the estimate if lender or property details change.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="down-payment-calculator.html">Down Payment Calculator</a> · <a href="home-affordability.html">Home Affordability</a> · <a href="mortgage.html">Mortgage</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What are closing costs?</strong><br>Closing costs are transaction expenses tied to a property purchase in addition to the sale price itself.</p><p class="subtle"><strong>Do prepaid items count toward closing funds?</strong><br>Yes. Prepaid taxes, insurance, and similar items often affect the cash needed at closing.</p><p class="subtle"><strong>Are rates the same everywhere?</strong><br>No. Closing fees, taxes, and lender charges vary by location, lender, and transaction type.</p><p class="subtle"><strong>Does this include every fee automatically?</strong><br>No. This is a simplified estimate and actual closing disclosures may include additional items.</p><p class="subtle"><strong>When should I update the estimate?</strong><br>Update it when purchase price, expected fees, lender terms, or prepaid items change.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides real-estate planning estimates only. Actual closing costs, prepaid items, and lender charges can vary.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
     </main>
-    <div id="toast" class="toast"></div>
-    <script src="/calc-utils.js"></script>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
     <script>
-        document.getElementById('calcForm').addEventListener('submit',function(e){
-            e.preventDefault();
-            const homevalue=parseFloat(document.getElementById('homevalue').value);
-            const loanamount=parseFloat(document.getElementById('loanamount').value);
-            const origination=loanamount*0.01;
-            const appraisal=400;
-            const titleInsurance=homevalue*0.006;
-            const processing=500;
-            const attorney=800;
-            const inspection=300;
-            const survey=300;
-            const creditCheck=100;
-            const totalCosts=origination+appraisal+titleInsurance+processing+attorney+inspection+survey+creditCheck;
-            const percentage=(totalCosts/homevalue*100).toFixed(2);
-            const downpayment=homevalue-loanamount;
-            const budget=downpayment+totalCosts;
-            document.getElementById('totalCosts').textContent='$'+Math.round(totalCosts).toLocaleString();
-            document.getElementById('percentage').textContent=percentage+'%';
-            document.getElementById('budget').textContent='$'+Math.round(budget).toLocaleString();
-            let breakdown=`
-                <div class="cost-line"><span class="cost-label">Loan Origination</span><span class="cost-amount">$${Math.round(origination).toLocaleString()}</span></div>
-                <div class="cost-line"><span class="cost-label">Appraisal</span><span class="cost-amount">$${appraisal}</span></div>
-                <div class="cost-line"><span class="cost-label">Title Insurance</span><span class="cost-amount">$${Math.round(titleInsurance).toLocaleString()}</span></div>
-                <div class="cost-line"><span class="cost-label">Processing Fee</span><span class="cost-amount">$${processing}</span></div>
-                <div class="cost-line"><span class="cost-label">Attorney Fees</span><span class="cost-amount">$${attorney}</span></div>
-                <div class="cost-line"><span class="cost-label">Home Inspection</span><span class="cost-amount">$${inspection}</span></div>
-                <div class="cost-line"><span class="cost-label">Survey</span><span class="cost-amount">$${survey}</span></div>
-                <div class="cost-line"><span class="cost-label">Credit Check</span><span class="cost-amount">$${creditCheck}</span></div>
-            `;
-            document.getElementById('breakdown').innerHTML=breakdown;
-            document.getElementById('results').classList.add('active');
+        const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const price = Number(document.getElementById("price").value);
+            const rate = Number(document.getElementById("rate").value) / 100;
+            const prepaid = Number(document.getElementById("prepaid").value);
+            const baseCosts = price * rate;
+            const total = baseCosts + prepaid;
+            document.getElementById("value").textContent = money(total);
+            document.getElementById("detail").textContent = `${money(baseCosts)} estimated transaction costs plus ${money(prepaid)} in prepaid items.`;
+            document.getElementById("result").classList.add("active");
         });
-        function saveResults(){if(document.getElementById('totalCosts').textContent==='-'){showToast('⚠️ Calculate');return}showToast('✓ Saved')}
-        function shareResults(){if(document.getElementById('totalCosts').textContent==='-'){showToast('⚠️ Calculate');return}const msg=`📊 Closing Costs\nTotal: ${document.getElementById('totalCosts').textContent}\n% of Price: ${document.getElementById('percentage').textContent}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('📤 Copied'))}}
-        function printResults(){if(document.getElementById('totalCosts').textContent==='-'){showToast('⚠️ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script><title>Closing Costs</title><style>body{font-family:Arial;padding:20px;}</style></head><body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav><h1>Closing Costs</h1><p><strong>Total:</strong> ${document.getElementById('totalCosts').textContent}</p><p><strong>% of Price:</strong> ${document.getElementById('percentage').textContent}</p><p><strong>Budget:</strong> ${document.getElementById('budget').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
     </script>
-    <footer><p><strong>Precision Finance</strong> © 2025</p>
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
 </body>
 </html>
+
+

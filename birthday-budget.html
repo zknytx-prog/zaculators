@@ -1,59 +1,72 @@
-﻿<!DOCTYPE html><html><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Budget Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.55rem; font-weight:700; color:var(--success); margin-bottom:0.5rem; }
+        h1 { font-size:1.8rem; margin-bottom:0.25rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What should I include in a birthday budget estimate?","acceptedAnswer":{"@type":"Answer","text":"Include guest-related food costs, decorations, cake, activities, and any other party expenses you expect."}},{"@type":"Question","name":"Is the result per guest or total?","acceptedAnswer":{"@type":"Answer","text":"The main result is a total estimate, and the page also shows a per-guest estimate based on your inputs."}},{"@type":"Question","name":"Should I include gifts or venue costs?","acceptedAnswer":{"@type":"Answer","text":"Yes, if those are part of your plan you can add them into the values you use for the estimate."}},{"@type":"Question","name":"Can this help compare party sizes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Try different guest counts or spending levels to compare possible budget scenarios."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it whenever guest count, food pricing, or activity plans change."}}]}</script>
+</head>
+<body>
+    <header>
+        <h1>Birthday Budget Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Personal &amp; Life</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div><label for="guests">Guests</label><input id="guests" type="number" min="1" step="1" placeholder="20" required></div>
+                <div><label for="food">Food per Guest</label><input id="food" type="number" min="0" step="0.01" placeholder="15" required></div>
+                <div><label for="decor">Decor</label><input id="decor" type="number" min="0" step="0.01" placeholder="80" required></div>
+                <div><label for="cake">Cake</label><input id="cake" type="number" min="0" step="0.01" placeholder="45" required></div>
+                <div><label for="activities">Activities</label><input id="activities" type="number" min="0" step="0.01" placeholder="100" required></div>
+                <div class="full"><button type="submit">Estimate Budget</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates a simple birthday party budget from the values you enter. It can help compare total event cost and cost per guest before you finalize plans.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter your expected guest count and key spending categories.</li><li>Use current prices for food, cake, decor, and activities.</li><li>Click Estimate Budget to view the total estimate.</li><li>Review the per-guest cost shown in the result area.</li><li>Update the numbers if guest count or plans change.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="event-planner.html">Event Planner</a> · <a href="vacation-budget.html">Vacation Budget</a> · <a href="wedding-budget.html">Wedding Budget</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What should I include in a birthday budget estimate?</strong><br>Include guest-related food costs, decorations, cake, activities, and any other party expenses you expect.</p><p class="subtle"><strong>Is the result per guest or total?</strong><br>The main result is a total estimate, and the page also shows a per-guest estimate based on your inputs.</p><p class="subtle"><strong>Should I include gifts or venue costs?</strong><br>Yes, if those are part of your plan you can add them into the values you use for the estimate.</p><p class="subtle"><strong>Can this help compare party sizes?</strong><br>Yes. Try different guest counts or spending levels to compare possible budget scenarios.</p><p class="subtle"><strong>When should I update the estimate?</strong><br>Update it whenever guest count, food pricing, or activity plans change.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides event-planning estimates only. Final costs can vary based on guests, pricing, and local conditions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const guests = Number(document.getElementById("guests").value);
+            const total = (guests * Number(document.getElementById("food").value))
+                + Number(document.getElementById("decor").value)
+                + Number(document.getElementById("cake").value)
+                + Number(document.getElementById("activities").value);
+            document.getElementById("value").textContent = money(total);
+            document.getElementById("detail").textContent = `${money(total / guests)} per guest based on current inputs.`;
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
+</body>
+</html>
 
-  gtag('config', 'G-1B4FY69QMS');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:#0f172a}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem;margin-bottom:2rem}input,button{width:100%;padding:0.75rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:6px;font-size:1rem}button{background:var(--primary);color:white;border:none;cursor:pointer;font-weight:500;font-size:1rem}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}footer{background:white;border-top:1px solid #e2e8f0;padding:2rem;text-align:center;color:#64748b;margin-top:3rem}.faq-section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #e2e8f0}.faq-item h3{font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a reasonable birthday party budget per person?","acceptedAnswer":{"@type":"Answer","text":"For a home or backyard party, a reasonable budget is $15-$30 per guest including food, drinks, cake, and basic decorations. A venue-based party with catering typically runs $40-$80 per person. The US average household spends roughly $200-$400 on a child's birthday party, though costs vary widely by region and party style."}},{"@type":"Question","name":"What birthday party costs are easiest to cut without ruining the experience?","acceptedAnswer":{"@type":"Answer","text":"Venue is usually the biggest lever — hosting at home or a park instead of a dedicated party venue saves the most money. Printed invitations can be replaced by free digital options. Generic themed plates from a dollar store cost a fraction of branded party supply store prices. A homemade or supermarket cake typically satisfies kids just as well as catered alternatives."}},{"@type":"Question","name":"Should I include gift costs in a birthday budget?","acceptedAnswer":{"@type":"Answer","text":"If you plan to give your child a gift separate from the party, include it in the overall birthday budget so you see the full outlay in one place. If you are hosting a party for a friend and plan to give a personal gift, tracking both costs together prevents the combined spending from exceeding what you intended."}},{"@type":"Question","name":"How far in advance should I plan a birthday party budget?","acceptedAnswer":{"@type":"Answer","text":"For a home or small party, two to three weeks is typically enough lead time. For a venue-based party requiring a reservation deposit, four to eight weeks is more realistic. Starting with the budget before booking anything prevents committing to a venue cost that then forces cuts everywhere else."}},{"@type":"Question","name":"How do I split a birthday party budget if multiple families are co-hosting?","acceptedAnswer":{"@type":"Answer","text":"Calculate the total projected cost first, then divide by the number of contributing families. Be explicit about which costs each family covers rather than splitting every receipt. Assign one person to track spending against the total budget in real time so no single category runs over without the group noticing."}}]}</script></head><body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav><header><h1>Free Calculator</h1></header><main><section class="section"><form id="f"><input type="number" id="v1" placeholder="Value 1" required><input type="number" id="v2" placeholder="Value 2" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result: Calculated</div></div></section><section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
-<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Birthday Budget Calculator?</h2>
-<p style="line-height:1.7;margin-bottom:0.75rem;">The Birthday Budget Calculator helps you plan how much to spend on a birthday celebration by breaking total costs into specific categories — venue, food, decorations, gifts, entertainment, and extras — so you can see a realistic total before you commit any money. Birthday parties are one of the most common sources of unexpected overspending in household budgets. A casual backyard party that starts at $200 in your head can easily reach $600 once you add a cake, balloons, party favors, and a few extra guests. This calculator makes the math visible upfront. Parents planning a child's birthday, adults organizing milestone celebrations like a 30th or 50th, and event planners doing quick estimates all benefit from working through a structured budget before making purchases or deposits.</p>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
-<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
-<li><strong>Value 1 (Per-person cost or category total)</strong> — Enter either the cost per guest or the total for your largest expense category, such as venue rental or catering cost per head.</li>
-<li><strong>Value 2 (Number of guests or additional costs)</strong> — Enter the guest count if using a per-person model, or the sum of your remaining expense categories — decorations, cake, invitations, entertainment, and party favors.</li>
-<li><strong>Click Calculate</strong> — The result shows your projected total birthday budget based on those two inputs.</li>
-</ol>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">Your result is a projected total spend. Compare it against the maximum amount you are willing to spend before the event, not after. If the projected total exceeds your comfort level, identify the largest line item and look for substitutions: a home venue instead of a rented space saves $150–$500 for most parties; a supermarket sheet cake instead of a custom bakery cake saves $50–$150; digital invitations instead of printed ones save $30–$80. Small adjustments in two or three categories can bring the total back within budget without sacrificing the overall experience. Remember to add a 10–15% buffer for last-minute additions — extra guests, forgotten supplies, or a tip for a hired entertainer.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">A parent planning a 7-year-old's birthday party for 15 kids estimates $12 per child for food and drinks, plus $180 in fixed costs (decorations, cake, invitations, and party favors). Total: 15 × $12 = $180 + $180 = $360. Adding a $75 entertainer brings the total to $435. The parent's budget cap is $400, so they swap the entertainer for a DIY craft activity costing $25, bringing the total to $385 — under budget with a 3.75% buffer left. This kind of line-item thinking before spending is exactly what the calculator is designed to enable.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
-<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is a reasonable birthday party budget per person?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">For a home or backyard party, a reasonable budget is $15–$30 per guest including food, drinks, cake, and basic decorations. A venue-based party with catering typically runs $40–$80 per person. An upscale event with a hired entertainer, custom cake, and professional decorations can reach $100+ per guest. The US average household spends roughly $200–$400 on a child's birthday party, though costs vary widely by region and party style.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What birthday party costs are easiest to cut without ruining the experience?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Venue is usually the biggest lever — hosting at home, a park, or a community space instead of a dedicated party venue saves the most money. Printed invitations can be replaced by free digital options. Generic themed plates and napkins from a dollar store cost a fraction of branded party supply store prices. For food, a homemade or supermarket cake and a simple pizza order typically satisfies kids just as well as catered alternatives.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Should I include gift costs in a birthday budget?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">If you are the one receiving gifts, that is not a cost. But if you are the parent and plan to give your child a gift separate from the party, include it in the overall birthday budget so you see the full outlay in one place. Similarly, if you are hosting a party for a friend and plan to give a personal gift, tracking both costs together prevents the combined spending from exceeding what you intended.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How far in advance should I plan a birthday party budget?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">For a home or small party, two to three weeks is typically enough lead time to set a budget and make purchases. For a venue-based party requiring a reservation deposit, four to eight weeks is more realistic — especially for popular venues on weekends. Starting with the budget before booking anything prevents the common pattern of committing to a venue cost that then forces cuts everywhere else.</p>
-</div>
-<div style="padding:1rem 1.25rem;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How do I split a birthday party budget if multiple families are co-hosting?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Calculate the total projected cost first using this calculator, then divide by the number of contributing families. Be explicit about which costs each family is responsible for — one covering venue and decorations, another covering food and cake, for example — rather than splitting every receipt. Assign one person to track spending against the total budget in real time so no single category runs over without the group noticing.</p>
-</div>
-</div>
-<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/budget-planner.html" style="color:#2563eb;">Budget Planner</a> · <a href="/anniversary-calculator.html" style="color:#2563eb;">Anniversary Calculator</a> · <a href="/days-until.html" style="color:#2563eb;">Days Until Calculator</a></p>
-</section><div class="disclaimer">⚠️ Estimates only. Not professional advice. Consult advisors.</div></main><footer><p><strong>Precision Finance</strong> © 2025 | 150+ Calculators</p>
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>

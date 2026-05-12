@@ -1,18 +1,223 @@
-﻿<!DOCTYPE html><html><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner | Zaculators</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --danger: #dc2626;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header, footer {
+            background: #fff;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        header { border-bottom: 1px solid var(--border); }
+        footer {
+            border-top: 1px solid var(--border);
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .panel {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        h2 { color: var(--primary); margin-bottom: 1rem; }
+        .subtle { color: #64748b; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+        .full { grid-column: 1 / -1; }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        input, button {
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font: inherit;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        button {
+            background: var(--primary);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .summary {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+        }
+        .summary.active { display: block; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .stat {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .stat strong {
+            display: block;
+            font-size: 1.4rem;
+            margin-top: 0.35rem;
+        }
+        .good { color: var(--success); }
+        .warn { color: var(--warning); }
+        .bad { color: var(--danger); }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 680px) {
+            .grid, .stats { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this budget estimate show?","acceptedAnswer":{"@type":"Answer","text":"It shows total planned expenses, remaining balance, and a simple savings-rate estimate based on your entries."}},{"@type":"Question","name":"Can I use monthly or weekly numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as every input uses the same time period."}},{"@type":"Question","name":"What if I am over budget?","acceptedAnswer":{"@type":"Answer","text":"Reduce categories, increase income assumptions, or test alternative spending plans."}},{"@type":"Question","name":"Does this replace a full finance app?","acceptedAnswer":{"@type":"Answer","text":"No. It is best for quick planning and scenario testing rather than full account tracking."}},{"@type":"Question","name":"When should I update the budget?","acceptedAnswer":{"@type":"Answer","text":"Update it whenever income, bills, debt payments, or savings targets change."}}]}</script>
+</head>
+<body>
+    <header>
+        <h1>Budget Planner</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+    </header>
 
-  gtag('config', 'G-1B4FY69QMS');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem}input{width:100%;padding:0.75rem;border:1px solid #e2e8f0;border-radius:6px;margin-bottom:1rem;font-size:1rem}button{width:100%;padding:0.75rem;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:1rem}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}footer{text-align:center;color:#64748b;margin-top:3rem;padding:2rem;border-top:1px solid #e2e8f0}</style></head><body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav><header><h1>Calculator</h1></header><main><section class="section"><form id="f"><input type="number" placeholder="Value" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result: Calculated</div></div></section></main><footer>Precision Finance © 2025
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+    <main>
+        <section class="panel">
+            <h2>Monthly Budget Inputs</h2>
+            <form id="budget-form" class="grid">
+                <div>
+                    <label for="income">Monthly Income</label>
+                    <input type="number" id="income" step="0.01" min="0" placeholder="5000" required>
+                </div>
+                <div>
+                    <label for="housing">Housing</label>
+                    <input type="number" id="housing" step="0.01" min="0" placeholder="1500" required>
+                </div>
+                <div>
+                    <label for="utilities">Utilities</label>
+                    <input type="number" id="utilities" step="0.01" min="0" placeholder="250" required>
+                </div>
+                <div>
+                    <label for="food">Food</label>
+                    <input type="number" id="food" step="0.01" min="0" placeholder="500" required>
+                </div>
+                <div>
+                    <label for="transport">Transport</label>
+                    <input type="number" id="transport" step="0.01" min="0" placeholder="350" required>
+                </div>
+                <div>
+                    <label for="debt">Debt Payments</label>
+                    <input type="number" id="debt" step="0.01" min="0" placeholder="300" required>
+                </div>
+                <div>
+                    <label for="savings">Planned Savings</label>
+                    <input type="number" id="savings" step="0.01" min="0" placeholder="600" required>
+                </div>
+                <div>
+                    <label for="other">Other Spending</label>
+                    <input type="number" id="other" step="0.01" min="0" placeholder="400" required>
+                </div>
+                <div class="full">
+                    <button type="submit">Build Budget</button>
+                </div>
+            </form>
+            <div id="summary" class="summary">
+                <div class="stats">
+                    <div class="stat">
+                        <span>Total Expenses</span>
+                        <strong id="totalExpenses"></strong>
+                    </div>
+                    <div class="stat">
+                        <span>Remaining Balance</span>
+                        <strong id="remainingBalance"></strong>
+                    </div>
+                    <div class="stat">
+                        <span>Savings Rate</span>
+                        <strong id="savingsRate"></strong>
+                    </div>
+                </div>
+                <p id="budgetMessage" class="subtle"></p>
+            </div>
+        </section>
+            <section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates a simple household or personal budget plan from the values you enter. It highlights total expenses, remaining balance, and savings rate.</p></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter income and each expense category using the same time period.</li><li>Use realistic estimates for bills, savings, and other spending.</li><li>Click Build Budget to calculate the summary.</li><li>Review the remaining balance and savings rate.</li><li>Adjust categories until the plan better matches your goal.</li></ol></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="expense-tracker.html">Expense Tracker</a> · <a href="net-worth.html">Net Worth</a> · <a href="simple-interest.html">Simple Interest</a></p></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does this budget estimate show?</strong><br>It shows total planned expenses, remaining balance, and a simple savings-rate estimate based on your entries.</p><p class="subtle"><strong>Can I use monthly or weekly numbers?</strong><br>Yes, as long as every input uses the same time period.</p><p class="subtle"><strong>What if I am over budget?</strong><br>Reduce categories, increase income assumptions, or test alternative spending plans.</p><p class="subtle"><strong>Does this replace a full finance app?</strong><br>No. It is best for quick planning and scenario testing rather than full account tracking.</p><p class="subtle"><strong>When should I update the budget?</strong><br>Update it whenever income, bills, debt payments, or savings targets change.</p></section><section class="panel"><p class="subtle">This calculator provides budgeting estimates only. Actual spending, timing, fees, and cash flow can vary from plan assumptions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+
+    <footer>
+        <p><strong>Zaculators</strong> &copy; 2026</p>
+    </footer>
+
+    <script>
+        function formatCurrency(value) {
+            return value.toLocaleString(undefined, { style: "currency", currency: "USD" });
+        }
+
+        document.getElementById("budget-form").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const ids = ["income", "housing", "utilities", "food", "transport", "debt", "savings", "other"];
+            const values = Object.fromEntries(ids.map(id => [id, Number(document.getElementById(id).value)]));
+
+            const totalExpenses = values.housing + values.utilities + values.food + values.transport + values.debt + values.savings + values.other;
+            const remaining = values.income - totalExpenses;
+            const savingsRate = values.income === 0 ? 0 : (values.savings / values.income) * 100;
+
+            const remainingEl = document.getElementById("remainingBalance");
+            remainingEl.textContent = formatCurrency(remaining);
+            remainingEl.className = remaining > 0 ? "good" : remaining === 0 ? "warn" : "bad";
+
+            document.getElementById("totalExpenses").textContent = formatCurrency(totalExpenses);
+            document.getElementById("savingsRate").textContent = `${savingsRate.toFixed(1)}%`;
+
+            const message = remaining > 0
+                ? `Your plan leaves ${formatCurrency(remaining)} unassigned each month.`
+                : remaining === 0
+                    ? "Your budget is fully allocated with no remaining margin."
+                    : `Your plan is over budget by ${formatCurrency(Math.abs(remaining))} each month.`;
+
+            document.getElementById("budgetMessage").textContent = message;
+            document.getElementById("summary").classList.add("active");
+        });
+    </script>
+</body>
+</html>
+
+

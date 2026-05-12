@@ -1,43 +1,28 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate blood alcohol content (BAC) and impairment level. Estimate how much alcohol affects your system based on drinks, body weight, and time.">
+    <meta name="keywords" content="BAC calculator, blood alcohol content, alcohol impairment, drink calculator">
+    <title>Blood Alcohol Content Calculator | BAC Estimator | Precision Finance</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Blood Alcohol Content Calculator",
+        "description": "Estimate BAC and alcohol impairment level",
+        "url": "https://project-mjcnr.vercel.app/2-medical/bac-calculator.html",
+        "applicationCategory": "HealthAndFitnessApplication",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "author": {"@type": "Organization", "name": "Precision Finance", "url": "https://project-mjcnr.vercel.app"}
+    }
+    </script>
 
-  gtag('config', 'G-1B4FY69QMS');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate blood alcohol concentration from drinks, body weight, time, and sex.">
-<meta name="keywords" content="bac calculator, blood alcohol calculator">
-<title>BAC Calculator | Zaculators</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "BAC Calculator",
-  "description": "Estimate blood alcohol concentration from drinks, body weight, time, and sex.",
-  "url": "https://zaculators.com/7-fitness/bac-calculator.html",
-  "applicationCategory": "UtilityApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Zaculators",
-    "url": "https://zaculators.com"
-  }
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can this calculator tell me if I am safe to drive?","acceptedAnswer":{"@type":"Answer","text":"No — and it should never be used for that purpose. This is an educational estimate based on average physiological assumptions. Actual BAC depends on many individual factors this formula cannot account for. Even a BAC below 0.08% can impair driving ability. The only responsible answer after drinking any amount of alcohol is to arrange a sober ride or wait a sufficient period confirmed by a certified breathalyzer."}},{"@type":"Question","name":"Why does biological sex affect the BAC estimate?","acceptedAnswer":{"@type":"Answer","text":"The Widmark formula uses a body water distribution constant — 0.73 for males and 0.66 for females on average. Females typically have a higher proportion of body fat and lower proportion of body water, meaning alcohol is distributed through less fluid, resulting in a higher estimated BAC for the same number of drinks."}},{"@type":"Question","name":"How long does it take to sober up?","acceptedAnswer":{"@type":"Answer","text":"The body metabolizes alcohol at roughly 0.015% BAC per hour on average — about one standard drink per hour for a typical adult. You cannot speed up this process by drinking coffee, eating, or exercising. The only thing that eliminates alcohol from your bloodstream is time and your liver's natural metabolic process."}},{"@type":"Question","name":"What counts as one standard drink in the US?","acceptedAnswer":{"@type":"Answer","text":"The NIAAA defines one standard drink as 14 grams of pure alcohol: 12 oz of regular beer at 5% ABV, 5 oz of table wine at 12% ABV, or 1.5 oz of 80-proof distilled spirits at 40% ABV. Many common servings — a large restaurant wine pour or a pint of craft IPA — contain more than one standard drink."}},{"@type":"Question","name":"At what BAC level does impairment begin?","acceptedAnswer":{"@type":"Answer","text":"Research shows measurable impairment of judgment and reaction time begins at BAC levels as low as 0.02-0.04%. At 0.05%, coordination deteriorates. At 0.08% — the legal limit — reaction time and lane tracking are significantly impaired. The legal threshold is not a safe level; it is the point at which driving is illegal, not where impairment starts."}}]}</script>
-<style>
-
+    <style>
         :root {
             --primary: #2563eb;
             --bg: #f8fafc;
@@ -45,224 +30,569 @@
             --border: #e2e8f0;
             --success: #16a34a;
             --error: #dc2626;
-            --muted: #64748b;
+            --warning: #f59e0b;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+        }
         header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
         .breadcrumb a { color: var(--primary); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
-        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
-        .intro { color: #475569; margin-bottom: 1rem; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
-        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
-        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
-        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
-        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-        .btn-primary { background: var(--primary); color: white; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .calculator-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .calculator-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 640px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .button-group { grid-template-columns: 1fr 1fr; }
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
         .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
         .btn-secondary:hover { background: #e2e8f0; }
-        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
+        .results-section {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            display: none;
+        }
         .results-section.active { display: block; }
-        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
-        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
-        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
-        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+        .result-item {
+            margin-bottom: 1.5rem;
+        }
+        .result-item:last-child { margin-bottom: 0; }
+        .result-item label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+        .result-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+        .impairment-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .impairment-none {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .impairment-mild {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .impairment-moderate {
+            background: #fed7aa;
+            color: #92400e;
+        }
+        .impairment-severe {
+            background: #fee2e2;
+            color: #7f1d1d;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .trust-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .faq-section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
         .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-        .faq-item p { color: var(--muted); }
-        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
-        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
-        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
-        .next-steps { background: #fffbeb; border-color: #fde68a; }
-        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
-        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
-        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
+        .faq-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .next-steps h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #92400e;
+        }
+        .next-steps ol {
+            padding-left: 1.5rem;
+            color: #92400e;
+        }
+        .next-steps li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            margin-top: 2rem;
+        }
+        .related-calculators {
+            background: #f0f4f8;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .related-calculators h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .related-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .related-links a {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
         .error-message.show { display: block; }
-
-</style>
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        .updated {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        .toast.show { display: block; }
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
-<header>
-  <h1>BAC Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
-</header>
-<main>
-<section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">This gives a rough BAC estimate. It is not exact and it is not permission. If you have been drinking, do not drive. End of the little carnival.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="drinks">Standard drinks</label><input id="drinks" type="number" min="0" step="0.5" required><div class="error-message"></div></div><div class="form-group"><label for="weight">Body weight (lb)</label><input id="weight" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="hours">Hours since first drink</label><input id="hours" type="number" min="0" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="sex">Sex</label><select id="sex"><option value="male">Male</option><option value="female">Female</option></select><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>BAC estimate</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Estimated BAC</label><div class="value" id="result-bac">—</div></div>
-<div class="result-item"><label>Safety status</label><div class="value" id="result-status">—</div></div>
-<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This estimator is for educational use only and is not suitable for legal, medical, or safety decisions. Do not use it to decide whether to drive, work, or operate machinery.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
-</section>
+<body>
+    <header>
+        <h1>Blood Alcohol Content Calculator</h1>
+        <div class="breadcrumb">
+            <a href="/">Precision Finance</a> / Medical & Health
+        </div>
+    </header>
 
-<div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/calorie-burn.html">Calorie Burn Calculator</a>
-<a href="/sleep-cycle.html">Sleep Cycle Calculator</a>
-<a href="/days-until.html">Days Until Calculator</a>
-<a href="/tdee.html">TDEE Calculator</a></div>
-</div>
+    <main>
+        <section class="calculator-section">
+            <h2>Estimate Your BAC</h2>
+            
+            <div class="trust-badges">
+                <span><div class="badge-icon">✓</div> Widmark Formula</span>
+                <span><div class="badge-icon">✓</div> Evidence-Based</span>
+                <span><div class="badge-icon">✓</div> Completely Free</span>
+            </div>
 
-<div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Use this as a warning tool, not a clearance tool.</li>
-<li>Do not drive after drinking.</li>
-<li>Plan transportation before drinking.</li>
-<li>If impairment is possible, assume it matters.</li>
-<li>Err on the side of safety every time.</li></ol>
-</div>
+            <form id="calcForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">-- Select --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Body Weight (kg)</label>
+                        <input type="number" id="weight" min="40" max="200" placeholder="e.g., 75" step="0.1" required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
 
-<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
-<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the BAC Calculator?</h2>
-<p style="line-height:1.7;margin-bottom:0.75rem;">Blood Alcohol Concentration (BAC) is a measure of the amount of alcohol present in a person's bloodstream, expressed as a percentage. A BAC of 0.08% — the legal driving limit in all US states — means 0.08 grams of alcohol per 100 milliliters of blood. This calculator estimates BAC using the Widmark formula, one of the most widely cited methods in forensic toxicology and alcohol research. It takes into account the number of standard drinks consumed, body weight, biological sex, and the number of hours since drinking began. This tool is strictly educational — for understanding how alcohol affects the body, for academic purposes, or for awareness. It must never be used to determine whether it is safe or legal to drive. Impairment can occur at BAC levels well below 0.08%, and individual variation is significant.</p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="drinks">Number of Drinks (12oz beer, 5oz wine, 1.5oz liquor)</label>
+                        <input type="number" id="drinks" min="0" max="20" placeholder="e.g., 2" step="0.5" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hours">Time Period (hours)</label>
+                        <input type="number" id="hours" min="0" max="24" placeholder="e.g., 2" step="0.5" required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
-<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
-<li><strong>Number of drinks</strong> — Enter the number of standard drinks consumed. In the US, one standard drink contains 14 grams of pure alcohol — equivalent to 12 oz of regular beer (5% ABV), 5 oz of wine (12% ABV), or 1.5 oz of distilled spirits (40% ABV). Craft beers, large wine pours, and cocktails often count as more than one standard drink.</li>
-<li><strong>Body weight</strong> — Enter your weight in pounds. The Widmark formula distributes alcohol through body water, and larger body mass dilutes alcohol more, resulting in lower estimated BAC.</li>
-<li><strong>Hours since drinking started</strong> — Enter how many hours have passed since you began drinking. The body metabolizes alcohol at roughly 0.015% BAC per hour on average, so time reduces the estimate.</li>
-<li><strong>Biological sex</strong> — Select male or female. The Widmark formula uses different distribution constants (r values) for each: 0.73 for males and 0.66 for females, reflecting different average body water percentages.</li>
-</ol>
+                <div class="form-group">
+                    <label for="food">Eaten Before/During Drinking?</label>
+                    <select id="food" required>
+                        <option value="">-- Select --</option>
+                        <option value="none">No food</option>
+                        <option value="light">Light snack</option>
+                        <option value="full">Full meal</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">The calculator returns an estimated BAC value and a status message. A result at or above 0.08 indicates high legal risk for driving in all US states. A non-zero result below 0.08 still signals that alcohol is present — impairment of judgment, reaction time, and coordination can occur at any measurable BAC. A result of 0 means the estimate suggests no alcohol remaining, but this is a mathematical estimate, not a clinical blood test. Real BAC is affected by food intake, hydration, liver function, medications, tolerance, and many other individual factors the Widmark formula does not capture. A breathalyzer or blood test administered by a medical professional is the only reliable measurement of actual BAC.</p>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Calculate</button>
+                    <button type="button" class="btn-secondary" onclick="saveResults()">💾 Save</button>
+                    <button type="button" class="btn-secondary" onclick="shareResults()">📤 Share</button>
+                    <button type="button" class="btn-secondary" onclick="printResults()">🖨️ Print</button>
+                </div>
+            </form>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">A 160-pound male consumes 3 standard drinks over 2 hours. Using the Widmark formula: (3 × 5.14) ÷ (160 × 0.73) = 15.42 ÷ 116.8 = 0.132. Subtract 0.015 × 2 hours = 0.030. Estimated BAC = 0.132 − 0.030 = approximately 0.102%. This is above the 0.08% legal limit. A 130-pound female consuming the same 3 drinks over 2 hours would calculate: (3 × 5.14) ÷ (130 × 0.66) = 15.42 ÷ 85.8 = 0.180, minus 0.030 = approximately 0.150% — substantially higher, illustrating why body weight and sex matter significantly in BAC estimation.</p>
+            <div id="results" class="results-section">
+                <div class="result-item">
+                    <label>Estimated Blood Alcohol Content (BAC)</label>
+                    <div class="value" id="bacValue">-</div>
+                </div>
 
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
-<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Can this calculator tell me if I am safe to drive?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">No — and it should never be used for that purpose. This is an educational estimate based on average physiological assumptions. Actual BAC depends on many individual factors this formula cannot account for. Even a BAC below 0.08% can impair driving ability. The only responsible answer after drinking any amount of alcohol is to arrange a sober ride, use a rideshare app, or wait a sufficient period of time confirmed by a certified breathalyzer.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does biological sex affect the BAC estimate?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">The Widmark formula uses a body water distribution constant — 0.73 for males and 0.66 for females on average. Females typically have a higher proportion of body fat and lower proportion of body water than males of the same weight, which means alcohol is distributed through less fluid, resulting in a higher estimated BAC for the same number of drinks. Hormonal fluctuations and other biological factors can also affect alcohol metabolism, but the Widmark constants are the primary adjustment in this formula.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How long does it take to sober up?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">The body metabolizes alcohol at roughly 0.015% BAC per hour on average — equivalent to about one standard drink per hour for a typical adult. You cannot speed up this process by drinking coffee, eating food, exercising, or sleeping. These actions may make you feel more alert but do not reduce actual BAC. The only thing that eliminates alcohol from your bloodstream is time and your liver's natural metabolic process.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What counts as one standard drink in the US?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">The US National Institute on Alcohol Abuse and Alcoholism (NIAAA) defines one standard drink as 14 grams (0.6 fl oz) of pure alcohol. This equals: 12 oz of regular beer at 5% ABV, 8–9 oz of malt liquor at 7% ABV, 5 oz of table wine at 12% ABV, or 1.5 oz of 80-proof distilled spirits at 40% ABV. Many common servings — a large restaurant pour of wine, a pint of craft IPA, or a strong cocktail — contain more than one standard drink.</p>
-</div>
-<div style="padding:1rem 1.25rem;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">At what BAC level does impairment begin?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Research shows measurable impairment of judgment and reaction time begins at BAC levels as low as 0.02–0.04%. At 0.05%, coordination and ability to track moving objects deteriorate. At 0.08% — the legal limit — reaction time, steering, and lane tracking are significantly impaired. At 0.15% and above, severe impairment of balance, speech, and motor control occurs. The 0.08% legal threshold is not a "safe" level; it is the point at which driving is illegal, not the point at which impairment starts.</p>
-</div>
-</div>
-<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/calorie-burn.html" style="color:#2563eb;">Calorie Burn Calculator</a> · <a href="/bmr.html" style="color:#2563eb;">BMR Calculator</a> · <a href="/body-fat-percentage.html" style="color:#2563eb;">Body Fat Percentage Calculator</a></p>
-</section>
-</main>
-<div id="toast"></div>
-<script src="/calc-utils.js"></script>
-<script>
+                <div class="result-item">
+                    <label>Impairment Level</label>
+                    <span id="impairmentBadge" class="impairment-badge">-</span>
+                </div>
 
-const CALCULATOR_ID = 'bac-calculator';
-const CALCULATOR_TITLE = 'BAC Calculator';
-const drinks = document.getElementById('drinks');
-const weight = document.getElementById('weight');
-const hours = document.getElementById('hours');
-const sex = document.getElementById('sex');
-let latestData = null;
+                <div class="result-item">
+                    <label>Effects You May Experience</label>
+                    <div style="font-size: 0.95rem; color: #64748b; margin-top: 0.5rem; line-height: 1.6;" id="effects">-</div>
+                </div>
 
-function calculateResults() {
+                <div class="result-item">
+                    <label>Recovery Time to 0.00% BAC</label>
+                    <div style="font-size: 0.95rem; color: #64748b; margin-top: 0.5rem;" id="recovery">-</div>
+                </div>
 
- const d=parseFloat(drinks.value), w=parseFloat(weight.value), hrs=parseFloat(hours.value), s=sex.value;
- if(!isFinite(d)||d<0){showValidationError(drinks,'Enter drinks');return;} else showValidationError(drinks,null);
- if(!isFinite(w)||w<=0){showValidationError(weight,'Enter weight');return;} else showValidationError(weight,null);
- if(!isFinite(hrs)||hrs<0){showValidationError(hours,'Enter hours');return;} else showValidationError(hours,null);
- const r = s==='male' ? 0.73 : 0.66;
- const bac = Math.max(0, ((d*5.14)/(w*r)) - 0.015*hrs);
- document.getElementById('result-bac').textContent = formatNumber(bac,3);
- document.getElementById('result-status').textContent = bac >= 0.08 ? 'High risk. Do not drive.' : bac > 0 ? 'Alcohol may still impair judgment and driving.' : 'No estimated alcohol remaining.';
- document.getElementById('result-note').textContent = 'This is an estimate only.';
+                <div class="result-item">
+                    <label>Important Note</label>
+                    <div style="font-size: 0.95rem; color: #64748b; margin-top: 0.5rem; font-style: italic;" id="legalNote">-</div>
+                </div>
+            </div>
 
-    latestData = {drinks:drinks.value,weight:weight.value,hours:hours.value,sex:sex.value,bac:formatNumber(bac,3),status:(bac >= 0.08 ? 'High risk. Do not drive.' : bac > 0 ? 'Alcohol may still impair judgment and driving.' : 'No estimated alcohol remaining.'),note:'This is an estimate only.'};
-    
-    document.getElementById('results').classList.add('active');
-}
+            <div class="disclaimer">
+                ⚠️ <strong>Critical Safety Disclaimer:</strong> This calculator is an ESTIMATE only. Actual BAC varies by individual metabolism, medication, food content, and numerous other factors. It is NOT a substitute for breathalyzers or sobriety tests. Never drive if you've consumed alcohol. If unsure of impairment, use a taxi, rideshare, or designated driver. Your safety and others' safety depend on responsible choices.
+            </div>
 
-function handleSave() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    saveResults(CALCULATOR_ID, latestData);
-}
+            <div class="updated">
+                Last updated: April 19, 2026
+            </div>
+        </section>
 
-function handleShare() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    shareResults(CALCULATOR_TITLE, latestData);
-}
+        <div class="related-calculators">
+            <h3>Related Calculators</h3>
+            <div class="related-links">
+                <a href="bmi-percentile.html">BMI for Kids</a>
+                <a href="calorie-needs.html">Calorie Needs</a>
+                <a href="tdee.html">TDEE Calculator</a>
+            </div>
+        </div>
 
-function handlePrint() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    printResults('results', CALCULATOR_TITLE);
-}
+        <div class="next-steps">
+            <h3>📋 What to Do Next:</h3>
+            <ol>
+                <li><strong>Plan ahead:</strong> Decide on transport BEFORE drinking (taxi, rideshare, designated driver, public transit)</li>
+                <li><strong>Pace yourself:</strong> Limit to 1-2 drinks per 2 hours; alternate with non-alcoholic beverages</li>
+                <li><strong>Eat beforehand:</strong> Food significantly slows alcohol absorption and reduces peak BAC by 30-40%</li>
+                <li><strong>Stay hydrated:</strong> Drink water between alcoholic drinks to reduce dehydration effects</li>
+                <li><strong>Know your limits:</strong> Everyone's metabolism differs. Track how you feel at different BAC levels</li>
+            </ol>
+        </div>
 
-document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
-window.addEventListener('DOMContentLoaded', function(){
-    const saved = loadResults(CALCULATOR_ID);
-    if (saved) {
-        if (saved.drinks !== undefined) drinks.value = saved.drinks;
-if (saved.weight !== undefined) weight.value = saved.weight;
-if (saved.hours !== undefined) hours.value = saved.hours;
-if (saved.sex !== undefined) sex.value = saved.sex;
-        latestData = saved;
-        document.getElementById('result-bac').textContent=saved.bac;document.getElementById('result-status').textContent=saved.status;document.getElementById('result-note').textContent=saved.note;
-        document.getElementById('results').classList.add('active');
-    }
-});
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>What does Blood Alcohol Content (BAC) actually measure?</h3>
+                <p>BAC is the percentage of alcohol in your bloodstream by volume. For example, 0.08% means 0.08 grams of alcohol per 100mL of blood. This measurement determines legal impairment thresholds. In most jurisdictions, 0.08% is the legal driving limit; 0.05% shows measurable impairment even if not legally drunk. BAC reflects total alcohol consumed minus what your liver eliminates (about 1 drink per hour).</p>
+            </div>
 
-</script>
-<footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+            <div class="faq-item">
+                <h3>Why do men and women metabolize alcohol differently?</h3>
+                <p>Women typically reach higher BAC than men consuming identical amounts due to: (1) lower body water percentage (alcohol distributes in water, not fat), (2) lower gastric alcohol dehydrogenase enzyme (metabolizes alcohol before absorption), (3) hormonal effects on metabolism varying with menstrual cycle. Women can have 20-30% higher BAC at the same consumption level. Medications, liver disease, and food also significantly affect metabolism.</p>
+            </div>
 
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
+            <div class="faq-item">
+                <h3>How accurate is this calculator compared to a breathalyzer?</h3>
+                <p>This uses the Widmark formula, the gold standard for BAC estimation. However, actual BAC varies ±10-15% due to individual metabolism differences. Breathalyzers measure actual breath alcohol and are significantly more accurate. This calculator is best for understanding relative impairment and recovery time. For legal/safety decisions, use an actual breathalyzer or observe sobriety tests (coordination, eye tracking).</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can eating food after drinking reduce BAC?</h3>
+                <p>No. Food consumed AFTER drinking doesn't reduce BAC because alcohol is already absorbed. Food eaten BEFORE or DURING drinking slows absorption, extending the time to peak BAC and reducing maximum BAC by 20-40%. The liver still eliminates one drink per hour regardless of food. Once alcohol is in your bloodstream, only time eliminates it—not food, coffee, cold showers, or exercise.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why is liver function critical for alcohol metabolism?</h3>
+                <p>Your liver metabolizes ~90% of consumed alcohol; kidneys/lungs eliminate ~10%. The liver processes alcohol at a fixed rate (about 1 standard drink/hour) that can't be accelerated by hydration, exercise, or willpower. Pre-existing liver disease (hepatitis, cirrhosis, fatty liver) severely reduces alcohol elimination, causing dangerously high BAC accumulation. Certain medications also interfere with liver metabolism. If you have liver concerns, discuss alcohol with a physician.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>At what BAC level is driving legally impaired?</h3>
+                <p>In most countries, 0.08% is the legal driving limit for adults (21+ in US). However, impairment begins much earlier: coordination effects at 0.02-0.03%, reduced judgment at 0.04-0.06%, significant impairment at 0.07-0.09%. Many insurance and legal experts recommend 0.05% as a personal safety threshold. Driving under 0.05% with any alcohol consumption is safest. Never rely on feeling "fine"—impairment is often invisible to yourself.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="/calc-utils.js"></script>
+
+    <script>
+        const EFFECTS_BY_BAC = {
+            0: { level: 'Sober', effects: 'No impairment', badge: 'impairment-none' },
+            0.02: { level: 'Mild', effects: 'Slight relaxation, reduced inhibition', badge: 'impairment-mild' },
+            0.05: { level: 'Mild-Moderate', effects: 'Impaired coordination, reduced alertness, slower reaction time', badge: 'impairment-mild' },
+            0.08: { level: 'Legally Impaired', effects: 'Reduced coordination, impaired judgment, slurred speech, poor balance', badge: 'impairment-moderate' },
+            0.15: { level: 'Severely Impaired', effects: 'Loss of balance, blurred vision, nausea, confusion', badge: 'impairment-severe' },
+            0.30: { level: 'Dangerously Drunk', effects: 'Risk of alcohol poisoning, loss of consciousness, severe health risk', badge: 'impairment-severe' }
+        };
+
+        function getImpairmentData(bac) {
+            const thresholds = [0.30, 0.15, 0.08, 0.05, 0.02, 0];
+            for (const threshold of thresholds) {
+                if (bac >= threshold) return EFFECTS_BY_BAC[threshold];
+            }
+            return EFFECTS_BY_BAC[0];
+        }
+
+        document.getElementById('calcForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const gender = document.getElementById('gender').value;
+            const weight = parseFloat(document.getElementById('weight').value);
+            const drinks = parseFloat(document.getElementById('drinks').value);
+            const hours = parseFloat(document.getElementById('hours').value);
+            const food = document.getElementById('food').value;
+            
+            if (!gender) {
+                showValidationError(document.getElementById('gender'), 'Please select gender');
+                return;
+            }
+            if (!isInRange(weight, 40, 200)) {
+                showValidationError(document.getElementById('weight'), 'Weight must be 40-200 kg');
+                return;
+            }
+            if (drinks < 0 || drinks > 20) {
+                showValidationError(document.getElementById('drinks'), 'Drinks must be 0-20');
+                return;
+            }
+            if (hours < 0 || hours > 24) {
+                showValidationError(document.getElementById('hours'), 'Hours must be 0-24');
+                return;
+            }
+            if (!food) {
+                showValidationError(document.getElementById('food'), 'Please select food option');
+                return;
+            }
+            
+            // Widmark formula: BAC = (drinks * 14 / (weight * r)) - (0.015 * hours)
+            // r = 0.73 for males, 0.66 for females
+            const r = gender === 'male' ? 0.73 : 0.66;
+            const foodFactor = food === 'full' ? 0.8 : food === 'light' ? 0.9 : 1.0;
+            let bac = (drinks * 14 * foodFactor / (weight * r)) - (0.015 * hours);
+            bac = Math.max(0, bac);
+            
+            const impairment = getImpairmentData(bac);
+            const recoveryHours = Math.round(drinks / 0.015 * 100) / 100;
+            
+            document.getElementById('bacValue').textContent = formatNumber(bac, 3);
+            document.getElementById('impairmentBadge').textContent = impairment.level;
+            document.getElementById('impairmentBadge').className = 'impairment-badge ' + impairment.badge;
+            document.getElementById('effects').textContent = impairment.effects;
+            document.getElementById('recovery').textContent = `Approximately ${recoveryHours} hours from start of drinking (liver metabolizes ~1 drink/hour)`;
+            document.getElementById('legalNote').textContent = 'Legal driving limit in most places: 0.08% BAC. This calculator is an estimate only. Do not drive if unsure.';
+            
+            document.getElementById('results').classList.add('active');
+            saveResults('bac', { gender, weight, drinks, hours, bac: formatNumber(bac, 3), level: impairment.level });
+        });
+
+        function saveResults() {
+            if (document.getElementById('bacValue').textContent === '-') {
+                showToast('⚠️ Calculate first');
+                return;
+            }
+            showToast('✓ Results saved to your device');
+        }
+
+        function shareResults() {
+            if (document.getElementById('bacValue').textContent === '-') {
+                showToast('⚠️ Calculate first');
+                return;
+            }
+            const summary = `📊 Blood Alcohol Content\nBAC: ${document.getElementById('bacValue').textContent}\nLevel: ${document.getElementById('impairmentBadge').textContent}\n\n⚠️ Do not drive. Use designated driver or taxi.\n💰 Calculated with Precision Finance Calculator`;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(summary).then(() => showToast('📤 Summary copied'));
+            }
+        }
+
+        function printResults() {
+            if (document.getElementById('bacValue').textContent === '-') {
+                showToast('⚠️ Calculate first');
+                return;
+            }
+            const pw = window.open('', '_blank');
+            pw.document.write(`<html><head><title>BAC Results</title><style>body{font-family:Arial;padding:20px;}h1{color:#2563eb;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}hr{margin:20px 0;}.warning{color:#dc2626;font-weight:bold;}</style></head><body><h1>Blood Alcohol Content Results</h1><div class="item"><div class="label">BAC:</div><div class="value">${document.getElementById('bacValue').textContent}</div></div><div class="item"><div class="label">Impairment Level:</div><div class="value">${document.getElementById('impairmentBadge').textContent}</div></div><hr><p class="warning">⚠️ Do not drive. Use a designated driver, taxi, or rideshare.</p><p style="font-size:0.9em;color:#666;">Calculated on ${new Date().toLocaleDateString()}</p></body></html>`);
+            pw.document.close();
+            pw.onload = () => pw.print();
+        }
+    </script>
+
+    <footer>
+        <p><strong>Precision Finance</strong> © 2025 | Free health & fitness calculators</p>
+    </footer>
 </body>
 </html>

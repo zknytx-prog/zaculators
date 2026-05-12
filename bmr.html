@@ -1,269 +1,78 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate basal metabolic rate using weight, height, age, and sex.">
-<meta name="keywords" content="bmr calculator, basal metabolic rate calculator">
-<title>BMR Calculator | Zaculators</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "BMR Calculator",
-  "description": "Estimate basal metabolic rate using weight, height, age, and sex.",
-  "url": "https://zaculators.com/7-fitness/bmr.html",
-  "applicationCategory": "UtilityApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Zaculators",
-    "url": "https://zaculators.com"
-  }
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is the calories your body burns at complete rest — the baseline energy for survival functions only. TDEE adds all other calorie use on top of BMR: energy burned through digestion, non-exercise activity like walking and fidgeting, and structured exercise. TDEE is the number you need to eat at for weight maintenance; BMR is simply the floor that TDEE builds on."}},{"@type":"Question","name":"Why does BMR decrease with age?","acceptedAnswer":{"@type":"Answer","text":"Lean muscle mass is metabolically active and burns more calories at rest than fat tissue. Most adults lose roughly 3-8% of muscle mass per decade after age 30, called sarcopenia. As muscle mass decreases, BMR falls with it. Resistance training helps slow muscle loss and maintain a higher BMR over time."}},{"@type":"Question","name":"Does eating less lower your BMR?","acceptedAnswer":{"@type":"Answer","text":"Yes. Significant calorie restriction causes metabolic adaptation where the body reduces energy expenditure to preserve itself. Studies show BMR can drop 10-20% below predicted values during prolonged calorie deficits. Gradual, moderate deficits of 300-500 calories per day below TDEE cause less adaptation than extreme restriction."}},{"@type":"Question","name":"Which BMR formula is most accurate — Mifflin-St Jeor or Harris-Benedict?","acceptedAnswer":{"@type":"Answer","text":"The Mifflin-St Jeor equation, published in 1990, is generally considered more accurate for most modern adults than the original Harris-Benedict equations from 1919. Multiple validation studies show Mifflin-St Jeor predicts measured resting metabolic rate within about 10% for roughly 80% of people."}},{"@type":"Question","name":"How should I use my BMR result for weight loss?","acceptedAnswer":{"@type":"Answer","text":"Start by calculating your TDEE by multiplying BMR by an activity factor. Then create a moderate deficit of 300-500 calories below your TDEE per day to lose approximately 0.6-1 pound per week. Avoid going below your BMR in daily calorie intake, as this risks muscle loss and metabolic slowdown. Recheck BMR every 10-15 pounds lost."}}]}</script>
-<style>
-
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #0f172a;
-            --border: #e2e8f0;
-            --success: #16a34a;
-            --error: #dc2626;
-            --muted: #64748b;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
-        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
-        .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
-        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
-        .intro { color: #475569; margin-bottom: 1rem; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
-        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
-        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
-        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
-        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { background: #e2e8f0; }
-        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
-        .results-section.active { display: block; }
-        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
-        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
-        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
-        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-        .faq-item p { color: var(--muted); }
-        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
-        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
-        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
-        .next-steps { background: #fffbeb; border-color: #fde68a; }
-        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
-        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
-        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
-        .error-message.show { display: block; }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel,.disclaimer { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .disclaimer { margin-top:2rem; color:#7f1d1d; background:#fee2e2; border-color:#fecaca; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, select, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.4rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does BMR estimate?","acceptedAnswer":{"@type":"Answer","text":"BMR estimates how many calories your body may use at complete rest under standard conditions."}},{"@type":"Question","name":"Is BMR the same as daily calorie needs?","acceptedAnswer":{"@type":"Answer","text":"No. BMR reflects resting needs only, while daily calorie needs usually depend on activity too."}},{"@type":"Question","name":"Why do age, sex, height, and weight matter?","acceptedAnswer":{"@type":"Answer","text":"Those factors are used in common BMR formulas because they influence resting energy use estimates."}},{"@type":"Question","name":"Can this replace professional nutrition advice?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate only and not a substitute for personalized medical or nutrition guidance."}},{"@type":"Question","name":"When should I recalculate BMR?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your body weight, body size, or activity planning changes meaningfully."}}]}</script>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
-<header>
-  <h1>BMR Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
-</header>
-<main>
-<section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate resting calorie burn before exercise or daily activity is added.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="sex">Sex</label><select id="sex"><option value="male">Male</option><option value="female">Female</option></select><div class="error-message"></div></div><div class="form-group"><label for="weight">Weight (lb)</label><input id="weight" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="height">Height (inches)</label><input id="height" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="age">Age</label><input id="age" type="number" min="1" max="120" step="1" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>BMR estimate</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Estimated BMR</label><div class="value" id="result-bmr">—</div></div>
-<div class="result-item"><label>Weekly resting calories</label><div class="value" id="result-week">—</div></div>
-<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
-</section>
-
-<div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/tdee.html">TDEE Calculator</a>
-<a href="/calorie-needs.html">Calorie Needs Calculator</a>
-<a href="/protein-intake.html">Protein Intake Calculator</a>
-<a href="/bmi.html">BMI Calculator</a></div>
-</div>
-
-<div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Use BMR as a base, not your final calorie target.</li>
-<li>Add activity with a TDEE calculator for a more practical estimate.</li>
-<li>Recalculate after major weight changes.</li>
-<li>Avoid extreme calorie deficits without supervision.</li>
-<li>Use trends in energy, weight, and performance to adjust.</li></ol>
-</div>
-
-<section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
-<h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the BMR Calculator?</h2>
-<p style="line-height:1.7;margin-bottom:0.75rem;">Basal Metabolic Rate (BMR) is the number of calories your body burns every day just to keep you alive — breathing, circulating blood, maintaining body temperature, repairing cells, and running every other basic function — while you are completely at rest. It is the floor of your daily calorie needs, the minimum your body requires even if you do nothing all day. BMR is not the same as your total daily calorie need; it is the starting point before accounting for physical activity. Knowing your BMR helps you understand how many calories you burn at baseline, which is the foundation for setting realistic calorie targets whether your goal is weight loss, maintenance, or muscle gain. This calculator uses the Mifflin-St Jeor equation, which is widely considered the most accurate general-population BMR formula for adults.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
-<ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
-<li><strong>Sex</strong> — Select male or female. The Mifflin-St Jeor equation uses different constants for each sex to account for average differences in lean body mass.</li>
-<li><strong>Weight (lb)</strong> — Enter your current body weight in pounds. The calculator converts to kilograms internally for the formula.</li>
-<li><strong>Height (inches)</strong> — Enter your height in total inches. For example, 5 feet 8 inches = 68 inches. The calculator converts to centimeters.</li>
-<li><strong>Age</strong> — Enter your age in years. BMR decreases slightly with age as lean muscle mass tends to decline over time.</li>
-<li><strong>Click Calculate</strong> — Results show your estimated daily BMR in kilocalories and your weekly resting calorie total.</li>
-</ol>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">Your BMR result is your estimated resting daily energy expenditure. To get your Total Daily Energy Expenditure (TDEE) — the actual number of calories you need per day — multiply your BMR by an activity factor: 1.2 for sedentary (desk job, little exercise), 1.375 for lightly active (exercise 1–3 days/week), 1.55 for moderately active (exercise 3–5 days/week), 1.725 for very active (hard exercise 6–7 days/week), and 1.9 for extremely active (physical job plus intense training). Never eat fewer calories than your BMR for extended periods without medical supervision — doing so can trigger muscle loss, metabolic adaptation, nutrient deficiencies, and other health problems. BMR estimates vary from actual measured values by roughly ±10% even with the best formulas.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
-<p style="line-height:1.7;margin-bottom:0.75rem;">A 35-year-old woman, 5 feet 5 inches tall (65 inches), weighing 145 pounds. Converting: 145 lbs × 0.4536 = 65.8 kg; 65 inches × 2.54 = 165.1 cm. Mifflin-St Jeor for females: (10 × 65.8) + (6.25 × 165.1) − (5 × 35) − 161 = 658 + 1,031.9 − 175 − 161 = 1,353.9 kcal/day. Her BMR is approximately 1,354 calories per day. If she is moderately active, her TDEE is 1,354 × 1.55 ≈ 2,099 calories per day — the amount she would need to eat to maintain her current weight.</p>
-
-<h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
-<div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">What is the difference between BMR and TDEE?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">BMR is the calories your body burns at complete rest — the baseline energy for survival functions only. TDEE (Total Daily Energy Expenditure) adds all other calorie use on top of BMR: the energy burned through digestion (about 10% of intake), non-exercise activity like walking and fidgeting, and structured exercise. TDEE is the number you actually need to eat at for weight maintenance; BMR is simply the floor that TDEE builds on.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Why does BMR decrease with age?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Lean muscle mass is metabolically active — it burns more calories at rest than fat tissue. Most adults lose roughly 3–8% of muscle mass per decade after age 30, a process called sarcopenia. As muscle mass decreases, BMR falls with it. This is one major reason why calorie intake patterns that maintained weight at 25 may lead to gradual weight gain by age 45 without changes to diet or exercise. Resistance training helps slow muscle loss and maintain a higher BMR over time.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Does eating less lower your BMR?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Yes. Significant calorie restriction causes metabolic adaptation, sometimes called "adaptive thermogenesis," where the body reduces energy expenditure to preserve itself. Studies show BMR can drop 10–20% below predicted values during prolonged calorie deficits. This is a key reason why very low calorie diets become less effective over time and why reintroducing food after a diet is often complicated. Gradual, moderate deficits (300–500 calories/day below TDEE) cause less adaptation than extreme restriction.</p>
-</div>
-<div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">Which BMR formula is most accurate — Mifflin-St Jeor or Harris-Benedict?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">The Mifflin-St Jeor equation, published in 1990, is generally considered more accurate for most modern adults than the original Harris-Benedict equations from 1919. Multiple validation studies show Mifflin-St Jeor predicts measured resting metabolic rate within about 10% for roughly 80% of people. The Katch-McArdle formula, which uses lean body mass, can be more accurate for individuals who know their body fat percentage accurately, but requires that additional measurement.</p>
-</div>
-<div style="padding:1rem 1.25rem;">
-<p style="font-weight:600;margin-bottom:0.35rem;color:#0f172a;">How should I use my BMR result for weight loss?</p>
-<p style="line-height:1.6;color:#475569;margin:0;">Start by calculating your TDEE (BMR × activity factor). Then create a moderate deficit of 300–500 calories below your TDEE per day to lose approximately 0.6–1 pound per week. Avoid going below your BMR in daily calorie intake, as this risks muscle loss and metabolic slowdown. Recheck your BMR every 10–15 pounds lost, since BMR decreases as body weight decreases and your targets need to adjust accordingly.</p>
-</div>
-</div>
-<p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/calorie-needs.html" style="color:#2563eb;">Calorie Needs Calculator</a> · <a href="/calorie-burn.html" style="color:#2563eb;">Calorie Burn Calculator</a> · <a href="/body-fat-percentage.html" style="color:#2563eb;">Body Fat Percentage Calculator</a></p>
-</section>
-</main>
-<div id="toast"></div>
-<script src="/calc-utils.js"></script>
-<script>
-
-const CALCULATOR_ID = 'bmr';
-const CALCULATOR_TITLE = 'BMR Calculator';
-const sex = document.getElementById('sex');
-const weight = document.getElementById('weight');
-const height = document.getElementById('height');
-const age = document.getElementById('age');
-let latestData = null;
-
-function calculateResults() {
-
- const s=sex.value,w=parseFloat(weight.value),h=parseFloat(height.value),a=parseFloat(age.value);
- if(!isFinite(w)||w<=0){showValidationError(weight,'Enter weight');return;} else showValidationError(weight,null);
- if(!isFinite(h)||h<=0){showValidationError(height,'Enter height');return;} else showValidationError(height,null);
- if(!isFinite(a)||a<=0){showValidationError(age,'Enter age');return;} else showValidationError(age,null);
- const kg = w*0.45359237, cm = h*2.54;
- const bmr = s==='male' ? 10*kg + 6.25*cm - 5*a + 5 : 10*kg + 6.25*cm - 5*a - 161;
- document.getElementById('result-bmr').textContent = formatNumber(bmr,0) + ' kcal/day';
- document.getElementById('result-week').textContent = formatNumber(bmr*7,0) + ' kcal/week';
- document.getElementById('result-note').textContent = 'BMR estimates resting calorie needs before activity.';
-
-    latestData = {sex:sex.value,weight:weight.value,height:height.value,age:age.value,bmr:formatNumber(bmr,0) + ' kcal/day',week:formatNumber(bmr*7,0) + ' kcal/week',note:'BMR estimates resting calorie needs before activity.'};
-    
-    document.getElementById('results').classList.add('active');
-}
-
-function handleSave() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    saveResults(CALCULATOR_ID, latestData);
-}
-
-function handleShare() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    shareResults(CALCULATOR_TITLE, latestData);
-}
-
-function handlePrint() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    printResults('results', CALCULATOR_TITLE);
-}
-
-document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
-window.addEventListener('DOMContentLoaded', function(){
-    const saved = loadResults(CALCULATOR_ID);
-    if (saved) {
-        if (saved.sex !== undefined) sex.value = saved.sex;
-if (saved.weight !== undefined) weight.value = saved.weight;
-if (saved.height !== undefined) height.value = saved.height;
-if (saved.age !== undefined) age.value = saved.age;
-        latestData = saved;
-        document.getElementById('result-bmr').textContent=saved.bmr;document.getElementById('result-week').textContent=saved.week;document.getElementById('result-note').textContent=saved.note;
-        document.getElementById('results').classList.add('active');
-    }
-});
-
-</script>
-<footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
+<body>
+    <header>
+        <h1>BMR Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div><label for="age">Age</label><input id="age" type="number" min="1" step="1" placeholder="30" required></div>
+                <div>
+                    <label for="sex">Sex</label>
+                    <select id="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div><label for="height">Height (cm)</label><input id="height" type="number" min="1" step="0.1" placeholder="175" required></div>
+                <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="1" step="0.1" placeholder="70" required></div>
+                <div class="full"><button type="submit">Calculate BMR</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+        <div class="disclaimer">BMR is an estimate of resting calorie needs and varies by individual health factors.</div>
+    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates basal metabolic rate, which is a rough measure of resting calorie use. It is useful for planning, not diagnosis.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter age, sex, height, and weight.</li><li>Use current measurements for the most relevant estimate.</li><li>Click Calculate BMR to view the result.</li><li>Review the estimated resting calories per day.</li><li>Use the estimate with other planning tools if needed.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmi.html">BMI</a> · <a href="calorie-needs.html">Calorie Needs</a> · <a href="protein-intake.html">Protein Intake</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does BMR estimate?</strong><br>BMR estimates how many calories your body may use at complete rest under standard conditions.</p><p class="subtle"><strong>Is BMR the same as daily calorie needs?</strong><br>No. BMR reflects resting needs only, while daily calorie needs usually depend on activity too.</p><p class="subtle"><strong>Why do age, sex, height, and weight matter?</strong><br>Those factors are used in common BMR formulas because they influence resting energy use estimates.</p><p class="subtle"><strong>Can this replace professional nutrition advice?</strong><br>No. It is a planning estimate only and not a substitute for personalized medical or nutrition guidance.</p><p class="subtle"><strong>When should I recalculate BMR?</strong><br>Recalculate when your body weight, body size, or activity planning changes meaningfully.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Individual calorie needs can vary for many reasons.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const age = Number(document.getElementById("age").value);
+            const height = Number(document.getElementById("height").value);
+            const weight = Number(document.getElementById("weight").value);
+            const sex = document.getElementById("sex").value;
+            const bmr = sex === "male"
+                ? (10 * weight) + (6.25 * height) - (5 * age) + 5
+                : (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            document.getElementById("value").textContent = `${Math.round(bmr).toLocaleString()} kcal/day`;
+            document.getElementById("detail").textContent = "Estimated calories burned at complete rest.";
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
 </body>
 </html>
+
+

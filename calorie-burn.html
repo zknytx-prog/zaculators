@@ -1,287 +1,76 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate calories burned from activity MET value, body weight, and duration.">
-<meta name="keywords" content="calorie burn calculator, exercise calories burned">
-<title>Calorie Burn Calculator | Zaculators</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Calorie Burn Calculator",
-  "description": "Estimate calories burned from activity MET value, body weight, and duration.",
-  "url": "https://zaculators.com/7-fitness/calorie-burn.html",
-  "applicationCategory": "UtilityApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Zaculators",
-    "url": "https://zaculators.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a MET value?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A MET is a standard way to describe activity intensity relative to rest."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is this only an estimate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Real burn varies with technique, effort, fitness, and environment."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use this for walking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, if you know the approximate MET value for your pace."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does body weight matter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Heavier bodies generally burn more energy for the same task."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is smartwatch data better?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sometimes, but even wearables are still estimates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why compare hourly burn?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It helps compare activities of different durations."
-      }
-    }
-  ]
-}
-</script>
-<style>
-
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #0f172a;
-            --border: #e2e8f0;
-            --success: #16a34a;
-            --error: #dc2626;
-            --muted: #64748b;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
-        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
-        .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
-        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
-        .intro { color: #475569; margin-bottom: 1rem; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
-        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
-        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
-        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
-        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { background: #e2e8f0; }
-        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
-        .results-section.active { display: block; }
-        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
-        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
-        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
-        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-        .faq-item p { color: var(--muted); }
-        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
-        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
-        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
-        .next-steps { background: #fffbeb; border-color: #fde68a; }
-        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
-        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
-        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
-        .error-message.show { display: block; }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Burn Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel,.disclaimer { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; }
+        .disclaimer { margin-top:2rem; color:#7f1d1d; background:#fee2e2; border-color:#fecaca; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, select, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.4rem; }
+        .subtle { color:#64748b; }
+        a { color:var(--primary); text-decoration:none; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What affects calorie-burn estimates?","acceptedAnswer":{"@type":"Answer","text":"Body weight, time spent, and activity intensity can all affect the estimate."}},{"@type":"Question","name":"Is this result exact?","acceptedAnswer":{"@type":"Answer","text":"No. Calorie burn is an estimate and can vary with pace, technique, fitness level, and conditions."}},{"@type":"Question","name":"Why are activities listed with preset values?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses simplified activity assumptions to generate a quick estimate."}},{"@type":"Question","name":"Can I use this for training plans?","acceptedAnswer":{"@type":"Answer","text":"It can help with planning, but it should not replace personalized fitness or medical guidance."}},{"@type":"Question","name":"When should I recalculate calorie burn?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when workout duration, body weight, or activity type changes."}}]}</script>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
-<header>
-  <h1>Calorie Burn Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
-</header>
-<main>
-<section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">Estimate calories burned during an activity using the standard MET method.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="met">Activity MET value</label><input id="met" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="weight">Weight (lb)</label><input id="weight" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="minutes">Minutes</label><input id="minutes" type="number" min="1" step="1" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>Calorie burn estimate</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Estimated calories burned</label><div class="value" id="result-cal">—</div></div>
-<div class="result-item"><label>Equivalent burn per hour</label><div class="value" id="result-hour">—</div></div>
-<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
-</section>
-
-<div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/tdee.html">TDEE Calculator</a>
-<a href="/max-heart-rate.html">Max Heart Rate Calculator</a>
-<a href="/bmr.html">BMR Calculator</a>
-<a href="/protein-intake.html">Protein Intake Calculator</a></div>
-</div>
-
-<div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Use realistic MET values, not fantasy numbers.</li>
-<li>Track consistency more than tiny calorie differences.</li>
-<li>Do not eat back every estimated calorie automatically.</li>
-<li>Use this with your overall calorie plan.</li>
-<li>Adjust based on real progress and recovery.</li></ol>
-</div>
-
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>What is a MET value?</h3><p>A MET is a standard way to describe activity intensity relative to rest.</p></div>
-<div class="faq-item"><h3>Why is this only an estimate?</h3><p>Real burn varies with technique, effort, fitness, and environment.</p></div>
-<div class="faq-item"><h3>Can I use this for walking?</h3><p>Yes, if you know the approximate MET value for your pace.</p></div>
-<div class="faq-item"><h3>Does body weight matter?</h3><p>Yes. Heavier bodies generally burn more energy for the same task.</p></div>
-<div class="faq-item"><h3>Is smartwatch data better?</h3><p>Sometimes, but even wearables are still estimates.</p></div>
-<div class="faq-item"><h3>Why compare hourly burn?</h3><p>It helps compare activities of different durations.</p></div>
-</section>
-</main>
-<div id="toast"></div>
-<script src="/calc-utils.js"></script>
-<script>
-
-const CALCULATOR_ID = 'calorie-burn';
-const CALCULATOR_TITLE = 'Calorie Burn Calculator';
-const met = document.getElementById('met');
-const weight = document.getElementById('weight');
-const minutes = document.getElementById('minutes');
-let latestData = null;
-
-function calculateResults() {
-
- const metVal=parseFloat(met.value), w=parseFloat(weight.value), mins=parseFloat(minutes.value);
- if(!isFinite(metVal)||metVal<=0){showValidationError(met,'Enter MET');return;} else showValidationError(met,null);
- if(!isFinite(w)||w<=0){showValidationError(weight,'Enter weight');return;} else showValidationError(weight,null);
- if(!isFinite(mins)||mins<=0){showValidationError(minutes,'Enter minutes');return;} else showValidationError(minutes,null);
- const kg = w*0.45359237;
- const cals = 0.0175 * metVal * kg * mins;
- document.getElementById('result-cal').textContent = formatNumber(cals,0) + ' kcal';
- document.getElementById('result-hour').textContent = formatNumber(cals*(60/mins),0) + ' kcal/hr';
- document.getElementById('result-note').textContent = 'Actual burn varies with effort and efficiency.';
-
-    latestData = {met:met.value,weight:weight.value,minutes:minutes.value,cal:formatNumber(cals,0) + ' kcal',hour:formatNumber(cals*(60/mins),0) + ' kcal/hr',note:'Actual burn varies with effort and efficiency.'};
-    
-    document.getElementById('results').classList.add('active');
-}
-
-function handleSave() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    saveResults(CALCULATOR_ID, latestData);
-}
-
-function handleShare() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    shareResults(CALCULATOR_TITLE, latestData);
-}
-
-function handlePrint() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    printResults('results', CALCULATOR_TITLE);
-}
-
-document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
-window.addEventListener('DOMContentLoaded', function(){
-    const saved = loadResults(CALCULATOR_ID);
-    if (saved) {
-        if (saved.met !== undefined) met.value = saved.met;
-if (saved.weight !== undefined) weight.value = saved.weight;
-if (saved.minutes !== undefined) minutes.value = saved.minutes;
-        latestData = saved;
-        document.getElementById('result-cal').textContent=saved.cal;document.getElementById('result-hour').textContent=saved.hour;document.getElementById('result-note').textContent=saved.note;
-        document.getElementById('results').classList.add('active');
-    }
-});
-
-</script>
-<footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
+<body>
+    <header>
+        <h1>Calorie Burn Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="1" step="0.1" placeholder="70" required></div>
+                <div><label for="minutes">Duration (minutes)</label><input id="minutes" type="number" min="1" step="1" placeholder="45" required></div>
+                <div class="full">
+                    <label for="activity">Activity</label>
+                    <select id="activity">
+                        <option value="3.5">Walking</option>
+                        <option value="6">Cycling</option>
+                        <option value="8">Running</option>
+                        <option value="5">Strength training</option>
+                    </select>
+                </div>
+                <div class="full"><button type="submit">Estimate Burn</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+        <div class="disclaimer">Exercise calorie estimates vary with intensity, technique, and fitness level.</div>
+            <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates calories burned during a selected activity using a simplified intensity model and the values you enter.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter weight and activity duration.</li><li>Select the activity that best matches your workout.</li><li>Click Estimate Burn to view the result.</li><li>Review the calorie estimate as a planning figure.</li><li>Update the inputs when workout conditions change.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="calorie-needs.html">Calorie Needs</a> · <a href="exercise-duration.html">Exercise Duration</a> · <a href="water-intake.html">Water Intake</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What affects calorie-burn estimates?</strong><br>Body weight, time spent, and activity intensity can all affect the estimate.</p><p class="subtle"><strong>Is this result exact?</strong><br>No. Calorie burn is an estimate and can vary with pace, technique, fitness level, and conditions.</p><p class="subtle"><strong>Why are activities listed with preset values?</strong><br>The calculator uses simplified activity assumptions to generate a quick estimate.</p><p class="subtle"><strong>Can I use this for training plans?</strong><br>It can help with planning, but it should not replace personalized fitness or medical guidance.</p><p class="subtle"><strong>When should I recalculate calorie burn?</strong><br>Recalculate when workout duration, body weight, or activity type changes.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Actual calorie burn varies from person to person.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const weight = Number(document.getElementById("weight").value);
+            const minutes = Number(document.getElementById("minutes").value);
+            const met = Number(document.getElementById("activity").value);
+            const calories = met * 3.5 * weight / 200 * minutes;
+            document.getElementById("value").textContent = `${Math.round(calories).toLocaleString()} kcal`;
+            document.getElementById("detail").textContent = "Estimated calories burned during the selected activity.";
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
 </body>
 </html>
+
+

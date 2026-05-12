@@ -11,206 +11,777 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="All 136+ free online calculators on Zaculators — finance, real estate, health, business, automotive, and more. No sign-up required.">
-    <title>All Calculators - Zaculators | 136+ Free Online Calculators</title>
+    <meta name="description" content="Browse all 254 live Zaculators calculators in one place. Search by keyword, jump by category, and open finance, tax, health, business, property, education, and global calculators fast.">
+    <meta name="theme-color" content="#2563eb">
+    <title>All Calculators | Zaculators</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are Zaculators calculators free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The calculators listed in this directory are free to use in your browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No account is required. You can open calculators directly and use them without sign-up."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are the results financial, tax, legal, or medical advice?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Results are estimates for planning and education only. Important financial, tax, legal, and medical decisions should be reviewed with a qualified professional."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do some calculators use assumptions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Some tools simplify rates, formulas, or scenarios so they stay fast and practical. Your real-world results may differ based on location, timing, provider terms, or personal circumstances."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use these calculators for international planning?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, many tools can help with international planning, but exchange rates, taxes, mortgage rules, and local regulations vary by country. Always verify location-specific details before acting on results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often are calculators updated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Calculators are updated as the site grows and improves. If a tool depends on rates, tax bands, or policy assumptions, it should be checked against current official sources before important decisions."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         :root {
             --primary: #2563eb;
+            --primary-dark: #1e40af;
             --accent: #10b981;
             --bg-light: #f8fafc;
             --bg-dark: #0f172a;
+            --surface-light: #ffffff;
+            --surface-dark: #1e293b;
             --text-light: #0f172a;
             --text-dark: #f1f5f9;
+            --muted-light: #475569;
+            --muted-dark: #94a3b8;
             --border-light: #e2e8f0;
             --border-dark: #334155;
-            --card-light: #ffffff;
-            --card-dark: #1e293b;
+            --shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: var(--bg-light);
             color: var(--text-light);
             line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
         }
-        body.dark-mode { background: var(--bg-dark); color: var(--text-dark); }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
 
         header {
-            background: var(--card-light);
+            background: var(--surface-light);
             border-bottom: 1px solid var(--border-light);
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
-        body.dark-mode header { background: var(--card-dark); border-bottom-color: var(--border-dark); }
+
+        body.dark-mode header {
+            background: var(--surface-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
         .logo {
-            display: flex; align-items: center; gap: 0.75rem;
-            font-size: 1.4rem; font-weight: 700; color: var(--primary); text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
         }
+
         .logo-icon {
-            width: 36px; height: 36px;
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 8px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
         }
-        .theme-toggle { background: none; border: none; cursor: pointer; font-size: 1.4rem; }
 
-        .page-hero {
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .header-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.72rem 1rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 700;
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.45rem;
+            color: inherit;
+        }
+
+        .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white; padding: 2.5rem 2rem; text-align: center;
+            color: white;
+            padding: 4rem 1.5rem 3.25rem;
+            text-align: center;
         }
-        .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.5rem; }
-        .page-hero p { opacity: 0.9; font-size: 1.05rem; margin-bottom: 1.5rem; }
 
-        .search-wrap {
-            max-width: 520px; margin: 0 auto;
-            display: flex; gap: 0.5rem;
+        .hero h1 {
+            font-size: clamp(2rem, 4.8vw, 3.4rem);
+            margin-bottom: 0.9rem;
+            font-weight: 800;
+            color: var(--primary, #2563eb);
         }
-        #searchInput {
-            flex: 1; padding: 0.8rem 1.2rem; border-radius: 50px; border: none;
-            font-size: 1rem; outline: none; color: #0f172a;
-        }
-        .clear-btn {
-            background: rgba(255,255,255,0.2); border: none; border-radius: 50px;
-            padding: 0.8rem 1.2rem; color: white; cursor: pointer; font-size: 0.9rem;
-            display: none;
-        }
-        .clear-btn.visible { display: block; }
 
-        .category-nav {
-            background: var(--card-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 0.75rem 2rem;
-            display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
-            position: sticky; top: 65px; z-index: 99;
+        .hero p {
+            max-width: 820px;
+            margin: 0 auto 1.2rem;
+            font-size: 1.05rem;
+            opacity: 0.95;
         }
-        body.dark-mode .category-nav { background: var(--card-dark); border-bottom-color: var(--border-dark); }
-        .cat-pill {
-            padding: 0.35rem 0.9rem; border-radius: 50px;
-            background: var(--bg-light); border: 1px solid var(--border-light);
-            color: inherit; text-decoration: none; font-size: 0.85rem; font-weight: 600;
-            transition: all 0.2s; white-space: nowrap;
-        }
-        body.dark-mode .cat-pill { background: var(--bg-dark); border-color: var(--border-dark); }
-        .cat-pill:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-        main { max-width: 1400px; margin: 0 auto; padding: 2.5rem 2rem; }
-
-        .search-status {
-            text-align: center; padding: 0.75rem; font-size: 0.95rem;
-            color: #64748b; display: none;
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
         }
-        body.dark-mode .search-status { color: #94a3b8; }
 
-        .category-section { margin-bottom: 3.5rem; }
-        .category-section h2 {
-            font-size: 1.5rem; margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem; border-bottom: 3px solid var(--primary);
-            display: flex; align-items: center; gap: 0.5rem;
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 190px;
+            padding: 0.95rem 1.3rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
         }
-        .cat-count {
-            font-size: 0.85rem; font-weight: 500; color: #64748b;
-            background: var(--bg-light); border: 1px solid var(--border-light);
-            border-radius: 20px; padding: 0.1rem 0.6rem; margin-left: 0.25rem;
-        }
-        body.dark-mode .cat-count { background: var(--bg-dark); border-color: var(--border-dark); color: #94a3b8; }
 
-        .calc-grid {
+        .hero-button.primary {
+            background: #ffffff;
+            color: var(--primary-dark);
+            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+        }
+
+        .hero-button.secondary {
+            background: rgba(255, 255, 255, 0.14);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-helper {
+            font-size: 0.95rem;
+            opacity: 0.92;
+        }
+
+        .hero-utility-row,
+        .search-panel {
+            max-width: 820px;
+            margin: 1rem auto 0;
+        }
+
+        .currency-compact,
+        .search-panel {
+            padding: 1rem 1.1rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+        }
+
+        .currency-compact {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .currency-compact label,
+        .search-panel label {
+            display: block;
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .currency-compact select,
+        .search-panel input {
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-light);
+            font: inherit;
+        }
+
+        .currency-compact select {
+            min-width: 260px;
+            padding: 0.72rem 0.9rem;
+            border-radius: 999px;
+        }
+
+        .currency-compact-note {
+            font-size: 0.88rem;
+            opacity: 0.94;
+        }
+
+        .search-panel {
+            text-align: left;
+        }
+
+        .search-panel label {
+            margin-bottom: 0.55rem;
+        }
+
+        .search-panel input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border-radius: 12px;
+        }
+
+        .search-panel input:focus,
+        .currency-compact select:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 2px;
+        }
+
+        .search-meta {
+            margin-top: 0.65rem;
+            font-size: 0.88rem;
+            opacity: 0.94;
+        }
+
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .jump-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.4rem;
+        }
+
+        .jump-nav a {
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 0.9rem;
+            font-weight: 700;
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .jump-nav a {
+            background: var(--surface-dark);
+            border-color: var(--border-dark);
+        }
+
+        .section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section h2 {
+            font-size: 1.65rem;
+            margin-bottom: 0.25rem;
+            color: var(--primary, #2563eb);
+        }
+
+        .section-copy {
+            color: var(--muted-light);
+            max-width: 820px;
+        }
+
+        body.dark-mode .section-copy,
+        body.dark-mode .section-count,
+        body.dark-mode .calc-card p,
+        body.dark-mode .support-panel p,
+        body.dark-mode .faq-item p,
+        body.dark-mode .support-links a span,
+        body.dark-mode .updated-line {
+            color: var(--muted-dark);
+        }
+
+        .section-count {
+            color: var(--muted-light);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .calculator-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 1rem;
+        }
+
+        .calc-card {
+            display: block;
+            min-height: 158px;
+            padding: 1rem;
+            border-radius: 18px;
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .calc-card,
+        body.dark-mode .support-panel,
+        body.dark-mode .faq-section {
+            background: var(--surface-dark);
+            border-color: var(--border-dark);
+        }
+
+        .calc-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.12);
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+        }
+
+        body.dark-mode .calc-icon {
+            background: rgba(96, 165, 250, 0.18);
+            color: #bfdbfe;
+        }
+
+        .calc-card h3 {
+            font-size: 0.98rem;
+            line-height: 1.3;
+            margin-bottom: 0.45rem;
+        }
+
+        .calc-card p {
+            color: var(--muted-light);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .empty-state {
+            display: none;
+            margin: 1rem 0 2rem;
+            padding: 1rem 1.1rem;
+            border-radius: 16px;
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            color: #9a3412;
+        }
+
+        .support-stack {
+            display: grid;
+            gap: 1.4rem;
+        }
+
+        .support-panel,
+        .faq-section {
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            border-radius: 18px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+        }
+
+        .support-panel h2,
+        .faq-section h2 {
+            font-size: 1.45rem;
+            margin-bottom: 1rem;
+            color: var(--primary, #2563eb);
+        }
+
+        .support-panel p {
+            color: var(--muted-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .support-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .support-card {
+            padding: 1rem;
+            border-radius: 14px;
+            background: rgba(37, 99, 235, 0.06);
+            border: 1px solid rgba(37, 99, 235, 0.12);
+        }
+
+        body.dark-mode .support-card {
+            background: rgba(96, 165, 250, 0.08);
+            border-color: rgba(96, 165, 250, 0.16);
+        }
+
+        .support-card h3 {
+            margin-bottom: 0.35rem;
+        }
+
+        .support-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 0.9rem;
         }
-        .calc-card {
-            background: var(--card-light); border: 1px solid var(--border-light);
-            border-radius: 12px; padding: 1.1rem 0.9rem;
-            text-decoration: none; color: inherit;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: center; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; min-height: 110px;
-        }
-        body.dark-mode .calc-card { background: var(--card-dark); border-color: var(--border-dark); }
-        .calc-card:hover {
-            transform: translateY(-5px); border-color: var(--primary);
-            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.18);
-            background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(16,185,129,0.04));
-        }
-        .calc-card .icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
-        .calc-card h3 { font-size: 0.88rem; font-weight: 600; line-height: 1.3; }
-        .calc-card.hidden { display: none; }
 
-        .no-results {
-            text-align: center; padding: 3rem; display: none;
-            color: #64748b;
+        .support-links a {
+            display: block;
+            padding: 1rem;
+            border-radius: 14px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.16);
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
         }
-        body.dark-mode .no-results { color: #94a3b8; }
-        .no-results p { font-size: 1.1rem; }
+
+        body.dark-mode .support-links a {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.18);
+        }
+
+        .support-links a span {
+            display: block;
+            margin-top: 0.35rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--muted-light);
+        }
+
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        body.dark-mode .faq-item {
+            border-bottom-color: var(--border-dark);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .faq-item p {
+            color: var(--muted-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .disclaimer-panel {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 18px;
+            padding: 1rem 1.1rem;
+            color: #9a3412;
+            box-shadow: var(--shadow);
+        }
+
+        .updated-line {
+            text-align: center;
+            color: var(--muted-light);
+            font-size: 0.9rem;
+        }
 
         footer {
-            background: var(--card-light); border-top: 1px solid var(--border-light);
-            padding: 2.5rem 2rem; text-align: center; color: #64748b; margin-top: 2rem;
+            padding: 2rem 1.5rem 3rem;
+            text-align: center;
+            color: var(--muted-light);
         }
-        body.dark-mode footer { background: var(--card-dark); border-top-color: var(--border-dark); color: #94a3b8; }
-        .footer-links { margin-top: 0.75rem; }
-        .footer-links a { color: inherit; opacity: 0.8; margin: 0 0.5rem; text-decoration: none; font-size: 0.9rem; }
-        .footer-links a:hover { opacity: 1; text-decoration: underline; }
 
-        @media (max-width: 768px) {
-            header { padding: 0.75rem 1rem; }
-            .page-hero { padding: 1.75rem 1rem; }
-            .category-nav { top: 57px; padding: 0.6rem 1rem; }
-            main { padding: 1.5rem 1rem; }
-            .calc-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.65rem; }
-            .calc-card { min-height: 95px; padding: 0.85rem 0.65rem; }
-            .calc-card h3 { font-size: 0.8rem; }
+        body.dark-mode footer {
+            color: var(--muted-dark);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
+        }
+
+        .footer-links a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 720px) {
+            header {
+                padding: 0.9rem 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem 2.8rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-button {
+                width: 100%;
+            }
+
+            .header-link {
+                display: none;
+            }
+
+            .currency-compact,
+            .search-panel {
+                padding: 0.9rem 1rem;
+            }
+
+            .currency-compact {
+                justify-content: stretch;
+            }
+
+            .currency-compact select {
+                width: 100%;
+                min-width: 0;
+            }
+
+            main {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .calculator-grid {
+                grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .calc-card {
+                min-height: 136px;
+                padding: 0.9rem 0.8rem;
+            }
+
+            .calc-card h3 {
+                font-size: 0.88rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="/" class="logo">
-            <div class="logo-icon">🧮</div>
+        <a href="index.html" class="logo" aria-label="Zaculators home">
+            <div class="logo-icon">&#129518;</div>
             <span>Zaculators</span>
         </a>
-        <nav style="display:flex;gap:1.25rem;align-items:center;font-size:0.88rem;font-family:system-ui,sans-serif;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;">All Calculators</a></nav><button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+        <div class="header-actions">
+            <a href="index.html" class="header-link">Back to Home</a>
+            <button class="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">&#127769;</button>
+        </div>
     </header>
 
-    <div class="page-hero">
-        <h1>All Calculators</h1>
-        <p>136+ free tools — no sign-up, no data collection</p>
-        <div class="search-wrap">
-            <input type="search" id="searchInput" placeholder="Search calculators…" autocomplete="off" />
-            <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕ Clear</button>
+    <section class="hero">
+        <h1>All Live Calculators</h1>
+        <p>Browse all 254 live root-level Zaculators calculators in one place. Search by keyword, jump by category, and open the exact tool you need.</p>
+        <div class="hero-actions">
+            <a class="hero-button primary" href="index.html">Back to Homepage</a>
+            <a class="hero-button secondary" href="#directory">Jump to Directory</a>
         </div>
-    </div>
-
-    <nav class="category-nav" aria-label="Calculator categories">
-        <a href="#financial"   class="cat-pill">💰 Financial</a>
-        <a href="#realestate"  class="cat-pill">🏠 Real Estate</a>
-        <a href="#business"    class="cat-pill">💼 Business</a>
-        <a href="#health"      class="cat-pill">❤️ Health</a>
-        <a href="#automotive"  class="cat-pill">🚗 Automotive</a>
-        <a href="#personal"    class="cat-pill">👨‍👩‍👧 Personal</a>
-        <a href="#education"   class="cat-pill">🎓 Education</a>
-    </nav>
-
-    <main>
-        <div class="search-status" id="searchStatus"></div>
-        <div class="no-results" id="noResults">
-            <p>No calculators found for "<span id="searchTerm"></span>"</p>
-            <p style="margin-top:0.5rem;font-size:0.9rem;"><a href="#" onclick="clearSearch();return false;">Clear search</a></p>
+        <div class="hero-helper">Only live calculator pages from the current root folder are included here.</div>
+        <div class="hero-utility-row">
+            <div class="currency-compact">
+                <label for="currencyPreferenceSelector">Preferred Currency</label>
+                <select id="currencyPreferenceSelector" aria-label="Preferred currency"></select>
+                <div class="currency-compact-note">Used by calculators that support saved currency preferences.</div>
+            </div>
         </div>
-        <div id="categorySections"></div>
+        <div class="search-panel">
+            <label for="calculatorSearch">Search calculators</label>
+            <input id="calculatorSearch" type="search" placeholder="Try mortgage, VAT, calories, currency, or loan" autocomplete="off">
+            <div class="search-meta"><span id="matchCount">254</span> calculators listed across 10 categories.</div>
+        </div>
+    </section>
+
+    <main id="directory">
+        <nav class="jump-nav" id="jumpNav" aria-label="Category shortcuts"></nav>
+        <div id="directorySections"></div>
+
+        <div class="empty-state" id="emptyState">
+            No calculators matched your search. Try a broader term like <strong>tax</strong>, <strong>mortgage</strong>, or <strong>travel</strong>.
+        </div>
+
+        <div class="support-stack">
+            <section class="support-panel">
+                <h2>How to Use Zaculators</h2>
+                <p>Use the search box to narrow the list quickly, or jump straight to a category if you already know the type of calculator you need. Each card opens a live calculator page in the current root directory.</p>
+                <p>If you are comparing options, open a few related tools side by side. For example, a home purchase decision may involve mortgage, closing costs, home affordability, and property tax calculators together.</p>
+            </section>
+
+            <section class="support-panel">
+                <h2>Why Choose Zaculators</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>Fast to browse</h3>
+                        <p>The directory is organized so you can find a useful tool without digging through menus.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Free to use</h3>
+                        <p>Calculators are available directly in your browser without account creation or gated access.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Practical estimates</h3>
+                        <p>These tools are designed for planning, comparison, and rough decision support.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>Broad coverage</h3>
+                        <p>Finance, tax, health, education, utilities, and international planning tools live in one place.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support-panel">
+                <h2>Privacy / Cookie / Advertising Note</h2>
+                <p>This directory may use analytics, cookies, and similar technologies to understand usage, remember preferences such as display settings, and improve how visitors browse calculators across the site.</p>
+                <p>Advertising may appear on some pages to support Zaculators, but ads do not change calculator formulas or results. The directory structure, search, and category links are intended to stay useful and easy to scan without creating misleading navigation.</p>
+            </section>
+
+            <section class="support-panel">
+                <h2>Popular Calculator Categories</h2>
+                <p>Some visitors start with a category instead of a specific calculator name. These are the most common starting points in the directory.</p>
+                <div class="support-links">
+                    <a href="#financial">Financial<span>Cash flow, debt payoff, savings, and budgeting tools.</span></a>
+                    <a href="#real-estate">Real Estate<span>Mortgage, affordability, equity, and property tools.</span></a>
+                    <a href="#tax">Tax<span>VAT, income tax, payroll, sales tax, and refund estimates.</span></a>
+                    <a href="#international">Travel &amp; International<span>Currency, travel, regional costs, and visa planning.</span></a>
+                    <a href="#health">Health &amp; Fitness<span>BMI, calories, sleep, protein, and performance metrics.</span></a>
+                    <a href="#automotive">Automotive<span>Fuel cost, vehicle ownership, depreciation, and loan tools.</span></a>
+                </div>
+            </section>
+
+            <section class="faq-section" aria-labelledby="directory-faq-heading">
+                <h2 id="directory-faq-heading">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>Are Zaculators calculators free?</h3>
+                    <p>Yes. The calculators listed in this directory are free to use in your browser.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need to create an account?</h3>
+                    <p>No account is required. You can open calculators directly and use them without sign-up.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are the results financial, tax, legal, or medical advice?</h3>
+                    <p>No. Results are estimates for planning and education only. Important financial, tax, legal, and medical decisions should be reviewed with a qualified professional.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why do some calculators use assumptions?</h3>
+                    <p>Some tools simplify rates, formulas, or scenarios so they stay fast and practical. Your real-world results may differ based on location, timing, provider terms, or personal circumstances.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use these calculators for international planning?</h3>
+                    <p>Yes, many tools can help with international planning, but exchange rates, taxes, mortgage rules, and local regulations vary by country. Always verify location-specific details before acting on results.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How often are calculators updated?</h3>
+                    <p>Calculators are updated as the site grows and improves. If a tool depends on rates, tax bands, or policy assumptions, it should be checked against current official sources before important decisions.</p>
+                </div>
+            </section>
+
+            <section class="disclaimer-panel">
+                <strong>General Disclaimer:</strong> This directory is meant to help you find and compare calculators quickly. Outputs are estimates, not guarantees. Tax, finance, legal, health, and property decisions may depend on jurisdiction, timing, lender terms, medical history, or professional interpretation. Use calculator results as general planning support, not as professional advice.
+            </section>
+
+            <div class="updated-line">Last updated: May 12, 2026</div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Zaculators. All rights reserved.</p>
+        <p>&copy; 2026 Zaculators. Free calculators for money, health, home, school, business, and daily life.</p>
         <div class="footer-links">
+            <a href="all-calculators.html">All Calculators</a>
             <a href="about-us.html">About</a>
             <a href="contact-us.html">Contact</a>
             <a href="privacy-policy.html">Privacy Policy</a>
@@ -219,278 +790,287 @@
         </div>
     </footer>
 
+    <script src="currency-preferences.js"></script>
     <script>
-    const CATEGORIES = [
-        {
-            id: 'financial',
-            label: '💰 Financial & Investing',
-            calcs: [
-                { name: 'APR Calculator',             icon: '💹', file: 'apr.html' },
-                { name: 'Annuity Calculator',         icon: '💳', file: 'annuity-calculator.html' },
-                { name: 'Bond Calculator',            icon: '📊', file: 'bond-calculator.html' },
-                { name: 'Break-Even Calculator',      icon: '📉', file: 'break-even.html' },
-                { name: 'Budget Planner',             icon: '📋', file: 'budget-planner.html' },
-                { name: 'Cash Flow Projection',       icon: '📈', file: 'cash-flow-projection.html' },
-                { name: 'Cash Flow Tracker',          icon: '💵', file: 'cash-flow-tracker.html' },
-                { name: 'Commission Calculator',      icon: '💰', file: 'commission.html' },
-                { name: 'Compound Interest',          icon: '📈', file: 'compound-interest-monthly.html' },
-                { name: 'Credit Utilization',         icon: '💳', file: 'credit-utilization.html' },
-                { name: 'Customer Lifetime Value',    icon: '📊', file: 'customer-lifetime-value.html' },
-                { name: 'Customer LTV',               icon: '📊', file: 'customer-ltv.html' },
-                { name: 'Debt Consolidation',         icon: '💸', file: 'debt-consolidation.html' },
-                { name: 'Debt Payoff',                icon: '✅', file: 'debt-payoff.html' },
-                { name: 'Depreciation Calculator',    icon: '📉', file: 'depreciation.html' },
-                { name: 'Discount Calculator',        icon: '🏷️', file: 'discount.html' },
-                { name: 'Dividend Calculator',        icon: '💹', file: 'dividend-calculator.html' },
-                { name: 'Down Payment',               icon: '🏦', file: 'down-payment.html' },
-                { name: 'Emergency Fund',             icon: '🛡️', file: 'emergency-fund.html' },
-                { name: 'ETF Calculator',             icon: '📊', file: 'etf-calculator.html' },
-                { name: 'Expense Allocator',          icon: '💰', file: 'expense-allocator.html' },
-                { name: 'Expense Tracker',            icon: '📋', file: 'expense-tracker.html' },
-                { name: 'Financial Aid',              icon: '🎓', file: 'financial-aid-calculator.html' },
-                { name: 'Future Value',               icon: '📈', file: 'future-value.html' },
-                { name: 'Hourly Rate',                icon: '⏱️', file: 'hourly-rate.html' },
-                { name: 'Inflation Calculator',       icon: '📊', file: 'inflation-calculator.html' },
-                { name: 'Investment Return',          icon: '💹', file: 'investment-return.html' },
-                { name: 'Loan Calculator',            icon: '🏦', file: 'loan.html' },
-                { name: 'Loan Comparison',            icon: '⚖️', file: 'loan-comparison.html' },
-                { name: 'Loan Payoff',                icon: '✅', file: 'loan-payoff.html' },
-                { name: 'Markup Calculator',          icon: '🏷️', file: 'markup-calculator.html' },
-                { name: 'Net Worth',                  icon: '💎', file: 'net-worth.html' },
-                { name: 'Pension Calculator',         icon: '👴', file: 'pension-calculator.html' },
-                { name: 'Percentage Calculator',      icon: '%',  file: 'percentage.html' },
-                { name: 'Present Value',              icon: '💰', file: 'present-value.html' },
-                { name: 'Profit Margin',              icon: '💹', file: 'profit-margin.html' },
-                { name: 'Profit Maximizer',           icon: '📈', file: 'profit-maximizer.html' },
-                { name: 'Retirement Planner',         icon: '🏖️', file: 'retirement.html' },
-                { name: 'Retirement Age',             icon: '📅', file: 'retirement-age.html' },
-                { name: 'Retirement Countdown',       icon: '⏳', file: 'retirement-countdown.html' },
-                { name: 'Scholarship Calculator',     icon: '🎓', file: 'scholarship-calculator.html' },
-                { name: 'Simple Interest',            icon: '💰', file: 'simple-interest.html' },
-                { name: 'Social Security',            icon: '🛡️', file: 'social-security.html' },
-                { name: 'Student Loan',               icon: '📚', file: 'student-loan.html' },
-                { name: 'Tip Calculator',             icon: '🍽️', file: 'tip.html' },
-                { name: 'Time Value of Money',        icon: '⏱️', file: 'time-value.html' },
-            ]
-        },
-        {
-            id: 'realestate',
-            label: '🏠 Real Estate & Mortgage',
-            calcs: [
-                { name: 'Closing Costs',              icon: '🏠', file: 'closing-costs.html' },
-                { name: 'Down Payment Calculator',    icon: '💰', file: 'down-payment-calculator.html' },
-                { name: 'Equity Calculator',          icon: '📊', file: 'equity-calculator.html' },
-                { name: 'Equity Loan',                icon: '🏦', file: 'equity-loan.html' },
-                { name: 'Flipping Calculator',        icon: '🔨', file: 'flipping-calculator.html' },
-                { name: 'Home Affordability',         icon: '🏡', file: 'home-affordability.html' },
-                { name: 'Home Equity',                icon: '📈', file: 'home-equity.html' },
-                { name: 'Home Improvement',           icon: '🔧', file: 'home-improvement.html' },
-                { name: 'HOA Fees',                   icon: '🏘️', file: 'hoa-fees.html' },
-                { name: 'HOA Fees Estimator',         icon: '🏘️', file: 'hoa-fees-estimator.html' },
-                { name: 'Investment Property',        icon: '🏗️', file: 'investment-property.html' },
-                { name: 'Investment Property ROI',    icon: '💹', file: 'investment-property-roi.html' },
-                { name: 'Lease Calculator',           icon: '📋', file: 'lease-calculator.html' },
-                { name: 'Mortgage Calculator',        icon: '🏠', file: 'mortgage.html' },
-                { name: 'Mortgage Amortization',      icon: '📊', file: 'mortgage-amortization.html' },
-                { name: 'Property Appreciation',      icon: '📈', file: 'property-appreciation.html' },
-                { name: 'Property Tax',               icon: '🏛️', file: 'property-tax.html' },
-                { name: 'Property Valuation',         icon: '💎', file: 'property-valuation.html' },
-                { name: 'Refinance Calculator',       icon: '🔄', file: 'refinance.html' },
-                { name: 'Rent vs Buy',                icon: '⚖️', file: 'rent-vs-buy.html' },
-            ]
-        },
-        {
-            id: 'business',
-            label: '💼 Business & Entrepreneurship',
-            calcs: [
-                { name: 'Break-Even Sales',           icon: '📊', file: 'break-even-sales.html' },
-                { name: 'Course Cost Tracker',        icon: '📚', file: 'course-cost-tracker.html' },
-                { name: 'Degree ROI',                 icon: '🎓', file: 'degree-roi.html' },
-                { name: 'Inventory Manager',          icon: '📦', file: 'inventory-manager.html' },
-                { name: 'Inventory Turnover',         icon: '🔄', file: 'inventory-turnover.html' },
-                { name: 'Markup Tool',                icon: '🏷️', file: 'markup-tool.html' },
-                { name: 'Payroll Calculator',         icon: '💵', file: 'payroll-calculator.html' },
-                { name: 'Payroll Tax',                icon: '💸', file: 'payroll-tax.html' },
-                { name: 'Pricing Optimizer',          icon: '🎯', file: 'pricing-optimizer.html' },
-                { name: 'Revenue Projector',          icon: '📊', file: 'revenue-projector.html' },
-            ]
-        },
-        {
-            id: 'health',
-            label: '❤️ Health & Fitness',
-            calcs: [
-                { name: 'BAC Calculator',             icon: '🍷', file: 'bac-calculator.html' },
-                { name: 'BMI Calculator',             icon: '⚖️', file: 'bmi.html' },
-                { name: 'BMI Percentile',             icon: '📊', file: 'bmi-percentile.html' },
-                { name: 'BMR Calculator',             icon: '⚡', file: 'bmr.html' },
-                { name: 'Body Fat Percentage',        icon: '💪', file: 'body-fat-percentage.html' },
-                { name: 'Calorie Burn',               icon: '🔥', file: 'calorie-burn.html' },
-                { name: 'Calorie Needs',              icon: '🥗', file: 'calorie-needs.html' },
-                { name: 'Exercise Duration',          icon: '🏃', file: 'exercise-duration.html' },
-                { name: 'Fitness Level',              icon: '🏋️', file: 'fitness-level.html' },
-                { name: 'HIIT Timer',                 icon: '⏱️', file: 'hiit-timer.html' },
-                { name: 'Ideal Weight',               icon: '⚖️', file: 'ideal-weight.html' },
-                { name: 'Max Heart Rate',             icon: '❤️', file: 'max-heart-rate.html' },
-                { name: 'Nutrition Calculator',       icon: '🥗', file: 'nutrition-calculator.html' },
-                { name: 'One Rep Max',                icon: '🏋️', file: 'one-rep-max.html' },
-                { name: 'Pace Calculator',            icon: '🏃', file: 'pace-calculator.html' },
-                { name: 'Protein Intake',             icon: '💪', file: 'protein-intake.html' },
-                { name: 'Sleep Calculator',           icon: '😴', file: 'sleep-calculator.html' },
-                { name: 'Sleep Cycle',                icon: '🌙', file: 'sleep-cycle.html' },
-                { name: 'TDEE Calculator',            icon: '⚡', file: 'tdee.html' },
-                { name: 'VO2 Max',                    icon: '🫁', file: 'vo2-max.html' },
-                { name: 'Waist-Hip Ratio',            icon: '📏', file: 'waist-hip-ratio.html' },
-                { name: 'Water Intake',               icon: '💧', file: 'water-intake.html' },
-                { name: 'Weight Loss Timeline',       icon: '📉', file: 'weight-loss-timeline.html' },
-            ]
-        },
-        {
-            id: 'automotive',
-            label: '🚗 Automotive & Travel',
-            calcs: [
-                { name: 'Car Payment',                icon: '🚗', file: 'car-payment.html' },
-                { name: 'EV Charging Cost',           icon: '⚡', file: 'ev-charging-cost.html' },
-                { name: 'Fuel Cost',                  icon: '⛽', file: 'fuel-cost.html' },
-                { name: 'Fuel Efficiency',            icon: '🚗', file: 'fuel-efficiency.html' },
-                { name: 'Gas Mileage',                icon: '⛽', file: 'gas-mileage.html' },
-                { name: 'Lease vs Buy',               icon: '⚖️', file: 'lease-vs-buy.html' },
-                { name: 'Road Trip Cost',             icon: '🗺️', file: 'road-trip-cost.html' },
-                { name: 'Tire Pressure',              icon: '🔧', file: 'tire-pressure.html' },
-                { name: 'Trip Cost',                  icon: '✈️', file: 'trip-cost.html' },
-                { name: 'Vacation Budget',            icon: '🏖️', file: 'vacation-budget.html' },
-                { name: 'Vehicle Cost',               icon: '💰', file: 'vehicle-cost.html' },
-                { name: 'Vehicle Depreciation',       icon: '📉', file: 'vehicle-depreciation.html' },
-                { name: 'Vehicle Loan',               icon: '🏦', file: 'vehicle-loan.html' },
-            ]
-        },
-        {
-            id: 'personal',
-            label: '👨‍👩‍👧 Personal & Life Events',
-            calcs: [
-                { name: 'Age Difference',             icon: '📅', file: 'age-difference.html' },
-                { name: 'Anniversary Calculator',     icon: '🎉', file: 'anniversary-calculator.html' },
-                { name: 'Baby Due Date',              icon: '👶', file: 'baby-due-date.html' },
-                { name: 'Birthday Budget',            icon: '🎂', file: 'birthday-budget.html' },
-                { name: 'Days Until',                 icon: '📅', file: 'days-until.html' },
-                { name: 'Gift Budget',                icon: '🎁', file: 'gift-budget.html' },
-                { name: 'Life Path Number',           icon: '🔮', file: 'life-path-number.html' },
-                { name: 'Love Calculator',            icon: '❤️', file: 'love-calculator.html' },
-                { name: 'Pet Age',                    icon: '🐾', file: 'pet-age.html' },
-                { name: 'Pregnancy Calculator',       icon: '🤰', file: 'pregnancy-calculator.html' },
-                { name: 'Wedding Budget',             icon: '💍', file: 'wedding-budget.html' },
-                { name: 'Zodiac Sign',                icon: '⭐', file: 'zodiac-sign.html' },
-            ]
-        },
-        {
-            id: 'education',
-            label: '🎓 Education & Lifestyle',
-            calcs: [
-                { name: 'Appliance Cost',             icon: '🏠', file: 'appliance-cost.html' },
-                { name: 'Energy Cost',                icon: '⚡', file: 'energy-cost.html' },
-                { name: 'Event Planner',              icon: '📅', file: 'event-planner.html' },
-                { name: 'Furniture Cost',             icon: '🪑', file: 'furniture-cost.html' },
-                { name: 'GPA Calculator',             icon: '📚', file: 'gpa-calculator.html' },
-                { name: 'Grade Calculator',           icon: '📝', file: 'grade-calculator.html' },
-                { name: 'Grade Converter',            icon: '🔄', file: 'grade-converter.html' },
-                { name: 'Insurance Premium',          icon: '🛡️', file: 'insurance-premium.html' },
-                { name: 'Moving Cost',                icon: '📦', file: 'moving-cost.html' },
-                { name: 'Parking Fee',                icon: '🅿️', file: 'parking-fee.html' },
-                { name: 'Student Budget',             icon: '💰', file: 'student-budget.html' },
-                { name: 'Study Planner',              icon: '📚', file: 'study-planner.html' },
-                { name: 'Tuition Cost',               icon: '🎓', file: 'tuition-cost.html' },
-                { name: 'Tuition Forecaster',         icon: '📊', file: 'tuition-forecaster.html' },
-                { name: 'Unit Converter',             icon: '🔄', file: 'unit-converter.html' },
-                { name: 'Utility Cost',               icon: '💡', file: 'utility-cost.html' },
-                { name: 'Water Bill',                 icon: '💧', file: 'water-bill.html' },
-            ]
+                const DIRECTORY_SECTIONS = [
+            {
+                id: 'financial',
+                title: 'Financial',
+                icon: '&#128181;',
+                copy: 'Core money tools for borrowing, saving, investing, and everyday planning.',
+                files: ['annuity-calculator.html', 'apr-calculator.html', 'average-calculator.html', 'bond-calculator.html', 'cagr-calculator.html', 'compound-interest-monthly.html', 'credit-card-payoff-calculator.html', 'credit-utilization.html', 'date-calculator.html', 'debt-consolidation.html', 'debt-to-income-ratio-calculator.html', 'discount-calculator.html', 'dividend-calculator.html', 'emergency-fund.html', 'emi-calculator-india.html', 'equity-loan.html', 'etf-calculator.html', 'fd-calculator-india.html', 'flipping-calculator.html', 'fraction-calculator.html', 'future-value.html', 'hours-calculator.html', 'inflation-calculator.html', 'insurance-premium.html', 'investment-return.html', 'loan-comparison.html', 'loan-payment-calculator.html', 'loan-payoff.html', 'lumpsum-calculator-india.html', 'net-worth.html', 'pension-calculator.html', 'percentage-calculator.html', 'percentage-decrease-calculator.html', 'percentage-increase-calculator.html', 'percent-change-calculator.html', 'personal-loan-calculator.html', 'ppf-calculator-india.html', 'present-value.html', 'ratio-calculator.html', 'retirement-age.html', 'retirement-countdown.html', 'retirement.html', 'simple-interest.html', 'sip-calculator.html', 'social-security.html', 'time-duration-calculator.html', 'time-value.html', 'tip.html']
+            },
+            {
+                id: 'tax',
+                title: 'Tax / Payroll / VAT',
+                icon: '&#129518;',
+                copy: 'Income tax, payroll, VAT, GST, pension, and country-specific estimate tools.',
+                files: ['bahrain-end-of-service-calculator.html', 'bangladesh-income-tax-calculator.html', 'capital-gains-tax-calculator.html', 'corporate-tax-calculator.html', 'effective-tax-rate-calculator.html', 'egypt-income-tax-calculator.html', 'end-of-service-calculator-saudi-arabia.html', 'epf-calculator-india.html', 'ethiopia-income-tax-calculator.html', 'federal-income-tax-calculator.html', 'ghana-paye-calculator.html', 'gosi-calculator-saudi-arabia.html', 'gratuity-calculator-india.html', 'gratuity-calculator-uae.html', 'gst-calculator-australia.html', 'gst-calculator-india.html', 'gst-calculator-new-zealand.html', 'gst-calculator-singapore.html', 'hra-calculator-india.html', 'income-tax-calculator-canada.html', 'income-tax-calculator-india.html', 'income-tax-calculator-uk.html', 'income-tax-new-regime-calculator-india.html', 'indonesia-income-tax-calculator.html', 'inheritance-tax-calculator.html', 'japan-consumption-tax-calculator.html', 'kuwait-indemnity-calculator.html', 'land-transfer-tax-calculator-canada.html', 'malaysia-epf-calculator.html', 'malaysia-income-tax-calculator.html', 'morocco-vat-calculator.html', 'national-insurance-calculator-uk.html', 'nigeria-income-tax-calculator.html', 'nigeria-vat-calculator.html', 'oman-end-of-service-calculator.html', 'pakistan-income-tax-calculator.html', 'paye-calculator-kenya.html', 'paye-calculator-south-africa.html', 'payroll-tax.html', 'payroll-tax-calculator.html', 'philippines-pagibig-mp2-calculator.html', 'philippines-sss-contribution-calculator.html', 'property-tax.html', 'property-tax-calculator.html', 'qatar-end-of-service-calculator.html', 'sales-tax-calculator.html', 'self-employment-tax-calculator.html', 'singapore-cpf-calculator.html', 'singapore-income-tax-calculator.html', 'south-korea-vat-calculator.html', 'sri-lanka-income-tax-calculator.html', 'state-income-tax-calculator.html', 'tanzania-paye-calculator.html', 'taxable-income-calculator.html', 'tax-bracket-calculator.html', 'tax-calculator-kenya.html', 'tax-calculator-south-africa.html', 'tax-deduction-calculator.html', 'tax-refund-estimator.html', 'uganda-paye-calculator.html', 'vat-calculator-eu.html', 'vat-calculator-saudi-arabia.html', 'vat-calculator-south-africa.html', 'vat-calculator-uae.html', 'vat-calculator-uk.html', 'vat-reverse-calculator.html', 'zakat-calculator.html']
+            },
+            {
+                id: 'salary',
+                title: 'Salary & Paycheck',
+                icon: '&#128188;',
+                copy: 'Salary conversion, overtime, payroll, and take-home pay planning tools.',
+                files: ['hourly-to-salary-calculator.html', 'overtime-pay-calculator.html', 'payroll-calculator.html', 'salary-calculator-australia.html', 'salary-calculator-canada.html', 'salary-calculator-india.html', 'salary-calculator-kenya.html', 'salary-calculator-nigeria.html', 'salary-calculator-saudi-arabia.html', 'salary-calculator-south-africa.html', 'salary-calculator-uae.html', 'salary-calculator-uk.html', 'salary-converter-usd-aud.html', 'salary-converter-usd-cad.html', 'salary-converter-usd-eur.html', 'salary-converter-usd-gbp.html', 'salary-to-hourly-calculator.html']
+            },
+            {
+                id: 'property',
+                title: 'Property / Mortgage / Real Estate',
+                icon: '&#127968;',
+                copy: 'Home buying, mortgage, rent, equity, and property decision tools.',
+                files: ['bond-calculator-south-africa.html', 'closing-costs.html', 'down-payment.html', 'down-payment-calculator.html', 'dubai-rent-increase-calculator.html', 'equity-calculator.html', 'hoa-fees.html', 'hoa-fees-estimator.html', 'home-affordability.html', 'home-equity.html', 'home-improvement.html', 'investment-property.html', 'investment-property-roi.html', 'lease-calculator.html', 'lease-vs-buy.html', 'mortgage.html', 'mortgage-amortization.html', 'mortgage-calculator-premium.html', 'mortgage-calculator-standalone.html', 'mortgage-calculator-uae.html', 'mortgage-calculator-uk.html', 'property-appreciation.html', 'property-valuation.html', 'refinance.html', 'rent-calculator.html', 'rent-vs-buy.html', 'stamp-duty-calculator-australia.html', 'stamp-duty-calculator-uk.html']
+            },
+            {
+                id: 'business',
+                title: 'Business',
+                icon: '&#128200;',
+                copy: 'Cash flow, pricing, revenue, inventory, and planning tools for work and operations.',
+                files: ['birthday-budget.html', 'break-even-sales.html', 'budget-planner.html', 'business-loan-calculator.html', 'cash-flow-projection.html', 'cash-flow-tracker.html', 'commission.html', 'customer-lifetime-value.html', 'customer-ltv.html', 'event-planner.html', 'expense-allocator.html', 'expense-tracker.html', 'gift-budget.html', 'inventory-manager.html', 'inventory-turnover.html', 'markup-calculator.html', 'markup-tool.html', 'moving-cost.html', 'parking-fee.html', 'pricing-optimizer.html', 'profit-margin.html', 'profit-maximizer.html', 'revenue-projector.html', 'vacation-budget.html', 'wedding-budget.html']
+            },
+            {
+                id: 'health',
+                title: 'Health & Fitness',
+                icon: '&#10084;&#65039;',
+                copy: 'Body metrics, calorie estimates, sleep, fitness, and wellness calculators.',
+                files: ['bac-calculator.html', 'bmi.html', 'bmi-percentile.html', 'bmr.html', 'body-fat-percentage.html', 'calorie-burn.html', 'calorie-needs.html', 'due-date-calculator.html', 'exercise-duration.html', 'fitness-level.html', 'hiit-timer.html', 'ideal-weight.html', 'max-heart-rate.html', 'nutrition-calculator.html', 'one-rep-max.html', 'ovulation-calculator.html', 'pace-calculator.html', 'period-calculator.html', 'pet-age.html', 'pregnancy-calculator.html', 'protein-intake.html', 'sleep-calculator.html', 'tdee.html', 'vo2-max.html', 'waist-hip-ratio.html', 'water-intake.html', 'weight-loss-timeline.html']
+            },
+            {
+                id: 'education',
+                title: 'Education',
+                icon: '&#127891;',
+                copy: 'Study, tuition, GPA, aid, scholarship, and student-planning calculators.',
+                files: ['course-cost-tracker.html', 'degree-roi.html', 'financial-aid-calculator.html', 'gpa-calculator.html', 'grade-calculator.html', 'grade-converter.html', 'scholarship-calculator.html', 'student-budget.html', 'student-loan.html', 'study-planner.html', 'tuition-cost.html', 'tuition-forecaster.html']
+            },
+            {
+                id: 'utilities',
+                title: 'Utilities & Household',
+                icon: '&#128736;&#65039;',
+                copy: 'Household costs, utility planning, and practical day-to-day cost tools.',
+                files: ['age-difference.html', 'anniversary-calculator.html', 'appliance-cost.html', 'cost-of-living-calculator.html', 'days-until.html', 'energy-cost.html', 'energy-cost-calculator-eu.html', 'furniture-cost.html', 'life-path-number.html', 'love-calculator.html', 'utility-cost.html', 'water-bill.html', 'zodiac-sign.html']
+            },
+            {
+                id: 'automotive',
+                title: 'Automotive',
+                icon: '&#128664;',
+                copy: 'Fuel, vehicle ownership, depreciation, and car financing calculators.',
+                files: ['ev-charging-cost.html', 'fuel-cost.html', 'fuel-efficiency.html', 'tire-pressure.html', 'vehicle-cost.html', 'vehicle-depreciation.html', 'vehicle-loan.html']
+            },
+            {
+                id: 'international',
+                title: 'International / Currency / Travel',
+                icon: '&#127760;',
+                copy: 'Currency, visa, travel, unit conversion, and international planning tools.',
+                files: ['currency-converter.html', 'distance-converter.html', 'schengen-visa-days-calculator.html', 'temperature-converter.html', 'travel-budget-calculator-international.html', 'trip-cost.html', 'unit-converter.html', 'utility-cost-converter.html', 'visa-cost-calculator.html', 'weight-converter.html']
+            }
+        ];
+
+                const TITLE_OVERRIDES = {
+            'bac-calculator.html': 'BAC Calculator',
+            'bmi.html': 'BMI',
+            'bmi-percentile.html': 'BMI Percentile',
+            'bmr.html': 'BMR',
+            'cagr-calculator.html': 'CAGR Calculator',
+            'course-cost-tracker.html': 'Course Cost Tracker',
+            'currency-converter.html': 'Currency Converter',
+            'customer-ltv.html': 'Customer LTV',
+            'degree-roi.html': 'Degree ROI',
+            'energy-cost-calculator-eu.html': 'Energy Cost Calculator EU',
+            'end-of-service-calculator-saudi-arabia.html': 'End of Service Calculator Saudi Arabia',
+            'epf-calculator-india.html': 'EPF Calculator India',
+            'etf-calculator.html': 'ETF Calculator',
+            'fd-calculator-india.html': 'FD Calculator India',
+            'gosi-calculator-saudi-arabia.html': 'GOSI Calculator Saudi Arabia',
+            'gpa-calculator.html': 'GPA Calculator',
+            'gst-calculator-australia.html': 'GST Calculator Australia',
+            'gst-calculator-india.html': 'GST Calculator India',
+            'gst-calculator-new-zealand.html': 'GST Calculator New Zealand',
+            'gst-calculator-singapore.html': 'GST Calculator Singapore',
+            'hiit-timer.html': 'HIIT Timer',
+            'hoa-fees.html': 'HOA Fees',
+            'hoa-fees-estimator.html': 'HOA Fees Estimator',
+            'hra-calculator-india.html': 'HRA Calculator India',
+            'income-tax-calculator-canada.html': 'Income Tax Calculator Canada',
+            'income-tax-calculator-india.html': 'Income Tax Calculator India',
+            'income-tax-calculator-uk.html': 'Income Tax Calculator UK',
+            'income-tax-new-regime-calculator-india.html': 'Income Tax New Regime Calculator India',
+            'investment-property-roi.html': 'Investment Property ROI',
+            'japan-consumption-tax-calculator.html': 'Japan Consumption Tax Calculator',
+            'mortgage-calculator-uae.html': 'Mortgage Calculator UAE',
+            'mortgage-calculator-uk.html': 'Mortgage Calculator UK',
+            'nigeria-vat-calculator.html': 'Nigeria VAT Calculator',
+            'pagibig-mp2-calculator.html': 'Pag-IBIG MP2 Calculator',
+            'paye-calculator-kenya.html': 'PAYE Calculator Kenya',
+            'paye-calculator-south-africa.html': 'PAYE Calculator South Africa',
+            'payroll-tax-calculator.html': 'Payroll Tax Calculator',
+            'ppf-calculator-india.html': 'PPF Calculator India',
+            'salary-calculator-uae.html': 'Salary Calculator UAE',
+            'salary-calculator-uk.html': 'Salary Calculator UK',
+            'salary-converter-usd-aud.html': 'Salary Converter USD to AUD',
+            'salary-converter-usd-cad.html': 'Salary Converter USD to CAD',
+            'salary-converter-usd-eur.html': 'Salary Converter USD to EUR',
+            'salary-converter-usd-gbp.html': 'Salary Converter USD to GBP',
+            'schengen-visa-days-calculator.html': 'Schengen Visa Days Calculator',
+            'self-employment-tax-calculator.html': 'Self-Employment Tax Calculator',
+            'singapore-cpf-calculator.html': 'Singapore CPF Calculator',
+            'singapore-income-tax-calculator.html': 'Singapore Income Tax Calculator',
+            'sip-calculator.html': 'SIP Calculator',
+            'south-korea-vat-calculator.html': 'South Korea VAT Calculator',
+            'tdee.html': 'TDEE',
+            'travel-budget-calculator-international.html': 'Travel Budget Calculator International',
+            'utility-cost-converter.html': 'Utility Cost Converter',
+            'vat-calculator-eu.html': 'VAT Calculator EU',
+            'vat-calculator-saudi-arabia.html': 'VAT Calculator Saudi Arabia',
+            'vat-calculator-south-africa.html': 'VAT Calculator South Africa',
+            'vat-calculator-uae.html': 'VAT Calculator UAE',
+            'vat-calculator-uk.html': 'VAT Calculator UK',
+            'vo2-max.html': 'VO2 Max'
+        };
+
+                const TOKEN_OVERRIDES = {
+            apr: 'APR',
+            bac: 'BAC',
+            bmi: 'BMI',
+            bmr: 'BMR',
+            cagr: 'CAGR',
+            cpf: 'CPF',
+            emi: 'EMI',
+            epf: 'EPF',
+            etf: 'ETF',
+            eu: 'EU',
+            fd: 'FD',
+            gbp: 'GBP',
+            gosi: 'GOSI',
+            gpa: 'GPA',
+            gst: 'GST',
+            hiit: 'HIIT',
+            hoa: 'HOA',
+            hra: 'HRA',
+            ltv: 'LTV',
+            mp2: 'MP2',
+            pagibig: 'Pag-IBIG',
+            paye: 'PAYE',
+            ppf: 'PPF',
+            roi: 'ROI',
+            sip: 'SIP',
+            sss: 'SSS',
+            tdee: 'TDEE',
+            uae: 'UAE',
+            uk: 'UK',
+            usd: 'USD',
+            vat: 'VAT',
+            vo2: 'VO2'
+        };
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('zaculators-dark-mode', isDark ? '1' : '0');
+            document.querySelector('.theme-toggle').textContent = isDark ? '\u2600\ufe0f' : '\ud83c\udf19';
         }
-    ];
 
-    function buildPage() {
-        const container = document.getElementById('categorySections');
-        CATEGORIES.forEach(cat => {
-            const section = document.createElement('section');
-            section.className = 'category-section';
-            section.id = cat.id;
+        (function initTheme() {
+            const saved = localStorage.getItem('zaculators-dark-mode');
+            if (saved === '1') {
+                document.body.classList.add('dark-mode');
+                const btn = document.querySelector('.theme-toggle');
+                if (btn) btn.textContent = '\u2600\ufe0f';
+            }
+        })();
 
-            const heading = document.createElement('h2');
-            heading.innerHTML = `${cat.label} <span class="cat-count">${cat.calcs.length}</span>`;
-            section.appendChild(heading);
+        function titleFromFilename(filename) {
+            if (TITLE_OVERRIDES[filename]) {
+                return TITLE_OVERRIDES[filename];
+            }
 
-            const grid = document.createElement('div');
-            grid.className = 'calc-grid';
-            grid.dataset.catId = cat.id;
-
-            cat.calcs.forEach(calc => {
-                const a = document.createElement('a');
-                a.href = calc.file;
-                a.className = 'calc-card';
-                a.dataset.name = calc.name.toLowerCase();
-                a.innerHTML = `<div class="icon">${calc.icon}</div><h3>${calc.name}</h3>`;
-                grid.appendChild(a);
-            });
-
-            section.appendChild(grid);
-            container.appendChild(section);
-        });
-    }
-
-    function doSearch(q) {
-        q = q.trim().toLowerCase();
-        const sections = document.querySelectorAll('.category-section');
-        const statusEl = document.getElementById('searchStatus');
-        const noResults = document.getElementById('noResults');
-        const clearBtn = document.getElementById('clearBtn');
-
-        clearBtn.classList.toggle('visible', q.length > 0);
-
-        let total = 0;
-        sections.forEach(section => {
-            const cards = section.querySelectorAll('.calc-card');
-            let visible = 0;
-            cards.forEach(card => {
-                const match = !q || card.dataset.name.includes(q);
-                card.classList.toggle('hidden', !match);
-                if (match) visible++;
-            });
-            total += visible;
-            section.style.display = (visible === 0 && q) ? 'none' : '';
-        });
-
-        if (q) {
-            statusEl.style.display = 'block';
-            statusEl.textContent = `${total} result${total !== 1 ? 's' : ''} for "${q}"`;
-            noResults.style.display = total === 0 ? 'block' : 'none';
-            document.getElementById('searchTerm').textContent = q;
-        } else {
-            statusEl.style.display = 'none';
-            noResults.style.display = 'none';
+            const stem = filename.replace(/\.html$/, '');
+            return stem
+                .split('-')
+                .map(token => TOKEN_OVERRIDES[token] || token.charAt(0).toUpperCase() + token.slice(1))
+                .join(' ');
         }
-    }
 
-    function clearSearch() {
-        const input = document.getElementById('searchInput');
-        input.value = '';
-        doSearch('');
-        input.focus();
-    }
+        function descriptionFor(title, sectionTitle) {
+            return `Open the ${title} calculator for ${sectionTitle.toLowerCase()} planning.`;
+        }
 
-    function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-        updateThemeBtn();
-    }
-    function updateThemeBtn() {
-        document.querySelector('.theme-toggle').textContent =
-            document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
+        function renderDirectory() {
+            const jumpNav = document.getElementById('jumpNav');
+            const directorySections = document.getElementById('directorySections');
+            const totalCount = DIRECTORY_SECTIONS.reduce((sum, section) => sum + section.files.length, 0);
 
-    buildPage();
+            document.getElementById('matchCount').textContent = String(totalCount);
+            document.querySelector('.search-meta').innerHTML = `<span id="matchCount">${totalCount}</span> calculators listed across ${DIRECTORY_SECTIONS.length} categories.`;
 
-    document.getElementById('searchInput').addEventListener('input', e => doSearch(e.target.value));
+            jumpNav.innerHTML = DIRECTORY_SECTIONS
+                .map(section => `<a href="#${section.id}">${section.title}</a>`)
+                .join('');
 
-    if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark-mode');
-    updateThemeBtn();
+            directorySections.innerHTML = DIRECTORY_SECTIONS
+                .map(section => {
+                    const cards = section.files.map(filename => {
+                        const title = titleFromFilename(filename);
+                        const search = `${filename.replace(/\.html$/, '').replace(/-/g, ' ')} ${title} ${section.title}`.toLowerCase();
+                        return `
+                <a href="${filename}" class="calc-card" data-search="${search}">
+                    <div class="calc-icon">${section.icon}</div>
+                    <h3>${title}</h3>
+                    <p>${descriptionFor(title, section.title)}</p>
+                </a>`;
+                    }).join('');
+
+                    return `
+        <section class="section directory-section" id="${section.id}">
+            <div class="section-head">
+                <div>
+                    <h2>${section.title}</h2>
+                    <p class="section-copy">${section.copy}</p>
+                </div>
+                <div class="section-count">${section.files.length} calculators</div>
+            </div>
+            <div class="calculator-grid">${cards}
+            </div>
+        </section>`;
+                }).join('');
+        }
+
+        function initializeDirectorySearch() {
+            const input = document.getElementById('calculatorSearch');
+            const cards = Array.from(document.querySelectorAll('.calc-card'));
+            const sections = Array.from(document.querySelectorAll('.directory-section'));
+            const count = document.getElementById('matchCount');
+            const empty = document.getElementById('emptyState');
+
+            function applyFilter() {
+                const query = input.value.trim().toLowerCase();
+                let visibleCards = 0;
+
+                cards.forEach(card => {
+                    const haystack = `${card.textContent} ${card.dataset.search || ''}`.toLowerCase();
+                    const matches = !query || haystack.includes(query);
+                    card.hidden = !matches;
+                    if (matches) visibleCards += 1;
+                });
+
+                sections.forEach(section => {
+                    const anyVisible = Array.from(section.querySelectorAll('.calc-card')).some(card => !card.hidden);
+                    section.hidden = !anyVisible;
+                });
+
+                count.textContent = String(visibleCards);
+                empty.style.display = visibleCards === 0 ? 'block' : 'none';
+            }
+
+            input.addEventListener('input', applyFilter);
+            applyFilter();
+        }
+
+        renderDirectory();
+        initializeDirectorySearch();
+        if (typeof initializeCurrencySelector === 'function') {
+            initializeCurrencySelector();
+        }
     </script>
 </body>
 </html>
+

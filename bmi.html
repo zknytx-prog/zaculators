@@ -1,248 +1,95 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1B4FY69QMS');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Calculate body mass index and a general weight category from weight and height.">
-<meta name="keywords" content="bmi calculator, body mass index calculator">
-<title>BMI Calculator | Zaculators</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "BMI Calculator",
-  "description": "Calculate body mass index and a general weight category from weight and height.",
-  "url": "https://zaculators.com/7-fitness/bmi.html",
-  "applicationCategory": "UtilityApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Zaculators",
-    "url": "https://zaculators.com"
-  }
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What do the four BMI categories mean?","acceptedAnswer":{"@type":"Answer","text":"The WHO and CDC classify BMI into four ranges: Underweight (below 18.5) may indicate insufficient body mass; Healthy weight (18.5–24.9) is associated with the lowest population-level health risk; Overweight (25–29.9) indicates above-average weight relative to height; Obesity (30+) is subdivided into Class I (30–34.9), Class II (35–39.9), and Class III (40+), with higher classes linked to increasing health risks including type 2 diabetes and cardiovascular disease."}},{"@type":"Question","name":"Can a muscular person have a high BMI and still be healthy?","acceptedAnswer":{"@type":"Answer","text":"Yes. BMI cannot distinguish between muscle mass and fat mass. A professional athlete may score in the overweight or obese BMI range while carrying very little excess body fat. Clinicians often pair BMI with waist circumference measurements or body composition scans for a more complete picture."}},{"@type":"Question","name":"How do I calculate BMI manually?","acceptedAnswer":{"@type":"Answer","text":"In imperial units: BMI = (weight in lbs × 703) ÷ (height in inches)². Example: a person weighing 165 lb at 5 feet 10 inches (70 inches) calculates as 165 × 703 = 115,995 ÷ 4,900 = BMI 23.7, which falls in the healthy weight range."}},{"@type":"Question","name":"Should I use BMI for medical decisions?","acceptedAnswer":{"@type":"Answer","text":"No. BMI is a population-level screening tool, not a diagnostic instrument. A physician will interpret BMI alongside age, sex, ethnicity, medical history, and clinical data. Do not make treatment or lifestyle decisions based on BMI alone."}},{"@type":"Question","name":"Does BMI apply equally to all ethnic groups?","acceptedAnswer":{"@type":"Answer","text":"Research shows that health risks linked to excess body fat occur at lower BMI thresholds in some Asian populations. Some organizations recommend lower overweight and obesity thresholds for people of Asian descent. Discuss appropriate thresholds with your healthcare provider."}}]}</script>
-<style>
-
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --text: #0f172a;
-            --border: #e2e8f0;
-            --success: #16a34a;
-            --error: #dc2626;
-            --muted: #64748b;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: white; border-bottom: 1px solid var(--border); padding: 1.5rem; text-align: center; }
-        header h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-        .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
-        .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        main { max-width: 920px; margin: 0 auto; padding: 2rem; }
-        .calculator-section, .faq-section, .related-calculators, .next-steps { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
-        .calculator-section h2, .faq-section h2 { font-size: 1.45rem; margin-bottom: 1rem; color: var(--primary); }
-        .intro { color: #475569; margin-bottom: 1rem; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.45rem; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
-        .hint { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
-        .button-group { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
-        @media (max-width: 640px) { .button-group { grid-template-columns: 1fr 1fr; } main { padding: 1rem; } .calculator-section, .faq-section, .related-calculators, .next-steps { padding: 1.25rem; } }
-        button { padding: 0.85rem 1rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { background: #e2e8f0; }
-        .results-section { background: #f0fdf4; border-left: 4px solid var(--success); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; display: none; }
-        .results-section.active { display: block; }
-        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .result-item { background: white; border: 1px solid #dcfce7; border-radius: 8px; padding: 1rem; }
-        .result-item label { font-size: 0.88rem; color: var(--muted); font-weight: 500; margin-bottom: 0.2rem; }
-        .result-item .value { font-size: 1.3rem; font-weight: 700; color: var(--success); }
-        .trust-badges { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.25rem; color: var(--muted); font-size: 0.88rem; }
-        .trust-badges span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .badge-icon { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: var(--primary); color: white; font-size: 0.75rem; }
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-        .faq-item p { color: var(--muted); }
-        .related-calculators h3, .next-steps h3 { color: var(--primary); margin-bottom: 0.9rem; }
-        .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .related-links a { text-decoration: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; text-align: center; color: var(--primary); background: #f8fafc; }
-        .related-links a:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .next-steps ol { padding-left: 1.25rem; color: #92400e; }
-        .next-steps { background: #fffbeb; border-color: #fde68a; }
-        .disclaimer { background: #fee2e2; border-left: 4px solid var(--error); padding: 1rem; border-radius: 8px; font-size: 0.92rem; color: #7f1d1d; margin-top: 1.5rem; }
-        .updated { font-size: 0.82rem; color: #94a3b8; margin-top: 1rem; }
-        footer { background: white; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); margin-top: 2rem; }
-        .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
-        .error-message.show { display: block; }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | Zaculators</title>
+    <style>
+        :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+        header, footer { background:#fff; text-align:center; padding:1.5rem; }
+        header { border-bottom:1px solid var(--border); }
+        footer { border-top:1px solid var(--border); color:#64748b; margin-top:3rem; }
+        main { max-width:920px; margin:0 auto; padding:2rem; }
+        .panel { background:#fff; border:1px solid var(--border); border-radius:12px; padding:2rem; margin-bottom:2rem; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, select, button { width:100%; padding:0.85rem; border:1px solid var(--border); border-radius:8px; font:inherit; }
+        button { background:var(--primary); border:none; color:#fff; font-weight:600; cursor:pointer; }
+        .result { display:none; margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border-left:4px solid var(--success); border-radius:8px; }
+        .result.active { display:block; }
+        .value { font-size:1.5rem; font-weight:700; color:var(--success); margin-bottom:0.4rem; }
+        .subtle { color:#64748b; }
+        .disclaimer { font-size:0.9rem; color:#7f1d1d; background:#fee2e2; border-left:4px solid #dc2626; padding:1rem; border-radius:8px; }
+        a { color:var(--primary); text-decoration:none; }
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does BMI estimate?","acceptedAnswer":{"@type":"Answer","text":"BMI estimates body size relative to height and weight using a simple screening formula."}},{"@type":"Question","name":"Is BMI a diagnosis?","acceptedAnswer":{"@type":"Answer","text":"No. BMI is an informational screening measure and not a medical diagnosis."}},{"@type":"Question","name":"Can athletic body types affect BMI?","acceptedAnswer":{"@type":"Answer","text":"Yes. Muscle mass and body composition can make BMI less representative for some people."}},{"@type":"Question","name":"Should I use metric or imperial units?","acceptedAnswer":{"@type":"Answer","text":"Use whichever units you know best. The calculator converts them into the same estimate."}},{"@type":"Question","name":"When should I recalculate BMI?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your height or weight changes enough to matter for your estimate."}}]}</script>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
-<header>
-  <h1>BMI Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Health &amp; Fitness</div>
-</header>
-<main>
-<section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">A quick BMI estimate for screening. Useful, limited, and often misunderstood. Just like most metrics people turn into identity.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="weight">Weight (lb)</label><input id="weight" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="heightIn">Height (inches)</label><input id="heightIn" type="number" min="1" step="0.1" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>BMI result</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>BMI</label><div class="value" id="result-bmi">—</div></div>
-<div class="result-item"><label>Weight category</label><div class="value" id="result-cat">—</div></div>
-<div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
-</section>
-
-<div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/bmr.html">BMR Calculator</a>
-<a href="/body-fat-percentage.html">Body Fat Calculator</a>
-<a href="/waist-hip-ratio.html">Waist-Hip Ratio Calculator</a>
-<a href="/ideal-weight.html">Ideal Weight Calculator</a></div>
-</div>
-
-<div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Treat the result as a starting point, not a verdict.</li>
-<li>Pair BMI with waist measures, body composition, and clinical context.</li>
-<li>Check trends over time instead of obsessing over one number.</li>
-<li>Use realistic habits for weight change, not crash plans.</li>
-<li>Talk with a qualified professional for personal guidance.</li></ol>
-</div>
-
-<section class="faq-section">
-<h2>Understanding Your BMI Results</h2>
-
-<h3 style="margin-top:1rem;">What the Four BMI Categories Mean</h3>
-<p>Body mass index groups people into four internationally recognized ranges based on their height-to-weight ratio. The World Health Organization and the CDC use the same thresholds for adults:</p>
-<ul style="padding-left:1.25rem;line-height:1.8;margin:0.5rem 0;">
-  <li><strong>Underweight (below 18.5)</strong> — Weight may be insufficient for optimal health. Common causes include restrictive eating, illness, or high activity levels with inadequate caloric intake. Medical evaluation is recommended.</li>
-  <li><strong>Healthy weight (18.5–24.9)</strong> — Associated with the lowest statistical risk for weight-related conditions at the population level. Individual health still depends on diet quality, exercise, and other factors.</li>
-  <li><strong>Overweight (25–29.9)</strong> — Indicates above-average weight relative to height. Not a diagnosis on its own, but may warrant a lifestyle discussion with a healthcare provider, particularly if waist circumference is also elevated.</li>
-  <li><strong>Obesity (30 and above)</strong> — Subdivided into Class I (30–34.9), Class II (35–39.9), and Class III (40+). Higher classes are associated with increased risk of type 2 diabetes, cardiovascular disease, and joint problems.</li>
-</ul>
-
-<h3 style="margin-top:1.25rem;">The Muscle-Mass Limitation</h3>
-<p>BMI is calculated from height and weight alone — it cannot determine whether that weight comes from muscle, fat, water, or bone. This creates a well-known limitation for certain populations.</p>
-<p style="margin-top:0.5rem;">A professional athlete or bodybuilder may score 27–30 on the BMI scale while carrying very little excess body fat. Conversely, an older, sedentary person may show a "normal" BMI of 23 while carrying significant visceral fat (the metabolically active fat stored around internal organs). For this reason, clinicians frequently pair BMI with waist circumference measurements, DEXA scans, or bioelectrical impedance analysis for a more complete picture.</p>
-
-<h3 style="margin-top:1.25rem;">How to Calculate BMI Manually</h3>
-<p>The imperial formula is: <strong>BMI = (weight in lbs × 703) ÷ (height in inches)²</strong></p>
-<p style="margin-top:0.5rem;"><strong>Example:</strong> A person weighing 165 lb who stands 5 feet 10 inches (70 inches total): 165 × 703 = 115,995 ÷ (70 × 70 = 4,900) = <strong>BMI 23.7</strong> — squarely in the healthy weight range.</p>
-<p style="margin-top:0.5rem;">The metric formula is: <strong>BMI = weight in kg ÷ (height in meters)²</strong></p>
-
-<h2 style="margin-top:1.5rem;">Frequently Asked Questions</h2>
-<div class="faq-item"><h3>Is BMI an accurate measure of body fat?</h3><p>No. BMI is a simple screening tool derived from height and weight. It correlates with body fat at the population level but cannot distinguish between muscle mass and fat in an individual. Use it as a starting point, not a definitive measurement.</p></div>
-<div class="faq-item"><h3>Can muscular people have a high BMI and still be healthy?</h3><p>Yes. Athletes and highly muscular individuals often register in the overweight or obese range despite low body-fat percentages. Other measurements like waist circumference or body composition analysis provide a fuller picture.</p></div>
-<div class="faq-item"><h3>Is BMI the same for men and women?</h3><p>The formula is the same, but women naturally carry a higher percentage of body fat at the same BMI value as men. Some researchers argue separate male/female cut-offs would be more accurate, though the standard WHO thresholds are currently applied universally to adults.</p></div>
-<div class="faq-item"><h3>Should I use BMI for medical decisions?</h3><p>No. Treat BMI as a population-level screening tool only. A qualified clinician will interpret your BMI alongside age, sex, ethnicity, medical history, and other clinical data before drawing any conclusions or recommending treatment.</p></div>
-<div class="faq-item"><h3>How often should I check my BMI?</h3><p>Trends matter more than single readings. Checking quarterly or semi-annually while monitoring diet and exercise habits gives you more meaningful data. Consistent changes in BMI over time are worth discussing with a healthcare provider.</p></div>
-</section>
-</main>
-<div id="toast"></div>
-<script src="/calc-utils.js"></script>
-<script>
-
-const CALCULATOR_ID = 'bmi';
-const CALCULATOR_TITLE = 'BMI Calculator';
-const weight = document.getElementById('weight');
-const heightIn = document.getElementById('heightIn');
-let latestData = null;
-
-function calculateResults() {
-
- const w=parseFloat(weight.value), h=parseFloat(heightIn.value);
- if(!isFinite(w)||w<=0){showValidationError(weight,'Enter weight');return;} else showValidationError(weight,null);
- if(!isFinite(h)||h<=0){showValidationError(heightIn,'Enter height');return;} else showValidationError(heightIn,null);
- const bmi = (w / (h*h)) * 703;
- let cat = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Healthy weight' : bmi < 30 ? 'Overweight' : 'Obesity range';
- document.getElementById('result-bmi').textContent = formatNumber(bmi,1);
- document.getElementById('result-cat').textContent = cat;
- document.getElementById('result-note').textContent = 'BMI is a screening tool, not a direct body fat measurement.';
-
-    latestData = {weight:weight.value,heightIn:heightIn.value,bmi:formatNumber(bmi,1),cat:cat,note:'BMI is a screening tool, not a direct body fat measurement.'};
-    
-    document.getElementById('results').classList.add('active');
-}
-
-function handleSave() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    saveResults(CALCULATOR_ID, latestData);
-}
-
-function handleShare() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    shareResults(CALCULATOR_TITLE, latestData);
-}
-
-function handlePrint() {
-    if (!latestData) { showToast('Run the calculator first'); return; }
-    printResults('results', CALCULATOR_TITLE);
-}
-
-document.getElementById('calcForm').addEventListener('submit', function(e) { e.preventDefault(); calculateResults(); });
-window.addEventListener('DOMContentLoaded', function(){
-    const saved = loadResults(CALCULATOR_ID);
-    if (saved) {
-        if (saved.weight !== undefined) weight.value = saved.weight;
-if (saved.heightIn !== undefined) heightIn.value = saved.heightIn;
-        latestData = saved;
-        document.getElementById('result-bmi').textContent = saved.bmi;document.getElementById('result-cat').textContent = saved.cat;document.getElementById('result-note').textContent = saved.note;
-        document.getElementById('results').classList.add('active');
-    }
-});
-
-</script>
-<footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer>
+<body>
+    <header>
+        <h1>BMI Calculator</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+    </header>
+    <main>
+        <section class="panel">
+            <form id="form" class="grid">
+                <div>
+                    <label for="heightUnit">Height Unit</label>
+                    <select id="heightUnit">
+                        <option value="cm">Centimeters</option>
+                        <option value="in">Inches</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="weightUnit">Weight Unit</label>
+                    <select id="weightUnit">
+                        <option value="kg">Kilograms</option>
+                        <option value="lb">Pounds</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="height">Height</label>
+                    <input id="height" type="number" min="1" step="0.1" placeholder="175" required>
+                </div>
+                <div>
+                    <label for="weight">Weight</label>
+                    <input id="weight" type="number" min="1" step="0.1" placeholder="70" required>
+                </div>
+                <div class="full"><button type="submit">Calculate BMI</button></div>
+            </form>
+            <div id="result" class="result">
+                <div id="value" class="value"></div>
+                <p id="detail" class="subtle"></p>
+            </div>
+        </section>
+        <div class="disclaimer">Health estimates only. Use alongside medical guidance, not as a diagnosis.</div>
+    <section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates body mass index from height and weight. It can help with general health screening, but it is not a diagnosis.</p></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Select the height and weight units you want to use.</li><li>Enter current height and weight values.</li><li>Click Calculate BMI to view the estimate.</li><li>Review the category shown with the result.</li><li>Use the estimate as informational screening only.</li></ol></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmr.html">BMR</a> · <a href="body-fat-percentage.html">Body Fat Percentage</a> · <a href="waist-hip-ratio.html">Waist-Hip Ratio</a></p></section><section class="panel"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does BMI estimate?</strong><br>BMI estimates body size relative to height and weight using a simple screening formula.</p><p class="subtle"><strong>Is BMI a diagnosis?</strong><br>No. BMI is an informational screening measure and not a medical diagnosis.</p><p class="subtle"><strong>Can athletic body types affect BMI?</strong><br>Yes. Muscle mass and body composition can make BMI less representative for some people.</p><p class="subtle"><strong>Should I use metric or imperial units?</strong><br>Use whichever units you know best. The calculator converts them into the same estimate.</p><p class="subtle"><strong>When should I recalculate BMI?</strong><br>Recalculate when your height or weight changes enough to matter for your estimate.</p></section><section class="panel"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Consider professional guidance for personal health decisions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+    </main>
+    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
+    <script>
+        document.getElementById("form").addEventListener("submit", event => {
+            event.preventDefault();
+            const heightUnit = document.getElementById("heightUnit").value;
+            const weightUnit = document.getElementById("weightUnit").value;
+            let heightMeters = Number(document.getElementById("height").value);
+            let weightKg = Number(document.getElementById("weight").value);
+            if (heightUnit === "cm") heightMeters /= 100;
+            else heightMeters *= 0.0254;
+            if (weightUnit === "lb") weightKg *= 0.45359237;
+            const bmi = weightKg / (heightMeters * heightMeters);
+            let category = "Obesity";
+            if (bmi < 18.5) category = "Underweight";
+            else if (bmi < 25) category = "Healthy weight";
+            else if (bmi < 30) category = "Overweight";
+            document.getElementById("value").textContent = bmi.toFixed(1);
+            document.getElementById("detail").textContent = `Category: ${category}`;
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
 </body>
 </html>
+
+

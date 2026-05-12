@@ -1,18 +1,189 @@
-﻿<!DOCTYPE html><html><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Value Converter | Zaculators</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --border: #e2e8f0;
+            --success: #16a34a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        header, footer {
+            background: #fff;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        header { border-bottom: 1px solid var(--border); }
+        footer {
+            border-top: 1px solid var(--border);
+            color: #64748b;
+            margin-top: 3rem;
+        }
+        main {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .panel {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        h2 { color: var(--primary); margin-bottom: 1rem; }
+        .subtle { color: #64748b; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+        .full { grid-column: 1 / -1; }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font: inherit;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        button {
+            background: var(--primary);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .result {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            border-left: 4px solid var(--success);
+            background: #f0fdf4;
+            border-radius: 8px;
+        }
+        .result.active { display: block; }
+        .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 0.75rem;
+        }
+        .list {
+            display: grid;
+            gap: 0.5rem;
+            color: #475569;
+        }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 680px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Time Value Converter</h1>
+        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+    </header>
 
-  gtag('config', 'G-1B4FY69QMS');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem}input{width:100%;padding:0.75rem;border:1px solid #e2e8f0;border-radius:6px;margin-bottom:1rem;font-size:1rem}button{width:100%;padding:0.75rem;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:1rem}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}footer{text-align:center;color:#64748b;margin-top:3rem;padding:2rem;border-top:1px solid #e2e8f0}</style></head><body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav><header><h1>Calculator</h1></header><main><section class="section"><form id="f"><input type="number" placeholder="Value" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result: Calculated</div></div></section></main><footer>Precision Finance © 2025
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
-    <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
-</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+    <main>
+        <section class="panel">
+            <h2>Convert Time Units</h2>
+            <form id="time-form" class="grid">
+                <div>
+                    <label for="timeValue">Time Value</label>
+                    <input type="number" id="timeValue" step="any" min="0" placeholder="Enter a time amount" required>
+                </div>
+                <div>
+                    <label for="timeUnit">Unit</label>
+                    <select id="timeUnit">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                        <option value="days">Days</option>
+                        <option value="weeks">Weeks</option>
+                    </select>
+                </div>
+                <div class="full">
+                    <button type="submit">Convert Time</button>
+                </div>
+            </form>
+            <div id="result" class="result">
+                <div class="value" id="headline"></div>
+                <div class="list" id="breakdown"></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Use Cases</h2>
+            <div class="list">
+                <p>Compare project durations across hours, days, and weeks.</p>
+                <p>Translate workout or study blocks into larger schedules.</p>
+                <p>Quickly normalize time estimates into one consistent unit.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Zaculators</strong> &copy; 2026</p>
+    </footer>
+
+    <script>
+        const secondsPerUnit = {
+            seconds: 1,
+            minutes: 60,
+            hours: 3600,
+            days: 86400,
+            weeks: 604800
+        };
+
+        const labels = {
+            seconds: "Seconds",
+            minutes: "Minutes",
+            hours: "Hours",
+            days: "Days",
+            weeks: "Weeks"
+        };
+
+        document.getElementById("time-form").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const value = Number(document.getElementById("timeValue").value);
+            const unit = document.getElementById("timeUnit").value;
+            const totalSeconds = value * secondsPerUnit[unit];
+            const headline = document.getElementById("headline");
+            const breakdown = document.getElementById("breakdown");
+
+            headline.textContent = `${value.toLocaleString()} ${labels[unit]}`;
+            breakdown.innerHTML = Object.keys(secondsPerUnit).map(key => {
+                const converted = totalSeconds / secondsPerUnit[key];
+                const rounded = Number(converted.toFixed(6));
+                return `<p>${rounded.toLocaleString()} ${labels[key]}</p>`;
+            }).join("");
+
+            document.getElementById("result").classList.add("active");
+        });
+    </script>
+</body>
+</html>
