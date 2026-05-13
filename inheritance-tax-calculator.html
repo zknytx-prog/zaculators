@@ -25,7 +25,23 @@
         .subtle { color:#64748b; }
         a { color:var(--primary); text-decoration:none; }
         @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    
+        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
+        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
+        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
+        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
+        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
+        .zac-support-card ol { padding-left:1.5rem; }
+        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
+        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
+        .zac-related-links a:hover { text-decoration:underline; }
+        .zac-support-faq { display:grid; gap:1rem; }
+        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
+        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
+        .zac-support-answer { margin-top:0.4rem; }
+
     </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Inheritance Tax Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a inheritance tax calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this inheritance tax calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
 </head>
 <body>
     <header>
@@ -46,6 +62,33 @@
             </div>
         </section>
         <div class="disclaimer">Estate tax rules vary widely and may depend on relationship, gifts, and exemptions.</div>
+
+        <section class="zac-support-card">
+            <h2>What This Calculator Estimates</h2>
+            <p class="subtle">The Inheritance Tax Calculator estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>How to Use This Calculator</h2>
+            <ol>
+                <li>Review the input labels to confirm the inheritance tax calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Related Calculators</h2>
+            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+        </section>
+        <section class="zac-support-card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="zac-support-faq">
+                <div class="zac-support-faq-item"><h3>What does the Inheritance Tax Calculator estimate?</h3><p class="zac-support-answer">It estimates a inheritance tax calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this inheritance tax calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+            </div>
+        </section>
+        <section class="zac-support-card">
+            <h2>General Disclaimer</h2>
+            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+        </section>
+
     </main>
     <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
     <script>

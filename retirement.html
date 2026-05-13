@@ -480,9 +480,25 @@
         align-items: flex-start;
       }
     }
-  </style>
+  
+        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
+        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
+        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
+        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
+        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
+        .zac-support-card ol { padding-left:1.5rem; }
+        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
+        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
+        .zac-related-links a:hover { text-decoration:underline; }
+        .zac-support-faq { display:grid; gap:1rem; }
+        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
+        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
+        .zac-support-answer { margin-top:0.4rem; }
+
+    </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Retirement Calculator","description":"Calculate retirement savings needed. See how much to save monthly to reach your retirement goal.","isPartOf":{"@type":"WebSite","name":"Utility Calculator Suite"},"publisher":{"@type":"Organization","name":"Utility Calculator Suite"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I save for retirement?","acceptedAnswer":{"@type":"Answer","text":"A widely cited guideline is 15% of gross income including any employer match. The right number depends on your current age, existing savings, expected Social Security income, and retirement lifestyle. Starting at 25 and saving 10%–12% can be sufficient; starting at 40 may require 20%+. Use this calculator to test different scenarios."}},{"@type":"Question","name":"What is the 4% rule?","acceptedAnswer":{"@type":"Answer","text":"The 4% rule, derived from the Trinity Study, states that a diversified portfolio has historically supported annual withdrawals of 4% of its initial value for at least 30 years. To use it: divide your annual spending goal by 0.04 to find your target portfolio size. If you need $60,000 per year, target $1.5 million. Many planners now recommend 3%–3.5% for retirements expected to last 35+ years."}},{"@type":"Question","name":"Roth vs. Traditional IRA — which is better?","acceptedAnswer":{"@type":"Answer","text":"Traditional accounts reduce taxable income today but withdrawals are taxed as ordinary income. Roth accounts offer no upfront deduction but qualified withdrawals including all growth are completely tax-free. If you expect to be in a higher tax bracket in retirement, Roth is generally preferred. Many advisors recommend contributing to both for tax diversification."}},{"@type":"Question","name":"Why is employer 401(k) match so important?","acceptedAnswer":{"@type":"Answer","text":"An employer match — commonly 50%–100% of contributions up to 3%–6% of salary — is an immediate 50%–100% return on your money before any market growth. No other investment reliably offers that. Always contribute at least enough to capture the full match before directing money anywhere else."}},{"@type":"Question","name":"How does compound growth work in retirement savings?","acceptedAnswer":{"@type":"Answer","text":"Compound growth means your investment returns generate their own returns. A 35-year-old with $25,000 saved who contributes $500 per month at a 7% annual return will have approximately $906,000 by age 65 — from total contributions of about $205,000. The other $700,000 comes purely from compounding. Starting 5 years earlier pushes that balance past $1.3 million."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Retirement Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a retirement calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this retirement calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Retirement Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a retirement calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this retirement calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to calculator</a>
@@ -686,7 +702,34 @@
       </div>
     </div>
   </section>
-  </main>
+
+        <section class="zac-support-card">
+            <h2>What This Calculator Estimates</h2>
+            <p class="subtle">The Retirement Calculator estimates a quick result from the values you enter. It is useful for budgeting, payoff planning, savings comparisons, and scenario testing before you act.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>How to Use This Calculator</h2>
+            <ol>
+                <li>Review the input labels to confirm the retirement calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Related Calculators</h2>
+            <div class="zac-related-links"><a href="annuity-calculator.html">Annuity Calculator</a><a href="apr-calculator.html">APR Calculator</a><a href="average-calculator.html">Average Calculator</a></div>
+        </section>
+        <section class="zac-support-card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="zac-support-faq">
+                <div class="zac-support-faq-item"><h3>What does the Retirement Calculator estimate?</h3><p class="zac-support-answer">It estimates a retirement calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this retirement calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+            </div>
+        </section>
+        <section class="zac-support-card">
+            <h2>General Disclaimer</h2>
+            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+        </section>
+
+    </main>
 
   <footer class="site-footer">
     <div class="footer-card">

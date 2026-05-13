@@ -35,7 +35,7 @@
   }
 }
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate is the estimated 1RM compared to a true max attempt?","acceptedAnswer":{"@type":"Answer","text":"Studies show that 1RM prediction formulas are accurate to within 3–5% when reps are in the 3–8 range. Accuracy drops significantly above 10 reps because fatigue and endurance become larger factors than raw strength. The Epley formula consistently outperforms simpler estimates and is one of the most validated across diverse populations."}},{"@type":"Question","name":"Why do training programs use percentages of 1RM?","acceptedAnswer":{"@type":"Answer","text":"Percentage-based programming ensures that training intensity is appropriate for your current strength level, regardless of absolute load. A beginner squatting 135 lbs and an advanced lifter squatting 500 lbs both get the same relative stimulus at 80% of their respective 1RMs, making percentage-based plans universally scalable."}},{"@type":"Question","name":"Should I ever test my actual 1RM?","acceptedAnswer":{"@type":"Answer","text":"Yes — but strategically. True 1RM testing is valuable before and after training cycles, before a powerlifting meet, or when setting a personal record. Requires proper warm-up over 5–6 escalating sets and 3–5 minutes rest between attempts. Most recreational lifters should test true 1RM no more than 2–4 times per year."}},{"@type":"Question","name":"Does the formula work for all exercises equally?","acceptedAnswer":{"@type":"Answer","text":"No — compound barbell movements (squat, bench, deadlift, overhead press) yield the most reliable estimates. Machine exercises and isolation movements have different strength curves that reduce accuracy. Cable exercises are particularly unreliable. The calculator is best used for major compound lifts that form the core of strength programs."}},{"@type":"Question","name":"How often should I update my 1RM estimate?","acceptedAnswer":{"@type":"Answer","text":"Update every 4–8 weeks, or whenever you achieve a new rep record at a given weight. Beginners may add strength rapidly and can reassess monthly. Intermediate and advanced lifters progress more slowly and may update quarterly. Tracking estimated 1RM over time is the clearest way to confirm training is producing results."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the One Rep Max Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a one rep max calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this one rep max calculator?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
 <style>
 
         :root {
@@ -96,7 +96,23 @@
         .error-message { color: var(--error); font-size: 0.84rem; margin-top: 0.3rem; display: none; }
         .error-message.show { display: block; }
 
-</style>
+
+        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
+        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
+        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
+        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
+        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
+        .zac-support-card ol { padding-left:1.5rem; }
+        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
+        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
+        .zac-related-links a:hover { text-decoration:underline; }
+        .zac-support-faq { display:grid; gap:1rem; }
+        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
+        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
+        .zac-support-answer { margin-top:0.4rem; }
+
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the One Rep Max Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a one rep max calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this one rep max calculator?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
 </head>
 <body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
@@ -193,7 +209,34 @@
 <p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/nutrition-calculator.html" style="color:#2563eb;">Nutrition Calculator</a> · <a href="/protein-intake.html" style="color:#2563eb;">Protein Intake Calculator</a> · <a href="/pace-calculator.html" style="color:#2563eb;">Pace Calculator</a></p>
 </section>
 </section>
-</main>
+
+        <section class="zac-support-card">
+            <h2>What This Calculator Estimates</h2>
+            <p class="subtle">The One Rep Max Calculator estimates a quick result from the values you enter. It is useful for general wellness tracking, planning, and educational reference only.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>How to Use This Calculator</h2>
+            <ol>
+                <li>Review the input labels to confirm the one rep max calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Related Calculators</h2>
+            <div class="zac-related-links"><a href="bac-calculator.html">BAC Calculator</a><a href="bmi.html">BMI</a><a href="bmi-percentile.html">BMI Percentile</a></div>
+        </section>
+        <section class="zac-support-card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="zac-support-faq">
+                <div class="zac-support-faq-item"><h3>What does the One Rep Max Calculator estimate?</h3><p class="zac-support-answer">It estimates a one rep max calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this one rep max calculator?</h3><p class="zac-support-answer">It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+            </div>
+        </section>
+        <section class="zac-support-card">
+            <h2>General Disclaimer</h2>
+            <p class="subtle">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment guidance. Consider qualified professional advice for personal health decisions.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+        </section>
+
+    </main>
 <div id="toast"></div>
 <script src="/calc-utils.js"></script>
 <script>
