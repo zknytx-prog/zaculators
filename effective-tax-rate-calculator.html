@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Effective Tax Rate Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a effective tax rate calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this effective tax rate calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the effective tax rate show?","acceptedAnswer":{"@type":"Answer","text":"It shows total tax paid as a percentage of total income."}},{"@type":"Question","name":"Is effective tax rate the same as marginal tax rate?","acceptedAnswer":{"@type":"Answer","text":"No. Effective rate is your average tax burden across all income, while marginal rate is the rate applied to the next portion of taxable income."}},{"@type":"Question","name":"What should I enter for total tax paid?","acceptedAnswer":{"@type":"Answer","text":"Use the total tax amount you actually want to compare against your total income, not just one withholding line item."}},{"@type":"Question","name":"Can credits and deductions change the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Credits, deductions, exemptions, and pre-tax contributions can significantly change your effective rate."}}]}</script>
 </head>
 <body>
     <header>
@@ -64,27 +64,52 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Effective Tax Rate Calculator estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+            <p class="subtle">This calculator estimates your effective tax rate by comparing total tax paid with total income. It helps you understand your average tax burden rather than the top marginal rate that applies to your next dollar of income.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the effective tax rate calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Effective tax rate = total tax paid / total income.</li>
+                <li>The calculator multiplies that ratio by 100 to show a percentage.</li>
+                <li>If income is zero, the displayed rate is set to 0% to avoid a division error.</li>
             </ol>
         </section>
         <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If total income is $90,000 and total tax paid is $18,500, the effective tax rate is 18,500 / 90,000 = 0.2056. Expressed as a percentage, that is 20.56%.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The percentage shown is your average tax burden across all income entered on the page. It is useful for year-over-year comparisons, compensation planning, and checking whether withholding feels broadly reasonable.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Comparing effective rate to marginal rate as if they mean the same thing.</li>
+                <li>Using withheld tax from one paycheck instead of the total tax amount for the period being reviewed.</li>
+                <li>Mixing gross income from one period with tax paid from another period.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Official References</h2>
+            <p class="subtle">For U.S. guidance, see the IRS pages on <a href="https://www.irs.gov/individuals/employees/tax-withholding">tax withholding</a> and the <a href="https://www.irs.gov/ht/individuals/tax-withholding-estimator">Tax Withholding Estimator</a>. Verify current rates with the official government source that applies to your filing location.</p>
+        </section>
+        <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+            <div class="zac-related-links"><a href="taxable-income-calculator.html">Taxable Income Calculator</a><a href="tax-bracket-calculator.html">Tax Bracket Calculator</a><a href="tax-refund-estimator.html">Tax Refund Estimator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Effective Tax Rate Calculator estimate?</h3><p class="zac-support-answer">It estimates a effective tax rate calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this effective tax rate calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the effective tax rate show?</h3><p class="zac-support-answer">It shows total tax paid as a percentage of total income.</p></div>
+                <div class="zac-support-faq-item"><h3>Is effective tax rate the same as marginal tax rate?</h3><p class="zac-support-answer">No. Effective rate is your average tax burden across all income, while marginal rate is the rate applied to the next portion of taxable income.</p></div>
+                <div class="zac-support-faq-item"><h3>What should I enter for total tax paid?</h3><p class="zac-support-answer">Use the total tax amount you actually want to compare against your total income, not just one withholding line item.</p></div>
+                <div class="zac-support-faq-item"><h3>Can credits and deductions change the result?</h3><p class="zac-support-answer">Yes. Credits, deductions, exemptions, and pre-tax contributions can significantly change your effective rate.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator provides a simplified effective-rate estimate only and is not tax advice. It does not identify filing status, brackets, withholding tables, deductions, or credits automatically.</p>
             <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
         </section>
 

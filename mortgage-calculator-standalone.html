@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, accurate mortgage calculator. Calculate monthly payments, total interest, and amortization. Updated for 2025 rates.">
+    <meta name="description" content="Mortgage calculator with monthly payment, total interest, PMI, and housing-cost breakdown.">
     <meta name="keywords" content="mortgage calculator, monthly payment, amortization calculator">
-    <title>Mortgage Calculator | Precision Finance</title>
+    <title>Mortgage Calculator | Zaculators</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeIn {
@@ -31,7 +31,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Mortgage Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a mortgage calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this mortgage calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this mortgage calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates principal and interest, then adds the monthly housing costs you enter to show a fuller payment picture."}},{"@type":"Question","name":"When does PMI get added?","acceptedAnswer":{"@type":"Answer","text":"This page adds PMI when the down payment is less than 20% of the home price."}},{"@type":"Question","name":"Does the calculator include closing costs?","acceptedAnswer":{"@type":"Answer","text":"No. Closing costs are separate from the monthly payment and should be reviewed independently."}},{"@type":"Question","name":"Can I use this as a lender approval result?","acceptedAnswer":{"@type":"Answer","text":"No. Lenders also review credit, debt, reserves, documentation, and product-specific fees."}}]}</script>
 </head>
 <body class="bg-gradient-to-br from-slate-50 via-white to-blue-50">
     
@@ -42,7 +42,7 @@
                 <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
                     <span class="text-white text-sm font-bold">PF</span>
                 </div>
-                <span class="font-semibold text-slate-900">Precision Finance</span>
+                <span class="font-semibold text-slate-900">Zaculators</span>
             </div>
             <nav class="hidden md:flex gap-6 text-sm">
                 <a href="#" class="text-slate-600 hover:text-blue-600 transition">Tools</a>
@@ -67,6 +67,7 @@
                 <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm sticky top-24">
                     <h2 class="text-lg font-semibold text-slate-900 mb-6">Loan Details</h2>
                     
+                    <form id="mortgageStandaloneForm" onsubmit="event.preventDefault();">
                     <div class="space-y-6">
                         <!-- Home Price -->
                         <div>
@@ -136,6 +137,7 @@
                     <button onclick="calculate()" class="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition">
                         Calculate
                     </button>
+                    </form>
                 </div>
             </div>
 
@@ -245,27 +247,49 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Mortgage Calculator estimates a quick result from the values you enter. It is useful for rough housing, mortgage, rent, equity, and property-cost planning.</p>
+            <p class="subtle">This calculator estimates a monthly housing payment by combining principal and interest with property tax, home insurance, HOA fees, and PMI when the down payment is below 20%. It is designed for scenario planning before you speak with a lender.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the mortgage calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Loan amount = home price - down payment.</li>
+                <li>Monthly principal and interest uses the standard amortizing-loan formula based on the entered rate and loan term.</li>
+                <li>Total monthly payment = principal and interest + PMI (if required) + property tax + home insurance + HOA fees.</li>
+                <li>The page also estimates total interest over the full term.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">Using the page defaults of a $350,000 home price, $70,000 down payment, 30-year term, 6.5% interest, $120 monthly property tax, and $150 monthly insurance, the loan amount is $280,000. The calculator estimates about $1,769.79 for principal and interest and about $2,039.79 total monthly housing cost because PMI is not required at 20% down.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The large number is your estimated total monthly housing payment. The supporting cards separate that into loan payment, total interest over time, PMI status, and loan amount so you can see what is driving affordability.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Comparing only principal and interest while ignoring taxes, insurance, or HOA fees.</li>
+                <li>Assuming PMI never applies without checking the actual down-payment percentage.</li>
+                <li>Using a headline interest rate without considering lender fees, escrow, or closing costs.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bond-calculator-south-africa.html">Bond Calculator South Africa</a><a href="closing-costs.html">Closing Costs</a><a href="down-payment.html">Down Payment</a></div>
+            <div class="zac-related-links"><a href="closing-costs.html">Closing Costs</a><a href="down-payment-calculator.html">Down Payment Calculator</a><a href="mortgage-amortization.html">Mortgage Amortization</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Mortgage Calculator estimate?</h3><p class="zac-support-answer">It estimates a mortgage calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this mortgage calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this mortgage calculator estimate?</h3><p class="zac-support-answer">It estimates principal and interest, then adds the monthly housing costs you enter to show a fuller payment picture.</p></div>
+                <div class="zac-support-faq-item"><h3>When does PMI get added?</h3><p class="zac-support-answer">This page adds PMI when the down payment is less than 20% of the home price.</p></div>
+                <div class="zac-support-faq-item"><h3>Does the calculator include closing costs?</h3><p class="zac-support-answer">No. Closing costs are separate from the monthly payment and should be reviewed independently.</p></div>
+                <div class="zac-support-faq-item"><h3>Can I use this as a lender approval result?</h3><p class="zac-support-answer">No. Lenders also review credit, debt, reserves, documentation, and product-specific fees.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides housing and property planning estimates only and is not mortgage, legal, valuation, or investment advice. Rates, fees, taxes, and lender terms can change.</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator provides a planning estimate only and is not mortgage, legal, or investment advice. Actual loan terms, escrow amounts, PMI rules, fees, and lender affordability tests can differ.</p>
             <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
         </section>
 
@@ -274,7 +298,7 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 mt-24 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm">
-            <p>&copy; 2025 Precision Finance. Calculators are tools only and not financial advice.</p>
+            <p>&copy; 2026 Zaculators. Calculators are tools only and not financial advice.</p>
         </div>
     </footer>
 

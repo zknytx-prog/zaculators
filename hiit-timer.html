@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the HIIT Timer estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a hiit timer result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this hiit timer?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the HIIT timer calculate?","acceptedAnswer":{"@type":"Answer","text":"It lays out the timing of your session by alternating work and rest intervals for the number of rounds you choose."}},{"@type":"Question","name":"Does the timer include a warm-up or cool-down?","acceptedAnswer":{"@type":"Answer","text":"No. This page only runs the interval blocks you enter, so warm-up and cool-down time should be planned separately."}},{"@type":"Question","name":"Why does the workout end after the last work interval?","acceptedAnswer":{"@type":"Answer","text":"The timer stops when the final programmed work block finishes, which is a common HIIT layout for short interval sessions."}},{"@type":"Question","name":"Can I use this for walking, cycling, or strength circuits?","acceptedAnswer":{"@type":"Answer","text":"Yes. The timer is generic and can be used for any workout that alternates effort and recovery periods."}}]}</script>
 </head>
 <body>
     <header>
@@ -51,6 +51,7 @@
     </header>
     <main>
         <section class="panel">
+            <form id="timerForm" onsubmit="event.preventDefault();">
             <div class="grid">
                 <div><label for="work">Work Seconds</label><input id="work" type="number" min="1" step="1" value="30"></div>
                 <div><label for="rest">Rest Seconds</label><input id="rest" type="number" min="1" step="1" value="15"></div>
@@ -58,6 +59,7 @@
                 <div class="full"><button id="start" class="primary">Start Timer</button></div>
                 <div class="full"><button id="reset" class="secondary" type="button">Reset</button></div>
             </div>
+            </form>
             <div class="result">
                 <div id="phase" class="subtle">Ready</div>
                 <div id="value" class="value">00:00</div>
@@ -68,27 +70,50 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The HIIT Timer estimates a quick result from the values you enter. It is useful for general wellness tracking, planning, and educational reference only.</p>
+            <p class="subtle">This HIIT timer estimates the structure and total length of an interval workout from your work interval, rest interval, and number of rounds. It helps you set up a repeatable session before you press start.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the hiit timer details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Total work time = work seconds x rounds.</li>
+                <li>Total rest time = rest seconds x number of rest intervals actually completed.</li>
+                <li>The timer starts with a work phase, alternates between work and rest, and stops after the last work block finishes.</li>
+                <li>The on-screen display shows the live phase, countdown, and current round while the session runs.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">Using the default setup of 30 seconds of work, 15 seconds of rest, and 8 rounds gives you 240 seconds of work. The timer then inserts a 15-second rest after each completed work block except the last one, so you get 105 seconds of rest. That produces a 5 minute 45 second interval session.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The countdown shows the exact seconds left in the current interval. The round counter tells you where you are in the session, and the final completion state confirms that all programmed rounds finished.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Setting work and rest intervals that are too aggressive for your current conditioning.</li>
+                <li>Forgetting that more rounds increases both fatigue and total session time.</li>
+                <li>Using the same interval plan for every workout without adjusting for exercise type.</li>
+                <li>Starting the timer before you have enough space, equipment, or warm-up time.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bac-calculator.html">BAC Calculator</a><a href="bmi.html">BMI</a><a href="bmi-percentile.html">BMI Percentile</a></div>
+            <div class="zac-related-links"><a href="exercise-duration.html">Exercise Duration</a><a href="calorie-burn.html">Calorie Burn</a><a href="max-heart-rate.html">Max Heart Rate</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the HIIT Timer estimate?</h3><p class="zac-support-answer">It estimates a hiit timer result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this hiit timer?</h3><p class="zac-support-answer">It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the HIIT timer calculate?</h3><p class="zac-support-answer">It lays out the timing of your session by alternating work and rest intervals for the number of rounds you choose.</p></div>
+                <div class="zac-support-faq-item"><h3>Does the timer include a warm-up or cool-down?</h3><p class="zac-support-answer">No. This page only runs the interval blocks you enter, so warm-up and cool-down time should be planned separately.</p></div>
+                <div class="zac-support-faq-item"><h3>Why does the workout end after the last work interval?</h3><p class="zac-support-answer">The timer stops when the final programmed work block finishes, which is a common HIIT layout for short interval sessions.</p></div>
+                <div class="zac-support-faq-item"><h3>Can I use this for walking, cycling, or strength circuits?</h3><p class="zac-support-answer">Yes. The timer is generic and can be used for any workout that alternates effort and recovery periods.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment guidance. Consider qualified professional advice for personal health decisions.</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This timer is for workout planning only and is not medical advice. It does not assess exercise readiness, injury risk, or training load. Adjust intervals to your ability and stop if you feel unwell.</p>
             <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
         </section>
 

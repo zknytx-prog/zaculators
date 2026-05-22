@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Income Tax Calculator UK estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a income tax calculator uk result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this income tax calculator uk?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this UK income tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates UK income tax using the personal allowance and the tax bands built into this page."}},{"@type":"Question","name":"Does this page include National Insurance automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates income tax only and does not automatically add every other payroll deduction."}},{"@type":"Question","name":"What happens after the personal allowance is used up?","acceptedAnswer":{"@type":"Answer","text":"The calculator taxes the remaining income according to the rates coded into the page for the simplified estimate."}},{"@type":"Question","name":"Should I verify current HMRC rates before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tax bands and allowances can change, so you should verify current HMRC guidance."}}]}</script>
 </head>
 <body>
     <header>
@@ -63,27 +63,52 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Income Tax Calculator UK estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+            <p class="subtle">This calculator estimates UK income tax on annual income using the personal allowance and the simplified tax-band structure built into the page. It is useful for quick scenario checks before you review a full payslip or current HMRC guidance.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the income tax calculator uk details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Taxable income = max(annual income - personal allowance, 0).</li>
+                <li>The calculator applies 20% to the first taxable band it models and 40% to taxable income above that point.</li>
+                <li>Estimated after-tax income = annual income - estimated income tax.</li>
             </ol>
         </section>
         <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">With annual income of £50,000, the calculator removes the £12,570 personal allowance and leaves £37,430 as taxable income. Because that taxable amount sits within the first band used here, the page estimates £7,486 of income tax and about £42,514 after income tax.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result is the estimated annual income tax from this simplified model. The detail line shows the remaining annual income after the estimated tax, before National Insurance, pension deductions, or other payroll items.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Assuming the page includes National Insurance when it is estimating income tax only.</li>
+                <li>Using salary sacrifice or other pre-tax arrangements in the wrong way when comparing figures.</li>
+                <li>Relying on a simplified estimate without checking the current HMRC thresholds for your tax year.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Official References</h2>
+            <p class="subtle">Check HMRC and GOV.UK for <a href="https://www.gov.uk/income-tax">Income Tax: introduction</a> and the current <a href="https://www.gov.uk/income-tax-rates">Income Tax rates and Personal Allowances</a>. Verify current rates with the official government source before relying on the estimate.</p>
+        </section>
+        <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+            <div class="zac-related-links"><a href="salary-calculator-uk.html">Salary Calculator UK</a><a href="national-insurance-calculator-uk.html">National Insurance Calculator UK</a><a href="tax-bracket-calculator.html">Tax Bracket Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Income Tax Calculator UK estimate?</h3><p class="zac-support-answer">It estimates a income tax calculator uk result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this income tax calculator uk?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this UK income tax calculator estimate?</h3><p class="zac-support-answer">It estimates UK income tax using the personal allowance and the tax bands built into this page.</p></div>
+                <div class="zac-support-faq-item"><h3>Does this page include National Insurance automatically?</h3><p class="zac-support-answer">No. This page estimates income tax only and does not automatically add every other payroll deduction.</p></div>
+                <div class="zac-support-faq-item"><h3>What happens after the personal allowance is used up?</h3><p class="zac-support-answer">The calculator taxes the remaining income according to the rates coded into the page for the simplified estimate.</p></div>
+                <div class="zac-support-faq-item"><h3>Should I verify current HMRC rates before relying on the result?</h3><p class="zac-support-answer">Yes. Tax bands and allowances can change, so you should verify current HMRC guidance.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator provides a simplified UK income-tax estimate only and is not tax advice. It does not automatically model every relief, tapered allowance, Scottish/Welsh variation, or payroll deduction.</p>
             <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
         </section>
 

@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Inheritance Tax Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a inheritance tax calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this inheritance tax calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this inheritance tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the taxable estate after the allowance you enter and then applies the tax rate you choose."}},{"@type":"Question","name":"Does the page automatically apply every inheritance-tax relief?","acceptedAnswer":{"@type":"Answer","text":"No. It is a simplified estimate and does not automatically model every exemption, relief, or gift rule."}},{"@type":"Question","name":"What should I enter as the allowance?","acceptedAnswer":{"@type":"Answer","text":"Enter the tax-free threshold you want to test for your scenario, based on the rules that apply to the estate you are reviewing."}},{"@type":"Question","name":"Should I verify current official rules before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Inheritance-tax rules can depend on jurisdiction, estate structure, and current law, so official guidance matters."}}]}</script>
 </head>
 <body>
     <header>
@@ -65,27 +65,52 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Inheritance Tax Calculator estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+            <p class="subtle">This calculator estimates inheritance tax by subtracting the allowance you enter from the estate value and applying the tax rate you enter to the remaining taxable amount. It is useful for rough estate-planning scenarios, not for final probate or filing work.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the inheritance tax calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Taxable estate = max(estate value - tax-free allowance, 0).</li>
+                <li>Estimated inheritance tax = taxable estate x tax rate.</li>
+                <li>The page does not automatically add gift rules, spousal exemptions, residence reliefs, or charitable reductions.</li>
             </ol>
         </section>
         <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If the estate value is $800,000, the allowance is $325,000, and the tax rate is 40%, the taxable estate becomes $475,000. Applying the 40% rate gives an estimated inheritance tax bill of $190,000.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The main result is the estimated tax bill based on the allowance and rate you supplied. The supporting line shows the amount treated as taxable after the allowance has been removed.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Assuming every estate uses the same tax-free threshold.</li>
+                <li>Ignoring lifetime gifts, spouse transfers, residence reliefs, or charitable exemptions.</li>
+                <li>Using a general estimate in place of estate-specific legal or tax advice.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Official References</h2>
+            <p class="subtle">For UK guidance, review GOV.UK on <a href="https://www.gov.uk/inheritance-tax">how Inheritance Tax works</a>. Verify current rates with the official government source that applies to the estate you are reviewing.</p>
+        </section>
+        <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+            <div class="zac-related-links"><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a><a href="property-valuation.html">Property Valuation</a><a href="net-worth.html">Net Worth</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Inheritance Tax Calculator estimate?</h3><p class="zac-support-answer">It estimates a inheritance tax calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this inheritance tax calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this inheritance tax calculator estimate?</h3><p class="zac-support-answer">It estimates the taxable estate after the allowance you enter and then applies the tax rate you choose.</p></div>
+                <div class="zac-support-faq-item"><h3>Does the page automatically apply every inheritance-tax relief?</h3><p class="zac-support-answer">No. It is a simplified estimate and does not automatically model every exemption, relief, or gift rule.</p></div>
+                <div class="zac-support-faq-item"><h3>What should I enter as the allowance?</h3><p class="zac-support-answer">Enter the tax-free threshold you want to test for your scenario, based on the rules that apply to the estate you are reviewing.</p></div>
+                <div class="zac-support-faq-item"><h3>Should I verify current official rules before relying on the result?</h3><p class="zac-support-answer">Yes. Inheritance-tax rules can depend on jurisdiction, estate structure, and current law, so official guidance matters.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator provides a simplified inheritance-tax estimate only and is not legal, estate, or tax advice. Estate planning can depend on asset type, relationship, timing of gifts, domicile, and current law.</p>
             <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
         </section>
 
