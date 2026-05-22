@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Tax Refund Estimator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a tax refund estimator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this tax refund estimator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this tax refund estimator calculate?","acceptedAnswer":{"@type":"Answer","text":"It compares estimated tax withheld to estimated tax liability and shows either a refund amount or the amount still owed."}},{"@type":"Question","name":"What if my result is negative?","acceptedAnswer":{"@type":"Answer","text":"A negative balance means the estimate suggests you may still owe tax rather than receive a refund."}},{"@type":"Question","name":"Can credits or filing status change the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Filing status, credits, deductions, and other income can all change the real refund or balance due."}},{"@type":"Question","name":"Should I use year-to-date withholding or the final total?","acceptedAnswer":{"@type":"Answer","text":"Use the best full-year estimate you have. If you are midyear, project your withholding and tax liability for the full year."}},{"@type":"Question","name":"Where should I verify withholding assumptions?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source before relying on the estimate for a final filing or withholding decision."}}]}</script>
 </head>
 <body>
     <header>
@@ -64,28 +64,68 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Tax Refund Estimator estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+            <p class="subtle">This tax refund estimator compares the tax withheld during the year to the tax liability you expect to owe. It helps you estimate whether you may receive a refund or still owe money at filing time.</p>
         </section>
         <section class="zac-support-card">
             <h2>How to Use This Calculator</h2>
             <ol>
-                <li>Review the input labels to confirm the tax refund estimator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Enter the total tax you expect to have withheld for the year.</li>
+                <li>Enter your estimated total tax liability for the year.</li>
+                <li>Click <strong>Estimate Refund</strong> to compare the two amounts.</li>
+                <li>Review whether the result suggests a refund or an amount still owed.</li>
+                <li>Recalculate if your withholding, income, or deductions change.</li>
             </ol>
         </section>
         <section class="zac-support-card">
+            <h2>Formula / Method Used</h2>
+            <ul>
+                <li>Estimated balance = Tax withheld - Estimated tax liability</li>
+                <li>If the balance is positive, it suggests a refund.</li>
+                <li>If the balance is negative, it suggests you may still owe tax.</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If tax withheld is <strong>$9,000</strong> and estimated tax liability is <strong>$7,500</strong>, the balance is <strong>$1,500</strong>. That suggests an estimated refund of <strong>$1,500</strong>.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result shows the size of the difference between what was withheld and what you expect to owe. The message below it tells you whether the estimate points to a refund or an amount still due.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Using year-to-date withholding without projecting the full year.</li>
+                <li>Leaving out credits, deductions, or side income that affect final liability.</li>
+                <li>Assuming a large refund means lower total tax instead of over-withholding.</li>
+                <li>Using old withholding assumptions after a job change or rate change.</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Official References</h2>
+            <ul>
+                <li><a href="https://www.irs.gov/individuals/employees/tax-withholding">IRS Tax Withholding</a></li>
+                <li><a href="https://www.irs.gov/individuals/tax-withholding-estimator">IRS Tax Withholding Estimator</a></li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+            <div class="zac-related-links"><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a><a href="payroll-tax-calculator.html">Payroll Tax Calculator</a><a href="self-employment-tax-calculator.html">Self-Employment Tax Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Tax Refund Estimator estimate?</h3><p class="zac-support-answer">It estimates a tax refund estimator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this tax refund estimator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this tax refund estimator calculate?</h3><p class="zac-support-answer">It compares estimated tax withheld to estimated tax liability and shows either a refund amount or the amount still owed.</p></div>
+                <div class="zac-support-faq-item"><h3>What if my result is negative?</h3><p class="zac-support-answer">A negative balance means the estimate suggests you may still owe tax rather than receive a refund.</p></div>
+                <div class="zac-support-faq-item"><h3>Can credits or filing status change the result?</h3><p class="zac-support-answer">Yes. Filing status, credits, deductions, and other income can all change the real refund or balance due.</p></div>
+                <div class="zac-support-faq-item"><h3>Should I use year-to-date withholding or the final total?</h3><p class="zac-support-answer">Use the best full-year estimate you have. If you are midyear, project your withholding and tax liability for the full year.</p></div>
+                <div class="zac-support-faq-item"><h3>Where should I verify withholding assumptions?</h3><p class="zac-support-answer">Verify current rates with the official government source before relying on the estimate for a final filing or withholding decision.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides tax refund estimates only and is not tax, legal, payroll, or accounting advice. Actual filing outcomes depend on current law, complete return details, and final assessed tax.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

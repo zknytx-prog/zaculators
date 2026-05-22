@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Property Tax Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a property tax calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this property tax calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this property tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates annual property tax by subtracting exemptions from assessed value, applying the tax rate, and then showing a monthly equivalent."}},{"@type":"Question","name":"Can I use market value instead of assessed value?","acceptedAnswer":{"@type":"Answer","text":"You should usually use the assessed value from the taxing authority because that is the figure used for billing in many locations."}},{"@type":"Question","name":"Does this include special assessments?","acceptedAnswer":{"@type":"Answer","text":"No. Special district charges, parcel fees, and supplemental assessments are not automatically included."}},{"@type":"Question","name":"Why does the monthly number matter?","acceptedAnswer":{"@type":"Answer","text":"The monthly equivalent can help when budgeting for an escrow payment or comparing the carrying cost of different homes."}},{"@type":"Question","name":"Where should I verify the actual tax bill?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source for your city, county, municipality, or tax assessor."}}]}</script>
 </head>
 <body>
     <header>
@@ -64,28 +64,66 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Property Tax Calculator estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+            <p class="subtle">This property tax page estimates annual property tax on a home after exemptions and shows the approximate monthly impact. It is useful when you are comparing neighborhoods, checking affordability, or building a homeowner budget.</p>
         </section>
         <section class="zac-support-card">
             <h2>How to Use This Calculator</h2>
             <ol>
-                <li>Review the input labels to confirm the property tax calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Enter the assessed property value from the local tax authority.</li>
+                <li>Enter the annual property tax rate as a percent.</li>
+                <li>Enter any exemption amount that lowers the taxable value.</li>
+                <li>Submit the form to view annual tax and monthly equivalent.</li>
+                <li>Recalculate with different assumptions to compare properties or exemption changes.</li>
             </ol>
         </section>
         <section class="zac-support-card">
+            <h2>Formula / Method Used</h2>
+            <ul>
+                <li>Taxable value = Assessed property value - Exemptions</li>
+                <li>Annual property tax = Taxable value x Tax rate</li>
+                <li>Monthly estimate = Annual property tax / 12</li>
+            </ul>
+            <p class="subtle">The calculator does not allow taxable value to go below zero.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">With an assessed value of <strong>$325,000</strong>, a rate of <strong>1.25%</strong>, and exemptions of <strong>$25,000</strong>, the taxable value is <strong>$300,000</strong>. Estimated annual property tax is <strong>$3,750</strong>, or about <strong>$312.50</strong> each month.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The top number is the annual tax estimate based on the inputs you entered. The supporting line shows the taxable value and the monthly equivalent, which can help when reviewing escrow or housing budgets.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Entering a listing price instead of the assessed value used for tax billing.</li>
+                <li>Ignoring local reassessment caps or limits that affect the final bill.</li>
+                <li>Forgetting parcel fees, district taxes, or supplemental assessments.</li>
+                <li>Using a stale rate from a previous tax year.</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Official References</h2>
+            <p class="subtle">Verify current rates with the official government source for your city, county, municipality, or tax assessor.</p>
+        </section>
+        <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+            <div class="zac-related-links"><a href="mortgage.html">Mortgage Calculator</a><a href="home-affordability.html">Home Affordability Calculator</a><a href="property-valuation.html">Property Valuation Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Property Tax Calculator estimate?</h3><p class="zac-support-answer">It estimates a property tax calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this property tax calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this property tax calculator estimate?</h3><p class="zac-support-answer">It estimates annual property tax by subtracting exemptions from assessed value, applying the tax rate, and then showing a monthly equivalent.</p></div>
+                <div class="zac-support-faq-item"><h3>Can I use market value instead of assessed value?</h3><p class="zac-support-answer">You should usually use the assessed value from the taxing authority because that is the figure used for billing in many locations.</p></div>
+                <div class="zac-support-faq-item"><h3>Does this include special assessments?</h3><p class="zac-support-answer">No. Special district charges, parcel fees, and supplemental assessments are not automatically included.</p></div>
+                <div class="zac-support-faq-item"><h3>Why does the monthly number matter?</h3><p class="zac-support-answer">The monthly equivalent can help when budgeting for an escrow payment or comparing the carrying cost of different homes.</p></div>
+                <div class="zac-support-faq-item"><h3>Where should I verify the actual tax bill?</h3><p class="zac-support-answer">Verify current rates with the official government source for your city, county, municipality, or tax assessor.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides property tax estimates only and is not tax, legal, real-estate, or lending advice. Official bills can include additional charges and location-specific rules not modeled here.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

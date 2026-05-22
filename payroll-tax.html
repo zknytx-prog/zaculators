@@ -1,10 +1,33 @@
-﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem;color:var(--primary,#2563eb)}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem}input{width:100%;padding:0.75rem;border:1px solid #e2e8f0;border-radius:6px;margin-bottom:1rem;font-size:1rem}button{width:100%;padding:0.75rem;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:1rem}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}footer{text-align:center;color:#64748b;margin-top:3rem;padding:2rem;border-top:1px solid #e2e8f0}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Payroll Tax Calculator | Zaculators</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:-apple-system,"Segoe UI",sans-serif; background:#f8fafc; color:#0f172a; }
+        header { background:#fff; padding:1.5rem; text-align:center; border-bottom:1px solid #e2e8f0; }
+        h1 { font-size:1.5rem; color:var(--primary,#2563eb); }
+        main { max-width:900px; margin:0 auto; padding:2rem; }
+        .section { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:2rem; }
+        .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+        .full { grid-column:1 / -1; }
+        label { display:block; font-weight:600; margin-bottom:0.5rem; }
+        input, button { width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:6px; font-size:1rem; }
+        button { background:#2563eb; color:#fff; border:none; cursor:pointer; font-weight:600; }
+        .results { background:#f0fdf4; border-left:4px solid #16a34a; padding:1.5rem; border-radius:6px; margin-top:2rem; display:none; }
+        .results.active { display:block; }
+        .value { font-size:1.5rem; font-weight:600; color:#16a34a; }
+        .subtle { color:#64748b; }
+        footer { text-align:center; color:#64748b; margin-top:3rem; padding:2rem; border-top:1px solid #e2e8f0; background:#fff; }
         .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
         .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
         .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
         .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
         .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
+        .zac-support-card ol, .zac-support-card ul { padding-left:1.5rem; }
         .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
         .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
         .zac-related-links a:hover { text-decoration:underline; }
@@ -12,35 +35,111 @@
         .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
         .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
         .zac-support-answer { margin-top:0.4rem; }
-
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Payroll Tax estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a payroll tax result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this payroll tax?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Calculator</h1></header><main><section class="section"><form id="f"><input type="number" placeholder="Value" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result: Calculated</div></div></section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Payroll Tax estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the payroll tax details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Payroll Tax estimate?</h3><p class="zac-support-answer">It estimates a payroll tax result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this payroll tax?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+        @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this payroll tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates payroll tax on a gross pay amount by multiplying gross pay by the payroll tax rate you enter, then shows the estimated pay left after that tax."}},{"@type":"Question","name":"Does this include every payroll deduction?","acceptedAnswer":{"@type":"Answer","text":"No. This page gives a basic payroll tax estimate and does not automatically include benefits, pretax deductions, employer taxes, local taxes, or special payroll rules."}},{"@type":"Question","name":"What payroll tax rate should I enter?","acceptedAnswer":{"@type":"Answer","text":"Use the rate that matches the situation you are checking, such as a combined withholding assumption or a payroll tax percentage from an official payroll reference."}},{"@type":"Question","name":"Why can the real paycheck differ?","acceptedAnswer":{"@type":"Answer","text":"Real payroll results can differ because withholding tables, annual wage limits, filing status, state rules, deductions, and benefit elections all change the final amount."}},{"@type":"Question","name":"Where should I verify payroll tax rules?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source and your payroll provider or tax adviser before using the result for a final payroll decision."}}]}</script>
+</head>
+<body>
+<header>
+    <h1>Payroll Tax Calculator</h1>
+    <p class="subtle">Basic payroll withholding estimate for one pay amount</p>
+</header>
+<main>
+    <section class="section">
+        <form id="f" class="grid">
+            <div>
+                <label for="grossPay">Gross Pay</label>
+                <input id="grossPay" type="number" min="0" step="0.01" placeholder="2500" required>
             </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+            <div>
+                <label for="taxRate">Payroll Tax Rate (%)</label>
+                <input id="taxRate" type="number" min="0" step="0.01" placeholder="18.5" required>
+            </div>
+            <div class="full">
+                <button type="submit">Estimate Payroll Tax</button>
+            </div>
+        </form>
+        <div id="r" class="results">
+            <div id="value" class="value"></div>
+            <p id="detail" class="subtle"></p>
+        </div>
+    </section>
 
-    </main><footer>Precision Finance Â© 2025</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
-
+    <section class="zac-support-card">
+        <h2>What This Calculator Estimates</h2>
+        <p class="subtle">This payroll tax calculator estimates the tax withheld from one gross pay amount using the payroll tax rate you enter. It is useful for a quick paycheck check when you want to compare different pay levels or withholding assumptions.</p>
+    </section>
+    <section class="zac-support-card">
+        <h2>Formula / Method Used</h2>
+        <p class="subtle">The calculator uses a simple percentage method:</p>
+        <ul>
+            <li>Estimated payroll tax = Gross pay x Payroll tax rate</li>
+            <li>Estimated pay after payroll tax = Gross pay - Estimated payroll tax</li>
+        </ul>
+        <p class="subtle">Enter the rate as a percent, such as <strong>18.5</strong> for 18.5%.</p>
+    </section>
+    <section class="zac-support-card">
+        <h2>Worked Example</h2>
+        <p class="subtle">If gross pay is <strong>$2,500</strong> and the payroll tax rate is <strong>18.5%</strong>, the estimated payroll tax is <strong>$462.50</strong>. The estimated amount left after payroll tax is <strong>$2,037.50</strong>.</p>
+    </section>
+    <section class="zac-support-card">
+        <h2>What the Result Means</h2>
+        <p class="subtle">The green result shows the estimated payroll tax for the pay amount you entered. The line below it shows the remaining pay after subtracting that estimated tax. Use it as a planning figure, not as a final paycheck calculation.</p>
+    </section>
+    <section class="zac-support-card">
+        <h2>Common Mistakes</h2>
+        <ul>
+            <li>Using an annual tax rate for one pay period without adjusting the assumption.</li>
+            <li>Forgetting that employer payroll taxes are separate from employee withholding.</li>
+            <li>Leaving out local taxes, retirement deductions, health premiums, or other paycheck deductions.</li>
+            <li>Using old payroll tables after rates or wage bases change.</li>
+        </ul>
+    </section>
+    <section class="zac-support-card">
+        <h2>Official References</h2>
+        <p class="subtle">For U.S. payroll checks, review the IRS employment tax guidance and Publication 15:</p>
+        <ul>
+            <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes">IRS: Understanding Employment Taxes</a></li>
+            <li><a href="https://www.irs.gov/publications/p15">IRS Publication 15 (Circular E)</a></li>
+        </ul>
+    </section>
+    <section class="zac-support-card">
+        <h2>Related Calculators</h2>
+        <div class="zac-related-links">
+            <a href="payroll-tax-calculator.html">Payroll Tax Calculator</a>
+            <a href="payroll-calculator.html">Payroll Calculator</a>
+            <a href="self-employment-tax-calculator.html">Self-Employment Tax Calculator</a>
+        </div>
+    </section>
+    <section class="zac-support-card">
+        <h2>Frequently Asked Questions</h2>
+        <div class="zac-support-faq">
+            <div class="zac-support-faq-item"><h3>What does this payroll tax calculator estimate?</h3><p class="zac-support-answer">It estimates payroll tax on a gross pay amount by multiplying gross pay by the payroll tax rate you enter, then shows the estimated pay left after that tax.</p></div>
+            <div class="zac-support-faq-item"><h3>Does this include every payroll deduction?</h3><p class="zac-support-answer">No. This page gives a basic payroll tax estimate and does not automatically include benefits, pretax deductions, employer taxes, local taxes, or special payroll rules.</p></div>
+            <div class="zac-support-faq-item"><h3>What payroll tax rate should I enter?</h3><p class="zac-support-answer">Use the rate that matches the situation you are checking, such as a combined withholding assumption or a payroll tax percentage from an official payroll reference.</p></div>
+            <div class="zac-support-faq-item"><h3>Why can the real paycheck differ?</h3><p class="zac-support-answer">Real payroll results can differ because withholding tables, annual wage limits, filing status, state rules, deductions, and benefit elections all change the final amount.</p></div>
+            <div class="zac-support-faq-item"><h3>Where should I verify payroll tax rules?</h3><p class="zac-support-answer">Verify current rates with the official government source and your payroll provider or tax adviser before using the result for a final payroll decision.</p></div>
+        </div>
+    </section>
+    <section class="zac-support-card">
+        <h2>General Disclaimer</h2>
+        <p class="subtle">This calculator provides payroll tax estimates only and is not tax, legal, payroll, or accounting advice. Final paycheck amounts depend on current rules, payroll setup, filing details, and deductions.</p>
+        <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+    </section>
+</main>
+<footer>Zaculators &copy; 2026</footer>
+<script>
+const money = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
+document.getElementById("f").addEventListener("submit", e => {
+    e.preventDefault();
+    const grossPay = Number(document.getElementById("grossPay").value);
+    const taxRate = Number(document.getElementById("taxRate").value) / 100;
+    const tax = grossPay * taxRate;
+    const net = grossPay - tax;
+    document.getElementById("value").textContent = money(tax);
+    document.getElementById("detail").textContent = `${money(net)} estimated after payroll tax on ${money(grossPay)} gross pay.`;
+    document.getElementById("r").classList.add("active");
+});
+</script>
+</body>
+</html>
