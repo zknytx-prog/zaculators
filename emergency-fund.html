@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Emergency Fund Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a emergency fund calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this emergency fund calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this emergency fund calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates an emergency fund target based on monthly essential expenses and the number of months of coverage you want."}},{"@type":"Question","name":"Does it also estimate how long it will take to reach the target?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you have not reached the target yet, it estimates how many months it could take at your current monthly savings amount."}},{"@type":"Question","name":"What expenses should I include?","acceptedAnswer":{"@type":"Answer","text":"Use essential monthly expenses such as housing, food, utilities, insurance, transportation, and minimum debt payments."}},{"@type":"Question","name":"What if I already have enough saved?","acceptedAnswer":{"@type":"Answer","text":"The calculator will show the target and tell you that your emergency fund target is already covered."}},{"@type":"Question","name":"Why can the recommended target differ from other advice?","acceptedAnswer":{"@type":"Answer","text":"Different households need different buffers based on job stability, dependents, health costs, and how variable monthly expenses are."}}]}</script>
 </head>
 <body>
     <header>
@@ -65,28 +65,47 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Emergency Fund Calculator estimates a quick result from the values you enter. It is useful for budgeting, payoff planning, savings comparisons, and scenario testing before you act.</p>
+            <p class="subtle">This emergency fund calculator estimates how much cash reserve you may want based on your essential monthly expenses and target coverage period. It also estimates the remaining gap and how many months it could take to close that gap at your current savings pace.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the emergency fund calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
+            <h2>Formula / Method Used</h2>
+            <ul>
+                <li>Emergency fund target = Monthly essential expenses x Coverage months</li>
+                <li>Remaining gap = Target - Already saved, but not less than zero</li>
+                <li>Months to target = Remaining gap / Monthly savings amount, rounded up</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If essential expenses are <strong>$3,200</strong> per month and you want <strong>6 months</strong> of coverage, the target fund is <strong>$19,200</strong>. If you already have <strong>$5,000</strong> saved and add <strong>$400</strong> per month, the remaining gap is <strong>$14,200</strong>, or about <strong>36 months</strong> to finish.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The main result shows your target emergency fund size. The detail line tells you whether the goal is already covered or how much remains and how long it may take to reach the target.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Using total spending instead of essential spending.</li>
+                <li>Ignoring irregular but necessary costs such as medical, car, or insurance expenses.</li>
+                <li>Assuming the same target works for every household.</li>
+                <li>Leaving out periods of unstable income when choosing coverage months.</li>
+            </ul>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="annuity-calculator.html">Annuity Calculator</a><a href="apr-calculator.html">APR Calculator</a><a href="average-calculator.html">Average Calculator</a></div>
+            <div class="zac-related-links"><a href="net-worth.html">Net Worth Calculator</a><a href="loan-payoff.html">Loan Payoff Calculator</a><a href="compound-interest-monthly.html">Compound Interest Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Emergency Fund Calculator estimate?</h3><p class="zac-support-answer">It estimates a emergency fund calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this emergency fund calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this emergency fund calculator estimate?</h3><p class="zac-support-answer">It estimates an emergency fund target based on monthly essential expenses and the number of months of coverage you want.</p></div><div class="zac-support-faq-item"><h3>Does it also estimate how long it will take to reach the target?</h3><p class="zac-support-answer">Yes. If you have not reached the target yet, it estimates how many months it could take at your current monthly savings amount.</p></div><div class="zac-support-faq-item"><h3>What expenses should I include?</h3><p class="zac-support-answer">Use essential monthly expenses such as housing, food, utilities, insurance, transportation, and minimum debt payments.</p></div><div class="zac-support-faq-item"><h3>What if I already have enough saved?</h3><p class="zac-support-answer">The calculator will show the target and tell you that your emergency fund target is already covered.</p></div><div class="zac-support-faq-item"><h3>Why can the recommended target differ from other advice?</h3><p class="zac-support-answer">Different households need different buffers based on job stability, dependents, health costs, and how variable monthly expenses are.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides educational planning estimates only and is not financial advice. The right emergency fund size depends on your income reliability, obligations, and risk tolerance.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

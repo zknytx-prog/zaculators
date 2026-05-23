@@ -40,7 +40,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Revenue Projector estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a revenue projector result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this revenue projector?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Revenue Projector estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total revenue over the number of months you enter by combining monthly customers, average revenue per customer, and monthly customer growth."}},{"@type":"Question","name":"How does growth work in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The customer count compounds each month by the growth rate, so each period starts from the previous month's customer level."}},{"@type":"Question","name":"Does this calculator subtract expenses?","acceptedAnswer":{"@type":"Answer","text":"No. It projects top-line revenue only and does not subtract costs, refunds, taxes, or churn."}},{"@type":"Question","name":"Why is the result higher than customers times price times months?","acceptedAnswer":{"@type":"Answer","text":"That happens when a positive growth rate increases the customer count over time, producing more revenue in later months."}},{"@type":"Question","name":"When should I recalculate the revenue projection?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your customer count, pricing, growth rate, or projection window changes."}}]}</script>
 </head>
 <body>
     <header>
@@ -64,28 +64,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Revenue Projector estimates a quick result from the values you enter. It is useful for pricing, margin, planning, and operating-cost comparisons.</p>
+            <p class="subtle">This calculator estimates cumulative revenue over a chosen number of months. It starts with your monthly customer count, multiplies by average revenue per customer, and then increases the customer base each month by your growth assumption.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">For each month, revenue is calculated as <strong>customers x average revenue per customer</strong>. After each month, the customer count is multiplied by <strong>1 + growth rate</strong>. The calculator adds every month's revenue to estimate total projected revenue over the full period.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If you start with 200 monthly customers, average $75 per customer, project 12 months, and assume 4% monthly growth, month one revenue is $15,000. Later months grow as the customer count compounds, so the total revenue across the full period is higher than simply multiplying month one by 12.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result is a top-line revenue estimate, not profit. It helps with target setting, sales planning, and scenario comparison. If growth is high, later months contribute a larger share of the total, so the projection becomes more sensitive to your growth assumption.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
             <ol>
-                <li>Review the input labels to confirm the revenue projector details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Using revenue per customer that already includes discounts or seasonality from a different period.</li>
+                <li>Applying an aggressive monthly growth rate without checking whether operations can support it.</li>
+                <li>Confusing revenue projection with profit or cash flow.</li>
+                <li>Ignoring churn, returns, or pricing changes that could reduce actual results.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="birthday-budget.html">Birthday Budget</a><a href="break-even-sales.html">Break Even Sales</a><a href="budget-planner.html">Budget Planner</a></div>
+            <div class="zac-related-links"><a href="commission.html">Commission Calculator</a><a href="profit-margin.html">Profit Margin Calculator</a><a href="cash-flow-projection.html">Cash Flow Projection</a><a href="break-even-sales.html">Break Even Sales Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Revenue Projector estimate?</h3><p class="zac-support-answer">It estimates a revenue projector result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this revenue projector?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the Revenue Projector estimate?</h3><p class="zac-support-answer">It estimates total revenue over the number of months you enter by combining monthly customers, average revenue per customer, and monthly customer growth.</p></div><div class="zac-support-faq-item"><h3>How does growth work in this calculator?</h3><p class="zac-support-answer">The customer count compounds each month by the growth rate, so each period starts from the previous month's customer level.</p></div><div class="zac-support-faq-item"><h3>Does this calculator subtract expenses?</h3><p class="zac-support-answer">No. It projects top-line revenue only and does not subtract costs, refunds, taxes, or churn.</p></div><div class="zac-support-faq-item"><h3>Why is the result higher than customers times price times months?</h3><p class="zac-support-answer">That happens when a positive growth rate increases the customer count over time, producing more revenue in later months.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate the revenue projection?</h3><p class="zac-support-answer">Recalculate whenever your customer count, pricing, growth rate, or projection window changes.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. Actual costs, margins, fees, and outcomes can vary.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This projection is for planning only. It does not include expenses, taxes, refunds, seasonality, market shocks, or customer churn unless you build those assumptions into the inputs separately.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Loan Payoff Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a loan payoff calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this loan payoff calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this loan payoff calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly payment you enter."}},{"@type":"Question","name":"What happens if my payment is too low?","acceptedAnswer":{"@type":"Answer","text":"If the monthly payment is too low to cover monthly interest, the calculator shows that the payment is too low and the balance will not be reduced."}},{"@type":"Question","name":"Does it include fees or extra payments automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This estimate uses only the balance, interest rate, and monthly payment entered in the form."}},{"@type":"Question","name":"Why can the real payoff date differ?","acceptedAnswer":{"@type":"Answer","text":"Actual payoff dates can differ because lenders may calculate interest differently, add fees, or apply extra payments on different dates."}},{"@type":"Question","name":"Can I compare different payment amounts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Changing the monthly payment is one of the fastest ways to compare payoff speed and estimated total interest."}}]}</script>
 </head>
 <body>
     <header>
@@ -64,28 +64,48 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Loan Payoff Calculator estimates a quick result from the values you enter. It is useful for budgeting, payoff planning, savings comparisons, and scenario testing before you act.</p>
+            <p class="subtle">This loan payoff calculator estimates how long it may take to eliminate a loan balance and how much interest may accumulate along the way. It is useful when testing whether a higher monthly payment would shorten the payoff timeline.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the loan payoff calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">The calculator simulates the balance one month at a time:</p>
+            <ul>
+                <li>Monthly interest = Current balance x Monthly rate</li>
+                <li>New balance = Current balance + Interest - Monthly payment</li>
+                <li>Months increase until the balance reaches zero or the payment is too low to beat interest</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">With a balance of <strong>$12,000</strong>, an annual rate of <strong>8%</strong>, and a monthly payment of <strong>$350</strong>, the estimated payoff time is about <strong>40 months</strong> with around <strong>$1,669.76</strong> in total interest.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The main result shows the estimated number of months to payoff. If the payment is too low, the calculator warns that interest is preventing progress. The detail line shows estimated interest or the reason payoff is not possible under the current payment.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Entering a payment that does not even cover monthly interest.</li>
+                <li>Ignoring fees, late charges, or variable-rate changes.</li>
+                <li>Assuming all lenders apply interest and payments on the same schedule.</li>
+                <li>Comparing payoff plans without keeping the starting balance constant.</li>
+            </ul>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="annuity-calculator.html">Annuity Calculator</a><a href="apr-calculator.html">APR Calculator</a><a href="average-calculator.html">Average Calculator</a></div>
+            <div class="zac-related-links"><a href="simple-interest.html">Simple Interest Calculator</a><a href="net-worth.html">Net Worth Calculator</a><a href="emergency-fund.html">Emergency Fund Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Loan Payoff Calculator estimate?</h3><p class="zac-support-answer">It estimates a loan payoff calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this loan payoff calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this loan payoff calculator estimate?</h3><p class="zac-support-answer">It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly payment you enter.</p></div><div class="zac-support-faq-item"><h3>What happens if my payment is too low?</h3><p class="zac-support-answer">If the monthly payment is too low to cover monthly interest, the calculator shows that the payment is too low and the balance will not be reduced.</p></div><div class="zac-support-faq-item"><h3>Does it include fees or extra payments automatically?</h3><p class="zac-support-answer">No. This estimate uses only the balance, interest rate, and monthly payment entered in the form.</p></div><div class="zac-support-faq-item"><h3>Why can the real payoff date differ?</h3><p class="zac-support-answer">Actual payoff dates can differ because lenders may calculate interest differently, add fees, or apply extra payments on different dates.</p></div><div class="zac-support-faq-item"><h3>Can I compare different payment amounts?</h3><p class="zac-support-answer">Yes. Changing the monthly payment is one of the fastest ways to compare payoff speed and estimated total interest.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides educational payoff estimates only and is not lending, legal, or financial advice. Actual lender terms, fees, and payment application rules can change the final payoff schedule.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

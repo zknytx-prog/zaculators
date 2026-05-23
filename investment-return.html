@@ -497,8 +497,7 @@
 
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Investment Return (ROI) Calculator","description":"Calculate return on investment. See profit, percentage return, and annualized ROI.","isPartOf":{"@type":"WebSite","name":"Utility Calculator Suite"},"publisher":{"@type":"Organization","name":"Utility Calculator Suite"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Investment Return (ROI) Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a investment return (roi) calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this investment return (roi) calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Investment Return (ROI) Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a investment return (roi) calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this investment return (roi) calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this investment return calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates profit, total ROI, and annualized ROI from the starting value, ending value, and holding period you enter."}},{"@type":"Question","name":"What is the difference between total ROI and annualized ROI?","acceptedAnswer":{"@type":"Answer","text":"Total ROI measures the full return over the whole holding period, while annualized ROI shows the average yearly growth rate that would produce the same ending value."}},{"@type":"Question","name":"Does this include dividends, taxes, or fees automatically?","acceptedAnswer":{"@type":"Answer","text":"No. You should include those effects in the starting or ending values yourself if you want them reflected in the estimate."}},{"@type":"Question","name":"Why is annualized ROI useful?","acceptedAnswer":{"@type":"Answer","text":"Annualized ROI makes it easier to compare investments held for different lengths of time on a like-for-like basis."}},{"@type":"Question","name":"When can ROI be misleading?","acceptedAnswer":{"@type":"Answer","text":"ROI can be misleading when it ignores risk, timing of cash flows, taxes, or changes in value that happen before the ending date."}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to calculator</a>
@@ -636,28 +635,47 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Investment Return (ROI) Calculator estimates a quick result from the values you enter. It is useful for budgeting, payoff planning, savings comparisons, and scenario testing before you act.</p>
+            <p class="subtle">This investment return calculator estimates profit, total ROI, and annualized ROI from a beginning value, ending value, and holding period. It is useful when comparing investments that were held for different amounts of time.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the investment return (roi) calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
+            <h2>Formula / Method Used</h2>
+            <ul>
+                <li>Profit = Final value - Initial investment</li>
+                <li>Total ROI = Profit / Initial investment</li>
+                <li>Annualized ROI = (Final value / Initial investment) ^ (1 / Years) - 1</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If the initial investment is <strong>$10,000</strong>, the ending value is <strong>$13,000</strong>, and the holding period is <strong>3 years</strong>, profit is <strong>$3,000</strong>, total ROI is <strong>30%</strong>, and annualized ROI is about <strong>9.14%</strong>.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">Profit shows the dollar gain or loss. Total ROI shows the full percentage return across the whole period. Annualized ROI shows the average yearly growth rate that would produce the same ending result over the time held.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Comparing total ROI on investments held for very different lengths of time.</li>
+                <li>Ignoring taxes, fees, or cash distributions.</li>
+                <li>Using this method for multiple cash-flow investments without adjusting the data.</li>
+                <li>Assuming ROI alone measures investment quality or risk.</li>
+            </ul>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="annuity-calculator.html">Annuity Calculator</a><a href="apr-calculator.html">APR Calculator</a><a href="average-calculator.html">Average Calculator</a></div>
+            <div class="zac-related-links"><a href="compound-interest-monthly.html">Compound Interest Calculator</a><a href="simple-interest.html">Simple Interest Calculator</a><a href="inflation-calculator.html">Inflation Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Investment Return (ROI) Calculator estimate?</h3><p class="zac-support-answer">It estimates a investment return (roi) calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this investment return (roi) calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this investment return calculator estimate?</h3><p class="zac-support-answer">It estimates profit, total ROI, and annualized ROI from the starting value, ending value, and holding period you enter.</p></div><div class="zac-support-faq-item"><h3>What is the difference between total ROI and annualized ROI?</h3><p class="zac-support-answer">Total ROI measures the full return over the whole holding period, while annualized ROI shows the average yearly growth rate that would produce the same ending value.</p></div><div class="zac-support-faq-item"><h3>Does this include dividends, taxes, or fees automatically?</h3><p class="zac-support-answer">No. You should include those effects in the starting or ending values yourself if you want them reflected in the estimate.</p></div><div class="zac-support-faq-item"><h3>Why is annualized ROI useful?</h3><p class="zac-support-answer">Annualized ROI makes it easier to compare investments held for different lengths of time on a like-for-like basis.</p></div><div class="zac-support-faq-item"><h3>When can ROI be misleading?</h3><p class="zac-support-answer">ROI can be misleading when it ignores risk, timing of cash flows, taxes, or changes in value that happen before the ending date.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides educational ROI estimates only and is not investment, tax, or financial advice. Actual investment outcomes depend on risk, fees, taxes, and the timing of cash flows.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

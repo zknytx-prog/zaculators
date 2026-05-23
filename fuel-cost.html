@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Fuel Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a fuel cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this fuel cost calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Fuel Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the fuel cost for the miles driven using your vehicle's fuel efficiency and the fuel price per gallon."}},{"@type":"Question","name":"How is fuel usage calculated?","acceptedAnswer":{"@type":"Answer","text":"Fuel usage is calculated by dividing miles driven by miles per gallon."}},{"@type":"Question","name":"Can I use this calculator for a monthly commute?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the total miles you expect to drive in the period you want to estimate."}},{"@type":"Question","name":"Why might actual fuel cost be different from the result?","acceptedAnswer":{"@type":"Answer","text":"Real-world fuel economy changes with traffic, speed, terrain, weather, cargo, tire pressure, and idling time."}},{"@type":"Question","name":"When should I recalculate fuel cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when gas prices change or when your driving distance or vehicle efficiency changes."}}]}</script>
 </head>
 <body>
     <header>
@@ -65,28 +65,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Fuel Cost Calculator estimates a quick result from the values you enter. It is useful for comparing driving, fuel, financing, and vehicle-cost assumptions.</p>
+            <p class="subtle">This calculator estimates the fuel expense for a given driving distance. It helps you turn miles driven, fuel efficiency, and gas price into a quick cash-cost estimate for a commute, road trip, or monthly driving plan.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">Fuel needed is estimated with <strong>miles driven / miles per gallon</strong>. The total cost is then <strong>gallons needed x fuel price per gallon</strong>. The result assumes your fuel efficiency stays constant for the full distance.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If you drive 1,200 miles in a vehicle that gets 30 MPG and gas costs $3.49 per gallon, estimated fuel use is 40 gallons. Multiply 40 by $3.49 and the estimated fuel cost is $139.60.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result gives you a direct fuel-budget estimate for the distance entered. It is useful for checking commuting cost, comparing vehicles, or deciding whether changes in price at the pump materially affect your monthly driving budget.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
             <ol>
-                <li>Review the input labels to confirm the fuel cost calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Entering an MPG figure that reflects ideal highway driving instead of your real mixed driving pattern.</li>
+                <li>Using a local gas price that does not match where most of the driving happens.</li>
+                <li>Forgetting that heavy cargo, cold weather, or traffic can reduce fuel economy.</li>
+                <li>Assuming fuel cost equals total transportation cost without adding insurance, maintenance, or payments.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="ev-charging-cost.html">Ev Charging Cost</a><a href="fuel-efficiency.html">Fuel Efficiency</a><a href="tire-pressure.html">Tire Pressure</a></div>
+            <div class="zac-related-links"><a href="trip-cost.html">Trip Cost Calculator</a><a href="fuel-efficiency.html">Fuel Efficiency Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="ev-charging-cost.html">EV Charging Cost Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Fuel Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates a fuel cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this fuel cost calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the Fuel Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates the fuel cost for the miles driven using your vehicle's fuel efficiency and the fuel price per gallon.</p></div><div class="zac-support-faq-item"><h3>How is fuel usage calculated?</h3><p class="zac-support-answer">Fuel usage is calculated by dividing miles driven by miles per gallon.</p></div><div class="zac-support-faq-item"><h3>Can I use this calculator for a monthly commute?</h3><p class="zac-support-answer">Yes. Enter the total miles you expect to drive in the period you want to estimate.</p></div><div class="zac-support-faq-item"><h3>Why might actual fuel cost be different from the result?</h3><p class="zac-support-answer">Real-world fuel economy changes with traffic, speed, terrain, weather, cargo, tire pressure, and idling time.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate fuel cost?</h3><p class="zac-support-answer">Recalculate when gas prices change or when your driving distance or vehicle efficiency changes.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This estimate is for budgeting only. Actual fuel use depends on real driving conditions, vehicle load, maintenance, weather, traffic, and driving style.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

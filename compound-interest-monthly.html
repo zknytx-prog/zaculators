@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Compound Interest Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a compound interest calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this compound interest calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this compound interest calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the ending balance of an account after monthly contributions and monthly compounding over the time period you enter."}},{"@type":"Question","name":"Does this include monthly contributions?","acceptedAnswer":{"@type":"Answer","text":"Yes. This page adds the monthly contribution each month before applying the monthly interest rate."}},{"@type":"Question","name":"Why is compound interest different from simple interest?","acceptedAnswer":{"@type":"Answer","text":"Compound interest earns returns on prior growth as well as the original principal, while simple interest is calculated only on the principal."}},{"@type":"Question","name":"Can I use this for savings or investing?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works well for rough planning of savings, brokerage, or similar balances as long as you understand the return assumption is simplified."}},{"@type":"Question","name":"Why can the real account value differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"Real balances can differ because rates change, contributions are irregular, taxes and fees apply, or returns do not compound evenly every month."}}]}</script>
 </head>
 <body>
     <header>
@@ -66,28 +66,49 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Compound Interest Calculator estimates a quick result from the values you enter. It is useful for budgeting, payoff planning, savings comparisons, and scenario testing before you act.</p>
+            <p class="subtle">This compound interest calculator estimates how a starting balance can grow when you add a monthly contribution and apply a monthly rate derived from the annual return you enter. It is useful for savings goals, investment projections, and side-by-side scenario testing.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the compound interest calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">The calculator loops through each month using this pattern:</p>
+            <ul>
+                <li>Monthly rate = Annual rate / 12</li>
+                <li>New balance each month = (Current balance + Monthly contribution) x (1 + Monthly rate)</li>
+                <li>Total invested = Starting amount + (Monthly contribution x Number of months)</li>
+                <li>Growth = Ending balance - Total invested</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">With a starting amount of <strong>$5,000</strong>, a monthly contribution of <strong>$200</strong>, an annual rate of <strong>6%</strong>, and a time period of <strong>10 years</strong>, the estimated ending balance is about <strong>$42,036.73</strong>. That includes about <strong>$13,036.73</strong> in growth on <strong>$29,000</strong> contributed.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The main result shows the projected ending balance. The detail line separates investment growth from the amount you personally contributed, which helps you see how much of the ending balance came from compounding rather than deposits.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Entering an expected annual return as if it were already a monthly rate.</li>
+                <li>Assuming the same return every month in real markets.</li>
+                <li>Ignoring taxes, account fees, or contribution limits.</li>
+                <li>Comparing results without matching the contribution schedule.</li>
+            </ul>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="annuity-calculator.html">Annuity Calculator</a><a href="apr-calculator.html">APR Calculator</a><a href="average-calculator.html">Average Calculator</a></div>
+            <div class="zac-related-links"><a href="simple-interest.html">Simple Interest Calculator</a><a href="inflation-calculator.html">Inflation Calculator</a><a href="net-worth.html">Net Worth Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Compound Interest Calculator estimate?</h3><p class="zac-support-answer">It estimates a compound interest calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this compound interest calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this compound interest calculator estimate?</h3><p class="zac-support-answer">It estimates the ending balance of an account after monthly contributions and monthly compounding over the time period you enter.</p></div><div class="zac-support-faq-item"><h3>Does this include monthly contributions?</h3><p class="zac-support-answer">Yes. This page adds the monthly contribution each month before applying the monthly interest rate.</p></div><div class="zac-support-faq-item"><h3>Why is compound interest different from simple interest?</h3><p class="zac-support-answer">Compound interest earns returns on prior growth as well as the original principal, while simple interest is calculated only on the principal.</p></div><div class="zac-support-faq-item"><h3>Can I use this for savings or investing?</h3><p class="zac-support-answer">Yes. It works well for rough planning of savings, brokerage, or similar balances as long as you understand the return assumption is simplified.</p></div><div class="zac-support-faq-item"><h3>Why can the real account value differ from this estimate?</h3><p class="zac-support-answer">Real balances can differ because rates change, contributions are irregular, taxes and fees apply, or returns do not compound evenly every month.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides educational growth estimates only and is not investment, tax, or financial advice. Actual account performance can be materially different from a steady-rate projection.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>

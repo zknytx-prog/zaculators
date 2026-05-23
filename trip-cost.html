@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Trip Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a trip cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this trip cost calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Trip Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total trip cost by adding fuel cost and any extra trip expenses such as tolls or fees."}},{"@type":"Question","name":"How is fuel cost calculated for the trip?","acceptedAnswer":{"@type":"Answer","text":"Fuel cost is calculated from distance divided by fuel efficiency, then multiplied by the fuel price per gallon."}},{"@type":"Question","name":"What should I enter as extra costs?","acceptedAnswer":{"@type":"Answer","text":"Enter tolls, parking, ferry charges, or other direct out-of-pocket travel costs you expect for the trip."}},{"@type":"Question","name":"Does this calculator work for round trips?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you enter the full round-trip distance and the extra costs for the complete journey."}},{"@type":"Question","name":"When should I recalculate trip cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your route, fuel price, vehicle efficiency, or extra travel costs change."}}]}</script>
 </head>
 <body>
     <header>
@@ -66,28 +66,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Trip Cost Calculator estimates a quick result from the values you enter. It is useful for conversions, trip planning, and international estimate comparisons.</p>
+            <p class="subtle">This calculator estimates the direct cost of a trip by combining fuel expense with tolls and other extra travel costs. It is useful for budgeting a drive, comparing routes, or deciding how much to set aside before a trip.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">The calculator first estimates gallons used with <strong>distance / miles per gallon</strong>. It then multiplies gallons by the fuel price per gallon to get fuel cost. Total trip cost is the fuel cost plus the extra costs you enter.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">For a 300-mile trip at 28 MPG and fuel at $3.49 per gallon, estimated fuel use is about 10.71 gallons. Fuel cost is roughly $37.39. If you add $25 in tolls and extras, the total trip cost is about $62.39.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result is a practical cash-cost estimate for the trip you entered. It does not represent full vehicle ownership cost, but it does help with route decisions, shared travel budgeting, and quick travel cost comparisons.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
             <ol>
-                <li>Review the input labels to confirm the trip cost calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Entering one-way distance when you really want a round-trip estimate.</li>
+                <li>Using highway MPG for a route with mostly city driving or mountain terrain.</li>
+                <li>Forgetting tolls, parking, or ferry fees in the extra cost field.</li>
+                <li>Using an outdated fuel price from a different area.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="currency-converter.html">Currency Converter</a><a href="distance-converter.html">Distance Converter</a><a href="schengen-visa-days-calculator.html">Schengen Visa Days Calculator</a></div>
+            <div class="zac-related-links"><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="fuel-efficiency.html">Fuel Efficiency Calculator</a><a href="distance-converter.html">Distance Converter</a><a href="travel-budget-calculator-international.html">Travel Budget Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Trip Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates a trip cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this trip cost calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the Trip Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates total trip cost by adding fuel cost and any extra trip expenses such as tolls or fees.</p></div><div class="zac-support-faq-item"><h3>How is fuel cost calculated for the trip?</h3><p class="zac-support-answer">Fuel cost is calculated from distance divided by fuel efficiency, then multiplied by the fuel price per gallon.</p></div><div class="zac-support-faq-item"><h3>What should I enter as extra costs?</h3><p class="zac-support-answer">Enter tolls, parking, ferry charges, or other direct out-of-pocket travel costs you expect for the trip.</p></div><div class="zac-support-faq-item"><h3>Does this calculator work for round trips?</h3><p class="zac-support-answer">Yes, if you enter the full round-trip distance and the extra costs for the complete journey.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate trip cost?</h3><p class="zac-support-answer">Recalculate when your route, fuel price, vehicle efficiency, or extra travel costs change.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator gives a planning estimate only. Actual travel cost can vary with traffic, weather, idling, detours, driving speed, terrain, and real-world fuel economy.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>
