@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Exercise Duration Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a exercise duration calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this exercise duration calculator?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Exercise Duration Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many minutes of a selected activity may be needed to burn a target number of calories."}},{"@type":"Question","name":"How does the calculator estimate calories burned per minute?","acceptedAnswer":{"@type":"Answer","text":"It uses the selected MET value, your body weight, and a standard calories-burned formula to estimate energy use per minute."}},{"@type":"Question","name":"Why do different activities produce different times?","acceptedAnswer":{"@type":"Answer","text":"Higher-intensity activities have higher MET values, which means they burn more calories per minute and may require less time."}},{"@type":"Question","name":"Is this a medical or training prescription?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate and should not replace personalized medical or training guidance."}},{"@type":"Question","name":"When should I recalculate exercise duration?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your target calories, body weight, or activity choice changes."}}]}</script>
 </head>
 <body>
     <header>
@@ -73,28 +73,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Exercise Duration Calculator estimates a quick result from the values you enter. It is useful for general wellness tracking, planning, and educational reference only.</p>
+            <p class="subtle">This calculator estimates how long a workout may need to last to reach a target calorie burn. It uses your body weight and a selected activity level to turn a calorie goal into a rough time estimate.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">The calculator estimates calories burned per minute with the common MET-based formula: <strong>MET x 3.5 x body weight in kg / 200</strong>. It then divides your calorie target by that per-minute estimate to calculate workout duration in minutes.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If your goal is to burn 400 calories, you weigh 70 kg, and you select running with a MET value of 8, the calculator estimates calories burned per minute and then calculates the number of minutes needed to reach the 400-calorie goal.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result is a planning estimate, not a guarantee. It can help you compare activities or set a workout target, but real calorie burn varies with pace, fitness level, movement efficiency, and how closely your session matches the chosen intensity.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
             <ol>
-                <li>Review the input labels to confirm the exercise duration calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Choosing an activity intensity that does not match your real workout pace.</li>
+                <li>Assuming machine calorie numbers and formula estimates will match exactly.</li>
+                <li>Using a stale body-weight estimate after significant change.</li>
+                <li>Treating calorie burn as the only meaningful workout goal.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bac-calculator.html">BAC Calculator</a><a href="bmi.html">BMI</a><a href="bmi-percentile.html">BMI Percentile</a></div>
+            <div class="zac-related-links"><a href="calorie-burn.html">Calorie Burn Calculator</a><a href="tdee.html">TDEE Calculator</a><a href="protein-intake.html">Protein Intake Calculator</a><a href="max-heart-rate.html">Max Heart Rate Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Exercise Duration Calculator estimate?</h3><p class="zac-support-answer">It estimates a exercise duration calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this exercise duration calculator?</h3><p class="zac-support-answer">It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the Exercise Duration Calculator estimate?</h3><p class="zac-support-answer">It estimates how many minutes of a selected activity may be needed to burn a target number of calories.</p></div><div class="zac-support-faq-item"><h3>How does the calculator estimate calories burned per minute?</h3><p class="zac-support-answer">It uses the selected MET value, your body weight, and a standard calories-burned formula to estimate energy use per minute.</p></div><div class="zac-support-faq-item"><h3>Why do different activities produce different times?</h3><p class="zac-support-answer">Higher-intensity activities have higher MET values, which means they burn more calories per minute and may require less time.</p></div><div class="zac-support-faq-item"><h3>Is this a medical or training prescription?</h3><p class="zac-support-answer">No. It is a planning estimate and should not replace personalized medical or training guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate exercise duration?</h3><p class="zac-support-answer">Recalculate when your target calories, body weight, or activity choice changes.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment guidance. Consider qualified professional advice for personal health decisions.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator is for general fitness planning only. It is not medical advice, and actual calorie burn can differ from estimates because of intensity, conditioning, biomechanics, and device measurement differences.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>

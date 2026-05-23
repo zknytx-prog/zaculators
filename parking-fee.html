@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Parking Fee Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a parking fee calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this parking fee calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Parking Fee Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total parking cost using hours parked, an hourly rate, a daily maximum, and any entry fee."}},{"@type":"Question","name":"How does the daily maximum work?","acceptedAnswer":{"@type":"Answer","text":"The time-based charge is capped at the daily maximum before the entry fee is added."}},{"@type":"Question","name":"Does this calculator handle multi-day parking?","acceptedAnswer":{"@type":"Answer","text":"No. It is best for a single-day estimate based on one set of parking rates."}},{"@type":"Question","name":"Should I include taxes or validation discounts?","acceptedAnswer":{"@type":"Answer","text":"Only if you manually reflect them in the numbers you enter, since the calculator does not apply them automatically."}},{"@type":"Question","name":"When should I recalculate parking cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your parking duration or the lot's pricing rules change."}}]}</script>
 </head>
 <body>
     <header>
@@ -66,28 +66,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Parking Fee Calculator estimates a quick result from the values you enter. It is useful for pricing, margin, planning, and operating-cost comparisons.</p>
+            <p class="subtle">This calculator estimates a parking charge for one parking session. It combines time-based parking cost with an entry fee and applies a daily cap when the hourly total would otherwise go higher.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">The calculator first multiplies <strong>hours parked x hourly rate</strong>. It then compares that amount with the daily maximum and uses the lower value. Finally, it adds the entry fee to estimate total parking cost.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If you park for 6 hours at $4 per hour, the time-based cost is $24. With a daily maximum of $20, the calculator uses $20 instead. If the entry fee is $2, the total estimated parking cost becomes $22.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The result gives a quick estimate for what you may pay before any taxes, validation discounts, or special event pricing. It is useful for comparing parking options or deciding whether a full-day cap makes a longer stay more economical.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
             <ol>
-                <li>Review the input labels to confirm the parking fee calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Entering a daily maximum lower than the lot really charges.</li>
+                <li>Ignoring taxes, validation rules, or evening rates.</li>
+                <li>Using a single-day calculator for a multi-day stay.</li>
+                <li>Forgetting that some garages round time up to the next hour.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="birthday-budget.html">Birthday Budget</a><a href="break-even-sales.html">Break Even Sales</a><a href="budget-planner.html">Budget Planner</a></div>
+            <div class="zac-related-links"><a href="trip-cost.html">Trip Cost Calculator</a><a href="moving-cost.html">Moving Cost Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Parking Fee Calculator estimate?</h3><p class="zac-support-answer">It estimates a parking fee calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this parking fee calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does the Parking Fee Calculator estimate?</h3><p class="zac-support-answer">It estimates total parking cost using hours parked, an hourly rate, a daily maximum, and any entry fee.</p></div><div class="zac-support-faq-item"><h3>How does the daily maximum work?</h3><p class="zac-support-answer">The time-based charge is capped at the daily maximum before the entry fee is added.</p></div><div class="zac-support-faq-item"><h3>Does this calculator handle multi-day parking?</h3><p class="zac-support-answer">No. It is best for a single-day estimate based on one set of parking rates.</p></div><div class="zac-support-faq-item"><h3>Should I include taxes or validation discounts?</h3><p class="zac-support-answer">Only if you manually reflect them in the numbers you enter, since the calculator does not apply them automatically.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate parking cost?</h3><p class="zac-support-answer">Recalculate when your parking duration or the lot's pricing rules change.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. Actual costs, margins, fees, and outcomes can vary.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This estimate is for planning only. Actual parking charges can vary with grace periods, tax, event surcharges, validation programs, overnight rules, and rounding policies used by the facility.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>
