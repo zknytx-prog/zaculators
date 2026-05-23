@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the VO2 Max estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a vo2 max result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this vo2 max?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What test does this VO2 max calculator use?","acceptedAnswer":{"@type":"Answer","text":"This page uses the 12-minute Cooper test. You enter the total distance covered in 12 minutes, and the calculator applies the Cooper estimate for VO2 max."}},{"@type":"Question","name":"Is this the same as a lab VO2 max test?","acceptedAnswer":{"@type":"Answer","text":"No. A laboratory test with gas analysis is more precise. This calculator gives a field-test estimate that is useful for trend tracking and rough fitness comparisons."}},{"@type":"Question","name":"What if I enter distance in miles or kilometers?","acceptedAnswer":{"@type":"Answer","text":"Convert your distance to meters first. The formula on this page expects the 12-minute distance in meters."}},{"@type":"Question","name":"Why might my result differ from my watch or treadmill?","acceptedAnswer":{"@type":"Answer","text":"Different devices may use other formulas, heart-rate data, pace history, or proprietary adjustments. This page uses only the Cooper test distance formula."}},{"@type":"Question","name":"Who should avoid relying on this estimate alone?","acceptedAnswer":{"@type":"Answer","text":"Anyone making medical, return-to-sport, or high-stakes training decisions should not rely on this estimate alone. Use professional guidance when accuracy matters."}}]}</script>
 </head>
 <body>
     <header>
@@ -63,28 +63,48 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The VO2 Max estimates a quick result from the values you enter. It is useful for general wellness tracking, planning, and educational reference only.</p>
+            <p class="subtle">This calculator estimates your aerobic fitness level from a 12-minute Cooper test. After you enter the total distance you covered in 12 minutes, it returns an estimated VO2 max in <span aria-label="milliliters per kilogram per minute">ml/kg/min</span>, which is a common way to express how efficiently your body uses oxygen during exercise.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the vo2 max details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Complete a 12-minute run or walk test on a measured track or route.</li>
+                <li>Record the total distance covered in meters.</li>
+                <li>The calculator applies the Cooper test estimate: <strong>VO2 max = (distance in meters - 504.9) / 44.73</strong>.</li>
+                <li>The result is shown as an estimated aerobic capacity value in ml/kg/min.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p>If you cover <strong>2,400 meters</strong> in 12 minutes, the estimate is <strong>(2400 - 504.9) / 44.73 = 42.4 ml/kg/min</strong>. That gives you a quick benchmark you can compare against future tests completed under similar conditions.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">A higher result generally suggests stronger aerobic conditioning. The most useful way to use this number is for repeat tracking over time, such as comparing your result after a training block, rather than treating one estimate as a clinical measurement.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Entering miles or kilometers instead of meters.</li>
+                <li>Using a route distance that was not measured accurately.</li>
+                <li>Stopping early or pacing inconsistently during the 12-minute test.</li>
+                <li>Comparing results from very different weather, terrain, or effort levels.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bac-calculator.html">BAC Calculator</a><a href="bmi.html">BMI</a><a href="bmi-percentile.html">BMI Percentile</a></div>
+            <div class="zac-related-links"><a href="tdee.html">TDEE Calculator</a><a href="max-heart-rate.html">Max Heart Rate</a><a href="pace-calculator.html">Pace Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the VO2 Max estimate?</h3><p class="zac-support-answer">It estimates a vo2 max result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this vo2 max?</h3><p class="zac-support-answer">It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What test does this VO2 max calculator use?</h3><p class="zac-support-answer">This page uses the 12-minute Cooper test. You enter the total distance covered in 12 minutes, and the calculator applies the Cooper estimate for VO2 max.</p></div><div class="zac-support-faq-item"><h3>Is this the same as a lab VO2 max test?</h3><p class="zac-support-answer">No. A laboratory test with gas analysis is more precise. This calculator gives a field-test estimate that is useful for trend tracking and rough fitness comparisons.</p></div><div class="zac-support-faq-item"><h3>What if I enter distance in miles or kilometers?</h3><p class="zac-support-answer">Convert your distance to meters first. The formula on this page expects the 12-minute distance in meters.</p></div><div class="zac-support-faq-item"><h3>Why might my result differ from my watch or treadmill?</h3><p class="zac-support-answer">Different devices may use other formulas, heart-rate data, pace history, or proprietary adjustments. This page uses only the Cooper test distance formula.</p></div><div class="zac-support-faq-item"><h3>Who should avoid relying on this estimate alone?</h3><p class="zac-support-answer">Anyone making medical, return-to-sport, or high-stakes training decisions should not rely on this estimate alone. Use professional guidance when accuracy matters.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment guidance. Consider qualified professional advice for personal health decisions.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator provides a field-test estimate only. It does not account for lab testing, altitude, heat, pacing strategy, heart-rate response, injury status, or medical conditions. It is not medical advice, diagnosis, or clearance for training.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>
