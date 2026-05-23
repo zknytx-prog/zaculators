@@ -41,7 +41,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the VAT Reverse Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a vat reverse calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this vat reverse calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this VAT reverse calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the net amount before VAT by removing VAT from a gross amount using the VAT rate you enter."}},{"@type":"Question","name":"When is a reverse VAT calculation useful?","acceptedAnswer":{"@type":"Answer","text":"It is useful when you know the VAT-inclusive total and need to estimate the net amount and VAT portion."}},{"@type":"Question","name":"Does it work for any VAT rate?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as you enter the correct VAT rate for the transaction you are checking."}},{"@type":"Question","name":"Why can the extracted VAT differ from an invoice?","acceptedAnswer":{"@type":"Answer","text":"Invoice rounding, discounts, item-specific rules, and local tax treatment can make the final VAT amount differ."}},{"@type":"Question","name":"Where should I verify the rate and treatment?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official tax authority source that applies to the transaction before using the result for filing or invoicing."}}]}</script>
 </head>
 <body>
     <header>
@@ -64,28 +64,54 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The VAT Reverse Calculator estimates a quick result from the values you enter. It is useful for rough tax planning, withholding checks, and comparing assumptions before using official figures.</p>
+            <p class="subtle">This VAT reverse calculator estimates the net amount before VAT when you start with a gross VAT-inclusive price. It also shows the VAT portion extracted from that total.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the vat reverse calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
+            <h2>Formula / Method Used</h2>
+            <ul>
+                <li>Net amount = Gross amount / (1 + VAT rate)</li>
+                <li>VAT amount = Gross amount - Net amount</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If the gross amount is <strong>120.00</strong> and the VAT rate is <strong>20%</strong>, the estimated net amount is <strong>100.00</strong> and the extracted VAT is <strong>20.00</strong>.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>What the Result Means</h2>
+            <p class="subtle">The main result is the estimated net amount before VAT. The detail line shows how much VAT was contained within the gross amount you entered.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ul>
+                <li>Entering a net amount even though this page expects a gross amount.</li>
+                <li>Using the wrong VAT rate for the transaction.</li>
+                <li>Assuming every item in a mixed invoice uses the same VAT treatment.</li>
+                <li>Ignoring rounding differences between line-item and invoice-level VAT.</li>
+            </ul>
+        </section>
+        <section class="zac-support-card">
+            <h2>Official References</h2>
+            <p class="subtle">Verify current rates with the official tax authority source that applies to the transaction before using the result for filing or invoicing.</p>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bahrain-end-of-service-calculator.html">Bahrain End Of Service Calculator</a><a href="bangladesh-income-tax-calculator.html">Bangladesh Income Tax Calculator</a><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a></div>
+            <div class="zac-related-links"><a href="vat-calculator-uk.html">VAT Calculator UK</a><a href="vat-calculator-eu.html">VAT Calculator EU</a><a href="sales-tax-calculator.html">Sales Tax Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the VAT Reverse Calculator estimate?</h3><p class="zac-support-answer">It estimates a vat reverse calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this vat reverse calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this VAT reverse calculator estimate?</h3><p class="zac-support-answer">It estimates the net amount before VAT by removing VAT from a gross amount using the VAT rate you enter.</p></div>
+                <div class="zac-support-faq-item"><h3>When is a reverse VAT calculation useful?</h3><p class="zac-support-answer">It is useful when you know the VAT-inclusive total and need to estimate the net amount and VAT portion.</p></div>
+                <div class="zac-support-faq-item"><h3>Does it work for any VAT rate?</h3><p class="zac-support-answer">Yes, as long as you enter the correct VAT rate for the transaction you are checking.</p></div>
+                <div class="zac-support-faq-item"><h3>Why can the extracted VAT differ from an invoice?</h3><p class="zac-support-answer">Invoice rounding, discounts, item-specific rules, and local tax treatment can make the final VAT amount differ.</p></div>
+                <div class="zac-support-faq-item"><h3>Where should I verify the rate and treatment?</h3><p class="zac-support-answer">Verify current rates with the official tax authority source that applies to the transaction before using the result for filing or invoicing.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides tax planning estimates only and is not tax, legal, or accounting advice. Rules, rates, bands, deductions, and filing obligations can change by location and situation.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides VAT estimates only and is not tax, legal, or accounting advice. Final VAT treatment depends on current rules, item category, and invoice structure.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
         </section>
 
     </main>
