@@ -40,7 +40,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Vehicle Depreciation Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a vehicle depreciation calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this vehicle depreciation calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this vehicle depreciation calculator work?","acceptedAnswer":{"@type":"Answer","text":"It applies the annual depreciation rate to the vehicle price year after year using a declining-balance method."}},{"@type":"Question","name":"What depreciation rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Use a rate that fits the vehicle type, market, mileage expectations, and ownership period you want to model."}},{"@type":"Question","name":"Why can actual resale value differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"Mileage, condition, accidents, maintenance history, trim, market demand, and local pricing can all move resale value away from a simple model."}},{"@type":"Question","name":"Does this include loan payoff or negative equity?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates future vehicle value only, not loan balance, payoff amount, or trade-in fees."}},{"@type":"Question","name":"Can I compare several ownership scenarios?","acceptedAnswer":{"@type":"Answer","text":"Yes. Recalculate with different rates and years to compare optimistic and conservative value projections."}}]}</script>
 </head>
 <body>
     <header>
@@ -63,28 +63,44 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Vehicle Depreciation Calculator estimates a quick result from the values you enter. It is useful for comparing driving, fuel, financing, and vehicle-cost assumptions.</p>
+            <p class="subtle">This calculator estimates how much a vehicle may be worth after a set number of years using a fixed annual depreciation rate. It is useful for trade-in planning, ownership comparisons, and budgeting for replacement timing.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the vehicle depreciation calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Enter the purchase price.</li>
+                <li>Enter the annual depreciation rate as a percentage.</li>
+                <li>Enter the number of years you want to project.</li>
+                <li>The calculator uses <strong>future value = purchase price x (1 - depreciation rate)^years</strong>.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p>If a vehicle costs <strong>$32,000</strong>, depreciates at <strong>15%</strong> per year, and you keep it for <strong>5 years</strong>, the projected value is about <strong>$14,183</strong>. That implies about <strong>$17,817</strong> in estimated depreciation over the period.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Using a depreciation rate that is too low for the vehicle category.</li>
+                <li>Assuming the same rate applies equally every year in real life.</li>
+                <li>Ignoring mileage, accident history, and maintenance condition.</li>
+                <li>Confusing projected value with trade-in cash after fees or payoff.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="ev-charging-cost.html">Ev Charging Cost</a><a href="fuel-cost.html">Fuel Cost</a><a href="fuel-efficiency.html">Fuel Efficiency</a></div>
+            <div class="zac-related-links"><a href="vehicle-loan.html">Vehicle Loan Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Vehicle Depreciation Calculator estimate?</h3><p class="zac-support-answer">It estimates a vehicle depreciation calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this vehicle depreciation calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>How does this vehicle depreciation calculator work?</h3><p class="zac-support-answer">It applies the annual depreciation rate to the vehicle price year after year using a declining-balance method.</p></div><div class="zac-support-faq-item"><h3>What depreciation rate should I use?</h3><p class="zac-support-answer">Use a rate that fits the vehicle type, market, mileage expectations, and ownership period you want to model.</p></div><div class="zac-support-faq-item"><h3>Why can actual resale value differ from this estimate?</h3><p class="zac-support-answer">Mileage, condition, accidents, maintenance history, trim, market demand, and local pricing can all move resale value away from a simple model.</p></div><div class="zac-support-faq-item"><h3>Does this include loan payoff or negative equity?</h3><p class="zac-support-answer">No. This page estimates future vehicle value only, not loan balance, payoff amount, or trade-in fees.</p></div><div class="zac-support-faq-item"><h3>Can I compare several ownership scenarios?</h3><p class="zac-support-answer">Yes. Recalculate with different rates and years to compare optimistic and conservative value projections.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator uses a simplified depreciation model. It does not include market shocks, maintenance history, mileage, financing, taxes, or dealer trade-in adjustments that can materially affect real resale value.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
         </section>
 
     </main>
