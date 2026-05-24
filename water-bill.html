@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Water Bill Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a water bill calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this water bill calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this water bill calculator work?","acceptedAnswer":{"@type":"Answer","text":"It multiplies gallons used by the rate per 1,000 gallons, then adds the base fee and sewer fee you enter."}},{"@type":"Question","name":"What if my utility uses cubic feet instead of gallons?","acceptedAnswer":{"@type":"Answer","text":"Convert your usage to gallons or use a bill figure already expressed in gallons before entering the number here."}},{"@type":"Question","name":"Should I include sewer charges?","acceptedAnswer":{"@type":"Answer","text":"Yes, if your bill includes a separate sewer charge and you want a closer estimate of the full amount due."}},{"@type":"Question","name":"Why might my actual bill be higher?","acceptedAnswer":{"@type":"Answer","text":"Actual bills may include tiered pricing, taxes, stormwater fees, service fees, or minimum charges not captured here."}},{"@type":"Question","name":"Can this help track conservation savings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter lower usage scenarios to estimate how reduced water use could affect the bill."}}]}</script>
 </head>
 <body>
     <header>
@@ -66,28 +66,44 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Water Bill Calculator estimates a quick result from the values you enter. It is useful for everyday planning, household budgeting, and general reference estimates.</p>
+            <p class="subtle">This calculator estimates a water bill from usage in gallons, a rate per 1,000 gallons, and fixed charges like base and sewer fees. It is useful for household budgeting and comparing usage scenarios.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the water bill calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Enter gallons used for the billing period.</li>
+                <li>Enter the rate charged per 1,000 gallons.</li>
+                <li>Enter any base fee and sewer fee.</li>
+                <li>The calculator estimates <strong>usage cost = (gallons / 1,000) x rate</strong>, then adds fixed fees.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p>If you use <strong>6,000 gallons</strong>, the rate is <strong>$7.50</strong> per 1,000 gallons, the base fee is <strong>$18</strong>, and the sewer fee is <strong>$12</strong>, the usage cost is <strong>$45</strong> and the total estimate is <strong>$75</strong>.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Entering the rate as a per-gallon number instead of per 1,000 gallons.</li>
+                <li>Leaving out sewer or service charges.</li>
+                <li>Using estimated usage instead of the meter-based bill figure.</li>
+                <li>Assuming the calculator includes all city or district surcharges.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="age-difference.html">Age Difference</a><a href="anniversary-calculator.html">Anniversary Calculator</a><a href="appliance-cost.html">Appliance Cost</a></div>
+            <div class="zac-related-links"><a href="utility-cost.html">Utility Cost Calculator</a><a href="energy-cost.html">Energy Cost Calculator</a><a href="cost-of-living-calculator.html">Cost Of Living Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Water Bill Calculator estimate?</h3><p class="zac-support-answer">It estimates a water bill calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this water bill calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>How does this water bill calculator work?</h3><p class="zac-support-answer">It multiplies gallons used by the rate per 1,000 gallons, then adds the base fee and sewer fee you enter.</p></div><div class="zac-support-faq-item"><h3>What if my utility uses cubic feet instead of gallons?</h3><p class="zac-support-answer">Convert your usage to gallons or use a bill figure already expressed in gallons before entering the number here.</p></div><div class="zac-support-faq-item"><h3>Should I include sewer charges?</h3><p class="zac-support-answer">Yes, if your bill includes a separate sewer charge and you want a closer estimate of the full amount due.</p></div><div class="zac-support-faq-item"><h3>Why might my actual bill be higher?</h3><p class="zac-support-answer">Actual bills may include tiered pricing, taxes, stormwater fees, service fees, or minimum charges not captured here.</p></div><div class="zac-support-faq-item"><h3>Can this help track conservation savings?</h3><p class="zac-support-answer">Yes. Enter lower usage scenarios to estimate how reduced water use could affect the bill.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator is a simplified estimate and does not include every municipal fee, tax, tiered rate, drought surcharge, or service adjustment that may appear on an actual bill.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>

@@ -167,7 +167,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Tire Pressure Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a tire pressure calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this tire pressure calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the door sticker PSI the correct number?","acceptedAnswer":{"@type":"Answer","text":"Usually yes. That recommendation is specific to your vehicle and load conditions."}},{"@type":"Question","name":"Should I adjust tire pressure when tires are hot?","acceptedAnswer":{"@type":"Answer","text":"No. Tire pressure should normally be checked when tires are cold for the most accurate reading."}},{"@type":"Question","name":"How much does temperature matter?","acceptedAnswer":{"@type":"Answer","text":"A rough rule is about 1 PSI for every 10°F change, which is what this estimate uses."}},{"@type":"Question","name":"Does overinflation hurt ride quality?","acceptedAnswer":{"@type":"Answer","text":"It can make the ride harsher and may affect tire wear."}},{"@type":"Question","name":"Can underinflation reduce MPG?","acceptedAnswer":{"@type":"Answer","text":"Yes. It increases rolling resistance and can hurt both efficiency and tire life."}},{"@type":"Question","name":"Should front and rear tires match?","acceptedAnswer":{"@type":"Answer","text":"Not always. Follow the exact vehicle recommendation because front and rear may differ."}}]}</script>
 </head>
 <body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
@@ -233,28 +233,44 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Tire Pressure Calculator estimates a quick result from the values you enter. It is useful for comparing driving, fuel, financing, and vehicle-cost assumptions.</p>
+            <p class="subtle">This calculator estimates how temperature changes may affect tire pressure relative to the door-sticker PSI you enter. It is a quick seasonal check for cold-weather or hot-weather pressure shifts.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the tire pressure calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Enter the recommended cold tire pressure from the vehicle door sticker.</li>
+                <li>Enter the current temperature and a reference temperature.</li>
+                <li>The page uses a rule of thumb of about <strong>1 PSI for every 10°F</strong> change from the reference point.</li>
+                <li>It adds or subtracts that estimate from the sticker PSI.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p>If the door sticker says <strong>35 PSI</strong>, the reference temperature is <strong>70°F</strong>, and the current temperature is <strong>40°F</strong>, the estimate is about <strong>32 PSI</strong>, or roughly <strong>3 PSI lower</strong> than the baseline.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Using the tire sidewall maximum instead of the door-sticker recommendation.</li>
+                <li>Checking or adjusting pressure when the tires are hot.</li>
+                <li>Assuming the estimate replaces a real pressure gauge.</li>
+                <li>Expecting front and rear tire recommendations to always match.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="ev-charging-cost.html">Ev Charging Cost</a><a href="fuel-cost.html">Fuel Cost</a><a href="fuel-efficiency.html">Fuel Efficiency</a></div>
+            <div class="zac-related-links"><a href="fuel-efficiency.html">Fuel Efficiency Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Tire Pressure Calculator estimate?</h3><p class="zac-support-answer">It estimates a tire pressure calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this tire pressure calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>Is the door sticker PSI the correct number?</h3><p class="zac-support-answer">Usually yes. That recommendation is specific to your vehicle and load conditions.</p></div><div class="zac-support-faq-item"><h3>Should I adjust tire pressure when tires are hot?</h3><p class="zac-support-answer">No. Tire pressure should normally be checked when tires are cold for the most accurate reading.</p></div><div class="zac-support-faq-item"><h3>How much does temperature matter?</h3><p class="zac-support-answer">A rough rule is about 1 PSI for every 10°F change, which is what this estimate uses.</p></div><div class="zac-support-faq-item"><h3>Does overinflation hurt ride quality?</h3><p class="zac-support-answer">It can make the ride harsher and may affect tire wear.</p></div><div class="zac-support-faq-item"><h3>Can underinflation reduce MPG?</h3><p class="zac-support-answer">Yes. It increases rolling resistance and can hurt both efficiency and tire life.</p></div><div class="zac-support-faq-item"><h3>Should front and rear tires match?</h3><p class="zac-support-answer">Not always. Follow the exact vehicle recommendation because front and rear may differ.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator uses a rule-of-thumb estimate and does not replace checking tire pressure with an accurate gauge. Always follow the vehicle manufacturer's recommendations for safety-critical adjustments.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>

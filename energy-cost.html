@@ -42,7 +42,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Energy Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a energy cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this energy cost calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this energy cost calculator work?","acceptedAnswer":{"@type":"Answer","text":"It converts appliance watts to kilowatt-hours based on daily use, then multiplies the monthly kWh by your electricity rate."}},{"@type":"Question","name":"What electricity rate should I enter?","acceptedAnswer":{"@type":"Answer","text":"Use the effective rate from your utility bill if possible, including the rate structure that applies to the appliance usage you are estimating."}},{"@type":"Question","name":"Does this include taxes or fixed utility fees?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates usage cost only and does not add taxes, delivery fees, or fixed monthly charges."}},{"@type":"Question","name":"Can I use this for any appliance?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as you know the appliance wattage and have a reasonable estimate of hours used per day and days used per month."}},{"@type":"Question","name":"Why might the result differ from my utility bill?","acceptedAnswer":{"@type":"Answer","text":"Real bills may include tiered pricing, time-of-use rates, taxes, fees, and differences between nameplate wattage and actual draw."}}]}</script>
 </head>
 <body>
     <header>
@@ -66,28 +66,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Energy Cost Calculator estimates a quick result from the values you enter. It is useful for everyday planning, household budgeting, and general reference estimates.</p>
+            <p class="subtle">This calculator estimates the monthly electricity cost of running one appliance based on its wattage, how long you use it each day, how many days you use it in a month, and your electricity rate.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the energy cost calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Convert appliance watts to kilowatts by dividing by 1,000.</li>
+                <li>Multiply by hours used per day and days used per month to estimate monthly kWh.</li>
+                <li>Multiply monthly kWh by your rate per kWh.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p>A <strong>1,500-watt</strong> heater used for <strong>4 hours per day</strong> over <strong>30 days</strong> uses about <strong>180 kWh</strong> in a month. At <strong>$0.15 per kWh</strong>, the estimated usage cost is <strong>$27.00</strong>.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Entering volts or amps instead of watts.</li>
+                <li>Ignoring the difference between actual usage hours and maximum possible hours.</li>
+                <li>Using an outdated utility rate.</li>
+                <li>Expecting this estimate to include taxes and fixed charges.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="age-difference.html">Age Difference</a><a href="anniversary-calculator.html">Anniversary Calculator</a><a href="appliance-cost.html">Appliance Cost</a></div>
+            <div class="zac-related-links"><a href="appliance-cost.html">Appliance Cost</a><a href="utility-cost.html">Utility Cost Calculator</a><a href="water-bill.html">Water Bill Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Energy Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates a energy cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this energy cost calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>How does this energy cost calculator work?</h3><p class="zac-support-answer">It converts appliance watts to kilowatt-hours based on daily use, then multiplies the monthly kWh by your electricity rate.</p></div><div class="zac-support-faq-item"><h3>What electricity rate should I enter?</h3><p class="zac-support-answer">Use the effective rate from your utility bill if possible, including the rate structure that applies to the appliance usage you are estimating.</p></div><div class="zac-support-faq-item"><h3>Does this include taxes or fixed utility fees?</h3><p class="zac-support-answer">No. This page estimates usage cost only and does not add taxes, delivery fees, or fixed monthly charges.</p></div><div class="zac-support-faq-item"><h3>Can I use this for any appliance?</h3><p class="zac-support-answer">Yes, as long as you know the appliance wattage and have a reasonable estimate of hours used per day and days used per month.</p></div><div class="zac-support-faq-item"><h3>Why might the result differ from my utility bill?</h3><p class="zac-support-answer">Real bills may include tiered pricing, time-of-use rates, taxes, fees, and differences between nameplate wattage and actual draw.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator estimates appliance energy usage only. It does not model standby power, demand charges, taxes, delivery fees, tiered utility pricing, or real-world appliance cycling behavior.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>

@@ -167,7 +167,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the EV Charging Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a ev charging cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this ev charging cost calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this include charging losses?","acceptedAnswer":{"@type":"Answer","text":"No. Real charging can use a bit more electricity due to conversion losses."}},{"@type":"Question","name":"Can I use public charger pricing?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as you enter the effective price per kWh."}},{"@type":"Question","name":"Why compare full charge cost?","acceptedAnswer":{"@type":"Answer","text":"It gives a quick benchmark even if you usually charge only part of the battery."}},{"@type":"Question","name":"Does battery size equal usable battery?","acceptedAnswer":{"@type":"Answer","text":"Not always. Some EVs reserve part of the pack, so usable capacity may be lower."}},{"@type":"Question","name":"Can time-of-use rates lower cost?","acceptedAnswer":{"@type":"Answer","text":"Yes. Overnight charging can be substantially cheaper in some areas."}},{"@type":"Question","name":"Should I charge to 100% every day?","acceptedAnswer":{"@type":"Answer","text":"That depends on the EV and your needs. Many owners use lower daily charge targets."}}]}</script>
 </head>
 <body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
@@ -233,28 +233,45 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The EV Charging Cost Calculator estimates a quick result from the values you enter. It is useful for comparing driving, fuel, financing, and vehicle-cost assumptions.</p>
+            <p class="subtle">This calculator estimates the electricity cost of an EV charge session from battery size, electricity price per kWh, and the percentage of charge needed. It also shows an estimated cost for a full 100% battery charge.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
             <ol>
-                <li>Review the input labels to confirm the ev charging cost calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Enter total battery size in kWh.</li>
+                <li>Enter electricity price per kWh.</li>
+                <li>Enter the percentage of the battery you want to charge.</li>
+                <li>The page calculates <strong>energy needed = battery size x charge percentage</strong>.</li>
+                <li>It then multiplies energy needed by price per kWh to estimate session cost.</li>
+            </ol>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p>If your battery is <strong>75 kWh</strong>, electricity costs <strong>$0.16</strong> per kWh, and you need a <strong>60%</strong> charge, the energy needed is about <strong>45 kWh</strong> and the estimated session cost is about <strong>$7.20</strong>.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
+            <ol>
+                <li>Using the wrong battery size for the vehicle.</li>
+                <li>Ignoring charging losses when comparing with real bills.</li>
+                <li>Using home rates when estimating public fast charging.</li>
+                <li>Assuming the battery's full advertised size is always usable.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="fuel-cost.html">Fuel Cost</a><a href="fuel-efficiency.html">Fuel Efficiency</a><a href="tire-pressure.html">Tire Pressure</a></div>
+            <div class="zac-related-links"><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="fuel-efficiency.html">Fuel Efficiency Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the EV Charging Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates a ev charging cost calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this ev charging cost calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>Does this include charging losses?</h3><p class="zac-support-answer">No. Real charging can use a bit more electricity due to conversion losses.</p></div><div class="zac-support-faq-item"><h3>Can I use public charger pricing?</h3><p class="zac-support-answer">Yes, as long as you enter the effective price per kWh.</p></div><div class="zac-support-faq-item"><h3>Why compare full charge cost?</h3><p class="zac-support-answer">It gives a quick benchmark even if you usually charge only part of the battery.</p></div><div class="zac-support-faq-item"><h3>Does battery size equal usable battery?</h3><p class="zac-support-answer">Not always. Some EVs reserve part of the pack, so usable capacity may be lower.</p></div><div class="zac-support-faq-item"><h3>Can time-of-use rates lower cost?</h3><p class="zac-support-answer">Yes. Overnight charging can be substantially cheaper in some areas.</p></div><div class="zac-support-faq-item"><h3>Should I charge to 100% every day?</h3><p class="zac-support-answer">That depends on the EV and your needs. Many owners use lower daily charge targets.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <h2>Limitations / Disclaimer</h2>
+            <p class="subtle">This calculator is a planning estimate only. It does not model charging losses, battery reserve buffers, idle fees, membership discounts, taxes, or session fees that may apply at public chargers.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
         </section>
 
     </main>
