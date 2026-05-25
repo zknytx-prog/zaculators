@@ -1,46 +1,238 @@
-﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem;color:var(--primary,#2563eb)}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem}input{width:100%;padding:0.75rem;border:1px solid #e2e8f0;border-radius:6px;margin-bottom:1rem;font-size:1rem}button{width:100%;padding:0.75rem;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:1rem}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}footer{text-align:center;color:#64748b;margin-top:3rem;padding:2rem;border-top:1px solid #e2e8f0}
-        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
-        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
-        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
-        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
-        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
-        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
-        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
-        .zac-related-links a:hover { text-decoration:underline; }
-        .zac-support-faq { display:grid; gap:1rem; }
-        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
-        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
-        .zac-support-answer { margin-top:0.4rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expense Tracker Calculator | Zaculators</title>
+<meta name="description" content="Estimate total monthly expenses, remaining income, and expense ratio using common budget categories.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff}
+header{padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem;color:var(--muted)}
+h1,h2,h3{color:var(--primary)}
+main{max-width:980px;margin:0 auto;padding:2rem}
+.section,.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}
+.intro,.answer{color:var(--muted);line-height:1.7}
+.intro{margin-top:.75rem}
+.grid,.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+label{display:block;font-weight:600;margin-bottom:.45rem}
+input,button{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:8px;font-size:1rem}
+button{background:var(--primary);color:#fff;border:none;font-weight:700;cursor:pointer}
+.results{display:none;margin-top:1.5rem;background:var(--success-bg);border-left:4px solid #16a34a;border-radius:8px;padding:1.5rem}
+.results.active{display:block}
+.metric{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:1rem}
+.metric-label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.metric-value{font-size:1.15rem;font-weight:700;color:var(--success)}
+ul,ol{padding-left:1.25rem;line-height:1.8}
+.faq-item{padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.related-links a{display:inline-flex;align-items:center;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--primary);background:#f8fbff}
+.disclaimer{background:var(--danger-bg);border-left:4px solid #dc2626;color:var(--danger)}
+.updated{margin-top:1rem;color:var(--muted)}
+@media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this expense tracker calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates total monthly expenses, remaining income, and the share of income going to expenses based on the categories you enter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the expense-to-income percentage mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It shows what percentage of your monthly income is being used by the expenses entered on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a simple budget status?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This page labels the budget as comfortable, tight, or over budget based on the remaining income estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these budget results exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Results are estimates only and depend on the categories included and the values you enter."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Expense Tracker Calculator</h1>
+</header>
+<main>
+  <section class="section">
+    <p class="intro">Estimate your total monthly expenses and compare them with your monthly income. This page helps you see how much income remains after common expense categories and whether the current budget looks comfortable, tight, or over budget.</p>
+    <form id="expense-form">
+      <div class="grid">
+        <div>
+          <label for="monthly-income">Monthly Income</label>
+          <input type="number" id="monthly-income" min="0" step="0.01" placeholder="e.g. 5200" required>
+        </div>
+        <div>
+          <label for="housing">Housing</label>
+          <input type="number" id="housing" min="0" step="0.01" placeholder="e.g. 1600" required>
+        </div>
+        <div>
+          <label for="food">Food</label>
+          <input type="number" id="food" min="0" step="0.01" placeholder="e.g. 550" required>
+        </div>
+        <div>
+          <label for="transportation">Transportation</label>
+          <input type="number" id="transportation" min="0" step="0.01" placeholder="e.g. 420" required>
+        </div>
+        <div>
+          <label for="debt">Debt Payments</label>
+          <input type="number" id="debt" min="0" step="0.01" placeholder="e.g. 350" required>
+        </div>
+        <div>
+          <label for="utilities">Utilities</label>
+          <input type="number" id="utilities" min="0" step="0.01" placeholder="e.g. 240" required>
+        </div>
+        <div>
+          <label for="other-expenses">Other Expenses</label>
+          <input type="number" id="other-expenses" min="0" step="0.01" placeholder="e.g. 600" required>
+        </div>
+      </div>
+      <button type="submit">Track Expenses</button>
+    </form>
+    <div id="expense-results" class="results" aria-live="polite">
+      <div class="results-grid">
+        <div class="metric"><span class="metric-label">Total Monthly Expenses</span><span id="total-expenses" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Remaining Income</span><span id="remaining-income" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Expense-to-Income Percentage</span><span id="expense-ratio" class="metric-value">0.00%</span></div>
+        <div class="metric"><span class="metric-label">Simple Budget Status</span><span id="budget-status" class="metric-value">Comfortable</span></div>
+      </div>
+      <p id="expense-note" class="intro"></p>
+    </div>
+  </section>
 
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Expense Tracker estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a expense tracker result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this expense tracker?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Calculator</h1></header><main><section class="section"><form id="f"><input type="number" placeholder="Value" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result: Calculated</div></div></section>
+  <section class="support-card">
+    <h2>What This Calculator Estimates</h2>
+    <p class="intro">This calculator estimates how your main monthly budget categories compare with monthly income. It is useful for a quick budget check, especially when you want to see whether spending is leaving room for savings, emergencies, or debt reduction.</p>
+  </section>
 
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Expense Tracker estimates a quick result from the values you enter. It is useful for pricing, margin, planning, and operating-cost comparisons.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the expense tracker details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="birthday-budget.html">Birthday Budget</a><a href="break-even-sales.html">Break Even Sales</a><a href="budget-planner.html">Budget Planner</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Expense Tracker estimate?</h3><p class="zac-support-answer">It estimates a expense tracker result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this expense tracker?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. Actual costs, margins, fees, and outcomes can vary.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+  <section class="support-card">
+    <h2>Formula / Method Used</h2>
+    <ul>
+      <li><strong>Total expenses = sum of all expense categories entered</strong></li>
+      <li><strong>Remaining income = monthly income - total expenses</strong></li>
+      <li><strong>Expense-to-income percentage = total expenses / monthly income x 100</strong></li>
+    </ul>
+    <p class="intro">The budget status is a simple label based on the remaining income estimate.</p>
+  </section>
 
-    </main><footer>Precision Finance Â© 2025</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+  <section class="support-card">
+    <h2>Worked Example</h2>
+    <p class="intro">If monthly income is $5,200 and your housing, food, transportation, debt, utilities, and other expenses total $3,760, then remaining income is $1,440. The calculator also shows what share of your income is being consumed by those expenses.</p>
+  </section>
 
+  <section class="support-card">
+    <h2>What the Result Means</h2>
+    <p class="intro">Total monthly expenses shows the combined spending across the categories entered. Remaining income shows how much cash is left for savings, irregular costs, or extra debt payments. The expense-to-income percentage helps you see how much of your pay is already committed.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Leaving out recurring but less obvious monthly costs.</li>
+      <li>Using gross income when the budget is based on take-home pay.</li>
+      <li>Forgetting seasonal or irregular expenses.</li>
+      <li>Assuming one month will represent the entire year.</li>
+    </ul>
+  </section>
+
+  <section class="support-card disclaimer">
+    <h2>Limitations / Disclaimer</h2>
+    <p class="intro">This calculator provides budgeting estimates only and is not financial, tax, or accounting advice. Actual spending patterns can change over time, and categories not entered on the page will not appear in the result. Results are estimates.</p>
+    <p class="updated">Last updated: May 2026</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Related Calculators</h2>
+    <div class="related-links">
+      <a href="budget-planner.html">Budget Planner</a>
+      <a href="vacation-budget.html">Vacation Budget Calculator</a>
+      <a href="birthday-budget.html">Birthday Budget Calculator</a>
+    </div>
+  </section>
+
+  <section class="support-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What does this expense tracker calculator estimate?</h3>
+      <p class="answer">It estimates total monthly expenses, remaining income, and the share of income going to expenses based on the categories you enter.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does the expense-to-income percentage mean?</h3>
+      <p class="answer">It shows what percentage of your monthly income is being used by the expenses entered on the page.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is a simple budget status?</h3>
+      <p class="answer">This page labels the budget as comfortable, tight, or over budget based on the remaining income estimate.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are these budget results exact?</h3>
+      <p class="answer">No. Results are estimates only and depend on the categories included and the values you enter.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+</footer>
+<script>
+function formatCurrency(value) {
+  return '$' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+document.getElementById('expense-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var monthlyIncome = parseFloat(document.getElementById('monthly-income').value);
+  var housing = parseFloat(document.getElementById('housing').value);
+  var food = parseFloat(document.getElementById('food').value);
+  var transportation = parseFloat(document.getElementById('transportation').value);
+  var debt = parseFloat(document.getElementById('debt').value);
+  var utilities = parseFloat(document.getElementById('utilities').value);
+  var otherExpenses = parseFloat(document.getElementById('other-expenses').value);
+  if (!isFinite(monthlyIncome) || !isFinite(housing) || !isFinite(food) || !isFinite(transportation) || !isFinite(debt) || !isFinite(utilities) || !isFinite(otherExpenses) || monthlyIncome <= 0) {
+    return;
+  }
+  var totalExpenses = housing + food + transportation + debt + utilities + otherExpenses;
+  var remainingIncome = monthlyIncome - totalExpenses;
+  var expenseRatio = (totalExpenses / monthlyIncome) * 100;
+  var status = 'Comfortable';
+  if (remainingIncome < 0) {
+    status = 'Over Budget';
+  } else if (expenseRatio >= 90) {
+    status = 'Tight';
+  }
+  document.getElementById('total-expenses').textContent = formatCurrency(totalExpenses);
+  document.getElementById('remaining-income').textContent = formatCurrency(remainingIncome);
+  document.getElementById('expense-ratio').textContent = expenseRatio.toFixed(2) + '%';
+  document.getElementById('budget-status').textContent = status;
+  document.getElementById('expense-note').textContent = 'This estimate reflects only the categories entered on the page. Add separate savings, irregular bills, and annual expenses to build a fuller monthly budget.';
+  document.getElementById('expense-results').classList.add('active');
+});
+</script>
+</body>
+</html>

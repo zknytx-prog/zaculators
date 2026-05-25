@@ -1,46 +1,207 @@
-﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem;color:var(--primary,#2563eb)}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem}input{width:100%;padding:0.75rem;border:1px solid #e2e8f0;border-radius:6px;margin-bottom:1rem;font-size:1rem}button{width:100%;padding:0.75rem;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:1rem}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}footer{text-align:center;color:#64748b;margin-top:3rem;padding:2rem;border-top:1px solid #e2e8f0}
-        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
-        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
-        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
-        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
-        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
-        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
-        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
-        .zac-related-links a:hover { text-decoration:underline; }
-        .zac-support-faq { display:grid; gap:1rem; }
-        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
-        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
-        .zac-support-answer { margin-top:0.4rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade Calculator | Zaculators</title>
+<meta name="description" content="Estimate the final exam grade needed to reach your desired course grade.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff}
+header{padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem;color:var(--muted)}
+h1,h2,h3{color:var(--primary)}
+main{max-width:960px;margin:0 auto;padding:2rem}
+.section,.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}
+.intro,.answer{color:var(--muted);line-height:1.7}
+.intro{margin-top:.75rem}
+.grid,.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+label{display:block;font-weight:600;margin-bottom:.45rem}
+input,button{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:8px;font-size:1rem}
+button{background:var(--primary);color:#fff;border:none;font-weight:700;cursor:pointer}
+.results{display:none;margin-top:1.5rem;background:var(--success-bg);border-left:4px solid #16a34a;border-radius:8px;padding:1.5rem}
+.results.active{display:block}
+.metric{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:1rem}
+.metric-label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.metric-value{font-size:1.2rem;font-weight:700;color:var(--success)}
+ul,ol{padding-left:1.25rem;line-height:1.8}
+.faq-item{padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.related-links a{display:inline-flex;align-items:center;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--primary);background:#f8fbff}
+.disclaimer{background:var(--danger-bg);border-left:4px solid #dc2626;color:var(--danger)}
+.updated{margin-top:1rem;color:var(--muted)}
+@media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this grade calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates the final exam grade needed to reach a desired final course grade based on your current grade and final exam weight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the needed final exam grade is over 100 percent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That means the target grade is not achievable under the assumptions entered unless extra credit or a different weighting method changes the outcome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the needed final exam grade is zero or less?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That means your current course standing is already enough to reach the desired final grade under the weighting entered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are grade results exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Results are estimates based on the percentages you enter. Different school grading rules, rounding, and extra credit can change the final outcome."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Grade Calculator</h1>
+</header>
+<main>
+  <section class="section">
+    <p class="intro">Estimate the final exam grade needed to reach your desired course grade. This calculator is useful when your course uses a weighted final exam and you want a quick planning estimate before the term ends.</p>
+    <form id="grade-form">
+      <div class="grid">
+        <div>
+          <label for="current-grade">Current Grade Percentage</label>
+          <input type="number" id="current-grade" min="0" max="100" step="0.01" placeholder="e.g. 84.5" required>
+        </div>
+        <div>
+          <label for="final-weight">Final Exam Weight Percentage</label>
+          <input type="number" id="final-weight" min="0.01" max="100" step="0.01" placeholder="e.g. 25" required>
+        </div>
+        <div>
+          <label for="desired-grade">Desired Final Course Grade</label>
+          <input type="number" id="desired-grade" min="0" max="100" step="0.01" placeholder="e.g. 90" required>
+        </div>
+      </div>
+      <button type="submit">Calculate Grade Needed</button>
+    </form>
+    <div id="grade-results" class="results" aria-live="polite">
+      <div class="results-grid">
+        <div class="metric"><span class="metric-label">Grade Needed on Final Exam</span><span id="needed-grade" class="metric-value">0.00%</span></div>
+      </div>
+      <p id="grade-note" class="intro"></p>
+    </div>
+  </section>
 
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Grade Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a grade calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this grade calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Calculator</h1></header><main><section class="section"><form id="f"><input type="number" placeholder="Value" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result: Calculated</div></div></section>
+  <section class="support-card">
+    <h2>What This Calculator Estimates</h2>
+    <p class="intro">This calculator estimates the final exam score needed to reach a target course grade. It assumes your current grade represents the non-final portion of the course and that the final exam weight is applied once to determine the final average. Results are estimates only.</p>
+  </section>
 
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Grade Calculator estimates a quick result from the values you enter. It is useful for budgeting, course planning, and comparing education-related scenarios.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the grade calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="course-cost-tracker.html">Course Cost Tracker</a><a href="degree-roi.html">Degree ROI</a><a href="financial-aid-calculator.html">Financial Aid Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Grade Calculator estimate?</h3><p class="zac-support-answer">It estimates a grade calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this grade calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+  <section class="support-card">
+    <h2>Formula / Method Used</h2>
+    <p class="intro"><strong>Needed final exam grade = (desired grade - current grade x remaining weight) / final exam weight</strong></p>
+    <p class="intro">In percent form, the remaining weight is <strong>1 - final exam weight</strong> after converting the exam weight percentage to a decimal.</p>
+  </section>
 
-    </main><footer>Precision Finance Â© 2025</footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+  <section class="support-card">
+    <h2>Worked Example</h2>
+    <p class="intro">If your current course grade is 84.5%, the final exam is worth 25%, and you want a final course grade of 90%, the calculator first applies your current grade to the remaining 75% of the course and then solves for the final exam score needed to reach 90% overall.</p>
+  </section>
 
+  <section class="support-card">
+    <h2>What the Result Means</h2>
+    <p class="intro">A result between 0% and 100% means the target is theoretically reachable under the assumptions you entered. A result above 100% means the target is likely out of reach without extra credit or a different grading rule. A result below 0% means you are already on track to finish at or above your target.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Using the wrong final exam weight.</li>
+      <li>Entering a current grade that already includes the final exam.</li>
+      <li>Ignoring extra credit or category-specific grading rules.</li>
+      <li>Forgetting that some instructors round final grades differently.</li>
+    </ul>
+  </section>
+
+  <section class="support-card disclaimer">
+    <h2>Limitations / Disclaimer</h2>
+    <p class="intro">This calculator provides grade estimates only and is not an official school record. Actual results can vary based on your syllabus, grading scale, teacher rounding, extra credit, and category weighting details.</p>
+    <p class="updated">Last updated: May 2026</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Related Calculators</h2>
+    <div class="related-links">
+      <a href="grade-converter.html">Grade Converter</a>
+      <a href="degree-roi.html">Degree ROI Calculator</a>
+      <a href="course-cost-tracker.html">Course Cost Tracker</a>
+    </div>
+  </section>
+
+  <section class="support-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What does this grade calculator estimate?</h3>
+      <p class="answer">It estimates the final exam grade needed to reach a desired final course grade based on your current grade and final exam weight.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if the needed final exam grade is over 100 percent?</h3>
+      <p class="answer">That means the target grade is not achievable under the assumptions entered unless extra credit or a different weighting method changes the outcome.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if the needed final exam grade is zero or less?</h3>
+      <p class="answer">That means your current course standing is already enough to reach the desired final grade under the weighting entered.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are grade results exact?</h3>
+      <p class="answer">Results are estimates based on the percentages you enter. Different school grading rules, rounding, and extra credit can change the final outcome.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+</footer>
+<script>
+document.getElementById('grade-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var currentGrade = parseFloat(document.getElementById('current-grade').value);
+  var finalWeightPercent = parseFloat(document.getElementById('final-weight').value);
+  var desiredGrade = parseFloat(document.getElementById('desired-grade').value);
+  if (!isFinite(currentGrade) || !isFinite(finalWeightPercent) || !isFinite(desiredGrade) || finalWeightPercent <= 0 || finalWeightPercent > 100) {
+    return;
+  }
+  var finalWeight = finalWeightPercent / 100;
+  var remainingWeight = 1 - finalWeight;
+  var needed = (desiredGrade - (currentGrade * remainingWeight)) / finalWeight;
+  var note = '';
+  if (needed > 100) {
+    note = 'This target appears impossible under the current assumptions because the required final exam score is above 100%.';
+  } else if (needed <= 0) {
+    note = 'You have already achieved enough course standing to reach the desired final grade under the weighting entered.';
+  } else {
+    note = 'This is the estimated final exam score needed to reach your target course grade.';
+  }
+  document.getElementById('needed-grade').textContent = needed.toFixed(2) + '%';
+  document.getElementById('grade-note').textContent = note;
+  document.getElementById('grade-results').classList.add('active');
+});
+</script>
+</body>
+</html>
