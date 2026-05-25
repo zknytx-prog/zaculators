@@ -1,45 +1,235 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}h1{font-size:1.5rem;margin-bottom:0.25rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}input,button{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;margin-bottom:1rem;font-size:1rem}button{background:var(--primary);color:white;border:none;cursor:pointer;font-weight:500}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid #f59e0b;padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps ol{padding-left:1.5rem}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}
-        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
-        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
-        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
-        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
-        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
-        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
-        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
-        .zac-related-links a:hover { text-decoration:underline; }
-        .zac-support-faq { display:grid; gap:1rem; }
-        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
-        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
-        .zac-support-answer { margin-top:0.4rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profit Maximizer Calculator | Zaculators</title>
+<meta name="description" content="Estimate how a price change and demand shift may affect profit after fixed costs.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff}
+header{padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem;color:var(--muted)}
+h1,h2,h3{color:var(--primary)}
+main{max-width:980px;margin:0 auto;padding:2rem}
+.section,.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}
+.intro,.answer{color:var(--muted);line-height:1.7}
+.intro{margin-top:.75rem}
+.grid,.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+label{display:block;font-weight:600;margin-bottom:.45rem}
+input,button{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:8px;font-size:1rem}
+button{background:var(--primary);color:#fff;border:none;font-weight:700;cursor:pointer}
+.results{display:none;margin-top:1.5rem;background:var(--success-bg);border-left:4px solid #16a34a;border-radius:8px;padding:1.5rem}
+.results.active{display:block}
+.metric{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:1rem}
+.metric-label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.metric-value{font-size:1.15rem;font-weight:700;color:var(--success)}
+ul,ol{padding-left:1.25rem;line-height:1.8}
+.faq-item{padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.related-links a{display:inline-flex;align-items:center;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--primary);background:#f8fbff}
+.disclaimer{background:var(--danger-bg);border-left:4px solid #dc2626;color:var(--danger)}
+.updated{margin-top:1rem;color:var(--muted)}
+@media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this profit maximizer calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates current profit, a new profit scenario after a price change and demand shift, the profit difference, and break-even units."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are break-even units?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break-even units estimate how many units must be sold to cover fixed monthly costs at the current selling price and unit cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why include both price change and demand change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A higher or lower price can change unit margin and also affect sales volume, so both assumptions matter for profit planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these results exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Results are estimates only and depend on the demand response and cost assumptions you enter."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Profit Maximizer Calculator</h1>
+</header>
+<main>
+  <section class="section">
+    <p class="intro">Estimate how a proposed price change and demand response could affect profit after fixed monthly costs. This calculator helps you compare the current situation with a new pricing scenario using simple, transparent assumptions.</p>
+    <form id="profit-form">
+      <div class="grid">
+        <div>
+          <label for="selling-price">Selling Price</label>
+          <input type="number" id="selling-price" min="0" step="0.01" placeholder="e.g. 45" required>
+        </div>
+        <div>
+          <label for="unit-cost">Unit Cost</label>
+          <input type="number" id="unit-cost" min="0" step="0.01" placeholder="e.g. 18" required>
+        </div>
+        <div>
+          <label for="fixed-costs">Fixed Monthly Costs</label>
+          <input type="number" id="fixed-costs" min="0" step="0.01" placeholder="e.g. 12000" required>
+        </div>
+        <div>
+          <label for="units-sold">Units Sold</label>
+          <input type="number" id="units-sold" min="0" step="0.01" placeholder="e.g. 900" required>
+        </div>
+        <div>
+          <label for="price-change">Proposed Price Change (%)</label>
+          <input type="number" id="price-change" step="0.01" placeholder="e.g. 6" required>
+        </div>
+        <div>
+          <label for="demand-change">Estimated Demand Change (%)</label>
+          <input type="number" id="demand-change" step="0.01" placeholder="e.g. -5" required>
+        </div>
+      </div>
+      <button type="submit">Estimate Profit Scenario</button>
+    </form>
+    <div id="profit-results" class="results" aria-live="polite">
+      <div class="results-grid">
+        <div class="metric"><span class="metric-label">Current Profit</span><span id="current-profit" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">New Estimated Profit</span><span id="new-profit" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Profit Difference</span><span id="profit-difference" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Break-Even Units</span><span id="break-even-units" class="metric-value">0</span></div>
+      </div>
+      <p id="profit-note" class="intro"></p>
+    </div>
+  </section>
 
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Profit Maximizer estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a profit maximizer result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this profit maximizer?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Calculator | Precision Finance</h1></header><main><section class="section"><form id="f"><input type="number" id="v1" placeholder="Enter value" required><input type="number" id="v2" placeholder="Enter value" required><button type="submit">Calculate</button></form><div id="r" class="results"><div class="value" id="val">Calculated</div></div></section><div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="index.html">All Calculators</a><a href="mortgage.html">Mortgage</a><a href="investment-property-roi.html">Investment ROI</a></div></div><div class="next-steps"><h3>📋 Next Steps:</h3><ol><li>Enter accurate values</li><li>Review calculation results</li><li>Compare with other options</li><li>Consult professional advisors</li><li>Make informed decisions</li><li>Monitor progress regularly</li></ol></div><section class="faq-section"><h2>FAQ</h2><div class="faq-item"><h3>How accurate is this calculator?</h3><p>This provides estimates based on standard industry formulas. Actual results vary by individual circumstances. Use as guide, not definitive answer. Consult professionals for major decisions.</p></div><div class="faq-item"><h3>Can I use this for important decisions?</h3><p>Yes as starting point. Always verify with qualified professionals before making major financial, educational, or business decisions based on calculations.</p></div><div class="faq-item"><h3>How often should I recalculate?</h3><p>Recalculate when circumstances change significantly. Market conditions, interest rates, and personal situations change—keep numbers current.</p></div><div class="faq-item"><h3>What assumptions are included?</h3><p>Standard industry assumptions. Your situation may differ. Adjust inputs for more accurate personalized results.</p></div><div class="faq-item"><h3>Is my data safe?</h3><p>Yes. All calculations run locally in your browser. No data sent to servers. Your information stays private.</p></div><div class="faq-item"><h3>Can I save or share results?</h3><p>Yes. Use browser features to save or print. You can also manually copy results and share with advisors.</p></div></section><div class="disclaimer">⚠️ This calculator provides estimates. Not financial, legal, or professional advice. Consult qualified professionals before decisions.</div>
+  <section class="support-card">
+    <h2>What This Calculator Estimates</h2>
+    <p class="intro">This calculator estimates the effect of a pricing change on profit after fixed costs. It compares the current profit with a new scenario that changes both price and demand, which makes it useful for rough pricing strategy discussions.</p>
+  </section>
 
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Profit Maximizer estimates a quick result from the values you enter. It is useful for pricing, margin, planning, and operating-cost comparisons.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the profit maximizer details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="birthday-budget.html">Birthday Budget</a><a href="break-even-sales.html">Break Even Sales</a><a href="budget-planner.html">Budget Planner</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Profit Maximizer estimate?</h3><p class="zac-support-answer">It estimates a profit maximizer result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this profit maximizer?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. Actual costs, margins, fees, and outcomes can vary.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+  <section class="support-card">
+    <h2>Formula / Method Used</h2>
+    <ul>
+      <li><strong>Profit = (price - unit cost) x units sold - fixed costs</strong></li>
+      <li><strong>New price = current price x (1 + price change)</strong></li>
+      <li><strong>New units sold = current units sold x (1 + demand change)</strong></li>
+      <li><strong>Break-even units = fixed costs / (selling price - unit cost)</strong></li>
+    </ul>
+  </section>
 
-    </main><footer><p><strong>Precision Finance</strong> © 2025 | 100+ Free Calculators</p></footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+  <section class="support-card">
+    <h2>Worked Example</h2>
+    <p class="intro">If the current selling price is $45, unit cost is $18, fixed monthly costs are $12,000, current unit sales are 900, proposed price change is 6%, and estimated demand change is -5%, the calculator first computes current profit, then adjusts the price and estimated sales volume to compare the new profit scenario.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>What the Result Means</h2>
+    <p class="intro">Current profit shows what your present margin and unit volume are estimated to generate after fixed costs. New estimated profit shows the same profit logic under the new price and demand assumptions. Break-even units show how many units must be sold at the current price and cost to cover fixed costs.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Using unrealistic demand change assumptions.</li>
+      <li>Ignoring channel fees, refunds, or commissions.</li>
+      <li>Assuming unit cost stays fixed when volume changes significantly.</li>
+      <li>Focusing only on short-term profit without considering customer retention or brand effects.</li>
+    </ul>
+  </section>
+
+  <section class="support-card disclaimer">
+    <h2>Limitations / Disclaimer</h2>
+    <p class="intro">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. It does not model inventory limits, taxes, financing, competitor reactions, or operational bottlenecks. Results are estimates only.</p>
+    <p class="updated">Last updated: May 2026</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Related Calculators</h2>
+    <div class="related-links">
+      <a href="profit-margin.html">Profit Margin Calculator</a>
+      <a href="pricing-optimizer.html">Pricing Optimizer Calculator</a>
+      <a href="break-even-sales.html">Break-Even Sales Calculator</a>
+    </div>
+  </section>
+
+  <section class="support-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What does this profit maximizer calculator estimate?</h3>
+      <p class="answer">It estimates current profit, a new profit scenario after a price change and demand shift, the profit difference, and break-even units.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are break-even units?</h3>
+      <p class="answer">Break-even units estimate how many units must be sold to cover fixed monthly costs at the current selling price and unit cost.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why include both price change and demand change?</h3>
+      <p class="answer">A higher or lower price can change unit margin and also affect sales volume, so both assumptions matter for profit planning.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are these results exact?</h3>
+      <p class="answer">No. Results are estimates only and depend on the demand response and cost assumptions you enter.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+</footer>
+<script>
+function formatCurrency(value) {
+  return '$' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+document.getElementById('profit-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var sellingPrice = parseFloat(document.getElementById('selling-price').value);
+  var unitCost = parseFloat(document.getElementById('unit-cost').value);
+  var fixedCosts = parseFloat(document.getElementById('fixed-costs').value);
+  var unitsSold = parseFloat(document.getElementById('units-sold').value);
+  var priceChange = parseFloat(document.getElementById('price-change').value) / 100;
+  var demandChange = parseFloat(document.getElementById('demand-change').value) / 100;
+  if (!isFinite(sellingPrice) || !isFinite(unitCost) || !isFinite(fixedCosts) || !isFinite(unitsSold) || !isFinite(priceChange) || !isFinite(demandChange)) {
+    return;
+  }
+  var currentProfit = ((sellingPrice - unitCost) * unitsSold) - fixedCosts;
+  var newPrice = sellingPrice * (1 + priceChange);
+  var newUnits = unitsSold * (1 + demandChange);
+  var newProfit = ((newPrice - unitCost) * newUnits) - fixedCosts;
+  var profitDifference = newProfit - currentProfit;
+  var marginPerUnit = sellingPrice - unitCost;
+  var breakEvenUnits = marginPerUnit > 0 ? (fixedCosts / marginPerUnit) : Infinity;
+  document.getElementById('current-profit').textContent = formatCurrency(currentProfit);
+  document.getElementById('new-profit').textContent = formatCurrency(newProfit);
+  document.getElementById('profit-difference').textContent = formatCurrency(profitDifference);
+  document.getElementById('break-even-units').textContent = isFinite(breakEvenUnits) ? breakEvenUnits.toFixed(2) : 'N/A';
+  document.getElementById('profit-note').textContent = profitDifference > 0
+    ? 'Under the assumptions entered, the proposed pricing change appears to improve profit after fixed costs.'
+    : profitDifference < 0
+      ? 'Under the assumptions entered, the proposed pricing change appears to reduce profit after fixed costs.'
+      : 'Under the assumptions entered, the current and proposed scenarios appear roughly equal.';
+  document.getElementById('profit-results').classList.add('active');
+});
+</script>
+</body>
+</html>
