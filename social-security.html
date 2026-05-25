@@ -1,46 +1,233 @@
-﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg)}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem;color:var(--primary,#2563eb)}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem;margin-bottom:2rem}input,button{width:100%;padding:0.75rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:6px;font-size:1rem}button{background:var(--primary);color:white;border:none;cursor:pointer;font-weight:500}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}.faq-section{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #e2e8f0}.faq-item:last-child{border-bottom:none}.faq-item h3{font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}footer{background:white;border-top:1px solid #e2e8f0;padding:2rem;text-align:center;color:#64748b;margin-top:3rem}
-        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
-        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
-        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
-        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
-        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
-        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
-        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
-        .zac-related-links a:hover { text-decoration:underline; }
-        .zac-support-faq { display:grid; gap:1rem; }
-        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
-        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
-        .zac-support-answer { margin-top:0.4rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Security Benefit Estimate Calculator | Zaculators</title>
+<meta name="description" content="Estimate how claiming earlier or later than full retirement age may affect a monthly Social Security benefit.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff}
+header{padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem;color:var(--muted)}
+h1,h2,h3{color:var(--primary)}
+main{max-width:980px;margin:0 auto;padding:2rem}
+.section,.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}
+.intro,.answer{color:var(--muted);line-height:1.7}
+.intro{margin-top:.75rem}
+.grid,.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+label{display:block;font-weight:600;margin-bottom:.45rem}
+input,button{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:8px;font-size:1rem}
+button{background:var(--primary);color:#fff;border:none;font-weight:700;cursor:pointer}
+.results{display:none;margin-top:1.5rem;background:var(--success-bg);border-left:4px solid #16a34a;border-radius:8px;padding:1.5rem}
+.results.active{display:block}
+.metric{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:1rem}
+.metric-label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.metric-value{font-size:1.2rem;font-weight:700;color:var(--success)}
+ul,ol{padding-left:1.25rem;line-height:1.8}
+.faq-item{padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.related-links a{display:inline-flex;align-items:center;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--primary);background:#f8fbff}
+.disclaimer{background:var(--danger-bg);border-left:4px solid #dc2626;color:var(--danger)}
+.updated{margin-top:1rem;color:var(--muted)}
+@media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this Social Security calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates how claiming before or after full retirement age may affect a monthly benefit, based on the assumptions used on this page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an official Social Security benefit calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This is an estimate-only planning tool and does not replace an official benefit statement or government calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this page adjust benefits for claiming age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This page uses a simple estimate that reduces the benefit for early claiming and increases it for delayed claiming after full retirement age, up to age 70."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I verify these results elsewhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Verify current benefit rules and your personal estimate with the official Social Security source."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Social Security Benefit Estimate Calculator</h1>
+</header>
+<main>
+  <section class="section">
+    <p class="intro">Estimate how claiming earlier or later than full retirement age may affect a monthly Social Security benefit. This is a simplified planning tool only. It does not produce official Social Security results, and all results on this page are estimates.</p>
+    <form id="social-security-form">
+      <div class="grid">
+        <div>
+          <label for="fra-benefit">Estimated Monthly Benefit at Full Retirement Age</label>
+          <input type="number" id="fra-benefit" min="0" step="0.01" placeholder="e.g. 2200" required>
+        </div>
+        <div>
+          <label for="claiming-age">Claiming Age</label>
+          <input type="number" id="claiming-age" min="62" max="70" step="0.1" placeholder="e.g. 67" required>
+        </div>
+        <div>
+          <label for="full-retirement-age">Full Retirement Age</label>
+          <input type="number" id="full-retirement-age" min="62" max="70" step="0.1" placeholder="e.g. 67" required>
+        </div>
+        <div>
+          <label for="cola">Annual COLA (%) optional</label>
+          <input type="number" id="cola" step="0.01" placeholder="e.g. 2">
+        </div>
+      </div>
+      <button type="submit">Estimate Benefit Adjustment</button>
+    </form>
+    <div id="social-security-results" class="results" aria-live="polite">
+      <div class="results-grid">
+        <div class="metric"><span class="metric-label">Estimated Monthly Benefit</span><span id="adjusted-benefit" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Estimated Annual Benefit</span><span id="annual-benefit" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Monthly Benefit Adjustment</span><span id="benefit-adjustment" class="metric-value">$0.00</span></div>
+      </div>
+      <p id="social-security-note" class="intro"></p>
+    </div>
+  </section>
 
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Social Security estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a social security result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this social security?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Free Calculator | Precision Finance</h1></header><main><section class="section"><form id="f"><input type="number" id="v1" placeholder="Enter value" required><input type="number" id="v2" placeholder="Enter value" required><button>Calculate</button></form><div id="r" class="results"><div class="value">Result calculated</div></div></section><section class="faq-section"><h2>FAQ</h2><div class="faq-item"><h3>How accurate?</h3><p>Provides estimates based on standard formulas. Consult professionals for important decisions.</p></div><div class="faq-item"><h3>Is it free?</h3><p>100% free, no hidden costs, no registration required.</p></div><div class="faq-item"><h3>Is my data safe?</h3><p>All calculations run locally in your browser. No data sent anywhere. Your privacy protected.</p></div><div class="faq-item"><h3>How often update?</h3><p>Recalculate when circumstances change. Keep numbers current for accuracy.</p></div><div class="faq-item"><h3>Can I use for decisions?</h3><p>Yes as starting point. Always consult qualified advisors before major decisions.</p></div><div class="faq-item"><h3>Is this accurate?</h3><p>Uses industry-standard formulas. Actual results may vary. Check with professionals.</p></div></section><div class="disclaimer">âš ï¸ Estimates only. Not financial/legal advice. Consult professionals before decisions.</div>
+  <section class="support-card">
+    <h2>What This Calculator Estimates</h2>
+    <p class="intro">This calculator estimates how a monthly benefit may change if benefits are claimed before or after full retirement age. It is meant for rough planning only. It does not include full government rules, earnings history details, taxation, spousal benefits, or survivor rules.</p>
+  </section>
 
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Social Security estimates a quick result from the values you enter. It is useful for budgeting, payoff planning, savings comparisons, and scenario testing before you act.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the social security details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="annuity-calculator.html">Annuity Calculator</a><a href="apr-calculator.html">APR Calculator</a><a href="average-calculator.html">Average Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Social Security estimate?</h3><p class="zac-support-answer">It estimates a social security result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this social security?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+  <section class="support-card">
+    <h2>Formula / Method Used</h2>
+    <p class="intro">This page uses a simple estimate-only approach:</p>
+    <ul>
+      <li>If claiming before full retirement age, the monthly estimate is reduced by about 6% per year early.</li>
+      <li>If claiming after full retirement age, the monthly estimate is increased by about 8% per year delayed, up to age 70.</li>
+      <li>If an annual COLA is entered, the estimate applies that growth for the number of years between full retirement age and claiming age when claiming later.</li>
+    </ul>
+    <p class="intro">This is not an official formula and should not be treated as an official benefit calculation.</p>
+  </section>
 
-    </main><footer><p><strong>Precision Finance</strong> Â© 2025 | 100+ Free Calculators</p></footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+  <section class="support-card">
+    <h2>Worked Example</h2>
+    <p class="intro">If your estimated full retirement age benefit is $2,200 per month, your full retirement age is 67, and you claim at 65, this calculator applies a simple early-claiming reduction to estimate a lower monthly benefit. If you claim later than full retirement age, it applies a delayed-claiming increase instead.</p>
+  </section>
 
+  <section class="support-card">
+    <h2>What the Result Means</h2>
+    <p class="intro">The adjusted monthly benefit shows the estimate after the claiming-age adjustment. The annual benefit multiplies that estimate by 12. The note below the result gives a simple comparison against claiming at full retirement age so you can quickly see whether the estimate is lower, about the same, or higher.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Treating this estimate as an official Social Security result.</li>
+      <li>Ignoring the effect of personal earnings history and government updates.</li>
+      <li>Forgetting that real COLA adjustments can change year to year.</li>
+      <li>Using a full retirement age that does not match your actual eligibility rules.</li>
+    </ul>
+  </section>
+
+  <section class="support-card disclaimer">
+    <h2>Limitations / Disclaimer</h2>
+    <p class="intro">This page provides estimates only and is not affiliated with or endorsed by the Social Security Administration. It does not provide official benefit calculations or legal, financial, or retirement advice. Verify current rates with the official government source.</p>
+    <p class="updated">Last updated: May 2026</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Related Calculators</h2>
+    <div class="related-links">
+      <a href="retirement.html">Retirement Calculator</a>
+      <a href="retirement-age.html">Retirement Age Calculator</a>
+      <a href="retirement-countdown.html">Retirement Countdown Calculator</a>
+    </div>
+  </section>
+
+  <section class="support-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What does this Social Security calculator estimate?</h3>
+      <p class="answer">It estimates how claiming before or after full retirement age may affect a monthly benefit, based on the assumptions used on this page.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is this an official Social Security benefit calculation?</h3>
+      <p class="answer">No. This is an estimate-only planning tool and does not replace an official benefit statement or government calculator.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does this page adjust benefits for claiming age?</h3>
+      <p class="answer">This page uses a simple estimate that reduces the benefit for early claiming and increases it for delayed claiming after full retirement age, up to age 70.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Should I verify these results elsewhere?</h3>
+      <p class="answer">Yes. Verify current benefit rules and your personal estimate with the official Social Security source.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+</footer>
+<script>
+function formatCurrency(value) {
+  return '$' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+document.getElementById('social-security-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var fraBenefit = parseFloat(document.getElementById('fra-benefit').value);
+  var claimingAge = parseFloat(document.getElementById('claiming-age').value);
+  var fra = parseFloat(document.getElementById('full-retirement-age').value);
+  var cola = parseFloat(document.getElementById('cola').value);
+  if (!isFinite(fraBenefit) || !isFinite(claimingAge) || !isFinite(fra) || fraBenefit < 0) {
+    return;
+  }
+  var adjustedBenefit = fraBenefit;
+  if (claimingAge < fra) {
+    adjustedBenefit = fraBenefit * (1 - ((fra - claimingAge) * 0.06));
+  } else if (claimingAge > fra) {
+    var delayedYears = Math.min(claimingAge, 70) - fra;
+    adjustedBenefit = fraBenefit * (1 + (delayedYears * 0.08));
+    if (isFinite(cola) && cola !== 0) {
+      adjustedBenefit = adjustedBenefit * Math.pow(1 + (cola / 100), delayedYears);
+    }
+  }
+  if (adjustedBenefit < 0) {
+    adjustedBenefit = 0;
+  }
+  var adjustment = adjustedBenefit - fraBenefit;
+  var annualBenefit = adjustedBenefit * 12;
+  var note = claimingAge < fra
+    ? 'This estimate is lower than the full-retirement-age amount because the claiming age entered is earlier than full retirement age.'
+    : claimingAge > fra
+      ? 'This estimate is higher than the full-retirement-age amount because the claiming age entered is later than full retirement age.'
+      : 'This estimate matches the full-retirement-age amount because the claiming age equals full retirement age.';
+  document.getElementById('adjusted-benefit').textContent = formatCurrency(adjustedBenefit);
+  document.getElementById('annual-benefit').textContent = formatCurrency(annualBenefit);
+  document.getElementById('benefit-adjustment').textContent = formatCurrency(adjustment);
+  document.getElementById('social-security-note').textContent = note + ' Verify current rates with the official government source.';
+  document.getElementById('social-security-results').classList.add('active');
+});
+</script>
+</body>
+</html>
