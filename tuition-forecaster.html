@@ -1,45 +1,218 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}h1{font-size:1.5rem;margin-bottom:0.25rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}input,button{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;margin-bottom:1rem;font-size:1rem}button{background:var(--primary);color:white;border:none;cursor:pointer;font-weight:500}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid #f59e0b;padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps ol{padding-left:1.5rem}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}
-        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
-        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
-        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
-        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
-        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
-        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
-        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
-        .zac-related-links a:hover { text-decoration:underline; }
-        .zac-support-faq { display:grid; gap:1rem; }
-        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
-        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
-        .zac-support-answer { margin-top:0.4rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuition Forecaster Calculator | Zaculators</title>
+<meta name="description" content="Project future first-year tuition and total tuition over a study period using annual tuition inflation.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff}
+header{padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem;color:var(--muted)}
+h1,h2,h3{color:var(--primary)}
+main{max-width:980px;margin:0 auto;padding:2rem}
+.section,.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}
+.intro,.answer{color:var(--muted);line-height:1.7}
+.intro{margin-top:.75rem}
+.grid,.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+label{display:block;font-weight:600;margin-bottom:.45rem}
+input,button{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:8px;font-size:1rem}
+button{background:var(--primary);color:#fff;border:none;font-weight:700;cursor:pointer}
+.results{display:none;margin-top:1.5rem;background:var(--success-bg);border-left:4px solid #16a34a;border-radius:8px;padding:1.5rem}
+.results.active{display:block}
+.metric{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:1rem}
+.metric-label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.metric-value{font-size:1.15rem;font-weight:700;color:var(--success)}
+ul,ol{padding-left:1.25rem;line-height:1.8}
+.faq-item{padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.related-links a{display:inline-flex;align-items:center;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--primary);background:#f8fbff}
+.disclaimer{background:var(--danger-bg);border-left:4px solid #dc2626;color:var(--danger)}
+.updated{margin-top:1rem;color:var(--muted)}
+@media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this tuition forecaster calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates first-year projected tuition, total tuition over the study period, and how much those amounts may increase compared with today's annual tuition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why include years until enrollment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That lets the calculator project how tuition may rise before the first year of study even begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this include aid or living costs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page forecasts tuition only and does not include scholarships, housing, books, or other school expenses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these tuition forecasts exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Results are estimates only and actual tuition increases can differ by school, program, and year."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Tuition Forecaster Calculator</h1>
+</header>
+<main>
+  <section class="section">
+    <p class="intro">Forecast what tuition may look like by the time enrollment begins and across the full years of study. This calculator uses a simple annual tuition inflation assumption so families and students can build a rough planning estimate.</p>
+    <form id="tuition-forecaster-form">
+      <div class="grid">
+        <div>
+          <label for="current-annual-tuition">Current Annual Tuition</label>
+          <input type="number" id="current-annual-tuition" min="0" step="0.01" placeholder="e.g. 18000" required>
+        </div>
+        <div>
+          <label for="years-until-enrollment">Years Until Enrollment</label>
+          <input type="number" id="years-until-enrollment" min="0" step="1" placeholder="e.g. 3" required>
+        </div>
+        <div>
+          <label for="years-of-study">Years of Study</label>
+          <input type="number" id="years-of-study" min="1" step="1" placeholder="e.g. 4" required>
+        </div>
+        <div>
+          <label for="tuition-inflation">Expected Annual Tuition Inflation (%)</label>
+          <input type="number" id="tuition-inflation" min="0" step="0.01" placeholder="e.g. 4" required>
+        </div>
+      </div>
+      <button type="submit">Forecast Tuition</button>
+    </form>
+    <div id="tuition-forecaster-results" class="results" aria-live="polite">
+      <div class="results-grid">
+        <div class="metric"><span class="metric-label">First-Year Projected Tuition</span><span id="first-year-tuition" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Estimated Total Tuition Over Study Period</span><span id="total-tuition" class="metric-value">$0.00</span></div>
+        <div class="metric"><span class="metric-label">Increase Compared With Today</span><span id="increase-today" class="metric-value">$0.00</span></div>
+      </div>
+      <p id="tuition-forecaster-note" class="intro"></p>
+    </div>
+  </section>
 
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Tuition Forecaster estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a tuition forecaster result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this tuition forecaster?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Calculator | Precision Finance</h1></header><main><section class="section"><form id="f"><input type="number" id="v1" placeholder="Enter value" required><input type="number" id="v2" placeholder="Enter value" required><button type="submit">Calculate</button></form><div id="r" class="results"><div class="value" id="val">Calculated</div></div></section><div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="index.html">All Calculators</a><a href="mortgage.html">Mortgage</a><a href="investment-property-roi.html">Investment ROI</a></div></div><div class="next-steps"><h3>📋 Next Steps:</h3><ol><li>Enter accurate values</li><li>Review calculation results</li><li>Compare with other options</li><li>Consult professional advisors</li><li>Make informed decisions</li><li>Monitor progress regularly</li></ol></div><section class="faq-section"><h2>FAQ</h2><div class="faq-item"><h3>How accurate is this calculator?</h3><p>This provides estimates based on standard industry formulas. Actual results vary by individual circumstances. Use as guide, not definitive answer. Consult professionals for major decisions.</p></div><div class="faq-item"><h3>Can I use this for important decisions?</h3><p>Yes as starting point. Always verify with qualified professionals before making major financial, educational, or business decisions based on calculations.</p></div><div class="faq-item"><h3>How often should I recalculate?</h3><p>Recalculate when circumstances change significantly. Market conditions, interest rates, and personal situations change—keep numbers current.</p></div><div class="faq-item"><h3>What assumptions are included?</h3><p>Standard industry assumptions. Your situation may differ. Adjust inputs for more accurate personalized results.</p></div><div class="faq-item"><h3>Is my data safe?</h3><p>Yes. All calculations run locally in your browser. No data sent to servers. Your information stays private.</p></div><div class="faq-item"><h3>Can I save or share results?</h3><p>Yes. Use browser features to save or print. You can also manually copy results and share with advisors.</p></div></section><div class="disclaimer">⚠️ This calculator provides estimates. Not financial, legal, or professional advice. Consult qualified professionals before decisions.</div>
+  <section class="support-card">
+    <h2>What This Calculator Estimates</h2>
+    <p class="intro">This calculator estimates what tuition may cost when enrollment begins and what total tuition may look like across the study period. It is meant for early planning and uses a constant annual tuition inflation assumption.</p>
+  </section>
 
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Tuition Forecaster estimates a quick result from the values you enter. It is useful for budgeting, course planning, and comparing education-related scenarios.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the tuition forecaster details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="course-cost-tracker.html">Course Cost Tracker</a><a href="degree-roi.html">Degree ROI</a><a href="financial-aid-calculator.html">Financial Aid Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Tuition Forecaster estimate?</h3><p class="zac-support-answer">It estimates a tuition forecaster result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this tuition forecaster?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+  <section class="support-card">
+    <h2>Formula / Method Used</h2>
+    <ul>
+      <li><strong>First-year projected tuition = current annual tuition x (1 + inflation) ^ years until enrollment</strong></li>
+      <li>Each study year is then projected to grow again by the same annual tuition inflation rate</li>
+      <li><strong>Estimated total tuition = sum of all projected study years</strong></li>
+      <li><strong>Increase compared with today = first-year projected tuition - current annual tuition</strong></li>
+    </ul>
+  </section>
 
-    </main><footer><p><strong>Precision Finance</strong> © 2025 | 100+ Free Calculators</p></footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+  <section class="support-card">
+    <h2>Worked Example</h2>
+    <p class="intro">If current annual tuition is $18,000, enrollment is 3 years away, the program lasts 4 years, and tuition inflation is expected to be 4% per year, the calculator first projects the tuition for year 1 of enrollment and then continues inflating tuition for each later study year.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>What the Result Means</h2>
+    <p class="intro">The first-year projection estimates the annual tuition at the time school begins. Total tuition shows the projected tuition-only cost across all years of study. The increase figure shows how much the first-year annual tuition exceeds the current annual tuition entered today.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Using a tuition inflation rate that is unrealistically low or high.</li>
+      <li>Forgetting that private, public, and program-specific tuition can move differently.</li>
+      <li>Assuming this includes books, housing, or aid.</li>
+      <li>Entering years until enrollment or years of study incorrectly.</li>
+    </ul>
+  </section>
+
+  <section class="support-card disclaimer">
+    <h2>Limitations / Disclaimer</h2>
+    <p class="intro">This calculator provides tuition forecasts only and is not an official school estimate or financial aid projection. It does not include scholarships, grants, housing, books, fees, or living costs. Results are estimates only.</p>
+    <p class="updated">Last updated: May 2026</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Related Calculators</h2>
+    <div class="related-links">
+      <a href="tuition-cost.html">Tuition Cost Calculator</a>
+      <a href="financial-aid-calculator.html">Financial Aid Calculator</a>
+      <a href="degree-roi.html">Degree ROI Calculator</a>
+    </div>
+  </section>
+
+  <section class="support-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What does this tuition forecaster calculator estimate?</h3>
+      <p class="answer">It estimates first-year projected tuition, total tuition over the study period, and how much those amounts may increase compared with today's annual tuition.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why include years until enrollment?</h3>
+      <p class="answer">That lets the calculator project how tuition may rise before the first year of study even begins.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does this include aid or living costs?</h3>
+      <p class="answer">No. This page forecasts tuition only and does not include scholarships, housing, books, or other school expenses.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are these tuition forecasts exact?</h3>
+      <p class="answer">No. Results are estimates only and actual tuition increases can differ by school, program, and year.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+</footer>
+<script>
+function formatCurrency(value) {
+  return '$' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+document.getElementById('tuition-forecaster-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var currentTuition = parseFloat(document.getElementById('current-annual-tuition').value);
+  var yearsUntilEnrollment = parseInt(document.getElementById('years-until-enrollment').value, 10);
+  var yearsOfStudy = parseInt(document.getElementById('years-of-study').value, 10);
+  var inflation = parseFloat(document.getElementById('tuition-inflation').value) / 100;
+  if (!isFinite(currentTuition) || !isFinite(yearsUntilEnrollment) || !isFinite(yearsOfStudy) || !isFinite(inflation) || yearsOfStudy <= 0) {
+    return;
+  }
+  var firstYearTuition = currentTuition * Math.pow(1 + inflation, yearsUntilEnrollment);
+  var totalTuition = 0;
+  for (var year = 0; year < yearsOfStudy; year += 1) {
+    totalTuition += firstYearTuition * Math.pow(1 + inflation, year);
+  }
+  var increaseCompared = firstYearTuition - currentTuition;
+  document.getElementById('first-year-tuition').textContent = formatCurrency(firstYearTuition);
+  document.getElementById('total-tuition').textContent = formatCurrency(totalTuition);
+  document.getElementById('increase-today').textContent = formatCurrency(increaseCompared);
+  document.getElementById('tuition-forecaster-note').textContent = 'This estimate assumes the same annual tuition inflation rate continues through enrollment and across the full study period.';
+  document.getElementById('tuition-forecaster-results').classList.add('active');
+});
+</script>
+</body>
+</html>

@@ -1,45 +1,230 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator | Precision Finance</title><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script><style>:root{--primary:#2563eb;--bg:#f8fafc;--text:#0f172a;--border:#e2e8f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}header{background:white;padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}h1{font-size:1.5rem;margin-bottom:0.25rem}main{max-width:900px;margin:0 auto;padding:2rem}.section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}input,button{width:100%;padding:0.75rem;border:1px solid var(--border);border-radius:6px;margin-bottom:1rem;font-size:1rem}button{background:var(--primary);color:white;border:none;cursor:pointer;font-weight:500}.results{background:#f0fdf4;border-left:4px solid #16a34a;padding:1.5rem;border-radius:6px;margin-top:2rem;display:none}.results.active{display:block}.value{font-size:1.5rem;font-weight:600;color:#16a34a}.faq-section{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}.faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}.faq-item h3{font-weight:600;margin-bottom:0.5rem}.faq-item p{font-size:0.95rem;color:#64748b;line-height:1.6}.next-steps{background:#fef3c7;border-left:4px solid #f59e0b;padding:1.5rem;border-radius:6px;margin-bottom:2rem}.next-steps ol{padding-left:1.5rem}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:0.9rem;color:#7f1d1d;margin-top:2rem}.related{background:#f0f4f8;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem}.related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}.related-links a{padding:0.75rem 1rem;background:white;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--primary);font-size:0.9rem;text-align:center}.related-links a:hover{background:var(--primary);color:white;border-color:var(--primary)}footer{background:white;border-top:1px solid var(--border);padding:2rem;text-align:center;color:#64748b;margin-top:3rem}
-        .zac-support-card { background:#fff; border:1px solid var(--border, #e2e8f0); border-radius:12px; padding:2rem; margin-top:2rem; }
-        .zac-support-card h2, .zac-support-card h3 { color:var(--primary, #2563eb); font-weight:700; }
-        .zac-support-card h2 { margin:0 0 1rem; font-size:1.35rem; }
-        .zac-support-card p, .zac-support-card li { color:var(--text, #0f172a); line-height:1.7; }
-        .zac-support-card .subtle, .zac-support-card .zac-support-answer { color:#64748b; }
-        .zac-support-card ol { padding-left:1.5rem; }
-        .zac-related-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
-        .zac-related-links a { display:inline-flex; align-items:center; padding:0.7rem 1rem; border:1px solid var(--border, #e2e8f0); border-radius:999px; text-decoration:none; color:var(--primary, #2563eb); background:#f8fbff; }
-        .zac-related-links a:hover { text-decoration:underline; }
-        .zac-support-faq { display:grid; gap:1rem; }
-        .zac-support-faq-item { padding-bottom:1rem; border-bottom:1px solid var(--border, #e2e8f0); }
-        .zac-support-faq-item:last-child { padding-bottom:0; border-bottom:none; }
-        .zac-support-answer { margin-top:0.4rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study Planner Calculator | Zaculators</title>
+<meta name="description" content="Estimate days remaining, weekly study hours needed, and whether your current study schedule is enough before an exam date.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header,footer{background:#fff}
+header{padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
+footer{padding:2rem;text-align:center;border-top:1px solid var(--border);margin-top:3rem;color:var(--muted)}
+h1,h2,h3{color:var(--primary)}
+main{max-width:980px;margin:0 auto;padding:2rem}
+.section,.support-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem}
+.intro,.answer{color:var(--muted);line-height:1.7}
+.intro{margin-top:.75rem}
+.grid,.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+label{display:block;font-weight:600;margin-bottom:.45rem}
+input,button{width:100%;padding:.8rem;border:1px solid var(--border);border-radius:8px;font-size:1rem}
+button{background:var(--primary);color:#fff;border:none;font-weight:700;cursor:pointer}
+.results{display:none;margin-top:1.5rem;background:var(--success-bg);border-left:4px solid #16a34a;border-radius:8px;padding:1.5rem}
+.results.active{display:block}
+.metric{background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:1rem}
+.metric-label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.metric-value{font-size:1.15rem;font-weight:700;color:var(--success)}
+ul,ol{padding-left:1.25rem;line-height:1.8}
+.faq-item{padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.related-links a{display:inline-flex;align-items:center;padding:.7rem 1rem;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--primary);background:#f8fbff}
+.disclaimer{background:var(--danger-bg);border-left:4px solid #dc2626;color:var(--danger)}
+.updated{margin-top:1rem;color:var(--muted)}
+@media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does this study planner calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates days remaining until the exam, weekly study hours needed, whether the current schedule is enough, and a suggested daily target."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does schedule is enough mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It compares the total study time available under the current weekly schedule with the total study hours needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this account for difficulty differences by subject?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page spreads the total study-hour target across the available time and does not weight subjects by difficulty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these study results exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Results are estimates only and depend on how realistic the study-hour assumptions are."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Study Planner Calculator</h1>
+</header>
+<main>
+  <section class="section">
+    <p class="intro">Estimate how much study time you need between now and an exam date and compare it with the study schedule you think you can maintain. This page is useful for quickly checking whether your current plan looks realistic.</p>
+    <form id="study-planner-form">
+      <div class="grid">
+        <div>
+          <label for="exam-date">Exam Date</label>
+          <input type="date" id="exam-date" required>
+        </div>
+        <div>
+          <label for="subjects">Number of Subjects</label>
+          <input type="number" id="subjects" min="1" step="1" placeholder="e.g. 5" required>
+        </div>
+        <div>
+          <label for="total-hours">Total Study Hours Needed</label>
+          <input type="number" id="total-hours" min="0" step="0.1" placeholder="e.g. 80" required>
+        </div>
+        <div>
+          <label for="study-days">Available Study Days per Week</label>
+          <input type="number" id="study-days" min="1" max="7" step="1" placeholder="e.g. 5" required>
+        </div>
+        <div>
+          <label for="hours-per-day">Study Hours per Day</label>
+          <input type="number" id="hours-per-day" min="0" step="0.1" placeholder="e.g. 2.5" required>
+        </div>
+      </div>
+      <button type="submit">Build Study Plan</button>
+    </form>
+    <div id="study-planner-results" class="results" aria-live="polite">
+      <div class="results-grid">
+        <div class="metric"><span class="metric-label">Days Remaining</span><span id="days-remaining" class="metric-value">0</span></div>
+        <div class="metric"><span class="metric-label">Weekly Study Hours Needed</span><span id="weekly-hours-needed" class="metric-value">0.0</span></div>
+        <div class="metric"><span class="metric-label">Schedule Enough?</span><span id="schedule-enough" class="metric-value">No</span></div>
+        <div class="metric"><span class="metric-label">Suggested Daily Target</span><span id="daily-target" class="metric-value">0.0</span></div>
+      </div>
+      <p id="study-planner-note" class="intro"></p>
+    </div>
+  </section>
 
-    </style>    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Study Planner estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a study planner result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this study planner?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
-</head><body><header><h1>Calculator | Precision Finance</h1></header><main><section class="section"><form id="f"><input type="number" id="v1" placeholder="Enter value" required><input type="number" id="v2" placeholder="Enter value" required><button type="submit">Calculate</button></form><div id="r" class="results"><div class="value" id="val">Calculated</div></div></section><div class="related"><h3>Related Calculators</h3><div class="related-links"><a href="index.html">All Calculators</a><a href="mortgage.html">Mortgage</a><a href="investment-property-roi.html">Investment ROI</a></div></div><div class="next-steps"><h3>📋 Next Steps:</h3><ol><li>Enter accurate values</li><li>Review calculation results</li><li>Compare with other options</li><li>Consult professional advisors</li><li>Make informed decisions</li><li>Monitor progress regularly</li></ol></div><section class="faq-section"><h2>FAQ</h2><div class="faq-item"><h3>How accurate is this calculator?</h3><p>This provides estimates based on standard industry formulas. Actual results vary by individual circumstances. Use as guide, not definitive answer. Consult professionals for major decisions.</p></div><div class="faq-item"><h3>Can I use this for important decisions?</h3><p>Yes as starting point. Always verify with qualified professionals before making major financial, educational, or business decisions based on calculations.</p></div><div class="faq-item"><h3>How often should I recalculate?</h3><p>Recalculate when circumstances change significantly. Market conditions, interest rates, and personal situations change—keep numbers current.</p></div><div class="faq-item"><h3>What assumptions are included?</h3><p>Standard industry assumptions. Your situation may differ. Adjust inputs for more accurate personalized results.</p></div><div class="faq-item"><h3>Is my data safe?</h3><p>Yes. All calculations run locally in your browser. No data sent to servers. Your information stays private.</p></div><div class="faq-item"><h3>Can I save or share results?</h3><p>Yes. Use browser features to save or print. You can also manually copy results and share with advisors.</p></div></section><div class="disclaimer">⚠️ This calculator provides estimates. Not financial, legal, or professional advice. Consult qualified professionals before decisions.</div>
+  <section class="support-card">
+    <h2>What This Calculator Estimates</h2>
+    <p class="intro">This calculator estimates how much weekly and daily study time may be needed between now and an exam date. It compares that requirement with your available study days and hours per day to show whether the current schedule appears sufficient.</p>
+  </section>
 
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Study Planner estimates a quick result from the values you enter. It is useful for budgeting, course planning, and comparing education-related scenarios.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the study planner details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="course-cost-tracker.html">Course Cost Tracker</a><a href="degree-roi.html">Degree ROI</a><a href="financial-aid-calculator.html">Financial Aid Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Study Planner estimate?</h3><p class="zac-support-answer">It estimates a study planner result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this study planner?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides informational estimates only and is not financial, legal, tax, medical, or professional advice. Review important decisions with a qualified professional when accuracy matters.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
+  <section class="support-card">
+    <h2>Formula / Method Used</h2>
+    <ul>
+      <li><strong>Days remaining = exam date - today</strong></li>
+      <li><strong>Weeks remaining = days remaining / 7</strong></li>
+      <li><strong>Weekly study hours needed = total study hours needed / weeks remaining</strong></li>
+      <li><strong>Suggested daily target = total study hours needed / available study days before exam</strong></li>
+    </ul>
+    <p class="intro">The schedule check compares total available study hours before the exam with the total study hours needed.</p>
+  </section>
 
-    </main><footer><p><strong>Precision Finance</strong> © 2025 | 100+ Free Calculators</p></footer><script>document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();document.getElementById('r').classList.add('active')})</script></body></html>
+  <section class="support-card">
+    <h2>Worked Example</h2>
+    <p class="intro">If the exam is 28 days away, total study time needed is 80 hours, study days available each week are 5, and you can study 2.5 hours per day, the calculator estimates weekly study hours needed and compares the required total hours with the hours your schedule can realistically provide.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>What the Result Means</h2>
+    <p class="intro">Days remaining shows the countdown to the exam. Weekly study hours needed shows the pace required to hit the total study target. “Schedule enough” shows whether the planned study availability appears to cover the target. Suggested daily target spreads the remaining work across the available study days.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li>Overestimating the number of productive study hours per day.</li>
+      <li>Ignoring days lost to work, travel, or fatigue.</li>
+      <li>Assuming all subjects need equal time when some are harder.</li>
+      <li>Setting the total study hours target without past performance data.</li>
+    </ul>
+  </section>
+
+  <section class="support-card disclaimer">
+    <h2>Limitations / Disclaimer</h2>
+    <p class="intro">This calculator provides planning estimates only and is not a guarantee of exam performance. It does not account for subject difficulty, quality of study sessions, revision efficiency, or unexpected interruptions. Results are estimates only.</p>
+    <p class="updated">Last updated: May 2026</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Related Calculators</h2>
+    <div class="related-links">
+      <a href="grade-calculator.html">Grade Calculator</a>
+      <a href="course-cost-tracker.html">Course Cost Tracker</a>
+      <a href="degree-roi.html">Degree ROI Calculator</a>
+    </div>
+  </section>
+
+  <section class="support-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What does this study planner calculator estimate?</h3>
+      <p class="answer">It estimates days remaining until the exam, weekly study hours needed, whether the current schedule is enough, and a suggested daily target.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does schedule is enough mean?</h3>
+      <p class="answer">It compares the total study time available under the current weekly schedule with the total study hours needed.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can this account for difficulty differences by subject?</h3>
+      <p class="answer">No. This page spreads the total study-hour target across the available time and does not weight subjects by difficulty.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are these study results exact?</h3>
+      <p class="answer">No. Results are estimates only and depend on how realistic the study-hour assumptions are.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+</footer>
+<script>
+document.getElementById('study-planner-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var examDateValue = document.getElementById('exam-date').value;
+  var totalHours = parseFloat(document.getElementById('total-hours').value);
+  var studyDays = parseFloat(document.getElementById('study-days').value);
+  var hoursPerDay = parseFloat(document.getElementById('hours-per-day').value);
+  if (!examDateValue || !isFinite(totalHours) || !isFinite(studyDays) || !isFinite(hoursPerDay) || studyDays <= 0) {
+    return;
+  }
+  var today = new Date();
+  var examDate = new Date(examDateValue + 'T00:00:00');
+  var daysRemaining = Math.ceil((examDate.getTime() - today.getTime()) / (24 * 60 * 60 * 1000));
+  var weeksRemaining = daysRemaining > 0 ? (daysRemaining / 7) : 0;
+  var weeklyHoursNeeded = weeksRemaining > 0 ? (totalHours / weeksRemaining) : 0;
+  var availableStudyDays = weeksRemaining > 0 ? (weeksRemaining * studyDays) : 0;
+  var suggestedDailyTarget = availableStudyDays > 0 ? (totalHours / availableStudyDays) : 0;
+  var totalAvailableHours = availableStudyDays * hoursPerDay;
+  var enough = totalAvailableHours >= totalHours && daysRemaining > 0;
+  var note = daysRemaining <= 0
+    ? 'The exam date entered is today or in the past, so a study timeline cannot be projected.'
+    : enough
+      ? 'Your current schedule appears sufficient for the total study hours entered.'
+      : 'Your current schedule may not provide enough time, so you may need more study days, more hours per day, or a lower total target.';
+  document.getElementById('days-remaining').textContent = Math.max(daysRemaining, 0).toString();
+  document.getElementById('weekly-hours-needed').textContent = weeklyHoursNeeded.toFixed(1);
+  document.getElementById('schedule-enough').textContent = enough ? 'Yes' : 'No';
+  document.getElementById('daily-target').textContent = suggestedDailyTarget.toFixed(1);
+  document.getElementById('study-planner-note').textContent = note;
+  document.getElementById('study-planner-results').classList.add('active');
+});
+</script>
+</body>
+</html>
