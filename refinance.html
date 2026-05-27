@@ -22,7 +22,7 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Refinance Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a refinance calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this refinance calculator?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this refinance calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates break-even timing, monthly payment change, total interest savings, and net savings after closing costs when you compare a current loan with a refinanced loan."}},{"@type":"Question","name":"What does break-even mean in a refinance?","acceptedAnswer":{"@type":"Answer","text":"Break-even is the number of months it may take for monthly savings to recover the refinance closing costs."}},{"@type":"Question","name":"Can a lower rate still produce weak savings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Small rate reductions, high closing costs, or a short remaining time in the home can reduce the benefit of refinancing."}},{"@type":"Question","name":"Does this calculator cover cash-out refinancing?","acceptedAnswer":{"@type":"Answer","text":"No. The estimate compares rate-and-term style payment assumptions and does not model cash-out proceeds, taxes, or equity withdrawal costs."}},{"@type":"Question","name":"When should I rerun the refinance estimate?","acceptedAnswer":{"@type":"Answer","text":"Rerun it when loan balance, market rate, remaining term, or expected closing costs change."}}]}</script>
 </head>
 <body>
     <header>
@@ -109,28 +109,43 @@
 
         <section class="zac-support-card">
             <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Refinance Calculator estimates a quick result from the values you enter. It is useful for rough housing, mortgage, rent, equity, and property-cost planning.</p>
+            <p class="subtle">This calculator estimates whether refinancing may lower your monthly payment and whether the interest savings may justify the closing costs. It compares the current loan payment with a new loan payment and highlights break-even timing, interest savings, and net savings.</p>
         </section>
         <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
+            <h2>Formula / Method Used</h2>
+            <p class="subtle">The page calculates the current loan payment and the refinanced loan payment with the standard amortized loan formula using the same remaining balance and term. Monthly savings are the difference between those payments, break-even months equal closing costs divided by monthly savings, and net savings equal estimated interest savings minus closing costs.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Worked Example</h2>
+            <p class="subtle">If a remaining mortgage balance is $250,000, the current rate is 7.0%, the new rate is 5.5%, the remaining term is 25 years, and closing costs are $5,000, the calculator compares the two payments and shows how long it may take for the payment reduction to offset the refinance costs.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>How to Interpret the Result</h2>
+            <p class="subtle">A shorter break-even period usually makes refinancing easier to justify if you expect to keep the loan long enough. Net savings help you compare the benefit after costs, while the payment comparison shows whether the refinance improves monthly cash flow.</p>
+        </section>
+        <section class="zac-support-card">
+            <h2>Common Mistakes</h2>
             <ol>
-                <li>Review the input labels to confirm the refinance calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+                <li>Ignoring closing costs while focusing only on the lower rate.</li>
+                <li>Refinancing with a break-even period longer than the expected time in the home.</li>
+                <li>Assuming the estimate covers cash-out refinancing or tax effects.</li>
+                <li>Forgetting that a new term can change total interest even if the payment drops.</li>
             </ol>
         </section>
         <section class="zac-support-card">
             <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bond-calculator-south-africa.html">Bond Calculator South Africa</a><a href="closing-costs.html">Closing Costs</a><a href="down-payment.html">Down Payment</a></div>
+            <div class="zac-related-links"><a href="mortgage.html">Mortgage</a><a href="closing-costs.html">Closing Costs</a><a href="home-affordability.html">Home Affordability</a></div>
         </section>
         <section class="zac-support-card">
             <h2>Frequently Asked Questions</h2>
             <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Refinance Calculator estimate?</h3><p class="zac-support-answer">It estimates a refinance calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this refinance calculator?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
+                <div class="zac-support-faq-item"><h3>What does this refinance calculator estimate?</h3><p class="zac-support-answer">It estimates break-even timing, monthly payment change, total interest savings, and net savings after closing costs when you compare a current loan with a refinanced loan.</p></div><div class="zac-support-faq-item"><h3>What does break-even mean in a refinance?</h3><p class="zac-support-answer">Break-even is the number of months it may take for monthly savings to recover the refinance closing costs.</p></div><div class="zac-support-faq-item"><h3>Can a lower rate still produce weak savings?</h3><p class="zac-support-answer">Yes. Small rate reductions, high closing costs, or a short remaining time in the home can reduce the benefit of refinancing.</p></div><div class="zac-support-faq-item"><h3>Does this calculator cover cash-out refinancing?</h3><p class="zac-support-answer">No. The estimate compares rate-and-term style payment assumptions and does not model cash-out proceeds, taxes, or equity withdrawal costs.</p></div><div class="zac-support-faq-item"><h3>When should I rerun the refinance estimate?</h3><p class="zac-support-answer">Rerun it when loan balance, market rate, remaining term, or expected closing costs change.</p></div>
             </div>
         </section>
         <section class="zac-support-card">
             <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides housing and property planning estimates only and is not mortgage, legal, valuation, or investment advice. Rates, fees, taxes, and lender terms can change.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+            <p class="subtle">This calculator provides refinance estimates only. Actual loan pricing, lender fees, escrow requirements, taxes, and underwriting decisions may change the real outcome. Results are estimates only.</p>
+            <p class="subtle" style="margin-top:0.85rem">Last updated: May 2026</p>
         </section>
 
     </main>
@@ -165,7 +180,7 @@
         function shareResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('âš ï¸ Calculate');return}const msg=`ðŸ“Š Refinance\nBreak-even: ${document.getElementById('breakeven').textContent}\nMonthly Savings: ${(parseFloat(document.getElementById('currentPayment').textContent.replace(/[^0-9.-]/g,''))-parseFloat(document.getElementById('newPayment').textContent.replace(/[^0-9.-]/g,''))).toLocaleString()}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('ðŸ“¤ Copied'))}}
         function printResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('âš ï¸ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head><title>Refinance</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Refinance Analysis</h1><p><strong>Break-even:</strong> ${document.getElementById('breakeven').textContent}</p><p><strong>Total Savings:</strong> ${document.getElementById('savings').textContent}</p></body></html>`);w.document.close();w.onload=()=>w.print()}
     </script>
-    <footer><p><strong>Zaculators</strong> Â© 2025</p></footer>
+    <footer><p><strong>Zaculators</strong> © 2025</p></footer>
 </body>
 </html>
 
