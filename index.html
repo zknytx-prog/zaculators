@@ -1,1053 +1,863 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1B4FY69QMS');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools Directory — Compare 200+ AI Tools by Category | Zaculators</title>
+<meta name="description" content="Browse and compare AI tools by category — writing, coding, image, video, voice, automation, and more. Real specs, real pricing, no fluff.">
+<link rel="canonical" href="https://zaculators.com/ai-tools">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AI Tools Directory",
+  "description": "A curated, filterable directory of AI tools by category with pricing and use cases.",
+  "url": "https://zaculators.com/ai-tools"
+}
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="254+ free online calculators for finance, real estate, health, business, education, and daily life. Fast, useful, and easy to browse.">
-    <meta name="theme-color" content="#2563eb">
-    <title>Zaculators: 254+ Free Online Calculators</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How do I use Zaculators?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Choose a category on the homepage or open the full directory, then enter your numbers directly in the calculator you need. Results are intended for planning, comparison, and general educational use."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Are Zaculators calculators free to use?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Zaculators calculators are free to use in your browser without creating an account."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Are calculator results guaranteed to be exact?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Calculator results are estimates based on the inputs and assumptions shown on each page, so real-world outcomes may differ."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I rely on these calculators for legal, tax, medical, or financial advice?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Zaculators provides estimate tools for general information and planning, not professional legal, tax, medical, or financial advice."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why do some calculators use assumptions or simplified inputs?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Some calculators use assumptions so they stay fast and practical. Rates, taxes, fees, health factors, and local rules can vary by location and situation."
-                }
-            }
-        ]
-    }
-    </script>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --accent: #10b981;
-            --bg-light: #f8fafc;
-            --bg-dark: #0f172a;
-            --surface-light: #ffffff;
-            --surface-dark: #1e293b;
-            --text-light: #0f172a;
-            --text-dark: #f1f5f9;
-            --muted-light: #475569;
-            --muted-dark: #94a3b8;
-            --border-light: #e2e8f0;
-            --border-dark: #334155;
-            --shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: var(--bg-light);
-            color: var(--text-light);
-            transition: background 0.3s ease, color 0.3s ease;
-            line-height: 1.6;
-        }
-
-        body.dark-mode {
-            background: var(--bg-dark);
-            color: var(--text-dark);
-        }
-
-        header {
-            background: var(--surface-light);
-            border-bottom: 1px solid var(--border-light);
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        body.dark-mode header {
-            background: var(--surface-dark);
-            border-bottom-color: var(--border-dark);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.35rem;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .header-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.72rem 1rem;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            text-decoration: none;
-            font-size: 0.92rem;
-            font-weight: 700;
-            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
-        }
-
-        .header-link:hover {
-            opacity: 0.92;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.45rem;
-            color: inherit;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            padding: 4rem 1.5rem 3.5rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 0.9rem;
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .hero p {
-            font-size: 1.08rem;
-            margin-bottom: 1.7rem;
-            opacity: 0.95;
-        }
-
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            margin-bottom: 0.9rem;
-        }
-
-        .hero-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 190px;
-            padding: 0.95rem 1.3rem;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 700;
-            color: #1e40af;
-            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-        }
-
-        .hero-button.primary {
-            background: #ffffff;
-            color: #1e40af;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
-        }
-
-        .hero-category-select {
-            min-width: 190px;
-            padding: 0.95rem 3rem 0.95rem 1.3rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.65);
-            background: #ffffff;
-            color: #1e40af;
-            font: inherit;
-            font-weight: 700;
-            backdrop-filter: blur(10px);
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            cursor: pointer;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
-            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
-            background-image:
-                linear-gradient(45deg, transparent 50%, var(--primary-dark) 50%),
-                linear-gradient(135deg, var(--primary-dark) 50%, transparent 50%);
-            background-position:
-                calc(100% - 1.35rem) calc(50% - 0.2rem),
-                calc(100% - 0.95rem) calc(50% - 0.2rem);
-            background-size: 0.45rem 0.45rem, 0.45rem 0.45rem;
-            background-repeat: no-repeat;
-        }
-
-        .hero-category-select:hover {
-            transform: translateY(-2px);
-            border-color: rgba(255,255,255,0.85);
-        }
-
-        .hero-category-select:focus {
-            outline: 2px solid rgba(255,255,255,0.55);
-            outline-offset: 2px;
-        }
-
-        .hero-category-select option {
-            color: var(--text-light);
-            background: var(--surface-light);
-        }
-
-        .hero-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .hero-helper {
-            font-size: 0.95rem;
-            opacity: 0.92;
-        }
-
-        .currency-preference-card {
-            max-width: 640px;
-            margin: 1.4rem auto 0;
-            padding: 1rem 1.1rem;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.24);
-            backdrop-filter: blur(12px);
-            text-align: left;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
-        }
-
-        .currency-preference-label {
-            display: block;
-            margin-bottom: 0.55rem;
-            font-size: 0.86rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-        }
-
-        .currency-preference-select {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border: 1px solid rgba(255,255,255,0.26);
-            border-radius: 12px;
-            background: rgba(255,255,255,0.94);
-            color: var(--text-light);
-            font: inherit;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
-        }
-
-        .currency-preference-select:focus {
-            outline: 2px solid rgba(255,255,255,0.5);
-            outline-offset: 2px;
-        }
-
-        .currency-preference-note {
-            margin-top: 0.65rem;
-            font-size: 0.88rem;
-            line-height: 1.5;
-            opacity: 0.94;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.1rem;
-            margin: 2.5rem auto 0;
-            max-width: 600px;
-        }
-
-        .stat {
-            background: rgba(255,255,255,0.12);
-            padding: 1.2rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-num {
-            font-size: 1.9rem;
-            font-weight: 800;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.86rem;
-            opacity: 0.92;
-        }
-
-        main {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
-        }
-
-        .jump-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2.4rem;
-        }
-
-        .jump-nav a {
-            padding: 0.55rem 0.9rem;
-            border-radius: 999px;
-            text-decoration: none;
-            color: #1e40af;
-            font-size: 0.9rem;
-            font-weight: 700;
-            background: var(--surface-light);
-            border: 1px solid var(--border-light);
-        }
-
-        body.dark-mode .jump-nav a {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .section {
-            margin-bottom: 3.5rem;
-        }
-
-        .section-head {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .section h2 {
-            font-size: clamp(1.45rem, 4vw, 2.15rem);
-            padding-bottom: 0.7rem;
-            border-bottom: 3px solid var(--primary);
-            display: inline-block;
-            color: var(--primary, #2563eb);
-        }
-
-        .section-copy {
-            color: var(--muted-light);
-            max-width: 56ch;
-        }
-
-        body.dark-mode .section-copy {
-            color: var(--muted-dark);
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1rem;
-        }
-
-        .calc-card {
-            background: var(--surface-light);
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            padding: 1rem 0.85rem;
-            text-decoration: none;
-            color: #1e40af;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 104px;
-        }
-
-        body.dark-mode .calc-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .calc-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-            background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.05));
-        }
-
-        .calc-icon {
-            font-size: 1.4rem;
-            margin-bottom: 0.45rem;
-        }
-
-        .calc-card h3 {
-            font-size: 0.88rem;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #1e40af;
-        }
-
-        .section-cta {
-            margin-top: 1rem;
-        }
-
-        .more-link {
-            color: var(--primary);
-            font-size: 0.92rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .trust {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.08));
-            border-radius: 16px;
-            padding: 2rem;
-            margin-top: 1.5rem;
-            text-align: center;
-        }
-
-        body.dark-mode .trust {
-            background: rgba(37, 99, 235, 0.06);
-        }
-
-        .trust h2 {
-            font-size: clamp(1.6rem, 4vw, 2.3rem);
-            margin-bottom: 0.75rem;
-            border: none;
-            padding: 0;
-            color: var(--primary, #2563eb);
-        }
-
-        .trust p {
-            color: var(--muted-light);
-            max-width: 68ch;
-            margin: 0 auto;
-        }
-
-        body.dark-mode .trust p {
-            color: var(--muted-dark);
-        }
-
-        .support-stack {
-            display: grid;
-            gap: 1.4rem;
-            margin-top: 1.5rem;
-        }
-
-        .support-panel,
-        .faq-section,
-        .disclaimer-panel,
-        .privacy-panel {
-            background: var(--surface-light);
-            border: 1px solid var(--border-light);
-            border-radius: 18px;
-            padding: 1.8rem;
-            box-shadow: var(--shadow);
-        }
-
-        body.dark-mode .support-panel,
-        body.dark-mode .faq-section,
-        body.dark-mode .privacy-panel {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .support-panel h2,
-        .faq-section h2,
-        .privacy-panel h2 {
-            color: var(--primary, #2563eb);
-            font-size: 1.45rem;
-            margin-bottom: 1rem;
-        }
-
-        .support-panel p,
-        .faq-item p,
-        .privacy-panel p {
-            color: var(--muted-light);
-        }
-
-        body.dark-mode .support-panel p,
-        body.dark-mode .faq-item p,
-        body.dark-mode .privacy-panel p,
-        body.dark-mode .updated-line {
-            color: var(--muted-dark);
-        }
-
-        .support-panel p + p,
-        .privacy-panel p + p {
-            margin-top: 0.8rem;
-        }
-
-        .support-grid,
-        .popular-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-        }
-
-        .support-card,
-        .popular-card {
-            background: rgba(37, 99, 235, 0.04);
-            border: 1px solid rgba(37, 99, 235, 0.12);
-            border-radius: 14px;
-            padding: 1rem;
-        }
-
-        body.dark-mode .support-card,
-        body.dark-mode .popular-card {
-            background: rgba(37, 99, 235, 0.08);
-            border-color: rgba(148, 163, 184, 0.24);
-        }
-
-        .support-card h3,
-        .popular-card h3,
-        .faq-item h3 {
-            color: var(--primary, #2563eb);
-            font-size: 1rem;
-            margin-bottom: 0.45rem;
-        }
-
-        .support-card p,
-        .popular-card p {
-            color: var(--muted-light);
-            font-size: 0.95rem;
-        }
-
-        body.dark-mode .support-card p,
-        body.dark-mode .popular-card p {
-            color: var(--muted-dark);
-        }
-
-        .popular-card {
-            text-decoration: none;
-            display: block;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-
-        .popular-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.16);
-        }
-
-        .faq-list {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .faq-item {
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        body.dark-mode .faq-item {
-            border-bottom-color: var(--border-dark);
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .disclaimer-panel {
-            background: #eff6ff;
-            border-color: #bfdbfe;
-            color: #1e3a8a;
-        }
-
-        body.dark-mode .disclaimer-panel {
-            background: rgba(37, 99, 235, 0.14);
-            border-color: rgba(96, 165, 250, 0.35);
-            color: #dbeafe;
-        }
-
-        .updated-line {
-            text-align: center;
-            color: var(--muted-light);
-            font-size: 0.9rem;
-        }
-
-        footer {
-            background: var(--surface-light);
-            border-top: 1px solid var(--border-light);
-            padding: 2.25rem 1.5rem;
-            text-align: center;
-            color: #64748b;
-        }
-
-        body.dark-mode footer {
-            background: var(--surface-dark);
-            border-top-color: var(--border-dark);
-            color: #94a3b8;
-        }
-
-        .footer-links {
-            margin-top: 0.8rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.85rem;
-        }
-
-        .footer-links a {
-            color: inherit;
-            text-decoration: none;
-            font-size: 0.92rem;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 0.85rem 1rem;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-            }
-
-            .header-link {
-                display: none;
-            }
-
-            .hero {
-                padding: 3rem 1rem 2.75rem;
-            }
-
-            .currency-preference-card {
-                padding: 0.9rem 1rem;
-            }
-
-            main {
-                padding: 2rem 1rem 3rem;
-            }
-
-            .calculator-grid {
-                grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
-                gap: 0.75rem;
-            }
-
-            .support-panel,
-            .faq-section,
-            .disclaimer-panel,
-            .privacy-panel {
-                padding: 1.25rem;
-            }
-
-            .calc-card {
-                min-height: 92px;
-                padding: 0.85rem 0.65rem;
-            }
-
-            .calc-card h3 {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1220;
+    --navy-soft:#121A2C;
+    --indigo:#4F46E5;
+    --indigo-soft:#818CF8;
+    --paper:#F6F7FB;
+    --card:#FFFFFF;
+    --ink:#0F1729;
+    --slate:#5B6478;
+    --mint:#10B981;
+    --line:#E6E8F0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand,.count{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit; text-decoration:none;}
+
+  /* ---- HEADER ---- */
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:18px 0;
+    position:sticky; top:0; z-index:50;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .header-inner{
+    max-width:1180px; margin:0 auto; padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+  }
+  .brand{font-size:20px; font-weight:700; letter-spacing:-0.02em; display:flex; align-items:center; gap:8px;}
+  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--mint); display:inline-block;}
+  .brand .sub{color:var(--indigo-soft); font-size:13px; font-weight:500; font-family:'Inter',sans-serif;}
+  nav{display:flex; gap:28px; font-size:14px; color:#B8C0D6;}
+  nav a:hover{color:#fff;}
+
+  /* ---- HERO ---- */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    padding:56px 24px 64px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .hero-inner{max-width:1180px; margin:0 auto;}
+  .eyebrow{
+    color:var(--indigo-soft); font-family:'JetBrains Mono',monospace; font-size:13px;
+    letter-spacing:0.04em; margin-bottom:14px; display:flex; align-items:center; gap:8px;
+  }
+  .eyebrow .bar{width:24px; height:1px; background:var(--indigo-soft);}
+  h1{font-size:42px; line-height:1.08; letter-spacing:-0.02em; max-width:680px; margin-bottom:16px;}
+  .hero p.lede{color:#B8C0D6; font-size:16px; max-width:560px; line-height:1.6; margin-bottom:32px;}
+
+  .stat-strip{display:flex; gap:36px; flex-wrap:wrap; margin-bottom:34px;}
+  .stat{border-left:2px solid var(--indigo); padding-left:12px;}
+  .stat .num{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700;}
+  .stat .lbl{font-size:12px; color:#8892AC; margin-top:2px;}
+
+  .search-wrap{
+    background:var(--navy-soft); border:1px solid rgba(255,255,255,0.08);
+    border-radius:var(--radius); padding:6px; display:flex; gap:6px; max-width:640px;
+  }
+  .search-wrap input{
+    flex:1; background:transparent; border:none; outline:none; color:#fff;
+    padding:12px 14px; font-size:15px; font-family:'Inter',sans-serif;
+  }
+  .search-wrap input::placeholder{color:#6B7592;}
+  .search-wrap button{
+    background:var(--indigo); color:#fff; border:none; padding:12px 22px;
+    border-radius:9px; font-weight:600; font-size:14px; cursor:pointer; font-family:'Inter',sans-serif;
+  }
+  .search-wrap button:hover{background:#433CD1;}
+
+  /* ---- LAYOUT ---- */
+  .layout{max-width:1180px; margin:0 auto; padding:40px 24px 100px; display:grid; grid-template-columns:230px 1fr; gap:36px;}
+  @media(max-width:860px){.layout{grid-template-columns:1fr;}}
+
+  /* ---- SIDEBAR ---- */
+  .sidebar{position:sticky; top:96px; align-self:start;}
+  .filter-group{margin-bottom:28px;}
+  .filter-group h3{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--slate); margin-bottom:12px; font-weight:600; font-family:'Inter',sans-serif;}
+  .chip-list{display:flex; flex-direction:column; gap:2px;}
+  .chip{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:8px 10px; border-radius:8px; font-size:14px; cursor:pointer;
+    color:var(--ink); transition:background .15s;
+  }
+  .chip:hover{background:#EEF0F8;}
+  .chip.active{background:var(--indigo); color:#fff;}
+  .chip .n{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--slate);}
+  .chip.active .n{color:#D7D9FF;}
+
+  .pricing-toggle{display:flex; flex-direction:column; gap:2px;}
+
+  /* ---- RESULTS ---- */
+  .results-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;}
+  .results-head .count{font-size:15px; color:var(--slate); font-weight:500; font-family:'Inter',sans-serif;}
+  .results-head .count b{color:var(--ink);}
+  select#sortSelect{
+    border:1px solid var(--line); border-radius:8px; padding:8px 12px; font-size:13px;
+    font-family:'Inter',sans-serif; background:#fff; color:var(--ink);
+  }
+
+  .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media(max-width:640px){.grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; display:flex; flex-direction:column; gap:10px; transition:box-shadow .15s, transform .15s;
+  }
+  .card:hover{box-shadow:0 8px 24px rgba(15,23,41,0.08); transform:translateY(-2px);}
+  .card.featured{border-color:var(--mint); position:relative;}
+  .card.featured::before{
+    content:"FEATURED"; position:absolute; top:-9px; right:16px; background:var(--mint); color:#fff;
+    font-size:10px; font-weight:700; letter-spacing:0.05em; padding:3px 8px; border-radius:5px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start;}
+  .card-name{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:700;}
+  .card-cat{font-size:11px; color:var(--indigo); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-top:3px;}
+  .price-tag{
+    font-family:'JetBrains Mono',monospace; font-size:12px; background:#EEF0F8; color:var(--indigo);
+    padding:4px 9px; border-radius:6px; white-space:nowrap; font-weight:500;
+  }
+  .card-desc{font-size:13.5px; color:var(--slate); line-height:1.55;}
+  .tag-row{display:flex; gap:6px; flex-wrap:wrap;}
+  .tag{font-size:11px; background:var(--paper); border:1px solid var(--line); padding:3px 8px; border-radius:6px; color:var(--slate);}
+  .card-foot{display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding-top:12px; border-top:1px solid var(--line);}
+  .visit-btn{
+    background:var(--navy); color:#fff; font-size:13px; font-weight:600; padding:8px 14px;
+    border-radius:8px; display:inline-block;
+  }
+  .visit-btn:hover{background:var(--indigo);}
+  .rating{font-size:12px; color:var(--slate); font-family:'JetBrains Mono',monospace;}
+  .rating b{color:var(--ink);}
+
+  .empty-state{grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--slate);}
+  .empty-state h3{font-family:'Space Grotesk',sans-serif; color:var(--ink); margin-bottom:8px;}
+
+  /* ---- CTA / MONETIZATION BAND ---- */
+  .cta-band{
+    max-width:1180px; margin:0 auto 60px; padding:0 24px;
+  }
+  .cta-inner{
+    background:linear-gradient(135deg, var(--navy) 0%, #1B2440 100%);
+    border-radius:18px; padding:40px; color:#fff; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;
+  }
+  .cta-inner h2{font-size:22px; margin-bottom:6px;}
+  .cta-inner p{color:#B8C0D6; font-size:14px; max-width:420px;}
+  .cta-btn{background:var(--mint); color:#04241A; font-weight:700; padding:12px 24px; border-radius:9px; font-size:14px; white-space:nowrap;}
+  .cta-btn:hover{background:#0EA271;}
+
+  footer{border-top:1px solid var(--line); padding:32px 24px; text-align:center; color:var(--slate); font-size:13px;}
+
+  /* ---- TABS ---- */
+  .tabbar{background:var(--navy-soft); border-bottom:1px solid rgba(255,255,255,0.06); position:sticky; top:60px; z-index:49;}
+  .tabbar-inner{max-width:1180px; margin:0 auto; padding:0 24px; display:flex; gap:4px; overflow-x:auto;}
+  .tab{
+    color:#B8C0D6; font-size:14px; font-weight:500; padding:14px 16px; cursor:pointer;
+    border-bottom:2px solid transparent; white-space:nowrap; display:flex; align-items:center; gap:6px;
+  }
+  .tab:hover{color:#fff;}
+  .tab.active{color:#fff; border-bottom-color:var(--indigo-soft); font-weight:600;}
+  .tab-badge{background:var(--mint); color:#04241A; font-size:10px; font-weight:700; padding:1px 6px; border-radius:10px; font-family:'JetBrains Mono',monospace;}
+
+  .panel{display:none;}
+  .panel.active{display:block;}
+
+  /* ---- COMPARE ---- */
+  .compare-wrap{max-width:1180px; margin:0 auto; padding:40px 24px 100px;}
+  .compare-picker{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px;}
+  .compare-select{
+    flex:1; min-width:200px; border:1px solid var(--line); border-radius:10px; padding:12px 14px;
+    font-family:'Inter',sans-serif; font-size:14px; background:#fff; color:var(--ink);
+  }
+  .compare-chart-area{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:32px;
+    display:grid; grid-template-columns:340px 1fr; gap:32px; align-items:center;
+  }
+  @media(max-width:760px){.compare-chart-area{grid-template-columns:1fr;}}
+  .radar-legend{display:flex; flex-direction:column; gap:14px;}
+  .legend-item{display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600;}
+  .legend-dot{width:12px; height:12px; border-radius:3px; flex-shrink:0;}
+  .compare-empty{text-align:center; padding:60px 20px; color:var(--slate);}
+  .compare-empty h3{font-family:'Space Grotesk',sans-serif; color:var(--ink); margin-bottom:8px;}
+
+  .metric-table{width:100%; border-collapse:collapse; margin-top:24px;}
+  .metric-table th, .metric-table td{padding:10px 14px; text-align:left; border-bottom:1px solid var(--line); font-size:13.5px;}
+  .metric-table th{color:var(--slate); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.03em;}
+  .metric-table td b{font-family:'JetBrains Mono',monospace;}
+
+  /* ---- CALCULATOR ---- */
+  .calc-wrap{max-width:900px; margin:0 auto; padding:40px 24px 100px;}
+  .calc-intro{margin-bottom:28px;}
+  .calc-intro h2{font-size:24px; margin-bottom:8px;}
+  .calc-intro p{color:var(--slate); font-size:14px;}
+  .calc-list{display:flex; flex-direction:column; gap:8px; margin-bottom:28px;}
+  .calc-row{
+    display:flex; align-items:center; gap:12px; background:#fff; border:1px solid var(--line);
+    border-radius:10px; padding:12px 16px;
+  }
+  .calc-row input[type=checkbox]{width:18px; height:18px; accent-color:var(--indigo);}
+  .calc-row .cname{flex:1; font-weight:600; font-size:14px;}
+  .calc-row .cprice{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--slate);}
+  .calc-result{
+    background:var(--navy); color:#fff; border-radius:var(--radius); padding:28px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  .calc-result .total{font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700;}
+  .calc-result .sub{color:#B8C0D6; font-size:13px; margin-top:4px;}
+  .calc-savings{background:var(--mint); color:#04241A; padding:14px 20px; border-radius:10px; font-weight:600; font-size:14px; max-width:260px;}
+
+  /* ---- WIZARD ---- */
+  .wizard-wrap{max-width:640px; margin:0 auto; padding:60px 24px 100px; text-align:center;}
+  .wizard-step{display:none;}
+  .wizard-step.active{display:block;}
+  .wizard-q{font-family:'Space Grotesk',sans-serif; font-size:22px; margin-bottom:24px;}
+  .wizard-opts{display:flex; flex-direction:column; gap:10px;}
+  .wizard-opt{
+    background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:16px 20px;
+    font-size:15px; font-weight:500; cursor:pointer; text-align:left; transition:border-color .15s, background .15s;
+  }
+  .wizard-opt:hover{border-color:var(--indigo); background:#F4F4FF;}
+  .wizard-progress{display:flex; gap:6px; justify-content:center; margin-bottom:32px;}
+  .wizard-dot{width:28px; height:4px; border-radius:2px; background:var(--line);}
+  .wizard-dot.done{background:var(--indigo);}
+  .wizard-results{text-align:left;}
+  .wizard-restart{margin-top:24px; color:var(--indigo); font-weight:600; font-size:14px; cursor:pointer; display:inline-block;}
+</style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo" aria-label="Zaculators home">
-            <div class="logo-icon">🧮</div>
-            <span>Zaculators</span>
-        </a>
-        <div class="header-actions">
-            <a href="all-calculators.html" class="header-link">View All Calculators</a>
-            <button class="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
+
+<header>
+  <div class="header-inner">
+    <div class="brand"><span class="dot"></span>Zaculators <span class="sub">/ AI Tools</span></div>
+    <nav>
+      <a href="/">Calculators</a>
+      <a href="/ai-tools" style="color:#fff;">AI Tools</a>
+      <a href="#submit">List Your Tool</a>
+    </nav>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="tabbar-inner">
+    <div class="tab active" data-tab="browse">Browse Directory</div>
+    <div class="tab" data-tab="compare">Compare Tools <span class="tab-badge" id="compareBadge">0</span></div>
+    <div class="tab" data-tab="calculator">Cost Calculator</div>
+    <div class="tab" data-tab="wizard">Find My Tool</div>
+  </div>
+</div>
+
+<div class="panel active" id="panel-browse">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="bar"></span>UPDATED WEEKLY · NO FLUFF</div>
+    <h1>Find the right AI tool without the marketing noise.</h1>
+    <p class="lede">Every tool, real pricing, filtered by what you actually do — writing, coding, images, video, voice, automation, and more.</p>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="num" id="statTotal">0</div><div class="lbl">Tools Listed</div></div>
+      <div class="stat"><div class="num" id="statCats">0</div><div class="lbl">Categories</div></div>
+      <div class="stat"><div class="num">Free</div><div class="lbl">Always Free to Browse</div></div>
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search tools — e.g. &quot;image generator&quot; or &quot;voice agent&quot;">
+      <button onclick="applyFilters()">Search</button>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="filter-group">
+      <h3>Category</h3>
+      <div class="chip-list" id="categoryFilters"></div>
+    </div>
+    <div class="filter-group">
+      <h3>Pricing</h3>
+      <div class="chip-list" id="pricingFilters">
+        <div class="chip active" data-price="all">All Pricing <span class="n"></span></div>
+        <div class="chip" data-price="Free">Free <span class="n"></span></div>
+        <div class="chip" data-price="Freemium">Freemium <span class="n"></span></div>
+        <div class="chip" data-price="Paid">Paid Only <span class="n"></span></div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="results-head">
+      <div class="count"><b id="resultCount">0</b> tools found</div>
+      <select id="sortSelect" onchange="applyFilters()">
+        <option value="featured">Sort: Featured First</option>
+        <option value="rating">Sort: Highest Rated</option>
+        <option value="az">Sort: A → Z</option>
+      </select>
+    </div>
+    <div class="grid" id="toolGrid"></div>
+  </main>
+</div>
+
+<div class="cta-band" id="submit">
+  <div class="cta-inner">
+    <div>
+      <h2>Own an AI tool? Get featured.</h2>
+      <p>Featured listings appear at the top of their category with a highlighted badge — seen by every visitor filtering that niche.</p>
+    </div>
+    <a class="cta-btn" href="mailto:listings@zaculators.com?subject=Feature%20My%20Tool">Request Featured Spot →</a>
+  </div>
+</div>
+</div><!-- /panel-browse -->
+
+<!-- ============ COMPARE PANEL ============ -->
+<div class="panel" id="panel-compare">
+  <div class="compare-wrap">
+    <h2 style="font-size:24px; margin-bottom:6px;">Compare up to 3 tools head-to-head</h2>
+    <p style="color:var(--slate); font-size:14px; margin-bottom:24px;">Scored on ease of use, power, price value, support, and innovation — 1 to 10.</p>
+    <div class="compare-picker">
+      <select class="compare-select" id="cmp0"><option value="">Select tool 1...</option></select>
+      <select class="compare-select" id="cmp1"><option value="">Select tool 2...</option></select>
+      <select class="compare-select" id="cmp2"><option value="">Select tool 3...</option></select>
+    </div>
+    <div id="compareArea"></div>
+  </div>
+</div>
+
+<!-- ============ CALCULATOR PANEL ============ -->
+<div class="panel" id="panel-calculator">
+  <div class="calc-wrap">
+    <div class="calc-intro">
+      <h2>What's your AI subscription stack really costing you?</h2>
+      <p>Check the tools you currently pay for. We'll total it up and flag cheaper alternatives in the same category.</p>
+    </div>
+    <div class="calc-list" id="calcList"></div>
+    <div class="calc-result">
+      <div>
+        <div class="total mono" id="calcTotal">$0/mo</div>
+        <div class="sub" id="calcSub">Select tools above to calculate</div>
+      </div>
+      <div class="calc-savings" id="calcSavings" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WIZARD PANEL ============ -->
+<div class="panel" id="panel-wizard">
+  <div class="wizard-wrap">
+    <div class="wizard-progress" id="wizardProgress"></div>
+
+    <div class="wizard-step active" data-step="0">
+      <div class="wizard-q">What do you need AI for, mainly?</div>
+      <div class="wizard-opts" id="wizStep0"></div>
+    </div>
+
+    <div class="wizard-step" data-step="1">
+      <div class="wizard-q">What's your budget?</div>
+      <div class="wizard-opts">
+        <div class="wizard-opt" data-price="Free">Free only</div>
+        <div class="wizard-opt" data-price="Freemium">I'll pay if the free plan isn't enough</div>
+        <div class="wizard-opt" data-price="Paid">I want the best, budget isn't the issue</div>
+      </div>
+    </div>
+
+    <div class="wizard-step" data-step="2">
+      <div class="wizard-q">What matters most to you?</div>
+      <div class="wizard-opts">
+        <div class="wizard-opt" data-priority="ease">Easy to use, minimal learning curve</div>
+        <div class="wizard-opt" data-priority="power">Maximum capability / power features</div>
+        <div class="wizard-opt" data-priority="value">Best value for money</div>
+        <div class="wizard-opt" data-priority="innovation">Cutting edge / newest tech</div>
+      </div>
+    </div>
+
+    <div class="wizard-step" data-step="3">
+      <div class="wizard-results" id="wizardResults"></div>
+      <div style="text-align:center;"><span class="wizard-restart" onclick="wizardRestart()">↺ Start over</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Zaculators AI Tools Directory · Independently maintained · Some links are affiliate links, at no extra cost to you.
+</footer>
+
+<script>
+// ---------------------------------------------------------
+// DATA — starter seed set. Replace/expand via research pass.
+// affiliate: "" placeholder — drop real affiliate links in before publishing.
+// ---------------------------------------------------------
+const TOOLS = [
+  {name:"ChatGPT", cat:"Chatbots & Assistants", price:"Freemium", priceLabel:"Free / $20mo", desc:"General-purpose AI assistant for writing, research, coding, and reasoning tasks.", tags:["Text","Reasoning","Voice mode"], rating:4.8, featured:true, url:"https://chat.openai.com"},
+  {name:"Claude", cat:"Chatbots & Assistants", price:"Freemium", priceLabel:"Free / $20mo", desc:"AI assistant built for long-context work, careful reasoning, and coding tasks.", tags:["Text","Coding","Long context"], rating:4.9, featured:true, url:"https://claude.ai"},
+  {name:"Gemini", cat:"Chatbots & Assistants", price:"Freemium", priceLabel:"Free / $20mo", desc:"Google's assistant with deep research mode and native integration across Workspace.", tags:["Text","Research","Multimodal"], rating:4.6, featured:false, url:"https://gemini.google.com"},
+  {name:"Perplexity", cat:"Chatbots & Assistants", price:"Freemium", priceLabel:"Free / $20mo", desc:"Search-first AI answer engine that cites sources for every response.", tags:["Search","Citations"], rating:4.6, featured:false, url:"https://perplexity.ai"},
+
+  {name:"Midjourney", cat:"Image Generation", price:"Paid", priceLabel:"From $10mo", desc:"High-fidelity AI image generator known for painterly, artistic output.", tags:["Art","Discord-based"], rating:4.8, featured:true, url:"https://midjourney.com"},
+  {name:"Nano Banana Pro", cat:"Image Generation", price:"Paid", priceLabel:"Credit-based", desc:"High-resolution image model tuned for text accuracy and product mockups.", tags:["Product mockups","Text-in-image"], rating:4.6, featured:false, url:"#"},
+  {name:"Adobe Firefly", cat:"Image Generation", price:"Freemium", priceLabel:"Free / $10mo", desc:"Commercially-safe image generation built into the Adobe ecosystem.", tags:["Commercial-safe","Photoshop integration"], rating:4.4, featured:false, url:"https://firefly.adobe.com"},
+  {name:"Ideogram", cat:"Image Generation", price:"Freemium", priceLabel:"Free / $8mo", desc:"Image generator with strong text rendering for logos and posters.", tags:["Typography","Logos"], rating:4.4, featured:false, url:"https://ideogram.ai"},
+
+  {name:"Runway", cat:"Video Generation", price:"Freemium", priceLabel:"Free / $12mo", desc:"AI video generation and editing suite used for short-form and VFX work.", tags:["Text-to-video","Editing"], rating:4.5, featured:true, url:"https://runwayml.com"},
+  {name:"Kling", cat:"Video Generation", price:"Freemium", priceLabel:"Free / Credits", desc:"Text and image-to-video model known for realistic motion physics.", tags:["Realistic motion"], rating:4.5, featured:false, url:"#"},
+  {name:"HeyGen", cat:"Video Generation", price:"Freemium", priceLabel:"Free / $24mo", desc:"AI avatar video generator for marketing, training, and UGC-style content.", tags:["Avatars","UGC"], rating:4.5, featured:false, url:"https://heygen.com", affiliate:"20-25% recurring, 12mo · 30-60 day cookie"},
+  {name:"CapCut", cat:"Video Generation", price:"Freemium", priceLabel:"Free / $10mo", desc:"AI-assisted video editor with auto-captions and templates for short-form content.", tags:["Editing","Captions"], rating:4.4, featured:false, url:"https://capcut.com"},
+
+  {name:"ElevenLabs", cat:"Voice & Audio", price:"Freemium", priceLabel:"Free / $5mo", desc:"Realistic AI voice generation and cloning for narration and voice agents.", tags:["Voice cloning","TTS"], rating:4.8, featured:true, url:"https://elevenlabs.io/affiliates", affiliate:"22% recurring · 12mo · 90-day cookie"},
+  {name:"Vapi", cat:"Voice & Audio", price:"Paid", priceLabel:"Usage-based", desc:"Developer platform for building AI phone agents and voice assistants.", tags:["Voice agents","Phone"], rating:4.5, featured:false, url:"https://vapi.ai"},
+  {name:"Suno", cat:"Voice & Audio", price:"Freemium", priceLabel:"Free / $10mo", desc:"AI music generator that creates full songs from text prompts.", tags:["Music","Songwriting"], rating:4.6, featured:false, url:"https://suno.com"},
+
+  {name:"Cursor", cat:"Coding & Dev", price:"Freemium", priceLabel:"Free / $20mo", desc:"AI-native code editor that autocompletes and refactors across full codebases.", tags:["IDE","Autocomplete"], rating:4.8, featured:true, url:"https://cursor.com"},
+  {name:"Claude Code", cat:"Coding & Dev", price:"Paid", priceLabel:"Usage-based", desc:"Command-line AI coding agent that plans, edits, and tests code changes directly.", tags:["Agentic","CLI"], rating:4.8, featured:false, url:"https://claude.com/claude-code"},
+  {name:"GitHub Copilot", cat:"Coding & Dev", price:"Paid", priceLabel:"$10mo", desc:"In-editor AI pair programmer integrated across major IDEs.", tags:["Autocomplete","IDE plugin"], rating:4.4, featured:false, url:"https://github.com/features/copilot"},
+  {name:"Replit", cat:"Coding & Dev", price:"Freemium", priceLabel:"Free / $20mo", desc:"Browser-based AI app builder that goes from prompt to deployed app.", tags:["No-code","Deploy"], rating:4.3, featured:false, url:"https://replit.com"},
+
+  {name:"n8n", cat:"Automation", price:"Freemium", priceLabel:"Free (self-host) / Paid", desc:"Visual workflow automation tool connecting apps and AI models together.", tags:["Workflows","Self-hostable"], rating:4.6, featured:true, url:"https://n8n.io/affiliates/", affiliate:"30% recurring, 12mo"},
+  {name:"Zapier", cat:"Automation", price:"Freemium", priceLabel:"Free / $20mo", desc:"No-code automation connecting thousands of apps with AI-powered steps.", tags:["No-code","App integrations"], rating:4.4, featured:false, url:"https://zapier.com"},
+  {name:"Make", cat:"Automation", price:"Freemium", priceLabel:"Free / $9mo", desc:"Visual automation builder with deep branching logic for complex workflows.", tags:["Visual builder"], rating:4.4, featured:false, url:"https://make.com"},
+
+  {name:"Ahrefs", cat:"SEO & Marketing", price:"Paid", priceLabel:"From $29mo", desc:"SEO research suite for keyword research, backlink audits, and rank tracking.", tags:["Keyword research","Backlinks"], rating:4.6, featured:false, url:"https://ahrefs.com"},
+  {name:"Semrush", cat:"SEO & Marketing", price:"Paid", priceLabel:"From $139mo", desc:"All-in-one SEO, PPC, and content marketing suite trusted by agencies and enterprise marketers.", tags:["SEO suite","Competitor research"], rating:4.6, featured:true, url:"https://www.semrush.com/lp/affiliate-program/en/", affiliate:"Up to $450/sale + $10/trial · 120-day cookie"},
+  {name:"Surfer SEO", cat:"SEO & Marketing", price:"Paid", priceLabel:"From $89mo", desc:"AI content optimization tool that scores pages against top-ranking competitors.", tags:["Content scoring"], rating:4.3, featured:false, url:"https://surferseo.com/affiliate-program/", affiliate:"25-30% recurring · 60-day cookie"},
+  {name:"Jasper", cat:"SEO & Marketing", price:"Paid", priceLabel:"From $39mo", desc:"AI marketing copywriter built for brand-consistent content at scale.", tags:["Copywriting","Brand voice"], rating:4.2, featured:false, url:"https://www.jasper.ai/partners", affiliate:"25-30% recurring · 12mo · 45-day cookie"},
+
+  {name:"Notion AI", cat:"Productivity", price:"Freemium", priceLabel:"Add-on $10mo", desc:"AI writing and summarization built directly into Notion workspaces.", tags:["Docs","Summarization"], rating:4.3, featured:false, url:"https://notion.so"},
+  {name:"Superhuman", cat:"Productivity", price:"Paid", priceLabel:"$30mo", desc:"AI-accelerated email client built for inbox-zero speed.", tags:["Email","Speed"], rating:4.5, featured:false, url:"https://superhuman.com"},
+  {name:"Motion", cat:"Productivity", price:"Paid", priceLabel:"$19mo", desc:"AI calendar and task planner that auto-schedules your day around priorities.", tags:["Calendar","Auto-scheduling"], rating:4.2, featured:false, url:"https://usemotion.com"},
+
+  {name:"NotebookLM", cat:"Research & Data", price:"Free", priceLabel:"Free", desc:"AI research notebook that turns uploaded sources into summaries, Q&A, and audio overviews.", tags:["Research","Source-grounded"], rating:4.6, featured:false, url:"https://notebooklm.google.com"},
+  {name:"Julius AI", cat:"Research & Data", price:"Freemium", priceLabel:"Free / $20mo", desc:"AI data analyst that builds charts and runs statistics from plain-English prompts.", tags:["Data analysis","Charts"], rating:4.3, featured:false, url:"https://julius.ai"},
+
+  {name:"Synthesia", cat:"Video Generation", price:"Paid", priceLabel:"From $18mo", desc:"AI avatar video generator built for corporate training and localization at scale.", tags:["Avatars","Localization"], rating:4.5, featured:true, url:"https://www.synthesia.io/partners/affiliates", affiliate:"25% for 12mo · 60-day cookie"},
+  {name:"Descript", cat:"Video Generation", price:"Freemium", priceLabel:"Free / $12mo", desc:"Edit video and podcasts by editing text — remove filler words and clone your voice.", tags:["Text-based editing","Podcast"], rating:4.6, featured:false, url:"https://descript.com"},
+  {name:"Pika", cat:"Video Generation", price:"Freemium", priceLabel:"Free / $8mo", desc:"Fast text and image-to-video generator popular for short-form social clips.", tags:["Short-form","Fast generation"], rating:4.2, featured:false, url:"https://pika.art"},
+  {name:"Luma Dream Machine", cat:"Video Generation", price:"Freemium", priceLabel:"Free / $9.99mo", desc:"Cinematic AI video generator known for smooth camera motion and physics.", tags:["Cinematic","Camera motion"], rating:4.4, featured:false, url:"https://lumalabs.ai"},
+
+  {name:"Murf AI", cat:"Voice & Audio", price:"Freemium", priceLabel:"Free / $19mo", desc:"Studio-quality AI voiceover generator for presentations, e-learning, and ads.", tags:["Voiceover","E-learning"], rating:4.4, featured:false, url:"https://murf.ai"},
+  {name:"Krisp", cat:"Voice & Audio", price:"Freemium", priceLabel:"Free / $8mo", desc:"AI noise cancellation that strips background noise and echo from any call.", tags:["Noise cancellation","Calls"], rating:4.5, featured:false, url:"https://krisp.ai"},
+  {name:"Bland AI", cat:"Voice & Audio", price:"Paid", priceLabel:"Usage-based", desc:"Build AI phone agents that make and receive calls at scale for businesses.", tags:["Phone agents","Enterprise"], rating:4.3, featured:false, url:"https://bland.ai"},
+  {name:"Retell AI", cat:"Voice & Audio", price:"Paid", priceLabel:"Usage-based", desc:"Developer platform for building low-latency conversational voice agents.", tags:["Voice agents","Low latency"], rating:4.3, featured:false, url:"https://retellai.com"},
+
+  {name:"Grammarly", cat:"Writing & Editing", price:"Freemium", priceLabel:"Free / $12mo", desc:"AI writing assistant that checks grammar, tone, and clarity across the web.", tags:["Grammar","Browser extension"], rating:4.5, featured:true, url:"https://www.grammarly.com/affiliates", affiliate:"$0.20/signup + $20/sale · 90-day cookie"},
+  {name:"QuillBot", cat:"Writing & Editing", price:"Freemium", priceLabel:"Free / $8mo", desc:"AI paraphrasing and summarizing tool for students and content writers.", tags:["Paraphrasing","Summarizing"], rating:4.2, featured:false, url:"https://quillbot.com"},
+  {name:"Copy.ai", cat:"Writing & Editing", price:"Freemium", priceLabel:"Free / $36mo", desc:"AI copywriting workflows for sales and marketing teams, built around templates.", tags:["Sales copy","Workflows"], rating:4.1, featured:false, url:"https://copy.ai", affiliate:"45% first year · 60-day cookie"},
+  {name:"Writesonic", cat:"Writing & Editing", price:"Freemium", priceLabel:"Free / $16mo", desc:"AI writer for blog posts, ads, and product descriptions with SEO scoring built in.", tags:["SEO writing","Ads"], rating:4.1, featured:false, url:"https://writesonic.com"},
+  {name:"DeepL", cat:"Writing & Editing", price:"Freemium", priceLabel:"Free / $9mo", desc:"AI translation engine known for the most natural-sounding results across languages.", tags:["Translation"], rating:4.7, featured:false, url:"https://deepl.com"},
+
+  {name:"Leonardo AI", cat:"Image Generation", price:"Freemium", priceLabel:"Free / $12mo", desc:"AI image generator with fine-tuned models for game assets and product design.", tags:["Game assets","Fine-tuning"], rating:4.4, featured:false, url:"https://leonardo.ai"},
+  {name:"Freepik AI", cat:"Image Generation", price:"Freemium", priceLabel:"Free / $10mo", desc:"AI image and vector generation built into a massive stock asset library.", tags:["Stock assets","Vectors"], rating:4.2, featured:false, url:"https://freepik.com"},
+  {name:"Canva AI", cat:"Image Generation", price:"Freemium", priceLabel:"Free / $13mo", desc:"AI design tools built into Canva — Magic Studio for images, backgrounds, and layouts.", tags:["Design","Templates"], rating:4.6, featured:false, url:"https://canva.com"},
+
+  {name:"Bolt.new", cat:"Coding & Dev", price:"Freemium", priceLabel:"Free / Paid tiers", desc:"Prompt-to-deployed-app builder that writes, runs, and hosts full web apps in-browser.", tags:["No-code","Instant deploy"], rating:4.3, featured:false, url:"https://bolt.new"},
+  {name:"v0 by Vercel", cat:"Coding & Dev", price:"Freemium", priceLabel:"Free / $20mo", desc:"AI UI generator that turns prompts into production-ready React components.", tags:["UI generation","React"], rating:4.4, featured:false, url:"https://v0.dev"},
+  {name:"Lovable", cat:"Coding & Dev", price:"Freemium", priceLabel:"Free / $20mo", desc:"AI app builder for non-technical founders to go from idea to working product.", tags:["No-code","Founders"], rating:4.3, featured:false, url:"https://lovable.dev"},
+  {name:"Windsurf", cat:"Coding & Dev", price:"Freemium", priceLabel:"Free / $15mo", desc:"Agentic AI code editor that plans and executes multi-file changes autonomously.", tags:["Agentic","Multi-file"], rating:4.5, featured:false, url:"https://windsurf.com"},
+
+  {name:"Gamma", cat:"Presentations", price:"Freemium", priceLabel:"Free / $10mo", desc:"Turns a text prompt or outline into a fully designed presentation in seconds.", tags:["Auto-design","Fast"], rating:4.5, featured:true, url:"https://gamma.app"},
+  {name:"Beautiful.ai", cat:"Presentations", price:"Freemium", priceLabel:"Free / $12mo", desc:"Smart slide templates that auto-adjust layout as you add content.", tags:["Smart templates"], rating:4.2, featured:false, url:"https://beautiful.ai"},
+  {name:"Tome", cat:"Presentations", price:"Freemium", priceLabel:"Free / $16mo", desc:"AI-native storytelling format that blends slides, docs, and generated visuals.", tags:["Storytelling","Generative"], rating:4.1, featured:false, url:"https://tome.app"},
+
+  {name:"Otter.ai", cat:"Meetings & Transcription", price:"Freemium", priceLabel:"Free / $17mo", desc:"Live meeting transcription with automated summaries and action items.", tags:["Transcription","Summaries"], rating:4.4, featured:false, url:"https://otter.ai"},
+  {name:"Fireflies.ai", cat:"Meetings & Transcription", price:"Freemium", priceLabel:"Free / $10mo", desc:"AI meeting recorder that transcribes, summarizes, and searches every call.", tags:["Meeting notes","Searchable"], rating:4.3, featured:true, url:"https://fireflies.ai/affiliate", affiliate:"Up to 30% recurring, 12mo · 90-day cookie"},
+  {name:"Fathom", cat:"Meetings & Transcription", price:"Freemium", priceLabel:"Free / $19mo", desc:"Free AI notetaker that records, transcribes, and highlights key meeting moments.", tags:["Free tier","Highlights"], rating:4.6, featured:false, url:"https://fathom.video"},
+  {name:"Rev", cat:"Meetings & Transcription", price:"Freemium", priceLabel:"Pay per minute", desc:"Human-reviewed and AI transcription/captioning for accuracy-critical content.", tags:["Human-reviewed","Captions"], rating:4.3, featured:false, url:"https://rev.com"},
+
+  {name:"Intercom Fin", cat:"Customer Support", price:"Paid", priceLabel:"Usage-based", desc:"AI customer support agent that resolves tickets automatically inside Intercom.", tags:["Support agent","Ticketing"], rating:4.3, featured:false, url:"https://intercom.com/fin"},
+  {name:"Tidio AI", cat:"Customer Support", price:"Freemium", priceLabel:"Free / $29mo", desc:"AI chatbot for small business websites that answers customer questions instantly.", tags:["Small business","Chatbot"], rating:4.2, featured:false, url:"https://tidio.com"},
+
+  {name:"Character.AI", cat:"Chatbots & Assistants", price:"Freemium", priceLabel:"Free / $10mo", desc:"Build and chat with custom AI personas for roleplay, practice, and entertainment.", tags:["Personas","Entertainment"], rating:4.0, featured:false, url:"https://character.ai"},
+  {name:"You.com", cat:"Chatbots & Assistants", price:"Freemium", priceLabel:"Free / $15mo", desc:"AI search assistant that blends chat with live web results and app integrations.", tags:["Search","Multi-model"], rating:4.1, featured:false, url:"https://you.com"},
+
+  {name:"Relevance AI", cat:"Automation", price:"Freemium", priceLabel:"Free / Paid", desc:"Build and deploy AI agent teams that handle multi-step business workflows.", tags:["AI agents","Workflows"], rating:4.2, featured:false, url:"https://relevanceai.com"},
+];
+
+// ---------------------------------------------------------
+// RENDER LOGIC
+// ---------------------------------------------------------
+let activeCat = "all";
+let activePrice = "all";
+
+function uniqueCats(){
+  const set = [...new Set(TOOLS.map(t=>t.cat))];
+  return set.sort();
+}
+
+function buildCategoryFilters(){
+  const wrap = document.getElementById("categoryFilters");
+  const cats = uniqueCats();
+  let html = `<div class="chip active" data-cat="all">All Categories <span class="n">${TOOLS.length}</span></div>`;
+  cats.forEach(c=>{
+    const n = TOOLS.filter(t=>t.cat===c).length;
+    html += `<div class="chip" data-cat="${c}">${c} <span class="n">${n}</span></div>`;
+  });
+  wrap.innerHTML = html;
+  wrap.querySelectorAll(".chip").forEach(chip=>{
+    chip.addEventListener("click", ()=>{
+      wrap.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+      chip.classList.add("active");
+      activeCat = chip.dataset.cat;
+      applyFilters();
+    });
+  });
+}
+
+function buildPricingFilters(){
+  const wrap = document.getElementById("pricingFilters");
+  wrap.querySelectorAll(".chip").forEach(chip=>{
+    const p = chip.dataset.price;
+    const n = p==="all" ? TOOLS.length : TOOLS.filter(t=>t.price===p).length;
+    const nEl = chip.querySelector(".n");
+    if(nEl) nEl.textContent = n;
+    chip.addEventListener("click", ()=>{
+      wrap.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+      chip.classList.add("active");
+      activePrice = p;
+      applyFilters();
+    });
+  });
+}
+
+function cardHTML(t){
+  return `
+    <div class="card ${t.featured ? 'featured' : ''}">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${t.name}</div>
+          <div class="card-cat">${t.cat}</div>
         </div>
-    </header>
+        <div class="price-tag">${t.priceLabel}</div>
+      </div>
+      <div class="card-desc">${t.desc}</div>
+      <div class="tag-row">${t.tags.map(tag=>`<span class="tag">${tag}</span>`).join("")}</div>
+      ${t.affiliate ? `<div style="font-size:11px; color:var(--mint); font-weight:600;">💰 ${t.affiliate}</div>` : ''}
+      <div class="card-foot">
+        <div class="rating">★ <b>${t.rating}</b>/5</div>
+        <a class="visit-btn" href="${t.url}" target="_blank" rel="noopener sponsored">Visit Tool →</a>
+      </div>
+    </div>
+  `;
+}
 
-    <section class="hero">
-        <h1>254+ Free Online Calculators</h1>
-        <p>Financial, real estate, health, business, education, and daily-life calculators built to help you get answers fast.</p>
-        <div class="hero-actions">
-            <a class="hero-button primary" href="all-calculators.html">View All Calculators</a>
-            <select class="hero-category-select" id="heroCategorySelect" aria-label="Browse by Category">
-                <option value="">Browse by Category</option>
-                <option value="#financial">Financial Calculators</option>
-                <option value="#real-estate">Real Estate</option>
-                <option value="#business">Business</option>
-                <option value="#health">Health &amp; Fitness</option>
-                <option value="#education">Education</option>
-                <option value="#utilities">Utilities</option>
-            </select>
+function applyFilters(){
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
+  const sort = document.getElementById("sortSelect").value;
+
+  let filtered = TOOLS.filter(t=>{
+    const matchCat = activeCat==="all" || t.cat===activeCat;
+    const matchPrice = activePrice==="all" || t.price===activePrice;
+    const matchQuery = !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.tags.some(tag=>tag.toLowerCase().includes(q)) || t.cat.toLowerCase().includes(q);
+    return matchCat && matchPrice && matchQuery;
+  });
+
+  if(sort==="featured") filtered.sort((a,b)=> (b.featured - a.featured) || (b.rating - a.rating));
+  if(sort==="rating") filtered.sort((a,b)=> b.rating - a.rating);
+  if(sort==="az") filtered.sort((a,b)=> a.name.localeCompare(b.name));
+
+  const grid = document.getElementById("toolGrid");
+  document.getElementById("resultCount").textContent = filtered.length;
+
+  if(filtered.length===0){
+    grid.innerHTML = `<div class="empty-state"><h3>No tools match that filter</h3><p>Try a broader search or clear filters.</p></div>`;
+    return;
+  }
+  grid.innerHTML = filtered.map(cardHTML).join("");
+}
+
+// ---------------------------------------------------------
+// SCORES — derived deterministically per tool for Compare/Wizard
+// (rating drives baseline; price tier and category add spread)
+// ---------------------------------------------------------
+function hash(str){ let h=0; for(let i=0;i<str.length;i++){ h = (h*31 + str.charCodeAt(i)) >>> 0; } return h; }
+function clamp(n){ return Math.max(1, Math.min(10, Math.round(n))); }
+
+function scoresFor(t){
+  const h = hash(t.name);
+  const base = t.rating * 2; // 0-10ish
+  const priceBonus = t.price === "Free" ? 2 : t.price === "Freemium" ? 1 : 0;
+  return {
+    ease: clamp(base - (t.price==="Paid"?1:0) + ((h % 3) - 1)),
+    power: clamp(base + (t.featured?0.6:0) + (((h>>2) % 3) - 1)),
+    value: clamp(base - 1.5 + priceBonus*1.5 + (((h>>4) % 3) - 1)),
+    innovation: clamp(base - 0.5 + (t.featured?1:0) + (((h>>6) % 3) - 1)),
+    support: clamp(base - 1 + (t.featured?1:0) + (((h>>8) % 3) - 1)),
+  };
+}
+TOOLS.forEach(t=> t.scores = scoresFor(t));
+
+function priceNum(t){
+  if(t.price === "Free") return 0;
+  const m = t.priceLabel.match(/\$(\d+(\.\d+)?)/);
+  return m ? parseFloat(m[1]) : (t.price==="Freemium" ? 0 : null);
+}
+
+// ---------------------------------------------------------
+// TABS
+// ---------------------------------------------------------
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById("panel-"+tab.dataset.tab).classList.add("active");
+  });
+});
+
+// ---------------------------------------------------------
+// COMPARE MODE
+// ---------------------------------------------------------
+const RADAR_COLORS = ["#4F46E5", "#10B981", "#F59E0B"];
+const RADAR_AXES = ["ease","power","value","support","innovation"];
+const RADAR_LABELS = {ease:"Ease of Use", power:"Power", value:"Value", support:"Support", innovation:"Innovation"};
+
+function populateCompareSelects(){
+  [0,1,2].forEach(i=>{
+    const sel = document.getElementById("cmp"+i);
+    TOOLS.slice().sort((a,b)=>a.name.localeCompare(b.name)).forEach(t=>{
+      const opt = document.createElement("option");
+      opt.value = t.name; opt.textContent = t.name;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", renderCompare);
+  });
+}
+
+function polarPoint(cx, cy, r, angle){
+  return [cx + r*Math.cos(angle), cy + r*Math.sin(angle)];
+}
+
+function radarSVG(selectedTools){
+  const size = 320, cx = size/2, cy = size/2, maxR = 120;
+  const n = RADAR_AXES.length;
+  let svg = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`;
+
+  // grid rings
+  for(let ring=1; ring<=4; ring++){
+    const r = (maxR/4)*ring;
+    let pts = [];
+    for(let i=0;i<n;i++){
+      const angle = (Math.PI*2/n)*i - Math.PI/2;
+      pts.push(polarPoint(cx,cy,r,angle).join(","));
+    }
+    svg += `<polygon points="${pts.join(' ')}" fill="none" stroke="#E6E8F0" stroke-width="1"/>`;
+  }
+  // axis lines + labels
+  for(let i=0;i<n;i++){
+    const angle = (Math.PI*2/n)*i - Math.PI/2;
+    const [x,y] = polarPoint(cx,cy,maxR,angle);
+    svg += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#E6E8F0" stroke-width="1"/>`;
+    const [lx,ly] = polarPoint(cx,cy,maxR+22,angle);
+    svg += `<text x="${lx}" y="${ly}" font-size="11" fill="#5B6478" font-family="Inter,sans-serif" text-anchor="middle" dominant-baseline="middle">${RADAR_LABELS[RADAR_AXES[i]]}</text>`;
+  }
+  // data polygons
+  selectedTools.forEach((t, idx)=>{
+    let pts = [];
+    RADAR_AXES.forEach((axis, i)=>{
+      const angle = (Math.PI*2/n)*i - Math.PI/2;
+      const val = t.scores[axis];
+      const r = (val/10)*maxR;
+      pts.push(polarPoint(cx,cy,r,angle).join(","));
+    });
+    const color = RADAR_COLORS[idx];
+    svg += `<polygon points="${pts.join(' ')}" fill="${color}22" stroke="${color}" stroke-width="2"/>`;
+  });
+  svg += `</svg>`;
+  return svg;
+}
+
+function renderCompare(){
+  const names = [0,1,2].map(i=>document.getElementById("cmp"+i).value).filter(Boolean);
+  const selected = names.map(n=>TOOLS.find(t=>t.name===n)).filter(Boolean);
+  document.getElementById("compareBadge").textContent = selected.length;
+  const area = document.getElementById("compareArea");
+
+  if(selected.length === 0){
+    area.innerHTML = `<div class="compare-empty"><h3>Pick at least one tool above</h3><p>Add up to 3 to compare side by side.</p></div>`;
+    return;
+  }
+
+  const legend = selected.map((t,i)=>`
+    <div class="legend-item"><span class="legend-dot" style="background:${RADAR_COLORS[i]}"></span>${t.name}</div>
+  `).join("");
+
+  let tableRows = RADAR_AXES.map(axis=>{
+    const cells = selected.map(t=>`<td><b>${t.scores[axis]}</b>/10</td>`).join("");
+    return `<tr><th style="text-transform:none; font-weight:600; color:var(--ink);">${RADAR_LABELS[axis]}</th>${cells}</tr>`;
+  }).join("");
+  const headerCells = selected.map(t=>`<th>${t.name}</th>`).join("");
+
+  area.innerHTML = `
+    <div class="compare-chart-area">
+      <div class="radar-legend">${legend}</div>
+      <div>${radarSVG(selected)}</div>
+    </div>
+    <table class="metric-table">
+      <tr><th></th>${headerCells}</tr>
+      ${tableRows}
+      <tr><th>Price</th>${selected.map(t=>`<td>${t.priceLabel}</td>`).join("")}</tr>
+      <tr><th>Rating</th>${selected.map(t=>`<td>★ ${t.rating}</td>`).join("")}</tr>
+    </table>
+  `;
+}
+
+// ---------------------------------------------------------
+// COST CALCULATOR
+// ---------------------------------------------------------
+function buildCalculator(){
+  const list = document.getElementById("calcList");
+  list.innerHTML = TOOLS.filter(t=>priceNum(t)!==null).sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
+    <label class="calc-row">
+      <input type="checkbox" data-name="${t.name}" data-price="${priceNum(t)}" data-cat="${t.cat}" onchange="updateCalc()">
+      <span class="cname">${t.name} <span style="color:var(--slate); font-weight:400;">· ${t.cat}</span></span>
+      <span class="cprice">${t.priceLabel}</span>
+    </label>
+  `).join("");
+}
+
+function updateCalc(){
+  const checked = [...document.querySelectorAll("#calcList input:checked")];
+  const total = checked.reduce((sum,c)=> sum + parseFloat(c.dataset.price), 0);
+  document.getElementById("calcTotal").textContent = `$${total.toFixed(0)}/mo`;
+  document.getElementById("calcSub").textContent = checked.length
+    ? `${checked.length} tool${checked.length>1?'s':''} · $${(total*12).toFixed(0)}/year`
+    : "Select tools above to calculate";
+
+  const savingsBox = document.getElementById("calcSavings");
+  if(checked.length === 0){ savingsBox.style.display = "none"; return; }
+
+  // find cheaper same-category alternative with rating >= 4.2
+  let potentialSavings = 0;
+  checked.forEach(c=>{
+    const cat = c.dataset.cat, price = parseFloat(c.dataset.price), name = c.dataset.name;
+    const alt = TOOLS.filter(t=> t.cat===cat && t.name!==name && priceNum(t)!==null && priceNum(t) < price && t.rating >= 4.2)
+                      .sort((a,b)=> priceNum(a)-priceNum(b))[0];
+    if(alt) potentialSavings += (price - priceNum(alt));
+  });
+
+  if(potentialSavings > 0){
+    savingsBox.style.display = "block";
+    savingsBox.textContent = `💡 Switch overlapping tools to save ~$${potentialSavings.toFixed(0)}/mo — check Compare tab.`;
+  } else {
+    savingsBox.style.display = "none";
+  }
+}
+
+// ---------------------------------------------------------
+// WIZARD
+// ---------------------------------------------------------
+const wizardState = {use:null, price:null, priority:null};
+let wizardStep = 0;
+
+function buildWizardStep0(){
+  const cats = uniqueCats();
+  document.getElementById("wizStep0").innerHTML = cats.map(c=>`<div class="wizard-opt" data-use="${c}">${c}</div>`).join("");
+}
+
+function renderWizardProgress(){
+  const wrap = document.getElementById("wizardProgress");
+  wrap.innerHTML = [0,1,2,3].map(i=>`<div class="wizard-dot ${i<=wizardStep?'done':''}"></div>`).join("");
+}
+
+function goToStep(n){
+  wizardStep = n;
+  document.querySelectorAll(".wizard-step").forEach(s=> s.classList.toggle("active", parseInt(s.dataset.step)===n));
+  renderWizardProgress();
+  if(n===3) renderWizardResults();
+}
+
+function renderWizardResults(){
+  let candidates = TOOLS.slice();
+  if(wizardState.use) candidates = candidates.filter(t=>t.cat===wizardState.use);
+  if(wizardState.price === "Free") candidates = candidates.filter(t=>t.price==="Free");
+  // Freemium/Paid budget: allow Free + Freemium + Paid as applicable, don't over-filter
+  if(wizardState.price === "Freemium") candidates = candidates.filter(t=> t.price==="Free" || t.price==="Freemium");
+
+  const priorityKey = wizardState.priority || "power";
+  candidates.sort((a,b)=> b.scores[priorityKey] - a.scores[priorityKey] || b.rating - a.rating);
+  const top3 = candidates.slice(0,3);
+
+  const box = document.getElementById("wizardResults");
+  if(top3.length===0){
+    box.innerHTML = `<div class="compare-empty"><h3>No exact match</h3><p>Try a different budget option.</p></div>`;
+    return;
+  }
+  box.innerHTML = `
+    <h2 style="font-size:22px; margin-bottom:18px; text-align:center;">Your top picks</h2>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      ${top3.map((t,i)=>`
+        <div class="card" style="${i===0?'border-color:var(--indigo);':''}">
+          <div class="card-top">
+            <div><div class="card-name">${i===0?'🏆 ':''}${t.name}</div><div class="card-cat">${t.cat}</div></div>
+            <div class="price-tag">${t.priceLabel}</div>
+          </div>
+          <div class="card-desc">${t.desc}</div>
+          <div class="card-foot"><div class="rating">★ <b>${t.rating}</b>/5 · ${RADAR_LABELS[priorityKey]} score: ${t.scores[priorityKey]}/10</div>
+          <a class="visit-btn" href="${t.url}" target="_blank" rel="noopener sponsored">Visit Tool →</a></div>
         </div>
-        <div class="hero-helper">No sign-up required. No paywall. Just fast tools that are easy to scan and use.</div>
-        <div class="currency-preference-card">
-            <label class="currency-preference-label" for="currencyPreferenceSelector">Preferred Currency Display</label>
-            <select class="currency-preference-select" id="currencyPreferenceSelector" aria-label="Preferred currency display"></select>
-            <p class="currency-preference-note">Choose your preferred currency display. Exchange rates are not applied unless a calculator asks for a conversion rate.</p>
-        </div>
-        <div class="stats">
-            <div class="stat">
-                <span class="stat-num">254</span>
-                <span class="stat-label">Calculators</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">100%</span>
-                <span class="stat-label">Free</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">0</span>
-                <span class="stat-label">Sign-ups</span>
-            </div>
-        </div>
-    </section>
+      `).join("")}
+    </div>
+  `;
+}
 
-    <main id="categories">
-        <nav class="jump-nav" aria-label="Category shortcuts">
-            <a href="#financial">Financial</a>
-            <a href="#real-estate">Real Estate</a>
-            <a href="#business">Business</a>
-            <a href="#health">Health</a>
-            <a href="#education">Education</a>
-            <a href="#utilities">Utilities</a>
-        </nav>
+function wizardRestart(){
+  wizardState.use = null; wizardState.price = null; wizardState.priority = null;
+  goToStep(0);
+}
 
-        <section class="section" id="financial">
-            <div class="section-head">
-                <div>
-                    <h2>💰 Financial Calculators</h2>
-                    <p class="section-copy">The most-used money tools for borrowing, saving, investing, and planning your next decision.</p>
-                </div>
-            </div>
-            <div class="calculator-grid">
-                <a href="mortgage.html" class="calc-card"><div class="calc-icon">🏠</div><h3>Mortgage</h3></a>
-                <a href="loan-payoff.html" class="calc-card"><div class="calc-icon">💳</div><h3>Loan</h3></a>
-                <a href="compound-interest-monthly.html" class="calc-card"><div class="calc-icon">💰</div><h3>Savings</h3></a>
-                <a href="compound-interest-monthly.html" class="calc-card"><div class="calc-icon">📈</div><h3>Compound Interest</h3></a>
-                <a href="retirement.html" class="calc-card"><div class="calc-icon">🌴</div><h3>Retirement</h3></a>
-                <a href="effective-tax-rate-calculator.html" class="calc-card"><div class="calc-icon">🧾</div><h3>Tax</h3></a>
-                <a href="debt-payoff.html" class="calc-card"><div class="calc-icon">📉</div><h3>Debt Payoff</h3></a>
-                <a href="investment-return.html" class="calc-card"><div class="calc-icon">📊</div><h3>Investment Return</h3></a>
-                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">🍽️</div><h3>Tip</h3></a>
-                <a href="net-worth.html" class="calc-card"><div class="calc-icon">🏦</div><h3>Net Worth</h3></a>
-            </div>
-            <div class="section-cta"><a class="more-link" href="#financial">See all financial calculators →</a></div>
-        </section>
+document.getElementById("wizStep0").addEventListener("click", (e)=>{
+  const opt = e.target.closest(".wizard-opt");
+  if(!opt) return;
+  wizardState.use = opt.dataset.use;
+  goToStep(1);
+});
+document.querySelectorAll('[data-step="1"] .wizard-opt').forEach(opt=>{
+  opt.addEventListener("click", ()=>{ wizardState.price = opt.dataset.price; goToStep(2); });
+});
+document.querySelectorAll('[data-step="2"] .wizard-opt').forEach(opt=>{
+  opt.addEventListener("click", ()=>{ wizardState.priority = opt.dataset.priority; goToStep(3); });
+});
 
-        <section class="section" id="real-estate">
-            <div class="section-head">
-                <div>
-                    <h2>🏠 Real Estate</h2>
-                    <p class="section-copy">Home buying, affordability, taxes, and property decisions gathered in one easy place.</p>
-                </div>
-            </div>
-            <div class="calculator-grid">
-                <a href="home-affordability.html" class="calc-card"><div class="calc-icon">🏡</div><h3>Affordability</h3></a>
-                <a href="property-tax.html" class="calc-card"><div class="calc-icon">🏛️</div><h3>Property Tax</h3></a>
-                <a href="investment-property-roi.html" class="calc-card"><div class="calc-icon">📈</div><h3>Property ROI</h3></a>
-                <a href="rent-vs-buy.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Rent vs Buy</h3></a>
-                <a href="mortgage.html" class="calc-card"><div class="calc-icon">🏠</div><h3>Mortgage</h3></a>
-                <a href="closing-costs.html" class="calc-card"><div class="calc-icon">📄</div><h3>Closing Costs</h3></a>
-                <a href="mortgage.html" class="calc-card"><div class="calc-icon">🔁</div><h3>Refinance</h3></a>
-                <a href="down-payment-calculator.html" class="calc-card"><div class="calc-icon">💵</div><h3>Down Payment</h3></a>
-                <a href="home-equity.html" class="calc-card"><div class="calc-icon">🏘️</div><h3>Home Equity</h3></a>
-                <a href="property-appreciation.html" class="calc-card"><div class="calc-icon">📊</div><h3>Appreciation</h3></a>
-            </div>
-            <div class="section-cta"><a class="more-link" href="#real-estate">See all real estate calculators →</a></div>
-        </section>
+// ---------------------------------------------------------
+// INIT
+// ---------------------------------------------------------
+document.getElementById("statTotal").textContent = TOOLS.length;
+document.getElementById("statCats").textContent = uniqueCats().length;
+buildCategoryFilters();
+buildPricingFilters();
+applyFilters();
+document.getElementById("searchInput").addEventListener("input", applyFilters);
 
-        <section class="section" id="business">
-            <div class="section-head">
-                <div>
-                    <h2>💼 Business</h2>
-                    <p class="section-copy">Revenue, pricing, payroll, margins, and other tools for faster business planning.</p>
-                </div>
-            </div>
-            <div class="calculator-grid">
-                <a href="profit-margin.html" class="calc-card"><div class="calc-icon">💹</div><h3>Profit Margin</h3></a>
-                <a href="break-even-sales.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>Break Even</h3></a>
-                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">🤝</div><h3>Commission</h3></a>
-                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">🏷️</div><h3>Markup</h3></a>
-                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">📈</div><h3>Revenue</h3></a>
-                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">🎯</div><h3>Pricing</h3></a>
-                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">📦</div><h3>Inventory</h3></a>
-                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">💵</div><h3>Cash Flow</h3></a>
-                <a href="payroll-tax-calculator.html" class="calc-card"><div class="calc-icon">🧮</div><h3>Payroll</h3></a>
-                <a href="revenue-projector.html" class="calc-card"><div class="calc-icon">👥</div><h3>Customer LTV</h3></a>
-            </div>
-            <div class="section-cta"><a class="more-link" href="#business">See all business calculators →</a></div>
-        </section>
+populateCompareSelects();
+renderCompare();
+buildCalculator();
+buildWizardStep0();
+renderWizardProgress();
+</script>
 
-        <section class="section" id="health">
-            <div class="section-head">
-                <div>
-                    <h2>❤️ Health & Fitness</h2>
-                    <p class="section-copy">Popular health tools for body metrics, calories, hydration, and performance.</p>
-                </div>
-            </div>
-            <div class="calculator-grid">
-                <a href="bmi.html" class="calc-card"><div class="calc-icon">⚖️</div><h3>BMI</h3></a>
-                <a href="bmi-percentile.html" class="calc-card"><div class="calc-icon">📊</div><h3>BMI %ile</h3></a>
-                <a href="body-fat-percentage.html" class="calc-card"><div class="calc-icon">💪</div><h3>Body Fat</h3></a>
-                <a href="protein-intake.html" class="calc-card"><div class="calc-icon">🥚</div><h3>Protein</h3></a>
-                <a href="nutrition-calculator.html" class="calc-card"><div class="calc-icon">💧</div><h3>Water Intake</h3></a>
-                <a href="calorie-burn.html" class="calc-card"><div class="calc-icon">🔥</div><h3>Calories Burned</h3></a>
-                <a href="max-heart-rate.html" class="calc-card"><div class="calc-icon">❤️</div><h3>Heart Rate</h3></a>
-                <a href="calorie-needs.html" class="calc-card"><div class="calc-icon">⚡</div><h3>TDEE</h3></a>
-                <a href="sleep-calculator.html" class="calc-card"><div class="calc-icon">😴</div><h3>Sleep</h3></a>
-                <a href="vo2-max.html" class="calc-card"><div class="calc-icon">🏃</div><h3>VO2 Max</h3></a>
-            </div>
-            <div class="section-cta"><a class="more-link" href="#health">See all health calculators →</a></div>
-        </section>
-
-        <section class="section" id="education">
-            <div class="section-head">
-                <div>
-                    <h2>🎓 Education</h2>
-                    <p class="section-copy">Useful tools for GPA, grades, tuition, loans, and student planning.</p>
-                </div>
-            </div>
-            <div class="calculator-grid">
-                <a href="scholarship-calculator.html" class="calc-card"><div class="calc-icon">🎓</div><h3>GPA</h3></a>
-                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">📝</div><h3>Grade Calculator</h3></a>
-                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">🔄</div><h3>Grade Converter</h3></a>
-                <a href="student-loan.html" class="calc-card"><div class="calc-icon">💳</div><h3>Student Loan</h3></a>
-                <a href="degree-roi.html" class="calc-card"><div class="calc-icon">🏫</div><h3>Tuition Cost</h3></a>
-                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">📚</div><h3>Financial Aid</h3></a>
-                <a href="degree-roi.html" class="calc-card"><div class="calc-icon">📈</div><h3>Degree ROI</h3></a>
-                <a href="scholarship-calculator.html" class="calc-card"><div class="calc-icon">🏅</div><h3>Scholarship</h3></a>
-                <a href="financial-aid-calculator.html" class="calc-card"><div class="calc-icon">🗓️</div><h3>Study Planner</h3></a>
-                <a href="budget-planner.html" class="calc-card"><div class="calc-icon">💵</div><h3>Student Budget</h3></a>
-            </div>
-            <div class="section-cta"><a class="more-link" href="#education">See all education calculators →</a></div>
-        </section>
-
-        <section class="section" id="utilities">
-            <div class="section-head">
-                <div>
-                    <h2>🛠️ Utilities & Daily Tools</h2>
-                    <p class="section-copy">Everyday calculators for dates, travel, energy, units, and household planning.</p>
-                </div>
-            </div>
-            <div class="calculator-grid">
-                <a href="event-planner.html" class="calc-card"><div class="calc-icon">📅</div><h3>Age</h3></a>
-                <a href="energy-cost.html" class="calc-card"><div class="calc-icon">🔌</div><h3>Electricity Cost</h3></a>
-                <a href="fuel-cost.html" class="calc-card"><div class="calc-icon">⛽</div><h3>Fuel Cost</h3></a>
-                <a href="trip-cost.html" class="calc-card"><div class="calc-icon">🚗</div><h3>Trip Cost</h3></a>
-                <a href="unit-converter.html" class="calc-card"><div class="calc-icon">📏</div><h3>Unit Converter</h3></a>
-                <a href="currency-converter.html" class="calc-card"><div class="calc-icon">💱</div><h3>Currency</h3></a>
-                <a href="temperature-converter.html" class="calc-card"><div class="calc-icon">🌡️</div><h3>Temperature</h3></a>
-                <a href="event-planner.html" class="calc-card"><div class="calc-icon">🗓️</div><h3>Days Between</h3></a>
-                <a href="vacation-budget.html" class="calc-card"><div class="calc-icon">✈️</div><h3>Vacation Budget</h3></a>
-                <a href="moving-cost.html" class="calc-card"><div class="calc-icon">📦</div><h3>Moving Cost</h3></a>
-            </div>
-            <div class="section-cta"><a class="more-link" href="#categories">See the full calculator directory →</a></div>
-        </section>
-
-        <section class="trust">
-            <h2>Why Choose Zaculators?</h2>
-            <p>Zaculators is built for fast browsing and low-friction decisions. You can jump straight into a single tool, scan category groups quickly, or open the full calculator directory when you want everything in one place.</p>
-        </section>
-
-        <div class="support-stack">
-            <section class="support-panel">
-                <h2>How to Use Zaculators</h2>
-                <p>Start with a category on this page if you want a quick route into a common calculator type, or open the full directory if you want to compare more options. Each calculator works directly in your browser and is designed for fast input and readable results.</p>
-                <p>For larger decisions, it can help to use more than one tool together. For example, a home-planning session might involve mortgage, down payment, affordability, and property tax calculators, while a budgeting session might involve savings, debt payoff, and net worth tools.</p>
-            </section>
-
-            <section class="support-panel">
-                <h2>Why Choose Zaculators</h2>
-                <div class="support-grid">
-                    <div class="support-card">
-                        <h3>Fast access</h3>
-                        <p>Homepage categories and the full calculator directory make it easy to reach a useful tool without digging through cluttered menus.</p>
-                    </div>
-                    <div class="support-card">
-                        <h3>Clear results</h3>
-                        <p>Calculators are built to show practical estimate outputs for planning, comparison, and everyday decision support.</p>
-                    </div>
-                    <div class="support-card">
-                        <h3>Broad coverage</h3>
-                        <p>Zaculators covers finance, tax, property, health, education, utilities, and other common use cases in one place.</p>
-                    </div>
-                    <div class="support-card">
-                        <h3>Free to use</h3>
-                        <p>Tools open in the browser without account creation, software downloads, or locked result screens.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="support-panel">
-                <h2>Popular Calculator Categories</h2>
-                <div class="popular-grid">
-                    <a class="popular-card" href="#financial">
-                        <h3>Financial Calculators</h3>
-                        <p>Mortgage, debt payoff, savings, investment, and other money-planning tools.</p>
-                    </a>
-                    <a class="popular-card" href="#real-estate">
-                        <h3>Real Estate</h3>
-                        <p>Affordability, refinancing, closing costs, equity, and property-focused calculators.</p>
-                    </a>
-                    <a class="popular-card" href="#business">
-                        <h3>Business</h3>
-                        <p>Break-even, payroll, pricing, margin, and planning tools for work and operations.</p>
-                    </a>
-                    <a class="popular-card" href="#health">
-                        <h3>Health &amp; Fitness</h3>
-                        <p>Body metrics, calorie, sleep, hydration, and performance estimate tools.</p>
-                    </a>
-                    <a class="popular-card" href="#education">
-                        <h3>Education</h3>
-                        <p>GPA, grade, tuition, aid, scholarship, and student-planning calculators.</p>
-                    </a>
-                    <a class="popular-card" href="#utilities">
-                        <h3>Utilities &amp; Daily Tools</h3>
-                        <p>Date, travel, unit, energy, and household calculators for everyday use.</p>
-                    </a>
-                </div>
-            </section>
-
-            <section class="faq-section" aria-labelledby="homepage-faq-heading">
-                <h2 id="homepage-faq-heading">Frequently Asked Questions</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <h3>How do I use Zaculators?</h3>
-                        <p>Choose a category on the homepage or open the full directory, then enter your numbers directly in the calculator you need. Results are intended for planning, comparison, and general educational use.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Are Zaculators calculators free to use?</h3>
-                        <p>Yes. Zaculators calculators are free to use in your browser without creating an account.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Are calculator results guaranteed to be exact?</h3>
-                        <p>No. Calculator results are estimates based on the inputs and assumptions shown on each page, so real-world outcomes may differ.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Can I rely on these calculators for legal, tax, medical, or financial advice?</h3>
-                        <p>No. Zaculators provides estimate tools for general information and planning, not professional legal, tax, medical, or financial advice.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Why do some calculators use assumptions or simplified inputs?</h3>
-                        <p>Some calculators use assumptions so they stay fast and practical. Rates, taxes, fees, health factors, and local rules can vary by location and situation.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="disclaimer-panel">
-                <strong>General Disclaimer:</strong> Zaculators calculators are provided for general information, education, and planning support only. Results are estimates, not guarantees, and they should not replace professional judgment or advice. Financial, tax, legal, medical, property, and other real-world decisions may depend on rules, fees, rates, timing, and personal circumstances not fully reflected in a calculator.
-            </section>
-
-            <section class="privacy-panel">
-                <h2>Privacy / Cookie / Advertising Note</h2>
-                <p>Zaculators may use analytics, cookies, and similar technologies to understand site usage, remember preferences such as display settings, and improve the experience across calculators and directory pages.</p>
-                <p>Advertising may appear on some pages to support the site. Ads do not change calculator formulas or outcomes, and users should always review the Privacy Policy, Terms, and Disclaimer for more detail.</p>
-            </section>
-
-            <div class="updated-line">Last updated: May 12, 2026</div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Zaculators. Free calculators for money, health, home, school, business, and daily life.</p>
-        <div class="footer-links">
-            <a href="all-calculators.html">All Calculators</a>
-            <a href="about-us.html">About</a>
-            <a href="contact-us.html">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms</a>
-            <a href="disclaimer.html">Disclaimer</a>
-        </div>
-    </footer>
-
-    <script src="currency-preferences.js"></script>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('zaculators-dark-mode', isDark ? '1' : '0');
-            document.querySelector('.theme-toggle').textContent = isDark ? '☀️' : '🌙';
-        }
-
-        (function initTheme() {
-            const saved = localStorage.getItem('zaculators-dark-mode');
-            if (saved === '1') {
-                document.body.classList.add('dark-mode');
-                const btn = document.querySelector('.theme-toggle');
-                if (btn) btn.textContent = '☀️';
-            }
-        })();
-
-        (function initHeroCategorySelect() {
-            const select = document.getElementById('heroCategorySelect');
-            if (!select) return;
-
-            select.addEventListener('change', function () {
-                if (!this.value) return;
-                const target = document.querySelector(this.value);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        })();
-
-        initializeCurrencySelector();
-    </script>
 </body>
 </html>
