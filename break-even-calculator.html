@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Break-Even Calculator - How Many Sales Do You Need? | BizyCalc</title>
+<meta name="description" content="Free break-even calculator for small businesses. Enter fixed costs, price, and variable cost per unit to find your break-even point instantly.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="/" class="logo">Bizy<span>Calc</span></a>
+  <nav><a href="/">All Tools</a></nav>
+</header>
+
+<div class="container">
+  <div class="hero" style="padding-top:0;">
+    <span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+    <h1>Break-Even Calculator</h1>
+    <p>See exactly how many units or sales you need to cover your costs.</p>
+  </div>
+
+  <div class="tool-box">
+    <label>Fixed Costs ($/month)</label>
+    <input type="number" id="fixed" placeholder="5000">
+
+    <label>Price Per Unit ($)</label>
+    <input type="number" id="price" placeholder="25">
+
+    <label>Variable Cost Per Unit ($)</label>
+    <input type="number" id="varCost" placeholder="10">
+
+    <button class="calc-btn" onclick="calcBreakEven()">Calculate Break-Even</button>
+
+    <div class="result" id="result">
+      <div class="result-row"><span>Contribution Margin / Unit</span><strong id="rMargin">$0</strong></div>
+      <div class="result-row"><span>Break-Even Units</span><strong id="rUnits">0</strong></div>
+      <div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
+        <span><strong>Break-Even Revenue</strong></span><strong id="rRevenue">$0</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="explain">
+    <h2>How this calculator works</h2>
+    <p>Contribution margin = price per unit − variable cost per unit. Break-even units = fixed costs ÷ contribution margin. Break-even revenue = break-even units × price per unit. Once you cross this number, every additional sale is profit.</p>
+  </div>
+</div>
+
+<footer>&copy; 2026 BizyCalc.com — <a href="/">More free tools</a></footer>
+
+<script>
+function calcBreakEven(){
+  const fixed = parseFloat(document.getElementById('fixed').value) || 0;
+  const price = parseFloat(document.getElementById('price').value) || 0;
+  const varCost = parseFloat(document.getElementById('varCost').value) || 0;
+
+  const margin = price - varCost;
+  const units = margin > 0 ? fixed / margin : 0;
+  const revenue = units * price;
+
+  document.getElementById('rMargin').textContent = '$' + margin.toFixed(2);
+  document.getElementById('rUnits').textContent = Math.ceil(units);
+  document.getElementById('rRevenue').textContent = '$' + revenue.toFixed(2);
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

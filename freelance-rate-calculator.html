@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Rate Calculator - Find Your Ideal Hourly Rate | BizyCalc</title>
+<meta name="description" content="Calculate your ideal freelance hourly rate based on desired income, expenses, billable hours, and taxes. Free, instant, no signup.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="/" class="logo">Bizy<span>Calc</span></a>
+  <nav><a href="/">All Tools</a></nav>
+</header>
+
+<div class="container">
+  <div class="hero" style="padding-top:0;">
+    <span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+    <h1>Freelance Rate Calculator</h1>
+    <p>Figure out exactly what to charge per hour to hit your income goals.</p>
+  </div>
+
+  <div class="tool-box">
+    <label>Desired Annual Income ($)</label>
+    <input type="number" id="income" placeholder="80000">
+
+    <label>Annual Business Expenses ($)</label>
+    <input type="number" id="expenses" placeholder="8000">
+
+    <label>Billable Hours Per Week</label>
+    <input type="number" id="hours" placeholder="25">
+
+    <label>Weeks Worked Per Year</label>
+    <input type="number" id="weeks" placeholder="48">
+
+    <label>Estimated Tax Rate (%)</label>
+    <input type="number" id="taxRate" placeholder="25">
+
+    <button class="calc-btn" onclick="calcRate()">Calculate My Rate</button>
+
+    <div class="result" id="result">
+      <div class="result-row"><span>Total Revenue Needed</span><strong id="rRevenue">$0</strong></div>
+      <div class="result-row"><span>Total Billable Hours / Year</span><strong id="rHours">0</strong></div>
+      <div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
+        <span><strong>Your Hourly Rate</strong></span><strong id="rRate">$0</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="explain">
+    <h2>How this calculator works</h2>
+    <p>We start with your desired take-home income, add your business expenses, then gross it up for taxes. That total is divided by your realistic annual billable hours (weekly billable hours × weeks worked) to get your break-even-plus-profit hourly rate.</p>
+  </div>
+</div>
+
+<footer>&copy; 2026 BizyCalc.com — <a href="/">More free tools</a></footer>
+
+<script>
+function calcRate(){
+  const income = parseFloat(document.getElementById('income').value) || 0;
+  const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+  const hours = parseFloat(document.getElementById('hours').value) || 0;
+  const weeks = parseFloat(document.getElementById('weeks').value) || 0;
+  const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+
+  const base = income + expenses;
+  const grossed = base / (1 - (taxRate/100));
+  const totalHours = hours * weeks;
+  const rate = totalHours > 0 ? grossed / totalHours : 0;
+
+  document.getElementById('rRevenue').textContent = '$' + grossed.toFixed(0);
+  document.getElementById('rHours').textContent = totalHours.toFixed(0);
+  document.getElementById('rRate').textContent = '$' + rate.toFixed(2) + '/hr';
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>
