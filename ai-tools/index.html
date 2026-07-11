@@ -330,9 +330,9 @@
   <div class="cta-inner">
     <div>
       <h2>Own an AI tool? Get featured.</h2>
-      <p>Featured listings appear at the top of their category with a highlighted badge — seen by every visitor filtering that niche.</p>
+      <p>Featured listings appear at the top of their category with a highlighted badge — seen by every visitor filtering that niche. <strong>$49/mo</strong> per category, or <strong>$399/yr</strong> (save 32%).</p>
     </div>
-    <a class="cta-btn" href="mailto:listings@zaculators.com?subject=Feature%20My%20Tool">Request Featured Spot →</a>
+    <a class="cta-btn" href="mailto:listings@zaculators.com?subject=Feature%20My%20Tool%20-%20%2449%2Fmo">Request Featured Spot →</a>
   </div>
 </div>
 </div><!-- /panel-browse -->
@@ -365,6 +365,12 @@
         <div class="sub" id="calcSub">Select tools above to calculate</div>
       </div>
       <div class="calc-savings" id="calcSavings" style="display:none;"></div>
+    </div>
+    <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);text-align:center;">
+      <p style="opacity:.7;margin-bottom:14px;">Need deeper analysis? Try these standalone tools:</p>
+      <a href="/ai-token-cost-calculator.html" style="margin:0 8px;color:inherit;text-decoration:underline;">API Token Cost Calculator</a>
+      <a href="/ai-subscription-comparison.html" style="margin:0 8px;color:inherit;text-decoration:underline;">Compare 2 Subscriptions</a>
+      <a href="/ai-roi-calculator.html" style="margin:0 8px;color:inherit;text-decoration:underline;">AI Automation ROI</a>
     </div>
   </div>
 </div>
@@ -497,6 +503,35 @@ const TOOLS = [
 
   {name:"Relevance AI", cat:"Automation", price:"Freemium", priceLabel:"Free / Paid", desc:"Build and deploy AI agent teams that handle multi-step business workflows.", tags:["AI agents","Workflows"], rating:4.2, featured:false, url:"https://relevanceai.com"},
 ];
+
+// SEO/GEO/AEO: build a full structured ItemList so AI search engines (ChatGPT, Perplexity, Gemini) can cite individual tools
+(function(){
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI Tools Directory",
+    "description": "A curated, filterable directory of AI tools by category with pricing and use cases.",
+    "url": "https://zaculators.com/ai-tools",
+    "numberOfItems": tools.length,
+    "itemListElement": tools.map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": t.name,
+        "applicationCategory": t.cat,
+        "description": t.desc,
+        "url": t.url,
+        "offers": { "@type": "Offer", "price": t.priceLabel },
+        "aggregateRating": t.rating ? { "@type": "AggregateRating", "ratingValue": t.rating, "bestRating": "5" } : undefined
+      }
+    }))
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(itemList);
+  document.head.appendChild(script);
+})();
 
 // ---------------------------------------------------------
 // RENDER LOGIC
