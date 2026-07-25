@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Loan Calculator | Zaculators</title>
-<meta name="description" content="Free Vehicle Loan Calculator — Zaculators / Automotive">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Loan Calculator | Zaculators</title>
+<meta content="Free Vehicle Loan Calculator — Zaculators / Automotive" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -41,77 +42,73 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this vehicle loan calculator work?","acceptedAnswer":{"@type":"Answer","text":"It subtracts the down payment from the vehicle price, then uses a standard fixed-rate amortization formula to estimate the monthly payment."}},{"@type":"Question","name":"Does this include taxes and dealer fees?","acceptedAnswer":{"@type":"Answer","text":"No. This page uses the vehicle price you enter and does not automatically add registration, sales tax, warranties, or dealer add-ons."}},{"@type":"Question","name":"What happens if I enter a zero interest rate?","acceptedAnswer":{"@type":"Answer","text":"The calculator divides the financed amount evenly across the loan term when the interest rate is zero."}},{"@type":"Question","name":"Why might my lender quote a different payment?","acceptedAnswer":{"@type":"Answer","text":"Lenders may include taxes, fees, rebates, insurance products, or different compounding assumptions that are not modeled here."}},{"@type":"Question","name":"Can I compare different down payments and loan terms?","acceptedAnswer":{"@type":"Answer","text":"Yes. Recalculate with different down payments, rates, or months to compare affordable payment ranges."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this vehicle loan calculator work?","acceptedAnswer":{"@type":"Answer","text":"It subtracts the down payment from the vehicle price, then uses a standard fixed-rate amortization formula to estimate the monthly payment."}},{"@type":"Question","name":"Does this include taxes and dealer fees?","acceptedAnswer":{"@type":"Answer","text":"No. This page uses the vehicle price you enter and does not automatically add registration, sales tax, warranties, or dealer add-ons."}},{"@type":"Question","name":"What happens if I enter a zero interest rate?","acceptedAnswer":{"@type":"Answer","text":"The calculator divides the financed amount evenly across the loan term when the interest rate is zero."}},{"@type":"Question","name":"Why might my lender quote a different payment?","acceptedAnswer":{"@type":"Answer","text":"Lenders may include taxes, fees, rebates, insurance products, or different compounding assumptions that are not modeled here."}},{"@type":"Question","name":"Can I compare different down payments and loan terms?","acceptedAnswer":{"@type":"Answer","text":"Yes. Recalculate with different down payments, rates, or months to compare affordable payment ranges."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Vehicle Loan Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Automotive</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="price">Vehicle Price</label><input id="price" type="number" min="0" step="0.01" placeholder="28000" required></div>
-                <div><label for="down">Down Payment</label><input id="down" type="number" min="0" step="0.01" placeholder="4000" required></div>
-                <div><label for="rate">Interest Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="6.5" required></div>
-                <div><label for="months">Loan Term (Months)</label><input id="months" type="number" min="1" step="1" placeholder="60" required></div>
-                <div class="full"><button type="submit">Calculate Loan</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a monthly vehicle loan payment from the vehicle price, down payment, interest rate, and term length. It also shows the total paid across the loan term for planning purposes.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Subtract the down payment from the vehicle price to get the financed amount.</li>
-                <li>Convert the annual interest rate into a monthly rate.</li>
-                <li>Apply the standard amortized loan-payment formula across the number of months entered.</li>
-                <li>Multiply the monthly payment by the term to estimate total paid.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If the vehicle price is <strong>$28,000</strong>, the down payment is <strong>$4,000</strong>, the rate is <strong>6.5%</strong>, and the term is <strong>60 months</strong>, the calculator estimates the monthly payment on the remaining <strong>$24,000</strong> financed amount.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Forgetting to include taxes or dealer fees in the purchase amount you want to finance.</li>
-                <li>Using the teaser rate instead of the approved lender rate.</li>
-                <li>Comparing payment size without looking at total paid over time.</li>
-                <li>Ignoring depreciation and possible negative equity risk.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="vehicle-depreciation.html">Vehicle Depreciation Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>How does this vehicle loan calculator work?</h3><p class="zac-support-answer">It subtracts the down payment from the vehicle price, then uses a standard fixed-rate amortization formula to estimate the monthly payment.</p></div><div class="zac-support-faq-item"><h3>Does this include taxes and dealer fees?</h3><p class="zac-support-answer">No. This page uses the vehicle price you enter and does not automatically add registration, sales tax, warranties, or dealer add-ons.</p></div><div class="zac-support-faq-item"><h3>What happens if I enter a zero interest rate?</h3><p class="zac-support-answer">The calculator divides the financed amount evenly across the loan term when the interest rate is zero.</p></div><div class="zac-support-faq-item"><h3>Why might my lender quote a different payment?</h3><p class="zac-support-answer">Lenders may include taxes, fees, rebates, insurance products, or different compounding assumptions that are not modeled here.</p></div><div class="zac-support-faq-item"><h3>Can I compare different down payments and loan terms?</h3><p class="zac-support-answer">Yes. Recalculate with different down payments, rates, or months to compare affordable payment ranges.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator is a simplified financing estimate. It does not include taxes, registration, lender fees, optional products, changing rates, or credit-based approval terms that can affect a real loan offer.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Vehicle Loan Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Automotive</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="price">Vehicle Price</label><input id="price" min="0" placeholder="28000" required="" step="0.01" type="number"/></div>
+<div><label for="down">Down Payment</label><input id="down" min="0" placeholder="4000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Interest Rate (%)</label><input id="rate" min="0" placeholder="6.5" required="" step="0.01" type="number"/></div>
+<div><label for="months">Loan Term (Months)</label><input id="months" min="1" placeholder="60" required="" step="1" type="number"/></div>
+<div class="full"><button type="submit">Calculate Loan</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Vehicle loans, whether for cars, motorcycles, boats, or other vehicles, follow a standard amortizing loan structure — principal and interest combined into fixed payments over an agreed term, with rates varying based on vehicle type, age, your credit profile, and lender. This calculator estimates monthly payments and total interest using the loan amount, rate, and term you provide for your specific vehicle financing scenario.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Subtract the down payment from the vehicle price to get the financed amount.</li>
+<li>Convert the annual interest rate into a monthly rate.</li>
+<li>Apply the standard amortized loan-payment formula across the number of months entered.</li>
+<li>Multiply the monthly payment by the term to estimate total paid.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If the vehicle price is <strong>$28,000</strong>, the down payment is <strong>$4,000</strong>, the rate is <strong>6.5%</strong>, and the term is <strong>60 months</strong>, the calculator estimates the monthly payment on the remaining <strong>$24,000</strong> financed amount.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Forgetting to include taxes or dealer fees in the purchase amount you want to finance.</li>
+<li>Using the teaser rate instead of the approved lender rate.</li>
+<li>Comparing payment size without looking at total paid over time.</li>
+<li>Ignoring depreciation and possible negative equity risk.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="vehicle-depreciation.html">Vehicle Depreciation Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Compare rates across different lenders, since vehicle type and age can affect what's offered.</li><li>Consider a larger down payment to reduce total interest and avoid being underwater on the loan.</li><li>Get pre-approved financing before shopping to know your budget and improve negotiating position.</li><li>Avoid overly long terms for depreciating assets like vehicles.</li><li>Factor in insurance and maintenance costs alongside the loan payment itself.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Do different vehicle types get different loan rates?</h3><p class="zac-support-answer">Yes, rates can vary depending on whether you're financing a car, motorcycle, boat, RV, or other vehicle type, with some categories considered higher risk by lenders and priced accordingly.</p></div><div class="zac-support-faq-item"><h3>Does vehicle age affect loan terms?</h3><p class="zac-support-answer">Yes, older or higher-mileage vehicles may come with shorter maximum loan terms and sometimes higher rates, since lenders view them as higher risk for the loan duration.</p></div><div class="zac-support-faq-item"><h3>How does my down payment affect the loan?</h3><p class="zac-support-answer">A larger down payment reduces the amount financed, lowering both your monthly payment and total interest paid over the life of the loan.</p></div><div class="zac-support-faq-item"><h3>What's the risk of financing a depreciating asset long-term?</h3><p class="zac-support-answer">Vehicles typically depreciate faster than many other assets, so long loan terms can leave you owing more than the vehicle is worth for an extended period, which matters if you need to sell or trade in early.</p></div><div class="zac-support-faq-item"><h3>Should I get pre-approved before shopping for a vehicle?</h3><p class="zac-support-answer">Yes, pre-approval gives you a clear budget and stronger negotiating position, and lets you compare the dealer's financing offer against outside options.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator is a simplified financing estimate. It does not include taxes, registration, lender fees, optional products, changing rates, or credit-based approval terms that can affect a real loan offer.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

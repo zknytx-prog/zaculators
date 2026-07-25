@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Depreciation Calculator | Zaculators</title>
-<meta name="description" content="Free Vehicle Depreciation Calculator — Zaculators / Automotive">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Depreciation Calculator | Zaculators</title>
+<meta content="Free Vehicle Depreciation Calculator — Zaculators / Automotive" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -41,76 +42,72 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this vehicle depreciation calculator work?","acceptedAnswer":{"@type":"Answer","text":"It applies the annual depreciation rate to the vehicle price year after year using a declining-balance method."}},{"@type":"Question","name":"What depreciation rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Use a rate that fits the vehicle type, market, mileage expectations, and ownership period you want to model."}},{"@type":"Question","name":"Why can actual resale value differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"Mileage, condition, accidents, maintenance history, trim, market demand, and local pricing can all move resale value away from a simple model."}},{"@type":"Question","name":"Does this include loan payoff or negative equity?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates future vehicle value only, not loan balance, payoff amount, or trade-in fees."}},{"@type":"Question","name":"Can I compare several ownership scenarios?","acceptedAnswer":{"@type":"Answer","text":"Yes. Recalculate with different rates and years to compare optimistic and conservative value projections."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this vehicle depreciation calculator work?","acceptedAnswer":{"@type":"Answer","text":"It applies the annual depreciation rate to the vehicle price year after year using a declining-balance method."}},{"@type":"Question","name":"What depreciation rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Use a rate that fits the vehicle type, market, mileage expectations, and ownership period you want to model."}},{"@type":"Question","name":"Why can actual resale value differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"Mileage, condition, accidents, maintenance history, trim, market demand, and local pricing can all move resale value away from a simple model."}},{"@type":"Question","name":"Does this include loan payoff or negative equity?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates future vehicle value only, not loan balance, payoff amount, or trade-in fees."}},{"@type":"Question","name":"Can I compare several ownership scenarios?","acceptedAnswer":{"@type":"Answer","text":"Yes. Recalculate with different rates and years to compare optimistic and conservative value projections."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Vehicle Depreciation Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Automotive</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="purchasePrice">Purchase Price</label><input id="purchasePrice" type="number" min="0" step="0.01" placeholder="32000" required></div>
-                <div><label for="rate">Annual Depreciation Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="15" required></div>
-                <div><label for="years">Years</label><input id="years" type="number" min="1" step="1" placeholder="5" required></div>
-                <div class="full"><button type="submit">Project Value</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates how much a vehicle may be worth after a set number of years using a fixed annual depreciation rate. It is useful for trade-in planning, ownership comparisons, and budgeting for replacement timing.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Enter the purchase price.</li>
-                <li>Enter the annual depreciation rate as a percentage.</li>
-                <li>Enter the number of years you want to project.</li>
-                <li>The calculator uses <strong>future value = purchase price x (1 - depreciation rate)^years</strong>.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If a vehicle costs <strong>$32,000</strong>, depreciates at <strong>15%</strong> per year, and you keep it for <strong>5 years</strong>, the projected value is about <strong>$14,183</strong>. That implies about <strong>$17,817</strong> in estimated depreciation over the period.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Using a depreciation rate that is too low for the vehicle category.</li>
-                <li>Assuming the same rate applies equally every year in real life.</li>
-                <li>Ignoring mileage, accident history, and maintenance condition.</li>
-                <li>Confusing projected value with trade-in cash after fees or payoff.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="vehicle-loan.html">Vehicle Loan Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>How does this vehicle depreciation calculator work?</h3><p class="zac-support-answer">It applies the annual depreciation rate to the vehicle price year after year using a declining-balance method.</p></div><div class="zac-support-faq-item"><h3>What depreciation rate should I use?</h3><p class="zac-support-answer">Use a rate that fits the vehicle type, market, mileage expectations, and ownership period you want to model.</p></div><div class="zac-support-faq-item"><h3>Why can actual resale value differ from this estimate?</h3><p class="zac-support-answer">Mileage, condition, accidents, maintenance history, trim, market demand, and local pricing can all move resale value away from a simple model.</p></div><div class="zac-support-faq-item"><h3>Does this include loan payoff or negative equity?</h3><p class="zac-support-answer">No. This page estimates future vehicle value only, not loan balance, payoff amount, or trade-in fees.</p></div><div class="zac-support-faq-item"><h3>Can I compare several ownership scenarios?</h3><p class="zac-support-answer">Yes. Recalculate with different rates and years to compare optimistic and conservative value projections.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator uses a simplified depreciation model. It does not include market shocks, maintenance history, mileage, financing, taxes, or dealer trade-in adjustments that can materially affect real resale value.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Vehicle Depreciation Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Automotive</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="purchasePrice">Purchase Price</label><input id="purchasePrice" min="0" placeholder="32000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Annual Depreciation Rate (%)</label><input id="rate" min="0" placeholder="15" required="" step="0.01" type="number"/></div>
+<div><label for="years">Years</label><input id="years" min="1" placeholder="5" required="" step="1" type="number"/></div>
+<div class="full"><button type="submit">Project Value</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Vehicle depreciation estimates how much a vehicle's value declines over time, typically fastest in the first few years of ownership, calculated using an assumed annual depreciation rate applied to the purchase price. Because depreciation rates vary significantly by make, model, mileage, and market conditions, this calculator provides a general estimate using the rate you enter, useful for understanding resale value expectations or total cost of ownership planning.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Enter the purchase price.</li>
+<li>Enter the annual depreciation rate as a percentage.</li>
+<li>Enter the number of years you want to project.</li>
+<li>The calculator uses <strong>future value = purchase price x (1 - depreciation rate)^years</strong>.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If a vehicle costs <strong>$32,000</strong>, depreciates at <strong>15%</strong> per year, and you keep it for <strong>5 years</strong>, the projected value is about <strong>$14,183</strong>. That implies about <strong>$17,817</strong> in estimated depreciation over the period.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Using a depreciation rate that is too low for the vehicle category.</li>
+<li>Assuming the same rate applies equally every year in real life.</li>
+<li>Ignoring mileage, accident history, and maintenance condition.</li>
+<li>Confusing projected value with trade-in cash after fees or payoff.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="vehicle-loan.html">Vehicle Loan Calculator</a><a href="vehicle-cost.html">Vehicle Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Research historical depreciation rates for specific makes and models before assuming a generic rate.</li><li>Remember depreciation is typically steepest in the first few years of ownership.</li><li>Factor in expected mileage, since higher mileage generally accelerates depreciation.</li><li>Consider resale value trends when choosing between similar vehicles.</li><li>Use depreciation estimates alongside other ownership costs for a complete cost picture.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Why do vehicles depreciate fastest in the first few years?</h3><p class="zac-support-answer">New vehicles typically lose a significant portion of their value as soon as they're driven off the lot and during the first few years, since buyers generally pay a premium for 'new' status that quickly diminishes.</p></div><div class="zac-support-faq-item"><h3>Do all vehicle makes and models depreciate at the same rate?</h3><p class="zac-support-answer">No, depreciation rates vary significantly by brand, model, reliability reputation, and market demand — some vehicles hold value notably better than others over comparable time periods.</p></div><div class="zac-support-faq-item"><h3>Does mileage affect depreciation beyond just age?</h3><p class="zac-support-answer">Yes, higher-than-average mileage for a vehicle's age typically accelerates depreciation, since it suggests more wear and reduces remaining useful life compared to lower-mileage vehicles of the same age.</p></div><div class="zac-support-faq-item"><h3>How does depreciation affect leasing versus buying decisions?</h3><p class="zac-support-answer">Since lease payments are based on expected depreciation, vehicles with slower depreciation typically have more favorable lease terms, which is one reason certain models are popular lease options.</p></div><div class="zac-support-faq-item"><h3>Should depreciation affect which vehicle I choose to buy?</h3><p class="zac-support-answer">It can be a meaningful factor if resale value matters to you, since choosing a vehicle with historically strong resale value can reduce your effective cost of ownership over time.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator uses a simplified depreciation model. It does not include market shocks, maintenance history, mileage, financing, taxes, or dealer trade-in adjustments that can materially affect real resale value.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

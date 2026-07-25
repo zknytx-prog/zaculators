@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Cost Calculator | Zaculators</title>
-<meta name="description" content="Free Vehicle Cost Calculator — Zaculators / Automotive">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Cost Calculator | Zaculators</title>
+<meta content="Free Vehicle Cost Calculator — Zaculators / Automotive" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -41,76 +42,72 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Vehicle Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates monthly vehicle ownership cost by adding your loan or lease payment, insurance, fuel, and maintenance expenses."}},{"@type":"Question","name":"Does this calculator show annual vehicle cost too?","acceptedAnswer":{"@type":"Answer","text":"Yes. It shows a monthly total and also converts that amount into an estimated annual ownership cost."}},{"@type":"Question","name":"What costs are not included here?","acceptedAnswer":{"@type":"Answer","text":"It does not include registration, parking, depreciation, taxes, tires, repairs beyond routine maintenance, or occasional tolls."}},{"@type":"Question","name":"Should I include a lease payment or a loan payment?","acceptedAnswer":{"@type":"Answer","text":"Enter whichever fixed monthly payment applies to the vehicle you are budgeting for."}},{"@type":"Question","name":"When should I recalculate vehicle cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when fuel, insurance, payment, or maintenance assumptions change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Vehicle Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates monthly vehicle ownership cost by adding your loan or lease payment, insurance, fuel, and maintenance expenses."}},{"@type":"Question","name":"Does this calculator show annual vehicle cost too?","acceptedAnswer":{"@type":"Answer","text":"Yes. It shows a monthly total and also converts that amount into an estimated annual ownership cost."}},{"@type":"Question","name":"What costs are not included here?","acceptedAnswer":{"@type":"Answer","text":"It does not include registration, parking, depreciation, taxes, tires, repairs beyond routine maintenance, or occasional tolls."}},{"@type":"Question","name":"Should I include a lease payment or a loan payment?","acceptedAnswer":{"@type":"Answer","text":"Enter whichever fixed monthly payment applies to the vehicle you are budgeting for."}},{"@type":"Question","name":"When should I recalculate vehicle cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when fuel, insurance, payment, or maintenance assumptions change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Vehicle Cost Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Automotive</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="payment">Monthly Payment</label><input id="payment" type="number" min="0" step="0.01" placeholder="450" required></div>
-                <div><label for="insurance">Monthly Insurance</label><input id="insurance" type="number" min="0" step="0.01" placeholder="160" required></div>
-                <div><label for="fuel">Monthly Fuel</label><input id="fuel" type="number" min="0" step="0.01" placeholder="180" required></div>
-                <div><label for="maintenance">Monthly Maintenance</label><input id="maintenance" type="number" min="0" step="0.01" placeholder="75" required></div>
-                <div class="full"><button type="submit">Calculate Total Cost</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates routine vehicle ownership cost per month and per year. It combines your monthly payment, insurance, fuel, and maintenance so you can compare different vehicles or check how a car fits into your budget.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">Monthly vehicle cost is calculated by adding the four monthly inputs together. The annual estimate is then calculated as <strong>monthly total x 12</strong>. The calculator does not weight any category differently or forecast future price changes.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If your monthly payment is $450, insurance is $160, fuel is $180, and maintenance is $75, the total monthly cost is $865. Multiplied across a year, that becomes an estimated annual ownership cost of $10,380.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The monthly total gives you a quick carrying-cost estimate for the vehicle. The annual figure helps when you compare car ownership against other budget priorities or when you want to see whether a less expensive car meaningfully reduces total transportation cost.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Leaving out irregular costs such as registration, parking, tires, or major repairs.</li>
-                <li>Using a fuel estimate from one driving pattern and applying it to a very different commute.</li>
-                <li>Ignoring depreciation when comparing ownership options.</li>
-                <li>Comparing a new payment with old insurance or maintenance numbers that no longer fit the vehicle.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="fuel-efficiency.html">Fuel Efficiency Calculator</a><a href="vehicle-loan.html">Vehicle Loan Calculator</a><a href="vehicle-depreciation.html">Vehicle Depreciation Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Vehicle Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates monthly vehicle ownership cost by adding your loan or lease payment, insurance, fuel, and maintenance expenses.</p></div><div class="zac-support-faq-item"><h3>Does this calculator show annual vehicle cost too?</h3><p class="zac-support-answer">Yes. It shows a monthly total and also converts that amount into an estimated annual ownership cost.</p></div><div class="zac-support-faq-item"><h3>What costs are not included here?</h3><p class="zac-support-answer">It does not include registration, parking, depreciation, taxes, tires, repairs beyond routine maintenance, or occasional tolls.</p></div><div class="zac-support-faq-item"><h3>Should I include a lease payment or a loan payment?</h3><p class="zac-support-answer">Enter whichever fixed monthly payment applies to the vehicle you are budgeting for.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate vehicle cost?</h3><p class="zac-support-answer">Recalculate when fuel, insurance, payment, or maintenance assumptions change.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This estimate is for budgeting only. Actual ownership cost can vary with taxes, local fees, depreciation, financing terms, repair frequency, mileage, and insurance changes.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Vehicle Cost Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Automotive</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="payment">Monthly Payment</label><input id="payment" min="0" placeholder="450" required="" step="0.01" type="number"/></div>
+<div><label for="insurance">Monthly Insurance</label><input id="insurance" min="0" placeholder="160" required="" step="0.01" type="number"/></div>
+<div><label for="fuel">Monthly Fuel</label><input id="fuel" min="0" placeholder="180" required="" step="0.01" type="number"/></div>
+<div><label for="maintenance">Monthly Maintenance</label><input id="maintenance" min="0" placeholder="75" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Calculate Total Cost</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Total vehicle ownership cost extends well beyond the purchase price or loan payment, including fuel, insurance, maintenance, repairs, registration, and depreciation — all of which combine to determine the true cost of owning a specific vehicle over time. This calculator estimates total cost of ownership using the expense categories and figures you provide, useful for comparing different vehicles beyond just their sticker price.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">Monthly vehicle cost is calculated by adding the four monthly inputs together. The annual estimate is then calculated as <strong>monthly total x 12</strong>. The calculator does not weight any category differently or forecast future price changes.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If your monthly payment is $450, insurance is $160, fuel is $180, and maintenance is $75, the total monthly cost is $865. Multiplied across a year, that becomes an estimated annual ownership cost of $10,380.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The monthly total gives you a quick carrying-cost estimate for the vehicle. The annual figure helps when you compare car ownership against other budget priorities or when you want to see whether a less expensive car meaningfully reduces total transportation cost.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Leaving out irregular costs such as registration, parking, tires, or major repairs.</li>
+<li>Using a fuel estimate from one driving pattern and applying it to a very different commute.</li>
+<li>Ignoring depreciation when comparing ownership options.</li>
+<li>Comparing a new payment with old insurance or maintenance numbers that no longer fit the vehicle.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="fuel-efficiency.html">Fuel Efficiency Calculator</a><a href="vehicle-loan.html">Vehicle Loan Calculator</a><a href="vehicle-depreciation.html">Vehicle Depreciation Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Include depreciation as a real cost, not just an abstract accounting concept.</li><li>Get insurance quotes for specific vehicles before purchasing, since rates vary significantly.</li><li>Factor in expected maintenance costs based on the vehicle's reliability reputation.</li><li>Compare total cost of ownership, not just purchase price, when choosing between vehicles.</li><li>Revisit your estimate periodically as fuel prices, insurance rates, or your driving habits change.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What costs are typically included in total vehicle ownership cost?</h3><p class="zac-support-answer">Common categories include the loan or lease payment, fuel, insurance, routine maintenance, unexpected repairs, registration/licensing fees, and depreciation — all combining to reflect true ownership cost.</p></div><div class="zac-support-faq-item"><h3>Why does comparing purchase price alone not tell the full story?</h3><p class="zac-support-answer">Two vehicles at the same purchase price can have very different total costs due to differences in fuel efficiency, insurance rates, expected maintenance, and depreciation rates.</p></div><div class="zac-support-faq-item"><h3>How does depreciation factor into total cost of ownership?</h3><p class="zac-support-answer">Depreciation (loss of value over time) is often one of the largest hidden costs of vehicle ownership, particularly in the first few years for new vehicles, and should be factored into any thorough cost comparison.</p></div><div class="zac-support-faq-item"><h3>Does insurance cost vary significantly by vehicle?</h3><p class="zac-support-answer">Yes, insurance premiums can vary substantially based on vehicle make, model, safety features, and repair costs, making it an important factor when comparing total ownership cost between different vehicles.</p></div><div class="zac-support-faq-item"><h3>Should I include fuel costs even if I don't drive much?</h3><p class="zac-support-answer">Yes, even modest fuel costs add up over the ownership period and should be factored in for an accurate comparison, especially when comparing vehicles with different fuel efficiency.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This estimate is for budgeting only. Actual ownership cost can vary with taxes, local fees, depreciation, financing terms, repair frequency, mileage, and insurance changes.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
