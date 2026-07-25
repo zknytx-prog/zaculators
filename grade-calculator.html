@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Grade Calculator | Zaculators</title>
-<meta name="description" content="Estimate the final exam grade needed to reach your desired course grade.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate the final exam grade needed to reach your desired course grade." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,108 +80,88 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Grade Calculator</h1>
+<h1>Grade Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate the final exam grade needed to reach your desired course grade. This calculator is useful when your course uses a weighted final exam and you want a quick planning estimate before the term ends.</p>
-    <form id="grade-form">
-      <div class="grid">
-        <div>
-          <label for="current-grade">Current Grade Percentage</label>
-          <input type="number" id="current-grade" min="0" max="100" step="0.01" placeholder="e.g. 84.5" required>
-        </div>
-        <div>
-          <label for="final-weight">Final Exam Weight Percentage</label>
-          <input type="number" id="final-weight" min="0.01" max="100" step="0.01" placeholder="e.g. 25" required>
-        </div>
-        <div>
-          <label for="desired-grade">Desired Final Course Grade</label>
-          <input type="number" id="desired-grade" min="0" max="100" step="0.01" placeholder="e.g. 90" required>
-        </div>
-      </div>
-      <button type="submit">Calculate Grade Needed</button>
-    </form>
-    <div id="grade-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Grade Needed on Final Exam</span><span id="needed-grade" class="metric-value">0.00%</span></div>
-      </div>
-      <p id="grade-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate the final exam grade needed to reach your desired course grade. This calculator is useful when your course uses a weighted final exam and you want a quick planning estimate before the term ends.</p>
+<form id="grade-form">
+<div class="grid">
+<div>
+<label for="current-grade">Current Grade Percentage</label>
+<input id="current-grade" max="100" min="0" placeholder="e.g. 84.5" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="final-weight">Final Exam Weight Percentage</label>
+<input id="final-weight" max="100" min="0.01" placeholder="e.g. 25" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="desired-grade">Desired Final Course Grade</label>
+<input id="desired-grade" max="100" min="0" placeholder="e.g. 90" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Calculate Grade Needed</button>
+</form>
+<div aria-live="polite" class="results" id="grade-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Grade Needed on Final Exam</span><span class="metric-value" id="needed-grade">0.00%</span></div>
+</div>
+<p class="intro" id="grade-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Calculating an overall course grade typically involves weighting different assessment categories (exams, homework, participation, projects) according to their assigned percentage of the final grade, then combining them into a single overall score. This calculator estimates your overall grade using the category scores and weights you provide, useful for tracking progress throughout a course or estimating what you need on remaining assessments.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro"><strong>Needed final exam grade = (desired grade - current grade x remaining weight) / final exam weight</strong></p>
+<p class="intro">In percent form, the remaining weight is <strong>1 - final exam weight</strong> after converting the exam weight percentage to a decimal.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If your current course grade is 84.5%, the final exam is worth 25%, and you want a final course grade of 90%, the calculator first applies your current grade to the remaining 75% of the course and then solves for the final exam score needed to reach 90% overall.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">A result between 0% and 100% means the target is theoretically reachable under the assumptions you entered. A result above 100% means the target is likely out of reach without extra credit or a different grading rule. A result below 0% means you are already on track to finish at or above your target.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using the wrong final exam weight.</li>
+<li>Entering a current grade that already includes the final exam.</li>
+<li>Ignoring extra credit or category-specific grading rules.</li>
+<li>Forgetting that some instructors round final grades differently.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides grade estimates only and is not an official school record. Actual results can vary based on your syllabus, grading scale, teacher rounding, extra credit, and category weighting details.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="grade-converter.html">Grade Converter</a>
+<a href="degree-roi.html">Degree ROI Calculator</a>
+<a href="course-cost-tracker.html">Course Cost Tracker</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Confirm the exact category weights from your syllabus before calculating.</li><li>Check for any dropped-lowest-score or extra-credit policies your instructor might apply.</li><li>Use this to estimate what you need on remaining assessments to reach a target grade.</li><li>Recalculate as new scores come in throughout the course to track your progress.</li><li>Verify your calculated grade against your school's official gradebook periodically.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How are weighted grades calculated?</h3><p>Each category's score is multiplied by its weight (as a percentage of the total grade), and these weighted values are summed to get the overall weighted grade.</p></div><div class="faq-item"><h3>What if my course doesn't use weighted categories?</h3><p>If all assessments count equally, you can treat each as having equal weight (like dividing 100% evenly), or simply average all scores directly instead of using differentiated weights.</p></div><div class="faq-item"><h3>Can I use this to figure out what I need on a final exam?</h3><p>Depending on the specific tool, entering your current category scores and grades along with the final exam's weight can help you back-calculate what score you'd need on the final to reach a target overall grade.</p></div><div class="faq-item"><h3>Does this calculator match my school's exact grading policy?</h3><p>This provides a general weighted average calculation; always verify against your specific syllabus or instructor's stated grading policy, since some courses have unique rules (like dropping lowest scores).</p></div><div class="faq-item"><h3>Why might my calculated grade differ from what's shown in my school's official gradebook?</h3><p>Differences can arise from rounding rules, dropped assignments, extra credit, or other policy-specific adjustments that a general calculator doesn't automatically account for.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates the final exam score needed to reach a target course grade. It assumes your current grade represents the non-final portion of the course and that the final exam weight is applied once to determine the final average. Results are estimates only.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro"><strong>Needed final exam grade = (desired grade - current grade x remaining weight) / final exam weight</strong></p>
-    <p class="intro">In percent form, the remaining weight is <strong>1 - final exam weight</strong> after converting the exam weight percentage to a decimal.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If your current course grade is 84.5%, the final exam is worth 25%, and you want a final course grade of 90%, the calculator first applies your current grade to the remaining 75% of the course and then solves for the final exam score needed to reach 90% overall.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">A result between 0% and 100% means the target is theoretically reachable under the assumptions you entered. A result above 100% means the target is likely out of reach without extra credit or a different grading rule. A result below 0% means you are already on track to finish at or above your target.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Using the wrong final exam weight.</li>
-      <li>Entering a current grade that already includes the final exam.</li>
-      <li>Ignoring extra credit or category-specific grading rules.</li>
-      <li>Forgetting that some instructors round final grades differently.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides grade estimates only and is not an official school record. Actual results can vary based on your syllabus, grading scale, teacher rounding, extra credit, and category weighting details.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="grade-converter.html">Grade Converter</a>
-      <a href="degree-roi.html">Degree ROI Calculator</a>
-      <a href="course-cost-tracker.html">Course Cost Tracker</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this grade calculator estimate?</h3>
-      <p class="answer">It estimates the final exam grade needed to reach a desired final course grade based on your current grade and final exam weight.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What if the needed final exam grade is over 100 percent?</h3>
-      <p class="answer">That means the target grade is not achievable under the assumptions entered unless extra credit or a different weighting method changes the outcome.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What if the needed final exam grade is zero or less?</h3>
-      <p class="answer">That means your current course standing is already enough to reach the desired final grade under the weighting entered.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are grade results exact?</h3>
-      <p class="answer">Results are estimates based on the percentages you enter. Different school grading rules, rounding, and extra credit can change the final outcome.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 document.getElementById('grade-form').addEventListener('submit', function (event) {
