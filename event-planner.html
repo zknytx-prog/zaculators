@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Planner Budget | Zaculators</title>
-<meta name="description" content="Free Event Planner Budget — Zaculators / Utilities &amp; Converters">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Planner Budget | Zaculators</title>
+<meta content="Free Event Planner Budget — Zaculators / Utilities &amp; Converters" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -43,62 +44,58 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Event Planner Budget estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a event planner budget result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this event planner budget?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Event Planner Budget estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a event planner budget result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this event planner budget?","acceptedAnswer":{"@type":"Answer","text":"It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Event Planner Budget</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="event-form" class="grid">
-                <div><label for="guests">Guests</label><input type="number" id="guests" min="1" step="1" placeholder="80" required></div>
-                <div><label for="foodPerGuest">Food per Guest</label><input type="number" id="foodPerGuest" min="0" step="0.01" placeholder="28" required></div>
-                <div><label for="venue">Venue</label><input type="number" id="venue" min="0" step="0.01" placeholder="1200" required></div>
-                <div><label for="decor">Decor</label><input type="number" id="decor" min="0" step="0.01" placeholder="300" required></div>
-                <div class="full"><label for="other">Other Costs</label><input type="number" id="other" min="0" step="0.01" placeholder="250" required></div>
-                <div class="full"><button type="submit">Estimate Event Budget</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Event Planner Budget estimates a quick result from the values you enter. It is useful for pricing, margin, planning, and operating-cost comparisons.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the event planner budget details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="birthday-budget.html">Birthday Budget</a><a href="break-even-sales.html">Break Even Sales</a><a href="budget-planner.html">Budget Planner</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Event Planner Budget estimate?</h3><p class="zac-support-answer">It estimates a event planner budget result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this event planner budget?</h3><p class="zac-support-answer">It gives a useful estimate based on the values you enter, but final figures can change with fees, timing, policy rules, provider terms, or personal circumstances.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for planning and comparison. Important financial, tax, legal, employment, housing, or business decisions should be checked against current official or professional guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. Actual costs, margins, fees, and outcomes can vary.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Event Planner Budget</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="event-form">
+<div><label for="guests">Guests</label><input id="guests" min="1" placeholder="80" required="" step="1" type="number"/></div>
+<div><label for="foodPerGuest">Food per Guest</label><input id="foodPerGuest" min="0" placeholder="28" required="" step="0.01" type="number"/></div>
+<div><label for="venue">Venue</label><input id="venue" min="0" placeholder="1200" required="" step="0.01" type="number"/></div>
+<div><label for="decor">Decor</label><input id="decor" min="0" placeholder="300" required="" step="0.01" type="number"/></div>
+<div class="full"><label for="other">Other Costs</label><input id="other" min="0" placeholder="250" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Event Budget</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Event budget planning typically estimates costs across categories like venue, catering, entertainment, decorations, and staffing, scaled to expected attendance, helping organizers set realistic expectations before committing to vendors or a venue. This calculator estimates total event cost using the category figures and attendance you provide, useful for planning events ranging from small gatherings to larger celebrations.</p>
+</section>
+<section class="zac-support-card">
+<h2>How to Use This Calculator</h2>
+<ol>
+<li>Review the input labels to confirm the event planner budget details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="birthday-budget.html">Birthday Budget</a><a href="break-even-sales.html">Break Even Sales</a><a href="budget-planner.html">Budget Planner</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Get an accurate headcount estimate early, since many costs scale directly with attendance.</li><li>Compare quotes from multiple vendors for major categories like venue and catering.</li><li>Build in a contingency buffer for unexpected costs that often arise during event planning.</li><li>Factor in taxes, gratuities, and service fees separately from quoted vendor prices.</li><li>Track actual spending against your budget as contracts are finalized and deposits are paid.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What are common cost categories for event planning?</h3><p class="zac-support-answer">Typical categories include venue rental, catering (often per-person), entertainment, decorations, staffing or coordination services, and sometimes rentals like tables, chairs, or audiovisual equipment.</p></div><div class="zac-support-faq-item"><h3>How does guest count affect the overall event budget?</h3><p class="zac-support-answer">Costs like catering, and sometimes venue fees, typically scale directly with attendance, so an accurate headcount estimate is important for a realistic budget, even before finalizing other details.</p></div><div class="zac-support-faq-item"><h3>Should I get quotes from multiple vendors before finalizing a budget?</h3><p class="zac-support-answer">Yes, comparing quotes for venue, catering, and other major cost categories can reveal significant price differences, helping you make informed decisions that fit your budget.</p></div><div class="zac-support-faq-item"><h3>How much buffer should I build into an event budget?</h3><p class="zac-support-answer">Building in a reasonable contingency buffer for unexpected costs is a common practice, since events often have some unplanned expenses that arise during final planning or on the day itself.</p></div><div class="zac-support-faq-item"><h3>Does this calculator account for taxes, gratuities, or service fees?</h3><p class="zac-support-answer">Not automatically — many vendors add taxes, gratuities, or service charges on top of quoted prices, so factor these in separately when finalizing your actual budget.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides business planning estimates only and is not accounting, legal, tax, or commercial advice. Actual costs, margins, fees, and outcomes can vary.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         function formatCurrency(value) {
             return value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         }

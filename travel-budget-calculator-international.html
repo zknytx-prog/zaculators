@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Budget Calculator International | Zaculators</title>
-<meta name="description" content="Free Travel Budget Calculator International — Zaculators / Tax &amp; International">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Travel Budget Calculator International | Zaculators</title>
+<meta content="Free Travel Budget Calculator International — Zaculators / Tax &amp; International" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,85 +43,81 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What costs does this travel budget calculator include?","acceptedAnswer":{"@type":"Answer","text":"It adds flights, lodging, food, local transport, activities, and a miscellaneous buffer to estimate a total trip budget."}},{"@type":"Question","name":"Should I include visa fees or travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, if they apply to your trip. Add them into the most appropriate category or include them in the buffer amount."}},{"@type":"Question","name":"Why can actual trip costs be different?","acceptedAnswer":{"@type":"Answer","text":"Flights, lodging, exchange rates, city taxes, baggage fees, and booking timing can all move the final cost above or below a rough estimate."}},{"@type":"Question","name":"Can I use this for multi-person travel?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the combined total you expect for each category across all travelers."}},{"@type":"Question","name":"Where should I verify travel fees?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or the official airline, embassy, or provider source when accuracy matters."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What costs does this travel budget calculator include?","acceptedAnswer":{"@type":"Answer","text":"It adds flights, lodging, food, local transport, activities, and a miscellaneous buffer to estimate a total trip budget."}},{"@type":"Question","name":"Should I include visa fees or travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes, if they apply to your trip. Add them into the most appropriate category or include them in the buffer amount."}},{"@type":"Question","name":"Why can actual trip costs be different?","acceptedAnswer":{"@type":"Answer","text":"Flights, lodging, exchange rates, city taxes, baggage fees, and booking timing can all move the final cost above or below a rough estimate."}},{"@type":"Question","name":"Can I use this for multi-person travel?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the combined total you expect for each category across all travelers."}},{"@type":"Question","name":"Where should I verify travel fees?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or the official airline, embassy, or provider source when accuracy matters."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Travel Budget Calculator International</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="flights">Flights</label><input id="flights" type="number" min="0" step="0.01" placeholder="950" required></div>
-                <div><label for="lodging">Lodging Total</label><input id="lodging" type="number" min="0" step="0.01" placeholder="1200" required></div>
-                <div><label for="food">Food Budget</label><input id="food" type="number" min="0" step="0.01" placeholder="400" required></div>
-                <div><label for="localTransport">Local Transport</label><input id="localTransport" type="number" min="0" step="0.01" placeholder="180" required></div>
-                <div><label for="activities">Activities</label><input id="activities" type="number" min="0" step="0.01" placeholder="350" required></div>
-                <div><label for="buffer">Buffer / Misc.</label><input id="buffer" type="number" min="0" step="0.01" placeholder="200" required></div>
-                <div class="full"><button type="submit">Estimate Travel Budget</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Travel costs vary by season, exchange rate, destination taxes, and booking timing.</div>
-        <div class="disclaimer">Currency display can be changed, but rates, taxes, and rules may still be country-specific.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a total international travel budget by adding major trip categories such as flights, lodging, food, local transport, activities, and a miscellaneous buffer.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Estimate each major travel category separately.</li>
-                <li>Enter the total expected cost for each category.</li>
-                <li>The calculator adds all entered categories to estimate the total budget.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If flights are <strong>950</strong>, lodging is <strong>1,200</strong>, food is <strong>400</strong>, local transport is <strong>180</strong>, activities are <strong>350</strong>, and the buffer is <strong>200</strong>, the estimated total budget is <strong>3,280</strong> in your chosen display currency.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Airfare, entry fees, visa charges, and exchange-rate assumptions can change quickly. Verify current rates with the official government source or the official airline, embassy, or provider source when accuracy matters.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Leaving out visa fees, travel insurance, baggage charges, or local taxes.</li>
-                <li>Using a stale exchange-rate assumption.</li>
-                <li>Forgetting that some costs are per person and others are per trip.</li>
-                <li>Skipping a contingency buffer for delays or emergencies.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="currency-converter.html">Currency Converter</a><a href="visa-cost-calculator.html">Visa Cost Calculator</a><a href="utility-cost-converter.html">Utility Cost Converter</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What costs does this travel budget calculator include?</h3><p class="zac-support-answer">It adds flights, lodging, food, local transport, activities, and a miscellaneous buffer to estimate a total trip budget.</p></div><div class="zac-support-faq-item"><h3>Should I include visa fees or travel insurance?</h3><p class="zac-support-answer">Yes, if they apply to your trip. Add them into the most appropriate category or include them in the buffer amount.</p></div><div class="zac-support-faq-item"><h3>Why can actual trip costs be different?</h3><p class="zac-support-answer">Flights, lodging, exchange rates, city taxes, baggage fees, and booking timing can all move the final cost above or below a rough estimate.</p></div><div class="zac-support-faq-item"><h3>Can I use this for multi-person travel?</h3><p class="zac-support-answer">Yes. Enter the combined total you expect for each category across all travelers.</p></div><div class="zac-support-faq-item"><h3>Where should I verify travel fees?</h3><p class="zac-support-answer">Verify current rates with the official government source or the official airline, embassy, or provider source when accuracy matters.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator is a rough planning tool and does not model live airfare changes, dynamic lodging pricing, local taxes, foreign transaction fees, or country-specific entry rules in real time.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Travel Budget Calculator International</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="flights">Flights</label><input id="flights" min="0" placeholder="950" required="" step="0.01" type="number"/></div>
+<div><label for="lodging">Lodging Total</label><input id="lodging" min="0" placeholder="1200" required="" step="0.01" type="number"/></div>
+<div><label for="food">Food Budget</label><input id="food" min="0" placeholder="400" required="" step="0.01" type="number"/></div>
+<div><label for="localTransport">Local Transport</label><input id="localTransport" min="0" placeholder="180" required="" step="0.01" type="number"/></div>
+<div><label for="activities">Activities</label><input id="activities" min="0" placeholder="350" required="" step="0.01" type="number"/></div>
+<div><label for="buffer">Buffer / Misc.</label><input id="buffer" min="0" placeholder="200" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Travel Budget</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Travel costs vary by season, exchange rate, destination taxes, and booking timing.</div>
+<div class="disclaimer">Currency display can be changed, but rates, taxes, and rules may still be country-specific.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">International trip budgets involve additional considerations beyond domestic travel, including currency exchange, international flight costs, visa fees, and potentially higher daily costs in certain destinations, making a dedicated international travel budget estimate useful for accurate planning. This calculator estimates total international trip cost using the figures you provide, adaptable across different destination countries and currencies.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Estimate each major travel category separately.</li>
+<li>Enter the total expected cost for each category.</li>
+<li>The calculator adds all entered categories to estimate the total budget.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If flights are <strong>950</strong>, lodging is <strong>1,200</strong>, food is <strong>400</strong>, local transport is <strong>180</strong>, activities are <strong>350</strong>, and the buffer is <strong>200</strong>, the estimated total budget is <strong>3,280</strong> in your chosen display currency.</p>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Airfare, entry fees, visa charges, and exchange-rate assumptions can change quickly. Verify current rates with the official government source or the official airline, embassy, or provider source when accuracy matters.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Leaving out visa fees, travel insurance, baggage charges, or local taxes.</li>
+<li>Using a stale exchange-rate assumption.</li>
+<li>Forgetting that some costs are per person and others are per trip.</li>
+<li>Skipping a contingency buffer for delays or emergencies.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="currency-converter.html">Currency Converter</a><a href="visa-cost-calculator.html">Visa Cost Calculator</a><a href="utility-cost-converter.html">Utility Cost Converter</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Research destination-specific daily costs rather than assuming domestic-level pricing.</li><li>Factor in visa fees, travel insurance, and any destination-specific health requirements.</li><li>Use cards with no foreign transaction fees to minimize currency exchange costs.</li><li>Build in a buffer for exchange rate fluctuations affecting your actual spending power.</li><li>Avoid airport currency exchange kiosks, which often offer poor exchange rates.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What additional costs should international travel budgets include beyond domestic trips?</h3><p class="zac-support-answer">International trips often involve visa fees, travel insurance, international flight costs (typically higher than domestic), currency exchange considerations, and sometimes vaccination or health requirement costs specific to the destination.</p></div><div class="zac-support-faq-item"><h3>How does currency exchange affect international trip budgeting?</h3><p class="zac-support-answer">Exchange rate fluctuations can affect your actual spending power abroad, and currency conversion fees (from cards or exchange services) add a cost layer worth factoring into your overall budget.</p></div><div class="zac-support-faq-item"><h3>Should I research destination-specific daily costs before budgeting an international trip?</h3><p class="zac-support-answer">Yes, daily costs for food, transportation, and accommodation vary enormously between countries and even cities, so researching destination-specific cost data gives a much more accurate budget than generic assumptions.</p></div><div class="zac-support-faq-item"><h3>Is travel insurance worth including in an international trip budget?</h3><p class="zac-support-answer">Many travelers find travel insurance a worthwhile inclusion for international trips, covering potential costs from trip cancellation, medical emergencies abroad, or lost luggage — factor this into your total budget.</p></div><div class="zac-support-faq-item"><h3>How can I minimize currency exchange fees while traveling internationally?</h3><p class="zac-support-answer">Using cards with no foreign transaction fees, avoiding airport currency exchange kiosks (which often have poor rates), and researching your bank's international ATM fee policies can all help minimize exchange-related costs.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator is a rough planning tool and does not model live airfare changes, dynamic lodging pricing, local taxes, foreign transaction fees, or country-specific entry rules in real time.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script src="currency-preferences.js"></script>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script src="currency-preferences.js"></script>
+<script>
         initializeCurrencySelector();
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

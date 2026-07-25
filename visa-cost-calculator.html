@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Cost Calculator | Zaculators</title>
-<meta name="description" content="Free Visa Cost Calculator — Zaculators / Tax &amp; International">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visa Cost Calculator | Zaculators</title>
+<meta content="Free Visa Cost Calculator — Zaculators / Tax &amp; International" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,83 +43,79 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What costs are included in this visa calculator?","acceptedAnswer":{"@type":"Answer","text":"It adds the application fee, processing or biometrics fee, travel or appointment cost, and other supporting costs you enter."}},{"@type":"Question","name":"Does this show the official visa fee automatically?","acceptedAnswer":{"@type":"Answer","text":"No. You must enter the current fee figures yourself because visa charges vary by route, country, and applicant type."}},{"@type":"Question","name":"Should I include document translation or courier fees?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add those into the supporting-cost field if they apply to your application."}},{"@type":"Question","name":"Why might the real cost be higher?","acceptedAnswer":{"@type":"Answer","text":"Actual costs may also include medical exams, photos, shipping, currency conversion fees, or travel changes that are not fixed in advance."}},{"@type":"Question","name":"Where should I verify visa charges?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or the official embassy or consulate source before paying."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What costs are included in this visa calculator?","acceptedAnswer":{"@type":"Answer","text":"It adds the application fee, processing or biometrics fee, travel or appointment cost, and other supporting costs you enter."}},{"@type":"Question","name":"Does this show the official visa fee automatically?","acceptedAnswer":{"@type":"Answer","text":"No. You must enter the current fee figures yourself because visa charges vary by route, country, and applicant type."}},{"@type":"Question","name":"Should I include document translation or courier fees?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add those into the supporting-cost field if they apply to your application."}},{"@type":"Question","name":"Why might the real cost be higher?","acceptedAnswer":{"@type":"Answer","text":"Actual costs may also include medical exams, photos, shipping, currency conversion fees, or travel changes that are not fixed in advance."}},{"@type":"Question","name":"Where should I verify visa charges?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or the official embassy or consulate source before paying."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Visa Cost Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="application">Application Fee</label><input id="application" type="number" min="0" step="0.01" placeholder="160" required></div>
-                <div><label for="processing">Processing / Biometrics</label><input id="processing" type="number" min="0" step="0.01" placeholder="85" required></div>
-                <div><label for="travel">Travel / Appointment Cost</label><input id="travel" type="number" min="0" step="0.01" placeholder="120" required></div>
-                <div><label for="extras">Other Supporting Costs</label><input id="extras" type="number" min="0" step="0.01" placeholder="50" required></div>
-                <div class="full"><button type="submit">Estimate Total Cost</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Visa fees and supporting costs vary by country, route, and exchange rate.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates the out-of-pocket cost of a visa application by combining official fees and related supporting expenses such as biometrics, travel to the appointment, and other required costs.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Enter the official application fee.</li>
-                <li>Enter any processing or biometrics charge.</li>
-                <li>Enter travel or appointment-related costs.</li>
-                <li>Enter any other supporting expenses.</li>
-                <li>The calculator adds all categories to estimate the total visa-related cost.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If the application fee is <strong>160</strong>, biometrics are <strong>85</strong>, travel to the appointment costs <strong>120</strong>, and other costs are <strong>50</strong>, the estimated total is <strong>415</strong> before any exchange-rate or card fees.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Visa fees and supporting requirements can change by nationality, visa category, and consular route. Verify current rates with the official government source or the official embassy or consulate source before paying.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Using an outdated fee schedule.</li>
-                <li>Leaving out biometrics, courier, translation, or medical-document costs.</li>
-                <li>Assuming appointment travel costs are minor when the office is far away.</li>
-                <li>Forgetting exchange-rate or payment-processing charges.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="travel-budget-calculator-international.html">Travel Budget Calculator International</a><a href="currency-converter.html">Currency Converter</a><a href="schengen-visa-days-calculator.html">Schengen Visa Days Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What costs are included in this visa calculator?</h3><p class="zac-support-answer">It adds the application fee, processing or biometrics fee, travel or appointment cost, and other supporting costs you enter.</p></div><div class="zac-support-faq-item"><h3>Does this show the official visa fee automatically?</h3><p class="zac-support-answer">No. You must enter the current fee figures yourself because visa charges vary by route, country, and applicant type.</p></div><div class="zac-support-faq-item"><h3>Should I include document translation or courier fees?</h3><p class="zac-support-answer">Yes. Add those into the supporting-cost field if they apply to your application.</p></div><div class="zac-support-faq-item"><h3>Why might the real cost be higher?</h3><p class="zac-support-answer">Actual costs may also include medical exams, photos, shipping, currency conversion fees, or travel changes that are not fixed in advance.</p></div><div class="zac-support-faq-item"><h3>Where should I verify visa charges?</h3><p class="zac-support-answer">Verify current rates with the official government source or the official embassy or consulate source before paying.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator is for planning only. It does not determine visa eligibility, approval odds, required documents, or the final official charges that apply to a specific route or nationality.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Visa Cost Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="application">Application Fee</label><input id="application" min="0" placeholder="160" required="" step="0.01" type="number"/></div>
+<div><label for="processing">Processing / Biometrics</label><input id="processing" min="0" placeholder="85" required="" step="0.01" type="number"/></div>
+<div><label for="travel">Travel / Appointment Cost</label><input id="travel" min="0" placeholder="120" required="" step="0.01" type="number"/></div>
+<div><label for="extras">Other Supporting Costs</label><input id="extras" min="0" placeholder="50" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Total Cost</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Visa fees and supporting costs vary by country, route, and exchange rate.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Visa costs for international travel or relocation vary significantly by destination country, visa type, and applicant nationality, often including application fees plus additional costs like biometrics, processing services, or required documentation. This calculator estimates total visa-related cost using the fee figures you provide, useful for budgeting travel or relocation involving visa requirements.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Enter the official application fee.</li>
+<li>Enter any processing or biometrics charge.</li>
+<li>Enter travel or appointment-related costs.</li>
+<li>Enter any other supporting expenses.</li>
+<li>The calculator adds all categories to estimate the total visa-related cost.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If the application fee is <strong>160</strong>, biometrics are <strong>85</strong>, travel to the appointment costs <strong>120</strong>, and other costs are <strong>50</strong>, the estimated total is <strong>415</strong> before any exchange-rate or card fees.</p>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Visa fees and supporting requirements can change by nationality, visa category, and consular route. Verify current rates with the official government source or the official embassy or consulate source before paying.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Using an outdated fee schedule.</li>
+<li>Leaving out biometrics, courier, translation, or medical-document costs.</li>
+<li>Assuming appointment travel costs are minor when the office is far away.</li>
+<li>Forgetting exchange-rate or payment-processing charges.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="travel-budget-calculator-international.html">Travel Budget Calculator International</a><a href="currency-converter.html">Currency Converter</a><a href="schengen-visa-days-calculator.html">Schengen Visa Days Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Check nationality-specific visa fees for your destination, since these can vary significantly.</li><li>Factor in biometric, processing, or agency service fees beyond the base application fee.</li><li>Apply well in advance to avoid costly expedited processing fees.</li><li>Remember visa fees are typically non-refundable, so prepare a complete, accurate application.</li><li>Budget for potential additional document costs like translations or notarizations.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What costs are typically included in visa applications beyond the base fee?</h3><p class="zac-support-answer">Beyond the base application fee, costs can include biometric appointment fees, expedited processing fees, courier or document delivery costs, and sometimes fees for required supporting documents like translations or notarizations.</p></div><div class="zac-support-faq-item"><h3>Does visa cost vary based on nationality?</h3><p class="zac-support-answer">Yes, many countries charge different visa fees depending on the applicant's nationality, often based on reciprocity agreements or bilateral relations between countries, so check the specific fee for your nationality and destination.</p></div><div class="zac-support-faq-item"><h3>Should I budget for visa application service fees if using an agency?</h3><p class="zac-support-answer">If using a visa processing agency or service rather than applying directly, factor in their service fee on top of the government application fee, since these add a meaningful cost layer.</p></div><div class="zac-support-faq-item"><h3>How far in advance should visa costs be budgeted before travel?</h3><p class="zac-support-answer">Since visa processing can take weeks or months depending on the country and visa type, budgeting and applying well in advance helps avoid rushed, more expensive expedited processing fees.</p></div><div class="zac-support-faq-item"><h3>Are visa fees typically refundable if an application is denied?</h3><p class="zac-support-answer">Generally no — most visa application fees are non-refundable regardless of outcome, which is an important consideration when budgeting and preparing a complete, accurate application.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator is for planning only. It does not determine visa eligibility, approval odds, required documents, or the final official charges that apply to a specific route or nationality.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 24, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const ids = ["application", "processing", "travel", "extras"];

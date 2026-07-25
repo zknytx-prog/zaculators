@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Bill Calculator | Zaculators</title>
-<meta name="description" content="Free Water Bill Calculator — Zaculators / Utilities &amp; Converters">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Water Bill Calculator | Zaculators</title>
+<meta content="Free Water Bill Calculator — Zaculators / Utilities &amp; Converters" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -43,77 +44,73 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this water bill calculator work?","acceptedAnswer":{"@type":"Answer","text":"It multiplies gallons used by the rate per 1,000 gallons, then adds the base fee and sewer fee you enter."}},{"@type":"Question","name":"What if my utility uses cubic feet instead of gallons?","acceptedAnswer":{"@type":"Answer","text":"Convert your usage to gallons or use a bill figure already expressed in gallons before entering the number here."}},{"@type":"Question","name":"Should I include sewer charges?","acceptedAnswer":{"@type":"Answer","text":"Yes, if your bill includes a separate sewer charge and you want a closer estimate of the full amount due."}},{"@type":"Question","name":"Why might my actual bill be higher?","acceptedAnswer":{"@type":"Answer","text":"Actual bills may include tiered pricing, taxes, stormwater fees, service fees, or minimum charges not captured here."}},{"@type":"Question","name":"Can this help track conservation savings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter lower usage scenarios to estimate how reduced water use could affect the bill."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this water bill calculator work?","acceptedAnswer":{"@type":"Answer","text":"It multiplies gallons used by the rate per 1,000 gallons, then adds the base fee and sewer fee you enter."}},{"@type":"Question","name":"What if my utility uses cubic feet instead of gallons?","acceptedAnswer":{"@type":"Answer","text":"Convert your usage to gallons or use a bill figure already expressed in gallons before entering the number here."}},{"@type":"Question","name":"Should I include sewer charges?","acceptedAnswer":{"@type":"Answer","text":"Yes, if your bill includes a separate sewer charge and you want a closer estimate of the full amount due."}},{"@type":"Question","name":"Why might my actual bill be higher?","acceptedAnswer":{"@type":"Answer","text":"Actual bills may include tiered pricing, taxes, stormwater fees, service fees, or minimum charges not captured here."}},{"@type":"Question","name":"Can this help track conservation savings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter lower usage scenarios to estimate how reduced water use could affect the bill."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Water Bill Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="water-form" class="grid">
-                <div><label for="gallons">Gallons Used</label><input type="number" id="gallons" min="0" step="any" placeholder="6000" required></div>
-                <div><label for="rate">Rate per 1,000 Gallons</label><input type="number" id="rate" min="0" step="0.01" placeholder="7.50" required></div>
-                <div><label for="baseFee">Base Fee</label><input type="number" id="baseFee" min="0" step="0.01" placeholder="18" required></div>
-                <div><label for="sewerFee">Sewer Fee</label><input type="number" id="sewerFee" min="0" step="0.01" placeholder="12" required></div>
-                <div class="full"><button type="submit">Estimate Bill</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a water bill from usage in gallons, a rate per 1,000 gallons, and fixed charges like base and sewer fees. It is useful for household budgeting and comparing usage scenarios.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Enter gallons used for the billing period.</li>
-                <li>Enter the rate charged per 1,000 gallons.</li>
-                <li>Enter any base fee and sewer fee.</li>
-                <li>The calculator estimates <strong>usage cost = (gallons / 1,000) x rate</strong>, then adds fixed fees.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If you use <strong>6,000 gallons</strong>, the rate is <strong>$7.50</strong> per 1,000 gallons, the base fee is <strong>$18</strong>, and the sewer fee is <strong>$12</strong>, the usage cost is <strong>$45</strong> and the total estimate is <strong>$75</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Entering the rate as a per-gallon number instead of per 1,000 gallons.</li>
-                <li>Leaving out sewer or service charges.</li>
-                <li>Using estimated usage instead of the meter-based bill figure.</li>
-                <li>Assuming the calculator includes all city or district surcharges.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="utility-cost.html">Utility Cost Calculator</a><a href="energy-cost.html">Energy Cost Calculator</a><a href="cost-of-living-calculator.html">Cost Of Living Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>How does this water bill calculator work?</h3><p class="zac-support-answer">It multiplies gallons used by the rate per 1,000 gallons, then adds the base fee and sewer fee you enter.</p></div><div class="zac-support-faq-item"><h3>What if my utility uses cubic feet instead of gallons?</h3><p class="zac-support-answer">Convert your usage to gallons or use a bill figure already expressed in gallons before entering the number here.</p></div><div class="zac-support-faq-item"><h3>Should I include sewer charges?</h3><p class="zac-support-answer">Yes, if your bill includes a separate sewer charge and you want a closer estimate of the full amount due.</p></div><div class="zac-support-faq-item"><h3>Why might my actual bill be higher?</h3><p class="zac-support-answer">Actual bills may include tiered pricing, taxes, stormwater fees, service fees, or minimum charges not captured here.</p></div><div class="zac-support-faq-item"><h3>Can this help track conservation savings?</h3><p class="zac-support-answer">Yes. Enter lower usage scenarios to estimate how reduced water use could affect the bill.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator is a simplified estimate and does not include every municipal fee, tax, tiered rate, drought surcharge, or service adjustment that may appear on an actual bill.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Water Bill Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="water-form">
+<div><label for="gallons">Gallons Used</label><input id="gallons" min="0" placeholder="6000" required="" step="any" type="number"/></div>
+<div><label for="rate">Rate per 1,000 Gallons</label><input id="rate" min="0" placeholder="7.50" required="" step="0.01" type="number"/></div>
+<div><label for="baseFee">Base Fee</label><input id="baseFee" min="0" placeholder="18" required="" step="0.01" type="number"/></div>
+<div><label for="sewerFee">Sewer Fee</label><input id="sewerFee" min="0" placeholder="12" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Bill</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Water bill estimates are typically calculated by multiplying water usage (measured in units like gallons or cubic meters) by the rate charged by your local water utility, which can include tiered pricing structures where rates increase with higher consumption levels. This calculator estimates water cost using the usage and rate figures you provide, useful for budgeting or understanding the impact of usage changes.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Enter gallons used for the billing period.</li>
+<li>Enter the rate charged per 1,000 gallons.</li>
+<li>Enter any base fee and sewer fee.</li>
+<li>The calculator estimates <strong>usage cost = (gallons / 1,000) x rate</strong>, then adds fixed fees.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If you use <strong>6,000 gallons</strong>, the rate is <strong>$7.50</strong> per 1,000 gallons, the base fee is <strong>$18</strong>, and the sewer fee is <strong>$12</strong>, the usage cost is <strong>$45</strong> and the total estimate is <strong>$75</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Entering the rate as a per-gallon number instead of per 1,000 gallons.</li>
+<li>Leaving out sewer or service charges.</li>
+<li>Using estimated usage instead of the meter-based bill figure.</li>
+<li>Assuming the calculator includes all city or district surcharges.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="utility-cost.html">Utility Cost Calculator</a><a href="energy-cost.html">Energy Cost Calculator</a><a href="cost-of-living-calculator.html">Cost Of Living Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Check whether your utility uses tiered pricing, since usage above certain thresholds costs more per unit.</li><li>Factor in fixed base charges and sewer fees beyond just the usage-based portion.</li><li>Fix leaks promptly, since a running toilet or pipe leak can significantly inflate usage.</li><li>Use water-efficient fixtures and habits to reduce both usage and cost over time.</li><li>Monitor your bill for unexpected spikes, which often signal a leak worth investigating.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How is a water bill typically calculated?</h3><p class="zac-support-answer">Water utilities generally charge based on metered usage multiplied by a rate per unit (gallons or cubic meters), sometimes combined with a fixed base charge regardless of usage.</p></div><div class="zac-support-faq-item"><h3>Do all water utilities use flat-rate pricing?</h3><p class="zac-support-answer">No, many utilities use tiered pricing, where the rate per unit increases once usage crosses certain thresholds, meant to encourage conservation — check your specific utility's rate structure.</p></div><div class="zac-support-faq-item"><h3>What other charges might appear on a water bill beyond usage?</h3><p class="zac-support-answer">Common additional charges include a fixed base/service fee, sewer charges (often based on water usage), and sometimes stormwater fees — these vary by municipality and utility provider.</p></div><div class="zac-support-faq-item"><h3>How can I reduce my water bill?</h3><p class="zac-support-answer">Fixing leaks promptly, using water-efficient fixtures and appliances, and adjusting usage habits (like shorter showers or full dishwasher/laundry loads) are common ways to reduce water consumption and cost.</p></div><div class="zac-support-faq-item"><h3>Why might my water bill spike unexpectedly?</h3><p class="zac-support-answer">A sudden spike often indicates a leak (running toilet, pipe leak, irrigation system issue) — checking your meter reading against expected usage can help identify unusual consumption early.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator is a simplified estimate and does not include every municipal fee, tax, tiered rate, drought surcharge, or service adjustment that may appear on an actual bill.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         function formatCurrency(value) {
             return value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         }

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Study Planner Calculator | Zaculators</title>
-<meta name="description" content="Estimate days remaining, weekly study hours needed, and whether your current study schedule is enough before an exam date.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate days remaining, weekly study hours needed, and whether your current study schedule is enough before an exam date." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,124 +80,104 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Study Planner Calculator</h1>
+<h1>Study Planner Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how much study time you need between now and an exam date and compare it with the study schedule you think you can maintain. This page is useful for quickly checking whether your current plan looks realistic.</p>
-    <form id="study-planner-form">
-      <div class="grid">
-        <div>
-          <label for="exam-date">Exam Date</label>
-          <input type="date" id="exam-date" required>
-        </div>
-        <div>
-          <label for="subjects">Number of Subjects</label>
-          <input type="number" id="subjects" min="1" step="1" placeholder="e.g. 5" required>
-        </div>
-        <div>
-          <label for="total-hours">Total Study Hours Needed</label>
-          <input type="number" id="total-hours" min="0" step="0.1" placeholder="e.g. 80" required>
-        </div>
-        <div>
-          <label for="study-days">Available Study Days per Week</label>
-          <input type="number" id="study-days" min="1" max="7" step="1" placeholder="e.g. 5" required>
-        </div>
-        <div>
-          <label for="hours-per-day">Study Hours per Day</label>
-          <input type="number" id="hours-per-day" min="0" step="0.1" placeholder="e.g. 2.5" required>
-        </div>
-      </div>
-      <button type="submit">Build Study Plan</button>
-    </form>
-    <div id="study-planner-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Days Remaining</span><span id="days-remaining" class="metric-value">0</span></div>
-        <div class="metric"><span class="metric-label">Weekly Study Hours Needed</span><span id="weekly-hours-needed" class="metric-value">0.0</span></div>
-        <div class="metric"><span class="metric-label">Schedule Enough?</span><span id="schedule-enough" class="metric-value">No</span></div>
-        <div class="metric"><span class="metric-label">Suggested Daily Target</span><span id="daily-target" class="metric-value">0.0</span></div>
-      </div>
-      <p id="study-planner-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how much study time you need between now and an exam date and compare it with the study schedule you think you can maintain. This page is useful for quickly checking whether your current plan looks realistic.</p>
+<form id="study-planner-form">
+<div class="grid">
+<div>
+<label for="exam-date">Exam Date</label>
+<input id="exam-date" required="" type="date"/>
+</div>
+<div>
+<label for="subjects">Number of Subjects</label>
+<input id="subjects" min="1" placeholder="e.g. 5" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="total-hours">Total Study Hours Needed</label>
+<input id="total-hours" min="0" placeholder="e.g. 80" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="study-days">Available Study Days per Week</label>
+<input id="study-days" max="7" min="1" placeholder="e.g. 5" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="hours-per-day">Study Hours per Day</label>
+<input id="hours-per-day" min="0" placeholder="e.g. 2.5" required="" step="0.1" type="number"/>
+</div>
+</div>
+<button type="submit">Build Study Plan</button>
+</form>
+<div aria-live="polite" class="results" id="study-planner-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Days Remaining</span><span class="metric-value" id="days-remaining">0</span></div>
+<div class="metric"><span class="metric-label">Weekly Study Hours Needed</span><span class="metric-value" id="weekly-hours-needed">0.0</span></div>
+<div class="metric"><span class="metric-label">Schedule Enough?</span><span class="metric-value" id="schedule-enough">No</span></div>
+<div class="metric"><span class="metric-label">Suggested Daily Target</span><span class="metric-value" id="daily-target">0.0</span></div>
+</div>
+<p class="intro" id="study-planner-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Study planning involves allocating available time across subjects or topics based on priorities, deadlines, and difficulty level, helping structure preparation for exams or coursework rather than studying reactively without a plan. This calculator estimates a study time allocation using the total available time and subject priorities you provide, useful for organizing exam preparation or ongoing coursework.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li><strong>Days remaining = exam date - today</strong></li>
+<li><strong>Weeks remaining = days remaining / 7</strong></li>
+<li><strong>Weekly study hours needed = total study hours needed / weeks remaining</strong></li>
+<li><strong>Suggested daily target = total study hours needed / available study days before exam</strong></li>
+</ul>
+<p class="intro">The schedule check compares total available study hours before the exam with the total study hours needed.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If the exam is 28 days away, total study time needed is 80 hours, study days available each week are 5, and you can study 2.5 hours per day, the calculator estimates weekly study hours needed and compares the required total hours with the hours your schedule can realistically provide.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">Days remaining shows the countdown to the exam. Weekly study hours needed shows the pace required to hit the total study target. “Schedule enough” shows whether the planned study availability appears to cover the target. Suggested daily target spreads the remaining work across the available study days.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Overestimating the number of productive study hours per day.</li>
+<li>Ignoring days lost to work, travel, or fatigue.</li>
+<li>Assuming all subjects need equal time when some are harder.</li>
+<li>Setting the total study hours target without past performance data.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides planning estimates only and is not a guarantee of exam performance. It does not account for subject difficulty, quality of study sessions, revision efficiency, or unexpected interruptions. Results are estimates only.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="grade-calculator.html">Grade Calculator</a>
+<a href="course-cost-tracker.html">Course Cost Tracker</a>
+<a href="degree-roi.html">Degree ROI Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Allocate more time to weaker subjects or those weighted more heavily in your grading.</li><li>Use spaced study sessions over time rather than concentrated cramming close to an exam.</li><li>Build regular breaks into your study schedule to maintain focus and retention.</li><li>Adjust your plan as you progress, reallocating time toward areas needing more attention.</li><li>Consider both subject difficulty and your own current familiarity when allocating study time.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How should study time be allocated across multiple subjects?</h3><p>Many students allocate more time to subjects that are weaker, weighted more heavily in grading, or have nearer deadlines, rather than splitting time evenly regardless of these factors.</p></div><div class="faq-item"><h3>Does spacing out study sessions work better than cramming?</h3><p>Research on learning generally supports spaced repetition (studying material across multiple shorter sessions over time) as more effective for retention than concentrated cramming close to an exam.</p></div><div class="faq-item"><h3>How can I estimate how much study time a subject actually needs?</h3><p>Considering subject difficulty, your current familiarity with the material, and the exam or assignment weight can help estimate a reasonable time allocation, adjusted based on your own past experience.</p></div><div class="faq-item"><h3>Should breaks be factored into a study schedule?</h3><p>Yes, regular breaks are widely considered helpful for maintaining focus and retention during extended study sessions, so building breaks into your plan rather than scheduling continuous study time is generally recommended.</p></div><div class="faq-item"><h3>How often should a study plan be revisited and adjusted?</h3><p>Reviewing your plan regularly, especially as you gauge your actual progress against subjects, helps you reallocate time toward areas that need more attention as your preparation continues.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates how much weekly and daily study time may be needed between now and an exam date. It compares that requirement with your available study days and hours per day to show whether the current schedule appears sufficient.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <ul>
-      <li><strong>Days remaining = exam date - today</strong></li>
-      <li><strong>Weeks remaining = days remaining / 7</strong></li>
-      <li><strong>Weekly study hours needed = total study hours needed / weeks remaining</strong></li>
-      <li><strong>Suggested daily target = total study hours needed / available study days before exam</strong></li>
-    </ul>
-    <p class="intro">The schedule check compares total available study hours before the exam with the total study hours needed.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If the exam is 28 days away, total study time needed is 80 hours, study days available each week are 5, and you can study 2.5 hours per day, the calculator estimates weekly study hours needed and compares the required total hours with the hours your schedule can realistically provide.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">Days remaining shows the countdown to the exam. Weekly study hours needed shows the pace required to hit the total study target. “Schedule enough” shows whether the planned study availability appears to cover the target. Suggested daily target spreads the remaining work across the available study days.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Overestimating the number of productive study hours per day.</li>
-      <li>Ignoring days lost to work, travel, or fatigue.</li>
-      <li>Assuming all subjects need equal time when some are harder.</li>
-      <li>Setting the total study hours target without past performance data.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides planning estimates only and is not a guarantee of exam performance. It does not account for subject difficulty, quality of study sessions, revision efficiency, or unexpected interruptions. Results are estimates only.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="grade-calculator.html">Grade Calculator</a>
-      <a href="course-cost-tracker.html">Course Cost Tracker</a>
-      <a href="degree-roi.html">Degree ROI Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this study planner calculator estimate?</h3>
-      <p class="answer">It estimates days remaining until the exam, weekly study hours needed, whether the current schedule is enough, and a suggested daily target.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What does schedule is enough mean?</h3>
-      <p class="answer">It compares the total study time available under the current weekly schedule with the total study hours needed.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can this account for difficulty differences by subject?</h3>
-      <p class="answer">No. This page spreads the total study-hour target across the available time and does not weight subjects by difficulty.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these study results exact?</h3>
-      <p class="answer">No. Results are estimates only and depend on how realistic the study-hour assumptions are.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 document.getElementById('study-planner-form').addEventListener('submit', function (event) {

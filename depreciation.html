@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,10 +11,10 @@
 
   gtag('config', 'G-1B4FY69QMS');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Measure how much value your vehicle has lost in dollars, percentage, and average annual depreciation.">
-<meta name="keywords" content="car depreciation calculator, vehicle value loss calculator">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Measure how much value your vehicle has lost in dollars, percentage, and average annual depreciation." name="description"/>
+<meta content="car depreciation calculator, vehicle value loss calculator" name="keywords"/>
 <title>Car Depreciation Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
@@ -153,69 +154,66 @@
 
 </style>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
+<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a aria-label="Return to Zaculators homepage" href="/" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">∑</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a aria-label="Return to homepage" href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
-  <h1>Car Depreciation Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
+<h1>Car Depreciation Calculator</h1>
+<div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">Use this calculator to estimate how much vehicle value has disappeared while you were busy paying for it. Humanity loves that arrangement.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="purchasePrice">Purchase price</label><input id="purchasePrice" type="number" min="1" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="currentValue">Current value</label><input id="currentValue" type="number" min="0" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="yearsOwned">Years owned</label><input id="yearsOwned" type="number" min="0.1" step="0.1" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>Vehicle depreciation estimate</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Value lost</label><div class="value" id="result-lost">—</div></div>
+<h2>Calculator</h2>
+<p class="intro">Use this calculator to estimate how much vehicle value has disappeared while you were busy paying for it. Humanity loves that arrangement.</p>
+<div class="trust-badges">
+<span><span class="badge-icon">✓</span> Accurate formulas</span>
+<span><span class="badge-icon">✓</span> Save and reload</span>
+<span><span class="badge-icon">✓</span> Free to use</span>
+</div>
+<form id="calcForm">
+<div class="form-row"><div class="form-group"><label for="purchasePrice">Purchase price</label><input id="purchasePrice" min="1" required="" step="0.01" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="currentValue">Current value</label><input id="currentValue" min="0" required="" step="0.01" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="yearsOwned">Years owned</label><input id="yearsOwned" min="0.1" required="" step="0.1" type="number"/><div class="error-message"></div></div></div>
+<div class="button-group">
+<button class="btn-primary" type="submit">Calculate</button>
+<button class="btn-secondary" onclick="handleSave()" type="button">💾 Save</button>
+<button class="btn-secondary" onclick="handleShare()" type="button">📤 Share</button>
+<button class="btn-secondary" onclick="handlePrint()" type="button">🖨️ Print</button>
+</div>
+</form>
+<div class="results-section" id="results">
+<h3>Vehicle depreciation estimate</h3>
+<div class="result-grid">
+<div class="result-item"><label>Value lost</label><div class="value" id="result-lost">—</div></div>
 <div class="result-item"><label>Percent depreciated</label><div class="value" id="result-percent">—</div></div>
 <div class="result-item"><label>Average annual depreciation</label><div class="value" id="result-annual">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
+</div>
+</div>
+<div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
+<div class="updated">Last updated: April 19, 2026</div>
 </section>
-
 <div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/car-payment.html">Car Payment Calculator</a>
+<h3>Related Calculators</h3>
+<div class="related-links"><a href="/car-payment.html">Car Payment Calculator</a>
 <a href="/lease-vs-buy.html">Lease vs Buy Calculator</a>
 <a href="/fuel-cost.html">Fuel Cost Calculator</a>
 <a href="/road-trip-cost.html">Road Trip Cost Calculator</a></div>
 </div>
-
 <div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Check both trade-in and private-party values to see the realistic range.</li>
+<h3>What to do next</h3>
+<ol><li>Check both trade-in and private-party values to see the realistic range.</li>
 <li>Use depreciation along with fuel and maintenance cost when comparing vehicles.</li>
 <li>Keep service records if you care about resale value.</li>
 <li>Avoid overpaying for add-ons that usually do not hold value.</li>
 <li>Review depreciation before deciding whether to keep or replace the car.</li></ol>
 </div>
+<section class="faq-section"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Use straight-line depreciation for simplicity when asset value decline is relatively even over time.</li><li>Consider declining balance depreciation for assets that lose value faster in early years.</li><li>Estimate a realistic salvage value, since this affects the total depreciable amount calculated.</li><li>Use depreciation estimates for both accounting purposes and personal asset value tracking.</li><li>Recalculate periodically if useful life assumptions or asset condition change significantly.</li></ul></section><section class="faq-section">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What is straight-line depreciation?</h3><p>It's a depreciation method that reduces an asset's value by an equal amount each year over its useful life, calculated by dividing the depreciable amount (cost minus salvage value) by the number of useful life years.</p></div><div class="faq-item"><h3>What is declining balance depreciation?</h3><p>It's a method that applies a fixed percentage to the asset's remaining book value each year, resulting in larger depreciation amounts in early years and progressively smaller amounts as the asset ages.</p></div><div class="faq-item"><h3>Why does depreciation matter for business accounting?</h3><p>Depreciation allows businesses to spread the cost of an asset over its useful life for accounting and tax purposes, rather than expensing the full cost in the year of purchase.</p></div><div class="faq-item"><h3>Does depreciation apply to personal assets like vehicles?</h3><p>Yes, tracking depreciation is useful for personal assets too, particularly vehicles, helping estimate current resale value or understand the true cost of ownership over time.</p></div><div class="faq-item"><h3>What is salvage value in a depreciation calculation?</h3><p>It's the estimated residual value of an asset at the end of its useful life — the amount it could still be sold for — which is subtracted from the original cost before calculating depreciable amount.</p></div>
 
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><h3>Why do new cars depreciate so quickly?</h3><p>The steepest value drop often happens in the first few years as the vehicle moves from new to used.</p></div>
-<div class="faq-item"><h3>Can maintenance slow depreciation?</h3><p>Good maintenance and records can help resale value, even if they do not fully stop depreciation.</p></div>
-<div class="faq-item"><h3>Should I use trade-in or private sale value?</h3><p>Use the value that matches your likely exit plan. Trade-in values are usually lower.</p></div>
-<div class="faq-item"><h3>Do some brands hold value better?</h3><p>Yes. Reliability, demand, and supply all affect resale strength.</p></div>
-<div class="faq-item"><h3>Why calculate annual depreciation?</h3><p>It helps compare the hidden cost of ownership across vehicles.</p></div>
-<div class="faq-item"><h3>Can mileage accelerate depreciation?</h3><p>Absolutely. Higher-than-average mileage usually lowers value.</p></div>
+
+
+
+
+
 </section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
@@ -282,15 +280,14 @@ if (saved.yearsOwned !== undefined) yearsOwned.value = saved.yearsOwned;
 
 </script>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
+<p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+<div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
+<a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>·
+    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>·
+    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>·
+    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>·
     <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
+</div>
 </footer>
 </body>
 </html>

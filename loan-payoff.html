@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Payoff Calculator | Zaculators</title>
-<meta name="description" content="Free Loan Payoff Calculator — It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly...">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loan Payoff Calculator | Zaculators</title>
+<meta content="Free Loan Payoff Calculator — It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,80 +43,76 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this loan payoff calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly payment you enter."}},{"@type":"Question","name":"What happens if my payment is too low?","acceptedAnswer":{"@type":"Answer","text":"If the monthly payment is too low to cover monthly interest, the calculator shows that the payment is too low and the balance will not be reduced."}},{"@type":"Question","name":"Does it include fees or extra payments automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This estimate uses only the balance, interest rate, and monthly payment entered in the form."}},{"@type":"Question","name":"Why can the real payoff date differ?","acceptedAnswer":{"@type":"Answer","text":"Actual payoff dates can differ because lenders may calculate interest differently, add fees, or apply extra payments on different dates."}},{"@type":"Question","name":"Can I compare different payment amounts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Changing the monthly payment is one of the fastest ways to compare payoff speed and estimated total interest."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this loan payoff calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly payment you enter."}},{"@type":"Question","name":"What happens if my payment is too low?","acceptedAnswer":{"@type":"Answer","text":"If the monthly payment is too low to cover monthly interest, the calculator shows that the payment is too low and the balance will not be reduced."}},{"@type":"Question","name":"Does it include fees or extra payments automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This estimate uses only the balance, interest rate, and monthly payment entered in the form."}},{"@type":"Question","name":"Why can the real payoff date differ?","acceptedAnswer":{"@type":"Answer","text":"Actual payoff dates can differ because lenders may calculate interest differently, add fees, or apply extra payments on different dates."}},{"@type":"Question","name":"Can I compare different payment amounts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Changing the monthly payment is one of the fastest ways to compare payoff speed and estimated total interest."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Loan Payoff Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="balance">Current Balance</label><input id="balance" type="number" min="0" step="0.01" placeholder="12000" required></div>
-                <div><label for="rate">Interest Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="8" required></div>
-                <div><label for="payment">Monthly Payment</label><input id="paymentInput" type="number" min="0.01" step="0.01" placeholder="350" required></div>
-                <div class="full"><button type="submit">Estimate Payoff</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This loan payoff calculator estimates how long it may take to eliminate a loan balance and how much interest may accumulate along the way. It is useful when testing whether a higher monthly payment would shorten the payoff timeline.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator simulates the balance one month at a time:</p>
-            <ul>
-                <li>Monthly interest = Current balance x Monthly rate</li>
-                <li>New balance = Current balance + Interest - Monthly payment</li>
-                <li>Months increase until the balance reaches zero or the payment is too low to beat interest</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">With a balance of <strong>$12,000</strong>, an annual rate of <strong>8%</strong>, and a monthly payment of <strong>$350</strong>, the estimated payoff time is about <strong>40 months</strong> with around <strong>$1,669.76</strong> in total interest.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result shows the estimated number of months to payoff. If the payment is too low, the calculator warns that interest is preventing progress. The detail line shows estimated interest or the reason payoff is not possible under the current payment.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ul>
-                <li>Entering a payment that does not even cover monthly interest.</li>
-                <li>Ignoring fees, late charges, or variable-rate changes.</li>
-                <li>Assuming all lenders apply interest and payments on the same schedule.</li>
-                <li>Comparing payoff plans without keeping the starting balance constant.</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="simple-interest.html">Simple Interest Calculator</a><a href="net-worth.html">Net Worth Calculator</a><a href="emergency-fund.html">Emergency Fund Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this loan payoff calculator estimate?</h3><p class="zac-support-answer">It estimates how many months it may take to pay off a loan balance and how much total interest may be paid with the monthly payment you enter.</p></div><div class="zac-support-faq-item"><h3>What happens if my payment is too low?</h3><p class="zac-support-answer">If the monthly payment is too low to cover monthly interest, the calculator shows that the payment is too low and the balance will not be reduced.</p></div><div class="zac-support-faq-item"><h3>Does it include fees or extra payments automatically?</h3><p class="zac-support-answer">No. This estimate uses only the balance, interest rate, and monthly payment entered in the form.</p></div><div class="zac-support-faq-item"><h3>Why can the real payoff date differ?</h3><p class="zac-support-answer">Actual payoff dates can differ because lenders may calculate interest differently, add fees, or apply extra payments on different dates.</p></div><div class="zac-support-faq-item"><h3>Can I compare different payment amounts?</h3><p class="zac-support-answer">Yes. Changing the monthly payment is one of the fastest ways to compare payoff speed and estimated total interest.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides educational payoff estimates only and is not lending, legal, or financial advice. Actual lender terms, fees, and payment application rules can change the final payoff schedule.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Loan Payoff Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="balance">Current Balance</label><input id="balance" min="0" placeholder="12000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Interest Rate (%)</label><input id="rate" min="0" placeholder="8" required="" step="0.01" type="number"/></div>
+<div><label for="payment">Monthly Payment</label><input id="paymentInput" min="0.01" placeholder="350" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Payoff</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Loan payoff planning estimates how extra payments toward principal can reduce total interest paid and shorten the repayment timeline compared to making only minimum required payments over the full original term. This calculator estimates payoff timeline and interest savings using the loan balance, rate, and payment figures you provide, useful for planning accelerated loan repayment.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator simulates the balance one month at a time:</p>
+<ul>
+<li>Monthly interest = Current balance x Monthly rate</li>
+<li>New balance = Current balance + Interest - Monthly payment</li>
+<li>Months increase until the balance reaches zero or the payment is too low to beat interest</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">With a balance of <strong>$12,000</strong>, an annual rate of <strong>8%</strong>, and a monthly payment of <strong>$350</strong>, the estimated payoff time is about <strong>40 months</strong> with around <strong>$1,669.76</strong> in total interest.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result shows the estimated number of months to payoff. If the payment is too low, the calculator warns that interest is preventing progress. The detail line shows estimated interest or the reason payoff is not possible under the current payment.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Entering a payment that does not even cover monthly interest.</li>
+<li>Ignoring fees, late charges, or variable-rate changes.</li>
+<li>Assuming all lenders apply interest and payments on the same schedule.</li>
+<li>Comparing payoff plans without keeping the starting balance constant.</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="simple-interest.html">Simple Interest Calculator</a><a href="net-worth.html">Net Worth Calculator</a><a href="emergency-fund.html">Emergency Fund Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Confirm with your loan servicer that extra payments are applied directly to principal.</li><li>Prioritize extra payments toward your highest-interest-rate debt first for maximum savings.</li><li>Weigh extra loan payments against other financial priorities like emergency savings.</li><li>Even small consistent extra payments can meaningfully reduce total interest over time.</li><li>Recalculate periodically as your balance decreases to see updated payoff timeline estimates.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How do extra payments affect loan payoff timelines?</h3><p class="zac-support-answer">Extra payments applied directly to principal reduce the balance faster, which reduces the interest that accrues on that balance going forward, shortening the overall payoff timeline compared to minimum payments alone.</p></div><div class="zac-support-faq-item"><h3>Why do extra payments save more in interest on high-rate loans?</h3><p class="zac-support-answer">The interest savings from extra principal payments compound based on the interest rate — higher-rate loans see proportionally larger interest savings from the same extra payment amount compared to lower-rate loans.</p></div><div class="zac-support-faq-item"><h3>Should extra payments go toward the highest-rate loan first if I have multiple loans?</h3><p class="zac-support-answer">This is a common strategy (sometimes called the avalanche method), prioritizing extra payments toward the highest-interest-rate debt first to maximize total interest savings across multiple loans.</p></div><div class="zac-support-faq-item"><h3>Does making extra payments always make financial sense?</h3><p class="zac-support-answer">Generally yes for high-interest debt, though it's worth weighing against other financial priorities like building an emergency fund or contributing to retirement accounts with potentially higher expected returns.</p></div><div class="zac-support-faq-item"><h3>How can I confirm extra payments are being applied to principal?</h3><p class="zac-support-answer">Check with your loan servicer to confirm how extra payments are applied — some loans require explicit instruction that extra payments go toward principal rather than being applied to future scheduled payments.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides educational payoff estimates only and is not lending, legal, or financial advice. Actual lender terms, fees, and payment application rules can change the final payoff schedule.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

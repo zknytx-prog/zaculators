@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Budget Calculator | Zaculators</title>
-<meta name="description" content="Free Birthday Budget Calculator — This calculator estimates a simple birthday party budget from the values you enter. It can help compare total event cost...">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Birthday Budget Calculator | Zaculators</title>
+<meta content="Free Birthday Budget Calculator — This calculator estimates a simple birthday party budget from the values you enter. It can help compare total event cost..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -28,36 +29,36 @@
         a:hover { text-decoration:underline; }
         @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What should I include in a birthday budget estimate?","acceptedAnswer":{"@type":"Answer","text":"Include guest-related food costs, decorations, cake, activities, and any other party expenses you expect."}},{"@type":"Question","name":"Is the result per guest or total?","acceptedAnswer":{"@type":"Answer","text":"The main result is a total estimate, and the page also shows a per-guest estimate based on your inputs."}},{"@type":"Question","name":"Should I include gifts or venue costs?","acceptedAnswer":{"@type":"Answer","text":"Yes, if those are part of your plan you can add them into the values you use for the estimate."}},{"@type":"Question","name":"Can this help compare party sizes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Try different guest counts or spending levels to compare possible budget scenarios."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it whenever guest count, food pricing, or activity plans change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What should I include in a birthday budget estimate?","acceptedAnswer":{"@type":"Answer","text":"Include guest-related food costs, decorations, cake, activities, and any other party expenses you expect."}},{"@type":"Question","name":"Is the result per guest or total?","acceptedAnswer":{"@type":"Answer","text":"The main result is a total estimate, and the page also shows a per-guest estimate based on your inputs."}},{"@type":"Question","name":"Should I include gifts or venue costs?","acceptedAnswer":{"@type":"Answer","text":"Yes, if those are part of your plan you can add them into the values you use for the estimate."}},{"@type":"Question","name":"Can this help compare party sizes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Try different guest counts or spending levels to compare possible budget scenarios."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it whenever guest count, food pricing, or activity plans change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Birthday Budget Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Personal &amp; Life</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="guests">Guests</label><input id="guests" type="number" min="1" step="1" placeholder="20" required></div>
-                <div><label for="food">Food per Guest</label><input id="food" type="number" min="0" step="0.01" placeholder="15" required></div>
-                <div><label for="decor">Decor</label><input id="decor" type="number" min="0" step="0.01" placeholder="80" required></div>
-                <div><label for="cake">Cake</label><input id="cake" type="number" min="0" step="0.01" placeholder="45" required></div>
-                <div><label for="activities">Activities</label><input id="activities" type="number" min="0" step="0.01" placeholder="100" required></div>
-                <div class="full"><button type="submit">Estimate Budget</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates a simple birthday party budget from the values you enter. It can help compare total event cost and cost per guest before you finalize plans.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter your expected guest count and key spending categories.</li><li>Use current prices for food, cake, decor, and activities.</li><li>Click Estimate Budget to view the total estimate.</li><li>Review the per-guest cost shown in the result area.</li><li>Update the numbers if guest count or plans change.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="event-planner.html">Event Planner</a> · <a href="vacation-budget.html">Vacation Budget</a> · <a href="wedding-budget.html">Wedding Budget</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What should I include in a birthday budget estimate?</strong><br>Include guest-related food costs, decorations, cake, activities, and any other party expenses you expect.</p><p class="subtle"><strong>Is the result per guest or total?</strong><br>The main result is a total estimate, and the page also shows a per-guest estimate based on your inputs.</p><p class="subtle"><strong>Should I include gifts or venue costs?</strong><br>Yes, if those are part of your plan you can add them into the values you use for the estimate.</p><p class="subtle"><strong>Can this help compare party sizes?</strong><br>Yes. Try different guest counts or spending levels to compare possible budget scenarios.</p><p class="subtle"><strong>When should I update the estimate?</strong><br>Update it whenever guest count, food pricing, or activity plans change.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides event-planning estimates only. Final costs can vary based on guests, pricing, and local conditions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Birthday Budget Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Personal &amp; Life</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="guests">Guests</label><input id="guests" min="1" placeholder="20" required="" step="1" type="number"/></div>
+<div><label for="food">Food per Guest</label><input id="food" min="0" placeholder="15" required="" step="0.01" type="number"/></div>
+<div><label for="decor">Decor</label><input id="decor" min="0" placeholder="80" required="" step="0.01" type="number"/></div>
+<div><label for="cake">Cake</label><input id="cake" min="0" placeholder="45" required="" step="0.01" type="number"/></div>
+<div><label for="activities">Activities</label><input id="activities" min="0" placeholder="100" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Budget</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">Planning a birthday celebration budget typically involves estimating costs across categories like venue, food and drinks, decorations, entertainment, and gifts, helping avoid overspending on what's meant to be a celebratory but often optional expense. This calculator estimates total birthday budget using the category costs you provide, useful for planning a celebration that fits your overall financial comfort level.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter your expected guest count and key spending categories.</li><li>Use current prices for food, cake, decor, and activities.</li><li>Click Estimate Budget to view the total estimate.</li><li>Review the per-guest cost shown in the result area.</li><li>Update the numbers if guest count or plans change.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="event-planner.html">Event Planner</a> · <a href="vacation-budget.html">Vacation Budget</a> · <a href="wedding-budget.html">Wedding Budget</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Set a target budget before finalizing venue and guest list decisions.</li><li>Consider hosting at home or simpler venues to reduce overall costs.</li><li>Get quotes from multiple vendors for catering, entertainment, or venue rental.</li><li>Build in a small buffer for unexpected last-minute costs.</li><li>Scale your budget realistically based on expected guest count.</li></ul></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What categories typically make up a birthday party budget?</strong><br/>Common categories include venue or location costs, food and drinks, decorations, entertainment or activities, party favors, and cake — though the specific mix depends on the scale and style of celebration.</p><p class="subtle"><strong>How can I keep birthday celebration costs down?</strong><br/>Hosting at home rather than a rented venue, DIY decorations, and simpler food options (like a potluck-style gathering) are common ways to reduce costs while still celebrating meaningfully.</p><p class="subtle"><strong>Should I set a budget before planning details, or plan first and see what it costs?</strong><br/>Setting a target budget first generally helps guide decisions on venue, guest count, and other choices, reducing the risk of overspending compared to planning details first and discovering the total cost afterward.</p><p class="subtle"><strong>Does celebration budget scale with number of guests?</strong><br/>Yes, costs like food, drinks, and sometimes venue fees typically scale with guest count, so having a realistic guest list estimate helps make your budget more accurate.</p><p class="subtle"><strong>Is it worth comparing quotes from multiple vendors for a party?</strong><br/>Yes, comparing options for venues, catering, or entertainment can reveal meaningful cost differences, helping you stay within budget while still getting what you want for the celebration.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides event-planning estimates only. Final costs can vary based on guests, pricing, and local conditions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
@@ -73,5 +74,3 @@
     </script>
 </body>
 </html>
-
-

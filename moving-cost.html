@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving Cost Calculator | Zaculators</title>
-<meta name="description" content="Free Moving Cost Calculator — Zaculators / Utilities &amp; Converters">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moving Cost Calculator | Zaculators</title>
+<meta content="Free Moving Cost Calculator — Zaculators / Utilities &amp; Converters" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -43,74 +44,70 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Moving Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total moving cost by adding truck rental, labor, packing supplies, travel, and miscellaneous moving expenses."}},{"@type":"Question","name":"Does this calculator include every moving expense?","acceptedAnswer":{"@type":"Answer","text":"No. It estimates the categories you enter and does not automatically include deposits, storage, insurance, pet transport, or utility setup fees."}},{"@type":"Question","name":"Should I enter actual quotes or rough estimates?","acceptedAnswer":{"@type":"Answer","text":"You can use either, but actual quotes from movers or truck providers will produce a more useful budget estimate."}},{"@type":"Question","name":"Can I use this for local and long-distance moves?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works for either type of move as long as you enter realistic cost figures for your situation."}},{"@type":"Question","name":"When should I recalculate moving cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when vendor quotes, fuel cost, labor needs, travel plans, or supply estimates change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Moving Cost Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total moving cost by adding truck rental, labor, packing supplies, travel, and miscellaneous moving expenses."}},{"@type":"Question","name":"Does this calculator include every moving expense?","acceptedAnswer":{"@type":"Answer","text":"No. It estimates the categories you enter and does not automatically include deposits, storage, insurance, pet transport, or utility setup fees."}},{"@type":"Question","name":"Should I enter actual quotes or rough estimates?","acceptedAnswer":{"@type":"Answer","text":"You can use either, but actual quotes from movers or truck providers will produce a more useful budget estimate."}},{"@type":"Question","name":"Can I use this for local and long-distance moves?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works for either type of move as long as you enter realistic cost figures for your situation."}},{"@type":"Question","name":"When should I recalculate moving cost?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when vendor quotes, fuel cost, labor needs, travel plans, or supply estimates change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Moving Cost Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="moving-form" class="grid">
-                <div><label for="truck">Truck Rental</label><input type="number" id="truck" min="0" step="0.01" placeholder="450" required></div>
-                <div><label for="labor">Labor</label><input type="number" id="labor" min="0" step="0.01" placeholder="600" required></div>
-                <div><label for="supplies">Packing Supplies</label><input type="number" id="supplies" min="0" step="0.01" placeholder="120" required></div>
-                <div><label for="travel">Travel and Fuel</label><input type="number" id="travel" min="0" step="0.01" placeholder="180" required></div>
-                <div class="full"><label for="misc">Miscellaneous</label><input type="number" id="misc" min="0" step="0.01" placeholder="75" required></div>
-                <div class="full"><button type="submit">Estimate Moving Cost</button></div>
-            </form>
-            <div id="result" class="result"><div id="value" class="value"></div></div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates the total out-of-pocket cost of a move by combining the main categories that usually drive a relocation budget: truck rental, labor, packing supplies, travel, and miscellaneous expenses.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The method is a direct sum of the cost categories entered. Total moving cost is calculated as <strong>truck rental + labor + packing supplies + travel and fuel + miscellaneous costs</strong>. The calculator does not add percentage markups or hidden fees on its own.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If truck rental is $450, labor is $600, packing supplies are $120, travel and fuel are $180, and miscellaneous costs are $75, the total moving cost estimate is $1,425. That gives you a practical starting point for comparing do-it-yourself and full-service moving options.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is a quick planning total for the move you described. It helps you see whether the move fits your budget and where the largest cost categories sit, but it is not a binding quote from a moving company or truck provider.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Leaving out one-time charges such as deposits, storage, cleaning, or utility connection fees.</li>
-                <li>Using a local travel estimate for a long-distance move.</li>
-                <li>Ignoring seasonal price changes, weekend surcharges, or peak-demand pricing from movers.</li>
-                <li>Forgetting that packing materials and labor can increase if the move takes longer than planned.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="trip-cost.html">Trip Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="vacation-budget.html">Vacation Budget Calculator</a><a href="utility-cost.html">Utility Cost Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Moving Cost Calculator estimate?</h3><p class="zac-support-answer">It estimates total moving cost by adding truck rental, labor, packing supplies, travel, and miscellaneous moving expenses.</p></div><div class="zac-support-faq-item"><h3>Does this calculator include every moving expense?</h3><p class="zac-support-answer">No. It estimates the categories you enter and does not automatically include deposits, storage, insurance, pet transport, or utility setup fees.</p></div><div class="zac-support-faq-item"><h3>Should I enter actual quotes or rough estimates?</h3><p class="zac-support-answer">You can use either, but actual quotes from movers or truck providers will produce a more useful budget estimate.</p></div><div class="zac-support-faq-item"><h3>Can I use this for local and long-distance moves?</h3><p class="zac-support-answer">Yes. It works for either type of move as long as you enter realistic cost figures for your situation.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate moving cost?</h3><p class="zac-support-answer">Recalculate when vendor quotes, fuel cost, labor needs, travel plans, or supply estimates change.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This estimate is for budgeting only. Actual moving cost can vary with mileage, inventory size, building access, fuel prices, mover availability, insurance options, and fees charged by service providers.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Moving Cost Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="moving-form">
+<div><label for="truck">Truck Rental</label><input id="truck" min="0" placeholder="450" required="" step="0.01" type="number"/></div>
+<div><label for="labor">Labor</label><input id="labor" min="0" placeholder="600" required="" step="0.01" type="number"/></div>
+<div><label for="supplies">Packing Supplies</label><input id="supplies" min="0" placeholder="120" required="" step="0.01" type="number"/></div>
+<div><label for="travel">Travel and Fuel</label><input id="travel" min="0" placeholder="180" required="" step="0.01" type="number"/></div>
+<div class="full"><label for="misc">Miscellaneous</label><input id="misc" min="0" placeholder="75" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Moving Cost</button></div>
+</form>
+<div class="result" id="result"><div class="value" id="value"></div></div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Moving costs typically include a combination of transportation (truck rental or moving company fees), packing materials and labor, and sometimes storage or travel expenses, with total cost varying significantly based on distance, volume of belongings, and whether you hire professional movers or move yourself. This calculator estimates total moving cost using the figures you provide, useful for budgeting a residential or long-distance move.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The method is a direct sum of the cost categories entered. Total moving cost is calculated as <strong>truck rental + labor + packing supplies + travel and fuel + miscellaneous costs</strong>. The calculator does not add percentage markups or hidden fees on its own.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If truck rental is $450, labor is $600, packing supplies are $120, travel and fuel are $180, and miscellaneous costs are $75, the total moving cost estimate is $1,425. That gives you a practical starting point for comparing do-it-yourself and full-service moving options.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is a quick planning total for the move you described. It helps you see whether the move fits your budget and where the largest cost categories sit, but it is not a binding quote from a moving company or truck provider.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Leaving out one-time charges such as deposits, storage, cleaning, or utility connection fees.</li>
+<li>Using a local travel estimate for a long-distance move.</li>
+<li>Ignoring seasonal price changes, weekend surcharges, or peak-demand pricing from movers.</li>
+<li>Forgetting that packing materials and labor can increase if the move takes longer than planned.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="trip-cost.html">Trip Cost Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="vacation-budget.html">Vacation Budget Calculator</a><a href="utility-cost.html">Utility Cost Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Get quotes from multiple moving companies to compare pricing for similar services.</li><li>Factor in packing supplies costs separately, especially for larger households.</li><li>Consider whether a DIY move or professional movers is more cost-effective for your situation.</li><li>Account for potential overnight stays or extra fuel costs on long-distance moves.</li><li>Build in a buffer for unexpected costs like additional packing materials or last-minute fees.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What are the main cost categories for a move?</h3><p class="zac-support-answer">Common categories include truck rental or moving company fees, packing materials and supplies, labor (professional movers or paid helpers), fuel costs, and sometimes temporary storage or travel expenses for long-distance moves.</p></div><div class="zac-support-faq-item"><h3>How does distance affect moving costs?</h3><p class="zac-support-answer">Longer-distance moves typically cost more due to increased fuel costs, more travel time (potentially requiring overnight stays), and moving companies often pricing based partly on mileage or shipment weight for long hauls.</p></div><div class="zac-support-faq-item"><h3>Is it cheaper to move yourself or hire professional movers?</h3><p class="zac-support-answer">DIY moves (renting a truck and doing labor yourself) are often cheaper for smaller moves and shorter distances, while professional movers can be more cost-effective and less stressful for larger households or long-distance relocations.</p></div><div class="zac-support-faq-item"><h3>What packing supplies should I budget for in a moving cost estimate?</h3><p class="zac-support-answer">Common supplies include boxes of various sizes, packing tape, bubble wrap or packing paper for fragile items, and furniture blankets — costs add up especially for larger households with more items to pack.</p></div><div class="zac-support-faq-item"><h3>Should I get quotes from multiple moving companies?</h3><p class="zac-support-answer">Yes, moving company quotes can vary significantly for similar services, so comparing multiple quotes helps ensure you're getting a fair price and can reveal differences in included services.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This estimate is for budgeting only. Actual moving cost can vary with mileage, inventory size, building access, fuel prices, mover availability, insurance options, and fees charged by service providers.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         function formatCurrency(value) {
             return value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         }
