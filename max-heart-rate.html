@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Heart Rate Calculator | Zaculators</title>
-<meta name="description" content="Free Max Heart Rate Calculator — Zaculators / Health &amp; Fitness">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Max Heart Rate Calculator | Zaculators</title>
+<meta content="Free Max Heart Rate Calculator — Zaculators / Health &amp; Fitness" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -41,74 +42,70 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Max Heart Rate Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates maximum heart rate from age using the simple 220 minus age formula."}},{"@type":"Question","name":"Does the calculator also show a training zone?","acceptedAnswer":{"@type":"Answer","text":"Yes. It uses the estimated maximum heart rate to show a moderate-intensity heart rate range."}},{"@type":"Question","name":"Is 220 minus age accurate for everyone?","acceptedAnswer":{"@type":"Answer","text":"No. It is a common estimate, but individual maximum heart rate can vary meaningfully from the formula."}},{"@type":"Question","name":"Should I use this result for medical decisions?","acceptedAnswer":{"@type":"Answer","text":"No. It is a general planning tool and not a substitute for medical evaluation or supervised exercise testing."}},{"@type":"Question","name":"When should I recalculate max heart rate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your age changes enough to matter for your training plan or when you want to refresh your target zones."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Max Heart Rate Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates maximum heart rate from age using the simple 220 minus age formula."}},{"@type":"Question","name":"Does the calculator also show a training zone?","acceptedAnswer":{"@type":"Answer","text":"Yes. It uses the estimated maximum heart rate to show a moderate-intensity heart rate range."}},{"@type":"Question","name":"Is 220 minus age accurate for everyone?","acceptedAnswer":{"@type":"Answer","text":"No. It is a common estimate, but individual maximum heart rate can vary meaningfully from the formula."}},{"@type":"Question","name":"Should I use this result for medical decisions?","acceptedAnswer":{"@type":"Answer","text":"No. It is a general planning tool and not a substitute for medical evaluation or supervised exercise testing."}},{"@type":"Question","name":"When should I recalculate max heart rate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your age changes enough to matter for your training plan or when you want to refresh your target zones."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Max Heart Rate Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="age">Age</label><input id="age" type="number" min="1" step="1" placeholder="35" required></div>
-                <div class="full"><button type="submit">Estimate Max Heart Rate</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Heart rate zones are estimates. Consult a clinician if you have cardiovascular concerns.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates your maximum heart rate using age and then suggests a moderate training zone based on that estimate. It is commonly used for basic cardio planning and exercise pacing.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator uses the widely known formula <strong>220 - age</strong> to estimate maximum heart rate in beats per minute. It then multiplies that estimate by 64% and 76% to show the moderate-intensity heart rate zone.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">At age 35, the simple formula estimates a maximum heart rate of 185 bpm. The calculator then estimates a moderate training zone at roughly 118 to 141 bpm, which can help guide steady-state exercise intensity.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The max heart rate figure is a rough planning number, not a measured physiological limit. The training zone can help structure cardio workouts, but your actual safe and effective range may differ depending on fitness history, medications, health conditions, and exercise mode.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Assuming the formula is exact for every person.</li>
-                <li>Using heart rate targets without considering medications or medical history.</li>
-                <li>Confusing a moderate zone with a hard-effort interval zone.</li>
-                <li>Trying to test true max heart rate without appropriate supervision.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="fitness-level.html">Fitness Level Calculator</a><a href="exercise-duration.html">Exercise Duration Calculator</a><a href="tdee.html">TDEE Calculator</a><a href="protein-intake.html">Protein Intake Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Max Heart Rate Calculator estimate?</h3><p class="zac-support-answer">It estimates maximum heart rate from age using the simple 220 minus age formula.</p></div><div class="zac-support-faq-item"><h3>Does the calculator also show a training zone?</h3><p class="zac-support-answer">Yes. It uses the estimated maximum heart rate to show a moderate-intensity heart rate range.</p></div><div class="zac-support-faq-item"><h3>Is 220 minus age accurate for everyone?</h3><p class="zac-support-answer">No. It is a common estimate, but individual maximum heart rate can vary meaningfully from the formula.</p></div><div class="zac-support-faq-item"><h3>Should I use this result for medical decisions?</h3><p class="zac-support-answer">No. It is a general planning tool and not a substitute for medical evaluation or supervised exercise testing.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate max heart rate?</h3><p class="zac-support-answer">Recalculate when your age changes enough to matter for your training plan or when you want to refresh your target zones.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator is for general fitness planning only. It is not medical advice, and heart rate targets should be reviewed carefully if you have cardiovascular symptoms, pregnancy, chronic illness, or medication that affects pulse response.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Max Heart Rate Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="age">Age</label><input id="age" min="1" placeholder="35" required="" step="1" type="number"/></div>
+<div class="full"><button type="submit">Estimate Max Heart Rate</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Heart rate zones are estimates. Consult a clinician if you have cardiovascular concerns.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Maximum heart rate is commonly estimated using simple age-based formulas (like 220 minus age), though these are population averages with meaningful individual variation, and more precise measurement generally requires a supervised clinical or lab-based stress test. Max heart rate estimates are often used to calculate training heart rate zones for cardiovascular exercise at different intensity levels.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator uses the widely known formula <strong>220 - age</strong> to estimate maximum heart rate in beats per minute. It then multiplies that estimate by 64% and 76% to show the moderate-intensity heart rate zone.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">At age 35, the simple formula estimates a maximum heart rate of 185 bpm. The calculator then estimates a moderate training zone at roughly 118 to 141 bpm, which can help guide steady-state exercise intensity.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The max heart rate figure is a rough planning number, not a measured physiological limit. The training zone can help structure cardio workouts, but your actual safe and effective range may differ depending on fitness history, medications, health conditions, and exercise mode.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Assuming the formula is exact for every person.</li>
+<li>Using heart rate targets without considering medications or medical history.</li>
+<li>Confusing a moderate zone with a hard-effort interval zone.</li>
+<li>Trying to test true max heart rate without appropriate supervision.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="fitness-level.html">Fitness Level Calculator</a><a href="exercise-duration.html">Exercise Duration Calculator</a><a href="tdee.html">TDEE Calculator</a><a href="protein-intake.html">Protein Intake Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Treat age-based max heart rate formulas as estimates, not precise individual measurements.</li><li>Use estimated max heart rate to calculate training zones for different workout intensities.</li><li>Consider a supervised stress test if you need a more precise measurement for training or medical reasons.</li><li>Consult a healthcare provider before starting high-intensity training, especially with any risk factors.</li><li>Recalculate training zones if your fitness goals or program structure changes.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How accurate is the '220 minus age' formula?</h3><p class="zac-support-answer">It's a widely used population average, but individual max heart rate can vary meaningfully from this estimate — some formulas offer slightly different adjustments, but none are perfectly precise for every individual.</p></div><div class="zac-support-faq-item"><h3>How is max heart rate used in training?</h3><p class="zac-support-answer">Many training programs calculate heart rate zones as percentages of estimated max heart rate, helping guide intensity for different types of cardiovascular workouts (easy, moderate, hard).</p></div><div class="zac-support-faq-item"><h3>How can I get a more precise max heart rate?</h3><p class="zac-support-answer">A supervised clinical or lab-based maximal exercise stress test provides a more accurate individual measurement than any age-based formula.</p></div><div class="zac-support-faq-item"><h3>Does fitness level affect max heart rate?</h3><p class="zac-support-answer">Max heart rate itself doesn't change dramatically with fitness improvements, but resting heart rate typically decreases with better cardiovascular fitness, which is a different metric.</p></div><div class="zac-support-faq-item"><h3>Should I consult a doctor before high-intensity training based on this estimate?</h3><p class="zac-support-answer">Yes, especially if you have any cardiovascular risk factors or are new to intense exercise — consult a healthcare provider before starting a new high-intensity training program.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator is for general fitness planning only. It is not medical advice, and heart rate targets should be reviewed carefully if you have cardiovascular symptoms, pregnancy, chronic illness, or medication that affects pulse response.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const age = Number(document.getElementById("age").value);

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise Duration Calculator | Zaculators</title>
-<meta name="description" content="Free Exercise Duration Calculator — Zaculators / Health &amp; Fitness">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exercise Duration Calculator | Zaculators</title>
+<meta content="Free Exercise Duration Calculator — Zaculators / Health &amp; Fitness" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,84 +43,80 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Exercise Duration Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many minutes of a selected activity may be needed to burn a target number of calories."}},{"@type":"Question","name":"How does the calculator estimate calories burned per minute?","acceptedAnswer":{"@type":"Answer","text":"It uses the selected MET value, your body weight, and a standard calories-burned formula to estimate energy use per minute."}},{"@type":"Question","name":"Why do different activities produce different times?","acceptedAnswer":{"@type":"Answer","text":"Higher-intensity activities have higher MET values, which means they burn more calories per minute and may require less time."}},{"@type":"Question","name":"Is this a medical or training prescription?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate and should not replace personalized medical or training guidance."}},{"@type":"Question","name":"When should I recalculate exercise duration?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your target calories, body weight, or activity choice changes."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Exercise Duration Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many minutes of a selected activity may be needed to burn a target number of calories."}},{"@type":"Question","name":"How does the calculator estimate calories burned per minute?","acceptedAnswer":{"@type":"Answer","text":"It uses the selected MET value, your body weight, and a standard calories-burned formula to estimate energy use per minute."}},{"@type":"Question","name":"Why do different activities produce different times?","acceptedAnswer":{"@type":"Answer","text":"Higher-intensity activities have higher MET values, which means they burn more calories per minute and may require less time."}},{"@type":"Question","name":"Is this a medical or training prescription?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate and should not replace personalized medical or training guidance."}},{"@type":"Question","name":"When should I recalculate exercise duration?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your target calories, body weight, or activity choice changes."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Exercise Duration Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="calories">Target Calories Burned</label><input id="calories" type="number" min="1" step="1" placeholder="400" required></div>
-                <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="1" step="0.1" placeholder="70" required></div>
-                <div class="full">
-                    <label for="activity">Activity</label>
-                    <select id="activity">
-                        <option value="3.5">Walking</option>
-                        <option value="6">Cycling</option>
-                        <option value="8">Running</option>
-                        <option value="5">Strength training</option>
-                    </select>
-                </div>
-                <div class="full"><button type="submit">Estimate Duration</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Workout duration estimates vary with real intensity and conditioning level.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates how long a workout may need to last to reach a target calorie burn. It uses your body weight and a selected activity level to turn a calorie goal into a rough time estimate.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator estimates calories burned per minute with the common MET-based formula: <strong>MET x 3.5 x body weight in kg / 200</strong>. It then divides your calorie target by that per-minute estimate to calculate workout duration in minutes.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If your goal is to burn 400 calories, you weigh 70 kg, and you select running with a MET value of 8, the calculator estimates calories burned per minute and then calculates the number of minutes needed to reach the 400-calorie goal.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is a planning estimate, not a guarantee. It can help you compare activities or set a workout target, but real calorie burn varies with pace, fitness level, movement efficiency, and how closely your session matches the chosen intensity.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Choosing an activity intensity that does not match your real workout pace.</li>
-                <li>Assuming machine calorie numbers and formula estimates will match exactly.</li>
-                <li>Using a stale body-weight estimate after significant change.</li>
-                <li>Treating calorie burn as the only meaningful workout goal.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="calorie-burn.html">Calorie Burn Calculator</a><a href="tdee.html">TDEE Calculator</a><a href="protein-intake.html">Protein Intake Calculator</a><a href="max-heart-rate.html">Max Heart Rate Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Exercise Duration Calculator estimate?</h3><p class="zac-support-answer">It estimates how many minutes of a selected activity may be needed to burn a target number of calories.</p></div><div class="zac-support-faq-item"><h3>How does the calculator estimate calories burned per minute?</h3><p class="zac-support-answer">It uses the selected MET value, your body weight, and a standard calories-burned formula to estimate energy use per minute.</p></div><div class="zac-support-faq-item"><h3>Why do different activities produce different times?</h3><p class="zac-support-answer">Higher-intensity activities have higher MET values, which means they burn more calories per minute and may require less time.</p></div><div class="zac-support-faq-item"><h3>Is this a medical or training prescription?</h3><p class="zac-support-answer">No. It is a planning estimate and should not replace personalized medical or training guidance.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate exercise duration?</h3><p class="zac-support-answer">Recalculate when your target calories, body weight, or activity choice changes.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator is for general fitness planning only. It is not medical advice, and actual calorie burn can differ from estimates because of intensity, conditioning, biomechanics, and device measurement differences.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Exercise Duration Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="calories">Target Calories Burned</label><input id="calories" min="1" placeholder="400" required="" step="1" type="number"/></div>
+<div><label for="weight">Weight (kg)</label><input id="weight" min="1" placeholder="70" required="" step="0.1" type="number"/></div>
+<div class="full">
+<label for="activity">Activity</label>
+<select id="activity">
+<option value="3.5">Walking</option>
+<option value="6">Cycling</option>
+<option value="8">Running</option>
+<option value="5">Strength training</option>
+</select>
+</div>
+<div class="full"><button type="submit">Estimate Duration</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Workout duration estimates vary with real intensity and conditioning level.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Recommended exercise duration depends on your specific fitness goals, current fitness level, and the type of activity, with general population health guidelines suggesting a baseline amount of moderate-to-vigorous activity per week for general health benefits, while performance or weight-management goals may call for more. This calculator helps estimate how exercise duration adds up toward weekly targets based on the sessions and durations you enter.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator estimates calories burned per minute with the common MET-based formula: <strong>MET x 3.5 x body weight in kg / 200</strong>. It then divides your calorie target by that per-minute estimate to calculate workout duration in minutes.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If your goal is to burn 400 calories, you weigh 70 kg, and you select running with a MET value of 8, the calculator estimates calories burned per minute and then calculates the number of minutes needed to reach the 400-calorie goal.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is a planning estimate, not a guarantee. It can help you compare activities or set a workout target, but real calorie burn varies with pace, fitness level, movement efficiency, and how closely your session matches the chosen intensity.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Choosing an activity intensity that does not match your real workout pace.</li>
+<li>Assuming machine calorie numbers and formula estimates will match exactly.</li>
+<li>Using a stale body-weight estimate after significant change.</li>
+<li>Treating calorie burn as the only meaningful workout goal.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="calorie-burn.html">Calorie Burn Calculator</a><a href="tdee.html">TDEE Calculator</a><a href="protein-intake.html">Protein Intake Calculator</a><a href="max-heart-rate.html">Max Heart Rate Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Aim for a mix of moderate and vigorous activity across the week for general health benefits.</li><li>Don't hesitate to break up exercise into shorter sessions if that fits your schedule better.</li><li>Include strength training alongside cardio activity for balanced fitness benefits.</li><li>Track your weekly total to see how individual sessions add up toward broader goals.</li><li>Consult a fitness professional for a plan tailored to specific performance or weight goals.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How much exercise is generally recommended per week?</h3><p class="zac-support-answer">General health guidelines commonly suggest a baseline amount of moderate-to-vigorous aerobic activity per week for general health benefits, plus strength training on multiple days, though specific goals may call for more.</p></div><div class="zac-support-faq-item"><h3>Does exercise duration matter more than intensity?</h3><p class="zac-support-answer">Both matter, and they can complement each other — shorter high-intensity sessions and longer moderate-intensity sessions can both contribute meaningfully to weekly activity targets, depending on your goals and preferences.</p></div><div class="zac-support-faq-item"><h3>Can I break up exercise into shorter sessions throughout the day?</h3><p class="zac-support-answer">Yes, accumulating activity in shorter bouts throughout the day generally counts toward weekly totals and can be just as beneficial as one continuous session for many health outcomes.</p></div><div class="zac-support-faq-item"><h3>Does this calculator account for exercise type?</h3><p class="zac-support-answer">It totals up duration across sessions you enter; the specific health benefit also depends on activity type and intensity, which vary by exercise.</p></div><div class="zac-support-faq-item"><h3>How do I know if I'm exercising enough for my specific goals?</h3><p class="zac-support-answer">General health guidelines provide a starting baseline, but specific goals (weight loss, athletic performance, etc.) often benefit from a more tailored plan — consider consulting a fitness professional for personalized guidance.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator is for general fitness planning only. It is not medical advice, and actual calorie burn can differ from estimates because of intensity, conditioning, biomechanics, and device measurement differences.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const calories = Number(document.getElementById("calories").value);

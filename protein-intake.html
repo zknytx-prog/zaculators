@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protein Intake Calculator | Zaculators</title>
-<meta name="description" content="Free Protein Intake Calculator — Zaculators / Health &amp; Fitness">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Protein Intake Calculator | Zaculators</title>
+<meta content="Free Protein Intake Calculator — Zaculators / Health &amp; Fitness" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,83 +43,79 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Protein Intake Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates daily protein intake in grams using your body weight and a selected intake target per kilogram."}},{"@type":"Question","name":"How is the protein target calculated?","acceptedAnswer":{"@type":"Answer","text":"The calculator multiplies your weight in kilograms by the grams-per-kilogram target tied to your selected goal."}},{"@type":"Question","name":"Why do the suggested amounts change by goal?","acceptedAnswer":{"@type":"Answer","text":"Different training and body-composition goals often use different protein targets, so the multiplier changes by goal selection."}},{"@type":"Question","name":"Is this a medical nutrition prescription?","acceptedAnswer":{"@type":"Answer","text":"No. It is a general estimate and does not replace personal advice from a qualified clinician or dietitian."}},{"@type":"Question","name":"When should I recalculate protein intake?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your body weight, training volume, or nutrition goal changes."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Protein Intake Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates daily protein intake in grams using your body weight and a selected intake target per kilogram."}},{"@type":"Question","name":"How is the protein target calculated?","acceptedAnswer":{"@type":"Answer","text":"The calculator multiplies your weight in kilograms by the grams-per-kilogram target tied to your selected goal."}},{"@type":"Question","name":"Why do the suggested amounts change by goal?","acceptedAnswer":{"@type":"Answer","text":"Different training and body-composition goals often use different protein targets, so the multiplier changes by goal selection."}},{"@type":"Question","name":"Is this a medical nutrition prescription?","acceptedAnswer":{"@type":"Answer","text":"No. It is a general estimate and does not replace personal advice from a qualified clinician or dietitian."}},{"@type":"Question","name":"When should I recalculate protein intake?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your body weight, training volume, or nutrition goal changes."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Protein Intake Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="1" step="0.1" placeholder="70" required></div>
-                <div class="full">
-                    <label for="goal">Goal</label>
-                    <select id="goal">
-                        <option value="0.8">General health</option>
-                        <option value="1.2">Active lifestyle</option>
-                        <option value="1.6">Muscle gain</option>
-                        <option value="2">Cutting phase</option>
-                    </select>
-                </div>
-                <div class="full"><button type="submit">Estimate Protein</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Protein needs differ by age, training load, and medical conditions.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a daily protein target in grams based on your body weight and your selected goal. It is useful for meal planning, training support, and rough nutrition budgeting.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator multiplies your weight in kilograms by a protein multiplier chosen from the goal menu. For example, general health uses 0.8 g/kg, active lifestyle uses 1.2 g/kg, muscle gain uses 1.6 g/kg, and cutting phase uses 2.0 g/kg.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If you weigh 70 kg and choose the muscle-gain setting of 1.6 g/kg, the calculator estimates 112 grams of protein per day. That can then be divided across meals and snacks to support your nutrition plan.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is a daily planning target, not a strict rule that must be hit exactly every day. It can help structure grocery planning, meal prep, and post-workout nutrition, but the right intake still depends on training volume, age, health status, and total calorie intake.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Using pounds instead of kilograms in the weight field.</li>
-                <li>Choosing a high-intake goal that does not match your actual training demand.</li>
-                <li>Focusing only on protein while ignoring overall calorie intake and diet quality.</li>
-                <li>Assuming more protein is always better regardless of medical considerations.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="tdee.html">TDEE Calculator</a><a href="exercise-duration.html">Exercise Duration Calculator</a><a href="fitness-level.html">Fitness Level Calculator</a><a href="max-heart-rate.html">Max Heart Rate Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Protein Intake Calculator estimate?</h3><p class="zac-support-answer">It estimates daily protein intake in grams using your body weight and a selected intake target per kilogram.</p></div><div class="zac-support-faq-item"><h3>How is the protein target calculated?</h3><p class="zac-support-answer">The calculator multiplies your weight in kilograms by the grams-per-kilogram target tied to your selected goal.</p></div><div class="zac-support-faq-item"><h3>Why do the suggested amounts change by goal?</h3><p class="zac-support-answer">Different training and body-composition goals often use different protein targets, so the multiplier changes by goal selection.</p></div><div class="zac-support-faq-item"><h3>Is this a medical nutrition prescription?</h3><p class="zac-support-answer">No. It is a general estimate and does not replace personal advice from a qualified clinician or dietitian.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate protein intake?</h3><p class="zac-support-answer">Recalculate when your body weight, training volume, or nutrition goal changes.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator is for general nutrition planning only. Protein needs can vary with age, kidney health, pregnancy, total calorie intake, medical conditions, and training load, so personalized guidance may be appropriate.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Protein Intake Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="weight">Weight (kg)</label><input id="weight" min="1" placeholder="70" required="" step="0.1" type="number"/></div>
+<div class="full">
+<label for="goal">Goal</label>
+<select id="goal">
+<option value="0.8">General health</option>
+<option value="1.2">Active lifestyle</option>
+<option value="1.6">Muscle gain</option>
+<option value="2">Cutting phase</option>
+</select>
+</div>
+<div class="full"><button type="submit">Estimate Protein</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Protein needs differ by age, training load, and medical conditions.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Daily protein needs depend on factors like body weight, activity level, and goals (maintenance, muscle building, or fat loss), with general population guidelines suggesting a baseline amount per kilogram of body weight, while athletes and those doing resistance training often benefit from higher intakes to support muscle repair and growth. This calculator estimates a protein target using your weight and an activity/goal-based multiplier you provide.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator multiplies your weight in kilograms by a protein multiplier chosen from the goal menu. For example, general health uses 0.8 g/kg, active lifestyle uses 1.2 g/kg, muscle gain uses 1.6 g/kg, and cutting phase uses 2.0 g/kg.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If you weigh 70 kg and choose the muscle-gain setting of 1.6 g/kg, the calculator estimates 112 grams of protein per day. That can then be divided across meals and snacks to support your nutrition plan.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is a daily planning target, not a strict rule that must be hit exactly every day. It can help structure grocery planning, meal prep, and post-workout nutrition, but the right intake still depends on training volume, age, health status, and total calorie intake.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Using pounds instead of kilograms in the weight field.</li>
+<li>Choosing a high-intake goal that does not match your actual training demand.</li>
+<li>Focusing only on protein while ignoring overall calorie intake and diet quality.</li>
+<li>Assuming more protein is always better regardless of medical considerations.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="tdee.html">TDEE Calculator</a><a href="exercise-duration.html">Exercise Duration Calculator</a><a href="fitness-level.html">Fitness Level Calculator</a><a href="max-heart-rate.html">Max Heart Rate Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Adjust your multiplier upward if you're doing regular resistance training or aiming for muscle growth.</li><li>Spread protein intake across meals throughout the day rather than one large serving.</li><li>Recalculate your target if your weight, activity level, or goals change.</li><li>Count protein from all sources, not just dedicated high-protein foods or supplements.</li><li>Discuss very high protein targets with a healthcare provider if you have any kidney concerns.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How much protein do I actually need per day?</h3><p class="zac-support-answer">General population guidelines suggest a baseline amount per kilogram of body weight for sedentary adults, while those doing regular resistance training or aiming for muscle growth often benefit from meaningfully higher intakes.</p></div><div class="zac-support-faq-item"><h3>Does more protein always mean more muscle?</h3><p class="zac-support-answer">No, protein intake supports muscle repair and growth alongside resistance training and adequate total calories — protein alone without training stimulus won't build significant muscle.</p></div><div class="zac-support-faq-item"><h3>Is there an upper limit to how much protein is safe?</h3><p class="zac-support-answer">Most healthy individuals can handle a fairly wide range of protein intake, but very high intakes should be discussed with a healthcare provider, especially for those with kidney conditions.</p></div><div class="zac-support-faq-item"><h3>Does protein need change during weight loss?</h3><p class="zac-support-answer">Many people benefit from relatively higher protein intake during a calorie deficit to help preserve muscle mass while losing fat, compared to simple maintenance needs.</p></div><div class="zac-support-faq-item"><h3>Should I count protein from all food sources?</h3><p class="zac-support-answer">Yes, total daily protein from all foods (meat, dairy, legumes, supplements, etc.) counts toward your daily target, not just deliberate high-protein foods.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator is for general nutrition planning only. Protein needs can vary with age, kidney health, pregnancy, total calorie intake, medical conditions, and training load, so personalized guidance may be appropriate.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const weight = Number(document.getElementById("weight").value);

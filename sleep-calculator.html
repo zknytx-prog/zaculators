@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep Calculator | Zaculators</title>
-<meta name="description" content="Free Sleep Calculator — Zaculators / Personal &amp; Life">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sleep Calculator | Zaculators</title>
+<meta content="Free Sleep Calculator — Zaculators / Personal &amp; Life" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -41,75 +42,71 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Sleep Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates suggested bedtimes based on a target wake time, several 90-minute sleep-cycle options, and a short wind-down period."}},{"@type":"Question","name":"How are the suggested bedtimes calculated?","acceptedAnswer":{"@type":"Answer","text":"The calculator counts backward from the wake time using 4, 5, or 6 sleep cycles of 90 minutes each, then adds 15 minutes for falling asleep."}},{"@type":"Question","name":"Why does the calculator give several bedtime options?","acceptedAnswer":{"@type":"Answer","text":"Different cycle counts let you compare shorter and longer sleep durations while still aiming to wake between cycles."}},{"@type":"Question","name":"Does this guarantee better sleep quality?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning tool only, and real sleep quality depends on many factors beyond bedtime timing."}},{"@type":"Question","name":"When should I recalculate sleep timing?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your wake time changes or you want to compare a different bedtime schedule."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Sleep Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates suggested bedtimes based on a target wake time, several 90-minute sleep-cycle options, and a short wind-down period."}},{"@type":"Question","name":"How are the suggested bedtimes calculated?","acceptedAnswer":{"@type":"Answer","text":"The calculator counts backward from the wake time using 4, 5, or 6 sleep cycles of 90 minutes each, then adds 15 minutes for falling asleep."}},{"@type":"Question","name":"Why does the calculator give several bedtime options?","acceptedAnswer":{"@type":"Answer","text":"Different cycle counts let you compare shorter and longer sleep durations while still aiming to wake between cycles."}},{"@type":"Question","name":"Does this guarantee better sleep quality?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning tool only, and real sleep quality depends on many factors beyond bedtime timing."}},{"@type":"Question","name":"When should I recalculate sleep timing?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your wake time changes or you want to compare a different bedtime schedule."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Sleep Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Personal &amp; Life</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="wakeHour">Wake Hour (24h)</label><input id="wakeHour" type="number" min="0" max="23" step="1" placeholder="7" required></div>
-                <div><label for="wakeMinute">Wake Minute</label><input id="wakeMinute" type="number" min="0" max="59" step="1" placeholder="0" required></div>
-                <div class="full"><button type="submit">Suggest Bedtimes</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Sleep cycles vary by person. Use this as a planning tool, not a medical recommendation.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates suggested bedtimes based on a target wake-up time. It is built around common sleep-cycle planning so you can compare several bedtime options before setting your schedule.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator counts backward from your wake time using three options: 4, 5, or 6 sleep cycles. Each cycle is treated as 90 minutes, and the page adds 15 minutes to account for winding down and falling asleep before generating the suggested bedtimes.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If you need to wake at 7:00, the calculator works backward by 6 cycles, 5 cycles, and 4 cycles, each plus 15 minutes. That gives you several bedtime options so you can choose between a longer or shorter night's sleep while still aiming to wake between cycles.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The suggested times are planning targets, not guarantees. They can help with routine-building and wind-down planning, but actual sleep quality also depends on stress, light exposure, illness, caffeine, screen use, and your own sleep patterns.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Ignoring the time it actually takes you to fall asleep.</li>
-                <li>Assuming every sleep cycle is exactly 90 minutes for every person.</li>
-                <li>Using the tool without adjusting for shift work, naps, or irregular schedules.</li>
-                <li>Expecting better sleep from timing alone without good sleep habits.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="days-until.html">Days Until Calculator</a><a href="exercise-duration.html">Exercise Duration Calculator</a><a href="fitness-level.html">Fitness Level Calculator</a><a href="pet-age.html">Pet Age Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Sleep Calculator estimate?</h3><p class="zac-support-answer">It estimates suggested bedtimes based on a target wake time, several 90-minute sleep-cycle options, and a short wind-down period.</p></div><div class="zac-support-faq-item"><h3>How are the suggested bedtimes calculated?</h3><p class="zac-support-answer">The calculator counts backward from the wake time using 4, 5, or 6 sleep cycles of 90 minutes each, then adds 15 minutes for falling asleep.</p></div><div class="zac-support-faq-item"><h3>Why does the calculator give several bedtime options?</h3><p class="zac-support-answer">Different cycle counts let you compare shorter and longer sleep durations while still aiming to wake between cycles.</p></div><div class="zac-support-faq-item"><h3>Does this guarantee better sleep quality?</h3><p class="zac-support-answer">No. It is a planning tool only, and real sleep quality depends on many factors beyond bedtime timing.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate sleep timing?</h3><p class="zac-support-answer">Recalculate whenever your wake time changes or you want to compare a different bedtime schedule.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator is for sleep-planning purposes only. It does not diagnose sleep disorders or replace professional advice if you have insomnia, excessive daytime sleepiness, apnea concerns, or other persistent sleep issues.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Sleep Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Personal &amp; Life</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="wakeHour">Wake Hour (24h)</label><input id="wakeHour" max="23" min="0" placeholder="7" required="" step="1" type="number"/></div>
+<div><label for="wakeMinute">Wake Minute</label><input id="wakeMinute" max="59" min="0" placeholder="0" required="" step="1" type="number"/></div>
+<div class="full"><button type="submit">Suggest Bedtimes</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Sleep cycles vary by person. Use this as a planning tool, not a medical recommendation.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Sleep calculators estimate ideal bedtimes or wake times based on typical sleep cycle length (commonly assumed around 90 minutes), aiming to help you wake up at the end of a complete cycle rather than mid-cycle, which is associated with feeling more rested. Because individual sleep cycle length and personal sleep needs vary, this calculator provides a general estimate rather than a precise guarantee of optimal rest.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator counts backward from your wake time using three options: 4, 5, or 6 sleep cycles. Each cycle is treated as 90 minutes, and the page adds 15 minutes to account for winding down and falling asleep before generating the suggested bedtimes.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If you need to wake at 7:00, the calculator works backward by 6 cycles, 5 cycles, and 4 cycles, each plus 15 minutes. That gives you several bedtime options so you can choose between a longer or shorter night's sleep while still aiming to wake between cycles.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The suggested times are planning targets, not guarantees. They can help with routine-building and wind-down planning, but actual sleep quality also depends on stress, light exposure, illness, caffeine, screen use, and your own sleep patterns.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Ignoring the time it actually takes you to fall asleep.</li>
+<li>Assuming every sleep cycle is exactly 90 minutes for every person.</li>
+<li>Using the tool without adjusting for shift work, naps, or irregular schedules.</li>
+<li>Expecting better sleep from timing alone without good sleep habits.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="days-until.html">Days Until Calculator</a><a href="exercise-duration.html">Exercise Duration Calculator</a><a href="fitness-level.html">Fitness Level Calculator</a><a href="pet-age.html">Pet Age Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Treat cycle length as an average estimate, since your personal cycle may differ somewhat.</li><li>Prioritize consistent sleep and wake times alongside cycle-based timing for better overall sleep quality.</li><li>Limit screens and caffeine close to bedtime to support better sleep quality.</li><li>Aim for a consistent total sleep duration that fits general health guidelines for your age group.</li><li>Adjust your target bedtime gradually if you're trying to shift your sleep schedule significantly.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How does a sleep cycle calculator actually work?</h3><p class="zac-support-answer">It typically works backward or forward from a target time using an assumed average sleep cycle length (often around 90 minutes), aiming to align wake-up time with the end of a complete cycle rather than the middle of one.</p></div><div class="zac-support-faq-item"><h3>Does everyone have the same sleep cycle length?</h3><p class="zac-support-answer">No, individual sleep cycle length varies somewhat from the commonly used average, so this calculator provides a general estimate rather than a precise personalized figure.</p></div><div class="zac-support-faq-item"><h3>How much total sleep do adults generally need?</h3><p class="zac-support-answer">General health guidelines suggest a baseline range of total sleep per night for most adults, though individual needs can vary based on age, health, and lifestyle factors.</p></div><div class="zac-support-faq-item"><h3>Does waking up mid-cycle really make a difference?</h3><p class="zac-support-answer">Many people report feeling more groggy when woken mid-cycle compared to at a natural break point, though the science on this is still evolving and individual experience varies.</p></div><div class="zac-support-faq-item"><h3>What else affects sleep quality besides timing?</h3><p class="zac-support-answer">Factors like sleep environment, screen exposure before bed, caffeine timing, stress, and consistency of sleep schedule all significantly affect sleep quality beyond just cycle timing.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator is for sleep-planning purposes only. It does not diagnose sleep disorders or replace professional advice if you have insomnia, excessive daytime sleepiness, apnea concerns, or other persistent sleep issues.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         function pad(n) { return String(n).padStart(2, "0"); }
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

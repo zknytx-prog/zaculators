@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waist-Hip Ratio Calculator | Zaculators</title>
-<meta name="description" content="Free Waist-Hip Ratio Calculator — Zaculators / Health &amp; Fitness">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Waist-Hip Ratio Calculator | Zaculators</title>
+<meta content="Free Waist-Hip Ratio Calculator — Zaculators / Health &amp; Fitness" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,87 +43,83 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is waist-hip ratio calculated?","acceptedAnswer":{"@type":"Answer","text":"Waist-hip ratio is calculated by dividing waist measurement by hip measurement, using the same unit for both numbers."}},{"@type":"Question","name":"Do I need inches or centimeters?","acceptedAnswer":{"@type":"Answer","text":"Either unit works as long as both waist and hip are entered in the same unit. The ratio stays the same."}},{"@type":"Question","name":"Why does the page ask for sex?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses different simple screening thresholds for male and female entries when labeling the result as lower or higher risk range."}},{"@type":"Question","name":"Is waist-hip ratio a diagnosis?","acceptedAnswer":{"@type":"Answer","text":"No. Waist-hip ratio is only a screening measure. It does not diagnose disease or replace a professional health assessment."}},{"@type":"Question","name":"How can I get a more reliable measurement?","acceptedAnswer":{"@type":"Answer","text":"Measure the waist and hips with a flexible tape at consistent points, keep the tape level, and avoid pulling it too tight."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is waist-hip ratio calculated?","acceptedAnswer":{"@type":"Answer","text":"Waist-hip ratio is calculated by dividing waist measurement by hip measurement, using the same unit for both numbers."}},{"@type":"Question","name":"Do I need inches or centimeters?","acceptedAnswer":{"@type":"Answer","text":"Either unit works as long as both waist and hip are entered in the same unit. The ratio stays the same."}},{"@type":"Question","name":"Why does the page ask for sex?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses different simple screening thresholds for male and female entries when labeling the result as lower or higher risk range."}},{"@type":"Question","name":"Is waist-hip ratio a diagnosis?","acceptedAnswer":{"@type":"Answer","text":"No. Waist-hip ratio is only a screening measure. It does not diagnose disease or replace a professional health assessment."}},{"@type":"Question","name":"How can I get a more reliable measurement?","acceptedAnswer":{"@type":"Answer","text":"Measure the waist and hips with a flexible tape at consistent points, keep the tape level, and avoid pulling it too tight."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Waist-Hip Ratio Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div>
-                    <label for="sex">Sex</label>
-                    <select id="sex">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-                <div><label for="waist">Waist</label><input id="waist" type="number" min="1" step="0.1" placeholder="85" required></div>
-                <div><label for="hip">Hip</label><input id="hip" type="number" min="1" step="0.1" placeholder="95" required></div>
-                <div class="full"><button type="submit">Calculate Ratio</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Anthropometric ratios are screening tools and do not replace medical evaluation.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates your waist-to-hip ratio and labels the result using a simple lower-risk or higher-risk screening range based on the sex you select. It is commonly used as a quick body-distribution check alongside other health indicators.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Measure your waist circumference at the narrowest point or just above the navel, depending on your tracking method.</li>
-                <li>Measure your hips at the widest point.</li>
-                <li>Enter both measurements in the same unit.</li>
-                <li>The calculator uses <strong>waist / hip</strong> and then compares the ratio with a simple threshold: <strong>0.90</strong> for male and <strong>0.85</strong> for female entries on this page.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If your waist is <strong>85 cm</strong> and your hips are <strong>95 cm</strong>, your ratio is <strong>85 / 95 = 0.89</strong>. On this page, a female entry at 0.89 would be labeled in the higher-risk range, while a male entry at 0.89 would be labeled in the lower-risk range.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The ratio helps describe where body mass is carried. Higher ratios can suggest more weight carried around the waist. This is a screening signal only and should be interpreted with context such as BMI, medical history, and professional guidance.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Mixing inches for one measurement and centimeters for the other.</li>
-                <li>Measuring the waist or hips at inconsistent points each time.</li>
-                <li>Pulling the tape too tight or measuring over bulky clothing.</li>
-                <li>Treating the ratio as a diagnosis instead of a screening tool.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bmi.html">BMI</a><a href="body-fat-percentage.html">Body Fat Percentage</a><a href="ideal-weight.html">Ideal Weight</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>How is waist-hip ratio calculated?</h3><p class="zac-support-answer">Waist-hip ratio is calculated by dividing waist measurement by hip measurement, using the same unit for both numbers.</p></div><div class="zac-support-faq-item"><h3>Do I need inches or centimeters?</h3><p class="zac-support-answer">Either unit works as long as both waist and hip are entered in the same unit. The ratio stays the same.</p></div><div class="zac-support-faq-item"><h3>Why does the page ask for sex?</h3><p class="zac-support-answer">This calculator uses different simple screening thresholds for male and female entries when labeling the result as lower or higher risk range.</p></div><div class="zac-support-faq-item"><h3>Is waist-hip ratio a diagnosis?</h3><p class="zac-support-answer">No. Waist-hip ratio is only a screening measure. It does not diagnose disease or replace a professional health assessment.</p></div><div class="zac-support-faq-item"><h3>How can I get a more reliable measurement?</h3><p class="zac-support-answer">Measure the waist and hips with a flexible tape at consistent points, keep the tape level, and avoid pulling it too tight.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator provides a simple screening estimate only. It does not account for age, ethnicity, pregnancy, athletic build, body composition testing, or medical history. It is not medical advice, diagnosis, or treatment guidance.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Waist-Hip Ratio Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div>
+<label for="sex">Sex</label>
+<select id="sex">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div><label for="waist">Waist</label><input id="waist" min="1" placeholder="85" required="" step="0.1" type="number"/></div>
+<div><label for="hip">Hip</label><input id="hip" min="1" placeholder="95" required="" step="0.1" type="number"/></div>
+<div class="full"><button type="submit">Calculate Ratio</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Anthropometric ratios are screening tools and do not replace medical evaluation.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Waist-to-hip ratio compares waist circumference to hip circumference, used as an indicator of body fat distribution and associated health risk, since carrying more weight around the waist (an 'apple' shape) is generally associated with different health risk patterns than carrying weight around the hips (a 'pear' shape). This simple ratio is often used alongside BMI to give additional context about body composition and fat distribution.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Measure your waist circumference at the narrowest point or just above the navel, depending on your tracking method.</li>
+<li>Measure your hips at the widest point.</li>
+<li>Enter both measurements in the same unit.</li>
+<li>The calculator uses <strong>waist / hip</strong> and then compares the ratio with a simple threshold: <strong>0.90</strong> for male and <strong>0.85</strong> for female entries on this page.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If your waist is <strong>85 cm</strong> and your hips are <strong>95 cm</strong>, your ratio is <strong>85 / 95 = 0.89</strong>. On this page, a female entry at 0.89 would be labeled in the higher-risk range, while a male entry at 0.89 would be labeled in the lower-risk range.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The ratio helps describe where body mass is carried. Higher ratios can suggest more weight carried around the waist. This is a screening signal only and should be interpreted with context such as BMI, medical history, and professional guidance.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Mixing inches for one measurement and centimeters for the other.</li>
+<li>Measuring the waist or hips at inconsistent points each time.</li>
+<li>Pulling the tape too tight or measuring over bulky clothing.</li>
+<li>Treating the ratio as a diagnosis instead of a screening tool.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="bmi.html">BMI</a><a href="body-fat-percentage.html">Body Fat Percentage</a><a href="ideal-weight.html">Ideal Weight</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Measure at the narrowest waist point and widest hip point for consistency.</li><li>Take measurements at the same time of day for the most comparable results over time.</li><li>Use this alongside BMI and body fat percentage for a fuller picture, not as a standalone metric.</li><li>Track trends over time rather than fixating on a single measurement.</li><li>Discuss any health concerns related to this ratio with a healthcare provider.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What does waist-to-hip ratio actually measure?</h3><p class="zac-support-answer">It's the ratio of your waist circumference to your hip circumference, used as an indicator of how body fat is distributed, which relates to certain health risk patterns.</p></div><div class="zac-support-faq-item"><h3>Why does fat distribution matter, not just total body fat?</h3><p class="zac-support-answer">Research generally associates central/abdominal fat distribution with different health risk profiles compared to fat carried in the hips and thighs, making distribution a useful additional data point beyond total body fat or weight.</p></div><div class="zac-support-faq-item"><h3>How should I measure my waist and hip circumference accurately?</h3><p class="zac-support-answer">Measure your waist at the narrowest point (typically around the belly button area) and hips at the widest point, using a flexible tape measure without pulling too tight, ideally at the same time of day for consistency.</p></div><div class="zac-support-faq-item"><h3>Is waist-to-hip ratio better than BMI?</h3><p class="zac-support-answer">They measure different things — BMI relates weight to height, while waist-to-hip ratio reflects fat distribution. Many health professionals use both together rather than favoring one over the other exclusively.</p></div><div class="zac-support-faq-item"><h3>Can waist-to-hip ratio change without changing body weight?</h3><p class="zac-support-answer">Yes, since it reflects distribution rather than total mass, body composition changes (like fat loss with muscle gain) can shift this ratio even if total weight stays similar.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator provides a simple screening estimate only. It does not account for age, ethnicity, pregnancy, athletic build, body composition testing, or medical history. It is not medical advice, diagnosis, or treatment guidance.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const ratio = Number(document.getElementById("waist").value) / Number(document.getElementById("hip").value);

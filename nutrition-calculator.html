@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrition Calculator | Zaculators</title>
-<meta name="description" content="Free Nutrition Calculator — Zaculators / Health &amp; Fitness">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nutrition Calculator | Zaculators</title>
+<meta content="Free Nutrition Calculator — Zaculators / Health &amp; Fitness" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,67 +43,63 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Nutrition Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a nutrition calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this nutrition calculator?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Nutrition Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a nutrition calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios."}},{"@type":"Question","name":"How accurate is this nutrition calculator?","acceptedAnswer":{"@type":"Answer","text":"It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture."}},{"@type":"Question","name":"Which inputs matter most in this calculator?","acceptedAnswer":{"@type":"Answer","text":"The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form."}},{"@type":"Question","name":"Can I use this estimate for final decisions?","acceptedAnswer":{"@type":"Answer","text":"Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals."}},{"@type":"Question","name":"When should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Nutrition Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="calories">Daily Calories</label><input id="calories" type="number" min="1" step="1" placeholder="2200" required></div>
-                <div>
-                    <label for="goal">Goal</label>
-                    <select id="goal">
-                        <option value="balanced">Balanced</option>
-                        <option value="highProtein">High protein</option>
-                        <option value="lowerCarb">Lower carb</option>
-                    </select>
-                </div>
-                <div class="full"><button type="submit">Estimate Macros</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Macro splits are simplified guidelines and may not fit medical or performance needs.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">The Nutrition Calculator estimates a quick result from the values you enter. It is useful for general wellness tracking, planning, and educational reference only.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Review the input labels to confirm the nutrition calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="bac-calculator.html">BAC Calculator</a><a href="bmi.html">BMI</a><a href="bmi-percentile.html">BMI Percentile</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Nutrition Calculator estimate?</h3><p class="zac-support-answer">It estimates a nutrition calculator result from the inputs you provide so you can review a quick planning figure before comparing other scenarios.</p></div><div class="zac-support-faq-item"><h3>How accurate is this nutrition calculator?</h3><p class="zac-support-answer">It can be helpful for education and general tracking, but personal health outcomes depend on factors this simple estimate may not capture.</p></div><div class="zac-support-faq-item"><h3>Which inputs matter most in this calculator?</h3><p class="zac-support-answer">The most important inputs are the figures that directly drive the calculation, such as amounts, rates, percentages, time periods, units, or category choices entered in the form.</p></div><div class="zac-support-faq-item"><h3>Can I use this estimate for final decisions?</h3><p class="zac-support-answer">Use it for general awareness and planning. Personal diagnosis or treatment decisions should come from qualified professionals.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your assumptions, rates, amounts, timing, units, or personal details change enough to affect the result.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment guidance. Consider qualified professional advice for personal health decisions.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Nutrition Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="calories">Daily Calories</label><input id="calories" min="1" placeholder="2200" required="" step="1" type="number"/></div>
+<div>
+<label for="goal">Goal</label>
+<select id="goal">
+<option value="balanced">Balanced</option>
+<option value="highProtein">High protein</option>
+<option value="lowerCarb">Lower carb</option>
+</select>
+</div>
+<div class="full"><button type="submit">Estimate Macros</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Macro splits are simplified guidelines and may not fit medical or performance needs.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Nutrition calculators estimate macronutrient breakdowns (protein, carbohydrates, and fats) based on total calorie targets and the percentage split you choose, helping translate a calorie goal into practical daily gram targets for each macronutrient. Because ideal macronutrient splits vary by individual goals (muscle gain, fat loss, endurance performance, etc.), this calculator uses the ratios you provide rather than assuming one universal split fits everyone.</p>
+</section>
+<section class="zac-support-card">
+<h2>How to Use This Calculator</h2>
+<ol>
+<li>Review the input labels to confirm the nutrition calculator details you want to estimate.</li><li>Enter each value using the units or format requested by the form.</li><li>Click the calculate button to generate the estimate.</li><li>Read the result and any supporting breakdown shown on the page.</li><li>Adjust the inputs to compare alternative scenarios before acting on the estimate.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="bac-calculator.html">BAC Calculator</a><a href="bmi.html">BMI</a><a href="bmi-percentile.html">BMI Percentile</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Start with adequate protein based on body weight before splitting remaining calories between carbs and fats.</li><li>Adjust your macro split based on your specific goal (muscle gain, fat loss, endurance, etc.).</li><li>Recalculate whenever your total calorie target changes significantly.</li><li>Use gram targets as a practical guide for meal planning, not a rigid rule to stress over.</li><li>Consult a registered dietitian for a personalized macro plan if you have specific health considerations.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How are macronutrient grams calculated from calories?</h3><p class="zac-support-answer">Protein and carbohydrates provide a set number of calories per gram, and fat provides more calories per gram — total calories are split by percentage across macros, then converted to grams using each macronutrient's calorie density.</p></div><div class="zac-support-faq-item"><h3>What macronutrient split is best?</h3><p class="zac-support-answer">This varies by individual goals — general balanced diets, muscle-building diets, and endurance athlete diets often use different protein/carb/fat splits, so there's no single universal ratio that fits everyone.</p></div><div class="zac-support-faq-item"><h3>Should I prioritize protein regardless of my split?</h3><p class="zac-support-answer">Many nutrition approaches emphasize adequate protein first (based on body weight and activity level) before dividing remaining calories between carbs and fats, though approaches vary.</p></div><div class="zac-support-faq-item"><h3>Does this calculator know my specific dietary goals?</h3><p class="zac-support-answer">No, enter the percentage split and calorie target that matches your specific goals — this tool handles the math of converting those into gram targets.</p></div><div class="zac-support-faq-item"><h3>How often should I adjust my macronutrient targets?</h3><p class="zac-support-answer">Reassess when your calorie needs, weight, activity level, or specific goals change significantly, since your ideal split may shift accordingly.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment guidance. Consider qualified professional advice for personal health decisions.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const calories = Number(document.getElementById("calories").value);

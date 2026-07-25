@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>TDEE Calculator | Zaculators</title>
-<meta name="description" content="Estimate BMR and total daily energy expenditure using the Mifflin-St Jeor equation and activity multipliers.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate BMR and total daily energy expenditure using the Mifflin-St Jeor equation and activity multipliers." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,131 +80,111 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>TDEE Calculator</h1>
+<h1>TDEE Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate your basal metabolic rate and total daily energy expenditure using the Mifflin-St Jeor equation. This page is useful for general calorie planning and maintenance estimates, but all results are estimates and should not replace medical advice.</p>
-    <form id="tdee-form">
-      <div class="grid">
-        <div>
-          <label for="age">Age</label>
-          <input type="number" id="age" min="1" step="1" placeholder="e.g. 32" required>
-        </div>
-        <div>
-          <label for="sex">Sex</label>
-          <select id="sex" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
-        <div>
-          <label for="height">Height (inches)</label>
-          <input type="number" id="height" min="1" step="0.1" placeholder="e.g. 70" required>
-        </div>
-        <div>
-          <label for="weight">Weight (pounds)</label>
-          <input type="number" id="weight" min="1" step="0.1" placeholder="e.g. 180" required>
-        </div>
-        <div>
-          <label for="activity">Activity Level</label>
-          <select id="activity" required>
-            <option value="1.2">Sedentary</option>
-            <option value="1.375">Lightly Active</option>
-            <option value="1.55">Moderately Active</option>
-            <option value="1.725">Very Active</option>
-            <option value="1.9">Extra Active</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit">Calculate TDEE</button>
-    </form>
-    <div id="tdee-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">BMR</span><span id="bmr-result" class="metric-value">0</span></div>
-        <div class="metric"><span class="metric-label">TDEE</span><span id="tdee-result" class="metric-value">0</span></div>
-        <div class="metric"><span class="metric-label">Maintenance Calories</span><span id="maintenance-result" class="metric-value">0</span></div>
-      </div>
-      <p id="tdee-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate your basal metabolic rate and total daily energy expenditure using the Mifflin-St Jeor equation. This page is useful for general calorie planning and maintenance estimates, but all results are estimates and should not replace medical advice.</p>
+<form id="tdee-form">
+<div class="grid">
+<div>
+<label for="age">Age</label>
+<input id="age" min="1" placeholder="e.g. 32" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="sex">Sex</label>
+<select id="sex" required="">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div>
+<label for="height">Height (inches)</label>
+<input id="height" min="1" placeholder="e.g. 70" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="weight">Weight (pounds)</label>
+<input id="weight" min="1" placeholder="e.g. 180" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="activity">Activity Level</label>
+<select id="activity" required="">
+<option value="1.2">Sedentary</option>
+<option value="1.375">Lightly Active</option>
+<option value="1.55">Moderately Active</option>
+<option value="1.725">Very Active</option>
+<option value="1.9">Extra Active</option>
+</select>
+</div>
+</div>
+<button type="submit">Calculate TDEE</button>
+</form>
+<div aria-live="polite" class="results" id="tdee-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">BMR</span><span class="metric-value" id="bmr-result">0</span></div>
+<div class="metric"><span class="metric-label">TDEE</span><span class="metric-value" id="tdee-result">0</span></div>
+<div class="metric"><span class="metric-label">Maintenance Calories</span><span class="metric-value" id="maintenance-result">0</span></div>
+</div>
+<p class="intro" id="tdee-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Total Daily Energy Expenditure (TDEE) estimates all the calories your body burns in a day, combining your Basal Metabolic Rate (BMR) — calories burned at rest — with an activity multiplier reflecting how much you move throughout the day, from sedentary desk work to intense daily training. TDEE serves as your maintenance calorie baseline: eating below it generally leads to weight loss, eating above it generally leads to weight gain, and eating at it maintains your current weight.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">This page uses the Mifflin-St Jeor BMR equation:</p>
+<ul>
+<li><strong>Male BMR = 10 x weight in kg + 6.25 x height in cm - 5 x age + 5</strong></li>
+<li><strong>Female BMR = 10 x weight in kg + 6.25 x height in cm - 5 x age - 161</strong></li>
+<li><strong>TDEE = BMR x activity multiplier</strong></li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If a 32-year-old person is 70 inches tall, weighs 180 pounds, and is moderately active, the calculator converts the height and weight to metric units, estimates BMR with the Mifflin-St Jeor equation, and then multiplies BMR by the activity factor of 1.55 to estimate daily maintenance calories.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">BMR is your estimated baseline calorie need at rest. TDEE and maintenance calories reflect your estimated daily calorie needs after adjusting for activity level. They are useful as a starting point for nutrition planning, not a guaranteed prescription.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Choosing an activity level that is much higher than actual day-to-day activity.</li>
+<li>Expecting calorie needs to stay fixed while weight or routine changes.</li>
+<li>Using this estimate as a diagnosis or treatment plan.</li>
+<li>Ignoring body composition and personal metabolic differences.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment. Real calorie needs vary by body composition, health conditions, medications, and activity patterns. Results are estimates.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="bmr.html">BMR Calculator</a>
+<a href="bmi.html">BMI Calculator</a>
+<a href="calorie-needs.html">Calorie Needs Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Choose an activity multiplier based on your typical week, not your best or worst days.</li><li>Use TDEE as your maintenance baseline, then adjust up or down based on your specific goal.</li><li>Recalculate periodically as your weight, age, or activity level changes.</li><li>Remember TDEE is an estimate — real-world results may require some individual adjustment.</li><li>Pair TDEE with adequate protein intake if your goal includes preserving or building muscle.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What's the difference between BMR and TDEE?</h3><p>BMR is calories burned at complete rest for basic body functions, while TDEE adds your activity level on top of BMR to estimate total calories burned across a full day.</p></div><div class="faq-item"><h3>How do I choose the right activity multiplier?</h3><p>Base it on your typical week overall, not just your most active or least active days — someone with a desk job who exercises a few times a week falls in a different category than someone with a physically demanding job or daily intense training.</p></div><div class="faq-item"><h3>Is TDEE the same for everyone at the same weight?</h3><p>No, TDEE varies based on BMR (affected by age, sex, muscle mass) and activity level, so two people at the same weight can have meaningfully different TDEE figures.</p></div><div class="faq-item"><h3>How do I use TDEE for weight loss or gain?</h3><p>Eating consistently below your TDEE typically results in weight loss over time, while eating above it typically results in weight gain — the size of that deficit or surplus affects the rate of change.</p></div><div class="faq-item"><h3>How often should I recalculate my TDEE?</h3><p>Recalculate whenever your weight, activity level, or age changes meaningfully, since these all affect the underlying BMR and multiplier that make up your TDEE estimate.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates your resting calorie needs and then scales that estimate by your activity level to produce a total daily energy expenditure estimate. It is useful for general maintenance planning, but it is not a medical or nutrition diagnosis.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">This page uses the Mifflin-St Jeor BMR equation:</p>
-    <ul>
-      <li><strong>Male BMR = 10 x weight in kg + 6.25 x height in cm - 5 x age + 5</strong></li>
-      <li><strong>Female BMR = 10 x weight in kg + 6.25 x height in cm - 5 x age - 161</strong></li>
-      <li><strong>TDEE = BMR x activity multiplier</strong></li>
-    </ul>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If a 32-year-old person is 70 inches tall, weighs 180 pounds, and is moderately active, the calculator converts the height and weight to metric units, estimates BMR with the Mifflin-St Jeor equation, and then multiplies BMR by the activity factor of 1.55 to estimate daily maintenance calories.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">BMR is your estimated baseline calorie need at rest. TDEE and maintenance calories reflect your estimated daily calorie needs after adjusting for activity level. They are useful as a starting point for nutrition planning, not a guaranteed prescription.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Choosing an activity level that is much higher than actual day-to-day activity.</li>
-      <li>Expecting calorie needs to stay fixed while weight or routine changes.</li>
-      <li>Using this estimate as a diagnosis or treatment plan.</li>
-      <li>Ignoring body composition and personal metabolic differences.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides general health and wellness estimates only and is not medical advice, diagnosis, or treatment. Real calorie needs vary by body composition, health conditions, medications, and activity patterns. Results are estimates.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="bmr.html">BMR Calculator</a>
-      <a href="bmi.html">BMI Calculator</a>
-      <a href="calorie-needs.html">Calorie Needs Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this TDEE calculator estimate?</h3>
-      <p class="answer">It estimates basal metabolic rate and total daily energy expenditure using the Mifflin-St Jeor equation and an activity multiplier.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What is the difference between BMR and TDEE?</h3>
-      <p class="answer">BMR estimates calories burned at rest, while TDEE estimates calories burned over a full day after adjusting for activity level.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are TDEE results exact?</h3>
-      <p class="answer">No. TDEE is an estimate and real calorie needs can vary based on body composition, health, and daily activity.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Should I use this for medical advice?</h3>
-      <p class="answer">No. This tool is for general education and planning only, not diagnosis or treatment.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 document.getElementById('tdee-form').addEventListener('submit', function (event) {

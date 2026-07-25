@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMR Calculator | Zaculators</title>
-<meta name="description" content="Free BMR Calculator — This calculator estimates basal metabolic rate, which is a rough measure of resting calorie use. It is useful for planning, not...">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BMR Calculator | Zaculators</title>
+<meta content="Free BMR Calculator — This calculator estimates basal metabolic rate, which is a rough measure of resting calorie use. It is useful for planning, not..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -27,42 +28,42 @@
         a { color:var(--primary); text-decoration:none; }
         @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does BMR estimate?","acceptedAnswer":{"@type":"Answer","text":"BMR estimates how many calories your body may use at complete rest under standard conditions."}},{"@type":"Question","name":"Is BMR the same as daily calorie needs?","acceptedAnswer":{"@type":"Answer","text":"No. BMR reflects resting needs only, while daily calorie needs usually depend on activity too."}},{"@type":"Question","name":"Why do age, sex, height, and weight matter?","acceptedAnswer":{"@type":"Answer","text":"Those factors are used in common BMR formulas because they influence resting energy use estimates."}},{"@type":"Question","name":"Can this replace professional nutrition advice?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate only and not a substitute for personalized medical or nutrition guidance."}},{"@type":"Question","name":"When should I recalculate BMR?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your body weight, body size, or activity planning changes meaningfully."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does BMR estimate?","acceptedAnswer":{"@type":"Answer","text":"BMR estimates how many calories your body may use at complete rest under standard conditions."}},{"@type":"Question","name":"Is BMR the same as daily calorie needs?","acceptedAnswer":{"@type":"Answer","text":"No. BMR reflects resting needs only, while daily calorie needs usually depend on activity too."}},{"@type":"Question","name":"Why do age, sex, height, and weight matter?","acceptedAnswer":{"@type":"Answer","text":"Those factors are used in common BMR formulas because they influence resting energy use estimates."}},{"@type":"Question","name":"Can this replace professional nutrition advice?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate only and not a substitute for personalized medical or nutrition guidance."}},{"@type":"Question","name":"When should I recalculate BMR?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when your body weight, body size, or activity planning changes meaningfully."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>BMR Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="age">Age</label><input id="age" type="number" min="1" step="1" placeholder="30" required></div>
-                <div>
-                    <label for="sex">Sex</label>
-                    <select id="sex">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-                <div><label for="height">Height (cm)</label><input id="height" type="number" min="1" step="0.1" placeholder="175" required></div>
-                <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="1" step="0.1" placeholder="70" required></div>
-                <div class="full"><button type="submit">Calculate BMR</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">BMR is an estimate of resting calorie needs and varies by individual health factors.</div>
-    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates basal metabolic rate, which is a rough measure of resting calorie use. It is useful for planning, not diagnosis.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter age, sex, height, and weight.</li><li>Use current measurements for the most relevant estimate.</li><li>Click Calculate BMR to view the result.</li><li>Review the estimated resting calories per day.</li><li>Use the estimate with other planning tools if needed.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmi.html">BMI</a> · <a href="calorie-needs.html">Calorie Needs</a> · <a href="protein-intake.html">Protein Intake</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does BMR estimate?</strong><br>BMR estimates how many calories your body may use at complete rest under standard conditions.</p><p class="subtle"><strong>Is BMR the same as daily calorie needs?</strong><br>No. BMR reflects resting needs only, while daily calorie needs usually depend on activity too.</p><p class="subtle"><strong>Why do age, sex, height, and weight matter?</strong><br>Those factors are used in common BMR formulas because they influence resting energy use estimates.</p><p class="subtle"><strong>Can this replace professional nutrition advice?</strong><br>No. It is a planning estimate only and not a substitute for personalized medical or nutrition guidance.</p><p class="subtle"><strong>When should I recalculate BMR?</strong><br>Recalculate when your body weight, body size, or activity planning changes meaningfully.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Individual calorie needs can vary for many reasons.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>BMR Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="age">Age</label><input id="age" min="1" placeholder="30" required="" step="1" type="number"/></div>
+<div>
+<label for="sex">Sex</label>
+<select id="sex">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div><label for="height">Height (cm)</label><input id="height" min="1" placeholder="175" required="" step="0.1" type="number"/></div>
+<div><label for="weight">Weight (kg)</label><input id="weight" min="1" placeholder="70" required="" step="0.1" type="number"/></div>
+<div class="full"><button type="submit">Calculate BMR</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">BMR is an estimate of resting calorie needs and varies by individual health factors.</div>
+<section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">Basal Metabolic Rate (BMR) estimates the number of calories your body burns at complete rest just to maintain basic functions like breathing, circulation, and cell production, typically calculated using formulas based on weight, height, age, and sex (such as the Mifflin-St Jeor or Harris-Benedict equations). BMR serves as the foundation for estimating total daily calorie needs once activity level is factored in, which is why it's often paired with a TDEE (Total Daily Energy Expenditure) calculation.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter age, sex, height, and weight.</li><li>Use current measurements for the most relevant estimate.</li><li>Click Calculate BMR to view the result.</li><li>Review the estimated resting calories per day.</li><li>Use the estimate with other planning tools if needed.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmi.html">BMI</a> · <a href="calorie-needs.html">Calorie Needs</a> · <a href="protein-intake.html">Protein Intake</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Use BMR alongside a TDEE calculator to estimate your true total daily calorie needs.</li><li>Remember BMR formulas are estimates — actual metabolic rate varies by individual factors like muscle mass.</li><li>Recalculate BMR periodically as your weight, age, or body composition changes.</li><li>Consider that maintaining muscle mass through strength training can help support a higher BMR over time.</li><li>Don't rely on BMR alone for calorie planning — factor in activity level for a complete picture.</li></ul></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does BMR actually measure?</strong><br/>BMR estimates the calories your body burns at complete rest to maintain basic life functions, not including any calories burned through movement, digestion, or exercise.</p><p class="subtle"><strong>What factors affect BMR the most?</strong><br/>Weight, height, age, and sex are the primary inputs in standard BMR formulas, with muscle mass also playing a significant role since muscle burns more calories at rest than fat tissue.</p><p class="subtle"><strong>Is BMR the same as TDEE?</strong><br/>No, BMR is your calorie burn at complete rest, while TDEE (Total Daily Energy Expenditure) adds your activity level on top of BMR to estimate total daily calorie needs.</p><p class="subtle"><strong>Why does BMR decrease with age?</strong><br/>BMR typically declines with age partly due to natural loss of muscle mass over time, which is one reason maintaining strength training becomes increasingly valuable as people get older.</p><p class="subtle"><strong>Which BMR formula is most accurate?</strong><br/>The Mifflin-St Jeor equation is generally considered more accurate for most modern populations compared to the older Harris-Benedict equation, though individual variation means any formula is an estimate.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Individual calorie needs can vary for many reasons.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const age = Number(document.getElementById("age").value);
@@ -79,5 +80,3 @@
     </script>
 </body>
 </html>
-
-

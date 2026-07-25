@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Weight Loss Timeline Calculator | Zaculators</title>
-<meta name="description" content="Estimate pounds to lose, weeks to goal, and an estimated goal date from your weekly weight loss target.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate pounds to lose, weeks to goal, and an estimated goal date from your weekly weight loss target." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,114 +80,94 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Weight Loss Timeline Calculator</h1>
+<h1>Weight Loss Timeline Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how long it may take to move from your current weight to your goal weight based on a weekly loss target. This page is intended for general planning only, and results are estimates rather than medical guidance.</p>
-    <form id="weight-loss-form">
-      <div class="grid">
-        <div>
-          <label for="current-weight">Current Weight</label>
-          <input type="number" id="current-weight" min="0" step="0.1" placeholder="e.g. 195" required>
-        </div>
-        <div>
-          <label for="goal-weight">Goal Weight</label>
-          <input type="number" id="goal-weight" min="0" step="0.1" placeholder="e.g. 170" required>
-        </div>
-        <div>
-          <label for="weekly-loss">Weekly Weight Loss Goal</label>
-          <input type="number" id="weekly-loss" min="0.1" step="0.1" placeholder="e.g. 1.5" required>
-        </div>
-      </div>
-      <button type="submit">Estimate Timeline</button>
-    </form>
-    <div id="weight-loss-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Pounds / Kg to Lose</span><span id="weight-to-lose" class="metric-value">0.0</span></div>
-        <div class="metric"><span class="metric-label">Estimated Weeks to Goal</span><span id="weeks-to-goal" class="metric-value">0.0</span></div>
-        <div class="metric"><span class="metric-label">Estimated Goal Date</span><span id="goal-date" class="metric-value">-</span></div>
-      </div>
-      <p id="weight-loss-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how long it may take to move from your current weight to your goal weight based on a weekly loss target. This page is intended for general planning only, and results are estimates rather than medical guidance.</p>
+<form id="weight-loss-form">
+<div class="grid">
+<div>
+<label for="current-weight">Current Weight</label>
+<input id="current-weight" min="0" placeholder="e.g. 195" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="goal-weight">Goal Weight</label>
+<input id="goal-weight" min="0" placeholder="e.g. 170" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="weekly-loss">Weekly Weight Loss Goal</label>
+<input id="weekly-loss" min="0.1" placeholder="e.g. 1.5" required="" step="0.1" type="number"/>
+</div>
+</div>
+<button type="submit">Estimate Timeline</button>
+</form>
+<div aria-live="polite" class="results" id="weight-loss-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Pounds / Kg to Lose</span><span class="metric-value" id="weight-to-lose">0.0</span></div>
+<div class="metric"><span class="metric-label">Estimated Weeks to Goal</span><span class="metric-value" id="weeks-to-goal">0.0</span></div>
+<div class="metric"><span class="metric-label">Estimated Goal Date</span><span class="metric-value" id="goal-date">-</span></div>
+</div>
+<p class="intro" id="weight-loss-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">A realistic weight loss timeline depends on your calorie deficit size relative to your maintenance calories, since safe and sustainable weight loss is generally recommended at a moderate rate per week rather than aggressive rapid loss, which is harder to sustain and can affect muscle mass and metabolic health. This calculator estimates a timeline based on your target weight loss and an assumed weekly rate, though individual results vary based on adherence, metabolism, and other factors.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li><strong>Weight to lose = current weight - goal weight</strong></li>
+<li><strong>Estimated weeks to goal = weight to lose / weekly loss goal</strong></li>
+<li><strong>Estimated goal date = today's date + estimated weeks to goal</strong></li>
+</ul>
+<p class="intro">This page also provides a safety note when the weekly target appears aggressive.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If current weight is 195, goal weight is 170, and the weekly target is 1.5, the calculator estimates 25 units of weight to lose and divides that by 1.5 to estimate how many weeks the goal could take under a constant-rate assumption.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The “to lose” figure shows the gap between current and goal weight. The weeks estimate shows how long it may take if the weekly pace stays consistent. The goal date is a rough planning date only and should not be treated as a guaranteed outcome.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Setting a weekly target that is too aggressive.</li>
+<li>Expecting weight loss to happen at the same rate every week.</li>
+<li>Ignoring plateaus, hydration, or changes in training and diet.</li>
+<li>Using this estimate as medical advice instead of general planning.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides general wellness estimates only and is not medical advice, diagnosis, or treatment. Weight change depends on nutrition, activity, health conditions, adherence, and individual differences. Results are estimates only.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="bmi.html">BMI Calculator</a>
+<a href="calorie-needs.html">Calorie Needs Calculator</a>
+<a href="tdee.html">TDEE Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Aim for a moderate, sustainable weekly rate rather than aggressive rapid loss.</li><li>Expect plateaus and fluctuations — weight loss is rarely a perfectly straight line.</li><li>Pair calorie deficit with adequate protein and resistance training to help preserve muscle mass.</li><li>Recalculate your timeline if your weight, activity level, or deficit size changes.</li><li>Focus on multi-week trends rather than day-to-day or even week-to-week fluctuations.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What is considered a safe rate of weight loss per week?</h3><p>Health guidelines generally recommend a moderate, gradual rate of weight loss per week for sustainable results, rather than aggressive rapid loss which is harder to maintain long-term.</p></div><div class="faq-item"><h3>Why does faster weight loss often not work well long-term?</h3><p>Very aggressive calorie deficits can lead to muscle loss, metabolic adaptation, and are often harder to sustain psychologically, frequently resulting in regained weight.</p></div><div class="faq-item"><h3>Does this calculator account for muscle gain or loss?</h3><p>No, this estimates a timeline based on total weight change assuming a consistent calorie deficit — it doesn't distinguish between fat loss and potential muscle loss.</p></div><div class="faq-item"><h3>Why might my actual weight loss differ from this estimate?</h3><p>Individual factors like metabolic adaptation, water weight fluctuations, adherence consistency, and activity level changes can all cause actual results to differ from a linear projection.</p></div><div class="faq-item"><h3>Should I expect steady weight loss every single week?</h3><p>No, weight loss is rarely perfectly linear — plateaus and fluctuations are normal, and multi-week trends are more informative than expecting consistent weekly drops.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates how much weight remains to lose, how many weeks it may take, and a simple target date based on a steady weekly loss assumption. It is helpful for rough planning and habit tracking, but results are only estimates.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <ul>
-      <li><strong>Weight to lose = current weight - goal weight</strong></li>
-      <li><strong>Estimated weeks to goal = weight to lose / weekly loss goal</strong></li>
-      <li><strong>Estimated goal date = today's date + estimated weeks to goal</strong></li>
-    </ul>
-    <p class="intro">This page also provides a safety note when the weekly target appears aggressive.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If current weight is 195, goal weight is 170, and the weekly target is 1.5, the calculator estimates 25 units of weight to lose and divides that by 1.5 to estimate how many weeks the goal could take under a constant-rate assumption.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The “to lose” figure shows the gap between current and goal weight. The weeks estimate shows how long it may take if the weekly pace stays consistent. The goal date is a rough planning date only and should not be treated as a guaranteed outcome.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Setting a weekly target that is too aggressive.</li>
-      <li>Expecting weight loss to happen at the same rate every week.</li>
-      <li>Ignoring plateaus, hydration, or changes in training and diet.</li>
-      <li>Using this estimate as medical advice instead of general planning.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides general wellness estimates only and is not medical advice, diagnosis, or treatment. Weight change depends on nutrition, activity, health conditions, adherence, and individual differences. Results are estimates only.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="bmi.html">BMI Calculator</a>
-      <a href="calorie-needs.html">Calorie Needs Calculator</a>
-      <a href="tdee.html">TDEE Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this weight loss timeline calculator estimate?</h3>
-      <p class="answer">It estimates how much weight remains to lose, how many weeks the goal may take, and an estimated goal date based on a weekly weight loss target.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What is considered an aggressive weekly goal?</h3>
-      <p class="answer">This page flags weekly goals above about 2 pounds per week as aggressive so users know the target may need extra caution.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this account for changing metabolism or plateaus?</h3>
-      <p class="answer">No. It uses a simple constant-rate estimate and does not account for metabolism changes, plateaus, or adherence differences.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these results medical advice?</h3>
-      <p class="answer">No. Results are estimates only and are not medical advice, diagnosis, or treatment guidance.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 document.getElementById('weight-loss-form').addEventListener('submit', function (event) {

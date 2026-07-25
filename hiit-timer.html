@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIIT Timer | Zaculators</title>
-<meta name="description" content="Free HIIT Timer — Zaculators / Health &amp; Fitness">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HIIT Timer | Zaculators</title>
+<meta content="Free HIIT Timer — Zaculators / Health &amp; Fitness" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; --warning:#f59e0b; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -43,88 +44,81 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the HIIT timer calculate?","acceptedAnswer":{"@type":"Answer","text":"It lays out the timing of your session by alternating work and rest intervals for the number of rounds you choose."}},{"@type":"Question","name":"Does the timer include a warm-up or cool-down?","acceptedAnswer":{"@type":"Answer","text":"No. This page only runs the interval blocks you enter, so warm-up and cool-down time should be planned separately."}},{"@type":"Question","name":"Why does the workout end after the last work interval?","acceptedAnswer":{"@type":"Answer","text":"The timer stops when the final programmed work block finishes, which is a common HIIT layout for short interval sessions."}},{"@type":"Question","name":"Can I use this for walking, cycling, or strength circuits?","acceptedAnswer":{"@type":"Answer","text":"Yes. The timer is generic and can be used for any workout that alternates effort and recovery periods."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the HIIT timer calculate?","acceptedAnswer":{"@type":"Answer","text":"It lays out the timing of your session by alternating work and rest intervals for the number of rounds you choose."}},{"@type":"Question","name":"Does the timer include a warm-up or cool-down?","acceptedAnswer":{"@type":"Answer","text":"No. This page only runs the interval blocks you enter, so warm-up and cool-down time should be planned separately."}},{"@type":"Question","name":"Why does the workout end after the last work interval?","acceptedAnswer":{"@type":"Answer","text":"The timer stops when the final programmed work block finishes, which is a common HIIT layout for short interval sessions."}},{"@type":"Question","name":"Can I use this for walking, cycling, or strength circuits?","acceptedAnswer":{"@type":"Answer","text":"Yes. The timer is generic and can be used for any workout that alternates effort and recovery periods."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>HIIT Timer</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="timerForm" onsubmit="event.preventDefault();">
-            <div class="grid">
-                <div><label for="work">Work Seconds</label><input id="work" type="number" min="1" step="1" value="30"></div>
-                <div><label for="rest">Rest Seconds</label><input id="rest" type="number" min="1" step="1" value="15"></div>
-                <div><label for="rounds">Rounds</label><input id="rounds" type="number" min="1" step="1" value="8"></div>
-                <div class="full"><button id="start" class="primary">Start Timer</button></div>
-                <div class="full"><button id="reset" class="secondary" type="button">Reset</button></div>
-            </div>
-            </form>
-            <div class="result">
-                <div id="phase" class="subtle">Ready</div>
-                <div id="value" class="value">00:00</div>
-                <p id="detail" class="subtle">Round 0 of 0</p>
-            </div>
-        </section>
-        <div class="disclaimer">Use exercise timers responsibly and adjust intervals to your fitness level.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This HIIT timer estimates the structure and total length of an interval workout from your work interval, rest interval, and number of rounds. It helps you set up a repeatable session before you press start.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Total work time = work seconds x rounds.</li>
-                <li>Total rest time = rest seconds x number of rest intervals actually completed.</li>
-                <li>The timer starts with a work phase, alternates between work and rest, and stops after the last work block finishes.</li>
-                <li>The on-screen display shows the live phase, countdown, and current round while the session runs.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">Using the default setup of 30 seconds of work, 15 seconds of rest, and 8 rounds gives you 240 seconds of work. The timer then inserts a 15-second rest after each completed work block except the last one, so you get 105 seconds of rest. That produces a 5 minute 45 second interval session.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The countdown shows the exact seconds left in the current interval. The round counter tells you where you are in the session, and the final completion state confirms that all programmed rounds finished.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Setting work and rest intervals that are too aggressive for your current conditioning.</li>
-                <li>Forgetting that more rounds increases both fatigue and total session time.</li>
-                <li>Using the same interval plan for every workout without adjusting for exercise type.</li>
-                <li>Starting the timer before you have enough space, equipment, or warm-up time.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="exercise-duration.html">Exercise Duration</a><a href="calorie-burn.html">Calorie Burn</a><a href="max-heart-rate.html">Max Heart Rate</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the HIIT timer calculate?</h3><p class="zac-support-answer">It lays out the timing of your session by alternating work and rest intervals for the number of rounds you choose.</p></div>
-                <div class="zac-support-faq-item"><h3>Does the timer include a warm-up or cool-down?</h3><p class="zac-support-answer">No. This page only runs the interval blocks you enter, so warm-up and cool-down time should be planned separately.</p></div>
-                <div class="zac-support-faq-item"><h3>Why does the workout end after the last work interval?</h3><p class="zac-support-answer">The timer stops when the final programmed work block finishes, which is a common HIIT layout for short interval sessions.</p></div>
-                <div class="zac-support-faq-item"><h3>Can I use this for walking, cycling, or strength circuits?</h3><p class="zac-support-answer">Yes. The timer is generic and can be used for any workout that alternates effort and recovery periods.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This timer is for workout planning only and is not medical advice. It does not assess exercise readiness, injury risk, or training load. Adjust intervals to your ability and stop if you feel unwell.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>HIIT Timer</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form id="timerForm" onsubmit="event.preventDefault();">
+<div class="grid">
+<div><label for="work">Work Seconds</label><input id="work" min="1" step="1" type="number" value="30"/></div>
+<div><label for="rest">Rest Seconds</label><input id="rest" min="1" step="1" type="number" value="15"/></div>
+<div><label for="rounds">Rounds</label><input id="rounds" min="1" step="1" type="number" value="8"/></div>
+<div class="full"><button class="primary" id="start">Start Timer</button></div>
+<div class="full"><button class="secondary" id="reset" type="button">Reset</button></div>
+</div>
+</form>
+<div class="result">
+<div class="subtle" id="phase">Ready</div>
+<div class="value" id="value">00:00</div>
+<p class="subtle" id="detail">Round 0 of 0</p>
+</div>
+</section>
+<div class="disclaimer">Use exercise timers responsibly and adjust intervals to your fitness level.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">High-Intensity Interval Training (HIIT) alternates short bursts of intense effort with recovery periods, a structure that can improve cardiovascular fitness and calorie burn efficiently in a shorter time than steady-state cardio, though it also places more strain on the body and requires attention to recovery, especially for beginners. This timer helps you structure work and rest intervals for a HIIT session based on the parameters you set.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Total work time = work seconds x rounds.</li>
+<li>Total rest time = rest seconds x number of rest intervals actually completed.</li>
+<li>The timer starts with a work phase, alternates between work and rest, and stops after the last work block finishes.</li>
+<li>The on-screen display shows the live phase, countdown, and current round while the session runs.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">Using the default setup of 30 seconds of work, 15 seconds of rest, and 8 rounds gives you 240 seconds of work. The timer then inserts a 15-second rest after each completed work block except the last one, so you get 105 seconds of rest. That produces a 5 minute 45 second interval session.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The countdown shows the exact seconds left in the current interval. The round counter tells you where you are in the session, and the final completion state confirms that all programmed rounds finished.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Setting work and rest intervals that are too aggressive for your current conditioning.</li>
+<li>Forgetting that more rounds increases both fatigue and total session time.</li>
+<li>Using the same interval plan for every workout without adjusting for exercise type.</li>
+<li>Starting the timer before you have enough space, equipment, or warm-up time.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="exercise-duration.html">Exercise Duration</a><a href="calorie-burn.html">Calorie Burn</a><a href="max-heart-rate.html">Max Heart Rate</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Start with longer rest periods and lower intensity if you're new to HIIT.</li><li>Limit HIIT sessions per week and allow adequate recovery between them.</li><li>Warm up properly before high-intensity intervals to reduce injury risk.</li><li>Combine HIIT with strength training and steady-state cardio for well-rounded fitness.</li><li>Adjust work-to-rest ratios based on your current fitness level and specific goals.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What makes HIIT different from regular cardio?</h3><p class="zac-support-answer">HIIT alternates short bursts of high-intensity effort with recovery periods, rather than maintaining one steady pace throughout, which can improve fitness and calorie burn efficiently in less total time than steady-state cardio.</p></div><div class="zac-support-faq-item"><h3>How long should work and rest intervals be?</h3><p class="zac-support-answer">This varies by fitness level and specific protocol — common structures range from very short intense bursts with equal or longer rest, to longer work intervals with shorter rest, depending on your goals and conditioning.</p></div><div class="zac-support-faq-item"><h3>Is HIIT suitable for beginners?</h3><p class="zac-support-answer">HIIT can be adapted for various fitness levels, but beginners should generally start with longer rest periods and lower intensity, building up gradually rather than jumping into advanced protocols.</p></div><div class="zac-support-faq-item"><h3>How often should I do HIIT sessions per week?</h3><p class="zac-support-answer">Because HIIT is demanding on the body, most guidance suggests limiting sessions per week and allowing adequate recovery between them, rather than doing it daily.</p></div><div class="zac-support-faq-item"><h3>Does HIIT replace the need for other types of exercise?</h3><p class="zac-support-answer">No, HIIT is one training method among several — combining it with strength training, flexibility work, and some steady-state cardio generally supports more well-rounded fitness.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This timer is for workout planning only and is not medical advice. It does not assess exercise readiness, injury risk, or training load. Adjust intervals to your ability and stop if you feel unwell.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         let interval = null;
         let remaining = 0;
         let totalRounds = 0;

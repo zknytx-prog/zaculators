@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Percentile Calculator | Zaculators</title>
-<meta name="description" content="Free BMI Percentile Calculator — This calculator estimates a simplified BMI percentile for children and teens. It is a screening tool only and not a...">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BMI Percentile Calculator | Zaculators</title>
+<meta content="Free BMI Percentile Calculator — This calculator estimates a simplified BMI percentile for children and teens. It is a screening tool only and not a..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -27,42 +28,42 @@
         a { color:var(--primary); text-decoration:none; }
         @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does BMI percentile estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a simplified BMI-for-age percentile range for children and teens based on the values entered."}},{"@type":"Question","name":"Is this a replacement for pediatric growth charts?","acceptedAnswer":{"@type":"Answer","text":"No. It is an informational estimate and not a replacement for official clinical growth charts."}},{"@type":"Question","name":"Why does age matter here?","acceptedAnswer":{"@type":"Answer","text":"BMI percentile uses age because expected growth patterns change throughout childhood and adolescence."}},{"@type":"Question","name":"Does sex affect the estimate?","acceptedAnswer":{"@type":"Answer","text":"Yes. The calculator uses the selected sex because percentile references are not identical."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it when age, height, or weight changes enough to affect the screening estimate."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does BMI percentile estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a simplified BMI-for-age percentile range for children and teens based on the values entered."}},{"@type":"Question","name":"Is this a replacement for pediatric growth charts?","acceptedAnswer":{"@type":"Answer","text":"No. It is an informational estimate and not a replacement for official clinical growth charts."}},{"@type":"Question","name":"Why does age matter here?","acceptedAnswer":{"@type":"Answer","text":"BMI percentile uses age because expected growth patterns change throughout childhood and adolescence."}},{"@type":"Question","name":"Does sex affect the estimate?","acceptedAnswer":{"@type":"Answer","text":"Yes. The calculator uses the selected sex because percentile references are not identical."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it when age, height, or weight changes enough to affect the screening estimate."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>BMI Percentile Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="age">Age (2-19)</label><input id="age" type="number" min="2" max="19" step="1" placeholder="10" required></div>
-                <div>
-                    <label for="sex">Sex</label>
-                    <select id="sex">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-                <div><label for="height">Height (cm)</label><input id="height" type="number" min="1" step="0.1" placeholder="140" required></div>
-                <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="1" step="0.1" placeholder="36" required></div>
-                <div class="full"><button type="submit">Estimate Percentile</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">This is a simplified estimate and not a replacement for pediatric growth charts.</div>
-    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates a simplified BMI percentile for children and teens. It is a screening tool only and not a substitute for medical evaluation.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter age, sex, height, and weight.</li><li>Use current measurements for the most relevant estimate.</li><li>Click Estimate Percentile to view the result.</li><li>Review the percentile and category shown.</li><li>Use the result as informational guidance only.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmi.html">BMI</a> · <a href="calorie-needs.html">Calorie Needs</a> · <a href="water-intake.html">Water Intake</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does BMI percentile estimate?</strong><br>It estimates a simplified BMI-for-age percentile range for children and teens based on the values entered.</p><p class="subtle"><strong>Is this a replacement for pediatric growth charts?</strong><br>No. It is an informational estimate and not a replacement for official clinical growth charts.</p><p class="subtle"><strong>Why does age matter here?</strong><br>BMI percentile uses age because expected growth patterns change throughout childhood and adolescence.</p><p class="subtle"><strong>Does sex affect the estimate?</strong><br>Yes. The calculator uses the selected sex because percentile references are not identical.</p><p class="subtle"><strong>When should I update the estimate?</strong><br>Update it when age, height, or weight changes enough to affect the screening estimate.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Use clinical growth references for formal decisions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>BMI Percentile Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Health &amp; Fitness</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="age">Age (2-19)</label><input id="age" max="19" min="2" placeholder="10" required="" step="1" type="number"/></div>
+<div>
+<label for="sex">Sex</label>
+<select id="sex">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div><label for="height">Height (cm)</label><input id="height" min="1" placeholder="140" required="" step="0.1" type="number"/></div>
+<div><label for="weight">Weight (kg)</label><input id="weight" min="1" placeholder="36" required="" step="0.1" type="number"/></div>
+<div class="full"><button type="submit">Estimate Percentile</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">This is a simplified estimate and not a replacement for pediatric growth charts.</div>
+<section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">BMI percentile, commonly used for children and teens, compares a young person's BMI to a reference population of others the same age and sex, expressed as a percentile rather than the fixed adult BMI categories, since healthy body composition changes significantly as children grow. Pediatric growth charts from health organizations are the standard reference for interpreting these percentiles, and this calculator provides a general estimate based on the values you provide.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Use This Calculator</h2><ol style="padding-left:1.5rem;color:#64748b"><li>Enter age, sex, height, and weight.</li><li>Use current measurements for the most relevant estimate.</li><li>Click Estimate Percentile to view the result.</li><li>Review the percentile and category shown.</li><li>Use the result as informational guidance only.</li></ol></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="bmi.html">BMI</a> · <a href="calorie-needs.html">Calorie Needs</a> · <a href="water-intake.html">Water Intake</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Use official CDC or WHO growth charts for clinically precise percentile figures.</li><li>Track percentile trends over time rather than a single reading.</li><li>Discuss any concerning results with a pediatrician rather than acting on this alone.</li><li>Remember healthy body composition changes significantly throughout childhood and adolescence.</li><li>Consider this one data point among several a pediatrician might use for growth assessment.</li></ul></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>Why does BMI percentile differ from adult BMI categories?</strong><br/>Children's bodies change significantly as they grow, so a fixed BMI number doesn't mean the same thing at every age — percentile compares a child's BMI to others of the same age and sex using standardized growth charts.</p><p class="subtle"><strong>What percentile range is generally considered healthy?</strong><br/>Standard pediatric growth charts typically classify percentile ranges into underweight, healthy weight, overweight, and obese categories — check current CDC or WHO growth chart guidance for exact ranges.</p><p class="subtle"><strong>Does this calculator use official growth chart data?</strong><br/>It provides a general estimate; for a clinically precise percentile, use official CDC or WHO growth chart tools or consult a pediatrician.</p><p class="subtle"><strong>Should BMI percentile be tracked over time for children?</strong><br/>Yes, tracking percentile trends over time is often more informative than a single reading, since consistent growth along a percentile curve is generally a good sign.</p><p class="subtle"><strong>Who should interpret a child's BMI percentile result?</strong><br/>A pediatrician or healthcare provider is best positioned to interpret BMI percentile in the context of a child's overall growth and health history.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides informational health estimates only and is not medical advice. Use clinical growth references for formal decisions.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 11, 2026</p></section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
             const age = Number(document.getElementById("age").value);
@@ -82,5 +83,3 @@
     </script>
 </body>
 </html>
-
-
