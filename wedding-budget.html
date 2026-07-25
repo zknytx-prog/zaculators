@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Budget Calculator | Zaculators</title>
-<meta name="description" content="Free Wedding Budget Calculator — Zaculators / Utilities &amp; Converters">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wedding Budget Calculator | Zaculators</title>
+<meta content="Free Wedding Budget Calculator — Zaculators / Utilities &amp; Converters" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -43,78 +44,74 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Wedding Budget Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total wedding cost from venue, catering, attire, photography, and other costs using the guest count you enter."}},{"@type":"Question","name":"Does the calculator show cost per guest?","acceptedAnswer":{"@type":"Answer","text":"Yes. It divides the total estimated budget by the number of guests to show an average cost per guest."}},{"@type":"Question","name":"Is catering treated as a per-guest cost?","acceptedAnswer":{"@type":"Answer","text":"Yes. The calculator multiplies the catering amount by the guest count."}},{"@type":"Question","name":"Should I include tax, tips, and service fees?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you know them, because the calculator does not add extra venue or vendor fees automatically."}},{"@type":"Question","name":"When should I recalculate a wedding budget?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever guest count, vendor quotes, or category spending plans change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Wedding Budget Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total wedding cost from venue, catering, attire, photography, and other costs using the guest count you enter."}},{"@type":"Question","name":"Does the calculator show cost per guest?","acceptedAnswer":{"@type":"Answer","text":"Yes. It divides the total estimated budget by the number of guests to show an average cost per guest."}},{"@type":"Question","name":"Is catering treated as a per-guest cost?","acceptedAnswer":{"@type":"Answer","text":"Yes. The calculator multiplies the catering amount by the guest count."}},{"@type":"Question","name":"Should I include tax, tips, and service fees?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you know them, because the calculator does not add extra venue or vendor fees automatically."}},{"@type":"Question","name":"When should I recalculate a wedding budget?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever guest count, vendor quotes, or category spending plans change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Wedding Budget Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="guests">Guests</label><input id="guests" type="number" min="1" step="1" placeholder="100" required></div>
-                <div><label for="venue">Venue</label><input id="venue" type="number" min="0" step="0.01" placeholder="5000" required></div>
-                <div><label for="catering">Catering per Guest</label><input id="catering" type="number" min="0" step="0.01" placeholder="65" required></div>
-                <div><label for="attire">Attire</label><input id="attire" type="number" min="0" step="0.01" placeholder="1800" required></div>
-                <div><label for="photo">Photography</label><input id="photo" type="number" min="0" step="0.01" placeholder="2200" required></div>
-                <div><label for="other">Other Costs</label><input id="other" type="number" min="0" step="0.01" placeholder="1500" required></div>
-                <div class="full"><button type="submit">Estimate Wedding Budget</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a total wedding budget using the categories that often drive the biggest wedding costs. It also shows an average cost per guest so you can compare the event size against the overall budget.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator adds venue, attire, photography, and other costs directly. Catering is calculated as <strong>guests x catering cost per guest</strong>. Total wedding budget is the sum of all categories. The per-guest figure is calculated as <strong>total budget / guest count</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">For 100 guests, a $5,000 venue, $65 catering per guest, $1,800 attire, $2,200 photography, and $1,500 other costs, the estimated budget is $17,000. That equals about $170 per guest.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The total estimate helps set a realistic planning ceiling before you book vendors. The per-guest figure is useful when you need to compare guest-list changes or check whether a smaller event materially reduces the budget.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Leaving out taxes, service charges, gratuities, or required rentals.</li>
-                <li>Ignoring how guest count affects more than just catering.</li>
-                <li>Using early vendor quotes without checking peak-season pricing.</li>
-                <li>Forgetting stationery, entertainment, transportation, or honeymoon costs if they belong in your full wedding plan.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="gift-budget.html">Gift Budget Calculator</a><a href="vacation-budget.html">Vacation Budget Calculator</a><a href="moving-cost.html">Moving Cost Calculator</a><a href="budget-planner.html">Budget Planner</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Wedding Budget Calculator estimate?</h3><p class="zac-support-answer">It estimates total wedding cost from venue, catering, attire, photography, and other costs using the guest count you enter.</p></div><div class="zac-support-faq-item"><h3>Does the calculator show cost per guest?</h3><p class="zac-support-answer">Yes. It divides the total estimated budget by the number of guests to show an average cost per guest.</p></div><div class="zac-support-faq-item"><h3>Is catering treated as a per-guest cost?</h3><p class="zac-support-answer">Yes. The calculator multiplies the catering amount by the guest count.</p></div><div class="zac-support-faq-item"><h3>Should I include tax, tips, and service fees?</h3><p class="zac-support-answer">Yes, if you know them, because the calculator does not add extra venue or vendor fees automatically.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate a wedding budget?</h3><p class="zac-support-answer">Recalculate whenever guest count, vendor quotes, or category spending plans change.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This estimate is for wedding planning only. Actual cost may differ because of contract terms, taxes, gratuities, guest-count changes, overtime, weather backups, and final vendor choices.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Wedding Budget Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="guests">Guests</label><input id="guests" min="1" placeholder="100" required="" step="1" type="number"/></div>
+<div><label for="venue">Venue</label><input id="venue" min="0" placeholder="5000" required="" step="0.01" type="number"/></div>
+<div><label for="catering">Catering per Guest</label><input id="catering" min="0" placeholder="65" required="" step="0.01" type="number"/></div>
+<div><label for="attire">Attire</label><input id="attire" min="0" placeholder="1800" required="" step="0.01" type="number"/></div>
+<div><label for="photo">Photography</label><input id="photo" min="0" placeholder="2200" required="" step="0.01" type="number"/></div>
+<div><label for="other">Other Costs</label><input id="other" min="0" placeholder="1500" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Wedding Budget</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Wedding budgets typically span many categories — venue, catering, attire, photography, flowers, entertainment — with total costs varying enormously based on guest count, location, and style choices, making an upfront budget estimate important before vendor deposits are paid. This calculator estimates total wedding cost using the category figures you provide, useful for planning a wedding that fits your overall financial comfort level.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator adds venue, attire, photography, and other costs directly. Catering is calculated as <strong>guests x catering cost per guest</strong>. Total wedding budget is the sum of all categories. The per-guest figure is calculated as <strong>total budget / guest count</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">For 100 guests, a $5,000 venue, $65 catering per guest, $1,800 attire, $2,200 photography, and $1,500 other costs, the estimated budget is $17,000. That equals about $170 per guest.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The total estimate helps set a realistic planning ceiling before you book vendors. The per-guest figure is useful when you need to compare guest-list changes or check whether a smaller event materially reduces the budget.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Leaving out taxes, service charges, gratuities, or required rentals.</li>
+<li>Ignoring how guest count affects more than just catering.</li>
+<li>Using early vendor quotes without checking peak-season pricing.</li>
+<li>Forgetting stationery, entertainment, transportation, or honeymoon costs if they belong in your full wedding plan.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="gift-budget.html">Gift Budget Calculator</a><a href="vacation-budget.html">Vacation Budget Calculator</a><a href="moving-cost.html">Moving Cost Calculator</a><a href="budget-planner.html">Budget Planner</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Set a total budget and rough category allocation before booking any vendors.</li><li>Prioritize spending on your top few priorities and economize on lower-priority categories.</li><li>Build in a 5-10% contingency buffer for unexpected costs during planning.</li><li>Get quotes from multiple vendors for major categories like venue and catering.</li><li>Recalculate as guest count firms up, since it's one of the biggest cost drivers.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What are the biggest cost categories in a typical wedding budget?</h3><p class="zac-support-answer">Venue and catering usually represent the largest share of most wedding budgets, followed by photography/videography, attire, flowers and decor, and entertainment — though the exact breakdown varies by couple's priorities.</p></div><div class="zac-support-faq-item"><h3>How does guest count affect total wedding cost?</h3><p class="zac-support-answer">Catering costs, and often venue capacity requirements, scale directly with guest count, making it one of the single biggest levers for controlling overall wedding budget.</p></div><div class="zac-support-faq-item"><h3>Should couples set a total budget before booking any vendors?</h3><p class="zac-support-answer">Yes, setting a total budget and rough category allocation before booking venue or vendors generally helps avoid overspending on early decisions that leave insufficient budget for later categories.</p></div><div class="zac-support-faq-item"><h3>Is it common for wedding costs to exceed the initial budget?</h3><p class="zac-support-answer">Yes, unexpected costs and upgrades are common throughout wedding planning, which is why many planners recommend building in a contingency buffer of 5-10% beyond the initial category estimates.</p></div><div class="zac-support-faq-item"><h3>How can couples reduce wedding costs without sacrificing what matters most?</h3><p class="zac-support-answer">Prioritizing spending on the few things that matter most to the couple (like photography or venue) while economizing on lower-priority categories (like favors or elaborate stationery) is a common cost-management approach.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This estimate is for wedding planning only. Actual cost may differ because of contract terms, taxes, gratuities, guest-count changes, overtime, weather backups, and final vendor choices.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Student Budget Calculator | Zaculators</title>
-<meta name="description" content="Estimate total student expenses, remaining money, and budget status from common monthly school spending categories.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate total student expenses, remaining money, and budget status from common monthly school spending categories." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,131 +80,111 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Student Budget Calculator</h1>
+<h1>Student Budget Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how monthly student income compares with common school and living expenses. This calculator helps with a quick budget check so you can see whether current income appears to cover housing, food, transportation, tuition payments, and other school costs.</p>
-    <form id="student-budget-form">
-      <div class="grid">
-        <div>
-          <label for="monthly-income">Monthly Income</label>
-          <input type="number" id="monthly-income" min="0" step="0.01" placeholder="e.g. 2200" required>
-        </div>
-        <div>
-          <label for="rent">Rent / Housing</label>
-          <input type="number" id="rent" min="0" step="0.01" placeholder="e.g. 850" required>
-        </div>
-        <div>
-          <label for="food">Food</label>
-          <input type="number" id="food" min="0" step="0.01" placeholder="e.g. 320" required>
-        </div>
-        <div>
-          <label for="transportation">Transportation</label>
-          <input type="number" id="transportation" min="0" step="0.01" placeholder="e.g. 140" required>
-        </div>
-        <div>
-          <label for="books">Books / Supplies</label>
-          <input type="number" id="books" min="0" step="0.01" placeholder="e.g. 90" required>
-        </div>
-        <div>
-          <label for="tuition-payment">Tuition Payment</label>
-          <input type="number" id="tuition-payment" min="0" step="0.01" placeholder="e.g. 400" required>
-        </div>
-        <div>
-          <label for="other-expenses">Other Expenses</label>
-          <input type="number" id="other-expenses" min="0" step="0.01" placeholder="e.g. 180" required>
-        </div>
-      </div>
-      <button type="submit">Calculate Student Budget</button>
-    </form>
-    <div id="student-budget-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Total Expenses</span><span id="total-expenses" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Remaining Money</span><span id="remaining-money" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Expense-to-Income Percentage</span><span id="expense-ratio" class="metric-value">0.00%</span></div>
-        <div class="metric"><span class="metric-label">Budget Status</span><span id="budget-status" class="metric-value">Comfortable</span></div>
-      </div>
-      <p id="student-budget-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how monthly student income compares with common school and living expenses. This calculator helps with a quick budget check so you can see whether current income appears to cover housing, food, transportation, tuition payments, and other school costs.</p>
+<form id="student-budget-form">
+<div class="grid">
+<div>
+<label for="monthly-income">Monthly Income</label>
+<input id="monthly-income" min="0" placeholder="e.g. 2200" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="rent">Rent / Housing</label>
+<input id="rent" min="0" placeholder="e.g. 850" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="food">Food</label>
+<input id="food" min="0" placeholder="e.g. 320" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="transportation">Transportation</label>
+<input id="transportation" min="0" placeholder="e.g. 140" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="books">Books / Supplies</label>
+<input id="books" min="0" placeholder="e.g. 90" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="tuition-payment">Tuition Payment</label>
+<input id="tuition-payment" min="0" placeholder="e.g. 400" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="other-expenses">Other Expenses</label>
+<input id="other-expenses" min="0" placeholder="e.g. 180" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Calculate Student Budget</button>
+</form>
+<div aria-live="polite" class="results" id="student-budget-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Total Expenses</span><span class="metric-value" id="total-expenses">$0.00</span></div>
+<div class="metric"><span class="metric-label">Remaining Money</span><span class="metric-value" id="remaining-money">$0.00</span></div>
+<div class="metric"><span class="metric-label">Expense-to-Income Percentage</span><span class="metric-value" id="expense-ratio">0.00%</span></div>
+<div class="metric"><span class="metric-label">Budget Status</span><span class="metric-value" id="budget-status">Comfortable</span></div>
+</div>
+<p class="intro" id="student-budget-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Student budgets typically balance limited income (from part-time work, financial aid, or family support) against expenses like tuition, housing, food, and course materials, making careful budgeting especially important during years of constrained income. This calculator estimates a student budget breakdown using the income and expense figures you provide, useful for planning finances throughout a semester or academic year.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li><strong>Total expenses = sum of all monthly categories entered</strong></li>
+<li><strong>Remaining money = monthly income - total expenses</strong></li>
+<li><strong>Expense-to-income percentage = total expenses / monthly income x 100</strong></li>
+</ul>
+<p class="intro">The budget status is a simple label based on the remaining money and income share consumed by expenses.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If monthly income is $2,200 and monthly expenses across rent, food, transportation, books, tuition, and other costs total $1,980, the calculator shows $220 remaining and reports what percentage of the monthly income is already being used.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">Total expenses shows the combined monthly cost of the categories entered. Remaining money shows what is left for savings, emergencies, or irregular costs. The expense-to-income percentage helps reveal how much budget flexibility remains.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Leaving out periodic but important costs like software, fees, or lab charges.</li>
+<li>Using tuition for a whole term instead of the monthly amount.</li>
+<li>Ignoring emergency savings or irregular living expenses.</li>
+<li>Using income that is not reliable every month.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides budgeting estimates only and is not financial, tax, or accounting advice. Actual spending patterns, school charges, and income timing can vary over the academic year. Results are estimates only.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="budget-planner.html">Budget Planner</a>
+<a href="financial-aid-calculator.html">Financial Aid Calculator</a>
+<a href="tuition-cost.html">Tuition Cost Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Spread lump-sum financial aid disbursements mentally across the full term to avoid early overspending.</li><li>Budget specifically for textbooks and course materials, and look into used or rental options.</li><li>Use student discounts and free campus resources to reduce discretionary spending.</li><li>Check in on your budget monthly or after any major income or expense change.</li><li>Track actual spending against your plan, especially during the first term while adjusting to student life.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What are typical expense categories in a student budget?</h3><p>Common categories include tuition and fees (if not fully covered by aid), housing, food, textbooks and course materials, transportation, and discretionary spending — with tuition and housing usually representing the largest shares.</p></div><div class="faq-item"><h3>How can students account for irregular income sources like financial aid disbursements?</h3><p>Since financial aid or scholarship disbursements often arrive as lump sums at the start of a term rather than evenly throughout, spreading that income mentally across the full term helps avoid overspending early on.</p></div><div class="faq-item"><h3>Should students budget for textbooks and course materials separately?</h3><p>Yes, textbook and course material costs can add up significantly each term and are often underestimated, so budgeting for them specifically (and looking into used or rental options) helps avoid surprises.</p></div><div class="faq-item"><h3>What's a common way for students to reduce discretionary spending?</h3><p>Common approaches include cooking rather than eating out frequently, using student discounts, buying used textbooks, and taking advantage of free campus resources and events.</p></div><div class="faq-item"><h3>How often should a student revisit their budget during a semester?</h3><p>Checking in monthly, or whenever a major expense or income change occurs (like a new part-time job or unexpected cost), helps keep the budget realistic throughout the term.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates a student's total monthly expenses, remaining money after expenses, and the share of income already committed. It is useful for checking whether a school-year budget looks manageable or needs adjustment.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <ul>
-      <li><strong>Total expenses = sum of all monthly categories entered</strong></li>
-      <li><strong>Remaining money = monthly income - total expenses</strong></li>
-      <li><strong>Expense-to-income percentage = total expenses / monthly income x 100</strong></li>
-    </ul>
-    <p class="intro">The budget status is a simple label based on the remaining money and income share consumed by expenses.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If monthly income is $2,200 and monthly expenses across rent, food, transportation, books, tuition, and other costs total $1,980, the calculator shows $220 remaining and reports what percentage of the monthly income is already being used.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">Total expenses shows the combined monthly cost of the categories entered. Remaining money shows what is left for savings, emergencies, or irregular costs. The expense-to-income percentage helps reveal how much budget flexibility remains.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Leaving out periodic but important costs like software, fees, or lab charges.</li>
-      <li>Using tuition for a whole term instead of the monthly amount.</li>
-      <li>Ignoring emergency savings or irregular living expenses.</li>
-      <li>Using income that is not reliable every month.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides budgeting estimates only and is not financial, tax, or accounting advice. Actual spending patterns, school charges, and income timing can vary over the academic year. Results are estimates only.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="budget-planner.html">Budget Planner</a>
-      <a href="financial-aid-calculator.html">Financial Aid Calculator</a>
-      <a href="tuition-cost.html">Tuition Cost Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this student budget calculator estimate?</h3>
-      <p class="answer">It estimates total monthly student expenses, remaining money, expense-to-income percentage, and a simple budget status note.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What does budget status mean?</h3>
-      <p class="answer">This page labels the budget as comfortable, tight, or over budget based on the remaining money estimate and how much of income is already committed.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Should tuition be included monthly?</h3>
-      <p class="answer">Yes, if you want a monthly budget view. Enter the monthly portion of tuition or any installment payment you expect to make.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these budget results exact?</h3>
-      <p class="answer">No. Results are estimates only and depend on the categories included and the numbers you enter.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

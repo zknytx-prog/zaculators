@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacation Budget Calculator | Zaculators</title>
-<meta name="description" content="Free Vacation Budget Calculator — Zaculators / Utilities &amp; Converters">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vacation Budget Calculator | Zaculators</title>
+<meta content="Free Vacation Budget Calculator — Zaculators / Utilities &amp; Converters" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -43,78 +44,74 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Vacation Budget Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total trip cost using travelers, days, lodging, food, transport, and extra activity spending."}},{"@type":"Question","name":"Does this calculator show cost per traveler?","acceptedAnswer":{"@type":"Answer","text":"Yes. It divides the total budget by the number of travelers to show a per-person estimate."}},{"@type":"Question","name":"Is transport entered per traveler or total?","acceptedAnswer":{"@type":"Answer","text":"Transport is treated as one total trip cost based on the current calculator setup."}},{"@type":"Question","name":"Should I include taxes and resort fees?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you already know them, because the calculator does not add them automatically."}},{"@type":"Question","name":"When should I recalculate a vacation budget?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when prices, traveler count, trip length, or activity plans change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Vacation Budget Calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates total trip cost using travelers, days, lodging, food, transport, and extra activity spending."}},{"@type":"Question","name":"Does this calculator show cost per traveler?","acceptedAnswer":{"@type":"Answer","text":"Yes. It divides the total budget by the number of travelers to show a per-person estimate."}},{"@type":"Question","name":"Is transport entered per traveler or total?","acceptedAnswer":{"@type":"Answer","text":"Transport is treated as one total trip cost based on the current calculator setup."}},{"@type":"Question","name":"Should I include taxes and resort fees?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you already know them, because the calculator does not add them automatically."}},{"@type":"Question","name":"When should I recalculate a vacation budget?","acceptedAnswer":{"@type":"Answer","text":"Recalculate when prices, traveler count, trip length, or activity plans change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Vacation Budget Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="vacation-form" class="grid">
-                <div><label for="travelers">Travelers</label><input type="number" id="travelers" min="1" step="1" placeholder="2" required></div>
-                <div><label for="days">Days</label><input type="number" id="days" min="1" step="1" placeholder="5" required></div>
-                <div><label for="lodging">Lodging per Night</label><input type="number" id="lodging" min="0" step="0.01" placeholder="180" required></div>
-                <div><label for="food">Food per Day</label><input type="number" id="food" min="0" step="0.01" placeholder="90" required></div>
-                <div><label for="transport">Transport Total</label><input type="number" id="transport" min="0" step="0.01" placeholder="400" required></div>
-                <div><label for="extras">Activities and Extras</label><input type="number" id="extras" min="0" step="0.01" placeholder="250" required></div>
-                <div class="full"><button type="submit">Build Budget</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a total vacation budget for the trip you describe. It combines the major travel cost categories most people plan around: lodging, daily food, transportation, and activity or extra spending.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">Lodging is calculated as <strong>lodging per night x number of days</strong>. Food is calculated as <strong>food per day x number of days x number of travelers</strong>. The calculator then adds total transport cost and activities or extras to produce the overall budget. A per-traveler estimate is calculated by dividing total cost by the number of travelers.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">For 2 travelers over 5 days, with lodging at $180 per night, food at $90 per day, transport at $400 total, and extras at $250, the estimated trip budget is $2,450. That works out to about $1,225 per traveler.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The total gives you a practical target budget before booking. The per-traveler figure is useful for shared trip planning, savings goals, and comparing one trip option with another. It is not a final quote, but it helps identify whether lodging, food, or extras are driving the biggest cost.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Forgetting taxes, resort fees, baggage fees, or airport transfers.</li>
-                <li>Entering transport as a per-person cost when the field is intended as a trip total.</li>
-                <li>Using a daily food budget that is too low for the destination.</li>
-                <li>Ignoring exchange-rate or seasonal price changes for international travel.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="trip-cost.html">Trip Cost Calculator</a><a href="travel-budget-calculator-international.html">Travel Budget Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="vacation-budget.html">Vacation Budget Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does the Vacation Budget Calculator estimate?</h3><p class="zac-support-answer">It estimates total trip cost using travelers, days, lodging, food, transport, and extra activity spending.</p></div><div class="zac-support-faq-item"><h3>Does this calculator show cost per traveler?</h3><p class="zac-support-answer">Yes. It divides the total budget by the number of travelers to show a per-person estimate.</p></div><div class="zac-support-faq-item"><h3>Is transport entered per traveler or total?</h3><p class="zac-support-answer">Transport is treated as one total trip cost based on the current calculator setup.</p></div><div class="zac-support-faq-item"><h3>Should I include taxes and resort fees?</h3><p class="zac-support-answer">Yes, if you already know them, because the calculator does not add them automatically.</p></div><div class="zac-support-faq-item"><h3>When should I recalculate a vacation budget?</h3><p class="zac-support-answer">Recalculate when prices, traveler count, trip length, or activity plans change.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator is for trip planning only. Actual vacation cost may differ because of taxes, gratuities, exchange rates, baggage fees, insurance, price changes, and spending habits during the trip.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Vacation Budget Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Utilities &amp; Converters</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="vacation-form">
+<div><label for="travelers">Travelers</label><input id="travelers" min="1" placeholder="2" required="" step="1" type="number"/></div>
+<div><label for="days">Days</label><input id="days" min="1" placeholder="5" required="" step="1" type="number"/></div>
+<div><label for="lodging">Lodging per Night</label><input id="lodging" min="0" placeholder="180" required="" step="0.01" type="number"/></div>
+<div><label for="food">Food per Day</label><input id="food" min="0" placeholder="90" required="" step="0.01" type="number"/></div>
+<div><label for="transport">Transport Total</label><input id="transport" min="0" placeholder="400" required="" step="0.01" type="number"/></div>
+<div><label for="extras">Activities and Extras</label><input id="extras" min="0" placeholder="250" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Build Budget</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Vacation budgets typically combine transportation, lodging, food, activities, and incidental spending, with total cost varying significantly based on destination, trip length, and travel style, making an upfront estimate useful before booking. This calculator estimates total vacation cost using the category figures you provide, useful for planning trips of varying length, destination, and style.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">Lodging is calculated as <strong>lodging per night x number of days</strong>. Food is calculated as <strong>food per day x number of days x number of travelers</strong>. The calculator then adds total transport cost and activities or extras to produce the overall budget. A per-traveler estimate is calculated by dividing total cost by the number of travelers.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">For 2 travelers over 5 days, with lodging at $180 per night, food at $90 per day, transport at $400 total, and extras at $250, the estimated trip budget is $2,450. That works out to about $1,225 per traveler.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The total gives you a practical target budget before booking. The per-traveler figure is useful for shared trip planning, savings goals, and comparing one trip option with another. It is not a final quote, but it helps identify whether lodging, food, or extras are driving the biggest cost.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Forgetting taxes, resort fees, baggage fees, or airport transfers.</li>
+<li>Entering transport as a per-person cost when the field is intended as a trip total.</li>
+<li>Using a daily food budget that is too low for the destination.</li>
+<li>Ignoring exchange-rate or seasonal price changes for international travel.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="trip-cost.html">Trip Cost Calculator</a><a href="travel-budget-calculator-international.html">Travel Budget Calculator</a><a href="fuel-cost.html">Fuel Cost Calculator</a><a href="vacation-budget.html">Vacation Budget Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Research destination-specific costs for lodging and food rather than using generic assumptions.</li><li>Build in a 10-15% contingency buffer for unexpected vacation expenses.</li><li>Estimate costs before booking so you can compare destinations or adjust plans if needed.</li><li>Calculate shared costs (lodging, rental car) separately from true per-person costs.</li><li>Track actual spending against your estimate during the trip to stay on budget.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What categories should a vacation budget include?</h3><p class="zac-support-answer">Common categories include transportation (flights or gas), lodging, food and dining, activities or entertainment, and a buffer for incidental or unexpected expenses that commonly come up while traveling.</p></div><div class="zac-support-faq-item"><h3>How can I estimate lodging costs for a vacation budget?</h3><p class="zac-support-answer">Researching typical rates for your destination and preferred accommodation type (hotel, vacation rental, etc.), then multiplying by the number of nights, gives a reasonable lodging estimate to include in your total.</p></div><div class="zac-support-faq-item"><h3>Should I build in a buffer for unexpected vacation expenses?</h3><p class="zac-support-answer">Yes, unplanned costs like souvenirs, extra activities, or minor travel disruptions are common, so building in a 10-15% contingency buffer is a widely recommended practice.</p></div><div class="zac-support-faq-item"><h3>Does vacation cost scale directly with the number of travelers?</h3><p class="zac-support-answer">Some costs (activities, food) scale per person, while others (like a shared hotel room or rental car) don't scale linearly, so it's worth estimating per category rather than a flat per-person multiplier.</p></div><div class="zac-support-faq-item"><h3>How far in advance should I estimate vacation costs?</h3><p class="zac-support-answer">Estimating early, ideally before booking flights and lodging, lets you compare destination options and adjust plans if your initial estimate runs over your available budget.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator is for trip planning only. Actual vacation cost may differ because of taxes, gratuities, exchange rates, baggage fees, insurance, price changes, and spending habits during the trip.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         function formatCurrency(value) {
             return value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         }
