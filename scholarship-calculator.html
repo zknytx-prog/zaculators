@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholarship Calculator | Zaculators</title>
-<meta name="description" content="Free Scholarship Calculator — It estimates the total scholarship value over the renewal period you enter and shows the tuition amount still remaining each...">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholarship Calculator | Zaculators</title>
+<meta content="Free Scholarship Calculator — It estimates the total scholarship value over the renewal period you enter and shows the tuition amount still remaining each..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,82 +43,78 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this scholarship calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the total scholarship value over the renewal period you enter and shows the tuition amount still remaining each year."}},{"@type":"Question","name":"Should I enter yearly or total scholarship amounts?","acceptedAnswer":{"@type":"Answer","text":"This page works best when you enter the scholarship amount that applies to one year, then use the renewal-years field to project the total value over time."}},{"@type":"Question","name":"What if tuition increases every year?","acceptedAnswer":{"@type":"Answer","text":"This calculator does not model future tuition increases. If you expect rising tuition, recalculate with updated annual costs or compare several scenarios."}},{"@type":"Question","name":"Do scholarship renewal rules matter?","acceptedAnswer":{"@type":"Answer","text":"Yes. GPA requirements, credit-load rules, and enrollment status can affect whether a scholarship renews. This page assumes the scholarship renews for the number of years you enter."}},{"@type":"Question","name":"Can the remaining tuition result go below zero?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator floors the remaining annual tuition at zero for the estimate shown on the page."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this scholarship calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the total scholarship value over the renewal period you enter and shows the tuition amount still remaining each year."}},{"@type":"Question","name":"Should I enter yearly or total scholarship amounts?","acceptedAnswer":{"@type":"Answer","text":"This page works best when you enter the scholarship amount that applies to one year, then use the renewal-years field to project the total value over time."}},{"@type":"Question","name":"What if tuition increases every year?","acceptedAnswer":{"@type":"Answer","text":"This calculator does not model future tuition increases. If you expect rising tuition, recalculate with updated annual costs or compare several scenarios."}},{"@type":"Question","name":"Do scholarship renewal rules matter?","acceptedAnswer":{"@type":"Answer","text":"Yes. GPA requirements, credit-load rules, and enrollment status can affect whether a scholarship renews. This page assumes the scholarship renews for the number of years you enter."}},{"@type":"Question","name":"Can the remaining tuition result go below zero?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator floors the remaining annual tuition at zero for the estimate shown on the page."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Scholarship Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="tuition">Annual Tuition and Fees</label><input id="tuition" type="number" min="0" step="0.01" placeholder="18000" required></div>
-                <div><label for="scholarships">Scholarship Total</label><input id="scholarships" type="number" min="0" step="0.01" placeholder="7000" required></div>
-                <div><label for="renewYears">Renewal Years</label><input id="renewYears" type="number" min="1" step="1" placeholder="4" required></div>
-                <div class="full"><button type="submit">Calculate Savings</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Scholarship renewal rules and tuition changes can affect actual long-term savings.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates how much scholarship funding could reduce your annual tuition and what the scholarship could be worth across multiple renewal years. It is useful for comparing award offers and planning school costs.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Enter annual tuition and fees.</li>
-                <li>Enter the scholarship amount applied for one year.</li>
-                <li>Enter how many years you expect the scholarship to renew.</li>
-                <li>The calculator estimates <strong>remaining annual tuition = tuition - scholarship</strong>, with a minimum of zero.</li>
-                <li>It also estimates <strong>total scholarship savings = annual scholarship x renewal years</strong>.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If annual tuition is <strong>$18,000</strong>, your scholarship is <strong>$7,000</strong> per year, and it renews for <strong>4 years</strong>, the estimated total scholarship value is <strong>$28,000</strong>. The remaining tuition each year would be <strong>$11,000</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result is the projected scholarship savings across the renewal period you entered. The supporting line shows how much annual tuition may still remain before housing, books, and other costs are added.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Entering a four-year scholarship total instead of a one-year award.</li>
-                <li>Ignoring GPA or enrollment rules needed for renewal.</li>
-                <li>Using tuition only when fees are also charged separately.</li>
-                <li>Assuming tuition will stay flat for all renewal years.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="financial-aid-calculator.html">Financial Aid Calculator</a><a href="student-loan.html">Student Loan Calculator</a><a href="degree-roi.html">Degree ROI</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this scholarship calculator estimate?</h3><p class="zac-support-answer">It estimates the total scholarship value over the renewal period you enter and shows the tuition amount still remaining each year.</p></div><div class="zac-support-faq-item"><h3>Should I enter yearly or total scholarship amounts?</h3><p class="zac-support-answer">This page works best when you enter the scholarship amount that applies to one year, then use the renewal-years field to project the total value over time.</p></div><div class="zac-support-faq-item"><h3>What if tuition increases every year?</h3><p class="zac-support-answer">This calculator does not model future tuition increases. If you expect rising tuition, recalculate with updated annual costs or compare several scenarios.</p></div><div class="zac-support-faq-item"><h3>Do scholarship renewal rules matter?</h3><p class="zac-support-answer">Yes. GPA requirements, credit-load rules, and enrollment status can affect whether a scholarship renews. This page assumes the scholarship renews for the number of years you enter.</p></div><div class="zac-support-faq-item"><h3>Can the remaining tuition result go below zero?</h3><p class="zac-support-answer">No. The calculator floors the remaining annual tuition at zero for the estimate shown on the page.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator assumes the scholarship renews exactly as entered and does not account for GPA conditions, enrollment changes, tuition inflation, taxable scholarship rules, or school-specific restrictions. Confirm award terms with the scholarship provider and your school.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Scholarship Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="tuition">Annual Tuition and Fees</label><input id="tuition" min="0" placeholder="18000" required="" step="0.01" type="number"/></div>
+<div><label for="scholarships">Scholarship Total</label><input id="scholarships" min="0" placeholder="7000" required="" step="0.01" type="number"/></div>
+<div><label for="renewYears">Renewal Years</label><input id="renewYears" min="1" placeholder="4" required="" step="1" type="number"/></div>
+<div class="full"><button type="submit">Calculate Savings</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Scholarship renewal rules and tuition changes can affect actual long-term savings.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Scholarship and financial aid planning involves comparing total cost of attendance against expected scholarships, grants, and other aid to estimate actual out-of-pocket cost, which can vary significantly between similarly priced institutions once aid packages are factored in. This calculator estimates net cost using the total cost and scholarship/aid figures you provide, useful for comparing offers from different schools.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Enter annual tuition and fees.</li>
+<li>Enter the scholarship amount applied for one year.</li>
+<li>Enter how many years you expect the scholarship to renew.</li>
+<li>The calculator estimates <strong>remaining annual tuition = tuition - scholarship</strong>, with a minimum of zero.</li>
+<li>It also estimates <strong>total scholarship savings = annual scholarship x renewal years</strong>.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If annual tuition is <strong>$18,000</strong>, your scholarship is <strong>$7,000</strong> per year, and it renews for <strong>4 years</strong>, the estimated total scholarship value is <strong>$28,000</strong>. The remaining tuition each year would be <strong>$11,000</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result is the projected scholarship savings across the renewal period you entered. The supporting line shows how much annual tuition may still remain before housing, books, and other costs are added.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Entering a four-year scholarship total instead of a one-year award.</li>
+<li>Ignoring GPA or enrollment rules needed for renewal.</li>
+<li>Using tuition only when fees are also charged separately.</li>
+<li>Assuming tuition will stay flat for all renewal years.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="financial-aid-calculator.html">Financial Aid Calculator</a><a href="student-loan.html">Student Loan Calculator</a><a href="degree-roi.html">Degree ROI</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Compare net cost across schools, not just sticker price, when weighing offers.</li><li>Check scholarship renewal requirements rather than assuming the full award continues automatically.</li><li>Distinguish between aid that must be repaid (loans) and aid that doesn't (scholarships, grants).</li><li>Factor in multi-year cost, not just first-year aid packages, when comparing schools.</li><li>Recalculate if aid offers or total cost figures are updated during the admissions process.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Why can net cost differ significantly between schools with similar sticker prices?</h3><p class="zac-support-answer">Scholarship and financial aid packages vary significantly between institutions, so two schools with similar advertised tuition can end up with very different actual out-of-pocket costs once aid is factored in.</p></div><div class="zac-support-faq-item"><h3>What's the difference between a scholarship and a grant?</h3><p class="zac-support-answer">Scholarships are often merit-based (academic, athletic, or other achievement), while grants are typically need-based, though terminology can vary by institution and country — both generally reduce net cost without requiring repayment.</p></div><div class="zac-support-faq-item"><h3>Are scholarships guaranteed for all years of enrollment?</h3><p class="zac-support-answer">Not always — some scholarships require maintaining certain criteria (like a minimum GPA) to renew each year, so check renewal requirements rather than assuming the full amount applies automatically every year.</p></div><div class="zac-support-faq-item"><h3>Should I compare net cost or sticker price when choosing between schools?</h3><p class="zac-support-answer">Net cost (after aid) is generally more meaningful for financial planning purposes than sticker price, since it reflects what you'll actually likely pay.</p></div><div class="zac-support-faq-item"><h3>Does this calculator account for loans as a form of aid?</h3><p class="zac-support-answer">This depends on how you categorize your inputs — if you include loan amounts as 'aid' in your net cost calculation, remember that loans need to be repaid, unlike scholarships or grants, which is an important distinction for financial planning.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator assumes the scholarship renews exactly as entered and does not account for GPA conditions, enrollment changes, tuition inflation, taxable scholarship rules, or school-specific restrictions. Confirm award terms with the scholarship provider and your school.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

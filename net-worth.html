@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Net Worth Calculator | Zaculators</title>
-<meta name="description" content="Free Net Worth Calculator — It estimates net worth by subtracting total liabilities from total assets using the values you enter.">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Net Worth Calculator | Zaculators</title>
+<meta content="Free Net Worth Calculator — It estimates net worth by subtracting total liabilities from total assets using the values you enter." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; --danger:#dc2626; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -45,82 +46,78 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this net worth calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates net worth by subtracting total liabilities from total assets using the values you enter."}},{"@type":"Question","name":"What counts as an asset in this calculator?","acceptedAnswer":{"@type":"Answer","text":"Assets on this page include cash and savings, investments, property value, and other assets you enter."}},{"@type":"Question","name":"What counts as a liability?","acceptedAnswer":{"@type":"Answer","text":"Liabilities here include loans and mortgage balances, but you can adapt the entries based on the debts you want to track."}},{"@type":"Question","name":"What if the result is negative?","acceptedAnswer":{"@type":"Answer","text":"A negative result means liabilities are larger than assets based on the values entered in the form."}},{"@type":"Question","name":"How often should I update net worth?","acceptedAnswer":{"@type":"Answer","text":"Many people update net worth monthly or quarterly so they can track progress without reacting to every small market move."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this net worth calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates net worth by subtracting total liabilities from total assets using the values you enter."}},{"@type":"Question","name":"What counts as an asset in this calculator?","acceptedAnswer":{"@type":"Answer","text":"Assets on this page include cash and savings, investments, property value, and other assets you enter."}},{"@type":"Question","name":"What counts as a liability?","acceptedAnswer":{"@type":"Answer","text":"Liabilities here include loans and mortgage balances, but you can adapt the entries based on the debts you want to track."}},{"@type":"Question","name":"What if the result is negative?","acceptedAnswer":{"@type":"Answer","text":"A negative result means liabilities are larger than assets based on the values entered in the form."}},{"@type":"Question","name":"How often should I update net worth?","acceptedAnswer":{"@type":"Answer","text":"Many people update net worth monthly or quarterly so they can track progress without reacting to every small market move."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Net Worth Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="cash">Cash and Savings</label><input id="cash" type="number" min="0" step="0.01" placeholder="10000" required></div>
-                <div><label for="investments">Investments</label><input id="investments" type="number" min="0" step="0.01" placeholder="25000" required></div>
-                <div><label for="property">Property Value</label><input id="property" type="number" min="0" step="0.01" placeholder="200000" required></div>
-                <div><label for="otherAssets">Other Assets</label><input id="otherAssets" type="number" min="0" step="0.01" placeholder="5000" required></div>
-                <div><label for="loans">Loans</label><input id="loans" type="number" min="0" step="0.01" placeholder="15000" required></div>
-                <div><label for="mortgage">Mortgage</label><input id="mortgage" type="number" min="0" step="0.01" placeholder="160000" required></div>
-                <div class="full"><button type="submit">Calculate Net Worth</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This net worth calculator estimates the difference between what you own and what you owe. It provides a quick snapshot of household balance-sheet health and is useful for tracking long-term financial progress.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ul>
-                <li>Total assets = Cash and savings + Investments + Property value + Other assets</li>
-                <li>Total liabilities = Loans + Mortgage</li>
-                <li>Net worth = Total assets - Total liabilities</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If assets total <strong>$240,000</strong> and liabilities total <strong>$175,000</strong>, the estimated net worth is <strong>$65,000</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">A positive result means assets are greater than liabilities. A negative result means debts are larger than the assets entered. The detail line breaks the number into total assets and total liabilities so you can see which side is driving the result.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ul>
-                <li>Using original purchase prices instead of current estimated values.</li>
-                <li>Leaving out smaller debts or asset categories.</li>
-                <li>Counting retirement accounts or home equity inconsistently across updates.</li>
-                <li>Comparing net worth over time without updating all values on the same date.</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="emergency-fund.html">Emergency Fund Calculator</a><a href="loan-payoff.html">Loan Payoff Calculator</a><a href="compound-interest-monthly.html">Compound Interest Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this net worth calculator estimate?</h3><p class="zac-support-answer">It estimates net worth by subtracting total liabilities from total assets using the values you enter.</p></div><div class="zac-support-faq-item"><h3>What counts as an asset in this calculator?</h3><p class="zac-support-answer">Assets on this page include cash and savings, investments, property value, and other assets you enter.</p></div><div class="zac-support-faq-item"><h3>What counts as a liability?</h3><p class="zac-support-answer">Liabilities here include loans and mortgage balances, but you can adapt the entries based on the debts you want to track.</p></div><div class="zac-support-faq-item"><h3>What if the result is negative?</h3><p class="zac-support-answer">A negative result means liabilities are larger than assets based on the values entered in the form.</p></div><div class="zac-support-faq-item"><h3>How often should I update net worth?</h3><p class="zac-support-answer">Many people update net worth monthly or quarterly so they can track progress without reacting to every small market move.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides educational balance-sheet estimates only and is not tax, legal, or financial advice. Market values, debt balances, and asset classifications can change over time.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Net Worth Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="cash">Cash and Savings</label><input id="cash" min="0" placeholder="10000" required="" step="0.01" type="number"/></div>
+<div><label for="investments">Investments</label><input id="investments" min="0" placeholder="25000" required="" step="0.01" type="number"/></div>
+<div><label for="property">Property Value</label><input id="property" min="0" placeholder="200000" required="" step="0.01" type="number"/></div>
+<div><label for="otherAssets">Other Assets</label><input id="otherAssets" min="0" placeholder="5000" required="" step="0.01" type="number"/></div>
+<div><label for="loans">Loans</label><input id="loans" min="0" placeholder="15000" required="" step="0.01" type="number"/></div>
+<div><label for="mortgage">Mortgage</label><input id="mortgage" min="0" placeholder="160000" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Calculate Net Worth</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Net worth is calculated as total assets (cash, investments, property, and other valuables) minus total liabilities (debts, loans, and other obligations), providing a snapshot of overall financial position at a point in time. Tracking net worth over time is often considered more meaningful than a single reading, since the trend reveals whether your financial position is improving through saving, debt paydown, and asset growth.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li>Total assets = Cash and savings + Investments + Property value + Other assets</li>
+<li>Total liabilities = Loans + Mortgage</li>
+<li>Net worth = Total assets - Total liabilities</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If assets total <strong>$240,000</strong> and liabilities total <strong>$175,000</strong>, the estimated net worth is <strong>$65,000</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">A positive result means assets are greater than liabilities. A negative result means debts are larger than the assets entered. The detail line breaks the number into total assets and total liabilities so you can see which side is driving the result.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using original purchase prices instead of current estimated values.</li>
+<li>Leaving out smaller debts or asset categories.</li>
+<li>Counting retirement accounts or home equity inconsistently across updates.</li>
+<li>Comparing net worth over time without updating all values on the same date.</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="emergency-fund.html">Emergency Fund Calculator</a><a href="loan-payoff.html">Loan Payoff Calculator</a><a href="compound-interest-monthly.html">Compound Interest Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Include all assets and liabilities for an accurate net worth calculation, not just obvious ones.</li><li>Track your net worth periodically (quarterly or annually) to see meaningful trends over time.</li><li>Don't be alarmed by a negative net worth early in life — focus on the trend improving over time.</li><li>Update your figures periodically as asset values and debt balances change.</li><li>Use net worth tracking as one tool among several for overall financial planning.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What counts as an asset for net worth calculation?</h3><p class="zac-support-answer">Common assets include cash and savings, investment accounts, retirement accounts, real estate, vehicles, and other valuables — generally anything you own that has monetary value.</p></div><div class="zac-support-faq-item"><h3>What counts as a liability?</h3><p class="zac-support-answer">Common liabilities include mortgage balances, car loans, student loans, credit card debt, and any other money owed — essentially anything you're obligated to pay back.</p></div><div class="zac-support-faq-item"><h3>Can net worth be negative?</h3><p class="zac-support-answer">Yes, if liabilities exceed assets (common for those with significant student loan or mortgage debt relative to accumulated assets, especially earlier in life), net worth can be negative, which isn't unusual and often improves over time.</p></div><div class="zac-support-faq-item"><h3>How often should I calculate my net worth?</h3><p class="zac-support-answer">Many people find checking quarterly or annually useful for tracking trends without becoming overly focused on short-term market fluctuations affecting asset values.</p></div><div class="zac-support-faq-item"><h3>Why does net worth trend matter more than a single number?</h3><p class="zac-support-answer">A single net worth figure gives a snapshot, but tracking the trend over time reveals whether your saving, debt paydown, and investment habits are actually improving your overall financial position.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides educational balance-sheet estimates only and is not tax, legal, or financial advice. Market values, debt balances, and asset classifications can change over time.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

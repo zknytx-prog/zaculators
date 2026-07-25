@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Pension Calculator | Zaculators</title>
-<meta name="description" content="Estimate pension balance at retirement using current balance, monthly contributions, employer contributions, and expected annual return.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate pension balance at retirement using current balance, monthly contributions, employer contributions, and expected annual return." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,128 +80,108 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Pension Calculator</h1>
+<h1>Pension Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how a pension-style retirement balance may grow from your current age to retirement if you and your employer keep contributing monthly and the account earns a steady average annual return. Results are estimates only.</p>
-    <form id="pension-form">
-      <div class="grid">
-        <div>
-          <label for="current-age">Current Age</label>
-          <input type="number" id="current-age" min="0" step="1" placeholder="e.g. 40" required>
-        </div>
-        <div>
-          <label for="retirement-age">Retirement Age</label>
-          <input type="number" id="retirement-age" min="1" step="1" placeholder="e.g. 65" required>
-        </div>
-        <div>
-          <label for="current-balance">Current Pension Balance</label>
-          <input type="number" id="current-balance" min="0" step="0.01" placeholder="e.g. 120000" required>
-        </div>
-        <div>
-          <label for="monthly-contribution">Monthly Contribution</label>
-          <input type="number" id="monthly-contribution" min="0" step="0.01" placeholder="e.g. 500" required>
-        </div>
-        <div>
-          <label for="employer-contribution">Employer Monthly Contribution</label>
-          <input type="number" id="employer-contribution" min="0" step="0.01" placeholder="e.g. 300" required>
-        </div>
-        <div>
-          <label for="annual-return">Expected Annual Return (%)</label>
-          <input type="number" id="annual-return" step="0.01" placeholder="e.g. 6" required>
-        </div>
-      </div>
-      <button type="submit">Estimate Pension Balance</button>
-    </form>
-    <div id="pension-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Estimated Pension Balance at Retirement</span><span id="retirement-balance" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Total Personal Contributions</span><span id="personal-total" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Total Employer Contributions</span><span id="employer-total" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Investment Growth</span><span id="growth-total" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="pension-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how a pension-style retirement balance may grow from your current age to retirement if you and your employer keep contributing monthly and the account earns a steady average annual return. Results are estimates only.</p>
+<form id="pension-form">
+<div class="grid">
+<div>
+<label for="current-age">Current Age</label>
+<input id="current-age" min="0" placeholder="e.g. 40" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="retirement-age">Retirement Age</label>
+<input id="retirement-age" min="1" placeholder="e.g. 65" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="current-balance">Current Pension Balance</label>
+<input id="current-balance" min="0" placeholder="e.g. 120000" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="monthly-contribution">Monthly Contribution</label>
+<input id="monthly-contribution" min="0" placeholder="e.g. 500" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="employer-contribution">Employer Monthly Contribution</label>
+<input id="employer-contribution" min="0" placeholder="e.g. 300" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="annual-return">Expected Annual Return (%)</label>
+<input id="annual-return" placeholder="e.g. 6" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Estimate Pension Balance</button>
+</form>
+<div aria-live="polite" class="results" id="pension-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Estimated Pension Balance at Retirement</span><span class="metric-value" id="retirement-balance">$0.00</span></div>
+<div class="metric"><span class="metric-label">Total Personal Contributions</span><span class="metric-value" id="personal-total">$0.00</span></div>
+<div class="metric"><span class="metric-label">Total Employer Contributions</span><span class="metric-value" id="employer-total">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Investment Growth</span><span class="metric-value" id="growth-total">$0.00</span></div>
+</div>
+<p class="intro" id="pension-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Pension estimates depend heavily on the specific pension scheme — defined benefit plans typically calculate payouts based on salary history and years of service, while defined contribution plans depend on accumulated contributions and investment growth, making pension calculations vary significantly by plan type and jurisdiction. This calculator provides a general estimate using the figures you provide, though your specific pension scheme's actual rules should be confirmed with your plan administrator.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">The estimate uses monthly compound growth until retirement:</p>
+<ul>
+<li>Monthly rate = annual return / 12</li>
+<li>Each month, the balance grows by the monthly rate</li>
+<li>Then the monthly personal and employer contributions are added</li>
+<li>Investment growth = projected retirement balance - current balance - all contributions</li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If you are 40, plan to retire at 65, already have $120,000 saved, contribute $500 per month, receive $300 per month from your employer, and assume a 6% annual return, the calculator compounds that balance monthly for 25 years while adding both contribution streams each month.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The projected balance shows the estimated account value at retirement age. Personal and employer contribution totals show how much was directly added over time. Investment growth shows the portion of the final balance that comes from compounded returns rather than direct contributions.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Confusing a pension balance estimate with a guaranteed monthly pension payout.</li>
+<li>Using a return assumption that is too optimistic.</li>
+<li>Ignoring changes in contribution rates over time.</li>
+<li>Forgetting that real accounts can include fees and taxes.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides retirement balance estimates only and is not pension, tax, legal, or investment advice. It does not model specific pension formulas, annuitization, inflation, taxes, or plan-specific rules. Results are estimates.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="retirement.html">Retirement Calculator</a>
+<a href="retirement-countdown.html">Retirement Countdown Calculator</a>
+<a href="investment-return.html">Investment Return Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Confirm whether your pension is defined benefit or defined contribution, since the calculation logic differs significantly.</li><li>Contact your plan administrator for an official benefit estimate specific to your situation.</li><li>Factor in pension income alongside personal savings and government benefits for a complete retirement picture.</li><li>Track years of service carefully if your pension formula rewards longer tenure.</li><li>Revisit your estimate periodically, especially if you change employers or your plan's terms change.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What's the difference between defined benefit and defined contribution pensions?</h3><p>Defined benefit pensions promise a specific payout based on formulas (often salary and years of service), while defined contribution pensions depend on how much was contributed and how those investments performed, with the final amount not guaranteed in advance.</p></div><div class="faq-item"><h3>Does this calculator apply to any type of pension scheme?</h3><p>This provides a general estimate; you'll need to enter figures reflecting your specific scheme's structure, since defined benefit and defined contribution calculations follow very different logic.</p></div><div class="faq-item"><h3>How do years of service typically affect a defined benefit pension?</h3><p>Many defined benefit formulas increase the payout based on years of service, meaning longer tenure with an employer generally results in a larger pension benefit, all else being equal.</p></div><div class="faq-item"><h3>Can I combine pension income with personal retirement savings?</h3><p>Yes, many people rely on a combination of pension income, personal retirement savings, and government retirement benefits (like Social Security) to fund their overall retirement income.</p></div><div class="faq-item"><h3>Where can I get an exact figure for my specific pension?</h3><p>Your pension plan administrator or HR department can typically provide an official benefit estimate based on your specific plan's rules and your actual employment history.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates the future value of a pension-style savings balance by combining the current balance, monthly personal contributions, employer monthly contributions, and a steady annual return assumption until retirement age.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">The estimate uses monthly compound growth until retirement:</p>
-    <ul>
-      <li>Monthly rate = annual return / 12</li>
-      <li>Each month, the balance grows by the monthly rate</li>
-      <li>Then the monthly personal and employer contributions are added</li>
-      <li>Investment growth = projected retirement balance - current balance - all contributions</li>
-    </ul>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If you are 40, plan to retire at 65, already have $120,000 saved, contribute $500 per month, receive $300 per month from your employer, and assume a 6% annual return, the calculator compounds that balance monthly for 25 years while adding both contribution streams each month.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The projected balance shows the estimated account value at retirement age. Personal and employer contribution totals show how much was directly added over time. Investment growth shows the portion of the final balance that comes from compounded returns rather than direct contributions.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Confusing a pension balance estimate with a guaranteed monthly pension payout.</li>
-      <li>Using a return assumption that is too optimistic.</li>
-      <li>Ignoring changes in contribution rates over time.</li>
-      <li>Forgetting that real accounts can include fees and taxes.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides retirement balance estimates only and is not pension, tax, legal, or investment advice. It does not model specific pension formulas, annuitization, inflation, taxes, or plan-specific rules. Results are estimates.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="retirement.html">Retirement Calculator</a>
-      <a href="retirement-countdown.html">Retirement Countdown Calculator</a>
-      <a href="investment-return.html">Investment Return Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this pension calculator estimate?</h3>
-      <p class="answer">It estimates pension balance at retirement based on current balance, monthly contributions, employer contributions, and expected annual return.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this include guaranteed pension income rules?</h3>
-      <p class="answer">No. This page estimates the growth of a pension-style savings balance and does not model specific pension payout formulas or guarantees.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Why separate personal and employer contributions?</h3>
-      <p class="answer">Separating them makes it easier to see how much of the projected retirement balance comes from your own contributions versus employer funding.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are pension results guaranteed?</h3>
-      <p class="answer">No. Results are estimates only and depend on the return assumption and contribution pattern used.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

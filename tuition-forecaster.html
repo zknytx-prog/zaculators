@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Tuition Forecaster – Predict Future College Costs Free | Zaculators</title>
-<meta name="description" content="Free tuition forecaster — project future first-year and total tuition costs using annual inflation. Plan ahead for college expenses in seconds.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Free tuition forecaster — project future first-year and total tuition costs using annual inflation. Plan ahead for college expenses in seconds." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,118 +80,98 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Tuition Forecaster Calculator</h1>
+<h1>Tuition Forecaster Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Forecast what tuition may look like by the time enrollment begins and across the full years of study. This calculator uses a simple annual tuition inflation assumption so families and students can build a rough planning estimate.</p>
-    <form id="tuition-forecaster-form">
-      <div class="grid">
-        <div>
-          <label for="current-annual-tuition">Current Annual Tuition</label>
-          <input type="number" id="current-annual-tuition" min="0" step="0.01" placeholder="e.g. 18000" required>
-        </div>
-        <div>
-          <label for="years-until-enrollment">Years Until Enrollment</label>
-          <input type="number" id="years-until-enrollment" min="0" step="1" placeholder="e.g. 3" required>
-        </div>
-        <div>
-          <label for="years-of-study">Years of Study</label>
-          <input type="number" id="years-of-study" min="1" step="1" placeholder="e.g. 4" required>
-        </div>
-        <div>
-          <label for="tuition-inflation">Expected Annual Tuition Inflation (%)</label>
-          <input type="number" id="tuition-inflation" min="0" step="0.01" placeholder="e.g. 4" required>
-        </div>
-      </div>
-      <button type="submit">Forecast Tuition</button>
-    </form>
-    <div id="tuition-forecaster-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">First-Year Projected Tuition</span><span id="first-year-tuition" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Total Tuition Over Study Period</span><span id="total-tuition" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Increase Compared With Today</span><span id="increase-today" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="tuition-forecaster-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Forecast what tuition may look like by the time enrollment begins and across the full years of study. This calculator uses a simple annual tuition inflation assumption so families and students can build a rough planning estimate.</p>
+<form id="tuition-forecaster-form">
+<div class="grid">
+<div>
+<label for="current-annual-tuition">Current Annual Tuition</label>
+<input id="current-annual-tuition" min="0" placeholder="e.g. 18000" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="years-until-enrollment">Years Until Enrollment</label>
+<input id="years-until-enrollment" min="0" placeholder="e.g. 3" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="years-of-study">Years of Study</label>
+<input id="years-of-study" min="1" placeholder="e.g. 4" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="tuition-inflation">Expected Annual Tuition Inflation (%)</label>
+<input id="tuition-inflation" min="0" placeholder="e.g. 4" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Forecast Tuition</button>
+</form>
+<div aria-live="polite" class="results" id="tuition-forecaster-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">First-Year Projected Tuition</span><span class="metric-value" id="first-year-tuition">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Total Tuition Over Study Period</span><span class="metric-value" id="total-tuition">$0.00</span></div>
+<div class="metric"><span class="metric-label">Increase Compared With Today</span><span class="metric-value" id="increase-today">$0.00</span></div>
+</div>
+<p class="intro" id="tuition-forecaster-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Forecasting future tuition costs typically involves applying an assumed annual increase rate to current tuition figures over a projected number of years, helping families and students plan ahead for rising education costs, such as when saving for a child's future education well before enrollment. This calculator projects future tuition cost using the current tuition, expected annual increase rate, and number of years you provide.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li><strong>First-year projected tuition = current annual tuition x (1 + inflation) ^ years until enrollment</strong></li>
+<li>Each study year is then projected to grow again by the same annual tuition inflation rate</li>
+<li><strong>Estimated total tuition = sum of all projected study years</strong></li>
+<li><strong>Increase compared with today = first-year projected tuition - current annual tuition</strong></li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If current annual tuition is $18,000, enrollment is 3 years away, the program lasts 4 years, and tuition inflation is expected to be 4% per year, the calculator first projects the tuition for year 1 of enrollment and then continues inflating tuition for each later study year.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The first-year projection estimates the annual tuition at the time school begins. Total tuition shows the projected tuition-only cost across all years of study. The increase figure shows how much the first-year annual tuition exceeds the current annual tuition entered today.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using a tuition inflation rate that is unrealistically low or high.</li>
+<li>Forgetting that private, public, and program-specific tuition can move differently.</li>
+<li>Assuming this includes books, housing, or aid.</li>
+<li>Entering years until enrollment or years of study incorrectly.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides tuition forecasts only and is not an official school estimate or financial aid projection. It does not include scholarships, grants, housing, books, fees, or living costs. Results are estimates only.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="tuition-cost.html">Tuition Cost Calculator</a>
+<a href="financial-aid-calculator.html">Financial Aid Calculator</a>
+<a href="degree-roi.html">Degree ROI Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Use historical tuition inflation rates specific to your target institution type for a realistic forecast.</li><li>Remember tuition has often risen faster than general inflation in many contexts — don't underestimate.</li><li>Use your forecasted figure to work backward into a realistic savings plan.</li><li>Update your forecast periodically as actual tuition trends and your timeline evolve.</li><li>Consider a range of scenarios (conservative to aggressive increase rates) rather than one fixed assumption.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>Why is it important to forecast tuition costs years in advance?</h3><p>Tuition costs typically rise over time, so families saving for future education (such as for young children) benefit from forecasting the likely future cost rather than planning around today's tuition figures alone.</p></div><div class="faq-item"><h3>What annual increase rate should I use for forecasting?</h3><p>Historical tuition inflation rates for your specific type of institution (which often outpace general inflation) provide a reasonable basis, though future rates remain uncertain and can vary by institution and country.</p></div><div class="faq-item"><h3>Does tuition typically rise faster than general inflation?</h3><p>In many countries and institution types, tuition has historically risen faster than general consumer price inflation, though this trend can vary significantly by institution, country, and time period.</p></div><div class="faq-item"><h3>How can I use a tuition forecast for savings planning?</h3><p>Once you have a forecasted future cost, you can work backward to estimate how much you'd need to save regularly (accounting for investment growth) to reach that target by the time tuition is due.</p></div><div class="faq-item"><h3>Should I update my forecast periodically?</h3><p>Yes, revisiting your forecast periodically with updated tuition trend data helps keep your savings plan aligned with realistic expectations as actual costs evolve.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates what tuition may cost when enrollment begins and what total tuition may look like across the study period. It is meant for early planning and uses a constant annual tuition inflation assumption.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <ul>
-      <li><strong>First-year projected tuition = current annual tuition x (1 + inflation) ^ years until enrollment</strong></li>
-      <li>Each study year is then projected to grow again by the same annual tuition inflation rate</li>
-      <li><strong>Estimated total tuition = sum of all projected study years</strong></li>
-      <li><strong>Increase compared with today = first-year projected tuition - current annual tuition</strong></li>
-    </ul>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If current annual tuition is $18,000, enrollment is 3 years away, the program lasts 4 years, and tuition inflation is expected to be 4% per year, the calculator first projects the tuition for year 1 of enrollment and then continues inflating tuition for each later study year.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The first-year projection estimates the annual tuition at the time school begins. Total tuition shows the projected tuition-only cost across all years of study. The increase figure shows how much the first-year annual tuition exceeds the current annual tuition entered today.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Using a tuition inflation rate that is unrealistically low or high.</li>
-      <li>Forgetting that private, public, and program-specific tuition can move differently.</li>
-      <li>Assuming this includes books, housing, or aid.</li>
-      <li>Entering years until enrollment or years of study incorrectly.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides tuition forecasts only and is not an official school estimate or financial aid projection. It does not include scholarships, grants, housing, books, fees, or living costs. Results are estimates only.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="tuition-cost.html">Tuition Cost Calculator</a>
-      <a href="financial-aid-calculator.html">Financial Aid Calculator</a>
-      <a href="degree-roi.html">Degree ROI Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this tuition forecaster calculator estimate?</h3>
-      <p class="answer">It estimates first-year projected tuition, total tuition over the study period, and how much those amounts may increase compared with today's annual tuition.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Why include years until enrollment?</h3>
-      <p class="answer">That lets the calculator project how tuition may rise before the first year of study even begins.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this include aid or living costs?</h3>
-      <p class="answer">No. This page forecasts tuition only and does not include scholarships, housing, books, or other school expenses.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these tuition forecasts exact?</h3>
-      <p class="answer">No. Results are estimates only and actual tuition increases can differ by school, program, and year.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

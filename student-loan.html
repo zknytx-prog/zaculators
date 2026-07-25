@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Loan Calculator | Zaculators</title>
-<meta name="description" content="Free Student Loan Calculator — Zaculators / Financial &amp; Planning">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Loan Calculator | Zaculators</title>
+<meta content="Free Student Loan Calculator — Zaculators / Financial &amp; Planning" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,86 +43,82 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this student loan calculator show?","acceptedAnswer":{"@type":"Answer","text":"It estimates the scheduled monthly payment for the loan terms you enter, then adds any extra monthly payment amount you choose."}},{"@type":"Question","name":"Does the calculator change the payoff date?","acceptedAnswer":{"@type":"Answer","text":"No. This page adds the extra payment to the monthly estimate shown, but it does not recalculate a shortened payoff schedule."}},{"@type":"Question","name":"What interest formula does this page use?","acceptedAnswer":{"@type":"Answer","text":"It uses the standard fixed-rate amortization payment formula for the scheduled monthly payment, then adds the extra monthly payment you enter."}},{"@type":"Question","name":"Can I use this for federal and private loans?","acceptedAnswer":{"@type":"Answer","text":"You can use it for rough planning on either type, but actual repayment rules, fees, capitalization, and forgiveness options may differ."}},{"@type":"Question","name":"Why should I verify with official sources?","acceptedAnswer":{"@type":"Answer","text":"Student loan rates, repayment plans, and servicer rules can change. Verify current rates with the official government source."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this student loan calculator show?","acceptedAnswer":{"@type":"Answer","text":"It estimates the scheduled monthly payment for the loan terms you enter, then adds any extra monthly payment amount you choose."}},{"@type":"Question","name":"Does the calculator change the payoff date?","acceptedAnswer":{"@type":"Answer","text":"No. This page adds the extra payment to the monthly estimate shown, but it does not recalculate a shortened payoff schedule."}},{"@type":"Question","name":"What interest formula does this page use?","acceptedAnswer":{"@type":"Answer","text":"It uses the standard fixed-rate amortization payment formula for the scheduled monthly payment, then adds the extra monthly payment you enter."}},{"@type":"Question","name":"Can I use this for federal and private loans?","acceptedAnswer":{"@type":"Answer","text":"You can use it for rough planning on either type, but actual repayment rules, fees, capitalization, and forgiveness options may differ."}},{"@type":"Question","name":"Why should I verify with official sources?","acceptedAnswer":{"@type":"Answer","text":"Student loan rates, repayment plans, and servicer rules can change. Verify current rates with the official government source."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Student Loan Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="balance">Loan Balance</label><input id="balance" type="number" min="0" step="0.01" placeholder="30000" required></div>
-                <div><label for="rate">Interest Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="5.5" required></div>
-                <div><label for="years">Repayment Term (Years)</label><input id="years" type="number" min="1" step="1" placeholder="10" required></div>
-                <div><label for="extra">Extra Monthly Payment</label><input id="extra" type="number" min="0" step="0.01" placeholder="50" required></div>
-                <div class="full"><button type="submit">Estimate Payment</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates a monthly student loan payment based on the balance, fixed interest rate, repayment term, and any extra amount you plan to pay each month. It is useful for payment planning and comparing borrowing scenarios.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Enter the total loan balance.</li>
-                <li>Enter the fixed annual interest rate and repayment term.</li>
-                <li>Enter any extra monthly payment you plan to add.</li>
-                <li>The page first calculates the standard amortized monthly payment.</li>
-                <li>It then adds your extra monthly payment to show a combined monthly amount.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If your balance is <strong>$30,000</strong>, rate is <strong>5.5%</strong>, term is <strong>10 years</strong>, and you plan to pay <strong>$50 extra each month</strong>, the page calculates the scheduled monthly payment first and then adds the extra amount to show the total monthly payment target.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result is the amount you would plan to pay each month under the terms entered on this page. The detail line separates the scheduled payment from the extra monthly amount so you can see how much of your plan is optional prepayment.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Entering a yearly rate as a monthly rate.</li>
-                <li>Using the wrong loan balance after capitalization or fees.</li>
-                <li>Assuming this page recalculates payoff date or total interest with extra payments.</li>
-                <li>Ignoring servicer rules, repayment plan changes, or variable-rate terms.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Federal loan rates, repayment plans, and servicer rules can change over time. Verify current rates with the official government source.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="financial-aid-calculator.html">Financial Aid Calculator</a><a href="scholarship-calculator.html">Scholarship Calculator</a><a href="degree-roi.html">Degree ROI</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this student loan calculator show?</h3><p class="zac-support-answer">It estimates the scheduled monthly payment for the loan terms you enter, then adds any extra monthly payment amount you choose.</p></div><div class="zac-support-faq-item"><h3>Does the calculator change the payoff date?</h3><p class="zac-support-answer">No. This page adds the extra payment to the monthly estimate shown, but it does not recalculate a shortened payoff schedule.</p></div><div class="zac-support-faq-item"><h3>What interest formula does this page use?</h3><p class="zac-support-answer">It uses the standard fixed-rate amortization payment formula for the scheduled monthly payment, then adds the extra monthly payment you enter.</p></div><div class="zac-support-faq-item"><h3>Can I use this for federal and private loans?</h3><p class="zac-support-answer">You can use it for rough planning on either type, but actual repayment rules, fees, capitalization, and forgiveness options may differ.</p></div><div class="zac-support-faq-item"><h3>Why should I verify with official sources?</h3><p class="zac-support-answer">Student loan rates, repayment plans, and servicer rules can change. Verify current rates with the official government source.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator assumes a fixed-rate loan and does not model deferment, income-driven repayment, capitalization events, fees, forgiveness programs, or a revised payoff date from extra payments. Use it for rough planning only.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Student Loan Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="balance">Loan Balance</label><input id="balance" min="0" placeholder="30000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Interest Rate (%)</label><input id="rate" min="0" placeholder="5.5" required="" step="0.01" type="number"/></div>
+<div><label for="years">Repayment Term (Years)</label><input id="years" min="1" placeholder="10" required="" step="1" type="number"/></div>
+<div><label for="extra">Extra Monthly Payment</label><input id="extra" min="0" placeholder="50" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Payment</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Student loan repayment is calculated based on the loan balance, interest rate, and repayment term, similar to other installment loans, though student loans often have specific features like income-driven repayment plans, deferment options, or forgiveness programs depending on the loan type and jurisdiction. This calculator estimates standard monthly payments and total interest using the balance, rate, and term you provide.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Enter the total loan balance.</li>
+<li>Enter the fixed annual interest rate and repayment term.</li>
+<li>Enter any extra monthly payment you plan to add.</li>
+<li>The page first calculates the standard amortized monthly payment.</li>
+<li>It then adds your extra monthly payment to show a combined monthly amount.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If your balance is <strong>$30,000</strong>, rate is <strong>5.5%</strong>, term is <strong>10 years</strong>, and you plan to pay <strong>$50 extra each month</strong>, the page calculates the scheduled monthly payment first and then adds the extra amount to show the total monthly payment target.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result is the amount you would plan to pay each month under the terms entered on this page. The detail line separates the scheduled payment from the extra monthly amount so you can see how much of your plan is optional prepayment.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Entering a yearly rate as a monthly rate.</li>
+<li>Using the wrong loan balance after capitalization or fees.</li>
+<li>Assuming this page recalculates payoff date or total interest with extra payments.</li>
+<li>Ignoring servicer rules, repayment plan changes, or variable-rate terms.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Federal loan rates, repayment plans, and servicer rules can change over time. Verify current rates with the official government source.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="financial-aid-calculator.html">Financial Aid Calculator</a><a href="scholarship-calculator.html">Scholarship Calculator</a><a href="degree-roi.html">Degree ROI</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Check whether income-driven repayment options might better fit your situation than standard repayment.</li><li>Understand what you might lose (like forgiveness eligibility) before refinancing federal loans to private.</li><li>Consider extra principal payments if you want to reduce total interest and payoff time.</li><li>Compare rates carefully if refinancing, and confirm there's no prepayment penalty on your current loan.</li><li>Check specific forgiveness program eligibility with your loan servicer if relevant to your profession.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Do all student loans use the same repayment structure?</h3><p class="zac-support-answer">No, federal and private student loans, as well as loans in different countries, can have very different repayment structures, including standard fixed payments, income-driven plans, or graduated payment schedules.</p></div><div class="zac-support-faq-item"><h3>What is income-driven repayment?</h3><p class="zac-support-answer">Some student loan programs offer plans where monthly payments are based on a percentage of income rather than a fixed amortization schedule, which this standard calculator doesn't model directly.</p></div><div class="zac-support-faq-item"><h3>Does this calculator account for loan forgiveness programs?</h3><p class="zac-support-answer">No, this estimates standard repayment based on balance, rate, and term. Specific forgiveness programs (available in some jurisdictions for certain professions or after qualifying payments) require checking your loan servicer's specific program rules.</p></div><div class="zac-support-faq-item"><h3>Should I refinance my student loans?</h3><p class="zac-support-answer">Refinancing can potentially lower your rate, but for federal loans in some countries, refinancing to a private loan may mean losing access to income-driven repayment or forgiveness programs — weigh this trade-off carefully.</p></div><div class="zac-support-faq-item"><h3>Can I pay off student loans early?</h3><p class="zac-support-answer">Most student loans allow early repayment without penalty, and extra payments toward principal can significantly reduce total interest paid over the life of the loan.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator assumes a fixed-rate loan and does not model deferment, income-driven repayment, capitalization events, fees, forgiveness programs, or a revised payoff date from extra payments. Use it for rough planning only.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Aid Calculator | Zaculators</title>
-<meta name="description" content="Free Financial Aid Calculator — Zaculators / Financial &amp; Planning">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Financial Aid Calculator | Zaculators</title>
+<meta content="Free Financial Aid Calculator — Zaculators / Financial &amp; Planning" name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,87 +43,83 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this financial aid calculator show?","acceptedAnswer":{"@type":"Answer","text":"It estimates the remaining annual cost after subtracting family contribution, grants, scholarships, and work-study or other aid from the annual cost of attendance you enter."}},{"@type":"Question","name":"Is the result the same as a school aid offer?","acceptedAnswer":{"@type":"Answer","text":"No. Schools package aid differently, and official aid offers can include loans, institutional rules, and program-specific limits that this page does not model."}},{"@type":"Question","name":"Should loans be entered as grants?","acceptedAnswer":{"@type":"Answer","text":"No. Enter grants and scholarships as gift aid. If you want to include a non-loan funding source in work-study or other aid, use that field instead."}},{"@type":"Question","name":"What is cost of attendance?","acceptedAnswer":{"@type":"Answer","text":"Cost of attendance usually includes tuition, fees, housing, food, books, supplies, and other approved school costs for the academic year."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your school updates its cost of attendance, your aid offer changes, or your expected family contribution changes."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this financial aid calculator show?","acceptedAnswer":{"@type":"Answer","text":"It estimates the remaining annual cost after subtracting family contribution, grants, scholarships, and work-study or other aid from the annual cost of attendance you enter."}},{"@type":"Question","name":"Is the result the same as a school aid offer?","acceptedAnswer":{"@type":"Answer","text":"No. Schools package aid differently, and official aid offers can include loans, institutional rules, and program-specific limits that this page does not model."}},{"@type":"Question","name":"Should loans be entered as grants?","acceptedAnswer":{"@type":"Answer","text":"No. Enter grants and scholarships as gift aid. If you want to include a non-loan funding source in work-study or other aid, use that field instead."}},{"@type":"Question","name":"What is cost of attendance?","acceptedAnswer":{"@type":"Answer","text":"Cost of attendance usually includes tuition, fees, housing, food, books, supplies, and other approved school costs for the academic year."}},{"@type":"Question","name":"How often should I recalculate?","acceptedAnswer":{"@type":"Answer","text":"Recalculate whenever your school updates its cost of attendance, your aid offer changes, or your expected family contribution changes."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Financial Aid Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="cost">Annual Cost of Attendance</label><input id="cost" type="number" min="0" step="0.01" placeholder="28000" required></div>
-                <div><label for="family">Estimated Family Contribution</label><input id="family" type="number" min="0" step="0.01" placeholder="9000" required></div>
-                <div><label for="grants">Grants and Scholarships</label><input id="grants" type="number" min="0" step="0.01" placeholder="6000" required></div>
-                <div><label for="workstudy">Work Study / Other Aid</label><input id="workstudy" type="number" min="0" step="0.01" placeholder="2000" required></div>
-                <div class="full"><button type="submit">Estimate Remaining Need</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Aid packaging varies by school and program. Use this for rough planning only.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates how much annual cost may still remain after you subtract your expected family contribution, grants, scholarships, and work-study or similar aid from the annual cost of attendance. It is useful for rough college budgeting before official award letters are final.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Enter your school's annual cost of attendance.</li>
-                <li>Enter the amount you expect from family contribution.</li>
-                <li>Enter grants and scholarships.</li>
-                <li>Enter work-study or other aid you want counted toward the annual cost.</li>
-                <li>The page calculates <strong>remaining need = cost of attendance - family contribution - grants - work-study/other aid</strong>, with a minimum result of zero.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p>If annual cost of attendance is <strong>$28,000</strong>, family contribution is <strong>$9,000</strong>, grants and scholarships total <strong>$6,000</strong>, and work-study or other aid is <strong>$2,000</strong>, the estimated remaining amount is <strong>$11,000</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is the estimated amount still not covered by the funding sources you entered. That remaining amount may need to be covered by savings, payment plans, student loans, additional scholarships, or lower-cost school options.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Using tuition only instead of full cost of attendance.</li>
-                <li>Counting loans as grants or scholarships.</li>
-                <li>Leaving out housing, books, or fees from school costs.</li>
-                <li>Assuming the estimate will match the final aid package exactly.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Use your school's published cost-of-attendance figures and official aid offer when available. Verify current rates with the official government source.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="scholarship-calculator.html">Scholarship Calculator</a><a href="student-loan.html">Student Loan Calculator</a><a href="degree-roi.html">Degree ROI</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this financial aid calculator show?</h3><p class="zac-support-answer">It estimates the remaining annual cost after subtracting family contribution, grants, scholarships, and work-study or other aid from the annual cost of attendance you enter.</p></div><div class="zac-support-faq-item"><h3>Is the result the same as a school aid offer?</h3><p class="zac-support-answer">No. Schools package aid differently, and official aid offers can include loans, institutional rules, and program-specific limits that this page does not model.</p></div><div class="zac-support-faq-item"><h3>Should loans be entered as grants?</h3><p class="zac-support-answer">No. Enter grants and scholarships as gift aid. If you want to include a non-loan funding source in work-study or other aid, use that field instead.</p></div><div class="zac-support-faq-item"><h3>What is cost of attendance?</h3><p class="zac-support-answer">Cost of attendance usually includes tuition, fees, housing, food, books, supplies, and other approved school costs for the academic year.</p></div><div class="zac-support-faq-item"><h3>How often should I recalculate?</h3><p class="zac-support-answer">Recalculate whenever your school updates its cost of attendance, your aid offer changes, or your expected family contribution changes.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator is a planning tool only. It does not account for school-specific formulas, verification changes, student loan eligibility, merit conditions, residency rules, or award caps. Review final financial decisions against your school's official documents.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Financial Aid Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="cost">Annual Cost of Attendance</label><input id="cost" min="0" placeholder="28000" required="" step="0.01" type="number"/></div>
+<div><label for="family">Estimated Family Contribution</label><input id="family" min="0" placeholder="9000" required="" step="0.01" type="number"/></div>
+<div><label for="grants">Grants and Scholarships</label><input id="grants" min="0" placeholder="6000" required="" step="0.01" type="number"/></div>
+<div><label for="workstudy">Work Study / Other Aid</label><input id="workstudy" min="0" placeholder="2000" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Remaining Need</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Aid packaging varies by school and program. Use this for rough planning only.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Financial aid eligibility and estimated need are typically calculated by comparing the total cost of attendance against an expected family contribution (based on income, assets, and family size), with the resulting gap representing demonstrated financial need that aid packages aim to help address. This calculator estimates financial need using the cost of attendance and expected contribution figures you provide.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Enter your school's annual cost of attendance.</li>
+<li>Enter the amount you expect from family contribution.</li>
+<li>Enter grants and scholarships.</li>
+<li>Enter work-study or other aid you want counted toward the annual cost.</li>
+<li>The page calculates <strong>remaining need = cost of attendance - family contribution - grants - work-study/other aid</strong>, with a minimum result of zero.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p>If annual cost of attendance is <strong>$28,000</strong>, family contribution is <strong>$9,000</strong>, grants and scholarships total <strong>$6,000</strong>, and work-study or other aid is <strong>$2,000</strong>, the estimated remaining amount is <strong>$11,000</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is the estimated amount still not covered by the funding sources you entered. That remaining amount may need to be covered by savings, payment plans, student loans, additional scholarships, or lower-cost school options.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Using tuition only instead of full cost of attendance.</li>
+<li>Counting loans as grants or scholarships.</li>
+<li>Leaving out housing, books, or fees from school costs.</li>
+<li>Assuming the estimate will match the final aid package exactly.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Use your school's published cost-of-attendance figures and official aid offer when available. Verify current rates with the official government source.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="scholarship-calculator.html">Scholarship Calculator</a><a href="student-loan.html">Student Loan Calculator</a><a href="degree-roi.html">Degree ROI</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Apply for financial aid even if you're uncertain about qualifying, since eligibility can surprise you.</li><li>Reapply each year, since financial aid eligibility is typically reassessed annually.</li><li>Understand that demonstrated need doesn't guarantee the full gap will be covered by aid.</li><li>Research each institution's specific aid policies, since these vary significantly between schools.</li><li>Meet application deadlines carefully, since many aid programs have strict cutoff dates.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How is financial need typically calculated?</h3><p class="zac-support-answer">It's generally the difference between total cost of attendance and your expected family contribution — the resulting gap represents demonstrated need that aid programs may help cover, though actual aid awarded depends on the institution and available funds.</p></div><div class="zac-support-faq-item"><h3>What factors go into expected family contribution?</h3><p class="zac-support-answer">Common factors include family income, assets, family size, and number of family members in higher education simultaneously, calculated through standardized formulas that vary by country and aid program.</p></div><div class="zac-support-faq-item"><h3>Does demonstrated financial need guarantee aid will be awarded?</h3><p class="zac-support-answer">No, demonstrated need indicates eligibility, but actual aid awarded also depends on the institution's available funds and specific aid policies, which can vary significantly between schools.</p></div><div class="zac-support-faq-item"><h3>Should I apply for financial aid even if I'm not sure I'll qualify?</h3><p class="zac-support-answer">Many families are pleasantly surprised by aid eligibility, and application deadlines are often strict, so applying even with uncertainty about qualifying is generally worthwhile given the potential benefit.</p></div><div class="zac-support-faq-item"><h3>How often do I need to reapply for financial aid?</h3><p class="zac-support-answer">Most financial aid programs require reapplication each year, since family financial circumstances and other factors can change from year to year.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator is a planning tool only. It does not account for school-specific formulas, verification changes, student loan eligibility, merit conditions, residency rules, or award caps. Review final financial decisions against your school's official documents.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 23, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

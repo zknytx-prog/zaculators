@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Free Tuition Calculator – Estimate Total College Costs | Zaculators</title>
-<meta name="description" content="Free tuition cost calculator — estimate total tuition, aid, and net school cost over multiple years, including annual tuition growth. Instant results.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Free tuition cost calculator — estimate total tuition, aid, and net school cost over multiple years, including annual tuition growth. Instant results." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,124 +80,104 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Tuition Cost Calculator</h1>
+<h1>Tuition Cost Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate the multi-year cost of a college or training program by combining annual tuition, annual tuition growth, scholarships or grants, and other school costs. Results are estimates only and are intended for planning.</p>
-    <form id="tuition-form">
-      <div class="grid">
-        <div>
-          <label for="annual-tuition">Annual Tuition</label>
-          <input type="number" id="annual-tuition" min="0" step="0.01" placeholder="e.g. 18000" required>
-        </div>
-        <div>
-          <label for="years-study">Years of Study</label>
-          <input type="number" id="years-study" min="1" step="1" placeholder="e.g. 4" required>
-        </div>
-        <div>
-          <label for="tuition-increase">Annual Tuition Increase (%)</label>
-          <input type="number" id="tuition-increase" min="0" step="0.01" placeholder="e.g. 3" required>
-        </div>
-        <div>
-          <label for="annual-aid">Scholarships / Grants per Year</label>
-          <input type="number" id="annual-aid" min="0" step="0.01" placeholder="e.g. 5000" required>
-        </div>
-        <div>
-          <label for="other-costs">Other Annual School Costs</label>
-          <input type="number" id="other-costs" min="0" step="0.01" placeholder="e.g. 3500" required>
-        </div>
-      </div>
-      <button type="submit">Estimate Tuition Cost</button>
-    </form>
-    <div id="tuition-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Estimated Total Tuition</span><span id="total-tuition" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Total School Cost</span><span id="total-school-cost" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Aid</span><span id="total-aid" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Net Estimated Cost</span><span id="net-cost" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="tuition-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate the multi-year cost of a college or training program by combining annual tuition, annual tuition growth, scholarships or grants, and other school costs. Results are estimates only and are intended for planning.</p>
+<form id="tuition-form">
+<div class="grid">
+<div>
+<label for="annual-tuition">Annual Tuition</label>
+<input id="annual-tuition" min="0" placeholder="e.g. 18000" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="years-study">Years of Study</label>
+<input id="years-study" min="1" placeholder="e.g. 4" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="tuition-increase">Annual Tuition Increase (%)</label>
+<input id="tuition-increase" min="0" placeholder="e.g. 3" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="annual-aid">Scholarships / Grants per Year</label>
+<input id="annual-aid" min="0" placeholder="e.g. 5000" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="other-costs">Other Annual School Costs</label>
+<input id="other-costs" min="0" placeholder="e.g. 3500" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Estimate Tuition Cost</button>
+</form>
+<div aria-live="polite" class="results" id="tuition-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Estimated Total Tuition</span><span class="metric-value" id="total-tuition">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Total School Cost</span><span class="metric-value" id="total-school-cost">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Aid</span><span class="metric-value" id="total-aid">$0.00</span></div>
+<div class="metric"><span class="metric-label">Net Estimated Cost</span><span class="metric-value" id="net-cost">$0.00</span></div>
+</div>
+<p class="intro" id="tuition-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Total tuition cost planning involves accounting for base tuition plus additional fees, and potentially estimating growth over multiple years if tuition rates increase annually, giving a more complete picture than looking at a single year's sticker price alone. This calculator estimates total cost using the tuition, fees, and duration figures you provide, useful for multi-year education cost planning.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">The estimate sums each school year separately:</p>
+<ul>
+<li>Tuition for each year grows by the annual tuition increase rate.</li>
+<li>Other annual school costs are added for each year.</li>
+<li>Scholarships and grants are subtracted each year.</li>
+<li>Net estimated cost = total tuition + total other costs - total aid.</li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If annual tuition starts at $18,000, the program lasts 4 years, tuition rises 3% per year, aid is $5,000 per year, and other annual school costs are $3,500, the calculator estimates each year separately and then combines those yearly totals into one overall cost picture.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">Estimated total tuition shows the projected academic charge across the full program. Estimated total school cost includes tuition plus other annual costs. Estimated aid totals the recurring aid entered. Net estimated cost shows the remaining cost after subtracting aid.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Forgetting that tuition can rise each year.</li>
+<li>Using one-time aid as if it repeats every year.</li>
+<li>Leaving out books, supplies, and other school-related costs.</li>
+<li>Assuming the school bill equals the full cost of attendance.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides educational cost estimates only and is not an official school financial aid statement. Tuition, fees, aid eligibility, housing, and living costs can change by term and by institution. Results are estimates.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="degree-roi.html">Degree ROI Calculator</a>
+<a href="financial-aid-calculator.html">Financial Aid Calculator</a>
+<a href="scholarship-calculator.html">Scholarship Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Account for expected annual tuition increases rather than assuming flat costs across multiple years.</li><li>Include mandatory fees, books, and housing costs, not just base tuition, for a complete estimate.</li><li>Subtract expected financial aid or scholarships separately to estimate net out-of-pocket cost.</li><li>Research your specific institution's historical tuition increase pattern for a more realistic assumption.</li><li>Recalculate periodically as tuition rates or your enrollment plans change.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>Does tuition typically increase each year?</h3><p>Yes, many educational institutions increase tuition rates annually, so multi-year cost planning should ideally account for expected increases rather than just multiplying a single year's cost by the number of years.</p></div><div class="faq-item"><h3>What additional fees should be included beyond base tuition?</h3><p>Common additional costs include mandatory fees, books and supplies, housing, and other institution-specific charges — a complete cost estimate should include these beyond just the base tuition figure.</p></div><div class="faq-item"><h3>How can I plan for rising tuition costs over multiple years?</h3><p>Applying an assumed annual increase rate to your base tuition figure across the expected duration gives a more realistic total cost estimate than assuming flat costs throughout.</p></div><div class="faq-item"><h3>Should I factor in financial aid or scholarships in this estimate?</h3><p>This calculator estimates gross cost; subtract any expected financial aid, scholarships, or grants separately to estimate your actual net out-of-pocket cost.</p></div><div class="faq-item"><h3>Does this apply to both domestic and international tuition planning?</h3><p>Yes, the same cost-planning approach applies regardless of location, though actual tuition rates, fee structures, and typical annual increases vary significantly by institution and country.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates how total tuition and school costs may add up across a multi-year program. It accounts for annual tuition growth, recurring aid, and recurring other school costs so you can build a more realistic planning estimate than a one-year sticker price alone.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">The estimate sums each school year separately:</p>
-    <ul>
-      <li>Tuition for each year grows by the annual tuition increase rate.</li>
-      <li>Other annual school costs are added for each year.</li>
-      <li>Scholarships and grants are subtracted each year.</li>
-      <li>Net estimated cost = total tuition + total other costs - total aid.</li>
-    </ul>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If annual tuition starts at $18,000, the program lasts 4 years, tuition rises 3% per year, aid is $5,000 per year, and other annual school costs are $3,500, the calculator estimates each year separately and then combines those yearly totals into one overall cost picture.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">Estimated total tuition shows the projected academic charge across the full program. Estimated total school cost includes tuition plus other annual costs. Estimated aid totals the recurring aid entered. Net estimated cost shows the remaining cost after subtracting aid.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Forgetting that tuition can rise each year.</li>
-      <li>Using one-time aid as if it repeats every year.</li>
-      <li>Leaving out books, supplies, and other school-related costs.</li>
-      <li>Assuming the school bill equals the full cost of attendance.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides educational cost estimates only and is not an official school financial aid statement. Tuition, fees, aid eligibility, housing, and living costs can change by term and by institution. Results are estimates.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="degree-roi.html">Degree ROI Calculator</a>
-      <a href="financial-aid-calculator.html">Financial Aid Calculator</a>
-      <a href="scholarship-calculator.html">Scholarship Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this tuition cost calculator estimate?</h3>
-      <p class="answer">It estimates total tuition, total school cost, total aid, and net cost over the years of study you enter.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Why include tuition growth?</h3>
-      <p class="answer">Annual tuition increases can materially affect the full cost of a degree, especially across multi-year programs.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this include loans?</h3>
-      <p class="answer">No. This page estimates cost and aid only. It does not calculate loan repayment terms.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are tuition results exact?</h3>
-      <p class="answer">No. Results are estimates only. Actual tuition, fees, aid, and living costs can change by school and year.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

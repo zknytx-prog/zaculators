@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Pricing Optimizer Calculator | Zaculators</title>
-<meta name="description" content="Compare current profit with a proposed price change and estimated demand shift.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Compare current profit with a proposed price change and estimated demand shift." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,123 +80,103 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Pricing Optimizer Calculator</h1>
+<h1>Pricing Optimizer Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Compare current pricing with a proposed price and a simple demand change assumption. This calculator helps you estimate whether a higher or lower price might improve profit under the unit sales response you expect.</p>
-    <form id="pricing-form">
-      <div class="grid">
-        <div>
-          <label for="current-price">Current Price</label>
-          <input type="number" id="current-price" min="0" step="0.01" placeholder="e.g. 29.99" required>
-        </div>
-        <div>
-          <label for="unit-cost">Unit Cost</label>
-          <input type="number" id="unit-cost" min="0" step="0.01" placeholder="e.g. 11.50" required>
-        </div>
-        <div>
-          <label for="monthly-units">Monthly Units Sold</label>
-          <input type="number" id="monthly-units" min="0" step="0.01" placeholder="e.g. 1200" required>
-        </div>
-        <div>
-          <label for="proposed-price">Proposed Price</label>
-          <input type="number" id="proposed-price" min="0" step="0.01" placeholder="e.g. 32.99" required>
-        </div>
-        <div>
-          <label for="demand-change">Estimated Demand Change (%)</label>
-          <input type="number" id="demand-change" step="0.01" placeholder="e.g. -8" required>
-        </div>
-      </div>
-      <button type="submit">Compare Pricing Scenario</button>
-    </form>
-    <div id="pricing-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Current Profit</span><span id="current-profit" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Proposed Profit</span><span id="proposed-profit" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Profit Difference</span><span id="profit-difference" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated New Units Sold</span><span id="new-units" class="metric-value">0</span></div>
-      </div>
-      <p id="pricing-note" class="intro"></p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Compare current pricing with a proposed price and a simple demand change assumption. This calculator helps you estimate whether a higher or lower price might improve profit under the unit sales response you expect.</p>
+<form id="pricing-form">
+<div class="grid">
+<div>
+<label for="current-price">Current Price</label>
+<input id="current-price" min="0" placeholder="e.g. 29.99" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="unit-cost">Unit Cost</label>
+<input id="unit-cost" min="0" placeholder="e.g. 11.50" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="monthly-units">Monthly Units Sold</label>
+<input id="monthly-units" min="0" placeholder="e.g. 1200" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="proposed-price">Proposed Price</label>
+<input id="proposed-price" min="0" placeholder="e.g. 32.99" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="demand-change">Estimated Demand Change (%)</label>
+<input id="demand-change" placeholder="e.g. -8" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Compare Pricing Scenario</button>
+</form>
+<div aria-live="polite" class="results" id="pricing-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Current Profit</span><span class="metric-value" id="current-profit">$0.00</span></div>
+<div class="metric"><span class="metric-label">Proposed Profit</span><span class="metric-value" id="proposed-profit">$0.00</span></div>
+<div class="metric"><span class="metric-label">Profit Difference</span><span class="metric-value" id="profit-difference">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated New Units Sold</span><span class="metric-value" id="new-units">0</span></div>
+</div>
+<p class="intro" id="pricing-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">Pricing optimization analyzes how different price points affect total revenue and profit, accounting for the relationship between price and sales volume, since the goal isn't simply the highest price or highest volume, but the combination that maximizes overall profitability. This calculator provides a general estimate based on the pricing, cost, and volume assumptions you provide, useful for exploring different pricing scenarios before implementation.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li><strong>Current profit = (current price - unit cost) x units sold</strong></li>
+<li><strong>Estimated new units sold = current units sold x (1 + demand change)</strong></li>
+<li><strong>Proposed profit = (proposed price - unit cost) x estimated new units sold</strong></li>
+<li><strong>Profit difference = proposed profit - current profit</strong></li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If your current price is $29.99, unit cost is $11.50, monthly unit sales are 1,200, the proposed price is $32.99, and you expect demand to decline 8%, the calculator estimates the lower unit volume first and then compares the current profit with the proposed profit under that new sales volume.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">Current profit shows what the current pricing setup is estimated to earn before fixed costs. Proposed profit shows the same margin math under the new price and the estimated unit-sales response. Profit difference shows whether the proposal appears stronger or weaker under the assumptions entered.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using a demand change assumption that is not evidence-based.</li>
+<li>Ignoring competitor reactions or channel pricing constraints.</li>
+<li>Forgetting that unit cost may change with volume.</li>
+<li>Assuming the highest profit scenario here is automatically the best market strategy.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides business planning estimates only and is not accounting, tax, or commercial advice. It does not model fixed costs, promotional expenses, taxes, refunds, inventory constraints, or competitor behavior. Results are estimates only.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="profit-margin.html">Profit Margin Calculator</a>
+<a href="break-even-sales.html">Break-Even Sales Calculator</a>
+<a href="markup-tool.html">Markup Calculator</a>
+</div>
+</section>
+<section class="support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Consider your cost structure (fixed vs variable costs) when developing pricing strategy.</li><li>Test different price points in real market conditions rather than relying solely on theoretical models.</li><li>Explore whether different pricing for different customer segments could improve overall profitability.</li><li>Review pricing strategy periodically as costs, competition, and market conditions evolve.</li><li>Balance volume and margin considerations rather than optimizing for just one in isolation.</li></ul></section><section class="support-card">
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What's the goal of pricing optimization?</h3><p>The goal is typically to find the price point that maximizes overall profit, not necessarily the highest price or highest sales volume individually, since these often work against each other.</p></div><div class="faq-item"><h3>How does cost structure affect optimal pricing?</h3><p>Businesses with high fixed costs and low variable costs often benefit from volume-focused pricing strategies, while those with high variable costs per unit may need to maintain higher margins per sale — your cost structure should inform your pricing approach.</p></div><div class="faq-item"><h3>Should pricing be the same across all customer segments?</h3><p>Not necessarily — many businesses use different pricing for different segments (based on volume, timing, customer type) to better capture value across a diverse customer base, though this requires careful strategy and sometimes legal consideration.</p></div><div class="faq-item"><h3>Does this calculator predict exact customer response to price changes?</h3><p>No, this provides estimates based on assumptions you provide about how volume might respond to price. Actual market response requires real-world testing and data specific to your business and customers.</p></div><div class="faq-item"><h3>How often should pricing strategy be reviewed?</h3><p>Regularly reviewing pricing relative to costs, competition, and market conditions helps ensure your strategy remains optimal as circumstances change over time.</p></div>
 
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates how a proposed price may affect monthly profit if unit demand changes by the percentage you enter. It is useful for quick scenario testing before changing pricing, promotions, or product positioning.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <ul>
-      <li><strong>Current profit = (current price - unit cost) x units sold</strong></li>
-      <li><strong>Estimated new units sold = current units sold x (1 + demand change)</strong></li>
-      <li><strong>Proposed profit = (proposed price - unit cost) x estimated new units sold</strong></li>
-      <li><strong>Profit difference = proposed profit - current profit</strong></li>
-    </ul>
-  </section>
 
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If your current price is $29.99, unit cost is $11.50, monthly unit sales are 1,200, the proposed price is $32.99, and you expect demand to decline 8%, the calculator estimates the lower unit volume first and then compares the current profit with the proposed profit under that new sales volume.</p>
-  </section>
 
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">Current profit shows what the current pricing setup is estimated to earn before fixed costs. Proposed profit shows the same margin math under the new price and the estimated unit-sales response. Profit difference shows whether the proposal appears stronger or weaker under the assumptions entered.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Using a demand change assumption that is not evidence-based.</li>
-      <li>Ignoring competitor reactions or channel pricing constraints.</li>
-      <li>Forgetting that unit cost may change with volume.</li>
-      <li>Assuming the highest profit scenario here is automatically the best market strategy.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides business planning estimates only and is not accounting, tax, or commercial advice. It does not model fixed costs, promotional expenses, taxes, refunds, inventory constraints, or competitor behavior. Results are estimates only.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="profit-margin.html">Profit Margin Calculator</a>
-      <a href="break-even-sales.html">Break-Even Sales Calculator</a>
-      <a href="markup-tool.html">Markup Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this pricing optimizer calculator estimate?</h3>
-      <p class="answer">It estimates current profit, proposed profit, profit difference, and estimated new unit sales under a proposed pricing scenario.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How does the demand change percentage work?</h3>
-      <p class="answer">It adjusts the monthly units sold estimate up or down to reflect the demand impact you expect from the proposed price.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this guarantee the best price?</h3>
-      <p class="answer">No. This page provides a simple estimate only and does not guarantee an optimal market price or customer response.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these profit results exact?</h3>
-      <p class="answer">No. Results are estimates only and depend on the demand change assumption and the cost inputs you provide.</p>
-    </div>
-  </section>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {
