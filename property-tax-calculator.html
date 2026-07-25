@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Tax Calculator | Zaculators</title>
-<link rel="canonical" href="https://zaculators.com/property-tax-calculator.html">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Property Tax Calculator | Zaculators</title>
+<link href="https://zaculators.com/property-tax-calculator.html" rel="canonical"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,100 +43,92 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this property tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates annual property tax by applying the property tax rate to the taxable value after exemptions, then shows an approximate monthly equivalent."}},{"@type":"Question","name":"What value should I use for assessed value?","acceptedAnswer":{"@type":"Answer","text":"Use the assessed value or taxable assessed value from your property notice, not necessarily the recent market sale price."}},{"@type":"Question","name":"Do exemptions reduce the tax bill?","acceptedAnswer":{"@type":"Answer","text":"Yes. This calculator subtracts exemptions from the assessed value before applying the tax rate, which lowers the taxable amount."}},{"@type":"Question","name":"Why can the official bill differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"Official bills can differ because local levies, special assessments, parcel fees, reassessment rules, and jurisdiction-specific discounts are not included here."}},{"@type":"Question","name":"Where should I confirm the final rate?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source for your city, county, municipality, or tax assessor."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this property tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates annual property tax by applying the property tax rate to the taxable value after exemptions, then shows an approximate monthly equivalent."}},{"@type":"Question","name":"What value should I use for assessed value?","acceptedAnswer":{"@type":"Answer","text":"Use the assessed value or taxable assessed value from your property notice, not necessarily the recent market sale price."}},{"@type":"Question","name":"Do exemptions reduce the tax bill?","acceptedAnswer":{"@type":"Answer","text":"Yes. This calculator subtracts exemptions from the assessed value before applying the tax rate, which lowers the taxable amount."}},{"@type":"Question","name":"Why can the official bill differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"Official bills can differ because local levies, special assessments, parcel fees, reassessment rules, and jurisdiction-specific discounts are not included here."}},{"@type":"Question","name":"Where should I confirm the final rate?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source for your city, county, municipality, or tax assessor."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Property Tax Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="assessed">Assessed Value</label><input id="assessed" type="number" min="0" step="0.01" placeholder="325000" required></div>
-                <div><label for="rate">Property Tax Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="1.25" required></div>
-                <div><label for="exemptions">Exemptions</label><input id="exemptions" type="number" min="0" step="0.01" placeholder="25000" required></div>
-                <div class="full"><button type="submit">Estimate Tax</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Property tax methods vary by location. Verify assessment and exemption rules locally.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This property tax calculator estimates annual property tax from three inputs: assessed value, tax rate, and exemptions. It also shows a monthly equivalent so you can budget for escrow or compare properties more easily.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Enter the assessed property value used by the tax authority.</li>
-                <li>Enter the annual property tax rate as a percentage.</li>
-                <li>Enter any exemption amount that reduces taxable value.</li>
-                <li>Click <strong>Estimate Tax</strong> to see the annual and monthly estimate.</li>
-                <li>Change the inputs to compare different tax-rate or exemption scenarios.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator follows this method:</p>
-            <ul>
-                <li>Taxable value = Assessed value - Exemptions</li>
-                <li>Annual property tax = Taxable value x Property tax rate</li>
-                <li>Monthly estimate = Annual property tax / 12</li>
-            </ul>
-            <p class="subtle">If exemptions are larger than the assessed value, taxable value is treated as zero.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">Assume an assessed value of <strong>$325,000</strong>, a tax rate of <strong>1.25%</strong>, and exemptions of <strong>$25,000</strong>. The taxable value is <strong>$300,000</strong>. Annual property tax is <strong>$3,750</strong>, which is about <strong>$312.50</strong> per month.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result is the estimated annual property tax. The detail line shows the taxable value after exemptions and the monthly equivalent. Use it as a budgeting estimate for ownership costs, not as a final tax bill.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ul>
-                <li>Using market value instead of the assessed value used by the local tax office.</li>
-                <li>Entering a millage rate as a percent without converting it correctly.</li>
-                <li>Forgetting homestead or senior exemptions that reduce taxable value.</li>
-                <li>Ignoring special assessments, parcel fees, or district charges.</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Verify current rates with the official government source for your city, county, municipality, or tax assessor.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="mortgage.html">Mortgage Calculator</a><a href="home-affordability.html">Home Affordability Calculator</a><a href="refinance.html">Refinance Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this property tax calculator estimate?</h3><p class="zac-support-answer">It estimates annual property tax by applying the property tax rate to the taxable value after exemptions, then shows an approximate monthly equivalent.</p></div>
-                <div class="zac-support-faq-item"><h3>What value should I use for assessed value?</h3><p class="zac-support-answer">Use the assessed value or taxable assessed value from your property notice, not necessarily the recent market sale price.</p></div>
-                <div class="zac-support-faq-item"><h3>Do exemptions reduce the tax bill?</h3><p class="zac-support-answer">Yes. This calculator subtracts exemptions from the assessed value before applying the tax rate, which lowers the taxable amount.</p></div>
-                <div class="zac-support-faq-item"><h3>Why can the official bill differ from this estimate?</h3><p class="zac-support-answer">Official bills can differ because local levies, special assessments, parcel fees, reassessment rules, and jurisdiction-specific discounts are not included here.</p></div>
-                <div class="zac-support-faq-item"><h3>Where should I confirm the final rate?</h3><p class="zac-support-answer">Verify current rates with the official government source for your city, county, municipality, or tax assessor.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides property tax estimates only and is not tax, legal, lending, or accounting advice. Local tax methods and billing rules vary widely by jurisdiction.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Property Tax Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="assessed">Assessed Value</label><input id="assessed" min="0" placeholder="325000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Property Tax Rate (%)</label><input id="rate" min="0" placeholder="1.25" required="" step="0.01" type="number"/></div>
+<div><label for="exemptions">Exemptions</label><input id="exemptions" min="0" placeholder="25000" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Tax</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Property tax methods vary by location. Verify assessment and exemption rules locally.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">This property tax calculator estimates your annual tax liability by applying a tax rate to your property's assessed value, useful for budgeting and comparing tax burdens across different properties or locations, though actual bills may include additional local levies, special assessments, or exemptions not captured in a simple rate calculation. Because property tax structures vary enormously by jurisdiction, use the rate and assessed value specific to your actual property for the most accurate estimate.</p>
+</section>
+<section class="zac-support-card">
+<h2>How to Use This Calculator</h2>
+<ol>
+<li>Enter the assessed property value used by the tax authority.</li>
+<li>Enter the annual property tax rate as a percentage.</li>
+<li>Enter any exemption amount that reduces taxable value.</li>
+<li>Click <strong>Estimate Tax</strong> to see the annual and monthly estimate.</li>
+<li>Change the inputs to compare different tax-rate or exemption scenarios.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator follows this method:</p>
+<ul>
+<li>Taxable value = Assessed value - Exemptions</li>
+<li>Annual property tax = Taxable value x Property tax rate</li>
+<li>Monthly estimate = Annual property tax / 12</li>
+</ul>
+<p class="subtle">If exemptions are larger than the assessed value, taxable value is treated as zero.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">Assume an assessed value of <strong>$325,000</strong>, a tax rate of <strong>1.25%</strong>, and exemptions of <strong>$25,000</strong>. The taxable value is <strong>$300,000</strong>. Annual property tax is <strong>$3,750</strong>, which is about <strong>$312.50</strong> per month.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result is the estimated annual property tax. The detail line shows the taxable value after exemptions and the monthly equivalent. Use it as a budgeting estimate for ownership costs, not as a final tax bill.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using market value instead of the assessed value used by the local tax office.</li>
+<li>Entering a millage rate as a percent without converting it correctly.</li>
+<li>Forgetting homestead or senior exemptions that reduce taxable value.</li>
+<li>Ignoring special assessments, parcel fees, or district charges.</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Verify current rates with the official government source for your city, county, municipality, or tax assessor.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="mortgage.html">Mortgage Calculator</a><a href="home-affordability.html">Home Affordability Calculator</a><a href="refinance.html">Refinance Calculator</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Use your property's actual assessed value from your local tax assessor for accuracy.</li><li>Remember your actual bill may include additional local levies beyond a single base rate.</li><li>Use this to compare relative tax burden across different areas for relocation planning.</li><li>Budget for potential tax increases over time due to reassessment or rate changes.</li><li>Check your local assessor's office for official figures rather than relying solely on estimates.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>How does this calculator differ from checking my actual tax bill?</h3><p class="zac-support-answer">This provides a general estimate using a single rate and assessed value; your actual bill may include multiple local levies, special district assessments, or exemptions that a simple calculation doesn't capture.</p></div><div class="zac-support-faq-item"><h3>Can I use this to compare property tax burden across different areas?</h3><p class="zac-support-answer">Yes, entering different rates and assessed values for properties in different areas can help you get a rough comparative sense of relative tax burden, useful for relocation or investment planning.</p></div><div class="zac-support-faq-item"><h3>Does a higher property value always mean proportionally higher tax?</h3><p class="zac-support-answer">Generally yes, since tax is typically calculated as a percentage of assessed value, though caps, exemptions, and assessment methodology differences can affect the exact relationship in some jurisdictions.</p></div><div class="zac-support-faq-item"><h3>Should I budget for property tax increases over time?</h3><p class="zac-support-answer">Yes, property tax often increases over time due to reassessment, rate changes, or removal of temporary exemptions, so building in some expected growth is prudent for long-term budgeting.</p></div><div class="zac-support-faq-item"><h3>Where can I find my property's official assessed value?</h3><p class="zac-support-answer">Your local tax assessor's office typically publishes assessed values, often searchable online by property address or parcel number.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides property tax estimates only and is not tax, legal, lending, or accounting advice. Local tax methods and billing rules vary widely by jurisdiction.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

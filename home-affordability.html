@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Affordability Calculator | Zaculators</title>
-<meta name="description" content="Free Home Affordability Calculator — It estimates an affordable home price using income, monthly debts, down payment, and mortgage rate assumptions.">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Affordability Calculator | Zaculators</title>
+<meta content="Free Home Affordability Calculator — It estimates an affordable home price using income, monthly debts, down payment, and mortgage rate assumptions." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,76 +43,72 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this home affordability calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates an affordable home price using income, monthly debts, down payment, and mortgage rate assumptions."}},{"@type":"Question","name":"Does the result include property taxes and insurance?","acceptedAnswer":{"@type":"Answer","text":"No. The estimate focuses on principal and interest budget capacity before taxes, insurance, HOA dues, or maintenance are added."}},{"@type":"Question","name":"Why does debt lower the home price estimate?","acceptedAnswer":{"@type":"Answer","text":"Monthly debt payments reduce the amount of income available for housing, which lowers the loan amount the calculator can support."}},{"@type":"Question","name":"Can the result guarantee mortgage approval?","acceptedAnswer":{"@type":"Answer","text":"No. Lenders may also review credit, reserves, documentation, property factors, and underwriting rules."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update the estimate when income, monthly debts, down payment, or mortgage rates change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this home affordability calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates an affordable home price using income, monthly debts, down payment, and mortgage rate assumptions."}},{"@type":"Question","name":"Does the result include property taxes and insurance?","acceptedAnswer":{"@type":"Answer","text":"No. The estimate focuses on principal and interest budget capacity before taxes, insurance, HOA dues, or maintenance are added."}},{"@type":"Question","name":"Why does debt lower the home price estimate?","acceptedAnswer":{"@type":"Answer","text":"Monthly debt payments reduce the amount of income available for housing, which lowers the loan amount the calculator can support."}},{"@type":"Question","name":"Can the result guarantee mortgage approval?","acceptedAnswer":{"@type":"Answer","text":"No. Lenders may also review credit, reserves, documentation, property factors, and underwriting rules."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update the estimate when income, monthly debts, down payment, or mortgage rates change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Home Affordability Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Real Estate</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="income">Annual Household Income</label><input id="income" type="number" min="0" step="0.01" placeholder="95000" required></div>
-                <div><label for="debts">Monthly Debt Payments</label><input id="debts" type="number" min="0" step="0.01" placeholder="600" required></div>
-                <div><label for="down">Available Down Payment</label><input id="down" type="number" min="0" step="0.01" placeholder="50000" required></div>
-                <div><label for="rate">Mortgage Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="6.5" required></div>
-                <div class="full"><button type="submit">Estimate Affordable Home Price</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This calculator estimates an affordable home price by starting with a simple monthly housing budget rule, subtracting monthly debts, and converting the remaining payment capacity into an estimated loan amount. It then adds your down payment to estimate a purchase price range.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The page first converts annual household income into monthly income. It then estimates a housing budget using 28% of monthly income minus monthly debts. That budget is used in a mortgage-style present value calculation based on the interest rate and a 30-year term, and your down payment is added to estimate an affordable home price.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If household income is $95,000 per year, monthly debts are $600, the down payment is $50,000, and the mortgage rate is 6.5%, the calculator estimates a monthly housing budget first. It then converts that budget into an estimated loan amount and adds the down payment to show a rough purchase price.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Interpret the Result</h2>
-            <p class="subtle">The estimated price is a planning number, not a lender commitment. It can help you narrow a search range or compare rate scenarios, but you still need to account for taxes, insurance, HOA dues, maintenance, and lender underwriting rules.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Using gross income but forgetting recurring debt obligations.</li>
-                <li>Assuming the estimate includes property taxes, insurance, or HOA dues.</li>
-                <li>Using a down payment amount that will also be needed for closing costs or reserves.</li>
-                <li>Comparing homes without updating the rate assumption when market rates change.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="closing-costs.html">Closing Costs</a><a href="mortgage.html">Mortgage</a><a href="rent-vs-buy.html">Rent vs Buy</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this home affordability calculator estimate?</h3><p class="zac-support-answer">It estimates an affordable home price using income, monthly debts, down payment, and mortgage rate assumptions.</p></div><div class="zac-support-faq-item"><h3>Does the result include property taxes and insurance?</h3><p class="zac-support-answer">No. The estimate focuses on principal and interest budget capacity before taxes, insurance, HOA dues, or maintenance are added.</p></div><div class="zac-support-faq-item"><h3>Why does debt lower the home price estimate?</h3><p class="zac-support-answer">Monthly debt payments reduce the amount of income available for housing, which lowers the loan amount the calculator can support.</p></div><div class="zac-support-faq-item"><h3>Can the result guarantee mortgage approval?</h3><p class="zac-support-answer">No. Lenders may also review credit, reserves, documentation, property factors, and underwriting rules.</p></div><div class="zac-support-faq-item"><h3>When should I update the estimate?</h3><p class="zac-support-answer">Update the estimate when income, monthly debts, down payment, or mortgage rates change.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides housing-planning estimates only. It does not include taxes, insurance, maintenance, HOA dues, or lender-specific underwriting. Results are estimates only.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Home Affordability Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Real Estate</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="income">Annual Household Income</label><input id="income" min="0" placeholder="95000" required="" step="0.01" type="number"/></div>
+<div><label for="debts">Monthly Debt Payments</label><input id="debts" min="0" placeholder="600" required="" step="0.01" type="number"/></div>
+<div><label for="down">Available Down Payment</label><input id="down" min="0" placeholder="50000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Mortgage Rate (%)</label><input id="rate" min="0" placeholder="6.5" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Affordable Home Price</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Home affordability estimates typically use rules of thumb like limiting your housing payment (mortgage, taxes, insurance) to a certain percentage of gross monthly income, or your total debt payments to a broader percentage — commonly referenced as debt-to-income guidelines lenders use for mortgage approval. This calculator estimates a general affordability range using your income, existing debts, and the assumptions you provide, though actual lending decisions depend on a lender's full underwriting criteria.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The page first converts annual household income into monthly income. It then estimates a housing budget using 28% of monthly income minus monthly debts. That budget is used in a mortgage-style present value calculation based on the interest rate and a 30-year term, and your down payment is added to estimate an affordable home price.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If household income is $95,000 per year, monthly debts are $600, the down payment is $50,000, and the mortgage rate is 6.5%, the calculator estimates a monthly housing budget first. It then converts that budget into an estimated loan amount and adds the down payment to show a rough purchase price.</p>
+</section>
+<section class="zac-support-card">
+<h2>How to Interpret the Result</h2>
+<p class="subtle">The estimated price is a planning number, not a lender commitment. It can help you narrow a search range or compare rate scenarios, but you still need to account for taxes, insurance, HOA dues, maintenance, and lender underwriting rules.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Using gross income but forgetting recurring debt obligations.</li>
+<li>Assuming the estimate includes property taxes, insurance, or HOA dues.</li>
+<li>Using a down payment amount that will also be needed for closing costs or reserves.</li>
+<li>Comparing homes without updating the rate assumption when market rates change.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="closing-costs.html">Closing Costs</a><a href="mortgage.html">Mortgage</a><a href="rent-vs-buy.html">Rent vs Buy</a></div>
+</section>
+<section class="zac-support-card"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Consider your total comfortable budget, not just the maximum amount a lender might approve.</li><li>Factor in property taxes, insurance, HOA fees, and maintenance beyond the base mortgage payment.</li><li>Pay down existing debt where possible to improve your debt-to-income ratio before applying.</li><li>Get pre-approval from a lender for figures specific to your actual financial situation.</li><li>Build in a buffer for unexpected homeownership costs beyond your calculated affordability limit.</li></ul></section><section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>What debt-to-income ratio do lenders typically look for?</h3><p class="zac-support-answer">Many lenders use guideline ranges for housing costs and total debt as a percentage of gross income, though specific thresholds vary by lender, loan type, and other factors in your application.</p></div><div class="zac-support-faq-item"><h3>Does this calculator guarantee mortgage approval for the estimated amount?</h3><p class="zac-support-answer">No, this provides a general affordability estimate for planning purposes — actual mortgage approval depends on a lender's full underwriting process, including credit score, employment history, and other factors.</p></div><div class="zac-support-faq-item"><h3>Should I borrow the maximum amount a calculator suggests?</h3><p class="zac-support-answer">Not necessarily — just because you might qualify for a certain amount doesn't mean it's the most comfortable payment for your specific lifestyle and other financial goals, so consider your full budget, not just the maximum.</p></div><div class="zac-support-faq-item"><h3>What other costs should I budget for beyond the mortgage payment?</h3><p class="zac-support-answer">Property taxes, homeowners insurance, HOA fees (if applicable), maintenance, and utilities all add to true homeownership cost beyond just the loan principal and interest payment.</p></div><div class="zac-support-faq-item"><h3>How does existing debt affect home affordability?</h3><p class="zac-support-answer">Existing debt payments (car loans, student loans, credit cards) count toward your total debt-to-income ratio, which can reduce the mortgage amount a lender is willing to approve, even with strong income.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides housing-planning estimates only. It does not include taxes, insurance, maintenance, HOA dues, or lender-specific underwriting. Results are estimates only.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
