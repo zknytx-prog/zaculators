@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inheritance Tax Calculator | Zaculators</title>
-<meta name="description" content="Free Inheritance Tax Calculator — It estimates the taxable estate after the allowance you enter and then applies the tax rate you choose.">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inheritance Tax Calculator | Zaculators</title>
+<meta content="Free Inheritance Tax Calculator — It estimates the taxable estate after the allowance you enter and then applies the tax rate you choose." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,85 +43,83 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this inheritance tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the taxable estate after the allowance you enter and then applies the tax rate you choose."}},{"@type":"Question","name":"Does the page automatically apply every inheritance-tax relief?","acceptedAnswer":{"@type":"Answer","text":"No. It is a simplified estimate and does not automatically model every exemption, relief, or gift rule."}},{"@type":"Question","name":"What should I enter as the allowance?","acceptedAnswer":{"@type":"Answer","text":"Enter the tax-free threshold you want to test for your scenario, based on the rules that apply to the estate you are reviewing."}},{"@type":"Question","name":"Should I verify current official rules before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Inheritance-tax rules can depend on jurisdiction, estate structure, and current law, so official guidance matters."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this inheritance tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the taxable estate after the allowance you enter and then applies the tax rate you choose."}},{"@type":"Question","name":"Does the page automatically apply every inheritance-tax relief?","acceptedAnswer":{"@type":"Answer","text":"No. It is a simplified estimate and does not automatically model every exemption, relief, or gift rule."}},{"@type":"Question","name":"What should I enter as the allowance?","acceptedAnswer":{"@type":"Answer","text":"Enter the tax-free threshold you want to test for your scenario, based on the rules that apply to the estate you are reviewing."}},{"@type":"Question","name":"Should I verify current official rules before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Inheritance-tax rules can depend on jurisdiction, estate structure, and current law, so official guidance matters."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Inheritance Tax Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="estate">Estate Value</label><input id="estate" type="number" min="0" step="0.01" placeholder="800000" required></div>
-                <div><label for="allowance">Tax-Free Allowance</label><input id="allowance" type="number" min="0" step="0.01" placeholder="325000" required></div>
-                <div><label for="rate">Tax Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="40" required></div>
-                <div class="full"><button type="submit">Estimate Tax</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Estate tax rules vary widely and may depend on relationship, gifts, and exemptions.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">Inheritance and estate taxes vary enormously across countries — some jurisdictions (like the UK) tax the estate before distribution above a threshold, others (like several US states) tax the inheritor directly, and many countries have no inheritance tax at all. Because rules, thresholds, and exemptions differ so significantly by jurisdiction and relationship to the deceased, this calculator provides a general estimate using the rate and threshold you enter for your specific situation.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Taxable estate = max(estate value - tax-free allowance, 0).</li>
-                <li>Estimated inheritance tax = taxable estate x tax rate.</li>
-                <li>The page does not automatically add gift rules, spousal exemptions, residence reliefs, or charitable reductions.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If the estate value is $800,000, the allowance is $325,000, and the tax rate is 40%, the taxable estate becomes $475,000. Applying the 40% rate gives an estimated inheritance tax bill of $190,000.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result is the estimated tax bill based on the allowance and rate you supplied. The supporting line shows the amount treated as taxable after the allowance has been removed.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Assuming every estate uses the same tax-free threshold.</li>
-                <li>Ignoring lifetime gifts, spouse transfers, residence reliefs, or charitable exemptions.</li>
-                <li>Using a general estimate in place of estate-specific legal or tax advice.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">For UK guidance, review GOV.UK on <a href="https://www.gov.uk/inheritance-tax">how Inheritance Tax works</a>. Verify current rates with the official government source that applies to the estate you are reviewing.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a><a href="property-valuation.html">Property Valuation</a><a href="net-worth.html">Net Worth</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Tips for a More Accurate Estimate</h2>
-            <ul><li>Confirm whether your jurisdiction taxes the estate or the individual inheritor.</li><li>Check exemption thresholds based on your relationship to the deceased.</li><li>Understand whether any gifts made before death count toward the taxable estate.</li><li>Consult an estate planning professional for significant estates, given the complexity involved.</li><li>Recheck thresholds periodically, since many jurisdictions adjust them over time.</li></ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Do all countries have inheritance tax?</h3><p class="zac-support-answer">No, many countries and jurisdictions have no inheritance or estate tax at all, while others apply it above certain thresholds — check your specific jurisdiction's rules.</p></div><div class="zac-support-faq-item"><h3>Is inheritance tax paid by the estate or the inheritor?</h3><p class="zac-support-answer">This depends on the jurisdiction — some tax the estate itself before distribution (estate tax), while others tax the individual receiving the inheritance (inheritance tax) — the terminology and mechanics differ.</p></div><div class="zac-support-faq-item"><h3>Are there exemptions based on relationship to the deceased?</h3><p class="zac-support-answer">Yes, many jurisdictions offer reduced rates or higher exemption thresholds for spouses, children, or other close relatives compared to more distant relations or unrelated beneficiaries.</p></div><div class="zac-support-faq-item"><h3>Does this calculator apply my jurisdiction's exact rules automatically?</h3><p class="zac-support-answer">No, enter the threshold and rate applicable to your specific jurisdiction and relationship category for an accurate estimate.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm current official rules?</h3><p class="zac-support-answer">Your country's tax authority publishes current inheritance/estate tax thresholds, rates, and relationship-based exemptions — this is worth confirming with a legal or tax advisor given the complexity.</p></div></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator provides a simplified inheritance-tax estimate only and is not legal, estate, or tax advice. Estate planning can depend on asset type, relationship, timing of gifts, domicile, and current law.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Inheritance Tax Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="estate">Estate Value</label><input id="estate" min="0" placeholder="800000" required="" step="0.01" type="number"/></div>
+<div><label for="allowance">Tax-Free Allowance</label><input id="allowance" min="0" placeholder="325000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Tax Rate (%)</label><input id="rate" min="0" placeholder="40" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Tax</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Estate tax rules vary widely and may depend on relationship, gifts, and exemptions.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Inheritance and estate taxes vary enormously across countries — some jurisdictions (like the UK) tax the estate before distribution above a threshold, others (like several US states) tax the inheritor directly, and many countries have no inheritance tax at all. Because rules, thresholds, and exemptions differ so significantly by jurisdiction and relationship to the deceased, this calculator provides a general estimate using the rate and threshold you enter for your specific situation.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Taxable estate = max(estate value - tax-free allowance, 0).</li>
+<li>Estimated inheritance tax = taxable estate x tax rate.</li>
+<li>The page does not automatically add gift rules, spousal exemptions, residence reliefs, or charitable reductions.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If the estate value is $800,000, the allowance is $325,000, and the tax rate is 40%, the taxable estate becomes $475,000. Applying the 40% rate gives an estimated inheritance tax bill of $190,000.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result is the estimated tax bill based on the allowance and rate you supplied. The supporting line shows the amount treated as taxable after the allowance has been removed.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Assuming every estate uses the same tax-free threshold.</li>
+<li>Ignoring lifetime gifts, spouse transfers, residence reliefs, or charitable exemptions.</li>
+<li>Using a general estimate in place of estate-specific legal or tax advice.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">For UK guidance, review GOV.UK on <a href="https://www.gov.uk/inheritance-tax">how Inheritance Tax works</a>. Verify current rates with the official government source that applies to the estate you are reviewing.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a><a href="property-valuation.html">Property Valuation</a><a href="net-worth.html">Net Worth</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Tips for a More Accurate Estimate</h2>
+<ul><li>Confirm whether your jurisdiction taxes the estate or the individual inheritor.</li><li>Check exemption thresholds based on your relationship to the deceased.</li><li>Understand whether any gifts made before death count toward the taxable estate.</li><li>Consult an estate planning professional for significant estates, given the complexity involved.</li><li>Recheck thresholds periodically, since many jurisdictions adjust them over time.</li></ul>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Do all countries have inheritance tax?</h3><p class="zac-support-answer">No, many countries and jurisdictions have no inheritance or estate tax at all, while others apply it above certain thresholds — check your specific jurisdiction's rules.</p></div><div class="zac-support-faq-item"><h3>Is inheritance tax paid by the estate or the inheritor?</h3><p class="zac-support-answer">This depends on the jurisdiction — some tax the estate itself before distribution (estate tax), while others tax the individual receiving the inheritance (inheritance tax) — the terminology and mechanics differ.</p></div><div class="zac-support-faq-item"><h3>Are there exemptions based on relationship to the deceased?</h3><p class="zac-support-answer">Yes, many jurisdictions offer reduced rates or higher exemption thresholds for spouses, children, or other close relatives compared to more distant relations or unrelated beneficiaries.</p></div><div class="zac-support-faq-item"><h3>Does this calculator apply my jurisdiction's exact rules automatically?</h3><p class="zac-support-answer">No, enter the threshold and rate applicable to your specific jurisdiction and relationship category for an accurate estimate.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm current official rules?</h3><p class="zac-support-answer">Your country's tax authority publishes current inheritance/estate tax thresholds, rates, and relationship-based exemptions — this is worth confirming with a legal or tax advisor given the complexity.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator provides a simplified inheritance-tax estimate only and is not legal, estate, or tax advice. Estate planning can depend on asset type, relationship, timing of gifts, domicile, and current law.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

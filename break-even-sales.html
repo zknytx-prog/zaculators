@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Break-Even Sales Calculator | Zaculators</title>
-<meta name="description" content="Free Break-Even Sales Calculator — This calculator estimates the number of units you may need to sell to cover fixed costs and the revenue required to...">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Break-Even Sales Calculator | Zaculators</title>
+<meta content="Free Break-Even Sales Calculator — This calculator estimates the number of units you may need to sell to cover fixed costs and the revenue required to..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -28,34 +29,34 @@
         a:hover { text-decoration:underline; }
         @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this break-even sales calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many units you need to sell and how much revenue you need to generate before contribution margin covers fixed costs."}},{"@type":"Question","name":"What is contribution margin?","acceptedAnswer":{"@type":"Answer","text":"Contribution margin is the amount left from each sale after subtracting variable cost per unit, and it is what goes toward covering fixed costs."}},{"@type":"Question","name":"Why does price matter so much?","acceptedAnswer":{"@type":"Answer","text":"A higher selling price can increase contribution margin per unit, which usually lowers the number of units needed to break even."}},{"@type":"Question","name":"Does this include taxes or financing costs?","acceptedAnswer":{"@type":"Answer","text":"No. This estimate focuses on fixed cost, price, and variable cost assumptions only."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it when fixed costs, unit price, variable costs, or sales assumptions change."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this break-even sales calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates how many units you need to sell and how much revenue you need to generate before contribution margin covers fixed costs."}},{"@type":"Question","name":"What is contribution margin?","acceptedAnswer":{"@type":"Answer","text":"Contribution margin is the amount left from each sale after subtracting variable cost per unit, and it is what goes toward covering fixed costs."}},{"@type":"Question","name":"Why does price matter so much?","acceptedAnswer":{"@type":"Answer","text":"A higher selling price can increase contribution margin per unit, which usually lowers the number of units needed to break even."}},{"@type":"Question","name":"Does this include taxes or financing costs?","acceptedAnswer":{"@type":"Answer","text":"No. This estimate focuses on fixed cost, price, and variable cost assumptions only."}},{"@type":"Question","name":"When should I update the estimate?","acceptedAnswer":{"@type":"Answer","text":"Update it when fixed costs, unit price, variable costs, or sales assumptions change."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Break-Even Sales Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="fixed">Fixed Costs</label><input id="fixed" type="number" min="0" step="0.01" placeholder="10000" required></div>
-                <div><label for="price">Selling Price per Unit</label><input id="price" type="number" min="0.01" step="0.01" placeholder="50" required></div>
-                <div><label for="variable">Variable Cost per Unit</label><input id="variable" type="number" min="0" step="0.01" placeholder="20" required></div>
-                <div class="full"><button type="submit">Calculate Break-Even</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-    <section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates the number of units you may need to sell to cover fixed costs and the revenue required to reach that break-even point. It helps you test whether current pricing and unit economics support the business model.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Formula / Method Used</h2><p class="subtle">The calculator first finds contribution margin per unit by subtracting variable cost from selling price. Break-even units equal fixed costs divided by contribution margin, and break-even revenue equals break-even units multiplied by selling price.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Worked Example</h2><p class="subtle">If fixed costs are $10,000, the selling price is $50 per unit, and variable cost is $20 per unit, the contribution margin is $30. That means you would need about 334 units to cover fixed costs, and break-even revenue would be about $16,700.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Interpret the Result</h2><p class="subtle">If the break-even unit count is higher than realistic sales capacity, the current structure may need a pricing change, cost reduction, or lower fixed overhead. If the break-even count looks manageable, the business may have room to move into profit once sales exceed that level.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Common Mistakes</h2><ul style="padding-left:1.5rem;color:#64748b"><li>Entering fixed and variable costs from different time periods.</li><li>Ignoring discounts, refunds, or commissions that reduce effective selling price.</li><li>Using average revenue per sale without checking true unit contribution.</li><li>Assuming break-even means the business has enough cash flow for growth.</li></ul></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="profit-margin.html">Profit Margin</a> · <a href="revenue-projector.html">Revenue Projector</a> · <a href="pricing-optimizer.html">Pricing Optimizer</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does this break-even sales calculator estimate?</strong><br>It estimates how many units you need to sell and how much revenue you need to generate before contribution margin covers fixed costs.</p><p class="subtle"><strong>What is contribution margin?</strong><br>Contribution margin is the amount left from each sale after subtracting variable cost per unit, and it is what goes toward covering fixed costs.</p><p class="subtle"><strong>Why does price matter so much?</strong><br>A higher selling price can increase contribution margin per unit, which usually lowers the number of units needed to break even.</p><p class="subtle"><strong>Does this include taxes or financing costs?</strong><br>No. This estimate focuses on fixed cost, price, and variable cost assumptions only.</p><p class="subtle"><strong>When should I update the estimate?</strong><br>Update it when fixed costs, unit price, variable costs, or sales assumptions change.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides business planning estimates only. Actual margins, demand, pricing, taxes, and operating costs may differ from simplified assumptions. Results are estimates only.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 2026</p></section>
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Break-Even Sales Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Financial &amp; Planning</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="fixed">Fixed Costs</label><input id="fixed" min="0" placeholder="10000" required="" step="0.01" type="number"/></div>
+<div><label for="price">Selling Price per Unit</label><input id="price" min="0.01" placeholder="50" required="" step="0.01" type="number"/></div>
+<div><label for="variable">Variable Cost per Unit</label><input id="variable" min="0" placeholder="20" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Calculate Break-Even</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2><p class="subtle">This calculator estimates the number of units you may need to sell to cover fixed costs and the revenue required to reach that break-even point. It helps you test whether current pricing and unit economics support the business model.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Formula / Method Used</h2><p class="subtle">The calculator first finds contribution margin per unit by subtracting variable cost from selling price. Break-even units equal fixed costs divided by contribution margin, and break-even revenue equals break-even units multiplied by selling price.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Worked Example</h2><p class="subtle">If fixed costs are $10,000, the selling price is $50 per unit, and variable cost is $20 per unit, the contribution margin is $30. That means you would need about 334 units to cover fixed costs, and break-even revenue would be about $16,700.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">How to Interpret the Result</h2><p class="subtle">If the break-even unit count is higher than realistic sales capacity, the current structure may need a pricing change, cost reduction, or lower fixed overhead. If the break-even count looks manageable, the business may have room to move into profit once sales exceed that level.</p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Common Mistakes</h2><ul style="padding-left:1.5rem;color:#64748b"><li>Entering fixed and variable costs from different time periods.</li><li>Ignoring discounts, refunds, or commissions that reduce effective selling price.</li><li>Using average revenue per sale without checking true unit contribution.</li><li>Assuming break-even means the business has enough cash flow for growth.</li></ul></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2><p><a href="profit-margin.html">Profit Margin</a> · <a href="revenue-projector.html">Revenue Projector</a> · <a href="pricing-optimizer.html">Pricing Optimizer</a></p></section><section class="panel" style="margin-top:2rem"><h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2><p class="subtle"><strong>What does this break-even sales calculator estimate?</strong><br/>It estimates how many units you need to sell and how much revenue you need to generate before contribution margin covers fixed costs.</p><p class="subtle"><strong>What is contribution margin?</strong><br/>Contribution margin is the amount left from each sale after subtracting variable cost per unit, and it is what goes toward covering fixed costs.</p><p class="subtle"><strong>Why does price matter so much?</strong><br/>A higher selling price can increase contribution margin per unit, which usually lowers the number of units needed to break even.</p><p class="subtle"><strong>Does this include taxes or financing costs?</strong><br/>No. This estimate focuses on fixed cost, price, and variable cost assumptions only.</p><p class="subtle"><strong>When should I update the estimate?</strong><br/>Update it when fixed costs, unit price, variable costs, or sales assumptions change.</p></section><section class="panel" style="margin-top:2rem"><p class="subtle">This calculator provides business planning estimates only. Actual margins, demand, pricing, taxes, and operating costs may differ from simplified assumptions. Results are estimates only.</p><p class="subtle" style="margin-top:0.75rem">Last updated: May 2026</p></section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => value.toLocaleString(undefined, { style: "currency", currency: "USD" });
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
@@ -72,5 +73,3 @@
     </script>
 </body>
 </html>
-
-

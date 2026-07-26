@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salary Converter USD AUD | Zaculators</title>
-<meta name="description" content="Free Salary Converter USD AUD — It converts an annual salary in U.S. dollars into an estimated annual salary in Australian dollars using the exchange rate...">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salary Converter USD AUD | Zaculators</title>
+<meta content="Free Salary Converter USD AUD — It converts an annual salary in U.S. dollars into an estimated annual salary in Australian dollars using the exchange rate..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,96 +43,94 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this USD to AUD salary converter estimate?","acceptedAnswer":{"@type":"Answer","text":"It converts an annual salary in U.S. dollars into an estimated annual salary in Australian dollars using the exchange rate you enter."}},{"@type":"Question","name":"Does this include Australian tax or superannuation?","acceptedAnswer":{"@type":"Answer","text":"No. This calculator converts salary by exchange rate only and does not automatically apply tax, superannuation, payroll rules, or cost-of-living adjustments."}},{"@type":"Question","name":"What exchange rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Use a rate from a recent official or market reference that matches the date and conversion basis you care about."}},{"@type":"Question","name":"Why can an offer still feel different after conversion?","acceptedAnswer":{"@type":"Answer","text":"A converted salary can still feel different because tax systems, benefits, retirement contributions, health costs, and local prices are different."}},{"@type":"Question","name":"Where should I verify current conversion assumptions?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or financial provider you rely on before making a final compensation decision."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this USD to AUD salary converter estimate?","acceptedAnswer":{"@type":"Answer","text":"It converts an annual salary in U.S. dollars into an estimated annual salary in Australian dollars using the exchange rate you enter."}},{"@type":"Question","name":"Does this include Australian tax or superannuation?","acceptedAnswer":{"@type":"Answer","text":"No. This calculator converts salary by exchange rate only and does not automatically apply tax, superannuation, payroll rules, or cost-of-living adjustments."}},{"@type":"Question","name":"What exchange rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Use a rate from a recent official or market reference that matches the date and conversion basis you care about."}},{"@type":"Question","name":"Why can an offer still feel different after conversion?","acceptedAnswer":{"@type":"Answer","text":"A converted salary can still feel different because tax systems, benefits, retirement contributions, health costs, and local prices are different."}},{"@type":"Question","name":"Where should I verify current conversion assumptions?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or financial provider you rely on before making a final compensation decision."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Salary Converter USD to AUD</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="salary">Annual Salary (USD)</label><input id="salary" type="number" min="0" step="0.01" placeholder="85000" required></div>
-                <div><label for="rate">Exchange Rate USD to AUD</label><input id="rate" type="number" min="0" step="0.0001" placeholder="1.52" required></div>
-                <div class="full"><button type="submit">Convert Salary</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Exchange rates move frequently and local taxes or cost-of-living differences are not included.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This USD to AUD salary converter estimates what a U.S. annual salary looks like in Australian dollars at the exchange rate you enter. It helps with early-stage relocation research, offer comparisons, and cross-border planning.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Enter the annual salary amount in U.S. dollars.</li>
-                <li>Enter the USD to AUD exchange rate you want to test.</li>
-                <li>Click <strong>Convert Salary</strong> to calculate the AUD equivalent.</li>
-                <li>Review the converted salary and the exchange rate shown below the result.</li>
-                <li>Change the rate to compare optimistic, current, and conservative scenarios.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <p class="subtle">The calculator uses a direct currency conversion:</p>
-            <ul>
-                <li>Converted salary in AUD = Salary in USD x USD-to-AUD exchange rate</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If a salary is <strong>$85,000 USD</strong> and the exchange rate is <strong>1.5200</strong>, the estimated converted salary is <strong>A$129,200</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is the gross annual salary converted into Australian dollars at the rate you entered. It is not a take-home pay estimate and does not account for superannuation, tax withholding, or local benefits.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ul>
-                <li>Comparing gross salary only without checking tax and retirement contribution differences.</li>
-                <li>Using an old exchange rate for a future job offer.</li>
-                <li>Forgetting that bonuses, stock grants, and benefits may not convert one-to-one.</li>
-                <li>Assuming converted salary equals the same purchasing power.</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="salary-calculator-australia.html">Salary Calculator Australia</a><a href="payroll-calculator.html">Payroll Calculator</a><a href="hourly-to-salary-calculator.html">Hourly To Salary Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this USD to AUD salary converter estimate?</h3><p class="zac-support-answer">It converts an annual salary in U.S. dollars into an estimated annual salary in Australian dollars using the exchange rate you enter.</p></div>
-                <div class="zac-support-faq-item"><h3>Does this include Australian tax or superannuation?</h3><p class="zac-support-answer">No. This calculator converts salary by exchange rate only and does not automatically apply tax, superannuation, payroll rules, or cost-of-living adjustments.</p></div>
-                <div class="zac-support-faq-item"><h3>What exchange rate should I use?</h3><p class="zac-support-answer">Use a rate from a recent official or market reference that matches the date and conversion basis you care about.</p></div>
-                <div class="zac-support-faq-item"><h3>Why can an offer still feel different after conversion?</h3><p class="zac-support-answer">A converted salary can still feel different because tax systems, benefits, retirement contributions, health costs, and local prices are different.</p></div>
-                <div class="zac-support-faq-item"><h3>Where should I verify current conversion assumptions?</h3><p class="zac-support-answer">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides currency-converted salary estimates only and is not tax, payroll, migration, employment, or financial advice. Exchange rates and compensation packages can change quickly.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Salary Converter USD to AUD</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="salary">Annual Salary (USD)</label><input id="salary" min="0" placeholder="85000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Exchange Rate USD to AUD</label><input id="rate" min="0" placeholder="1.52" required="" step="0.0001" type="number"/></div>
+<div class="full"><button type="submit">Convert Salary</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Exchange rates move frequently and local taxes or cost-of-living differences are not included.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">This USD to AUD salary converter estimates what a U.S. annual salary looks like in Australian dollars at the exchange rate you enter. It helps with early-stage relocation research, offer comparisons, and cross-border planning.</p>
+</section>
+<section class="zac-support-card">
+<h2>How to Use This Calculator</h2>
+<ol>
+<li>Enter the annual salary amount in U.S. dollars.</li>
+<li>Enter the USD to AUD exchange rate you want to test.</li>
+<li>Click <strong>Convert Salary</strong> to calculate the AUD equivalent.</li>
+<li>Review the converted salary and the exchange rate shown below the result.</li>
+<li>Change the rate to compare optimistic, current, and conservative scenarios.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<p class="subtle">The calculator uses a direct currency conversion:</p>
+<ul>
+<li>Converted salary in AUD = Salary in USD x USD-to-AUD exchange rate</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If a salary is <strong>$85,000 USD</strong> and the exchange rate is <strong>1.5200</strong>, the estimated converted salary is <strong>A$129,200</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is the gross annual salary converted into Australian dollars at the rate you entered. It is not a take-home pay estimate and does not account for superannuation, tax withholding, or local benefits.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Comparing gross salary only without checking tax and retirement contribution differences.</li>
+<li>Using an old exchange rate for a future job offer.</li>
+<li>Forgetting that bonuses, stock grants, and benefits may not convert one-to-one.</li>
+<li>Assuming converted salary equals the same purchasing power.</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="salary-calculator-australia.html">Salary Calculator Australia</a><a href="payroll-calculator.html">Payroll Calculator</a><a href="hourly-to-salary-calculator.html">Hourly To Salary Calculator</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq">
+<div class="zac-support-faq-item"><h3>What does this USD to AUD salary converter estimate?</h3><p class="zac-support-answer">It converts an annual salary in U.S. dollars into an estimated annual salary in Australian dollars using the exchange rate you enter.</p></div>
+<div class="zac-support-faq-item"><h3>Does this include Australian tax or superannuation?</h3><p class="zac-support-answer">No. This calculator converts salary by exchange rate only and does not automatically apply tax, superannuation, payroll rules, or cost-of-living adjustments.</p></div>
+<div class="zac-support-faq-item"><h3>What exchange rate should I use?</h3><p class="zac-support-answer">Use a rate from a recent official or market reference that matches the date and conversion basis you care about.</p></div>
+<div class="zac-support-faq-item"><h3>Why can an offer still feel different after conversion?</h3><p class="zac-support-answer">A converted salary can still feel different because tax systems, benefits, retirement contributions, health costs, and local prices are different.</p></div>
+<div class="zac-support-faq-item"><h3>Where should I verify current conversion assumptions?</h3><p class="zac-support-answer">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p></div>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides currency-converted salary estimates only and is not tax, payroll, migration, employment, or financial advice. Exchange rates and compensation packages can change quickly.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const usd = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         const aud = value => new Intl.NumberFormat("en-AU", { style:"currency", currency:"AUD" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {

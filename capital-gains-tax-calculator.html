@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capital Gains Tax Calculator | Zaculators</title>
-<meta name="description" content="Free Capital Gains Tax Calculator — It estimates tax on a simplified capital gain using your purchase price, sale price, and tax rate.">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Capital Gains Tax Calculator | Zaculators</title>
+<meta content="Free Capital Gains Tax Calculator — It estimates tax on a simplified capital gain using your purchase price, sale price, and tax rate." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -27,83 +28,83 @@
         a { color:var(--primary); text-decoration:none; }
         @media (max-width:680px) { .grid { grid-template-columns:1fr; } }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this capital gains tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates tax on a simplified capital gain using your purchase price, sale price, and tax rate."}},{"@type":"Question","name":"Does it include exemptions or holding-period rules automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Exemptions, allowances, holding-period rules, offsets, and asset-specific treatment are not automatically applied."}},{"@type":"Question","name":"What happens if the sale price is lower than the purchase price?","acceptedAnswer":{"@type":"Answer","text":"This calculator does not generate tax on a negative gain, but the tax treatment of capital losses varies by jurisdiction."}},{"@type":"Question","name":"Can I use it for shares, crypto, or property?","acceptedAnswer":{"@type":"Answer","text":"You can use it for simple planning scenarios, but actual tax rules can differ significantly by asset type and country."}},{"@type":"Question","name":"Where should I verify the final tax treatment?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates and rules with the official tax authority source for your jurisdiction before relying on the estimate."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this capital gains tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates tax on a simplified capital gain using your purchase price, sale price, and tax rate."}},{"@type":"Question","name":"Does it include exemptions or holding-period rules automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Exemptions, allowances, holding-period rules, offsets, and asset-specific treatment are not automatically applied."}},{"@type":"Question","name":"What happens if the sale price is lower than the purchase price?","acceptedAnswer":{"@type":"Answer","text":"This calculator does not generate tax on a negative gain, but the tax treatment of capital losses varies by jurisdiction."}},{"@type":"Question","name":"Can I use it for shares, crypto, or property?","acceptedAnswer":{"@type":"Answer","text":"You can use it for simple planning scenarios, but actual tax rules can differ significantly by asset type and country."}},{"@type":"Question","name":"Where should I verify the final tax treatment?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates and rules with the official tax authority source for your jurisdiction before relying on the estimate."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Capital Gains Tax Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="purchase">Purchase Price</label><input id="purchase" type="number" min="0" step="0.01" placeholder="10000" required></div>
-                <div><label for="sale">Sale Price</label><input id="sale" type="number" min="0" step="0.01" placeholder="16000" required></div>
-                <div><label for="rate">Tax Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="15" required></div>
-                <div class="full"><button type="submit">Estimate Tax</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Capital gains treatment depends on holding period, exemptions, and jurisdiction.</div>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2>
-            <p class="subtle">This capital gains tax calculator estimates tax on a simplified gain using your purchase price, sale price, and tax rate. It is useful for quick planning before you review country-specific rules, exemptions, and filing details.</p>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Formula / Method Used</h2>
-            <p class="subtle">This page uses a simple method:</p>
-            <ul style="padding-left:1.5rem;color:#64748b">
-                <li>Taxable gain = Sale price - Purchase price, but not less than zero</li>
-                <li>Estimated tax = Taxable gain x Tax rate</li>
-            </ul>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Worked Example</h2>
-            <p class="subtle">If you bought an asset for <strong>$10,000</strong>, sold it for <strong>$16,000</strong>, and use a tax rate of <strong>15%</strong>, the taxable gain is <strong>$6,000</strong> and the estimated tax is <strong>$900</strong>.</p>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What the Result Means</h2>
-            <p class="subtle">The main result is the estimated tax on the gain based on your simplified inputs. The detail line shows the taxable gain and the rate used in the estimate.</p>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Common Mistakes</h2>
-            <ul style="padding-left:1.5rem;color:#64748b">
-                <li>Ignoring transaction costs, improvements, or basis adjustments.</li>
-                <li>Using the same rate for every asset regardless of holding period.</li>
-                <li>Assuming capital losses are handled the same way in every country.</li>
-                <li>Using this estimate without checking asset-specific tax treatment.</li>
-            </ul>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Official References</h2>
-            <p class="subtle">Verify current rates and rules with the official tax authority source for your jurisdiction before relying on the estimate.</p>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2>
-            <p><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a> · <a href="tax-refund-estimator.html">Tax Refund Estimator</a> · <a href="sales-tax-calculator.html">Sales Tax Calculator</a></p>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2>
-            <p class="subtle"><strong>What does this capital gains tax calculator estimate?</strong><br>It estimates tax on a simplified capital gain using your purchase price, sale price, and tax rate.</p>
-            <p class="subtle"><strong>Does it include exemptions or holding-period rules automatically?</strong><br>No. Exemptions, allowances, holding-period rules, offsets, and asset-specific treatment are not automatically applied.</p>
-            <p class="subtle"><strong>What happens if the sale price is lower than the purchase price?</strong><br>This calculator does not generate tax on a negative gain, but the tax treatment of capital losses varies by jurisdiction.</p>
-            <p class="subtle"><strong>Can I use it for shares, crypto, or property?</strong><br>You can use it for simple planning scenarios, but actual tax rules can differ significantly by asset type and country.</p>
-            <p class="subtle"><strong>Where should I verify the final tax treatment?</strong><br>Verify current rates and rules with the official tax authority source for your jurisdiction before relying on the estimate.</p>
-        </section>
-        <section class="panel" style="margin-top:2rem">
-            <p class="subtle">This calculator provides tax planning estimates only. Actual tax results, rates, exemptions, and filing rules can vary by asset type, country, and holding period.</p>
-            <p class="subtle" style="margin-top:0.75rem">Last updated: May 22, 2026</p>
-        </section>
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Capital Gains Tax Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="purchase">Purchase Price</label><input id="purchase" min="0" placeholder="10000" required="" step="0.01" type="number"/></div>
+<div><label for="sale">Sale Price</label><input id="sale" min="0" placeholder="16000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Tax Rate (%)</label><input id="rate" min="0" placeholder="15" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Tax</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Capital gains treatment depends on holding period, exemptions, and jurisdiction.</div>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What This Calculator Estimates</h2>
+<p class="subtle">This capital gains tax calculator estimates tax on a simplified gain using your purchase price, sale price, and tax rate. It is useful for quick planning before you review country-specific rules, exemptions, and filing details.</p>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Formula / Method Used</h2>
+<p class="subtle">This page uses a simple method:</p>
+<ul style="padding-left:1.5rem;color:#64748b">
+<li>Taxable gain = Sale price - Purchase price, but not less than zero</li>
+<li>Estimated tax = Taxable gain x Tax rate</li>
+</ul>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Worked Example</h2>
+<p class="subtle">If you bought an asset for <strong>$10,000</strong>, sold it for <strong>$16,000</strong>, and use a tax rate of <strong>15%</strong>, the taxable gain is <strong>$6,000</strong> and the estimated tax is <strong>$900</strong>.</p>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">What the Result Means</h2>
+<p class="subtle">The main result is the estimated tax on the gain based on your simplified inputs. The detail line shows the taxable gain and the rate used in the estimate.</p>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Common Mistakes</h2>
+<ul style="padding-left:1.5rem;color:#64748b">
+<li>Ignoring transaction costs, improvements, or basis adjustments.</li>
+<li>Using the same rate for every asset regardless of holding period.</li>
+<li>Assuming capital losses are handled the same way in every country.</li>
+<li>Using this estimate without checking asset-specific tax treatment.</li>
+</ul>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Official References</h2>
+<p class="subtle">Verify current rates and rules with the official tax authority source for your jurisdiction before relying on the estimate.</p>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Related Calculators</h2>
+<p><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a> · <a href="tax-refund-estimator.html">Tax Refund Estimator</a> · <a href="sales-tax-calculator.html">Sales Tax Calculator</a></p>
+</section>
+<section class="panel" style="margin-top:2rem">
+<h2 style="margin-bottom:1rem;color:var(--primary, #2563eb);font-weight:700">Frequently Asked Questions</h2>
+<p class="subtle"><strong>What does this capital gains tax calculator estimate?</strong><br/>It estimates tax on a simplified capital gain using your purchase price, sale price, and tax rate.</p>
+<p class="subtle"><strong>Does it include exemptions or holding-period rules automatically?</strong><br/>No. Exemptions, allowances, holding-period rules, offsets, and asset-specific treatment are not automatically applied.</p>
+<p class="subtle"><strong>What happens if the sale price is lower than the purchase price?</strong><br/>This calculator does not generate tax on a negative gain, but the tax treatment of capital losses varies by jurisdiction.</p>
+<p class="subtle"><strong>Can I use it for shares, crypto, or property?</strong><br/>You can use it for simple planning scenarios, but actual tax rules can differ significantly by asset type and country.</p>
+<p class="subtle"><strong>Where should I verify the final tax treatment?</strong><br/>Verify current rates and rules with the official tax authority source for your jurisdiction before relying on the estimate.</p>
+</section>
+<section class="panel" style="margin-top:2rem">
+<p class="subtle">This calculator provides tax planning estimates only. Actual tax results, rates, exemptions, and filing rules can vary by asset type, country, and holding period.</p>
+<p class="subtle" style="margin-top:0.75rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();
@@ -119,5 +120,3 @@
     </script>
 </body>
 </html>
-
-

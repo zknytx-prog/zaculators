@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payroll Tax Calculator | Zaculators</title>
-<link rel="canonical" href="https://zaculators.com/payroll-tax.html">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payroll Tax Calculator | Zaculators</title>
+<link href="https://zaculators.com/payroll-tax.html" rel="canonical"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,84 +43,82 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this payroll tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates payroll tax by applying the rate you enter to the gross pay amount you enter."}},{"@type":"Question","name":"Does it automatically include every payroll deduction?","acceptedAnswer":{"@type":"Answer","text":"No. This is a simplified rate-based estimate and does not automatically pull in every federal, state, local, or employer-specific rule."}},{"@type":"Question","name":"Should I enter an employee withholding rate or a total payroll-tax assumption?","acceptedAnswer":{"@type":"Answer","text":"Enter the rate that matches the payroll tax layer you want to model, then verify the full payroll treatment separately."}},{"@type":"Question","name":"Should I verify official payroll rules before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Payroll taxes and withholding rules can change and may depend on the jurisdiction and pay type."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this payroll tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates payroll tax by applying the rate you enter to the gross pay amount you enter."}},{"@type":"Question","name":"Does it automatically include every payroll deduction?","acceptedAnswer":{"@type":"Answer","text":"No. This is a simplified rate-based estimate and does not automatically pull in every federal, state, local, or employer-specific rule."}},{"@type":"Question","name":"Should I enter an employee withholding rate or a total payroll-tax assumption?","acceptedAnswer":{"@type":"Answer","text":"Enter the rate that matches the payroll tax layer you want to model, then verify the full payroll treatment separately."}},{"@type":"Question","name":"Should I verify official payroll rules before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Payroll taxes and withholding rules can change and may depend on the jurisdiction and pay type."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Payroll Tax Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="gross">Gross Pay</label><input id="gross" type="number" min="0" step="0.01" placeholder="5000" required></div>
-                <div><label for="rate">Payroll Tax Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="7.65" required></div>
-                <div class="full"><button type="submit">Estimate Payroll Tax</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Payroll taxes differ by country, state, thresholds, and employer setup. Verify current rules.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This payroll tax calculator estimates the tax withheld from wages for a specific payroll program using the rate and wage figure you provide, useful for employers estimating their payroll tax liability or employees wanting to understand a specific line item on their payslip. Because payroll tax programs, rates, and wage caps vary significantly by country, this calculator uses an editable rate so you can model the specific program relevant to your situation.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Estimated payroll tax = gross pay x payroll tax rate.</li>
-                <li>Estimated net after payroll tax = gross pay - estimated payroll tax.</li>
-                <li>The page does not automatically separate federal, state, local, employer, or employee components unless your entered rate already reflects that assumption.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If gross pay is $5,000 and the payroll-tax rate entered is 7.65%, the calculator estimates $382.50 of payroll tax. The remaining pay after that estimated payroll tax is $4,617.50.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main figure is the estimated payroll tax amount under the rate assumption you entered. The supporting line shows the gross pay left after subtracting only that modeled payroll tax.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Using one blended rate for a payroll system that actually has multiple taxes and thresholds.</li>
-                <li>Assuming the result includes income-tax withholding, employer taxes, and benefits deductions automatically.</li>
-                <li>Comparing one pay-period estimate against annual tax obligations without adjusting the timeframe.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">For U.S. payroll guidance, review the IRS pages on <a href="https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes">understanding employment taxes</a> and <a href="https://www.irs.gov/publications/p15">Publication 15, Employer's Tax Guide</a>. Verify current rates with the official government source for the jurisdiction you are modeling.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="payroll-calculator.html">Payroll Calculator</a><a href="salary-to-hourly-calculator.html">Salary To Hourly Calculator</a><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Tips for a More Accurate Estimate</h2>
-            <ul><li>Identify the specific payroll program and jurisdiction before selecting a rate.</li><li>Check for wage caps that might limit the taxable wage base.</li><li>Use this alongside an Employee Cost Calculator for total employment cost estimates.</li><li>Cross-check your estimate against actual payroll records for accuracy.</li><li>Recheck official rates periodically, since they're commonly adjusted.</li></ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Who typically uses a payroll tax calculator?</h3><p class="zac-support-answer">Both employers (estimating total payroll tax liability across their workforce) and employees (understanding specific payslip deductions) commonly use payroll tax estimates for planning purposes.</p></div><div class="zac-support-faq-item"><h3>Does this calculator handle wage caps automatically?</h3><p class="zac-support-answer">No, if the specific program you're estimating has a wage cap above which the tax no longer applies, factor that into the wage figure you enter.</p></div><div class="zac-support-faq-item"><h3>Can I use this for state or regional payroll taxes too?</h3><p class="zac-support-answer">Yes, as long as you enter the correct rate and wage base for the specific state, regional, or national payroll tax program you're modeling.</p></div><div class="zac-support-faq-item"><h3>Is this the same as calculating total employment cost?</h3><p class="zac-support-answer">No, payroll tax is just one component of total employment cost, which may also include benefits, insurance, and other employer contributions not covered by this calculator.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm current official rates for my specific program?</h3><p class="zac-support-answer">Your relevant tax or social security authority publishes current rates and wage caps for each payroll tax program.</p></div></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator provides a simplified payroll-tax estimate only and is not payroll, tax, or legal advice. Real payroll systems may use multiple taxes, wage bases, allowances, filing status rules, and employer-specific deductions.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Payroll Tax Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="gross">Gross Pay</label><input id="gross" min="0" placeholder="5000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Payroll Tax Rate (%)</label><input id="rate" min="0" placeholder="7.65" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Payroll Tax</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Payroll taxes differ by country, state, thresholds, and employer setup. Verify current rules.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">This payroll tax calculator estimates the tax withheld from wages for a specific payroll program using the rate and wage figure you provide, useful for employers estimating their payroll tax liability or employees wanting to understand a specific line item on their payslip. Because payroll tax programs, rates, and wage caps vary significantly by country, this calculator uses an editable rate so you can model the specific program relevant to your situation.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Estimated payroll tax = gross pay x payroll tax rate.</li>
+<li>Estimated net after payroll tax = gross pay - estimated payroll tax.</li>
+<li>The page does not automatically separate federal, state, local, employer, or employee components unless your entered rate already reflects that assumption.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If gross pay is $5,000 and the payroll-tax rate entered is 7.65%, the calculator estimates $382.50 of payroll tax. The remaining pay after that estimated payroll tax is $4,617.50.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main figure is the estimated payroll tax amount under the rate assumption you entered. The supporting line shows the gross pay left after subtracting only that modeled payroll tax.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Using one blended rate for a payroll system that actually has multiple taxes and thresholds.</li>
+<li>Assuming the result includes income-tax withholding, employer taxes, and benefits deductions automatically.</li>
+<li>Comparing one pay-period estimate against annual tax obligations without adjusting the timeframe.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">For U.S. payroll guidance, review the IRS pages on <a href="https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes">understanding employment taxes</a> and <a href="https://www.irs.gov/publications/p15">Publication 15, Employer's Tax Guide</a>. Verify current rates with the official government source for the jurisdiction you are modeling.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="payroll-calculator.html">Payroll Calculator</a><a href="salary-to-hourly-calculator.html">Salary To Hourly Calculator</a><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Tips for a More Accurate Estimate</h2>
+<ul><li>Identify the specific payroll program and jurisdiction before selecting a rate.</li><li>Check for wage caps that might limit the taxable wage base.</li><li>Use this alongside an Employee Cost Calculator for total employment cost estimates.</li><li>Cross-check your estimate against actual payroll records for accuracy.</li><li>Recheck official rates periodically, since they're commonly adjusted.</li></ul>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Who typically uses a payroll tax calculator?</h3><p class="zac-support-answer">Both employers (estimating total payroll tax liability across their workforce) and employees (understanding specific payslip deductions) commonly use payroll tax estimates for planning purposes.</p></div><div class="zac-support-faq-item"><h3>Does this calculator handle wage caps automatically?</h3><p class="zac-support-answer">No, if the specific program you're estimating has a wage cap above which the tax no longer applies, factor that into the wage figure you enter.</p></div><div class="zac-support-faq-item"><h3>Can I use this for state or regional payroll taxes too?</h3><p class="zac-support-answer">Yes, as long as you enter the correct rate and wage base for the specific state, regional, or national payroll tax program you're modeling.</p></div><div class="zac-support-faq-item"><h3>Is this the same as calculating total employment cost?</h3><p class="zac-support-answer">No, payroll tax is just one component of total employment cost, which may also include benefits, insurance, and other employer contributions not covered by this calculator.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm current official rates for my specific program?</h3><p class="zac-support-answer">Your relevant tax or social security authority publishes current rates and wage caps for each payroll tax program.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator provides a simplified payroll-tax estimate only and is not payroll, tax, or legal advice. Real payroll systems may use multiple taxes, wage bases, allowances, filing status rules, and employer-specific deductions.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

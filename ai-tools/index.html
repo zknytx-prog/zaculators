@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head><link href="../favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="../favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -12,8 +13,8 @@
   gtag('config', 'G-1B4FY69QMS');
 </script>
 <title>AI Tools Directory — Compare 200+ AI Tools by Category | Zaculators</title>
-<meta name="description" content="Browse and compare AI tools by category — writing, coding, image, video, voice, automation, and more. Real specs, real pricing, no fluff.">
-<link rel="canonical" href="https://zaculators.com/ai-tools">
+<meta content="Browse and compare AI tools by category — writing, coding, image, video, voice, automation, and more. Real specs, real pricing, no fluff." name="description"/>
+<link href="https://zaculators.com/ai-tools" rel="canonical"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,8 +24,8 @@
   "url": "https://zaculators.com/ai-tools"
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --navy:#0B1220;
@@ -260,169 +261,152 @@
   .wizard-results{text-align:left;}
   .wizard-restart{margin-top:24px; color:var(--indigo); font-weight:600; font-size:14px; cursor:pointer; display:inline-block;}
 </style>
-<meta name="impact-site-verification" value="4e5eff18-af1b-46a4-b80a-f7d4ade4769b">
+<meta name="impact-site-verification" value="4e5eff18-af1b-46a4-b80a-f7d4ade4769b"/>
 </head>
 <body>
-
 <header>
-  <div class="header-inner">
-    <div class="brand"><span class="dot"></span>Zaculators <span class="sub">/ AI Tools</span></div>
-    <nav>
-      <a href="/">Calculators</a>
-      <a href="/ai-tools" style="color:#fff;">AI Tools</a>
-      <a href="#submit">List Your Tool</a>
-    </nav>
-  </div>
-</header>
-
-<div class="tabbar">
-  <div class="tabbar-inner">
-    <div class="tab active" data-tab="browse">Browse Directory</div>
-    <div class="tab" data-tab="compare">Compare Tools <span class="tab-badge" id="compareBadge">0</span></div>
-    <div class="tab" data-tab="calculator">Cost Calculator</div>
-    <div class="tab" data-tab="wizard">Find My Tool</div>
-  </div>
+<div class="header-inner">
+<div class="brand"><span class="dot"></span>Zaculators <span class="sub">/ AI Tools</span></div>
+<nav>
+<a href="/">Calculators</a>
+<a href="/ai-tools" style="color:#fff;">AI Tools</a>
+<a href="#submit">List Your Tool</a>
+</nav>
 </div>
-
+</header>
+<div class="tabbar">
+<div class="tabbar-inner">
+<div class="tab active" data-tab="browse">Browse Directory</div>
+<div class="tab" data-tab="compare">Compare Tools <span class="tab-badge" id="compareBadge">0</span></div>
+<div class="tab" data-tab="calculator">Cost Calculator</div>
+<div class="tab" data-tab="wizard">Find My Tool</div>
+</div>
+</div>
 <div class="panel active" id="panel-browse">
 <section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow"><span class="bar"></span>UPDATED WEEKLY · NO FLUFF</div>
-    <h1>Find the right AI tool without the marketing noise.</h1>
-    <p class="lede">Every tool, real pricing, filtered by what you actually do — writing, coding, images, video, voice, automation, and more.</p>
-
-    <div class="stat-strip">
-      <div class="stat"><div class="num" id="statTotal">0</div><div class="lbl">Tools Listed</div></div>
-      <div class="stat"><div class="num" id="statCats">0</div><div class="lbl">Categories</div></div>
-      <div class="stat"><div class="num">Free</div><div class="lbl">Always Free to Browse</div></div>
-    </div>
-
-    <div class="search-wrap">
-      <input type="text" id="searchInput" placeholder="Search tools — e.g. &quot;image generator&quot; or &quot;voice agent&quot;">
-      <button onclick="applyFilters()">Search</button>
-    </div>
-  </div>
-</section>
-
-<div class="layout">
-  <aside class="sidebar">
-    <div class="filter-group">
-      <h3>Category</h3>
-      <div class="chip-list" id="categoryFilters"></div>
-    </div>
-    <div class="filter-group">
-      <h3>Pricing</h3>
-      <div class="chip-list" id="pricingFilters">
-        <div class="chip active" data-price="all">All Pricing <span class="n"></span></div>
-        <div class="chip" data-price="Free">Free <span class="n"></span></div>
-        <div class="chip" data-price="Freemium">Freemium <span class="n"></span></div>
-        <div class="chip" data-price="Paid">Paid Only <span class="n"></span></div>
-      </div>
-    </div>
-  </aside>
-
-  <main>
-    <div class="results-head">
-      <div class="count"><b id="resultCount">0</b> tools found</div>
-      <select id="sortSelect" onchange="applyFilters()">
-        <option value="featured">Sort: Featured First</option>
-        <option value="rating">Sort: Highest Rated</option>
-        <option value="az">Sort: A → Z</option>
-      </select>
-    </div>
-    <div class="grid" id="toolGrid"></div>
-  </main>
+<div class="hero-inner">
+<div class="eyebrow"><span class="bar"></span>UPDATED WEEKLY · NO FLUFF</div>
+<h1>Find the right AI tool without the marketing noise.</h1>
+<p class="lede">Every tool, real pricing, filtered by what you actually do — writing, coding, images, video, voice, automation, and more.</p>
+<div class="stat-strip">
+<div class="stat"><div class="num" id="statTotal">0</div><div class="lbl">Tools Listed</div></div>
+<div class="stat"><div class="num" id="statCats">0</div><div class="lbl">Categories</div></div>
+<div class="stat"><div class="num">Free</div><div class="lbl">Always Free to Browse</div></div>
 </div>
-
+<div class="search-wrap">
+<input id="searchInput" placeholder='Search tools — e.g. "image generator" or "voice agent"' type="text"/>
+<button onclick="applyFilters()">Search</button>
+</div>
+</div>
+</section>
+<div class="layout">
+<aside class="sidebar">
+<div class="filter-group">
+<h3>Category</h3>
+<div class="chip-list" id="categoryFilters"></div>
+</div>
+<div class="filter-group">
+<h3>Pricing</h3>
+<div class="chip-list" id="pricingFilters">
+<div class="chip active" data-price="all">All Pricing <span class="n"></span></div>
+<div class="chip" data-price="Free">Free <span class="n"></span></div>
+<div class="chip" data-price="Freemium">Freemium <span class="n"></span></div>
+<div class="chip" data-price="Paid">Paid Only <span class="n"></span></div>
+</div>
+</div>
+</aside>
+<main>
+<div class="results-head">
+<div class="count"><b id="resultCount">0</b> tools found</div>
+<select id="sortSelect" onchange="applyFilters()">
+<option value="featured">Sort: Featured First</option>
+<option value="rating">Sort: Highest Rated</option>
+<option value="az">Sort: A → Z</option>
+</select>
+</div>
+<div class="grid" id="toolGrid"></div>
+</main>
+</div>
 <div class="cta-band" id="submit">
-  <div class="cta-inner">
-    <div>
-      <h2>Own an AI tool? Get featured.</h2>
-      <p>Featured listings appear at the top of their category with a highlighted badge — seen by every visitor filtering that niche. <strong>$49/mo</strong> per category, or <strong>$399/yr</strong> (save 32%).</p>
-    </div>
-    <a class="cta-btn" href="mailto:listings@zaculators.com?subject=Feature%20My%20Tool%20-%20%2449%2Fmo">Request Featured Spot →</a>
-  </div>
+<div class="cta-inner">
+<div>
+<h2>Own an AI tool? Get featured.</h2>
+<p>Featured listings appear at the top of their category with a highlighted badge — seen by every visitor filtering that niche. <strong>$49/mo</strong> per category, or <strong>$399/yr</strong> (save 32%).</p>
+</div>
+<a class="cta-btn" href="mailto:listings@zaculators.com?subject=Feature%20My%20Tool%20-%20%2449%2Fmo">Request Featured Spot →</a>
+</div>
 </div>
 </div><!-- /panel-browse -->
-
 <!-- ============ COMPARE PANEL ============ -->
 <div class="panel" id="panel-compare">
-  <div class="compare-wrap">
-    <h2 style="font-size:24px; margin-bottom:6px;">Compare up to 3 tools head-to-head</h2>
-    <p style="color:var(--slate); font-size:14px; margin-bottom:24px;">Scored on ease of use, power, price value, support, and innovation — 1 to 10.</p>
-    <div class="compare-picker">
-      <select class="compare-select" id="cmp0"><option value="">Select tool 1...</option></select>
-      <select class="compare-select" id="cmp1"><option value="">Select tool 2...</option></select>
-      <select class="compare-select" id="cmp2"><option value="">Select tool 3...</option></select>
-    </div>
-    <div id="compareArea"></div>
-  </div>
+<div class="compare-wrap">
+<h2 style="font-size:24px; margin-bottom:6px;">Compare up to 3 tools head-to-head</h2>
+<p style="color:var(--slate); font-size:14px; margin-bottom:24px;">Scored on ease of use, power, price value, support, and innovation — 1 to 10.</p>
+<div class="compare-picker">
+<select class="compare-select" id="cmp0"><option value="">Select tool 1...</option></select>
+<select class="compare-select" id="cmp1"><option value="">Select tool 2...</option></select>
+<select class="compare-select" id="cmp2"><option value="">Select tool 3...</option></select>
 </div>
-
+<div id="compareArea"></div>
+</div>
+</div>
 <!-- ============ CALCULATOR PANEL ============ -->
 <div class="panel" id="panel-calculator">
-  <div class="calc-wrap">
-    <div class="calc-intro">
-      <h2>What's your AI subscription stack really costing you?</h2>
-      <p>Check the tools you currently pay for. We'll total it up and flag cheaper alternatives in the same category.</p>
-    </div>
-    <div class="calc-list" id="calcList"></div>
-    <div class="calc-result">
-      <div>
-        <div class="total mono" id="calcTotal">$0/mo</div>
-        <div class="sub" id="calcSub">Select tools above to calculate</div>
-      </div>
-      <div class="calc-savings" id="calcSavings" style="display:none;"></div>
-    </div>
-    <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);text-align:center;">
-      <p style="opacity:.7;margin-bottom:14px;">Need deeper analysis? Try these standalone tools:</p>
-      <a href="/ai-token-cost-calculator.html" style="margin:0 8px;color:inherit;text-decoration:underline;">API Token Cost Calculator</a>
-      <a href="/ai-subscription-comparison.html" style="margin:0 8px;color:inherit;text-decoration:underline;">Compare 2 Subscriptions</a>
-      <a href="/ai-roi-calculator.html" style="margin:0 8px;color:inherit;text-decoration:underline;">AI Automation ROI</a>
-    </div>
-  </div>
+<div class="calc-wrap">
+<div class="calc-intro">
+<h2>What's your AI subscription stack really costing you?</h2>
+<p>Check the tools you currently pay for. We'll total it up and flag cheaper alternatives in the same category.</p>
 </div>
-
+<div class="calc-list" id="calcList"></div>
+<div class="calc-result">
+<div>
+<div class="total mono" id="calcTotal">$0/mo</div>
+<div class="sub" id="calcSub">Select tools above to calculate</div>
+</div>
+<div class="calc-savings" id="calcSavings" style="display:none;"></div>
+</div>
+<div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);text-align:center;">
+<p style="opacity:.7;margin-bottom:14px;">Need deeper analysis? Try these standalone tools:</p>
+<a href="/ai-token-cost-calculator.html" style="margin:0 8px;color:inherit;text-decoration:underline;">API Token Cost Calculator</a>
+<a href="/ai-subscription-comparison.html" style="margin:0 8px;color:inherit;text-decoration:underline;">Compare 2 Subscriptions</a>
+<a href="/ai-roi-calculator.html" style="margin:0 8px;color:inherit;text-decoration:underline;">AI Automation ROI</a>
+</div>
+</div>
+</div>
 <!-- ============ WIZARD PANEL ============ -->
 <div class="panel" id="panel-wizard">
-  <div class="wizard-wrap">
-    <div class="wizard-progress" id="wizardProgress"></div>
-
-    <div class="wizard-step active" data-step="0">
-      <div class="wizard-q">What do you need AI for, mainly?</div>
-      <div class="wizard-opts" id="wizStep0"></div>
-    </div>
-
-    <div class="wizard-step" data-step="1">
-      <div class="wizard-q">What's your budget?</div>
-      <div class="wizard-opts">
-        <div class="wizard-opt" data-price="Free">Free only</div>
-        <div class="wizard-opt" data-price="Freemium">I'll pay if the free plan isn't enough</div>
-        <div class="wizard-opt" data-price="Paid">I want the best, budget isn't the issue</div>
-      </div>
-    </div>
-
-    <div class="wizard-step" data-step="2">
-      <div class="wizard-q">What matters most to you?</div>
-      <div class="wizard-opts">
-        <div class="wizard-opt" data-priority="ease">Easy to use, minimal learning curve</div>
-        <div class="wizard-opt" data-priority="power">Maximum capability / power features</div>
-        <div class="wizard-opt" data-priority="value">Best value for money</div>
-        <div class="wizard-opt" data-priority="innovation">Cutting edge / newest tech</div>
-      </div>
-    </div>
-
-    <div class="wizard-step" data-step="3">
-      <div class="wizard-results" id="wizardResults"></div>
-      <div style="text-align:center;"><span class="wizard-restart" onclick="wizardRestart()">↺ Start over</span></div>
-    </div>
-  </div>
+<div class="wizard-wrap">
+<div class="wizard-progress" id="wizardProgress"></div>
+<div class="wizard-step active" data-step="0">
+<div class="wizard-q">What do you need AI for, mainly?</div>
+<div class="wizard-opts" id="wizStep0"></div>
 </div>
-
+<div class="wizard-step" data-step="1">
+<div class="wizard-q">What's your budget?</div>
+<div class="wizard-opts">
+<div class="wizard-opt" data-price="Free">Free only</div>
+<div class="wizard-opt" data-price="Freemium">I'll pay if the free plan isn't enough</div>
+<div class="wizard-opt" data-price="Paid">I want the best, budget isn't the issue</div>
+</div>
+</div>
+<div class="wizard-step" data-step="2">
+<div class="wizard-q">What matters most to you?</div>
+<div class="wizard-opts">
+<div class="wizard-opt" data-priority="ease">Easy to use, minimal learning curve</div>
+<div class="wizard-opt" data-priority="power">Maximum capability / power features</div>
+<div class="wizard-opt" data-priority="value">Best value for money</div>
+<div class="wizard-opt" data-priority="innovation">Cutting edge / newest tech</div>
+</div>
+</div>
+<div class="wizard-step" data-step="3">
+<div class="wizard-results" id="wizardResults"></div>
+<div style="text-align:center;"><span class="wizard-restart" onclick="wizardRestart()">↺ Start over</span></div>
+</div>
+</div>
+</div>
 <footer>
   Zaculators AI Tools Directory · Independently maintained · Some links are affiliate links, at no extra cost to you.
 </footer>
-
 <script>
 // ---------------------------------------------------------
 // DATA — starter seed set. Replace/expand via research pass.
@@ -902,6 +886,5 @@ buildCalculator();
 buildWizardStep0();
 renderWizardProgress();
 </script>
-
 </body>
 </html>

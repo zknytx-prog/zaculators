@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Loan Comparison Calculator | Zaculators</title>
-<meta name="description" content="Compare two loans by monthly payment, total repayment, total interest, and total cost differences.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Compare two loans by monthly payment, total repayment, total interest, and total cost differences." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -80,131 +81,123 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Loan Comparison Calculator</h1>
+<h1>Loan Comparison Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Compare two loan scenarios side by side. This calculator estimates the payment, total repayment, and total interest for each option so you can see which loan may cost less overall and which one offers lower monthly payments.</p>
-    <form id="loan-comparison-form">
-      <div class="loan-grid">
-        <div class="loan-box">
-          <h2>Loan A</h2>
-          <label for="loan-a-amount">Loan A Amount</label>
-          <input type="number" id="loan-a-amount" min="0" step="0.01" placeholder="e.g. 20000" required>
-          <label for="loan-a-apr">Loan A APR (%)</label>
-          <input type="number" id="loan-a-apr" min="0" step="0.01" placeholder="e.g. 7.5" required>
-          <label for="loan-a-term">Loan A Term (months)</label>
-          <input type="number" id="loan-a-term" min="1" step="1" placeholder="e.g. 60" required>
-          <label for="loan-a-fees">Loan A Fees (optional)</label>
-          <input type="number" id="loan-a-fees" min="0" step="0.01" placeholder="e.g. 250">
-        </div>
-        <div class="loan-box">
-          <h2>Loan B</h2>
-          <label for="loan-b-amount">Loan B Amount</label>
-          <input type="number" id="loan-b-amount" min="0" step="0.01" placeholder="e.g. 20000" required>
-          <label for="loan-b-apr">Loan B APR (%)</label>
-          <input type="number" id="loan-b-apr" min="0" step="0.01" placeholder="e.g. 6.9" required>
-          <label for="loan-b-term">Loan B Term (months)</label>
-          <input type="number" id="loan-b-term" min="1" step="1" placeholder="e.g. 48" required>
-          <label for="loan-b-fees">Loan B Fees (optional)</label>
-          <input type="number" id="loan-b-fees" min="0" step="0.01" placeholder="e.g. 500">
-        </div>
-      </div>
-      <button type="submit">Compare Loans</button>
-    </form>
-    <div id="loan-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Loan A Monthly Payment</span><span id="loan-a-payment" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Loan A Total Repayment</span><span id="loan-a-total" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Loan A Total Interest</span><span id="loan-a-interest" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Loan B Monthly Payment</span><span id="loan-b-payment" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Loan B Total Repayment</span><span id="loan-b-total" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Loan B Total Interest</span><span id="loan-b-interest" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Difference in Monthly Payment</span><span id="payment-diff" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Difference in Total Cost</span><span id="cost-diff" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="loan-note" class="intro"></p>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates the payment and total borrowing cost for two separate loan options. It is useful for comparing refinance offers, personal loans, auto loans, or other amortized borrowing choices when you want to balance monthly affordability against total cost.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">Each loan uses the standard amortized loan payment formula:</p>
-    <p class="intro"><strong>Payment = P x [r(1+r)^n] / [(1+r)^n - 1]</strong></p>
-    <ul>
-      <li><strong>P</strong> = loan amount plus optional fees</li>
-      <li><strong>r</strong> = monthly interest rate</li>
-      <li><strong>n</strong> = number of monthly payments</li>
-    </ul>
-    <p class="intro">Total repayment is monthly payment multiplied by the term. Total interest is total repayment minus the financed amount.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If Loan A is $20,000 at 7.5% for 60 months with $250 in fees, and Loan B is $20,000 at 6.9% for 48 months with $500 in fees, the calculator estimates each payment and the full repayment over the term. You can then compare whether the lower rate or shorter term actually reduces total cost.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The monthly payment figures help with cash-flow planning. The total repayment and total interest figures show the full borrowing cost. A loan with the lower payment is not always the cheaper loan overall, so the total cost difference matters most when comparing long-term affordability.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Looking only at APR and ignoring fees.</li>
-      <li>Choosing the lowest payment without checking the longer-term cost.</li>
-      <li>Comparing loans with different terms but treating them as equivalent.</li>
-      <li>Assuming the lender will finance fees the same way this estimate does.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides estimates only and is not a loan offer or financial advice. It assumes fixed-rate amortized payments and does not include taxes, late fees, changing rates, or lender-specific disclosures. Results are estimates.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="loan-payment-calculator.html">Loan Payment Calculator</a>
-      <a href="apr-calculator.html">APR Calculator</a>
-      <a href="personal-loan-calculator.html">Personal Loan Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this loan comparison calculator show?</h3>
-      <p class="answer">It estimates the monthly payment, total repayment, and total interest for two loans so you can compare cost and cash flow.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does a lower monthly payment mean a better loan?</h3>
-      <p class="answer">Not always. A lower payment can come from a longer term and may still lead to a higher total repayment.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How are fees handled here?</h3>
-      <p class="answer">Optional fees are added to the financed amount for each loan so the estimate reflects their impact on payment and total cost.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these loan results final offers?</h3>
-      <p class="answer">No. Results are estimates only. Actual lender offers can vary based on underwriting, fees, rate type, and disclosures.</p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Compare two loan scenarios side by side. This calculator estimates the payment, total repayment, and total interest for each option so you can see which loan may cost less overall and which one offers lower monthly payments.</p>
+<form id="loan-comparison-form">
+<div class="loan-grid">
+<div class="loan-box">
+<h2>Loan A</h2>
+<label for="loan-a-amount">Loan A Amount</label>
+<input id="loan-a-amount" min="0" placeholder="e.g. 20000" required="" step="0.01" type="number"/>
+<label for="loan-a-apr">Loan A APR (%)</label>
+<input id="loan-a-apr" min="0" placeholder="e.g. 7.5" required="" step="0.01" type="number"/>
+<label for="loan-a-term">Loan A Term (months)</label>
+<input id="loan-a-term" min="1" placeholder="e.g. 60" required="" step="1" type="number"/>
+<label for="loan-a-fees">Loan A Fees (optional)</label>
+<input id="loan-a-fees" min="0" placeholder="e.g. 250" step="0.01" type="number"/>
+</div>
+<div class="loan-box">
+<h2>Loan B</h2>
+<label for="loan-b-amount">Loan B Amount</label>
+<input id="loan-b-amount" min="0" placeholder="e.g. 20000" required="" step="0.01" type="number"/>
+<label for="loan-b-apr">Loan B APR (%)</label>
+<input id="loan-b-apr" min="0" placeholder="e.g. 6.9" required="" step="0.01" type="number"/>
+<label for="loan-b-term">Loan B Term (months)</label>
+<input id="loan-b-term" min="1" placeholder="e.g. 48" required="" step="1" type="number"/>
+<label for="loan-b-fees">Loan B Fees (optional)</label>
+<input id="loan-b-fees" min="0" placeholder="e.g. 500" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Compare Loans</button>
+</form>
+<div aria-live="polite" class="results" id="loan-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Loan A Monthly Payment</span><span class="metric-value" id="loan-a-payment">$0.00</span></div>
+<div class="metric"><span class="metric-label">Loan A Total Repayment</span><span class="metric-value" id="loan-a-total">$0.00</span></div>
+<div class="metric"><span class="metric-label">Loan A Total Interest</span><span class="metric-value" id="loan-a-interest">$0.00</span></div>
+<div class="metric"><span class="metric-label">Loan B Monthly Payment</span><span class="metric-value" id="loan-b-payment">$0.00</span></div>
+<div class="metric"><span class="metric-label">Loan B Total Repayment</span><span class="metric-value" id="loan-b-total">$0.00</span></div>
+<div class="metric"><span class="metric-label">Loan B Total Interest</span><span class="metric-value" id="loan-b-interest">$0.00</span></div>
+<div class="metric"><span class="metric-label">Difference in Monthly Payment</span><span class="metric-value" id="payment-diff">$0.00</span></div>
+<div class="metric"><span class="metric-label">Difference in Total Cost</span><span class="metric-value" id="cost-diff">$0.00</span></div>
+</div>
+<p class="intro" id="loan-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">This calculator estimates the payment and total borrowing cost for two separate loan options. It is useful for comparing refinance offers, personal loans, auto loans, or other amortized borrowing choices when you want to balance monthly affordability against total cost.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">Each loan uses the standard amortized loan payment formula:</p>
+<p class="intro"><strong>Payment = P x [r(1+r)^n] / [(1+r)^n - 1]</strong></p>
+<ul>
+<li><strong>P</strong> = loan amount plus optional fees</li>
+<li><strong>r</strong> = monthly interest rate</li>
+<li><strong>n</strong> = number of monthly payments</li>
+</ul>
+<p class="intro">Total repayment is monthly payment multiplied by the term. Total interest is total repayment minus the financed amount.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If Loan A is $20,000 at 7.5% for 60 months with $250 in fees, and Loan B is $20,000 at 6.9% for 48 months with $500 in fees, the calculator estimates each payment and the full repayment over the term. You can then compare whether the lower rate or shorter term actually reduces total cost.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The monthly payment figures help with cash-flow planning. The total repayment and total interest figures show the full borrowing cost. A loan with the lower payment is not always the cheaper loan overall, so the total cost difference matters most when comparing long-term affordability.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Looking only at APR and ignoring fees.</li>
+<li>Choosing the lowest payment without checking the longer-term cost.</li>
+<li>Comparing loans with different terms but treating them as equivalent.</li>
+<li>Assuming the lender will finance fees the same way this estimate does.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides estimates only and is not a loan offer or financial advice. It assumes fixed-rate amortized payments and does not include taxes, late fees, changing rates, or lender-specific disclosures. Results are estimates.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="loan-payment-calculator.html">Loan Payment Calculator</a>
+<a href="apr-calculator.html">APR Calculator</a>
+<a href="personal-loan-calculator.html">Personal Loan Calculator</a>
+</div>
+</section>
+<section class="support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What does this loan comparison calculator show?</h3>
+<p class="answer">It estimates the monthly payment, total repayment, and total interest for two loans so you can compare cost and cash flow.</p>
+</div>
+<div class="faq-item">
+<h3>Does a lower monthly payment mean a better loan?</h3>
+<p class="answer">Not always. A lower payment can come from a longer term and may still lead to a higher total repayment.</p>
+</div>
+<div class="faq-item">
+<h3>How are fees handled here?</h3>
+<p class="answer">Optional fees are added to the financed amount for each loan so the estimate reflects their impact on payment and total cost.</p>
+</div>
+<div class="faq-item">
+<h3>Are these loan results final offers?</h3>
+<p class="answer">No. Results are estimates only. Actual lender offers can vary based on underwriting, fees, rate type, and disclosures.</p>
+</div>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

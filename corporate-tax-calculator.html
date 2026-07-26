@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Tax Calculator | Zaculators</title>
-<meta name="description" content="Free Corporate Tax Calculator — It estimates the tax due when you apply a chosen corporate tax rate to taxable profit.">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Tax Calculator | Zaculators</title>
+<meta content="Free Corporate Tax Calculator — It estimates the tax due when you apply a chosen corporate tax rate to taxable profit." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,84 +43,82 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this corporate tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the tax due when you apply a chosen corporate tax rate to taxable profit."}},{"@type":"Question","name":"Should I enter revenue or taxable profit?","acceptedAnswer":{"@type":"Answer","text":"Enter taxable profit, not gross revenue, because the calculation applies the rate directly to the profit amount you provide."}},{"@type":"Question","name":"Does this include local surcharges or special regimes?","acceptedAnswer":{"@type":"Answer","text":"No. This is a simple rate-times-profit estimate and does not automatically add local surcharges, minimum taxes, or industry-specific rules."}},{"@type":"Question","name":"Can I use this for final filing figures?","acceptedAnswer":{"@type":"Answer","text":"No. It is best used for rough planning before you confirm the final treatment with the official tax authority or a qualified adviser."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this corporate tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates the tax due when you apply a chosen corporate tax rate to taxable profit."}},{"@type":"Question","name":"Should I enter revenue or taxable profit?","acceptedAnswer":{"@type":"Answer","text":"Enter taxable profit, not gross revenue, because the calculation applies the rate directly to the profit amount you provide."}},{"@type":"Question","name":"Does this include local surcharges or special regimes?","acceptedAnswer":{"@type":"Answer","text":"No. This is a simple rate-times-profit estimate and does not automatically add local surcharges, minimum taxes, or industry-specific rules."}},{"@type":"Question","name":"Can I use this for final filing figures?","acceptedAnswer":{"@type":"Answer","text":"No. It is best used for rough planning before you confirm the final treatment with the official tax authority or a qualified adviser."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Corporate Tax Calculator</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="profit">Taxable Profit</label><input id="profit" type="number" min="0" step="0.01" placeholder="250000" required></div>
-                <div><label for="rate">Corporate Tax Rate (%)</label><input id="rate" type="number" min="0" step="0.01" placeholder="25" required></div>
-                <div class="full"><button type="submit">Estimate Tax</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Corporate tax can depend on jurisdiction, deductions, and entity structure.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">Corporate income tax is levied on business profits and varies enormously by country and sometimes by business size or type, with some jurisdictions using a single flat rate and others using tiered rates or special regimes for small businesses. Because corporate tax rules differ so significantly by jurisdiction, this calculator lets you enter the applicable rate for your specific country and business situation, rather than assuming a universal rate.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Tax estimate = taxable profit x corporate tax rate.</li>
-                <li>Estimated after-tax profit = taxable profit - estimated corporate tax.</li>
-                <li>The page does not add separate local taxes, minimum taxes, credits, or group relief automatically.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If a company has taxable profit of $250,000 and you model a 25% corporate tax rate, the estimate is $62,500 in corporate tax. That leaves an estimated $187,500 after corporate tax, before any dividend planning or other business taxes.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result is the estimated tax due at the rate you entered. The secondary line shows the remaining profit after that tax estimate. It is a planning output, not a completed return calculation.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Entering total revenue instead of taxable profit.</li>
-                <li>Using a headline rate without checking whether surtaxes, minimum taxes, or special business regimes apply.</li>
-                <li>Forgetting that deductions, losses, credits, and depreciation can change the final taxable figure.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Corporate tax is jurisdiction-specific. For U.S. federal guidance, review the <a href="https://www.irs.gov/forms-pubs/about-publication-542">IRS overview of Publication 542, Corporations</a> and <a href="https://www.irs.gov/publications/p542">Publication 542 itself</a>. Verify current rates with the official government source for your jurisdiction.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a><a href="profit-margin.html">Profit Margin</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Tips for a More Accurate Estimate</h2>
-            <ul><li>Confirm your jurisdiction's current corporate tax rate and any small business concessions.</li><li>Understand what counts as taxable profit under your specific tax code before estimating.</li><li>Check whether your business qualifies for any reduced-rate regime.</li><li>Consult a tax professional for cross-border or complex corporate structures.</li><li>Recheck rates annually, since corporate tax rates are periodically revised through legislation.</li></ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Is corporate tax a flat rate everywhere?</h3><p class="zac-support-answer">No, some countries use a single flat corporate rate, while others use tiered rates (often lower for smaller businesses or specific industries) — check your specific jurisdiction's current rules.</p></div><div class="zac-support-faq-item"><h3>What counts as taxable corporate profit?</h3><p class="zac-support-answer">Generally revenue minus allowable business expenses, depreciation, and other deductions specific to your jurisdiction's tax code — consult a tax professional for your exact taxable base.</p></div><div class="zac-support-faq-item"><h3>Do small businesses get lower corporate tax rates?</h3><p class="zac-support-answer">In many jurisdictions, yes — smaller businesses or those below a certain revenue threshold often qualify for reduced rates, though rules vary significantly by country.</p></div><div class="zac-support-faq-item"><h3>Does this calculator handle international tax treaties or transfer pricing?</h3><p class="zac-support-answer">No, this is a simplified estimate based on a single rate and profit figure. Cross-border tax matters require specialized professional advice.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm my country's current corporate tax rate?</h3><p class="zac-support-answer">Your country's tax authority (equivalent to the IRS, HMRC, ATO, etc.) publishes current corporate tax rates and any special regimes for smaller businesses.</p></div></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator provides a simplified corporate tax estimate only and is not tax, legal, or accounting advice. Filing rules, loss carryforwards, apportionment, sector rules, and minimum taxes vary by jurisdiction.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Corporate Tax Calculator</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="profit">Taxable Profit</label><input id="profit" min="0" placeholder="250000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Corporate Tax Rate (%)</label><input id="rate" min="0" placeholder="25" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Tax</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Corporate tax can depend on jurisdiction, deductions, and entity structure.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Corporate income tax is levied on business profits and varies enormously by country and sometimes by business size or type, with some jurisdictions using a single flat rate and others using tiered rates or special regimes for small businesses. Because corporate tax rules differ so significantly by jurisdiction, this calculator lets you enter the applicable rate for your specific country and business situation, rather than assuming a universal rate.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Tax estimate = taxable profit x corporate tax rate.</li>
+<li>Estimated after-tax profit = taxable profit - estimated corporate tax.</li>
+<li>The page does not add separate local taxes, minimum taxes, credits, or group relief automatically.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If a company has taxable profit of $250,000 and you model a 25% corporate tax rate, the estimate is $62,500 in corporate tax. That leaves an estimated $187,500 after corporate tax, before any dividend planning or other business taxes.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result is the estimated tax due at the rate you entered. The secondary line shows the remaining profit after that tax estimate. It is a planning output, not a completed return calculation.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Entering total revenue instead of taxable profit.</li>
+<li>Using a headline rate without checking whether surtaxes, minimum taxes, or special business regimes apply.</li>
+<li>Forgetting that deductions, losses, credits, and depreciation can change the final taxable figure.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Corporate tax is jurisdiction-specific. For U.S. federal guidance, review the <a href="https://www.irs.gov/forms-pubs/about-publication-542">IRS overview of Publication 542, Corporations</a> and <a href="https://www.irs.gov/publications/p542">Publication 542 itself</a>. Verify current rates with the official government source for your jurisdiction.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="capital-gains-tax-calculator.html">Capital Gains Tax Calculator</a><a href="effective-tax-rate-calculator.html">Effective Tax Rate Calculator</a><a href="profit-margin.html">Profit Margin</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Tips for a More Accurate Estimate</h2>
+<ul><li>Confirm your jurisdiction's current corporate tax rate and any small business concessions.</li><li>Understand what counts as taxable profit under your specific tax code before estimating.</li><li>Check whether your business qualifies for any reduced-rate regime.</li><li>Consult a tax professional for cross-border or complex corporate structures.</li><li>Recheck rates annually, since corporate tax rates are periodically revised through legislation.</li></ul>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Is corporate tax a flat rate everywhere?</h3><p class="zac-support-answer">No, some countries use a single flat corporate rate, while others use tiered rates (often lower for smaller businesses or specific industries) — check your specific jurisdiction's current rules.</p></div><div class="zac-support-faq-item"><h3>What counts as taxable corporate profit?</h3><p class="zac-support-answer">Generally revenue minus allowable business expenses, depreciation, and other deductions specific to your jurisdiction's tax code — consult a tax professional for your exact taxable base.</p></div><div class="zac-support-faq-item"><h3>Do small businesses get lower corporate tax rates?</h3><p class="zac-support-answer">In many jurisdictions, yes — smaller businesses or those below a certain revenue threshold often qualify for reduced rates, though rules vary significantly by country.</p></div><div class="zac-support-faq-item"><h3>Does this calculator handle international tax treaties or transfer pricing?</h3><p class="zac-support-answer">No, this is a simplified estimate based on a single rate and profit figure. Cross-border tax matters require specialized professional advice.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm my country's current corporate tax rate?</h3><p class="zac-support-answer">Your country's tax authority (equivalent to the IRS, HMRC, ATO, etc.) publishes current corporate tax rates and any special regimes for smaller businesses.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator provides a simplified corporate tax estimate only and is not tax, legal, or accounting advice. Filing rules, loss carryforwards, apportionment, sector rules, and minimum taxes vary by jurisdiction.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

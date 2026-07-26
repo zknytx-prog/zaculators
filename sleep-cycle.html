@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
-<head>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,10 +11,10 @@
 
   gtag('config', 'G-1B4FY69QMS');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate wake-up or bedtime options based on 90-minute sleep cycles.">
-<meta name="keywords" content="sleep cycle calculator, bedtime calculator, wake up calculator">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Estimate wake-up or bedtime options based on 90-minute sleep cycles." name="description"/>
+<meta content="sleep cycle calculator, bedtime calculator, wake up calculator" name="keywords"/>
 <title>Sleep Cycle Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
@@ -98,62 +99,58 @@
 
 </style>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
+<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a aria-label="Return to Zaculators homepage" href="/" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">∑</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a aria-label="Return to homepage" href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
-  <h1>Sleep Cycle Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
+<h1>Sleep Cycle Calculator</h1>
+<div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
 </header>
 <main>
 <section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">This gives a simple sleep-cycle estimate using 90-minute blocks and a short fall-asleep buffer.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="mode">What do you want to calculate?</label><select id="mode"><option value="wake">Wake-up time from bedtime</option><option value="bed">Bedtime from wake-up time</option></select><div class="error-message"></div></div><div class="form-group"><label for="hour">Hour (1-12)</label><input id="hour" type="number" min="1" max="12" step="1" required><div class="error-message"></div></div><div class="form-group"><label for="minute">Minute</label><input id="minute" type="number" min="0" max="59" step="1" required><div class="error-message"></div></div><div class="form-group"><label for="ampm">AM/PM</label><select id="ampm"><option value="AM">AM</option><option value="PM">PM</option></select><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>Suggested times</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Option 1</label><div class="value" id="result-1">—</div></div>
+<h2>Calculator</h2>
+<p class="intro">This gives a simple sleep-cycle estimate using 90-minute blocks and a short fall-asleep buffer.</p>
+<div class="trust-badges">
+<span><span class="badge-icon">✓</span> Accurate formulas</span>
+<span><span class="badge-icon">✓</span> Save and reload</span>
+<span><span class="badge-icon">✓</span> Free to use</span>
+</div>
+<form id="calcForm">
+<div class="form-row"><div class="form-group"><label for="mode">What do you want to calculate?</label><select id="mode"><option value="wake">Wake-up time from bedtime</option><option value="bed">Bedtime from wake-up time</option></select><div class="error-message"></div></div><div class="form-group"><label for="hour">Hour (1-12)</label><input id="hour" max="12" min="1" required="" step="1" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="minute">Minute</label><input id="minute" max="59" min="0" required="" step="1" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="ampm">AM/PM</label><select id="ampm"><option value="AM">AM</option><option value="PM">PM</option></select><div class="error-message"></div></div></div>
+<div class="button-group">
+<button class="btn-primary" type="submit">Calculate</button>
+<button class="btn-secondary" onclick="handleSave()" type="button">💾 Save</button>
+<button class="btn-secondary" onclick="handleShare()" type="button">📤 Share</button>
+<button class="btn-secondary" onclick="handlePrint()" type="button">🖨️ Print</button>
+</div>
+</form>
+<div class="results-section" id="results">
+<h3>Suggested times</h3>
+<div class="result-grid">
+<div class="result-item"><label>Option 1</label><div class="value" id="result-1">—</div></div>
 <div class="result-item"><label>Option 2</label><div class="value" id="result-2">—</div></div>
 <div class="result-item"><label>Option 3</label><div class="value" id="result-3">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for general educational use only and is not medical advice. Sleep quality depends on more than cycle timing, including stress, illness, medications, and sleep disorders.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
+</div>
+</div>
+<div class="disclaimer">This calculator is for general educational use only and is not medical advice. Sleep quality depends on more than cycle timing, including stress, illness, medications, and sleep disorders.</div>
+<div class="updated">Last updated: April 19, 2026</div>
 </section>
-
 <div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/days-until.html">Days Until Calculator</a>
+<h3>Related Calculators</h3>
+<div class="related-links"><a href="/days-until.html">Days Until Calculator</a>
 <a href="/baby-due-date.html">Baby Due Date Calculator</a>
 <a href="/age-difference.html">Age Difference Calculator</a>
 <a href="/anniversary-calculator.html">Anniversary Calculator</a></div>
 </div>
-
 <div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Choose the option closest to your real schedule.</li>
+<h3>What to do next</h3>
+<ol><li>Choose the option closest to your real schedule.</li>
 <li>Use the result as a gentle guide, not a strict rule.</li>
 <li>Avoid caffeine late in the day if sleep quality matters.</li>
 <li>Keep your wake-up time consistent when possible.</li>
 <li>Talk to a clinician for ongoing sleep concerns.</li></ol>
 </div>
-
 <section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
 <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Sleep Cycle Calculator?</h2>
 <p style="line-height:1.7;margin-bottom:0.75rem;">The Sleep Cycle Calculator uses the well-established 90-minute sleep cycle model to suggest optimal wake-up times or bedtimes so you can rise at the natural end of a cycle rather than in the middle of deep sleep. A full night of sleep consists of multiple repeating cycles, each containing four distinct stages: two lighter NREM stages (N1 and N2), slow-wave deep sleep (N3), and REM sleep. Slow-wave sleep is critical for physical restoration, immune function, and memory consolidation, while REM sleep supports emotional processing and long-term memory. Waking during N3 causes the heaviest sleep inertia — that disoriented, heavy-headed feeling — while waking during or just after REM is associated with the greatest sense of refreshment. This tool is used by students, night-shift workers, frequent travelers managing jet lag, and anyone trying to optimize sleep quality without changing total sleep duration.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
 <ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
 <li><strong>What to calculate</strong> — Choose "Wake-up time from bedtime" to find when to set your alarm, or "Bedtime from wake-up time" to find when you should go to bed given a fixed morning schedule.</li>
@@ -161,13 +158,10 @@
 <li><strong>Minute</strong> — Enter the minutes (0–59) of your chosen time.</li>
 <li><strong>AM/PM</strong> — Select the correct period to place your time accurately on the daily clock.</li>
 </ol>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
 <p style="line-height:1.7;margin-bottom:0.75rem;">The calculator adds a 15-minute fall-asleep buffer then counts out 90-minute intervals to suggest three timing options. These correspond to 4 cycles (6 hours of sleep), 5 cycles (7.5 hours), and 6 cycles (9 hours). Most adults perform best on 5 cycles — 7.5 hours is closer to the ideal than 8 for many people simply because it aligns with a cycle boundary. The 4-cycle option is a minimum suitable for an occasional short night, not a regular schedule. Research consistently shows that chronic sleep under 7 hours — even when you adapt and no longer feel tired — produces measurable deficits in attention, working memory, and metabolic health that subjective reporting does not capture.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
 <p style="line-height:1.7;margin-bottom:0.75rem;">You plan to go to bed at 11:00 PM. The calculator adds 15 minutes (fall-asleep buffer), setting the clock to 11:15 PM. It then adds 90-minute increments: Option 1 (4 cycles) = 5:15 AM, Option 2 (5 cycles) = 6:45 AM, Option 3 (6 cycles) = 8:15 AM. If your alarm is fixed at 6:30 AM, Option 2 at 6:45 AM is the closest cycle-aligned time — setting your alarm at 6:45 AM instead of 6:30 AM and going to bed at 11 PM gives you a cycle-aligned 7.5-hour night rather than a mid-cycle interruption at 7.25 hours.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
 <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
 <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
@@ -194,7 +188,7 @@
 <p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/sleep-calculator.html" style="color:#2563eb;">Sleep Calculator</a> · <a href="/tdee.html" style="color:#2563eb;">TDEE Calculator</a> · <a href="/water-intake.html" style="color:#2563eb;">Water Intake Calculator</a></p>
 </section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
@@ -273,15 +267,14 @@ document.getElementById('result-3').textContent = saved.r3;
 
 </script>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
+<p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+<div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
+<a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>·
+    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>·
+    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>·
+    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>·
     <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
+</div>
 </footer>
 </body>
 </html>

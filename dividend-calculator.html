@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Dividend Calculator | Zaculators</title>
-<meta name="description" content="Estimate dividend income, dividend yield, and a 5-year dividend projection using your share count, price, and dividend per share.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate dividend income, dividend yield, and a 5-year dividend projection using your share count, price, and dividend per share." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -80,125 +81,117 @@ ol,ul{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Dividend Calculator</h1>
+<h1>Dividend Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how much dividend income a stock position could produce based on your share count, share price, and annual dividend per share. You can also test a simple dividend growth assumption to see what the estimated annual income could look like in year 5.</p>
-    <form id="dividend-form">
-      <div class="grid">
-        <div>
-          <label for="share-price">Share Price</label>
-          <input type="number" id="share-price" min="0.01" step="0.01" placeholder="e.g. 45.50" required>
-        </div>
-        <div>
-          <label for="share-count">Number of Shares</label>
-          <input type="number" id="share-count" min="0" step="0.0001" placeholder="e.g. 250" required>
-        </div>
-        <div>
-          <label for="annual-dividend">Annual Dividend per Share</label>
-          <input type="number" id="annual-dividend" min="0" step="0.0001" placeholder="e.g. 1.84" required>
-        </div>
-        <div>
-          <label for="dividend-growth">Dividend Growth Rate (%) optional</label>
-          <input type="number" id="dividend-growth" step="0.01" placeholder="e.g. 4">
-        </div>
-      </div>
-      <button type="submit">Estimate Dividend Income</button>
-    </form>
-    <div id="dividend-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Annual Dividend Income</span><span id="annual-income" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Monthly Dividend Income Estimate</span><span id="monthly-income" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Dividend Yield</span><span id="dividend-yield" class="metric-value">0.00%</span></div>
-        <div class="metric"><span class="metric-label">5-Year Projected Dividend Income</span><span id="projected-income" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="dividend-note" class="intro"></p>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates current dividend income and a simple long-range projection based on the inputs you provide. It is useful when comparing income stocks, building an income portfolio plan, or checking how share count changes affect annual cash flow. Results are estimates and do not predict future board decisions or market prices.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <ul>
-      <li><strong>Annual dividend income = Number of shares x Annual dividend per share</strong></li>
-      <li><strong>Monthly income estimate = Annual dividend income / 12</strong></li>
-      <li><strong>Dividend yield = Annual dividend per share / Share price x 100</strong></li>
-      <li><strong>5-year projected dividend income = Current annual income x (1 + growth rate)^5</strong></li>
-    </ul>
-  </section>
-
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">Suppose a stock trades at $45.50, you own 250 shares, and it pays $1.84 in annual dividends per share.</p>
-    <ul>
-      <li>Annual income = 250 x $1.84 = $460.00</li>
-      <li>Monthly estimate = $460.00 / 12 = $38.33</li>
-      <li>Yield = $1.84 / $45.50 x 100 = 4.04%</li>
-    </ul>
-    <p class="intro">If you also enter 4% dividend growth, the calculator estimates the annual dividend income in year 5 using that growth rate.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The annual income figure shows the estimated cash dividends generated by the current position over one year if the dividend rate stays unchanged. Yield helps compare income against the current share price. The 5-year projection shows how growth could affect annual income, but it should be treated as a planning estimate only.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Using a quarterly dividend as if it were an annual dividend.</li>
-      <li>Forgetting that dividend yield changes when the share price changes.</li>
-      <li>Assuming a growth rate will continue every year without interruption.</li>
-      <li>Ignoring taxes, reinvestment, or changes in the number of shares held.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This page provides informational estimates only and is not investment advice. Dividends are never guaranteed and may be reduced, suspended, or changed at any time. Results are estimates based solely on the inputs you enter.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="investment-return.html">Investment Return Calculator</a>
-      <a href="cagr-calculator.html">CAGR Calculator</a>
-      <a href="etf-calculator.html">ETF Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this dividend calculator estimate?</h3>
-      <p class="answer">It estimates annual dividend income, a monthly income estimate, dividend yield, and a simple year-5 dividend projection if you enter a growth rate.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How is dividend yield calculated?</h3>
-      <p class="answer">Dividend yield is estimated as annual dividend per share divided by share price, multiplied by 100.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What does the 5-year projection mean?</h3>
-      <p class="answer">It estimates the annual dividend income in year 5 by applying the growth rate to the annual dividend per share over five years.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these income results guaranteed?</h3>
-      <p class="answer">No. Dividends can be reduced, suspended, or increased, so all results on this page are estimates only.</p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how much dividend income a stock position could produce based on your share count, share price, and annual dividend per share. You can also test a simple dividend growth assumption to see what the estimated annual income could look like in year 5.</p>
+<form id="dividend-form">
+<div class="grid">
+<div>
+<label for="share-price">Share Price</label>
+<input id="share-price" min="0.01" placeholder="e.g. 45.50" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="share-count">Number of Shares</label>
+<input id="share-count" min="0" placeholder="e.g. 250" required="" step="0.0001" type="number"/>
+</div>
+<div>
+<label for="annual-dividend">Annual Dividend per Share</label>
+<input id="annual-dividend" min="0" placeholder="e.g. 1.84" required="" step="0.0001" type="number"/>
+</div>
+<div>
+<label for="dividend-growth">Dividend Growth Rate (%) optional</label>
+<input id="dividend-growth" placeholder="e.g. 4" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Estimate Dividend Income</button>
+</form>
+<div aria-live="polite" class="results" id="dividend-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Annual Dividend Income</span><span class="metric-value" id="annual-income">$0.00</span></div>
+<div class="metric"><span class="metric-label">Monthly Dividend Income Estimate</span><span class="metric-value" id="monthly-income">$0.00</span></div>
+<div class="metric"><span class="metric-label">Dividend Yield</span><span class="metric-value" id="dividend-yield">0.00%</span></div>
+<div class="metric"><span class="metric-label">5-Year Projected Dividend Income</span><span class="metric-value" id="projected-income">$0.00</span></div>
+</div>
+<p class="intro" id="dividend-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">This calculator estimates current dividend income and a simple long-range projection based on the inputs you provide. It is useful when comparing income stocks, building an income portfolio plan, or checking how share count changes affect annual cash flow. Results are estimates and do not predict future board decisions or market prices.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li><strong>Annual dividend income = Number of shares x Annual dividend per share</strong></li>
+<li><strong>Monthly income estimate = Annual dividend income / 12</strong></li>
+<li><strong>Dividend yield = Annual dividend per share / Share price x 100</strong></li>
+<li><strong>5-year projected dividend income = Current annual income x (1 + growth rate)^5</strong></li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">Suppose a stock trades at $45.50, you own 250 shares, and it pays $1.84 in annual dividends per share.</p>
+<ul>
+<li>Annual income = 250 x $1.84 = $460.00</li>
+<li>Monthly estimate = $460.00 / 12 = $38.33</li>
+<li>Yield = $1.84 / $45.50 x 100 = 4.04%</li>
+</ul>
+<p class="intro">If you also enter 4% dividend growth, the calculator estimates the annual dividend income in year 5 using that growth rate.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The annual income figure shows the estimated cash dividends generated by the current position over one year if the dividend rate stays unchanged. Yield helps compare income against the current share price. The 5-year projection shows how growth could affect annual income, but it should be treated as a planning estimate only.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using a quarterly dividend as if it were an annual dividend.</li>
+<li>Forgetting that dividend yield changes when the share price changes.</li>
+<li>Assuming a growth rate will continue every year without interruption.</li>
+<li>Ignoring taxes, reinvestment, or changes in the number of shares held.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This page provides informational estimates only and is not investment advice. Dividends are never guaranteed and may be reduced, suspended, or changed at any time. Results are estimates based solely on the inputs you enter.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="investment-return.html">Investment Return Calculator</a>
+<a href="cagr-calculator.html">CAGR Calculator</a>
+<a href="etf-calculator.html">ETF Calculator</a>
+</div>
+</section>
+<section class="support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What does this dividend calculator estimate?</h3>
+<p class="answer">It estimates annual dividend income, a monthly income estimate, dividend yield, and a simple year-5 dividend projection if you enter a growth rate.</p>
+</div>
+<div class="faq-item">
+<h3>How is dividend yield calculated?</h3>
+<p class="answer">Dividend yield is estimated as annual dividend per share divided by share price, multiplied by 100.</p>
+</div>
+<div class="faq-item">
+<h3>What does the 5-year projection mean?</h3>
+<p class="answer">It estimates the annual dividend income in year 5 by applying the growth rate to the annual dividend per share over five years.</p>
+</div>
+<div class="faq-item">
+<h3>Are these income results guaranteed?</h3>
+<p class="answer">No. Dividends can be reduced, suspended, or increased, so all results on this page are estimates only.</p>
+</div>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAT Calculator UK | Zaculators</title>
-<meta name="description" content="Free VAT Calculator UK — It estimates a gross amount after VAT by adding UK VAT to the net amount you enter.">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VAT Calculator UK | Zaculators</title>
+<meta content="Free VAT Calculator UK — It estimates a gross amount after VAT by adding UK VAT to the net amount you enter." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,92 +43,90 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this UK VAT calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a gross amount after VAT by adding UK VAT to the net amount you enter."}},{"@type":"Question","name":"What VAT rates does this page include?","acceptedAnswer":{"@type":"Answer","text":"This calculator includes 20%, 5%, and 0% as quick options for common UK VAT scenarios."}},{"@type":"Question","name":"Does it decide whether my sale is standard-rated or reduced-rated?","acceptedAnswer":{"@type":"Answer","text":"No. You need to choose the VAT rate that matches your goods or services."}},{"@type":"Question","name":"Why can the final invoice differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"The final invoice can differ because of item-specific treatment, discounts, rounding, or special VAT rules."}},{"@type":"Question","name":"Where should I verify current UK VAT rules?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with HMRC or the official UK government source before relying on the result."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this UK VAT calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates a gross amount after VAT by adding UK VAT to the net amount you enter."}},{"@type":"Question","name":"What VAT rates does this page include?","acceptedAnswer":{"@type":"Answer","text":"This calculator includes 20%, 5%, and 0% as quick options for common UK VAT scenarios."}},{"@type":"Question","name":"Does it decide whether my sale is standard-rated or reduced-rated?","acceptedAnswer":{"@type":"Answer","text":"No. You need to choose the VAT rate that matches your goods or services."}},{"@type":"Question","name":"Why can the final invoice differ from this estimate?","acceptedAnswer":{"@type":"Answer","text":"The final invoice can differ because of item-specific treatment, discounts, rounding, or special VAT rules."}},{"@type":"Question","name":"Where should I verify current UK VAT rules?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with HMRC or the official UK government source before relying on the result."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>VAT Calculator UK</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="amount">Net Amount</label><input id="amount" type="number" min="0" step="0.01" placeholder="100" required></div>
-                <div>
-                    <label for="rate">VAT Rate</label>
-                    <select id="rate">
-                        <option value="20">20%</option>
-                        <option value="5">5%</option>
-                        <option value="0">0%</option>
-                    </select>
-                </div>
-                <div class="full"><button type="submit">Add VAT</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Rates and rules can change. Confirm current UK VAT treatment for your goods or services.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">Value Added Tax in the UK is administered by HMRC and applied using a standard rate on most goods and services, alongside a reduced rate for specific categories (like domestic energy) and zero-rating for items like most food and children's clothing. Because the UK uses multiple VAT rates rather than one uniform figure, this calculator lets you enter the specific rate applicable to your goods or service, rather than assuming the standard rate applies universally.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ul>
-                <li>VAT amount = Net amount x VAT rate</li>
-                <li>Gross amount = Net amount + VAT amount</li>
-            </ul>
-            <p class="subtle">The page includes quick rate options of <strong>20%</strong>, <strong>5%</strong>, and <strong>0%</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If the net amount is <strong>GBP 100</strong> and the VAT rate is <strong>20%</strong>, VAT is <strong>GBP 20</strong> and the gross total is <strong>GBP 120</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The main result is the estimated price after VAT. The detail line shows the VAT portion added to the original net amount.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ul>
-                <li>Choosing 20% when the item is actually zero-rated or reduced-rated.</li>
-                <li>Entering a VAT-inclusive price instead of a net price.</li>
-                <li>Ignoring discounts that should be applied before VAT.</li>
-                <li>Using this estimate without checking current HMRC guidance.</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Verify current rates with HMRC or the official UK government source before relying on the result.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="vat-reverse-calculator.html">VAT Reverse Calculator</a><a href="vat-calculator-eu.html">VAT Calculator EU</a><a href="sales-tax-calculator.html">Sales Tax Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Tips for a More Accurate Estimate</h2>
-            <ul><li>Confirm which of the UK's several VAT rates applies to your specific goods or service.</li><li>Check HMRC's current category classifications, since some items move between rate bands over time.</li><li>Keep clear records distinguishing standard, reduced, and zero-rated sales for accurate filing.</li><li>Register for VAT proactively if you expect to exceed the mandatory turnover threshold.</li><li>Use HMRC's Making Tax Digital tools for official VAT return submissions.</li></ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Does the UK have one VAT rate or several?</h3><p class="zac-support-answer">The UK has a standard rate for most goods and services, a reduced rate for specific categories like home energy, and zero-rating for items like most food, books, and children's clothing — you need to know which applies to your transaction.</p></div><div class="zac-support-faq-item"><h3>Who is required to register for VAT in the UK?</h3><p class="zac-support-answer">Businesses with taxable turnover exceeding HMRC's registration threshold must register; voluntary registration is available below that threshold.</p></div><div class="zac-support-faq-item"><h3>How is VAT-inclusive price calculated?</h3><p class="zac-support-answer">This calculator multiplies your net amount by the VAT rate you enter to estimate the tax, then adds that to your original amount for the VAT-inclusive total.</p></div><div class="zac-support-faq-item"><h3>What is the difference between zero-rated and VAT-exempt?</h3><p class="zac-support-answer">Zero-rated goods are technically taxable but at 0%, allowing businesses to reclaim related input VAT, while exempt goods are outside the VAT system entirely, generally without input VAT recovery.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm the current UK VAT rates?</h3><p class="zac-support-answer">HMRC publishes current standard, reduced, and zero rates, along with category classifications, on its official website.</p></div></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides VAT estimates only and is not tax, legal, or accounting advice. Actual VAT treatment depends on the goods or services sold and current UK rules.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>VAT Calculator UK</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="amount">Net Amount</label><input id="amount" min="0" placeholder="100" required="" step="0.01" type="number"/></div>
+<div>
+<label for="rate">VAT Rate</label>
+<select id="rate">
+<option value="20">20%</option>
+<option value="5">5%</option>
+<option value="0">0%</option>
+</select>
+</div>
+<div class="full"><button type="submit">Add VAT</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Rates and rules can change. Confirm current UK VAT treatment for your goods or services.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">Value Added Tax in the UK is administered by HMRC and applied using a standard rate on most goods and services, alongside a reduced rate for specific categories (like domestic energy) and zero-rating for items like most food and children's clothing. Because the UK uses multiple VAT rates rather than one uniform figure, this calculator lets you enter the specific rate applicable to your goods or service, rather than assuming the standard rate applies universally.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li>VAT amount = Net amount x VAT rate</li>
+<li>Gross amount = Net amount + VAT amount</li>
+</ul>
+<p class="subtle">The page includes quick rate options of <strong>20%</strong>, <strong>5%</strong>, and <strong>0%</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If the net amount is <strong>GBP 100</strong> and the VAT rate is <strong>20%</strong>, VAT is <strong>GBP 20</strong> and the gross total is <strong>GBP 120</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The main result is the estimated price after VAT. The detail line shows the VAT portion added to the original net amount.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Choosing 20% when the item is actually zero-rated or reduced-rated.</li>
+<li>Entering a VAT-inclusive price instead of a net price.</li>
+<li>Ignoring discounts that should be applied before VAT.</li>
+<li>Using this estimate without checking current HMRC guidance.</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Verify current rates with HMRC or the official UK government source before relying on the result.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="vat-reverse-calculator.html">VAT Reverse Calculator</a><a href="vat-calculator-eu.html">VAT Calculator EU</a><a href="sales-tax-calculator.html">Sales Tax Calculator</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Tips for a More Accurate Estimate</h2>
+<ul><li>Confirm which of the UK's several VAT rates applies to your specific goods or service.</li><li>Check HMRC's current category classifications, since some items move between rate bands over time.</li><li>Keep clear records distinguishing standard, reduced, and zero-rated sales for accurate filing.</li><li>Register for VAT proactively if you expect to exceed the mandatory turnover threshold.</li><li>Use HMRC's Making Tax Digital tools for official VAT return submissions.</li></ul>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Does the UK have one VAT rate or several?</h3><p class="zac-support-answer">The UK has a standard rate for most goods and services, a reduced rate for specific categories like home energy, and zero-rating for items like most food, books, and children's clothing — you need to know which applies to your transaction.</p></div><div class="zac-support-faq-item"><h3>Who is required to register for VAT in the UK?</h3><p class="zac-support-answer">Businesses with taxable turnover exceeding HMRC's registration threshold must register; voluntary registration is available below that threshold.</p></div><div class="zac-support-faq-item"><h3>How is VAT-inclusive price calculated?</h3><p class="zac-support-answer">This calculator multiplies your net amount by the VAT rate you enter to estimate the tax, then adds that to your original amount for the VAT-inclusive total.</p></div><div class="zac-support-faq-item"><h3>What is the difference between zero-rated and VAT-exempt?</h3><p class="zac-support-answer">Zero-rated goods are technically taxable but at 0%, allowing businesses to reclaim related input VAT, while exempt goods are outside the VAT system entirely, generally without input VAT recovery.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm the current UK VAT rates?</h3><p class="zac-support-answer">HMRC publishes current standard, reduced, and zero rates, along with category classifications, on its official website.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides VAT estimates only and is not tax, legal, or accounting advice. Actual VAT treatment depends on the goods or services sold and current UK rules.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const money = value => new Intl.NumberFormat("en-GB", { style:"currency", currency:"GBP" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

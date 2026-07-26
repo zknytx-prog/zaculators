@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Income Tax Calculator UK | Zaculators</title>
-<meta name="description" content="Free Income Tax Calculator UK — It estimates UK income tax using the personal allowance and the tax bands built into this page.">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Income Tax Calculator UK | Zaculators</title>
+<meta content="Free Income Tax Calculator UK — It estimates UK income tax using the personal allowance and the tax bands built into this page." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,83 +43,81 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this UK income tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates UK income tax using the personal allowance and the tax bands built into this page."}},{"@type":"Question","name":"Does this page include National Insurance automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates income tax only and does not automatically add every other payroll deduction."}},{"@type":"Question","name":"What happens after the personal allowance is used up?","acceptedAnswer":{"@type":"Answer","text":"The calculator taxes the remaining income according to the rates coded into the page for the simplified estimate."}},{"@type":"Question","name":"Should I verify current HMRC rates before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tax bands and allowances can change, so you should verify current HMRC guidance."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this UK income tax calculator estimate?","acceptedAnswer":{"@type":"Answer","text":"It estimates UK income tax using the personal allowance and the tax bands built into this page."}},{"@type":"Question","name":"Does this page include National Insurance automatically?","acceptedAnswer":{"@type":"Answer","text":"No. This page estimates income tax only and does not automatically add every other payroll deduction."}},{"@type":"Question","name":"What happens after the personal allowance is used up?","acceptedAnswer":{"@type":"Answer","text":"The calculator taxes the remaining income according to the rates coded into the page for the simplified estimate."}},{"@type":"Question","name":"Should I verify current HMRC rates before relying on the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tax bands and allowances can change, so you should verify current HMRC guidance."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Income Tax Calculator UK</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="income">Annual Income</label><input id="income" type="number" min="0" step="0.01" placeholder="50000" required></div>
-                <div class="full"><button type="submit">Estimate Income Tax</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">UK tax bands and allowances can change. This is a simplified estimate only.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">UK Income Tax is administered by HMRC using a progressive band system (basic, higher, and additional rate bands in England, Wales, and Northern Ireland; Scotland has its own distinct bands), applied after your Personal Allowance is deducted from taxable income. Because your Personal Allowance can taper down at higher incomes and Scotland uses different bands than the rest of the UK, this calculator uses an editable rate so you can model your specific band and nation's tax structure.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ol>
-                <li>Taxable income = max(annual income - personal allowance, 0).</li>
-                <li>The calculator applies 20% to the first taxable band it models and 40% to taxable income above that point.</li>
-                <li>Estimated after-tax income = annual income - estimated income tax.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">With annual income of £50,000, the calculator removes the £12,570 personal allowance and leaves £37,430 as taxable income. Because that taxable amount sits within the first band used here, the page estimates £7,486 of income tax and about £42,514 after income tax.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is the estimated annual income tax from this simplified model. The detail line shows the remaining annual income after the estimated tax, before National Insurance, pension deductions, or other payroll items.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ol>
-                <li>Assuming the page includes National Insurance when it is estimating income tax only.</li>
-                <li>Using salary sacrifice or other pre-tax arrangements in the wrong way when comparing figures.</li>
-                <li>Relying on a simplified estimate without checking the current HMRC thresholds for your tax year.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Check HMRC and GOV.UK for <a href="https://www.gov.uk/income-tax">Income Tax: introduction</a> and the current <a href="https://www.gov.uk/income-tax-rates">Income Tax rates and Personal Allowances</a>. Verify current rates with the official government source before relying on the estimate.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="salary-calculator-uk.html">Salary Calculator UK</a><a href="national-insurance-calculator-uk.html">National Insurance Calculator UK</a><a href="tax-bracket-calculator.html">Tax Bracket Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Tips for a More Accurate Estimate</h2>
-            <ul><li>Confirm whether you're subject to UK-wide bands or Scotland's distinct bands.</li><li>Check whether your Personal Allowance tapers due to higher income.</li><li>Pair this with the National Insurance Calculator UK for your total statutory deduction picture.</li><li>Recheck HMRC's current band thresholds each tax year.</li><li>Use HMRC's official tax calculator or your tax code for filing-accurate figures.</li></ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Does Scotland have different Income Tax rates than the rest of the UK?</h3><p class="zac-support-answer">Yes, Scotland sets its own Income Tax bands and rates, which differ from those applying in England, Wales, and Northern Ireland, even though National Insurance remains UK-wide.</p></div><div class="zac-support-faq-item"><h3>What is the Personal Allowance?</h3><p class="zac-support-answer">It's the amount of income you can earn tax-free before Income Tax applies, though it tapers down for higher earners above a certain income threshold set by HMRC.</p></div><div class="zac-support-faq-item"><h3>Does this calculator apply my Personal Allowance automatically?</h3><p class="zac-support-answer">No, subtract your applicable Personal Allowance from gross income before entering a taxable income figure, or adjust the rate to reflect your effective burden.</p></div><div class="zac-support-faq-item"><h3>Is Income Tax the same as National Insurance?</h3><p class="zac-support-answer">No, they're separate systems — Income Tax funds general government spending while National Insurance specifically funds state benefits and pension entitlement, calculated using different thresholds.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm current official Income Tax bands?</h3><p class="zac-support-answer">HMRC publishes current band tables for England/Wales/Northern Ireland, while Revenue Scotland or the Scottish Government publishes Scotland's specific bands.</p></div></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Limitations / Disclaimer</h2>
-            <p class="subtle">This calculator provides a simplified UK income-tax estimate only and is not tax advice. It does not automatically model every relief, tapered allowance, Scottish/Welsh variation, or payroll deduction.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Income Tax Calculator UK</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="income">Annual Income</label><input id="income" min="0" placeholder="50000" required="" step="0.01" type="number"/></div>
+<div class="full"><button type="submit">Estimate Income Tax</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">UK tax bands and allowances can change. This is a simplified estimate only.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">UK Income Tax is administered by HMRC using a progressive band system (basic, higher, and additional rate bands in England, Wales, and Northern Ireland; Scotland has its own distinct bands), applied after your Personal Allowance is deducted from taxable income. Because your Personal Allowance can taper down at higher incomes and Scotland uses different bands than the rest of the UK, this calculator uses an editable rate so you can model your specific band and nation's tax structure.</p>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ol>
+<li>Taxable income = max(annual income - personal allowance, 0).</li>
+<li>The calculator applies 20% to the first taxable band it models and 40% to taxable income above that point.</li>
+<li>Estimated after-tax income = annual income - estimated income tax.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">With annual income of £50,000, the calculator removes the £12,570 personal allowance and leaves £37,430 as taxable income. Because that taxable amount sits within the first band used here, the page estimates £7,486 of income tax and about £42,514 after income tax.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is the estimated annual income tax from this simplified model. The detail line shows the remaining annual income after the estimated tax, before National Insurance, pension deductions, or other payroll items.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ol>
+<li>Assuming the page includes National Insurance when it is estimating income tax only.</li>
+<li>Using salary sacrifice or other pre-tax arrangements in the wrong way when comparing figures.</li>
+<li>Relying on a simplified estimate without checking the current HMRC thresholds for your tax year.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Check HMRC and GOV.UK for <a href="https://www.gov.uk/income-tax">Income Tax: introduction</a> and the current <a href="https://www.gov.uk/income-tax-rates">Income Tax rates and Personal Allowances</a>. Verify current rates with the official government source before relying on the estimate.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="salary-calculator-uk.html">Salary Calculator UK</a><a href="national-insurance-calculator-uk.html">National Insurance Calculator UK</a><a href="tax-bracket-calculator.html">Tax Bracket Calculator</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Tips for a More Accurate Estimate</h2>
+<ul><li>Confirm whether you're subject to UK-wide bands or Scotland's distinct bands.</li><li>Check whether your Personal Allowance tapers due to higher income.</li><li>Pair this with the National Insurance Calculator UK for your total statutory deduction picture.</li><li>Recheck HMRC's current band thresholds each tax year.</li><li>Use HMRC's official tax calculator or your tax code for filing-accurate figures.</li></ul>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq"><div class="zac-support-faq-item"><h3>Does Scotland have different Income Tax rates than the rest of the UK?</h3><p class="zac-support-answer">Yes, Scotland sets its own Income Tax bands and rates, which differ from those applying in England, Wales, and Northern Ireland, even though National Insurance remains UK-wide.</p></div><div class="zac-support-faq-item"><h3>What is the Personal Allowance?</h3><p class="zac-support-answer">It's the amount of income you can earn tax-free before Income Tax applies, though it tapers down for higher earners above a certain income threshold set by HMRC.</p></div><div class="zac-support-faq-item"><h3>Does this calculator apply my Personal Allowance automatically?</h3><p class="zac-support-answer">No, subtract your applicable Personal Allowance from gross income before entering a taxable income figure, or adjust the rate to reflect your effective burden.</p></div><div class="zac-support-faq-item"><h3>Is Income Tax the same as National Insurance?</h3><p class="zac-support-answer">No, they're separate systems — Income Tax funds general government spending while National Insurance specifically funds state benefits and pension entitlement, calculated using different thresholds.</p></div><div class="zac-support-faq-item"><h3>Where can I confirm current official Income Tax bands?</h3><p class="zac-support-answer">HMRC publishes current band tables for England/Wales/Northern Ireland, while Revenue Scotland or the Scottish Government publishes Scotland's specific bands.</p></div></div>
+</section>
+<section class="zac-support-card">
+<h2>Limitations / Disclaimer</h2>
+<p class="subtle">This calculator provides a simplified UK income-tax estimate only and is not tax advice. It does not automatically model every relief, tapered allowance, Scottish/Welsh variation, or payroll deduction.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 12, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const gbp = value => new Intl.NumberFormat("en-GB", { style:"currency", currency:"GBP" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {
             event.preventDefault();

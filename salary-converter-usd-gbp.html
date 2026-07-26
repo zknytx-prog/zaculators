@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salary Converter USD GBP | Zaculators</title>
-<meta name="description" content="Free Salary Converter USD GBP — It converts an annual salary in U.S. dollars into an estimated annual salary in British pounds using the exchange rate you...">
-    <style>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salary Converter USD GBP | Zaculators</title>
+<meta content="Free Salary Converter USD GBP — It converts an annual salary in U.S. dollars into an estimated annual salary in British pounds using the exchange rate you..." name="description"/>
+<style>
         :root { --primary:#2563eb; --bg:#f8fafc; --text:#0f172a; --border:#e2e8f0; --success:#16a34a; }
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
@@ -42,95 +43,93 @@
         .zac-support-answer { margin-top:0.4rem; }
 
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this USD to GBP salary converter estimate?","acceptedAnswer":{"@type":"Answer","text":"It converts an annual salary in U.S. dollars into an estimated annual salary in British pounds using the exchange rate you enter."}},{"@type":"Question","name":"Does this include UK income tax or National Insurance?","acceptedAnswer":{"@type":"Answer","text":"No. This page converts gross salary only and does not automatically apply UK income tax, National Insurance, pension contributions, or other deductions."}},{"@type":"Question","name":"Why can a converted salary still be misleading?","acceptedAnswer":{"@type":"Answer","text":"A straight conversion can miss tax differences, pension rules, employer benefits, and cost-of-living changes between countries."}},{"@type":"Question","name":"Should I test more than one exchange rate?","acceptedAnswer":{"@type":"Answer","text":"Yes. Testing several rates helps you see how currency moves can change the value of the same salary offer."}},{"@type":"Question","name":"Where should I verify current rates?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or financial provider you rely on before making a final compensation decision."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this USD to GBP salary converter estimate?","acceptedAnswer":{"@type":"Answer","text":"It converts an annual salary in U.S. dollars into an estimated annual salary in British pounds using the exchange rate you enter."}},{"@type":"Question","name":"Does this include UK income tax or National Insurance?","acceptedAnswer":{"@type":"Answer","text":"No. This page converts gross salary only and does not automatically apply UK income tax, National Insurance, pension contributions, or other deductions."}},{"@type":"Question","name":"Why can a converted salary still be misleading?","acceptedAnswer":{"@type":"Answer","text":"A straight conversion can miss tax differences, pension rules, employer benefits, and cost-of-living changes between countries."}},{"@type":"Question","name":"Should I test more than one exchange rate?","acceptedAnswer":{"@type":"Answer","text":"Yes. Testing several rates helps you see how currency moves can change the value of the same salary offer."}},{"@type":"Question","name":"Where should I verify current rates?","acceptedAnswer":{"@type":"Answer","text":"Verify current rates with the official government source or financial provider you rely on before making a final compensation decision."}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>Salary Converter USD to GBP</h1>
-        <p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
-    </header>
-    <main>
-        <section class="panel">
-            <form id="form" class="grid">
-                <div><label for="salary">Annual Salary (USD)</label><input id="salary" type="number" min="0" step="0.01" placeholder="85000" required></div>
-                <div><label for="rate">Exchange Rate USD to GBP</label><input id="rate" type="number" min="0" step="0.0001" placeholder="0.79" required></div>
-                <div class="full"><button type="submit">Convert Salary</button></div>
-            </form>
-            <div id="result" class="result">
-                <div id="value" class="value"></div>
-                <p id="detail" class="subtle"></p>
-            </div>
-        </section>
-        <div class="disclaimer">Exchange rates move frequently and local taxes or cost-of-living differences are not included.</div>
-
-        <section class="zac-support-card">
-            <h2>What This Calculator Estimates</h2>
-            <p class="subtle">This USD to GBP salary converter estimates the pound sterling equivalent of a U.S. annual salary using the exchange rate you enter. It is useful for comparing compensation across U.S. and UK roles before you model local deductions.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>How to Use This Calculator</h2>
-            <ol>
-                <li>Enter the annual salary amount in U.S. dollars.</li>
-                <li>Enter the USD to GBP exchange rate you want to use.</li>
-                <li>Click <strong>Convert Salary</strong> to calculate the GBP equivalent.</li>
-                <li>Review the converted figure and the exchange rate shown under the result.</li>
-                <li>Test a range of rates if you are planning around a future start date.</li>
-            </ol>
-        </section>
-        <section class="zac-support-card">
-            <h2>Formula / Method Used</h2>
-            <ul>
-                <li>Converted salary in GBP = Salary in USD x USD-to-GBP exchange rate</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Worked Example</h2>
-            <p class="subtle">If a salary is <strong>$85,000 USD</strong> and the exchange rate is <strong>0.7900</strong>, the estimated converted salary is <strong>GBP 67,150</strong>.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>What the Result Means</h2>
-            <p class="subtle">The result is the gross annual salary expressed in pounds at the rate you entered. It does not account for UK tax, National Insurance, pension contributions, bonuses, or the cost of living.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Common Mistakes</h2>
-            <ul>
-                <li>Assuming a converted gross salary equals UK take-home pay.</li>
-                <li>Using one exchange rate without checking a conservative scenario.</li>
-                <li>Ignoring pension matching, healthcare, and paid leave differences.</li>
-                <li>Comparing salary without checking local housing and transport costs.</li>
-            </ul>
-        </section>
-        <section class="zac-support-card">
-            <h2>Official References</h2>
-            <p class="subtle">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p>
-        </section>
-        <section class="zac-support-card">
-            <h2>Related Calculators</h2>
-            <div class="zac-related-links"><a href="salary-calculator-uk.html">Salary Calculator UK</a><a href="payroll-calculator.html">Payroll Calculator</a><a href="hourly-to-salary-calculator.html">Hourly To Salary Calculator</a></div>
-        </section>
-        <section class="zac-support-card">
-            <h2>Frequently Asked Questions</h2>
-            <div class="zac-support-faq">
-                <div class="zac-support-faq-item"><h3>What does this USD to GBP salary converter estimate?</h3><p class="zac-support-answer">It converts an annual salary in U.S. dollars into an estimated annual salary in British pounds using the exchange rate you enter.</p></div>
-                <div class="zac-support-faq-item"><h3>Does this include UK income tax or National Insurance?</h3><p class="zac-support-answer">No. This page converts gross salary only and does not automatically apply UK income tax, National Insurance, pension contributions, or other deductions.</p></div>
-                <div class="zac-support-faq-item"><h3>Why can a converted salary still be misleading?</h3><p class="zac-support-answer">A straight conversion can miss tax differences, pension rules, employer benefits, and cost-of-living changes between countries.</p></div>
-                <div class="zac-support-faq-item"><h3>Should I test more than one exchange rate?</h3><p class="zac-support-answer">Yes. Testing several rates helps you see how currency moves can change the value of the same salary offer.</p></div>
-                <div class="zac-support-faq-item"><h3>Where should I verify current rates?</h3><p class="zac-support-answer">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p></div>
-            </div>
-        </section>
-        <section class="zac-support-card">
-            <h2>General Disclaimer</h2>
-            <p class="subtle">This calculator provides currency-converted salary estimates only and is not tax, payroll, employment, immigration, or financial advice. Real compensation value depends on exchange rates, deductions, and package structure.</p>
-            <p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
-        </section>
-
-    <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<header>
+<h1>Salary Converter USD to GBP</h1>
+<p class="subtle"><a href="index.html">Zaculators</a> / Tax &amp; International</p>
+</header>
+<main>
+<section class="panel">
+<form class="grid" id="form">
+<div><label for="salary">Annual Salary (USD)</label><input id="salary" min="0" placeholder="85000" required="" step="0.01" type="number"/></div>
+<div><label for="rate">Exchange Rate USD to GBP</label><input id="rate" min="0" placeholder="0.79" required="" step="0.0001" type="number"/></div>
+<div class="full"><button type="submit">Convert Salary</button></div>
+</form>
+<div class="result" id="result">
+<div class="value" id="value"></div>
+<p class="subtle" id="detail"></p>
+</div>
+</section>
+<div class="disclaimer">Exchange rates move frequently and local taxes or cost-of-living differences are not included.</div>
+<section class="zac-support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="subtle">This USD to GBP salary converter estimates the pound sterling equivalent of a U.S. annual salary using the exchange rate you enter. It is useful for comparing compensation across U.S. and UK roles before you model local deductions.</p>
+</section>
+<section class="zac-support-card">
+<h2>How to Use This Calculator</h2>
+<ol>
+<li>Enter the annual salary amount in U.S. dollars.</li>
+<li>Enter the USD to GBP exchange rate you want to use.</li>
+<li>Click <strong>Convert Salary</strong> to calculate the GBP equivalent.</li>
+<li>Review the converted figure and the exchange rate shown under the result.</li>
+<li>Test a range of rates if you are planning around a future start date.</li>
+</ol>
+</section>
+<section class="zac-support-card">
+<h2>Formula / Method Used</h2>
+<ul>
+<li>Converted salary in GBP = Salary in USD x USD-to-GBP exchange rate</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Worked Example</h2>
+<p class="subtle">If a salary is <strong>$85,000 USD</strong> and the exchange rate is <strong>0.7900</strong>, the estimated converted salary is <strong>GBP 67,150</strong>.</p>
+</section>
+<section class="zac-support-card">
+<h2>What the Result Means</h2>
+<p class="subtle">The result is the gross annual salary expressed in pounds at the rate you entered. It does not account for UK tax, National Insurance, pension contributions, bonuses, or the cost of living.</p>
+</section>
+<section class="zac-support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Assuming a converted gross salary equals UK take-home pay.</li>
+<li>Using one exchange rate without checking a conservative scenario.</li>
+<li>Ignoring pension matching, healthcare, and paid leave differences.</li>
+<li>Comparing salary without checking local housing and transport costs.</li>
+</ul>
+</section>
+<section class="zac-support-card">
+<h2>Official References</h2>
+<p class="subtle">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p>
+</section>
+<section class="zac-support-card">
+<h2>Related Calculators</h2>
+<div class="zac-related-links"><a href="salary-calculator-uk.html">Salary Calculator UK</a><a href="payroll-calculator.html">Payroll Calculator</a><a href="hourly-to-salary-calculator.html">Hourly To Salary Calculator</a></div>
+</section>
+<section class="zac-support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="zac-support-faq">
+<div class="zac-support-faq-item"><h3>What does this USD to GBP salary converter estimate?</h3><p class="zac-support-answer">It converts an annual salary in U.S. dollars into an estimated annual salary in British pounds using the exchange rate you enter.</p></div>
+<div class="zac-support-faq-item"><h3>Does this include UK income tax or National Insurance?</h3><p class="zac-support-answer">No. This page converts gross salary only and does not automatically apply UK income tax, National Insurance, pension contributions, or other deductions.</p></div>
+<div class="zac-support-faq-item"><h3>Why can a converted salary still be misleading?</h3><p class="zac-support-answer">A straight conversion can miss tax differences, pension rules, employer benefits, and cost-of-living changes between countries.</p></div>
+<div class="zac-support-faq-item"><h3>Should I test more than one exchange rate?</h3><p class="zac-support-answer">Yes. Testing several rates helps you see how currency moves can change the value of the same salary offer.</p></div>
+<div class="zac-support-faq-item"><h3>Where should I verify current rates?</h3><p class="zac-support-answer">Verify current rates with the official government source or financial provider you rely on before making a final compensation decision.</p></div>
+</div>
+</section>
+<section class="zac-support-card">
+<h2>General Disclaimer</h2>
+<p class="subtle">This calculator provides currency-converted salary estimates only and is not tax, payroll, employment, immigration, or financial advice. Real compensation value depends on exchange rates, deductions, and package structure.</p>
+<p class="subtle" style="margin-top:0.85rem">Last updated: May 22, 2026</p>
+</section>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
-    <footer><p><strong>Zaculators</strong> &copy; 2026</p></footer>
-    <script>
+<footer><p><strong>Zaculators</strong> © 2026</p></footer>
+<script>
         const usd = value => new Intl.NumberFormat("en-US", { style:"currency", currency:"USD" }).format(value);
         const gbp = value => new Intl.NumberFormat("en-GB", { style:"currency", currency:"GBP" }).format(value);
         document.getElementById("form").addEventListener("submit", event => {

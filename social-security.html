@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Social Security Benefit Estimate Calculator | Zaculators</title>
-<meta name="description" content="Estimate how claiming earlier or later than full retirement age may affect a monthly Social Security benefit.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate how claiming earlier or later than full retirement age may affect a monthly Social Security benefit." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -79,119 +80,111 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Social Security Benefit Estimate Calculator</h1>
+<h1>Social Security Benefit Estimate Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how claiming earlier or later than full retirement age may affect a monthly Social Security benefit. This is a simplified planning tool only. It does not produce official Social Security results, and all results on this page are estimates.</p>
-    <form id="social-security-form">
-      <div class="grid">
-        <div>
-          <label for="fra-benefit">Estimated Monthly Benefit at Full Retirement Age</label>
-          <input type="number" id="fra-benefit" min="0" step="0.01" placeholder="e.g. 2200" required>
-        </div>
-        <div>
-          <label for="claiming-age">Claiming Age</label>
-          <input type="number" id="claiming-age" min="62" max="70" step="0.1" placeholder="e.g. 67" required>
-        </div>
-        <div>
-          <label for="full-retirement-age">Full Retirement Age</label>
-          <input type="number" id="full-retirement-age" min="62" max="70" step="0.1" placeholder="e.g. 67" required>
-        </div>
-        <div>
-          <label for="cola">Annual COLA (%) optional</label>
-          <input type="number" id="cola" step="0.01" placeholder="e.g. 2">
-        </div>
-      </div>
-      <button type="submit">Estimate Benefit Adjustment</button>
-    </form>
-    <div id="social-security-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Estimated Monthly Benefit</span><span id="adjusted-benefit" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Annual Benefit</span><span id="annual-benefit" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Monthly Benefit Adjustment</span><span id="benefit-adjustment" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="social-security-note" class="intro"></p>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates how a monthly benefit may change if benefits are claimed before or after full retirement age. It is meant for rough planning only. It does not include full government rules, earnings history details, taxation, spousal benefits, or survivor rules.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">This page uses a simple estimate-only approach:</p>
-    <ul>
-      <li>If claiming before full retirement age, the monthly estimate is reduced by about 6% per year early.</li>
-      <li>If claiming after full retirement age, the monthly estimate is increased by about 8% per year delayed, up to age 70.</li>
-      <li>If an annual COLA is entered, the estimate applies that growth for the number of years between full retirement age and claiming age when claiming later.</li>
-    </ul>
-    <p class="intro">This is not an official formula and should not be treated as an official benefit calculation.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If your estimated full retirement age benefit is $2,200 per month, your full retirement age is 67, and you claim at 65, this calculator applies a simple early-claiming reduction to estimate a lower monthly benefit. If you claim later than full retirement age, it applies a delayed-claiming increase instead.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The adjusted monthly benefit shows the estimate after the claiming-age adjustment. The annual benefit multiplies that estimate by 12. The note below the result gives a simple comparison against claiming at full retirement age so you can quickly see whether the estimate is lower, about the same, or higher.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Treating this estimate as an official Social Security result.</li>
-      <li>Ignoring the effect of personal earnings history and government updates.</li>
-      <li>Forgetting that real COLA adjustments can change year to year.</li>
-      <li>Using a full retirement age that does not match your actual eligibility rules.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This page provides estimates only and is not affiliated with or endorsed by the Social Security Administration. It does not provide official benefit calculations or legal, financial, or retirement advice. Verify current rates with the official government source.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="retirement.html">Retirement Calculator</a>
-      <a href="retirement-age.html">Retirement Age Calculator</a>
-      <a href="retirement-countdown.html">Retirement Countdown Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this Social Security calculator estimate?</h3>
-      <p class="answer">It estimates how claiming before or after full retirement age may affect a monthly benefit, based on the assumptions used on this page.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is this an official Social Security benefit calculation?</h3>
-      <p class="answer">No. This is an estimate-only planning tool and does not replace an official benefit statement or government calculator.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How does this page adjust benefits for claiming age?</h3>
-      <p class="answer">This page uses a simple estimate that reduces the benefit for early claiming and increases it for delayed claiming after full retirement age, up to age 70.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Should I verify these results elsewhere?</h3>
-      <p class="answer">Yes. Verify current benefit rules and your personal estimate with the official Social Security source.</p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how claiming earlier or later than full retirement age may affect a monthly Social Security benefit. This is a simplified planning tool only. It does not produce official Social Security results, and all results on this page are estimates.</p>
+<form id="social-security-form">
+<div class="grid">
+<div>
+<label for="fra-benefit">Estimated Monthly Benefit at Full Retirement Age</label>
+<input id="fra-benefit" min="0" placeholder="e.g. 2200" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="claiming-age">Claiming Age</label>
+<input id="claiming-age" max="70" min="62" placeholder="e.g. 67" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="full-retirement-age">Full Retirement Age</label>
+<input id="full-retirement-age" max="70" min="62" placeholder="e.g. 67" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label for="cola">Annual COLA (%) optional</label>
+<input id="cola" placeholder="e.g. 2" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Estimate Benefit Adjustment</button>
+</form>
+<div aria-live="polite" class="results" id="social-security-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Estimated Monthly Benefit</span><span class="metric-value" id="adjusted-benefit">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Annual Benefit</span><span class="metric-value" id="annual-benefit">$0.00</span></div>
+<div class="metric"><span class="metric-label">Monthly Benefit Adjustment</span><span class="metric-value" id="benefit-adjustment">$0.00</span></div>
+</div>
+<p class="intro" id="social-security-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">This calculator estimates how a monthly benefit may change if benefits are claimed before or after full retirement age. It is meant for rough planning only. It does not include full government rules, earnings history details, taxation, spousal benefits, or survivor rules.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">This page uses a simple estimate-only approach:</p>
+<ul>
+<li>If claiming before full retirement age, the monthly estimate is reduced by about 6% per year early.</li>
+<li>If claiming after full retirement age, the monthly estimate is increased by about 8% per year delayed, up to age 70.</li>
+<li>If an annual COLA is entered, the estimate applies that growth for the number of years between full retirement age and claiming age when claiming later.</li>
+</ul>
+<p class="intro">This is not an official formula and should not be treated as an official benefit calculation.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If your estimated full retirement age benefit is $2,200 per month, your full retirement age is 67, and you claim at 65, this calculator applies a simple early-claiming reduction to estimate a lower monthly benefit. If you claim later than full retirement age, it applies a delayed-claiming increase instead.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The adjusted monthly benefit shows the estimate after the claiming-age adjustment. The annual benefit multiplies that estimate by 12. The note below the result gives a simple comparison against claiming at full retirement age so you can quickly see whether the estimate is lower, about the same, or higher.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Treating this estimate as an official Social Security result.</li>
+<li>Ignoring the effect of personal earnings history and government updates.</li>
+<li>Forgetting that real COLA adjustments can change year to year.</li>
+<li>Using a full retirement age that does not match your actual eligibility rules.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This page provides estimates only and is not affiliated with or endorsed by the Social Security Administration. It does not provide official benefit calculations or legal, financial, or retirement advice. Verify current rates with the official government source.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="retirement.html">Retirement Calculator</a>
+<a href="retirement-age.html">Retirement Age Calculator</a>
+<a href="retirement-countdown.html">Retirement Countdown Calculator</a>
+</div>
+</section>
+<section class="support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What does this Social Security calculator estimate?</h3>
+<p class="answer">It estimates how claiming before or after full retirement age may affect a monthly benefit, based on the assumptions used on this page.</p>
+</div>
+<div class="faq-item">
+<h3>Is this an official Social Security benefit calculation?</h3>
+<p class="answer">No. This is an estimate-only planning tool and does not replace an official benefit statement or government calculator.</p>
+</div>
+<div class="faq-item">
+<h3>How does this page adjust benefits for claiming age?</h3>
+<p class="answer">This page uses a simple estimate that reduces the benefit for early claiming and increases it for delayed claiming after full retirement age, up to age 70.</p>
+</div>
+<div class="faq-item">
+<h3>Should I verify these results elsewhere?</h3>
+<p class="answer">Yes. Verify current benefit rules and your personal estimate with the official Social Security source.</p>
+</div>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

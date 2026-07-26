@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Credit Utilization Calculator | Zaculators</title>
-<meta name="description" content="Estimate your total credit utilization ratio and see whether your balance level is low, moderate, or high.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate your total credit utilization ratio and see whether your balance level is low, moderate, or high." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -84,123 +85,115 @@ ol,ul{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Credit Utilization Calculator</h1>
+<h1>Credit Utilization Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how much of your available revolving credit you are using right now. This calculator shows your overall utilization ratio and a simple status label so you can quickly see whether your balance level looks low, moderate, or high.</p>
-    <form id="credit-utilization-form">
-      <div class="grid">
-        <div>
-          <label for="total-balance">Total Credit Card Balance</label>
-          <input type="number" id="total-balance" min="0" step="0.01" placeholder="e.g. 3500" required>
-        </div>
-        <div>
-          <label for="total-limit">Total Credit Limit</label>
-          <input type="number" id="total-limit" min="0.01" step="0.01" placeholder="e.g. 12000" required>
-        </div>
-      </div>
-      <button type="submit">Calculate Utilization</button>
-    </form>
-    <div id="credit-utilization-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric">
-          <span class="metric-label">Credit Utilization</span>
-          <span id="utilization-percent" class="metric-value">0.00%</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">Utilization Status</span>
-          <span id="utilization-status" class="metric-value">Low</span>
-        </div>
-      </div>
-      <p id="utilization-note" class="note"></p>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates your total revolving credit utilization percentage using your combined credit card balances and combined credit limits. The result is a quick planning estimate, not a credit score. It helps you judge whether your current balances may look conservative, moderate, or elevated before statement closing dates or loan applications.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">The calculation uses a simple utilization ratio:</p>
-    <p class="intro"><strong>Credit utilization = Total credit card balance / Total credit limit x 100</strong></p>
-    <p class="intro">This page also assigns a simple status label:</p>
-    <ul>
-      <li><strong>Low:</strong> under 10%</li>
-      <li><strong>Moderate:</strong> 10% to 30%</li>
-      <li><strong>High:</strong> above 30%</li>
-    </ul>
-  </section>
-
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If your total balances are $3,500 and your total credit limit is $12,000:</p>
-    <ul>
-      <li>Utilization = 3,500 / 12,000 x 100</li>
-      <li>Utilization = 29.17%</li>
-      <li>Status = Moderate</li>
-    </ul>
-    <p class="intro">That tells you that a little under one-third of your available revolving credit is being used.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">A lower utilization ratio generally signals that you are using a smaller share of your available credit. Higher utilization can increase borrowing risk signals, especially if balances are reported near statement close. This estimate is most useful for scenario planning, such as deciding how much to pay down before a report date.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Using only one card balance instead of all revolving card balances.</li>
-      <li>Forgetting to use the total combined credit limit across all cards.</li>
-      <li>Confusing utilization with the minimum payment due.</li>
-      <li>Assuming a lower utilization estimate automatically guarantees a higher score.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides informational estimates only. Credit scores and lender decisions depend on more than total utilization, including payment history, reported balances by card, credit mix, and scoring model differences. Results are estimates, not financial advice or approval predictions.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="credit-card-payoff-calculator.html">Credit Card Payoff Calculator</a>
-      <a href="debt-to-income-ratio-calculator.html">Debt-to-Income Ratio Calculator</a>
-      <a href="debt-consolidation.html">Debt Consolidation Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What is a good credit utilization ratio?</h3>
-      <p class="answer">Many borrowers aim to keep revolving utilization below 30%, and often below 10% for stronger credit profiles. This calculator labels the result as low, moderate, or high for quick planning.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this calculator use all of my cards together?</h3>
-      <p class="answer">Yes. It estimates total utilization by dividing your combined credit card balances by your combined credit limits.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Why can my score still change if utilization is low?</h3>
-      <p class="answer">Credit scores also depend on payment history, account age, hard inquiries, credit mix, and the balance reported on each individual card.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can I use this result for lender approval decisions?</h3>
-      <p class="answer">Use it as an estimate only. Lenders and credit bureaus may use different scoring models and reporting dates.</p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how much of your available revolving credit you are using right now. This calculator shows your overall utilization ratio and a simple status label so you can quickly see whether your balance level looks low, moderate, or high.</p>
+<form id="credit-utilization-form">
+<div class="grid">
+<div>
+<label for="total-balance">Total Credit Card Balance</label>
+<input id="total-balance" min="0" placeholder="e.g. 3500" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="total-limit">Total Credit Limit</label>
+<input id="total-limit" min="0.01" placeholder="e.g. 12000" required="" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Calculate Utilization</button>
+</form>
+<div aria-live="polite" class="results" id="credit-utilization-results">
+<div class="results-grid">
+<div class="metric">
+<span class="metric-label">Credit Utilization</span>
+<span class="metric-value" id="utilization-percent">0.00%</span>
+</div>
+<div class="metric">
+<span class="metric-label">Utilization Status</span>
+<span class="metric-value" id="utilization-status">Low</span>
+</div>
+</div>
+<p class="note" id="utilization-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">This calculator estimates your total revolving credit utilization percentage using your combined credit card balances and combined credit limits. The result is a quick planning estimate, not a credit score. It helps you judge whether your current balances may look conservative, moderate, or elevated before statement closing dates or loan applications.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">The calculation uses a simple utilization ratio:</p>
+<p class="intro"><strong>Credit utilization = Total credit card balance / Total credit limit x 100</strong></p>
+<p class="intro">This page also assigns a simple status label:</p>
+<ul>
+<li><strong>Low:</strong> under 10%</li>
+<li><strong>Moderate:</strong> 10% to 30%</li>
+<li><strong>High:</strong> above 30%</li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If your total balances are $3,500 and your total credit limit is $12,000:</p>
+<ul>
+<li>Utilization = 3,500 / 12,000 x 100</li>
+<li>Utilization = 29.17%</li>
+<li>Status = Moderate</li>
+</ul>
+<p class="intro">That tells you that a little under one-third of your available revolving credit is being used.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">A lower utilization ratio generally signals that you are using a smaller share of your available credit. Higher utilization can increase borrowing risk signals, especially if balances are reported near statement close. This estimate is most useful for scenario planning, such as deciding how much to pay down before a report date.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Using only one card balance instead of all revolving card balances.</li>
+<li>Forgetting to use the total combined credit limit across all cards.</li>
+<li>Confusing utilization with the minimum payment due.</li>
+<li>Assuming a lower utilization estimate automatically guarantees a higher score.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides informational estimates only. Credit scores and lender decisions depend on more than total utilization, including payment history, reported balances by card, credit mix, and scoring model differences. Results are estimates, not financial advice or approval predictions.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="credit-card-payoff-calculator.html">Credit Card Payoff Calculator</a>
+<a href="debt-to-income-ratio-calculator.html">Debt-to-Income Ratio Calculator</a>
+<a href="debt-consolidation.html">Debt Consolidation Calculator</a>
+</div>
+</section>
+<section class="support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What is a good credit utilization ratio?</h3>
+<p class="answer">Many borrowers aim to keep revolving utilization below 30%, and often below 10% for stronger credit profiles. This calculator labels the result as low, moderate, or high for quick planning.</p>
+</div>
+<div class="faq-item">
+<h3>Does this calculator use all of my cards together?</h3>
+<p class="answer">Yes. It estimates total utilization by dividing your combined credit card balances by your combined credit limits.</p>
+</div>
+<div class="faq-item">
+<h3>Why can my score still change if utilization is low?</h3>
+<p class="answer">Credit scores also depend on payment history, account age, hard inquiries, credit mix, and the balance reported on each individual card.</p>
+</div>
+<div class="faq-item">
+<h3>Can I use this result for lender approval decisions?</h3>
+<p class="answer">Use it as an estimate only. Lenders and credit bureaus may use different scoring models and reporting dates.</p>
+</div>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 document.getElementById('credit-utilization-form').addEventListener('submit', function (event) {

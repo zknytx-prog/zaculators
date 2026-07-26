@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>ETF Calculator | Zaculators</title>
-<meta name="description" content="Estimate the future value of an ETF investment with monthly contributions and expense ratio drag.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Estimate the future value of an ETF investment with monthly contributions and expense ratio drag." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -80,130 +81,122 @@ ol,ul{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>ETF Calculator</h1>
+<h1>ETF Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Estimate how an exchange-traded fund investment could grow over time with monthly contributions. This calculator also shows an estimated expense drag by comparing growth before expenses with growth after reducing the annual return assumption by the ETF expense ratio.</p>
-    <form id="etf-form">
-      <div class="grid">
-        <div>
-          <label for="initial-investment">Initial Investment</label>
-          <input type="number" id="initial-investment" min="0" step="0.01" placeholder="e.g. 10000" required>
-        </div>
-        <div>
-          <label for="monthly-contribution">Monthly Contribution</label>
-          <input type="number" id="monthly-contribution" min="0" step="0.01" placeholder="e.g. 400" required>
-        </div>
-        <div>
-          <label for="annual-return">Expected Annual Return (%)</label>
-          <input type="number" id="annual-return" step="0.01" placeholder="e.g. 8" required>
-        </div>
-        <div>
-          <label for="expense-ratio">Expense Ratio (%)</label>
-          <input type="number" id="expense-ratio" min="0" step="0.01" placeholder="e.g. 0.15" required>
-        </div>
-        <div>
-          <label for="years">Years</label>
-          <input type="number" id="years" min="1" step="1" placeholder="e.g. 20" required>
-        </div>
-      </div>
-      <button type="submit">Estimate ETF Growth</button>
-    </form>
-    <div id="etf-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Future Value Before Expenses</span><span id="before-expenses" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Expense Drag</span><span id="expense-drag" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Value After Expenses</span><span id="after-expenses" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Total Contributions</span><span id="total-contributions" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Investment Gain</span><span id="investment-gain" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="etf-note" class="intro"></p>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates the growth of an ETF portfolio using an initial deposit, monthly contributions, an expected annual return, and an annual expense ratio. It is designed for long-range planning so you can compare rough outcomes with and without expense drag. Results are estimates, not forecasts or guarantees.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">The estimate uses monthly compounding with monthly contributions.</p>
-    <ul>
-      <li>Growth before expenses uses the annual return you enter.</li>
-      <li>Growth after expenses uses an adjusted annual return: <strong>Expected annual return - Expense ratio</strong>.</li>
-      <li>Total contributions = initial investment + monthly contribution x total months.</li>
-      <li>Estimated investment gain = estimated value after expenses - total contributions.</li>
-    </ul>
-  </section>
-
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">If you invest $10,000 up front, add $400 per month, expect 8% annual growth, pay a 0.15% expense ratio, and stay invested for 20 years, the calculator compounds the portfolio monthly twice:</p>
-    <ul>
-      <li>Once using the full 8% return</li>
-      <li>Once using a net annual return of 7.85%</li>
-    </ul>
-    <p class="intro">The difference between those two ending values is the estimated expense drag.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">The “before expenses” figure shows what the portfolio might reach if no expense ratio reduced returns. The “after expenses” figure shows a simplified net-growth estimate. Expense drag shows how even a small ongoing fee can reduce long-term compounding when the investment horizon is long.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Entering an expense ratio as a whole number when it is already expressed as a percent.</li>
-      <li>Assuming expected return will occur evenly every year.</li>
-      <li>Ignoring taxes, trading costs, and tracking differences.</li>
-      <li>Comparing funds by return assumption alone instead of also checking cost and risk.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides informational estimates only and is not investment advice. ETF returns, fees, distributions, taxes, and market conditions can change over time. Results are estimates based on simplified compounding assumptions and the inputs you enter.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="investment-return.html">Investment Return Calculator</a>
-      <a href="dividend-calculator.html">Dividend Calculator</a>
-      <a href="compound-interest-monthly.html">Compound Interest Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does this ETF calculator estimate?</h3>
-      <p class="answer">It estimates the future value of an ETF investment before expenses, the estimated expense drag, and the estimated value after expenses using your inputs.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How does the expense ratio affect the estimate?</h3>
-      <p class="answer">The calculator reduces the annual return assumption by the expense ratio to estimate how fees can lower long-term growth.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are ETF returns guaranteed?</h3>
-      <p class="answer">No. Actual ETF performance can vary from the return you enter and can be negative in some periods.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does this include taxes or trading costs?</h3>
-      <p class="answer">No. This estimate does not include taxes, bid-ask spreads, or brokerage commissions.</p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Estimate how an exchange-traded fund investment could grow over time with monthly contributions. This calculator also shows an estimated expense drag by comparing growth before expenses with growth after reducing the annual return assumption by the ETF expense ratio.</p>
+<form id="etf-form">
+<div class="grid">
+<div>
+<label for="initial-investment">Initial Investment</label>
+<input id="initial-investment" min="0" placeholder="e.g. 10000" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="monthly-contribution">Monthly Contribution</label>
+<input id="monthly-contribution" min="0" placeholder="e.g. 400" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="annual-return">Expected Annual Return (%)</label>
+<input id="annual-return" placeholder="e.g. 8" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="expense-ratio">Expense Ratio (%)</label>
+<input id="expense-ratio" min="0" placeholder="e.g. 0.15" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="years">Years</label>
+<input id="years" min="1" placeholder="e.g. 20" required="" step="1" type="number"/>
+</div>
+</div>
+<button type="submit">Estimate ETF Growth</button>
+</form>
+<div aria-live="polite" class="results" id="etf-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Future Value Before Expenses</span><span class="metric-value" id="before-expenses">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Expense Drag</span><span class="metric-value" id="expense-drag">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Value After Expenses</span><span class="metric-value" id="after-expenses">$0.00</span></div>
+<div class="metric"><span class="metric-label">Total Contributions</span><span class="metric-value" id="total-contributions">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Investment Gain</span><span class="metric-value" id="investment-gain">$0.00</span></div>
+</div>
+<p class="intro" id="etf-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">This calculator estimates the growth of an ETF portfolio using an initial deposit, monthly contributions, an expected annual return, and an annual expense ratio. It is designed for long-range planning so you can compare rough outcomes with and without expense drag. Results are estimates, not forecasts or guarantees.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">The estimate uses monthly compounding with monthly contributions.</p>
+<ul>
+<li>Growth before expenses uses the annual return you enter.</li>
+<li>Growth after expenses uses an adjusted annual return: <strong>Expected annual return - Expense ratio</strong>.</li>
+<li>Total contributions = initial investment + monthly contribution x total months.</li>
+<li>Estimated investment gain = estimated value after expenses - total contributions.</li>
+</ul>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">If you invest $10,000 up front, add $400 per month, expect 8% annual growth, pay a 0.15% expense ratio, and stay invested for 20 years, the calculator compounds the portfolio monthly twice:</p>
+<ul>
+<li>Once using the full 8% return</li>
+<li>Once using a net annual return of 7.85%</li>
+</ul>
+<p class="intro">The difference between those two ending values is the estimated expense drag.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">The “before expenses” figure shows what the portfolio might reach if no expense ratio reduced returns. The “after expenses” figure shows a simplified net-growth estimate. Expense drag shows how even a small ongoing fee can reduce long-term compounding when the investment horizon is long.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Entering an expense ratio as a whole number when it is already expressed as a percent.</li>
+<li>Assuming expected return will occur evenly every year.</li>
+<li>Ignoring taxes, trading costs, and tracking differences.</li>
+<li>Comparing funds by return assumption alone instead of also checking cost and risk.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides informational estimates only and is not investment advice. ETF returns, fees, distributions, taxes, and market conditions can change over time. Results are estimates based on simplified compounding assumptions and the inputs you enter.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="investment-return.html">Investment Return Calculator</a>
+<a href="dividend-calculator.html">Dividend Calculator</a>
+<a href="compound-interest-monthly.html">Compound Interest Calculator</a>
+</div>
+</section>
+<section class="support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What does this ETF calculator estimate?</h3>
+<p class="answer">It estimates the future value of an ETF investment before expenses, the estimated expense drag, and the estimated value after expenses using your inputs.</p>
+</div>
+<div class="faq-item">
+<h3>How does the expense ratio affect the estimate?</h3>
+<p class="answer">The calculator reduces the annual return assumption by the expense ratio to estimate how fees can lower long-term growth.</p>
+</div>
+<div class="faq-item">
+<h3>Are ETF returns guaranteed?</h3>
+<p class="answer">No. Actual ETF performance can vary from the return you enter and can be negative in some periods.</p>
+</div>
+<div class="faq-item">
+<h3>Does this include taxes or trading costs?</h3>
+<p class="answer">No. This estimate does not include taxes, bid-ask spreads, or brokerage commissions.</p>
+</div>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {

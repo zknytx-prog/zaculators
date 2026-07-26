@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
-<head>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,10 +11,10 @@
 
   gtag('config', 'G-1B4FY69QMS');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate fuel-only and total road trip cost including optional tolls and parking.">
-<meta name="keywords" content="road trip cost calculator, trip cost calculator, fuel trip calculator">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Estimate fuel-only and total road trip cost including optional tolls and parking." name="description"/>
+<meta content="road trip cost calculator, trip cost calculator, fuel trip calculator" name="keywords"/>
 <title>Road Trip Cost Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
@@ -98,62 +99,58 @@
 
 </style>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
+<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a aria-label="Return to Zaculators homepage" href="/" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">∑</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a aria-label="Return to homepage" href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
-  <h1>Road Trip Cost Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
+<h1>Road Trip Cost Calculator</h1>
+<div class="breadcrumb"><a href="/">Zaculators</a> / Automotive</div>
 </header>
 <main>
 <section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">Plan a driving trip budget with fuel, tolls, parking, and other predictable expenses.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="distance">Total trip miles</label><input id="distance" type="number" min="1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="mpg">Average MPG</label><input id="mpg" type="number" min="0.1" step="0.1" required><div class="error-message"></div></div><div class="form-group"><label for="fuelPrice">Fuel price per gallon</label><input id="fuelPrice" type="number" min="0.01" step="0.01" required><div class="error-message"></div></div><div class="form-group"><label for="extras">Tolls + parking + extras</label><input id="extras" type="number" min="0" step="0.01" placeholder="Optional" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>Road trip budget</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Fuel-only cost</label><div class="value" id="result-fuel">—</div></div>
+<h2>Calculator</h2>
+<p class="intro">Plan a driving trip budget with fuel, tolls, parking, and other predictable expenses.</p>
+<div class="trust-badges">
+<span><span class="badge-icon">✓</span> Accurate formulas</span>
+<span><span class="badge-icon">✓</span> Save and reload</span>
+<span><span class="badge-icon">✓</span> Free to use</span>
+</div>
+<form id="calcForm">
+<div class="form-row"><div class="form-group"><label for="distance">Total trip miles</label><input id="distance" min="1" required="" step="0.1" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="mpg">Average MPG</label><input id="mpg" min="0.1" required="" step="0.1" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="fuelPrice">Fuel price per gallon</label><input id="fuelPrice" min="0.01" required="" step="0.01" type="number"/><div class="error-message"></div></div><div class="form-group"><label for="extras">Tolls + parking + extras</label><input id="extras" min="0" placeholder="Optional" required="" step="0.01" type="number"/><div class="error-message"></div></div></div>
+<div class="button-group">
+<button class="btn-primary" type="submit">Calculate</button>
+<button class="btn-secondary" onclick="handleSave()" type="button">💾 Save</button>
+<button class="btn-secondary" onclick="handleShare()" type="button">📤 Share</button>
+<button class="btn-secondary" onclick="handlePrint()" type="button">🖨️ Print</button>
+</div>
+</form>
+<div class="results-section" id="results">
+<h3>Road trip budget</h3>
+<div class="result-grid">
+<div class="result-item"><label>Fuel-only cost</label><div class="value" id="result-fuel">—</div></div>
 <div class="result-item"><label>Total trip cost</label><div class="value" id="result-total">—</div></div>
 <div class="result-item"><label>Fuel needed</label><div class="value" id="result-gallons">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
+</div>
+</div>
+<div class="disclaimer">This calculator provides planning estimates only. Actual vehicle costs, safety requirements, tire pressures, charging needs, and financing terms can vary by vehicle, road conditions, lender, and location.</div>
+<div class="updated">Last updated: April 19, 2026</div>
 </section>
-
 <div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/fuel-cost.html">Fuel Cost Calculator</a>
+<h3>Related Calculators</h3>
+<div class="related-links"><a href="/fuel-cost.html">Fuel Cost Calculator</a>
 <a href="/gas-mileage.html">Gas Mileage Calculator</a>
 <a href="/car-payment.html">Car Payment Calculator</a>
 <a href="/ev-charging-cost.html">EV Charging Cost Calculator</a></div>
 </div>
-
 <div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Double-check whether the distance is one-way or round trip.</li>
+<h3>What to do next</h3>
+<ol><li>Double-check whether the distance is one-way or round trip.</li>
 <li>Add food and lodging separately if it is a longer trip.</li>
 <li>Budget a small cushion above the estimate for price changes.</li>
 <li>Compare your trip cost with flights or rental options.</li>
 <li>Use real-world MPG from recent driving, not optimistic brochure numbers.</li></ol>
 </div>
-
 <section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
 <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Road Trip Cost Calculator?</h2>
 <p style="line-height:1.7;margin-bottom:0.75rem;">The Road Trip Cost Calculator estimates how much you will spend on fuel for a driving trip, then adds optional tolls, parking, and other predictable extras to give you a complete budget number. Road trips remain one of the most popular ways to travel in the United States — AAA estimates tens of millions of Americans drive more than 50 miles from home for leisure each year — yet most people underestimate the real cost before they leave. This tool is useful for solo travelers, families planning a cross-country drive, gig workers tracking mileage expenses, and anyone comparing the total cost of driving versus flying or renting a car. By plugging in real numbers before departure, you avoid the unpleasant surprise of arriving home with a credit card bill that does not match your mental budget.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
 <ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
 <li><strong>Total trip miles</strong> — Enter the total driving distance one-way or round-trip. Use your mapping app's distance estimate for accuracy. If you want the full round-trip cost, double the one-way mileage or enter the combined total.</li>
@@ -161,13 +158,10 @@
 <li><strong>Fuel price per gallon</strong> — Enter the current price at stations along your route. GasBuddy or AAA's fuel gauge can give you regional averages. Rounding up by $0.05–0.10 is wise when prices are volatile.</li>
 <li><strong>Tolls, parking, and extras</strong> — Estimate tolls from mapping apps or state DOT websites. Add expected parking costs. This field is optional but makes the total far more realistic.</li>
 </ol>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
 <p style="line-height:1.7;margin-bottom:0.75rem;">The calculator outputs three numbers: fuel-only cost (gallons needed multiplied by price per gallon), total trip cost (fuel plus extras), and total gallons needed. The fuel-only cost is useful when comparing routes or vehicles. The total cost is what to put in your actual travel budget. Keep in mind this tool covers only direct fuel and road costs — it does not include food, lodging, vehicle wear-and-tear, or emergency expenses. A rule of thumb for long trips: budget an extra 10–15% above the calculated total for unplanned costs like detours, road closures, or unexpected fuel price spikes. Real-world MPG can be 15–25% lower than EPA estimates in heavy traffic, mountainous terrain, headwinds over 20 mph, or extreme cold temperatures below 20°F.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
 <p style="line-height:1.7;margin-bottom:0.75rem;">Suppose you are driving from Chicago to Nashville — roughly 470 miles each way, so 940 miles round-trip. Your SUV averages 28 MPG. Gas is priced at $3.35 per gallon regionally. You expect $22 in tolls and $15 in parking at your destination. Fuel needed: 940 ÷ 28 = 33.6 gallons. Fuel cost: 33.6 × $3.35 = $112.55. Total with extras: $112.55 + $22 + $15 = $149.55. That is your baseline road trip budget before food and hotel. Compare this against the cheapest round-trip flight price, and you will have a clear basis for deciding which option makes sense for your situation.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
 <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
 <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
@@ -194,7 +188,7 @@
 <p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/fuel-cost.html" style="color:#2563eb;">Fuel Cost Calculator</a> · <a href="/gas-mileage.html" style="color:#2563eb;">Gas Mileage Calculator</a> · <a href="/trip-cost.html" style="color:#2563eb;">Trip Cost Calculator</a></p>
 </section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
@@ -264,15 +258,14 @@ if (saved.extras !== undefined) extras.value = saved.extras;
 
 </script>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
+<p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+<div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
+<a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>·
+    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>·
+    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>·
+    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>·
     <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
+</div>
 </footer>
 </body>
 </html>

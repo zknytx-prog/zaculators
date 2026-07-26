@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
-<head>
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1B4FY69QMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,10 +11,10 @@
 
   gtag('config', 'G-1B4FY69QMS');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate a due date from the last menstrual period and average cycle length.">
-<meta name="keywords" content="baby due date calculator, pregnancy due date calculator">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Estimate a due date from the last menstrual period and average cycle length." name="description"/>
+<meta content="baby due date calculator, pregnancy due date calculator" name="keywords"/>
 <title>Baby Due Date Calculator | Zaculators</title>
 <script type="application/ld+json">
 {
@@ -98,75 +99,68 @@
 
 </style>
 </head>
-<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a href="/" aria-label="Return to Zaculators homepage" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">&#x2211;</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;" aria-label="Return to homepage">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
+<body><nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:0.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-family:system-ui,sans-serif;"><a aria-label="Return to Zaculators homepage" href="/" style="display:flex;align-items:center;gap:0.4rem;font-weight:700;color:#2563eb;text-decoration:none;font-size:1rem;"><span style="background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:0.9rem;">∑</span>Zaculators</a><div style="display:flex;gap:1.25rem;"><a aria-label="Return to homepage" href="/" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">Home</a><a href="/all-calculators.html" style="color:#475569;text-decoration:none;font-weight:500;font-size:0.88rem;">All Calculators</a></div></nav>
 <header>
-  <h1>Baby Due Date Calculator</h1>
-  <div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
+<h1>Baby Due Date Calculator</h1>
+<div class="breadcrumb"><a href="/">Zaculators</a> / Personal</div>
 </header>
 <main>
 <section class="calculator-section">
-  <h2>Calculator</h2>
-  <p class="intro">Use this tool for a basic due date estimate from LMP. Real prenatal dating may be adjusted by your clinician.</p>
-  <div class="trust-badges">
-    <span><span class="badge-icon">✓</span> Accurate formulas</span>
-    <span><span class="badge-icon">✓</span> Save and reload</span>
-    <span><span class="badge-icon">✓</span> Free to use</span>
-  </div>
-  <form id="calcForm">
-    <div class="form-row"><div class="form-group"><label for="lmp">Last menstrual period start date</label><input id="lmp" type="date" required><div class="error-message"></div></div><div class="form-group"><label for="cycleLen">Average cycle length (days)</label><input id="cycleLen" type="number" min="21" max="40" step="1" placeholder="28" required><div class="error-message"></div></div></div>
-    <div class="button-group">
-      <button type="submit" class="btn-primary">Calculate</button>
-      <button type="button" class="btn-secondary" onclick="handleSave()">💾 Save</button>
-      <button type="button" class="btn-secondary" onclick="handleShare()">📤 Share</button>
-      <button type="button" class="btn-secondary" onclick="handlePrint()">🖨️ Print</button>
-    </div>
-  </form>
-  <div id="results" class="results-section">
-    <h3>Due date estimate</h3>
-    <div class="result-grid">
-      <div class="result-item"><label>Estimated due date</label><div class="value" id="result-due">—</div></div>
+<h2>Calculator</h2>
+<p class="intro">Use this tool for a basic due date estimate from LMP. Real prenatal dating may be adjusted by your clinician.</p>
+<div class="trust-badges">
+<span><span class="badge-icon">✓</span> Accurate formulas</span>
+<span><span class="badge-icon">✓</span> Save and reload</span>
+<span><span class="badge-icon">✓</span> Free to use</span>
+</div>
+<form id="calcForm">
+<div class="form-row"><div class="form-group"><label for="lmp">Last menstrual period start date</label><input id="lmp" required="" type="date"/><div class="error-message"></div></div><div class="form-group"><label for="cycleLen">Average cycle length (days)</label><input id="cycleLen" max="40" min="21" placeholder="28" required="" step="1" type="number"/><div class="error-message"></div></div></div>
+<div class="button-group">
+<button class="btn-primary" type="submit">Calculate</button>
+<button class="btn-secondary" onclick="handleSave()" type="button">💾 Save</button>
+<button class="btn-secondary" onclick="handleShare()" type="button">📤 Share</button>
+<button class="btn-secondary" onclick="handlePrint()" type="button">🖨️ Print</button>
+</div>
+</form>
+<div class="results-section" id="results">
+<h3>Due date estimate</h3>
+<div class="result-grid">
+<div class="result-item"><label>Estimated due date</label><div class="value" id="result-due">—</div></div>
 <div class="result-item"><label>Current pregnancy timing</label><div class="value" id="result-gestation">—</div></div>
 <div class="result-item"><label>Important note</label><div class="value" id="result-note">—</div></div>
-    </div>
-  </div>
-  <div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
-  <div class="updated">Last updated: April 19, 2026</div>
+</div>
+</div>
+<div class="disclaimer">This calculator is for educational use only and does not replace medical advice, diagnosis, or treatment. Check with a qualified clinician before making health, nutrition, training, or pregnancy-related decisions.</div>
+<div class="updated">Last updated: April 19, 2026</div>
 </section>
-
 <div class="related-calculators">
-  <h3>Related Calculators</h3>
-  <div class="related-links"><a href="/days-until.html">Days Until Calculator</a>
+<h3>Related Calculators</h3>
+<div class="related-links"><a href="/days-until.html">Days Until Calculator</a>
 <a href="/anniversary-calculator.html">Anniversary Calculator</a>
 <a href="/sleep-cycle.html">Sleep Cycle Calculator</a>
 <a href="/age-difference.html">Age Difference Calculator</a></div>
 </div>
-
 <div class="next-steps">
-  <h3>What to do next</h3>
-  <ol><li>Use the estimate for simple planning, not medical decision-making.</li>
+<h3>What to do next</h3>
+<ol><li>Use the estimate for simple planning, not medical decision-making.</li>
 <li>Schedule proper prenatal care if needed.</li>
 <li>Write down your actual LMP date somewhere reliable.</li>
 <li>Compare this estimate with what your healthcare provider gives you.</li>
 <li>Use the share feature only if you actually want the entire family to start texting.</li></ol>
 </div>
-
 <section style="max-width:900px;margin:2rem auto;padding:0 1.5rem;font-family:system-ui,sans-serif;color:#334155;">
 <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#0f172a;">What Is the Baby Due Date Calculator?</h2>
 <p style="line-height:1.7;margin-bottom:0.75rem;">The Baby Due Date Calculator estimates when a baby is expected to arrive using Naegele's Rule — the same method most obstetricians use for a first estimate. The formula adds 280 days (40 weeks) to the first day of the last menstrual period (LMP), then adjusts for cycle lengths that differ from the standard 28-day assumption. A person with a 30-day cycle ovulates roughly two days later than average, shifting the estimated due date by the same amount. This calculator is useful for initial planning: setting up a prenatal appointment, estimating which trimester you are in, calculating how many weeks along you are today, and giving family members a rough timeline. It should never replace clinical dating, which may use ultrasound measurements — especially a first-trimester crown-rump length scan — to establish or refine the due date.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">How to Use This Calculator</h3>
 <ol style="line-height:1.9;padding-left:1.5rem;margin-bottom:0.75rem;">
 <li><strong>Last menstrual period start date</strong> — Enter the first day of your most recent period before conception. This is the anchor date for the 280-day calculation. If you are unsure of the exact date, use the first of the month as an approximation and note that results will be less precise.</li>
 <li><strong>Average cycle length (days)</strong> — Enter the typical length of your menstrual cycle in days, from the first day of one period to the first day of the next. The standard assumption is 28 days; enter your actual average if it is different, anywhere from 21 to 40 days.</li>
 <li><strong>Click Calculate</strong> — The result shows your estimated due date, how many weeks have elapsed since your LMP, and a reminder that clinical providers may adjust this estimate.</li>
 </ol>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Understanding Your Results</h3>
 <p style="line-height:1.7;margin-bottom:0.75rem;">The estimated due date is the 40-week mark from your LMP, adjusted by the difference between your cycle length and 28 days. Only about 5% of babies actually arrive on their estimated due date; most births occur within two weeks before or after. The "weeks elapsed" figure counts from your LMP date and is how healthcare providers measure gestational age — so at 8 weeks pregnant, your embryo is actually about 6 weeks old by fertilization age. If your estimated due date differs from what your OB or midwife tells you after an ultrasound, trust the clinical measurement. Ultrasound dating in the first trimester is accurate to within about 5–7 days, making it more reliable than LMP-based estimation when there is a discrepancy.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Example Calculation</h3>
 <p style="line-height:1.7;margin-bottom:0.75rem;">A person with a last menstrual period starting January 10, 2025, and a 28-day cycle enters those values. The calculator adds 280 days to January 10, arriving at an estimated due date of October 17, 2025. If the same person has a 31-day cycle, the due date shifts to October 20, 2025 — three days later, reflecting later ovulation. At the time of calculation in early April 2025, the calculator would show approximately 12 weeks elapsed, placing this pregnancy in the late first trimester. The person can use this information to confirm they are due for their first-trimester screening window and plan accordingly.</p>
-
 <h3 style="font-size:1.1rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#1e293b;">Frequently Asked Questions</h3>
 <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
 <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;">
@@ -193,7 +187,7 @@
 <p style="line-height:1.7;margin-top:0.75rem;">Related: <a href="/age-difference.html" style="color:#2563eb;">Age Difference Calculator</a> · <a href="/anniversary-calculator.html" style="color:#2563eb;">Anniversary Calculator</a> · <a href="/days-until.html" style="color:#2563eb;">Days Until Calculator</a></p>
 </section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
@@ -258,15 +252,14 @@ document.getElementById('result-note').textContent = saved.note;
 
 </script>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
-
-  <div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
-    <a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>&#183;
-    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>&#183;
-    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>&#183;
-    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>&#183;
+<p><strong>Zaculators</strong> © 2026 | Free calculator tools</p>
+<div style="margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(128,128,128,0.2);font-size:0.82rem;text-align:center;">
+<a href="/about-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">About</a>·
+    <a href="/contact-us.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Contact</a>·
+    <a href="/privacy-policy.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Privacy Policy</a>·
+    <a href="/terms-of-service.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Terms</a>·
     <a href="/disclaimer.html" style="color:inherit;opacity:0.75;text-decoration:none;margin:0 0.35rem;">Disclaimer</a>
-  </div>
+</div>
 </footer>
 </body>
 </html>

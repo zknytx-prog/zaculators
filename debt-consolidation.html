@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Debt Consolidation Calculator | Zaculators</title>
-<meta name="description" content="Compare your current debt payment with an estimated consolidation loan payment, total repayment, and possible savings.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<meta content="Compare your current debt payment with an estimated consolidation loan payment, total repayment, and possible savings." name="description"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
 <style>
 :root{--primary:#2563eb;--bg:#f8fafc;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--success:#166534;--success-bg:#f0fdf4;--danger:#991b1b;--danger-bg:#fef2f2}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -80,137 +81,129 @@ ol,ul{padding-left:1.25rem;line-height:1.8}
 </head>
 <body>
 <header>
-  <h1>Debt Consolidation Calculator</h1>
+<h1>Debt Consolidation Calculator</h1>
 </header>
 <main>
-  <section class="section">
-    <p class="intro">Compare your current debt situation with an estimated consolidation loan. This calculator uses a standard amortized loan formula to estimate the new monthly payment, total repayment, total interest, and whether the new loan may lower or increase your total cost.</p>
-    <form id="debt-consolidation-form">
-      <div class="grid">
-        <div>
-          <label for="current-debt">Current Total Debt</label>
-          <input type="number" id="current-debt" min="0" step="0.01" placeholder="e.g. 18000" required>
-        </div>
-        <div>
-          <label for="current-apr">Current Average APR (%)</label>
-          <input type="number" id="current-apr" min="0" step="0.01" placeholder="e.g. 21.5" required>
-        </div>
-        <div>
-          <label for="current-payment">Current Monthly Payment</label>
-          <input type="number" id="current-payment" min="0" step="0.01" placeholder="e.g. 650" required>
-        </div>
-        <div>
-          <label for="new-apr">New Consolidation Loan APR (%)</label>
-          <input type="number" id="new-apr" min="0" step="0.01" placeholder="e.g. 12.9" required>
-        </div>
-        <div>
-          <label for="loan-term">New Loan Term (months)</label>
-          <input type="number" id="loan-term" min="1" step="1" placeholder="e.g. 36" required>
-        </div>
-        <div>
-          <label for="origination-fee">Origination Fee (optional)</label>
-          <input type="number" id="origination-fee" min="0" step="0.01" placeholder="e.g. 500">
-        </div>
-      </div>
-      <button type="submit">Compare Consolidation Loan</button>
-    </form>
-    <div id="debt-consolidation-results" class="results" aria-live="polite">
-      <div class="results-grid">
-        <div class="metric"><span class="metric-label">Estimated New Monthly Payment</span><span id="new-payment" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Total Repayment</span><span id="total-repayment" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Total Interest</span><span id="total-interest" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Monthly Payment Difference</span><span id="payment-difference" class="metric-value">$0.00</span></div>
-        <div class="metric"><span class="metric-label">Estimated Savings / Extra Cost</span><span id="savings-or-cost" class="metric-value">$0.00</span></div>
-      </div>
-      <p id="debt-note" class="intro"></p>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>What This Calculator Estimates</h2>
-    <p class="intro">This calculator estimates how a consolidation loan could change your monthly payment and total repayment. It compares your current monthly payment against a new amortized loan built from the debt amount, consolidation APR, term, and any origination fee you enter. Results are estimates for planning, not loan offers.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Formula / Method Used</h2>
-    <p class="intro">The new loan estimate uses the standard amortized loan payment formula:</p>
-    <p class="intro"><strong>Payment = P x [r(1+r)^n] / [(1+r)^n - 1]</strong></p>
-    <ul>
-      <li><strong>P</strong> = principal financed, including any origination fee entered</li>
-      <li><strong>r</strong> = monthly interest rate (APR / 12)</li>
-      <li><strong>n</strong> = total number of monthly payments</li>
-    </ul>
-    <p class="intro">Estimated savings or extra cost compares the new total repayment to your current monthly payment multiplied by the same number of months.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Worked Example</h2>
-    <p class="intro">Suppose you owe $18,000, currently pay $650 per month, and are considering a 36-month consolidation loan at 12.9% APR with a $500 origination fee.</p>
-    <ul>
-      <li>Financed balance = $18,500</li>
-      <li>Monthly rate = 12.9% / 12</li>
-      <li>New monthly payment is estimated with the amortized loan formula</li>
-      <li>Total repayment = new monthly payment x 36</li>
-    </ul>
-    <p class="intro">You can then compare that projected repayment with your current payment pattern over the same 36-month period.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>What the Result Means</h2>
-    <p class="intro">A lower new payment may improve monthly cash flow, but the full comparison depends on total repayment and total interest. If the savings figure is positive, the estimate suggests the new loan costs less over the same number of months. If it is negative, the consolidation option may cost more overall.</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Common Mistakes</h2>
-    <ul>
-      <li>Ignoring fees that increase the amount financed.</li>
-      <li>Comparing only the payment and not the total repayment.</li>
-      <li>Using a term that is much longer than your realistic payoff plan.</li>
-      <li>Assuming your quoted APR will match the lender's final approved rate.</li>
-    </ul>
-  </section>
-
-  <section class="support-card disclaimer">
-    <h2>Limitations / Disclaimer</h2>
-    <p class="intro">This calculator provides estimates only and does not account for late fees, changing rates, promotional terms, taxes, or lender-specific underwriting rules. It is not financial advice. Review any consolidation decision against the actual loan disclosure before accepting an offer.</p>
-    <p class="updated">Last updated: May 2026</p>
-  </section>
-
-  <section class="support-card">
-    <h2>Related Calculators</h2>
-    <div class="related-links">
-      <a href="personal-loan-calculator.html">Personal Loan Calculator</a>
-      <a href="credit-card-payoff-calculator.html">Credit Card Payoff Calculator</a>
-      <a href="loan-payment-calculator.html">Loan Payment Calculator</a>
-    </div>
-  </section>
-
-  <section class="support-card">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What does a debt consolidation calculator estimate?</h3>
-      <p class="answer">It estimates what a new consolidation loan payment, total repayment, and total interest could look like based on the debt amount, new APR, and new loan term you enter.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does a lower monthly payment always mean I save money?</h3>
-      <p class="answer">No. A lower payment can still lead to a higher total repayment if the new term is longer or if fees are added.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How is the origination fee treated here?</h3>
-      <p class="answer">This estimate adds the origination fee to the debt being financed so you can see the effect on payment and total repayment.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Can I rely on this for a final loan offer?</h3>
-      <p class="answer">No. Use it for planning only. Actual loan offers may include different fees, APR structures, and repayment terms.</p>
-    </div>
-  </section>
+<section class="section">
+<p class="intro">Compare your current debt situation with an estimated consolidation loan. This calculator uses a standard amortized loan formula to estimate the new monthly payment, total repayment, total interest, and whether the new loan may lower or increase your total cost.</p>
+<form id="debt-consolidation-form">
+<div class="grid">
+<div>
+<label for="current-debt">Current Total Debt</label>
+<input id="current-debt" min="0" placeholder="e.g. 18000" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="current-apr">Current Average APR (%)</label>
+<input id="current-apr" min="0" placeholder="e.g. 21.5" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="current-payment">Current Monthly Payment</label>
+<input id="current-payment" min="0" placeholder="e.g. 650" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="new-apr">New Consolidation Loan APR (%)</label>
+<input id="new-apr" min="0" placeholder="e.g. 12.9" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label for="loan-term">New Loan Term (months)</label>
+<input id="loan-term" min="1" placeholder="e.g. 36" required="" step="1" type="number"/>
+</div>
+<div>
+<label for="origination-fee">Origination Fee (optional)</label>
+<input id="origination-fee" min="0" placeholder="e.g. 500" step="0.01" type="number"/>
+</div>
+</div>
+<button type="submit">Compare Consolidation Loan</button>
+</form>
+<div aria-live="polite" class="results" id="debt-consolidation-results">
+<div class="results-grid">
+<div class="metric"><span class="metric-label">Estimated New Monthly Payment</span><span class="metric-value" id="new-payment">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Total Repayment</span><span class="metric-value" id="total-repayment">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Total Interest</span><span class="metric-value" id="total-interest">$0.00</span></div>
+<div class="metric"><span class="metric-label">Monthly Payment Difference</span><span class="metric-value" id="payment-difference">$0.00</span></div>
+<div class="metric"><span class="metric-label">Estimated Savings / Extra Cost</span><span class="metric-value" id="savings-or-cost">$0.00</span></div>
+</div>
+<p class="intro" id="debt-note"></p>
+</div>
+</section>
+<section class="support-card">
+<h2>What This Calculator Estimates</h2>
+<p class="intro">This calculator estimates how a consolidation loan could change your monthly payment and total repayment. It compares your current monthly payment against a new amortized loan built from the debt amount, consolidation APR, term, and any origination fee you enter. Results are estimates for planning, not loan offers.</p>
+</section>
+<section class="support-card">
+<h2>Formula / Method Used</h2>
+<p class="intro">The new loan estimate uses the standard amortized loan payment formula:</p>
+<p class="intro"><strong>Payment = P x [r(1+r)^n] / [(1+r)^n - 1]</strong></p>
+<ul>
+<li><strong>P</strong> = principal financed, including any origination fee entered</li>
+<li><strong>r</strong> = monthly interest rate (APR / 12)</li>
+<li><strong>n</strong> = total number of monthly payments</li>
+</ul>
+<p class="intro">Estimated savings or extra cost compares the new total repayment to your current monthly payment multiplied by the same number of months.</p>
+</section>
+<section class="support-card">
+<h2>Worked Example</h2>
+<p class="intro">Suppose you owe $18,000, currently pay $650 per month, and are considering a 36-month consolidation loan at 12.9% APR with a $500 origination fee.</p>
+<ul>
+<li>Financed balance = $18,500</li>
+<li>Monthly rate = 12.9% / 12</li>
+<li>New monthly payment is estimated with the amortized loan formula</li>
+<li>Total repayment = new monthly payment x 36</li>
+</ul>
+<p class="intro">You can then compare that projected repayment with your current payment pattern over the same 36-month period.</p>
+</section>
+<section class="support-card">
+<h2>What the Result Means</h2>
+<p class="intro">A lower new payment may improve monthly cash flow, but the full comparison depends on total repayment and total interest. If the savings figure is positive, the estimate suggests the new loan costs less over the same number of months. If it is negative, the consolidation option may cost more overall.</p>
+</section>
+<section class="support-card">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Ignoring fees that increase the amount financed.</li>
+<li>Comparing only the payment and not the total repayment.</li>
+<li>Using a term that is much longer than your realistic payoff plan.</li>
+<li>Assuming your quoted APR will match the lender's final approved rate.</li>
+</ul>
+</section>
+<section class="support-card disclaimer">
+<h2>Limitations / Disclaimer</h2>
+<p class="intro">This calculator provides estimates only and does not account for late fees, changing rates, promotional terms, taxes, or lender-specific underwriting rules. It is not financial advice. Review any consolidation decision against the actual loan disclosure before accepting an offer.</p>
+<p class="updated">Last updated: May 2026</p>
+</section>
+<section class="support-card">
+<h2>Related Calculators</h2>
+<div class="related-links">
+<a href="personal-loan-calculator.html">Personal Loan Calculator</a>
+<a href="credit-card-payoff-calculator.html">Credit Card Payoff Calculator</a>
+<a href="loan-payment-calculator.html">Loan Payment Calculator</a>
+</div>
+</section>
+<section class="support-card">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What does a debt consolidation calculator estimate?</h3>
+<p class="answer">It estimates what a new consolidation loan payment, total repayment, and total interest could look like based on the debt amount, new APR, and new loan term you enter.</p>
+</div>
+<div class="faq-item">
+<h3>Does a lower monthly payment always mean I save money?</h3>
+<p class="answer">No. A lower payment can still lead to a higher total repayment if the new term is longer or if fees are added.</p>
+</div>
+<div class="faq-item">
+<h3>How is the origination fee treated here?</h3>
+<p class="answer">This estimate adds the origination fee to the debt being financed so you can see the effect on payment and total repayment.</p>
+</div>
+<div class="faq-item">
+<h3>Can I rely on this for a final loan offer?</h3>
+<p class="answer">No. Use it for planning only. Actual loan offers may include different fees, APR structures, and repayment terms.</p>
+</div>
+</section>
 <div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="5330582799" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 <footer>
-  <p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
+<p><strong>Zaculators</strong> © 2026 | Free online calculators</p>
 </footer>
 <script>
 function formatCurrency(value) {
