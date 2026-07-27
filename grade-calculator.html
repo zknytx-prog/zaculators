@@ -37,46 +37,7 @@ ul,ol{padding-left:1.25rem;line-height:1.8}
 .updated{margin-top:1rem;color:var(--muted)}
 @media (max-width:640px){main{padding:1rem}.section,.support-card{padding:1.25rem}}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does this grade calculator estimate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It estimates the final exam grade needed to reach a desired final course grade based on your current grade and final exam weight."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if the needed final exam grade is over 100 percent?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "That means the target grade is not achievable under the assumptions entered unless extra credit or a different weighting method changes the outcome."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if the needed final exam grade is zero or less?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "That means your current course standing is already enough to reach the desired final grade under the weighting entered."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are grade results exact?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Results are estimates based on the percentages you enter. Different school grading rules, rounding, and extra credit can change the final outcome."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are weighted grades calculated?","acceptedAnswer":{"@type":"Answer","text":"Each category's score is multiplied by its weight (as a percentage of the total grade), and these weighted values are summed to get the overall weighted grade."}},{"@type":"Question","name":"What if my course doesn't use weighted categories?","acceptedAnswer":{"@type":"Answer","text":"If all assessments count equally, you can treat each as having equal weight (like dividing 100% evenly), or simply average all scores directly instead of using differentiated weights."}},{"@type":"Question","name":"Can I use this to figure out what I need on a final exam?","acceptedAnswer":{"@type":"Answer","text":"Depending on the specific tool, entering your current category scores and grades along with the final exam's weight can help you back-calculate what score you'd need on the final to reach a target overall grade."}},{"@type":"Question","name":"Does this calculator match my school's exact grading policy?","acceptedAnswer":{"@type":"Answer","text":"This provides a general weighted average calculation; always verify against your specific syllabus or instructor's stated grading policy, since some courses have unique rules (like dropping lowest scores)."}},{"@type":"Question","name":"Why might my calculated grade differ from what's shown in my school's official gradebook?","acceptedAnswer":{"@type":"Answer","text":"Differences can arise from rounding rules, dropped assignments, extra credit, or other policy-specific adjustments that a general calculator doesn't automatically account for."}}]}</script>
 </head>
 <body>
 <header>
