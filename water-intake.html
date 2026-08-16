@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -181,6 +181,6 @@
         function shareResults(){if(document.getElementById('waterValue').textContent==='-'){showToast('âš ï¸ Calculate first');return}const summary=`ðŸ“Š Daily Water Intake\nRecommended: ${document.getElementById('waterValue').textContent}\nCups: ${document.getElementById('cupsValue').textContent}\n\nðŸ’° Calculated with Zaculators`;if(navigator.clipboard){navigator.clipboard.writeText(summary).then(()=>showToast('ðŸ“¤ Copied'))}}
         function printResults(){if(document.getElementById('waterValue').textContent==='-'){showToast('âš ï¸ Calculate first');return}const pw=window.open('','_blank');pw.document.write(`<html><head><title>Water Intake</title><style>body{font-family:Arial;padding:20px;}.item{margin:15px 0;}.label{font-weight:bold;color:#666;}.value{font-size:1.3em;font-weight:bold;color:#16a34a;}</style></head><body><h1>Daily Water Intake</h1><div class="item"><div class="label">Recommended:</div><div class="value">${document.getElementById('waterValue').textContent}</div></div><div class="item"><div class="label">Cups/Day:</div><div class="value">${document.getElementById('cupsValue').textContent}</div></div><hr><p style="font-size:0.9em;color:#666;">Calculated ${new Date().toLocaleDateString()}</p></body></html>`);pw.document.close();pw.onload=()=>pw.print()}
     </script>
-<footer><p><strong>Zaculators</strong> Â© 2025 | Free health &amp; fitness calculators</p></footer>
+<footer><p><strong>Zaculators</strong> © 2025 | Free health &amp; fitness calculators</p></footer>
 </body>
 </html>
