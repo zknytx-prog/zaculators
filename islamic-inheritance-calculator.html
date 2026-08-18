@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Islamic Inheritance Calculator | Zaculators</title>
+<meta content="Free Islamic Inheritance (Fara'id) Calculator — Estimate how an estate is divided among surviving spouse, children, parents, and siblings under the majority Sunni fixed-share system. Educational estimate only." name="description"/><script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Fara'id?","acceptedAnswer":{"@type":"Answer","text":"Fara'id is the Islamic system of fixed inheritance shares, derived primarily from verses in Surah An-Nisa of the Quran, that determines how a deceased Muslim's estate is distributed among specific categories of surviving relatives."}},{"@type":"Question","name":"Does this calculator cover every family situation?","acceptedAnswer":{"@type":"Answer","text":"No. This calculator covers the common nuclear-family case — spouse, children, parents, and full siblings. Estates involving multiple wives, grandparents, half-siblings, more distant relatives, missing heirs, or bequests require a qualified scholar or Islamic court, since the rules for those situations involve additional adjustments this tool does not model."}},{"@type":"Question","name":"Why do sons get twice the share of daughters?","acceptedAnswer":{"@type":"Answer","text":"Under the classical ruling, male heirs in the 'asaba (residuary) category inherit at twice the rate of equally-placed female heirs, reflecting differing financial obligations assigned in Islamic law (such as mahr and full financial maintenance of a household), not a statement about worth. Scholars have written extensively on the reasoning; this calculator applies the rule as classically defined."}},{"@type":"Question","name":"What happens if the shares do not add up to the whole estate?","acceptedAnswer":{"@type":"Answer","text":"Two adjustment mechanisms exist in Fara'id: awl, where shares are proportionally reduced if they exceed the whole estate, and radd, where leftover residue is returned to certain heirs if no residuary ('asaba) heir exists. This calculator applies awl automatically and flags radd cases for scholarly review rather than resolving them automatically, since the correct radd recipients vary by school of thought."}},{"@type":"Question","name":"Should I use this for actual estate distribution?","acceptedAnswer":{"@type":"Answer","text":"No. This is an educational estimate of the majority Sunni fixed-share structure only. Actual estate settlement should always be confirmed with a qualified Islamic scholar, Islamic court (Sharia council), or estate attorney familiar with Islamic inheritance law, particularly because madhab (school of thought) differences, local civil law, and family-specific details can all change the outcome."}}]}</script><style>:root{--primary:#2563eb;--bg:#f8fafc}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:#0f172a}header{background:#fff;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem;color:var(--primary,#2563eb)}main{max-width:900px;margin:0 auto;padding:2rem}.section,.faq-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:2rem;margin-bottom:2rem}label{display:block;font-weight:600;margin-bottom:.4rem}input,select,button{width:100%;padding:.75rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:6px;font-size:1rem}button{background:var(--primary);color:#fff;border:none;cursor:pointer;font-weight:600}.results{display:none;background:#f0fdf4;border-left:4px solid #16a34a;padding:1.25rem;border-radius:6px;margin-top:1rem}.results.active{display:block}.value{font-size:1.2rem;font-weight:700;color:#16a34a;margin-bottom:.4rem}.subtle,.faq-item p{color:#64748b;line-height:1.6}.faq-item{margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid #e2e8f0}.faq-item:last-child{border-bottom:none}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:.92rem;color:#7f1d1d;margin-top:2rem}.disclaimer-top{background:#fef9c3;border-left:4px solid #ca8a04;padding:1rem;border-radius:6px;font-size:.92rem;color:#713f12;margin-bottom:1.5rem}.section h2,.section h3,.faq-section h2,.faq-section h3{color:var(--primary,#2563eb);font-weight:700}.result-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e2e8f0}.result-row:last-child{border-bottom:none}footer{background:#fff;border-top:1px solid #e2e8f0;padding:2rem;text-align:center;color:#64748b;margin-top:3rem}</style></head><body><header><h1>Islamic Inheritance (Fara'id) Calculator</h1></header><main>
+
+<div class="disclaimer-top"><strong>Educational estimate only.</strong> This tool models the common nuclear-family case (spouse, children, parents, full siblings) under the majority Sunni fixed-share system. It does not cover multiple wives, grandparents, half-siblings, missing heirs, or bequests (wasiyyah). Always confirm actual estate distribution with a qualified Islamic scholar or Sharia council.</div>
+
+<section class="section"><form id="calcForm">
+<label for="estateValue">Net Estate Value (after debts, funeral costs, and wasiyyah up to 1/3)</label>
+<input id="estateValue" required step="any" type="number"/>
+
+<label for="deceasedGender">Deceased Was</label>
+<select id="deceasedGender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+
+<label for="spouseAlive">Surviving Spouse</label>
+<select id="spouseAlive">
+<option value="none">None</option>
+<option value="yes">Yes</option>
+</select>
+
+<label for="numWives">If deceased was male and has multiple surviving wives, how many? (leave 1 otherwise)</label>
+<input id="numWives" step="1" type="number" value="1"/>
+
+<label for="sons">Number of Sons</label>
+<input id="sons" step="1" type="number" value="0"/>
+
+<label for="daughters">Number of Daughters</label>
+<input id="daughters" step="1" type="number" value="0"/>
+
+<label for="motherAlive">Mother Surviving</label>
+<select id="motherAlive">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+
+<label for="fatherAlive">Father Surviving</label>
+<select id="fatherAlive">
+<option value="no">No</option>
+<option value="yes">Yes</option>
+</select>
+
+<label for="brothers">Full Brothers (only relevant if no father and no sons)</label>
+<input id="brothers" step="1" type="number" value="0"/>
+
+<label for="sisters">Full Sisters (only relevant if no father and no sons)</label>
+<input id="sisters" step="1" type="number" value="0"/>
+
+<button type="submit">Calculate Distribution</button>
+</form>
+<div class="results" id="result"></div>
+</section>
+
+<section class="section"><h2>What This Calculator Estimates</h2><p class="subtle">Fara'id is the Islamic system of fixed inheritance shares set out primarily in Surah An-Nisa (4:11-12) of the Quran. It defines specific fractional shares for certain heirs (spouse, parents, and daughters in some cases) and treats other heirs as 'asaba (residuary), who divide whatever remains after fixed shares are paid — with male 'asaba heirs generally receiving twice the share of equally-placed female 'asaba heirs. This calculator applies the majority Sunni structure to the common nuclear-family scenario: a surviving spouse, children, parents, and full siblings (siblings only inherit when there is no father and no sons).</p></section>
+
+<section class="section"><h2>How to Use This Calculator</h2><ol style="padding-left:1.5rem"><li>Enter the net estate value (after debts, funeral costs, and any bequest up to one-third of the estate).</li><li>Select whether the deceased was male or female — this changes whether the spouse is a husband or wife, and their respective shares.</li><li>Enter the surviving family members: spouse, sons, daughters, mother, father, and — only if relevant — full brothers and sisters.</li><li>Click Calculate Distribution.</li><li>Review the breakdown, and confirm with a scholar before relying on it for an actual estate.</li></ol></section>
+
+<section class="section"><h2>Scope and Limits</h2><p class="subtle">This calculator handles the fixed shares for spouse, mother, father, and daughters (when no sons are present), the 'asaba (residuary) split among sons and daughters together, and the 'asaba fallback to father or full siblings when there are no children. It applies <strong>awl</strong> (proportional reduction) automatically if the fixed shares exceed the full estate. It does <strong>not</strong> automatically apply <strong>radd</strong> (returning leftover residue to certain heirs when there's no 'asaba heir) — if that situation arises, the calculator will flag it and you'll need a scholar to confirm the correct radd distribution for your madhab. It also does not handle grandparents, half-siblings, multiple generations of relatives, missing/excluded heirs, or non-Sunni inheritance systems, all of which are common enough in practice that a scholar's review matters.</p></section>
+
+<section class="section"><h2>Related Calculators</h2><p><a href="zakat-calculator.html">Zakat Calculator</a> · <a href="net-worth.html">Net Worth</a> · <a href="inheritance-tax-calculator.html">Inheritance Tax Calculator</a></p></section>
+
+<section class="faq-section"><h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>What is Fara'id?</h3><p>Fara'id is the Islamic system of fixed inheritance shares, derived primarily from verses in Surah An-Nisa of the Quran, that determines how a deceased Muslim's estate is distributed among specific categories of surviving relatives.</p></div>
+<div class="faq-item"><h3>Does this calculator cover every family situation?</h3><p>No. This calculator covers the common nuclear-family case — spouse, children, parents, and full siblings. Estates involving multiple wives, grandparents, half-siblings, more distant relatives, missing heirs, or bequests require a qualified scholar or Islamic court, since the rules for those situations involve additional adjustments this tool does not model.</p></div>
+<div class="faq-item"><h3>Why do sons get twice the share of daughters?</h3><p>Under the classical ruling, male heirs in the 'asaba (residuary) category inherit at twice the rate of equally-placed female heirs, reflecting differing financial obligations assigned in Islamic law (such as mahr and full financial maintenance of a household), not a statement about worth. Scholars have written extensively on the reasoning; this calculator applies the rule as classically defined.</p></div>
+<div class="faq-item"><h3>What happens if the shares do not add up to the whole estate?</h3><p>Two adjustment mechanisms exist in Fara'id: awl, where shares are proportionally reduced if they exceed the whole estate, and radd, where leftover residue is returned to certain heirs if no residuary ('asaba) heir exists. This calculator applies awl automatically and flags radd cases for scholarly review rather than resolving them automatically, since the correct radd recipients vary by school of thought.</p></div>
+<div class="faq-item"><h3>Should I use this for actual estate distribution?</h3><p>No. This is an educational estimate of the majority Sunni fixed-share structure only. Actual estate settlement should always be confirmed with a qualified Islamic scholar, Islamic court (Sharia council), or estate attorney familiar with Islamic inheritance law, particularly because madhab (school of thought) differences, local civil law, and family-specific details can all change the outcome.</p></div>
+</section>
+
+<div class="disclaimer">This calculator provides an educational estimate only, based on the majority Sunni fixed-share (Fara'id) system for common family structures. It is not a religious ruling (fatwa) or legal advice. Actual estate distribution should always be confirmed with a qualified Islamic scholar, Sharia council, or estate attorney — especially for any estate involving multiple wives, grandparents, half-siblings, missing heirs, disputed paternity, non-Muslim heirs, or bequests.</div>
+<p class="subtle" style="margin-top:1rem">Last updated: August 18, 2026</p>
+<div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</main><footer><p><strong>Zaculators</strong> © 2025 | Free Calculators</p></footer>
+<script>
+calcForm.addEventListener('submit', function(e){
+e.preventDefault();
+const estate = parseFloat(estateValue.value);
+if(!isFinite(estate) || estate <= 0){ alert('Enter a valid estate value.'); return; }
+
+const gender = deceasedGender.value;
+const hasSpouse = spouseAlive.value === 'yes';
+const nWives = Math.max(1, parseInt(numWives.value) || 1);
+const sonsN = Math.max(0, parseInt(sons.value) || 0);
+const daughtersN = Math.max(0, parseInt(daughters.value) || 0);
+const hasChildren = (sonsN + daughtersN) > 0;
+const motherLives = motherAlive.value === 'yes';
+const fatherLives = fatherAlive.value === 'yes';
+const brothersN = Math.max(0, parseInt(brothers.value) || 0);
+const sistersN = Math.max(0, parseInt(sisters.value) || 0);
+
+let shares = {}; // name -> fraction of estate
+let notes = [];
+
+// Spouse share
+if(hasSpouse){
+  if(gender === 'male'){ // wife/wives share
+    const wifeShare = hasChildren ? (1/8) : (1/4);
+    shares['Wife'+(nWives>1?'ves ('+nWives+', shared)':'')] = wifeShare;
+  } else { // husband
+    const husbShare = hasChildren ? (1/4) : (1/2);
+    shares['Husband'] = husbShare;
+  }
+}
+
+// Mother share
+if(motherLives){
+  const siblingCount = brothersN + sistersN;
+  const motherShare = (hasChildren || siblingCount >= 2) ? (1/6) : (1/3);
+  shares['Mother'] = motherShare;
+}
+
+// Daughters fixed share (only if no sons)
+let daughtersFixedShare = 0;
+if(daughtersN > 0 && sonsN === 0){
+  daughtersFixedShare = daughtersN === 1 ? (1/2) : (2/3);
+  shares['Daughter'+(daughtersN>1?'s ('+daughtersN+', shared)':'')] = daughtersFixedShare;
+}
+
+// Father share
+let fatherFixed = 0;
+if(fatherLives){
+  if(hasChildren){
+    fatherFixed = 1/6;
+    shares['Father (fixed share)'] = fatherFixed;
+  }
+  // father also takes residue as 'asaba below if no sons
+}
+
+// Sum fixed shares so far
+let fixedSum = Object.values(shares).reduce((a,b)=>a+b,0);
+let residue = Math.max(0, 1 - fixedSum);
+
+// Residuary ('asaba) distribution
+if(sonsN > 0){
+  // sons + daughters split residue 2:1 (male share = 2x female share per unit)
+  const units = sonsN*2 + daughtersN;
+  const sonsTotalShare = residue * (sonsN*2/units);
+  const daughtersTotalShare = residue * (daughtersN*1/units);
+  shares['Son'+(sonsN>1?'s ('+sonsN+', combined)':'')] = sonsTotalShare;
+  if(daughtersN>0) shares['Daughter'+(daughtersN>1?'s ('+daughtersN+', residuary co-heirs, combined)':' (residuary co-heir)')] = daughtersTotalShare;
+  residue = 0;
+} else if(fatherLives && !hasChildren){
+  shares['Father'] = (shares['Father']||0) + residue;
+  residue = 0;
+} else if(fatherLives && hasChildren && daughtersN>0 && sonsN===0){
+  // father takes residue too as 'asaba after daughters' fixed share
+  shares['Father (fixed share)'] = (shares['Father (fixed share)']||0) + residue;
+  residue = 0;
+} else if(!fatherLives && !hasChildren && (brothersN>0 || sistersN>0)){
+  // full siblings inherit as 'asaba (simplified: only when no father, no children)
+  if(brothersN>0){
+    const units = brothersN*2 + sistersN;
+    const brothersTotalShare = residue*(brothersN*2/units);
+    const sistersTotalShare = residue*(sistersN*1/units);
+    shares['Brother'+(brothersN>1?'s ('+brothersN+', combined)':'')] = brothersTotalShare;
+    if(sistersN>0) shares['Sister'+(sistersN>1?'s ('+sistersN+', residuary co-heirs, combined)':' (residuary co-heir)')] = sistersTotalShare;
+  } else if(sistersN>0){
+    const sisterFixed = sistersN===1 ? (1/2) : (2/3);
+    shares['Sister'+(sistersN>1?'s ('+sistersN+', shared)':'')] = sisterFixed;
+    residue = Math.max(0, residue - sisterFixed);
+    if(residue > 0){ notes.push('Remaining '+(residue*100).toFixed(2)+'% is unassigned residue (radd case) — needs scholarly confirmation on distribution.'); }
+  }
+  residue = 0;
+}
+
+let totalFraction = Object.values(shares).reduce((a,b)=>a+b,0);
+
+// Apply awl if oversubscribed
+let awlApplied = false;
+if(totalFraction > 1.0001){
+  awlApplied = true;
+  const factor = 1/totalFraction;
+  for(const k in shares){ shares[k] = shares[k]*factor; }
+  totalFraction = 1;
+}
+
+if(residue > 0.0001 && totalFraction < 0.9999){
+  notes.push('Remaining '+(residue*100).toFixed(2)+'% of the estate has no assigned residuary heir under this simplified model (radd case) — this needs scholarly confirmation on which heirs receive it back.');
+}
+
+if(Object.keys(shares).length === 0){
+  notes.push('No heirs entered, or the entered combination falls outside common nuclear-family cases this calculator covers. Consult a scholar.');
+}
+
+let html = '';
+for(const [name, frac] of Object.entries(shares)){
+  const amt = estate * frac;
+  html += '<div class="result-row"><span>'+name+' ('+(frac*100).toFixed(2)+'%)</span><span class="value" style="margin:0;font-size:1rem">'+amt.toLocaleString(undefined,{maximumFractionDigits:2})+'</span></div>';
+}
+if(awlApplied){ html += '<p class="subtle" style="margin-top:0.75rem;">Note: fixed shares exceeded 100% of the estate, so proportional reduction (awl) was applied automatically to all shares.</p>'; }
+for(const n of notes){ html += '<p class="subtle" style="margin-top:0.75rem;color:#b45309;">⚠ '+n+'</p>'; }
+
+result.innerHTML = html;
+result.classList.add('active');
+});
+</script>
+</body></html>
