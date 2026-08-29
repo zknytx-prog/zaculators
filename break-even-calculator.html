@@ -1,14 +1,121 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="utf-8"/>
-<meta name="description" content="This page has moved. Visit our free break-even analysis calculator at zaculators.com/break-even.html for the full tool, FAQ, and related calculators.">
-<title>Redirecting...</title>
-<link href="https://zaculators.com/break-even.html" rel="canonical"/>
-<meta content="0; url=https://zaculators.com/break-even.html" http-equiv="refresh"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Break-Even Calculator | BizyCalc</title>
+<meta content="Free break-even calculator for small businesses. Enter fixed costs, price, and variable cost per unit to find your break-even point instantly." name="description"/><link href="https://bizycalc.com/break-even-calculator.html" rel="canonical"/><link href="/favicon.png" rel="icon" type="image/png"/><meta content="Break-Even Calculator | BizyCalc" property="og:title"/><meta content="Free break-even calculator for small businesses. Enter fixed costs, price, and variable cost per unit to find your break-even point instantly." property="og:description"/><meta content="website" property="og:type"/><meta content="https://bizycalc.com/break-even-calculator.html" property="og:url"/><meta content="https://bizycalc.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Break-Even Calculator | BizyCalc" name="twitter:title"/><meta content="Free break-even calculator for small businesses. Enter fixed costs, price, and variable cost per unit to find your break-even point instantly." name="twitter:description"/><meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
 </head>
 <body>
-<p>This page has moved. <a href="https://zaculators.com/break-even.html">Click here</a> if you are not redirected automatically.</p>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>Break-Even Calculator</h1>
+<p>See exactly how many units or sales you need to cover your costs.</p>
+</div>
+<div class="tool-box">
+<label>Fixed Costs ($/month)</label>
+<input id="fixed" placeholder="5000" type="number"/>
+<label>Price Per Unit ($)</label>
+<input id="price" placeholder="25" type="number"/>
+<label>Variable Cost Per Unit ($)</label>
+<input id="varCost" placeholder="10" type="number"/>
+<button class="calc-btn" onclick="calcBreakEven()">Calculate Break-Even</button>
+<div class="result" id="result">
+<div class="result-row"><span>Contribution Margin / Unit</span><strong id="rMargin">$0</strong></div>
+<div class="result-row"><span>Break-Even Units</span><strong id="rUnits">0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
+<span><strong>Break-Even Revenue</strong></span><strong id="rRevenue">$0</strong>
+</div>
+</div>
+</div>
+<div class="explain">
+<h2>How this calculator works</h2>
+<p>Contribution margin = price per unit − variable cost per unit. Break-even units = fixed costs ÷ contribution margin. Break-even revenue = break-even units × price per unit. Once you cross this number, every additional sale is profit.</p>
+</div>
+<div class="explain">
+<h2>Why break-even matters before you launch</h2>
+<p>Break-even analysis tells you the minimum volume you need before a product or service is worth doing. It's the single fastest way to sanity-check a new offer, a price change, or a decision to add staff — before you commit real money.</p>
+</div>
+<div class="explain">
+<h2>Fixed costs vs. variable costs</h2>
+<p>Fixed costs stay the same no matter how much you sell — rent, salaries, insurance, software subscriptions. Variable costs scale with each sale — materials, packaging, payment processing fees, direct labor per unit. Getting this split right is what makes the break-even number accurate.</p>
+</div>
+<div class="explain">
+<h2>A quick example</h2>
+<p>Say your fixed costs are $5,000/month, you sell a product for $25, and it costs you $10 in materials and processing per unit. Your contribution margin is $15 ($25 minus $10), so you need $5,000 divided by $15, or 334 units a month, to break even. Sell fewer than that and you're losing money; sell more and every extra unit is pure profit at that $15 margin.</p>
+</div>
+<div class="explain">
+<h2>FAQ</h2>
+<p><strong>What if my contribution margin is negative?</strong> That means your variable cost per unit is higher than your price — you lose money on every sale regardless of volume. Fix the pricing or cost structure before scaling.</p>
+<p><strong>Does break-even include profit?</strong> No — break-even is the point where revenue exactly equals costs, profit is $0. To target a specific profit number, add your profit goal to fixed costs before dividing by contribution margin.</p>
+<p><strong>How often should I recalculate this?</strong> Any time a major cost changes — rent increase, new hire, supplier price change, or a price adjustment on your product. Many businesses recheck quarterly at minimum.</p>
+</div>
+</div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/profit-margin-calculator.html">Profit Margin Calculator</a> · <a href="/shipping-cost-calculator.html">Shipping Cost Estimator</a> · <a href="/payback-period-calculator.html">Payback Period Calculator</a></p></div><div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function calcBreakEven(){
+  const fixed = parseFloat(document.getElementById('fixed').value) || 0;
+  const price = parseFloat(document.getElementById('price').value) || 0;
+  const varCost = parseFloat(document.getElementById('varCost').value) || 0;
+
+  const margin = price - varCost;
+  const units = margin > 0 ? fixed / margin : 0;
+  const revenue = units * price;
+
+  document.getElementById('rMargin').textContent = '$' + margin.toFixed(2);
+  document.getElementById('rUnits').textContent = Math.ceil(units);
+  document.getElementById('rRevenue').textContent = '$' + revenue.toFixed(2);
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Break-Even Calculator</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Free break-even calculator for small businesses. Enter fixed costs, price, and variable cost per unit to find your break-even point instantly. Instead of estimating or hunting for a formula online, Break-Even Calculator does the calculation instantly, right in your browser.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Fixed Costs, Price Per Unit and Variable Cost Per Unit, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">Here's what it takes to get a result:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter fixed costs.</li><li>Add price per unit, variable cost per unit.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">This tool is aimed at anyone who wants a precise figure without doing the math themselves, from first-time users to people who use it as part of a regular routine.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">Most people using a tool like this are somewhere in the middle of a real decision — pricing a product, weighing a fee structure, or checking a number before committing to something. A quick, accurate calculation beats guessing or digging through a spreadsheet template.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Will it work on my phone?</strong> Yes, the page is fully responsive and works the same on mobile, tablet, or desktop.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> The math behind this tool follows established, conventional methods — if a result looks off, the most likely cause is an input worth rechecking.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Break-Even isn't quite the tool you're after.</p>
+</section>
+
 </body>
 </html>

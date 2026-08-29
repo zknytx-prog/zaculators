@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon FBA Fee & Profit Calculator (2026 Rates) | BizyCalc</title>
+<meta name="description" content="Free Amazon FBA calculator with 2026 referral fees, fulfillment fees, and the fuel/logistics surcharge. See your real profit and margin per unit.">
+<link rel="canonical" href="https://bizycalc.com/amazon-fba-calculator.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:title" content="Amazon FBA Fee & Profit Calculator (2026 Rates) | BizyCalc">
+<meta property="og:description" content="Free Amazon FBA calculator with 2026 referral fees, fulfillment fees, and the fuel/logistics surcharge. See your real profit and margin per unit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bizycalc.com/amazon-fba-calculator.html">
+<meta property="og:image" content="https://bizycalc.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amazon FBA Fee & Profit Calculator (2026 Rates) | BizyCalc">
+<meta name="twitter:description" content="Free Amazon FBA calculator with 2026 referral fees, fulfillment fees, and the fuel/logistics surcharge. See your real profit and margin per unit.">
+<meta name="twitter:image" content="https://bizycalc.com/og-image.png">
+<link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789" crossorigin="anonymous"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" async></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+  <a href="/" class="logo">Bizy<span>Calc</span></a>
+  <nav><a href="/">All Tools</a></nav>
+</header>
+
+<div class="container">
+  <div class="hero" style="padding-top:0;">
+    <span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+    <h1>Amazon FBA Fee &amp; Profit Calculator</h1>
+    <p>Estimate your true FBA profit per unit after referral fees, fulfillment fees, and the 2026 fuel surcharge.</p>
+  </div>
+
+  <div class="tool-box">
+    <label>Sale Price ($)</label>
+    <input type="number" id="salePrice" placeholder="29.99" value="29.99">
+    <label>Your Product Cost ($)</label>
+    <input type="number" id="productCost" placeholder="8.00" value="8.00">
+    <label>Referral Fee (%)</label>
+    <input type="number" id="referralPct" placeholder="15" value="15">
+    <label>Size Tier</label>
+    <select id="sizeTier">
+      <option value="3.22">Small Standard (~$3.22 fulfillment)</option>
+      <option value="4.50" selected>Large Standard (~$4.50 fulfillment)</option>
+      <option value="8.00">Large Bulky (~$8.00 fulfillment)</option>
+      <option value="10.50">Oversize (~$10.50+ fulfillment)</option>
+    </select>
+    <button class="calc-btn" onclick="calcFBA()">Calculate Profit</button>
+    <div class="result" id="result">
+      <div class="result-row"><span>Referral Fee</span><strong id="rReferral">$0</strong></div>
+      <div class="result-row"><span>Fulfillment Fee</span><strong id="rFulfill">$0</strong></div>
+      <div class="result-row"><span>Fuel/Logistics Surcharge (3.5%)</span><strong id="rFuel">$0</strong></div>
+      <div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;"><span><strong>Net Profit / Unit</strong></span><strong id="rProfit">$0</strong></div>
+      <div class="result-row"><span>Profit Margin</span><strong id="rMargin">0%</strong></div>
+    </div>
+  </div>
+
+<div class="explain"><h2>How this calculator works</h2><p>Amazon charges a referral fee (a percentage of your sale price, usually 8–15% depending on category) plus a fixed fulfillment fee based on your product's size tier. Since April 17, 2026, Amazon also applies a 3.5% fuel and logistics surcharge on top of all FBA fulfillment fees. Your profit is what's left after subtracting your product cost and all three fees from the sale price.</p></div>
+<div class="explain"><h2>Why size tier matters so much</h2><p>Fulfillment fees are the single biggest lever you control. A product that barely fits in a larger tier can cost you $2–5 more per unit in fulfillment fees alone — often the difference between a profitable SKU and a break-even one. Check your exact tier in Seller Central before finalizing packaging.</p></div>
+<div class="explain"><h2>A quick example</h2><p>Say you sell a $29.99 item that costs you $8 to make, in the Large Standard tier ($4.50 fulfillment) at a 15% referral fee. Referral fee is $4.50, fulfillment is $4.50, subtotal $9.00, plus 3.5% fuel surcharge ($0.32) brings total fees to $9.32. Profit is $29.99 − $8.00 − $9.32 = $12.67, a 42.2% margin.</p></div>
+<div class="explain"><h2>FAQ</h2><p><strong>Are these exact fees for my product?</strong> No — referral fees range from 8% to 45% depending on category (most are 15%), and fulfillment fees depend on your exact weight and dimensions. Use Amazon's official Revenue Calculator in Seller Central for your specific SKU before pricing.</p><p><strong>Does this include storage fees?</strong> No. Monthly and long-term storage fees are separate and depend on how much inventory you hold and for how long — this tool covers per-unit selling costs only.</p><p><strong>What's the fuel and logistics surcharge?</strong> A 3.5% surcharge Amazon added on April 17, 2026, applied on top of FBA and Multi-Channel Fulfillment fees, in addition to the existing Q4 peak surcharge that applies October 15 through January 14.</p></div>
+
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/payment-processor-comparison.html">Payment Processor Comparison</a> · <a href="/etsy-fee-calculator.html">Etsy Fee Calculator</a> · <a href="/ebay-fee-calculator.html">eBay Fee Calculator</a></p></div>
+</div>
+
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3736768574278789" data-ad-slot="2665011148" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>&copy; 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+
+<script>
+function calcFBA(){
+  const price = parseFloat(document.getElementById('salePrice').value) || 0;
+  const cost = parseFloat(document.getElementById('productCost').value) || 0;
+  const refPct = parseFloat(document.getElementById('referralPct').value) || 0;
+  const fulfillFee = parseFloat(document.getElementById('sizeTier').value) || 0;
+
+  const referralFee = price * (refPct / 100);
+  const subtotal = referralFee + fulfillFee;
+  const fuelSurcharge = subtotal * 0.035;
+  const totalFees = subtotal + fuelSurcharge;
+  const profit = price - cost - totalFees;
+  const margin = price > 0 ? (profit / price) * 100 : 0;
+
+  document.getElementById('rReferral').textContent = '$' + referralFee.toFixed(2);
+  document.getElementById('rFulfill').textContent = '$' + fulfillFee.toFixed(2);
+  document.getElementById('rFuel').textContent = '$' + fuelSurcharge.toFixed(2);
+  document.getElementById('rProfit').textContent = '$' + profit.toFixed(2);
+  document.getElementById('rMargin').textContent = margin.toFixed(1) + '%';
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Amazon FBA Fee & Profit Calculator (2026 Rates)</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Free Amazon FBA calculator with 2026 referral fees, fulfillment fees, and the fuel/logistics surcharge. See your real profit and margin per unit. Amazon FBA Fee & Profit Calculator (2026 Rates) was built to replace the back-of-napkin math with something exact and repeatable.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Sale Price, Your Product Cost, Referral Fee and Size Tier, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">Using it is straightforward:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter sale price.</li><li>Add your product cost, referral fee, size tier.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">It's built for anyone who'd rather trust a calculation than guess — students, professionals, and everyday users checking a number they need to be right.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">Numbers like this tend to get recalculated more than once as circumstances shift, so having a fast, repeatable tool on hand saves real time over doing it manually each time.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Will it work on my phone?</strong> Yes, the page is fully responsive and works the same on mobile, tablet, or desktop.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Does it store my information?</strong> No. The calculation happens in your browser and nothing you enter is saved or sent anywhere.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> Results depend on standard, widely used formulas for this kind of calculation — accuracy is only as good as the numbers you put in, so it's worth double-checking your inputs.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Amazon FBA Fee & Profit (2026 Rates) isn't quite the tool you're after.</p>
+</section>
+
+</body>
+</html>

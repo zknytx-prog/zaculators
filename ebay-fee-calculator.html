@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>eBay Fee Calculator 2026 | BizyCalc</title>
+<meta content="Free eBay fee calculator using 2026 rates: 13.6% final value fee plus per-order fee. Enter your sale price and shipping to see your exact payout." name="description"/>
+<link href="https://bizycalc.com/ebay-fee-calculator.html" rel="canonical"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<meta content="eBay Fee Calculator 2026 | BizyCalc" property="og:title"/>
+<meta content="Free eBay fee calculator using 2026 rates: 13.6% final value fee plus per-order fee. Enter your sale price and shipping to see your exact payout." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://bizycalc.com/ebay-fee-calculator.html" property="og:url"/>
+<meta content="https://bizycalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="eBay Fee Calculator 2026 | BizyCalc" name="twitter:title"/>
+<meta content="Free eBay fee calculator using 2026 rates: 13.6% final value fee plus per-order fee. Enter your sale price and shipping to see your exact payout." name="twitter:description"/>
+<meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>eBay Fee Calculator</h1>
+<p>Calculate eBay's final value fee and per-order fee on your sale price and shipping to see what you actually keep.</p>
+</div>
+<div class="tool-box">
+<label>Sale Price ($)</label>
+<input id="salePrice" placeholder="60.00" type="number" value="60.00"/>
+<label>Shipping Charged to Buyer ($)</label>
+<input id="shipping" placeholder="7.00" type="number" value="7.00"/>
+<button class="calc-btn" onclick="calcEbay()">Calculate Net Payout</button>
+<div class="result" id="result">
+<div class="result-row"><span>Final Value Fee (13.6%)</span><strong id="rFVF">$0</strong></div>
+<div class="result-row"><span>Per-Order Fee</span><strong id="rPerOrder">$0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;"><span><strong>You Receive</strong></span><strong id="rNet">$0</strong></div>
+</div>
+</div>
+<div class="explain"><h2>How this calculator works</h2><p>eBay charges a final value fee — 13.6% for most categories — on the total amount the buyer pays, including shipping, plus a flat per-order fee ($0.40 for orders over $10, $0.30 for orders $10 or under).</p></div>
+<div class="explain"><h2>Category rates vary</h2><p>The 13.6% rate used here is the most common rate, but eBay's final value fee actually ranges from about 12.7% to 15.3% depending on category — electronics and some specialty categories run lower or higher than the standard rate.</p></div>
+<div class="explain"><h2>A quick example</h2><p>On a $60 item with $7 shipping ($67 total): final value fee is $9.11 (13.6% of $67), plus a $0.40 per-order fee since the total is over $10. Total fees: $9.51. You receive $57.49.</p></div>
+<div class="explain"><h2>FAQ</h2><p><strong>Does this include eBay Store subscription fees?</strong> No — this calculates per-transaction fees only. Monthly store subscription fees (which can lower your final value fee percentage in some categories) aren't included.</p><p><strong>Why does eBay charge fees on shipping too?</strong> eBay's final value fee applies to the total amount the buyer pays you, which includes shipping — this has been standard eBay policy since 2022.</p><p><strong>Are there fees for listing an item?</strong> Most sellers get a monthly allowance of free listings; insertion fees only kick in beyond that allowance or for certain listing upgrades, and aren't included here.</p></div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/etsy-fee-calculator.html">Etsy Fee Calculator</a> · <a href="/amazon-fba-calculator.html">Amazon FBA Calculator</a> · <a href="/shipping-cost-calculator.html">Shipping Cost Calculator</a></p></div>
+</div>
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function calcEbay(){
+  const price = parseFloat(document.getElementById('salePrice').value) || 0;
+  const shipping = parseFloat(document.getElementById('shipping').value) || 0;
+  const base = price + shipping;
+
+  const finalValueFee = base * 0.136;
+  const perOrderFee = base > 10 ? 0.40 : 0.30;
+  const totalFees = finalValueFee + perOrderFee;
+  const net = base - totalFees;
+
+  document.getElementById('rFVF').textContent = '$' + finalValueFee.toFixed(2);
+  document.getElementById('rPerOrder').textContent = '$' + perOrderFee.toFixed(2);
+  document.getElementById('rNet').textContent = '$' + net.toFixed(2);
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the eBay Fee Calculator 2026</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Free eBay fee calculator using 2026 rates: 13.6% final value fee plus per-order fee. Enter your sale price and shipping to see your exact payout. eBay Fee Calculator 2026 is built for one job — turning your inputs into an accurate result without spreadsheets, apps, or guesswork.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Sale Price and Shipping Charged to Buyer, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">Using it is straightforward:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter sale price.</li><li>Add shipping charged to buyer.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">This tool is aimed at anyone who wants a precise figure without doing the math themselves, from first-time users to people who use it as part of a regular routine.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">A lot of the value here isn't just the final number — it's being able to quickly test a few different scenarios and see how the result shifts before making a decision.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Will it work on my phone?</strong> Yes, the page is fully responsive and works the same on mobile, tablet, or desktop.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Does it store my information?</strong> No. The calculation happens in your browser and nothing you enter is saved or sent anywhere.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> This uses the standard approach used for this type of calculation, so the output should match what you'd get working it out by hand — just with less room for error.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if eBay Fee 2026 isn't quite the tool you're after.</p>
+</section>
+
+</body>
+</html>

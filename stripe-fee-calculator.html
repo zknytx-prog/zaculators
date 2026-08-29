@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stripe Fee Calculator 2026 | BizyCalc</title>
+<meta content="Free Stripe fee calculator with 2026 rates: 2.9% + 30¢ for domestic cards, 4.4% + 30¢ for international cards. See your exact net payout." name="description"/>
+<link href="https://bizycalc.com/stripe-fee-calculator.html" rel="canonical"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<meta content="Stripe Fee Calculator 2026 | BizyCalc" property="og:title"/>
+<meta content="Free Stripe fee calculator with 2026 rates: 2.9% + 30¢ for domestic cards, 4.4% + 30¢ for international cards. See your exact net payout." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://bizycalc.com/stripe-fee-calculator.html" property="og:url"/>
+<meta content="https://bizycalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Stripe Fee Calculator 2026 | BizyCalc" name="twitter:title"/>
+<meta content="Free Stripe fee calculator with 2026 rates: 2.9% + 30¢ for domestic cards, 4.4% + 30¢ for international cards. See your exact net payout." name="twitter:description"/>
+<meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>Stripe Fee Calculator</h1>
+<p>See exactly what Stripe takes on a card payment, domestic or international, and what actually lands in your account.</p>
+</div>
+<div class="tool-box">
+<label>Payment Amount ($)</label>
+<input id="amount" placeholder="500" type="number" value="500"/>
+<label>Card Type</label>
+<select id="cardType">
+<option value="domestic">Domestic card</option>
+<option value="international">International card (issued outside your country)</option>
+</select>
+<button class="calc-btn" onclick="calcStripe()">Calculate Fee</button>
+<div class="result" id="result">
+<div class="result-row"><span>Stripe Fee</span><strong id="rFee">$0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;"><span><strong>You Receive</strong></span><strong id="rNet">$0</strong></div>
+</div>
+</div>
+<div class="explain"><h2>How this calculator works</h2><p>Stripe's standard US rate is 2.9% + $0.30 per successful domestic card payment. When the card was issued outside your country, Stripe adds a 1.5% cross-border fee, bringing the total to 4.4% + $0.30.</p></div>
+<div class="explain"><h2>It's the card's origin that matters, not the customer's location</h2><p>The international rate applies based on where the card itself was issued, not necessarily where your customer is physically located — a customer traveling abroad using their home-country card still counts as domestic to Stripe.</p></div>
+<div class="explain"><h2>A quick example</h2><p>A $500 payment with a domestic card: 2.9% ($14.50) + $0.30 = $14.80 in fees, netting $485.20. The same payment with an international card: 4.4% ($22.00) + $0.30 = $22.30 in fees, netting $477.70 — a $7.50 difference.</p></div>
+<div class="explain"><h2>FAQ</h2><p><strong>Are there volume discounts?</strong> Yes, Stripe offers custom/negotiated pricing for higher-volume merchants, typically starting in the tens of thousands of dollars per month in processing — this calculator uses the standard published rate.</p><p><strong>Does this include Stripe's monthly fees?</strong> Stripe's standard plan has no monthly or setup fee — you only pay the per-transaction rate. This calculator reflects per-transaction cost only.</p><p><strong>What about ACH or bank transfers instead of cards?</strong> ACH debit payments through Stripe are typically much cheaper (around 0.8%, capped at $5) than card payments — this calculator is for card payments specifically.</p></div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/paypal-fee-calculator.html">PayPal Fee Calculator</a> · <a href="/shopify-fee-calculator.html">Shopify Fee Calculator</a> · <a href="/payment-processor-comparison.html">Payment Processor Comparison</a></p></div>
+</div>
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function calcStripe(){
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const intl = document.getElementById('cardType').value === 'international';
+
+  const fee = intl ? (amount * 0.044 + 0.30) : (amount * 0.029 + 0.30);
+  const net = amount - fee;
+
+  document.getElementById('rFee').textContent = '$' + fee.toFixed(2);
+  document.getElementById('rNet').textContent = '$' + net.toFixed(2);
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Stripe Fee Calculator 2026</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Free Stripe fee calculator with 2026 rates: 2.9% + 30¢ for domestic cards, 4.4% + 30¢ for international cards. See your exact net payout. Stripe Fee Calculator 2026 was built to replace the back-of-napkin math with something exact and repeatable.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Payment Amount and Card Type, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">Using it is straightforward:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter payment amount.</li><li>Add card type.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">People turn to this calculator when they need a fast, dependable number instead of estimating — whether that's for a one-off decision or something they check regularly.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">It's easy to lose track of small percentages and fees when they're spread across several line items — this tool pulls them into one clear number so nothing gets missed in the math.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Will it work on my phone?</strong> Yes, the page is fully responsive and works the same on mobile, tablet, or desktop.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> Results depend on standard, widely used formulas for this kind of calculation — accuracy is only as good as the numbers you put in, so it's worth double-checking your inputs.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Stripe Fee 2026 isn't quite the tool you're after.</p>
+</section>
+
+</body>
+</html>

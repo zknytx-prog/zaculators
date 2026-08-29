@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GST Calculator for Invoicing | BizyCalc</title>
+<meta content="Free GST calculator for business invoices. Add GST to a price or extract GST from a GST-inclusive amount, with CGST/SGST split shown for India." name="description"/>
+<link href="https://bizycalc.com/gst-business-calculator.html" rel="canonical"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<meta content="GST Calculator for Invoicing | BizyCalc" property="og:title"/>
+<meta content="Free GST calculator for business invoices. Add GST to a price or extract GST from a GST-inclusive amount, with CGST/SGST split shown for India." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://bizycalc.com/gst-business-calculator.html" property="og:url"/>
+<meta content="https://bizycalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="GST Calculator for Invoicing | BizyCalc" name="twitter:title"/>
+<meta content="Free GST calculator for business invoices. Add GST to a price or extract GST from a GST-inclusive amount, with CGST/SGST split shown for India." name="twitter:description"/>
+<meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>GST Calculator for Business Invoicing</h1>
+<p>Add GST to a price you're about to invoice, or extract the GST already included in a price — with the CGST/SGST split shown.</p>
+</div>
+<div class="tool-box">
+<label>Amount ($)</label>
+<input id="amount" placeholder="1000" type="number" value="1000"/>
+<label>GST Rate (%)</label>
+<input id="rate" placeholder="18" type="number" value="18"/>
+<label>Mode</label>
+<select id="mode">
+<option value="add">Add GST (amount is GST-exclusive)</option>
+<option value="extract">Extract GST (amount already includes GST)</option>
+</select>
+<button class="calc-btn" onclick="calcGST()">Calculate</button>
+<div class="result" id="result">
+<div class="result-row"><span>Base Amount</span><strong id="rBase">$0</strong></div>
+<div class="result-row"><span>GST Amount</span><strong id="rGST">$0</strong></div>
+<div class="result-row"><span>  CGST (half)</span><strong id="rCGST">$0</strong></div>
+<div class="result-row"><span>  SGST (half)</span><strong id="rSGST">$0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;"><span><strong>Total (GST-Inclusive)</strong></span><strong id="rTotal">$0</strong></div>
+</div>
+</div>
+<div class="explain"><h2>How this calculator works</h2><p>In 'Add GST' mode, your entered amount is treated as the base price and GST is added on top. In 'Extract GST' mode, your entered amount is treated as already including GST, and the calculator backs out the base price and GST portion from that total.</p></div>
+<div class="explain"><h2>CGST vs SGST vs IGST</h2><p>For intra-state sales in India, GST splits evenly into CGST (central) and SGST (state) — shown here as half each. For inter-state sales, the full amount is charged as IGST instead of split, but the total GST amount is the same either way.</p></div>
+<div class="explain"><h2>A quick example</h2><p>Adding 18% GST to a $1,000 invoice: GST amount is $180 ($90 CGST + $90 SGST), for a total of $1,180. Extracting GST from a $1,180 GST-inclusive amount at 18% gives the same result in reverse: base $1,000, GST $180.</p></div>
+<div class="explain"><h2>FAQ</h2><p><strong>Is this specific to India's GST?</strong> The CGST/SGST split is specific to India's GST system, but the core add/extract math works for any percentage-based goods and services tax — just adjust the rate and ignore the CGST/SGST breakdown if it doesn't apply to your country.</p><p><strong>What rate should I use?</strong> India's GST has multiple slabs (commonly 5%, 12%, 18%, 28%) depending on the goods or service category — confirm the correct slab for what you're invoicing before using this for an actual invoice.</p><p><strong>Is this tax advice?</strong> No — this is a calculation tool only, not tax advice. Confirm your specific GST obligations and correct rate with a tax professional or your local GST portal.</p></div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/vat-business-calculator.html">VAT Calculator for Business</a> · <a href="/invoice-generator.html">Invoice Generator</a> · <a href="/import-duty-calculator.html">Import Duty / Landed Cost Calculator</a></p></div>
+</div>
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function calcGST(){
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const rate = parseFloat(document.getElementById('rate').value) || 0;
+  const mode = document.getElementById('mode').value;
+
+  let base, gst, total;
+  if (mode === 'add') {
+    base = amount;
+    gst = amount * (rate / 100);
+    total = base + gst;
+  } else {
+    total = amount;
+    base = amount / (1 + rate / 100);
+    gst = total - base;
+  }
+
+  const cgst = gst / 2;
+  const sgst = gst / 2;
+
+  document.getElementById('rBase').textContent = '$' + base.toFixed(2);
+  document.getElementById('rGST').textContent = '$' + gst.toFixed(2);
+  document.getElementById('rCGST').textContent = '$' + cgst.toFixed(2);
+  document.getElementById('rSGST').textContent = '$' + sgst.toFixed(2);
+  document.getElementById('rTotal').textContent = '$' + total.toFixed(2);
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the GST Calculator for Invoicing</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Free GST calculator for business invoices. Add GST to a price or extract GST from a GST-inclusive amount, with CGST/SGST split shown for India. Instead of estimating or hunting for a formula online, GST Calculator for Invoicing does the calculation instantly, right in your browser.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Amount, GST Rate and Mode, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">The process takes under a minute:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter amount.</li><li>Add gst rate, mode.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">This tool is aimed at anyone who wants a precise figure without doing the math themselves, from first-time users to people who use it as part of a regular routine.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">Numbers like this tend to get recalculated more than once as circumstances shift, so having a fast, repeatable tool on hand saves real time over doing it manually each time.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Does it store my information?</strong> No. The calculation happens in your browser and nothing you enter is saved or sent anywhere.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> This uses the standard approach used for this type of calculation, so the output should match what you'd get working it out by hand — just with less room for error.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if GST for Invoicing isn't quite the tool you're after.</p>
+</section>
+
+</body>
+</html>

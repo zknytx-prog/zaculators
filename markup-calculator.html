@@ -1,14 +1,118 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="utf-8"/>
-<meta name="description" content="This page has moved. Visit our free markup and margin calculator at zaculators.com/markup-tool.html for the full tool, FAQ, and related calculators.">
-<title>Redirecting...</title>
-<link href="https://zaculators.com/markup-tool.html" rel="canonical"/>
-<meta content="0; url=https://zaculators.com/markup-tool.html" http-equiv="refresh"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Markup Calculator - Find Your Selling Price | BizyCalc</title>
+<meta content="Free markup calculator. Enter your cost and desired markup percentage to instantly find your selling price and profit per unit." name="description"/><link href="https://bizycalc.com/markup-calculator.html" rel="canonical"/><link href="/favicon.png" rel="icon" type="image/png"/><meta content="Markup Calculator - Find Your Selling Price | BizyCalc" property="og:title"/><meta content="Free markup calculator. Enter your cost and desired markup percentage to instantly find your selling price and profit per unit." property="og:description"/><meta content="website" property="og:type"/><meta content="https://bizycalc.com/markup-calculator.html" property="og:url"/><meta content="https://bizycalc.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Markup Calculator - Find Your Selling Price | BizyCalc" name="twitter:title"/><meta content="Free markup calculator. Enter your cost and desired markup percentage to instantly find your selling price and profit per unit." name="twitter:description"/><meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
 </head>
 <body>
-<p>This page has moved. <a href="https://zaculators.com/markup-tool.html">Click here</a> if you are not redirected automatically.</p>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>Markup Calculator</h1>
+<p>Find the right selling price based on your cost and target markup.</p>
+</div>
+<div class="tool-box">
+<label>Cost Per Unit ($)</label>
+<input id="cost" placeholder="20" type="number"/>
+<label>Desired Markup (%)</label>
+<input id="markup" placeholder="50" type="number"/>
+<button class="calc-btn" onclick="calcMarkup()">Calculate Selling Price</button>
+<div class="result" id="result">
+<div class="result-row"><span>Profit Per Unit</span><strong id="rProfit">$0</strong></div>
+<div class="result-row"><span>Selling Price</span><strong id="rPrice">$0</strong></div>
+<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
+<span><strong>Resulting Margin %</strong></span><strong id="rMarginPct">0%</strong>
+</div>
+</div>
+</div>
+<div class="explain">
+<h2>How this calculator works</h2>
+<p>Markup is calculated on cost: selling price = cost × (1 + markup %). Note markup and margin are different — a 50% markup is not the same as a 50% margin. We show both so you can price with confidence.</p>
+</div>
+<div class="explain">
+<h2>Markup by industry — rough benchmarks</h2>
+<p>Retail typically marks up 50-100% over wholesale cost. Restaurants often target 60-70% food cost markup (roughly a 3-4x multiplier on ingredient cost). Service businesses vary widely, but a 2-3x markup over direct labor cost is common to cover overhead and profit.</p>
+</div>
+<div class="explain">
+<h2>Markup and margin move differently</h2>
+<p>A 100% markup on a $10 cost gives you a $20 price — but that's only a 50% margin, not 100%. This gap surprises a lot of first-time business owners setting prices for the first time. Always double-check which number you're actually targeting.</p>
+</div>
+<div class="explain">
+<h2>A quick example</h2>
+<p>If an item costs you $40 and you apply a 50% markup, your selling price is $60 ($40 plus 50% of $40), which works out to a 33% margin, not 50% — a common point of confusion. To hit a specific margin target instead, use margin-based pricing directly: price equals cost divided by (1 minus target margin), so a $40 cost at a 50% margin target would price at $80.</p>
+</div>
+<div class="explain">
+<h2>FAQ</h2>
+<p><strong>Which should I set — markup or margin?</strong> If you think in terms of "what did this cost me and what do I want to add," use markup. If you think in terms of "what percentage of each sale is profit," set margin instead and back into the price.</p>
+<p><strong>Why is my competitor's price lower than my markup formula suggests?</strong> They may have lower supplier costs, higher volume discounts, or be accepting a thinner margin intentionally. Use markup as a starting point, then adjust for market reality.</p>
+<p><strong>Should shipping and packaging be included in cost?</strong> Yes, if you're absorbing that cost. Any direct cost to get the product into the customer's hands should factor into your cost basis before applying markup.</p>
+</div>
+</div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/wholesale-pricing-calculator.html">Wholesale Pricing Calculator</a> · <a href="/keystone-markup-calculator.html">Keystone Markup Calculator</a> · <a href="/profit-margin-calculator.html">Profit Margin Calculator</a></p></div><div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function calcMarkup(){
+  const cost = parseFloat(document.getElementById('cost').value) || 0;
+  const markupPct = parseFloat(document.getElementById('markup').value) || 0;
+
+  const price = cost * (1 + markupPct/100);
+  const profit = price - cost;
+  const marginPct = price > 0 ? (profit/price)*100 : 0;
+
+  document.getElementById('rProfit').textContent = '$' + profit.toFixed(2);
+  document.getElementById('rPrice').textContent = '$' + price.toFixed(2);
+  document.getElementById('rMarginPct').textContent = marginPct.toFixed(1) + '%';
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Markup Calculator - Find Your Selling Price</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Free markup calculator. Enter your cost and desired markup percentage to instantly find your selling price and profit per unit. Instead of estimating or hunting for a formula online, Markup Calculator - Find Your Selling Price does the calculation instantly, right in your browser.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Cost Per Unit and Desired Markup, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">Using it is straightforward:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter cost per unit.</li><li>Add desired markup.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Whether you're comparing a few scenarios or just need one clean answer, this calculator is meant to save you the manual work.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">It's easy to lose track of small percentages and fees when they're spread across several line items — this tool pulls them into one clear number so nothing gets missed in the math.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Will it work on my phone?</strong> Yes, the page is fully responsive and works the same on mobile, tablet, or desktop.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> Results depend on standard, widely used formulas for this kind of calculation — accuracy is only as good as the numbers you put in, so it's worth double-checking your inputs.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Markup - Find Your Selling Price isn't quite the tool you're after.</p>
+</section>
+
 </body>
 </html>

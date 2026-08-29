@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Processor Fee Comparison Tool | BizyCalc</title>
+<meta content="Compare PayPal, Stripe, Shopify Payments, and Wise fees side by side on the same sale amount and see which one actually nets you the most, instantly." name="description"/>
+<link href="https://bizycalc.com/payment-processor-comparison.html" rel="canonical"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<meta content="Payment Processor Fee Comparison Tool | BizyCalc" property="og:title"/>
+<meta content="Compare PayPal, Stripe, Shopify Payments, and Wise fees side by side on the same sale amount and see which one actually nets you the most, instantly." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://bizycalc.com/payment-processor-comparison.html" property="og:url"/>
+<meta content="https://bizycalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Payment Processor Fee Comparison Tool | BizyCalc" name="twitter:title"/>
+<meta content="Compare PayPal, Stripe, Shopify Payments, and Wise fees side by side on the same sale amount and see which one actually nets you the most, instantly." name="twitter:description"/>
+<meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
+<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+<a class="logo" href="/">Bizy<span>Calc</span></a>
+<nav><a href="/">All Tools</a></nav>
+</header>
+<div class="container">
+<div class="hero" style="padding-top:0;">
+<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
+<h1>Payment Processor Fee Comparison</h1>
+<p>See exactly what PayPal, Stripe, Shopify Payments, and Wise each take on the same transaction — side by side, in one table.</p>
+</div>
+<div class="tool-box" style="max-width:680px;">
+<label>Transaction Amount ($)</label>
+<input id="amount" placeholder="1000" type="number" value="1000"/>
+<label>Transaction Type</label>
+<select id="txType">
+<option value="domestic">Domestic card / same-currency payment</option>
+<option value="international">International card or cross-border payment</option>
+</select>
+<button class="calc-btn" onclick="compareFees()">Compare Fees</button>
+<div class="result" id="result" style="overflow-x:auto;">
+<table class="compare-table" id="compareTable">
+<thead>
+<tr><th>Processor</th><th>Fee</th><th>You Receive</th></tr>
+</thead>
+<tbody id="compareBody"></tbody>
+</table>
+<p class="subtle" style="margin-top:12px;font-size:.85rem;color:#5b6b7f;">Wise assumes bank-funded transfer at the lower end of its typical range. Actual rates vary by currency route, funding method, and your specific plan — always confirm current rates before pricing a large transaction.</p>
+</div>
+</div>
+<div class="explain">
+<h2>How this comparison works</h2>
+<p>Each processor charges a percentage fee plus (usually) a small fixed fee per transaction. On a domestic card payment, PayPal and Stripe land close to each other. Once a payment crosses currencies or comes from an international card, the gap widens fast — PayPal and Stripe both add a cross-border surcharge, while Wise is built around minimizing exactly that cost.</p>
+</div>
+<div class="explain">
+<h2>The rates used (2026)</h2>
+<p><strong>PayPal:</strong> 2.99% + $0.49 domestic Goods &amp; Services, 4.99% + $0.49 international, plus 3.5% if currency conversion is involved.<br/>
+<strong>Stripe:</strong> 2.9% + $0.30 domestic card, 4.4% + $0.30 for international cards (adds a 1.5% cross-border fee).<br/>
+<strong>Shopify Payments:</strong> 2.9% + $0.30 on the Basic plan (used here as the baseline — Grow and Advanced plans get 2.7% and 2.5%).<br/>
+<strong>Wise:</strong> roughly 0.33%–2% conversion fee plus a small fixed fee ($0.50–$5), no markup on the exchange rate itself — best suited to transfers rather than instant checkout.</p>
+</div>
+<div class="explain">
+<h2>Why this matters more than it looks</h2>
+<p>On a $1,000 international payment, the difference between the cheapest and most expensive option here can be $30–$50. That's real margin, especially for freelancers and small sellers who get paid internationally on a recurring basis — over a year of monthly payments, picking the wrong processor can cost several hundred dollars for zero extra benefit.</p>
+</div>
+<div class="explain">
+<h2>FAQ</h2>
+<p><strong>Which processor is cheapest overall?</strong> For simple domestic checkout, Stripe and Shopify Payments (on higher plans) are usually cheapest. For cross-border payments and currency conversion specifically, Wise is almost always cheapest by a wide margin.</p>
+<p><strong>Why is Wise not built for checkout?</strong> Wise is designed for transfers and payouts, not embedded card checkout on a website — but it's frequently the best option for receiving freelance/invoice payments from international clients.</p>
+<p><strong>Do these numbers include chargeback or dispute fees?</strong> No — this compares standard processing fees only. Chargeback fees ($15–$20 typically) apply separately if a dispute occurs, and vary by processor.</p>
+</div>
+<div class="explain related-tools"><h2>Related tools</h2><p><a href="/paypal-fee-calculator.html">PayPal Fee Calculator</a> · <a href="/stripe-fee-calculator.html">Stripe Fee Calculator</a> · <a href="/shopify-fee-calculator.html">Shopify Payments Fee Calculator</a></p></div>
+</div>
+<div style="max-width:920px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
+<script>
+function compareFees(){
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const intl = document.getElementById('txType').value === 'international';
+
+  let rows = [];
+
+  const paypalFee = intl ? (amount * 0.0499 + 0.49 + amount * 0.035) : (amount * 0.0299 + 0.49);
+  rows.push({name:'PayPal', fee: paypalFee});
+
+  const stripeFee = intl ? (amount * 0.044 + 0.30) : (amount * 0.029 + 0.30);
+  rows.push({name:'Stripe', fee: stripeFee});
+
+  const shopifyFee = amount * 0.029 + 0.30;
+  rows.push({name:'Shopify Payments (Basic plan)', fee: shopifyFee});
+
+  const wiseFee = intl ? (amount * 0.007 + 1.50) : (amount * 0.004 + 0.50);
+  rows.push({name:'Wise', fee: wiseFee});
+
+  rows.forEach(r => { r.net = amount - r.fee; });
+
+  const cheapest = rows.reduce((a,b) => a.fee < b.fee ? a : b);
+
+  const tbody = document.getElementById('compareBody');
+  tbody.innerHTML = '';
+  rows.sort((a,b) => a.fee - b.fee);
+  rows.forEach(r => {
+    const isBest = r.name === cheapest.name;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${r.name}${isBest ? '<span class="badge-best">Cheapest</span>' : ''}</td><td>$${r.fee.toFixed(2)}</td><td class="${isBest ? 'best' : ''}">$${r.net.toFixed(2)}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
+<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Payment Processor Fee Comparison Tool</h2>
+<p style="margin-bottom:1rem;line-height:1.7;">Compare PayPal, Stripe, Shopify Payments, and Wise fees side by side on the same sale amount and see which one actually nets you the most, instantly. Payment Processor Fee Comparison Tool was built to replace the back-of-napkin math with something exact and repeatable.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Transaction Amount and Transaction Type, and the calculator handles the rest.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;">Here's what it takes to get a result:</p>
+<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter transaction amount.</li><li>Add transaction type.</li><li>Review the result — adjust any field to see it update live.</li></ol>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">People turn to this calculator when they need a fast, dependable number instead of estimating — whether that's for a one-off decision or something they check regularly.</p>
+
+<p style="margin-bottom:1rem;line-height:1.7;">It's easy to lose track of small percentages and fees when they're spread across several line items — this tool pulls them into one clear number so nothing gets missed in the math.</p>
+
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Does it store my information?</strong> No. The calculation happens in your browser and nothing you enter is saved or sent anywhere.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
+<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> Results depend on standard, widely used formulas for this kind of calculation — accuracy is only as good as the numbers you put in, so it's worth double-checking your inputs.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
+<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
+<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Payment Processor Fee Comparison Tool isn't quite the tool you're after.</p>
+</section>
+
+</body>
+</html>
