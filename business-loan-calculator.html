@@ -1,118 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5P4Z68PC');</script>
-<!-- End Google Tag Manager -->
-
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Business Loan Calculator | BizyCalc</title>
-<meta content="Free business loan calculator. Enter loan amount, interest rate, and term to see your estimated monthly payment and total interest paid." name="description"/><link href="https://bizycalc.com/business-loan-calculator.html" rel="canonical"/><link href="/favicon.png" rel="icon" type="image/png"/><meta content="Business Loan Calculator | BizyCalc" property="og:title"/><meta content="Free business loan calculator. Enter loan amount, interest rate, and term to see your estimated monthly payment and total interest paid." property="og:description"/><meta content="website" property="og:type"/><meta content="https://bizycalc.com/business-loan-calculator.html" property="og:url"/><meta content="https://bizycalc.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Business Loan Calculator | BizyCalc" name="twitter:title"/><meta content="Free business loan calculator. Enter loan amount, interest rate, and term to see your estimated monthly payment and total interest paid." name="twitter:description"/><meta content="https://bizycalc.com/og-image.png" name="twitter:image"/>
-<link href="style.css" rel="stylesheet"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script>
-<script async="" data-key="tSXsYC6nz7Z/l9ja9YQQ9w" src="https://analytics.ahrefs.com/analytics.js"></script>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4Z68PC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<header>
-<a class="logo" href="/">Bizy<span>Calc</span></a>
-<nav><a href="/">All Tools</a></nav>
-</header>
-<div class="container">
-<div class="hero" style="padding-top:0;">
-<span class="eyebrow"><a href="/" style="color:inherit;">← All Tools</a></span>
-<h1>Business Loan Calculator</h1>
-<p>Estimate your monthly payment and total interest before you borrow.</p>
-</div>
-<div class="tool-box">
-<label>Loan Amount ($)</label>
-<input id="amount" placeholder="50000" type="number"/>
-<label>Annual Interest Rate (%)</label>
-<input id="rate" placeholder="9.5" type="number"/>
-<label>Loan Term (years)</label>
-<input id="term" placeholder="5" type="number"/>
-<button class="calc-btn" onclick="calcLoan()">Calculate Payment</button>
-<div class="result" id="result">
-<div class="result-row"><span>Monthly Payment</span><strong id="rMonthly">$0</strong></div>
-<div class="result-row"><span>Total Paid</span><strong id="rTotalPaid">$0</strong></div>
-<div class="result-row" style="border-top:1px solid #bfdbfe;padding-top:10px;margin-top:6px;">
-<span><strong>Total Interest</strong></span><strong id="rInterest">$0</strong>
-</div>
-</div>
-</div>
-<div class="explain">
-<h2>How this calculator works</h2>
-<p>We use the standard amortizing loan formula based on your loan amount, annual interest rate, and term in years to calculate a fixed monthly payment, then total that across the full term to show total paid and total interest.</p>
-</div>
-<div class="explain">
-<h2>Interest rate vs. APR — know the difference before you sign</h2>
-<p>The interest rate is just the cost of borrowing the principal. APR (annual percentage rate) also folds in fees — origination fees, processing fees, sometimes closing costs — giving you the true annual cost. Always compare loan offers by APR, not the headline interest rate.</p>
-</div>
-<div class="explain">
-<h2>What lenders look at</h2>
-<p>Most business lenders weigh time in business, annual revenue, personal and business credit score, and existing debt load. SBA loans typically offer the lowest rates but the slowest approval; online lenders move fast but charge more for the convenience.</p>
-</div>
-<div class="explain">
-<h2>A quick example</h2>
-<p>A $50,000 loan at 9% APR over 5 years works out to a monthly payment of roughly $1,038, with total interest of about $12,300 over the life of the loan — meaning you'd repay just over $62,300 total. Shortening the term to 3 years raises the monthly payment to around $1,590 but cuts total interest to about $7,240, a useful trade-off to weigh if your cash flow can absorb the higher payment.</p>
-</div>
-<div class="explain">
-<h2>FAQ</h2>
-<p><strong>Does this calculator account for fees?</strong> This estimates payments based on principal, rate, and term only. Always ask your lender for the full APR including any origination or processing fees before comparing offers.</p>
-<p><strong>Is a longer term always better?</strong> A longer term lowers your monthly payment but increases total interest paid over the life of the loan. Run both scenarios here to see the real tradeoff in dollars, not just monthly cash flow.</p>
-<p><strong>Can I pay it off early?</strong> Depends on the lender — some charge prepayment penalties, others don't. Confirm this before signing, especially if you expect strong cash flow that could let you pay down debt faster.</p>
-</div>
-</div>
-<div class="explain related-tools"><h2>Related tools</h2><p><a href="/payback-period-calculator.html">Payback Period Calculator</a> · <a href="/break-even-calculator.html">Break-Even Calculator</a> · <a href="/shopify-fee-calculator.html">Shopify Payments Fee Calculator</a></p></div><div style="max-width:700px;margin:2rem auto 0;padding:0 1.5rem;text-align:center;">
-<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="2665011148" data-full-width-responsive="true" style="display:block"></ins>
+<html lang="en"><head><link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Business Loan Calculator | Zaculators</title>
+<meta content="Free Business Loan Calculator — This calculator estimates a monthly business loan payment from the amount, rate, and term you enter. It is intended for..." name="description"/><script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3736768574278789"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What factors affect business loan interest rates?","acceptedAnswer":{"@type":"Answer","text":"Business credit history, time in business, revenue, industry risk, collateral, and loan type all typically affect the rate a lender offers, with newer or higher-risk businesses often facing higher rates."}},{"@type":"Question","name":"What's the difference between a term loan and a line of credit?","acceptedAnswer":{"@type":"Answer","text":"A term loan provides a lump sum repaid on a fixed schedule, while a line of credit offers flexible access to funds up to a limit, with interest charged only on the amount drawn — the right choice depends on your specific cash flow needs."}},{"@type":"Question","name":"Are SBA loans different from standard business loans?","acceptedAnswer":{"@type":"Answer","text":"SBA-backed loans often offer more favorable rates and terms since the government guarantees a portion of the loan, but they typically involve more paperwork and a longer approval process than a standard business loan."}},{"@type":"Question","name":"Does a longer loan term always mean paying more?","acceptedAnswer":{"@type":"Answer","text":"A longer term lowers monthly payments but generally increases total interest paid over the life of the loan, so the right trade-off depends on your business's cash flow needs versus total cost tolerance."}},{"@type":"Question","name":"Should I secure a business loan with collateral?","acceptedAnswer":{"@type":"Answer","text":"Secured loans (backed by business or personal assets) often come with better rates than unsecured options, but they also put those assets at risk if you can't repay — weigh this trade-off carefully."}}]}</script><style>:root{--primary:#2563eb;--bg:#f8fafc}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:#0f172a}header{background:#fff;padding:1.5rem;text-align:center;border-bottom:1px solid #e2e8f0}h1{font-size:1.5rem;color:var(--primary,#2563eb)}main{max-width:900px;margin:0 auto;padding:2rem}.section,.faq-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:2rem;margin-bottom:2rem}label{display:block;font-weight:600;margin-bottom:.4rem}input,button{width:100%;padding:.75rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:6px;font-size:1rem}button{background:var(--primary);color:#fff;border:none;cursor:pointer;font-weight:600}.results{display:none;background:#f0fdf4;border-left:4px solid #16a34a;padding:1.25rem;border-radius:6px;margin-top:1rem}.results.active{display:block}.value{font-size:1.2rem;font-weight:700;color:#16a34a;margin-bottom:.4rem}.subtle,.faq-item p{color:#64748b;line-height:1.6}.faq-item{margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid #e2e8f0}.faq-item:last-child{border-bottom:none}.disclaimer{background:#fee2e2;border-left:4px solid #dc2626;padding:1rem;border-radius:6px;font-size:.92rem;color:#7f1d1d;margin-top:2rem}.section h2,.section h3,.faq-section h2,.faq-section h3{color:var(--primary,#2563eb);font-weight:700}footer{background:#fff;border-top:1px solid #e2e8f0;padding:2rem;text-align:center;color:#64748b;margin-top:3rem}</style></head><body><header><h1>Business Loan Calculator</h1></header><main><section class="section"><form id="calcForm"><label for="amount">Loan Amount ($)</label><input id="amount" required="" step="any" type="number"/><label for="rate">Annual Interest Rate (%)</label><input id="rate" required="" step="any" type="number" value="9"/><label for="years">Loan Term (Years)</label><input id="years" required="" step="any" type="number" value="3"/><button type="submit">Estimate Business Loan Payment</button></form><div class="results" id="result"><div class="value" id="payment"></div><p class="subtle" id="repay"></p><p class="subtle" id="interest"></p></div></section><section class="section"><h2>What This Calculator Estimates</h2><p class="subtle">Business loans fund working capital, equipment purchases, expansion, or other business needs, typically repaid through fixed installments combining principal and interest, though terms, rates, and structures vary significantly depending on the lender, loan type (term loan, SBA loan, line of credit, etc.), and your business's credit profile. This calculator estimates monthly payments and total cost using the loan amount, rate, and term you provide for your specific scenario.</p></section><section class="section"><h2>How to Use This Calculator</h2><ol style="padding-left:1.5rem"><li>Enter the business loan amount.</li><li>Enter the annual interest rate.</li><li>Enter the term in years.</li><li>Click Estimate Business Loan Payment.</li><li>Review the payment and repayment estimate shown.</li></ol></section><section class="section"><h2>Related Calculators</h2><p><a href="loan-payment-calculator.html">Loan Payment Calculator</a> · <a href="cash-flow-projection.html">Cash Flow Projection</a> · <a href="break-even-sales.html">Break-Even Sales</a></p></section><section class="faq-section"><h2>Tips for a More Accurate Estimate</h2><ul style="padding-left:1.5rem;line-height:1.8"><li>Compare rates and terms across multiple lenders, including SBA-backed options if eligible.</li><li>Consider how a line of credit versus a term loan fits your specific cash flow pattern.</li><li>Factor in origination fees and any other closing costs beyond the stated interest rate.</li><li>Model different terms to balance monthly payment affordability against total interest cost.</li><li>Consult a financial advisor or accountant before taking on significant business debt.</li></ul></section><section class="faq-section"><h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What factors affect business loan interest rates?</h3><p>Business credit history, time in business, revenue, industry risk, collateral, and loan type all typically affect the rate a lender offers, with newer or higher-risk businesses often facing higher rates.</p></div><div class="faq-item"><h3>What's the difference between a term loan and a line of credit?</h3><p>A term loan provides a lump sum repaid on a fixed schedule, while a line of credit offers flexible access to funds up to a limit, with interest charged only on the amount drawn — the right choice depends on your specific cash flow needs.</p></div><div class="faq-item"><h3>Are SBA loans different from standard business loans?</h3><p>SBA-backed loans often offer more favorable rates and terms since the government guarantees a portion of the loan, but they typically involve more paperwork and a longer approval process than a standard business loan.</p></div><div class="faq-item"><h3>Does a longer loan term always mean paying more?</h3><p>A longer term lowers monthly payments but generally increases total interest paid over the life of the loan, so the right trade-off depends on your business's cash flow needs versus total cost tolerance.</p></div><div class="faq-item"><h3>Should I secure a business loan with collateral?</h3><p>Secured loans (backed by business or personal assets) often come with better rates than unsecured options, but they also put those assets at risk if you can't repay — weigh this trade-off carefully.</p></div></section><div class="disclaimer">This calculator provides business loan estimates only. Actual lender terms, fees, and repayment rules can vary, so verify details before relying on the result.</div><p class="subtle" style="margin-top:1rem">Last updated: May 11, 2026</p><div style="max-width:920px;margin:0 auto 2rem;padding:0 2rem;text-align:center;">
+<ins class="adsbygoogle" data-ad-client="ca-pub-3736768574278789" data-ad-format="auto" data-ad-slot="5330582799" data-full-width-responsive="true" style="display:block"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<footer>© 2026 BizyCalc.com — <a href="/">More free tools</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a></footer>
-<script>
-function calcLoan(){
-  const P = parseFloat(document.getElementById('amount').value) || 0;
-  const annualRate = parseFloat(document.getElementById('rate').value) || 0;
-  const years = parseFloat(document.getElementById('term').value) || 0;
-
-  const r = (annualRate/100) / 12;
-  const n = years * 12;
-  let monthly = 0;
-  if (r > 0 && n > 0) {
-    monthly = P * (r * Math.pow(1+r, n)) / (Math.pow(1+r, n) - 1);
-  } else if (n > 0) {
-    monthly = P / n;
-  }
-  const totalPaid = monthly * n;
-  const interest = totalPaid - P;
-
-  document.getElementById('rMonthly').textContent = '$' + monthly.toFixed(2);
-  document.getElementById('rTotalPaid').textContent = '$' + totalPaid.toFixed(2);
-  document.getElementById('rInterest').textContent = '$' + interest.toFixed(2);
-  document.getElementById('result').classList.add('show');
-}
-</script>
-
+</main><footer><p><strong>Zaculators</strong> © 2025 | Free Calculators</p></footer><script>calcForm.addEventListener('submit',function(e){e.preventDefault();const p=parseFloat(amount.value),r=parseFloat(rate.value)/1200,n=parseFloat(years.value)*12;if(!isFinite(p)||!isFinite(r)||!isFinite(n)||n<=0){alert('Enter valid numbers.');return}const m=r===0?p/n:p*r/(1-Math.pow(1+r,-n));const total=m*n;payment.textContent='Estimated monthly payment: $'+m.toFixed(2);repay.textContent='Estimated total repayment: $'+total.toFixed(2);interest.textContent='Estimated total interest: $'+(total-p).toFixed(2);result.classList.add('active')});</script>
 <section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
 <h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Business Loan Calculator</h2>
-<p style="margin-bottom:1rem;line-height:1.7;">Free business loan calculator. Enter loan amount, interest rate, and term to see your estimated monthly payment and total interest paid. Business Loan Calculator exists so you don't have to dig up a formula or estimate — plug in your numbers and get a real answer.</p>
+<p style="margin-bottom:1rem;line-height:1.7;">Free Business Loan Calculator — This calculator estimates a monthly business loan payment from the amount, rate, and term you enter. It is intended for. Business Loan Calculator exists so you don't have to dig up a formula or estimate — plug in your numbers and get a real answer.</p>
 <p style="margin-bottom:1rem;line-height:1.7;">You'll enter Loan Amount, Annual Interest Rate and Loan Term, and the calculator handles the rest.</p>
 <h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
 <p style="margin-bottom:0.5rem;line-height:1.7;">The process takes under a minute:</p>
 <ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter loan amount.</li><li>Add annual interest rate, loan term.</li><li>Review the result — adjust any field to see it update live.</li></ol>
 <h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
 <p style="margin-bottom:1rem;line-height:1.7;">This tool is aimed at anyone who wants a precise figure without doing the math themselves, from first-time users to people who use it as part of a regular routine.</p>
-
-<p style="margin-bottom:1rem;line-height:1.7;">Most people using a tool like this are somewhere in the middle of a real decision — pricing a product, weighing a fee structure, or checking a number before committing to something. A quick, accurate calculation beats guessing or digging through a spreadsheet template.</p>
+<p style="margin-top:1rem;line-height:1.7;">This page also answers common questions like "What factors affect business loan interest rates?" and "Should I secure a business loan with collateral?" — see the FAQ section above for details.</p>
 
 <h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
 <p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Will it work on my phone?</strong> Yes, the page is fully responsive and works the same on mobile, tablet, or desktop.</p>
@@ -124,5 +27,4 @@ function calcLoan(){
 <p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Business Loan isn't quite the tool you're after.</p>
 </section>
 
-</body>
-</html>
+</body></html>
