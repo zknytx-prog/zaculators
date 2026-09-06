@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/apr-calculator.html", "destination": "/apr.html", "statusCode": 301 },
+    { "source": "/discount-calculator.html", "destination": "/discount.html", "statusCode": 301 },
+    { "source": "/down-payment-calculator.html", "destination": "/down-payment.html", "statusCode": 301 },
+    { "source": "/markup-calculator.html", "destination": "/markup-tool.html", "statusCode": 301 },
+    { "source": "/customer-lifetime-value.html", "destination": "/customer-ltv.html", "statusCode": 301 },
+    { "source": "/gas-mileage.html", "destination": "/fuel-efficiency.html", "statusCode": 301 },
+    { "source": "/payroll-tax.html", "destination": "/payroll-tax-calculator.html", "statusCode": 301 },
+    { "source": "/equity-calculator.html", "destination": "/home-equity.html", "statusCode": 301 },
+    { "source": "/percentage-calculator.html", "destination": "/percentage.html", "statusCode": 301 },
+    { "source": "/break-even-calculator.html", "destination": "/break-even.html", "statusCode": 301 },
+    { "source": "/property-tax-calculator.html", "destination": "/property-tax.html", "statusCode": 301 }
+  ]
+}
