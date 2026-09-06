@@ -18,7 +18,7 @@ jobs:
         with:
           ref: fix-seo-indexing-2026-09-06
           fetch-depth: 0
-      - name: Run repository audit
+      - name: Run repository audit after cleanup
         run: python .github/scripts/repo_seo_audit.py
       - name: Commit audit report
         run: |
@@ -28,6 +28,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No audit report changes"
           else
-            git commit -m "Add temporary SEO audit report [skip ci]"
+            git commit -m "Refresh temporary SEO audit report [skip ci]"
             git push origin HEAD:fix-seo-indexing-2026-09-06
           fi
