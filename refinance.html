@@ -182,27 +182,6 @@
         function saveResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('âš ï¸ Calculate');return}showToast('âœ“ Saved')}
         function shareResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('âš ï¸ Calculate');return}const msg=`ðŸ“Š Refinance\nBreak-even: ${document.getElementById('breakeven').textContent}\nMonthly Savings: ${(parseFloat(document.getElementById('currentPayment').textContent.replace(/[^0-9.-]/g,''))-parseFloat(document.getElementById('newPayment').textContent.replace(/[^0-9.-]/g,''))).toLocaleString()}`;if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>showToast('ðŸ“¤ Copied'))}}
         function printResults(){if(document.getElementById('breakeven').textContent==='-'){showToast('âš ï¸ Calculate');return}const w=window.open('','_blank');w.document.write(`<html><head><title>Refinance</title><style>body{font-family:Arial;padding:20px;}</style></head><body><h1>Refinance Analysis</h1><p><strong>Break-even:</strong> ${document.getElementById('breakeven').textContent}</p><p><strong>Total Savings:</strong> ${document.getElementById('savings').textContent}</p>
-<section class="expanded-info" style="max-width:920px;margin:2rem auto;padding:2rem;background:white;border:1px solid #e2e8f0;border-radius:12px;">
-<h2 style="font-size:1.45rem;margin-bottom:1rem;color:#2563eb;">About the Refinance Calculator</h2>
-<p style="margin-bottom:1rem;line-height:1.7;">This calculator estimates whether refinancing may lower your monthly payment and whether the interest savings may justify the closing costs. Refinance Calculator is built for one job — turning your inputs into an accurate result without spreadsheets, apps, or guesswork.</p>
-<p style="margin-bottom:1rem;line-height:1.7;">You'll enter Current Loan Balance, Current Interest Rate, New Interest Rate, Years Remaining and Refinance Closing Costs, and the calculator handles the rest.</p>
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">How to Use It</h3>
-<p style="margin-bottom:0.5rem;line-height:1.7;">Using it is straightforward:</p>
-<ol style="margin-left:1.25rem;line-height:1.8;"><li>Enter current loan balance.</li><li>Add current interest rate, new interest rate, years remaining, refinance closing costs.</li><li>Review the result — adjust any field to see it update live.</li></ol>
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Who This Is For</h3>
-<p style="margin-bottom:1rem;line-height:1.7;">People turn to this calculator when they need a fast, dependable number instead of estimating — whether that's for a one-off decision or something they check regularly.</p>
-<p style="margin-top:1rem;line-height:1.7;">This page also answers common questions like "What does this refinance calculator estimate?" and "When should I rerun the refinance estimate?" — see the FAQ section above for details.</p>
-
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
-<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Does it store my information?</strong> No. The calculation happens in your browser and nothing you enter is saved or sent anywhere.</p>
-<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
-<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> The math behind this tool follows established, conventional methods — if a result looks off, the most likely cause is an input worth rechecking.</p>
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
-<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
-<p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Refinance isn't quite the tool you're after.</p>
-</section>
-
 </body></html>`);w.document.close();w.onload=()=>w.print()}
     </script>
 <footer><p><strong>Zaculators</strong> © 2025</p></footer>
@@ -218,12 +197,6 @@
 <p style="margin-bottom:1rem;line-height:1.7;">People turn to this calculator when they need a fast, dependable number instead of estimating — whether that's for a one-off decision or something they check regularly.</p>
 <p style="margin-top:1rem;line-height:1.7;">This page also answers common questions like "What does this refinance calculator estimate?" and "When should I rerun the refinance estimate?" — see the FAQ section above for details.</p>
 
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Good to Know</h3>
-<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Does it store my information?</strong> No. The calculation happens in your browser and nothing you enter is saved or sent anywhere.</p>
-<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>Is there a cost to use this?</strong> No — every calculator on Zaculators is free, with no account or sign-up needed.</p>
-<p style="margin-bottom:0.5rem;line-height:1.7;"><strong>How accurate is this?</strong> The math behind this tool follows established, conventional methods — if a result looks off, the most likely cause is an input worth rechecking.</p>
-<h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">A Note on Precision</h3>
-<p style="margin-bottom:1rem;line-height:1.7;">Small changes in your inputs can shift the result more than you'd expect, so it's worth running the numbers more than once if you're using this for something important. Treat the output as a strong estimate built on the figures you provide, not a substitute for professional advice where real money or decisions are on the line.</p>
 <h3 style="font-size:1.2rem;margin:1.25rem 0 0.75rem;color:#0f172a;">Explore More</h3>
 <p style="margin-bottom:1rem;line-height:1.7;">Zaculators has 250+ free calculators spanning finance, business, health, tax, and everyday planning. Browse the full <a href="/all-calculators.html" style="color:#2563eb;">calculator directory</a> if Refinance isn't quite the tool you're after.</p>
 </section>
